@@ -1,4 +1,5 @@
 "use client";
+import "./NavBar.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -6,6 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter();
 
@@ -35,33 +37,39 @@ export default function Navbar() {
 
   const handleNavigation = (path) => {
     router.push(path);
+    setMenuOpen(false); // close menu after navigation
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-transform duration-300 ${
-        show ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4">
+    <nav className={`navbar ${show ? "navbar-show" : "navbar-hide"}`}>
+      <div className="navbar-container">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <div className="navbar-logo" onClick={() => handleNavigation("/")}>
           <Image
             src="/resources/BuildNinja.png"
             alt="BuildNinja Logo"
             width={120}
             height={40}
-            className="object-contain"
-            onClick={()=>handleNavigation("/")}
+            className="logo-image"
           />
         </div>
 
+        {/* Hamburger icon (mobile) */}
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         {/* Navigation Links */}
-        <ul className="flex space-x-6 font-medium text-gray-700">
+        <ul className={`navbar-links ${menuOpen ? "menu-active" : ""}`}>
           {navItems.map((item) => (
             <li
               key={item.name}
-              className="hover:text-black cursor-pointer"
+              className="navbar-link"
               onClick={() => handleNavigation(item.path)}
             >
               {item.name}
