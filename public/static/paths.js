@@ -1,24 +1,34 @@
-import { version } from "react";
-
-export const paths ={
-    root:"/resources/icons/",
-    icons: {
-        cds:"/resources/icons/CDS.svg",
-        versioning:"/resources/icons/versioning.svg",
-        circleCheck:"/resources/icons/circleCheck.svg",
-        circleGreenCheck: "/resources/icons/circleGreenTick.svg",
-        clock: "/resources/icons/clock.svg",
-        greenTick: "/resources/icons/greenTick.svg",
-        shield: "/resources/icons/shield.svg",
-        greenShield: "/resources/icons/greenShield.svg",
-        whiteShield: "/resources/icons/whiteShield.svg",
-        upward: "/resources/icons/upward.svg",
-        target: "/resources/icons/target.svg",
-        calendar:"/resources/icons/calendar.svg",
-        box: "/resources/icons/box.svg",
-        bug: "/resources/icons/bug.svg",
-        fire: "/resources/icons/fire.svg",
-        service: "/resources/icons/service.svg",
-        stopWatch: "/resources/icons/stopWatch.svg"
-    }
-}
+export const paths = {
+  root: "/resources/icons/",
+  icons: {
+    cds: "/resources/icons/CDS.svg",
+    versioning: "/resources/icons/versioning.svg",
+    circleCheck: "/resources/icons/circleCheck.svg",
+    circleGreenCheck: "/resources/icons/circleGreenTick.svg",
+    clock: "/resources/icons/clock.svg",
+    greenTick: "/resources/icons/greenTick.svg",
+    shield: "/resources/icons/shield.svg",
+    greenShield: "/resources/icons/greenShield.svg",
+    whiteShield: "/resources/icons/whiteShield.svg",
+    upward: "/resources/icons/upward.svg",
+    target: "/resources/icons/target.svg",
+    calendar: "/resources/icons/calendar.svg",
+    box: "/resources/icons/box.svg",
+    bug: "/resources/icons/bug.svg",
+    fire: "/resources/icons/fire.svg",
+    service: "/resources/icons/service.svg",
+    stopWatch: "/resources/icons/stopWatch.svg",
+    download: "/resources/icons/download.svg",
+    thunder: "/resources/icons/thunder.svg",
+    server: "/resources/icons/server.svg",
+    thunderBlack: "/resources/icons/thunderBlack.svg",
+    artifactBox: "/resources/icons/artifactBox.svg",
+    chart: "/resources/icons/chart.svg",
+    crossPlatform: "/resources/icons/crossPlatform.svg",
+    gear: "/resources/icons/gear.svg",
+    globe: "/resources/icons/globe.svg",
+    puzzlePiece: "/resources/icons/puzzlePiece.svg",
+    users: "/resources/icons/users.svg",
+    email: "/resources/icons/email.svg",
+  },
+};
