@@ -1,0 +1,87 @@
+.thirdSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    padding: 2vw 10vw 4vw 16vw;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.thirdSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.thirdContent {
+    flex: 1 1 55%;
+    z-index: 2;
+}
+
+.thirdGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14vw;
+}
+
+.thirdTitle {
+    font-size: 2vw;
+    font-weight: 650;
+    /* color: ; */
+}
+
+.rightCellContainer {
+    margin-right: 3vw;
+    background-color: #F9F9F9;
+    height: 100%;
+    width: 70%;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    padding: 2vw;
+}
+
+.third-simple-list1 {
+    margin-top: 2vw;
+    list-style-type: disc;
+    font-size: 1vw;
+}
+
+.third-simple-list1 div.thirdListContainer+div.thirdListContainer {
+    margin-top: 0.5rem;
+}
+
+.third-simple-list2 {
+    margin-top: 2vw;
+  list-style-type: none;
+  font-size: 1vw;
+}
+
+
+.third-simple-list2 div.thirdListContainer+div.thirdListContainer {
+    margin-top: 0.5rem;
+}
+
+.thirdListContainer {
+    align-items: baseline;
+    display: flex;
+}
+
+.thirdTickIcon {
+    height: 0.8vw;
+}
+
+.third-simple-small-box-text {
+    text-align: center;
+    font-size: 1vw;
+    margin: 0.6vw 0 0 0;
+}

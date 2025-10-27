@@ -1,0 +1,109 @@
+.seventhSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    padding: 2vw 12vw 0vw 14vw;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.seventhSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.seventhContent {
+    flex: 1 1 55%;
+    z-index: 2;
+}
+
+.seventhTitle {
+    font-size: 2.0vw;
+    margin-bottom: 2vw;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.seventh-simple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2.4vw;
+}
+
+@media (min-width: 768px) {
+    .seventh-simple-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.seventh-simple-box:nth-child(2) {
+    justify-items: right;
+}
+
+@media (max-width: 768px) {
+    .seventh-simple-box:nth-child(2) {
+        justify-items: center;
+    }
+}
+
+.seventh-simple-box {
+    align-items: center;
+}
+
+.pr-block {
+    margin-bottom: 2vw;
+}
+
+.pr-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 2vw;
+}
+
+.pr-title {
+    min-width: 8vw;
+    font-size: 1.3vw;
+    font-weight: 600;
+    font-family: inherit;
+    color: #222;
+}
+
+.pr-text {
+    font-size: 1.05vw;
+    color: #444;
+    line-height: 1.7;
+    font-family: inherit;
+    flex: 1;
+}
+
+.approachContainer {
+    margin-right: 3vw;
+    background-color: #F9F9F9;
+    height: 20vw;
+    width: 20vw;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    padding: 1.5vw;
+}
+
+.seventhCardTitle {
+    font-size: 1.5vw;
+    font-weight: 600;
+    margin: 2vw 0 3.5vw 0;
+    line-height: 1.1;
+}
+
+.seventhCardDescription {
+    font-size: 0.9vw;
+}

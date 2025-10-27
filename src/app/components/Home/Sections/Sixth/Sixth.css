@@ -1,0 +1,138 @@
+.sixthSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    padding: 2vw 10vw 4vw 10vw;
+    background: #FBFBFB;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.sixthSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sixthContent {
+    flex: 1 1 55%;
+    z-index: 2;
+}
+
+.sixthTitle {
+    font-size: 3.0vw;
+    font-weight: 600;
+    margin: 1vw 0 3vw 0;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.iconContainer {
+    margin: 3vw 0 0 0;
+    justify-items: center;
+}
+
+.sixth-simple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2.4vw;
+}
+
+@media (min-width: 768px) {
+    .sixth-simple-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.sixth-simple-box {
+    align-content: center;
+}
+
+.sixth-simple-box-text {
+    font-size: 1vw;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0 1.7vw 1vw 1.7vw;
+}
+
+.sixthListContainer{
+    align-items: baseline; 
+    display: flex;                                   
+}
+
+.sixthTickIcon{
+    height:0.8vw;
+}
+
+.sixth-simple-list {
+    list-style: none;
+    font-size: 1vw;
+}
+
+.sixth-simple-list li+li {
+    margin-top: 0.5rem;
+}
+
+.smaller-box-container {
+    display: grid;
+    height: 100%;
+    width: 85%;
+    row-gap: 1vw;
+    column-gap: 0vw;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.small-box {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    text-align: center;
+    height: 9vw;
+    width: 14vw;
+}
+
+.sixth-simple-box-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.2vw;
+    margin-bottom: 0.6vw;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.sixth-simple-box-heading {
+    font-size: 1.8vw;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.sixth-simple-small-box-text {
+    text-align: center;
+    font-size: 1vw;
+    ;
+    margin: 0.6vw 0 0 0;
+}
+
+.sixth-simple-box .smaller-box-container .small-box:nth-child(3) {
+    background-color: #D4335C;
+    color:white;
+
+}
+
+.sixth-simple-box .smaller-box-container .small-box:nth-child(3) {
+    background-color: #D4335C;
+    color:white;   
+}
+
+.sixth-simple-box:nth-child(2){
+    justify-items: right;
+}

@@ -1,0 +1,68 @@
+.fifthSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  padding: 2vw 16vw 2vw 16vw;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.fifthSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fifthContent {
+  flex: 1 1 55%;
+  z-index: 2;
+}
+
+.fifthTitle {
+  font-size: 3.0vw;
+  font-weight: 600;
+  margin: 3vw 0 3vw 0;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.fifth-simple-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin:2.4vw;
+}
+
+@media (min-width: 768px) {
+  .fifth-simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.fifth-simple-box-text{
+  display: flex;
+   gap: 1vw;;
+  font-size: 1vw;
+  align-items: center;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0 1.7vw 1vw 1.7vw;
+}
+
+.simple-list {
+  list-style-type: none;
+  padding-left: 2.5rem; 
+  font-size: 1vw;
+}
+
+.simple-list li + li {
+  margin-top: 0.5rem;
+}

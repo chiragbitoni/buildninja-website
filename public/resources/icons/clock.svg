@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="2 2 20 20" aria-hidden="true" class="lucide lucide-clock" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg" data-type="ugc">
+    <g>
+        <path d="M12 6v6l4 2" fill="none"/>
+        <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10" fill="none"/>
+    </g>
+</svg>

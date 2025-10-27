@@ -1,0 +1,117 @@
+
+.secondSection {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    padding: 4vw 16vw 4vw 16vw;
+    background: #FBFBFB;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.secondSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.secondContent {
+    flex: 1 1 55%;
+    z-index: 2;
+}
+
+.secondTitle {
+    font-size: 3.0vw;
+    font-weight: 700;
+    margin: 0 0 1vw 0;
+    text-align: center;
+    line-height: 1.1;
+    color: #202226;
+}
+
+.secondSubtitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7vw;
+    /* margin: 0 0 2vw 0; */
+    color: #35363b;
+    line-height: 1.6;
+}
+.secondThirdSubtitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7vw;
+    margin: 0 0 2.5vw 0;
+    color: #35363b;
+    line-height: 1.6;
+}
+
+.subtitleParagraph{
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 1.3vw;
+    margin: 0 0 2vw 0;
+    color: #35363b;
+    line-height: 1.6;
+}
+
+.heroHighlight {
+    display: block;
+    color: #202226;
+    font-size: 3vw;
+    font-weight: 700;
+}
+
+.heroSubtitle {
+    font-size: 1.3vw;
+    margin: 0 0 1vw 0;
+    color: #35363b;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+.simple-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .simple-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.simple-box {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.simple-box-heading {
+  font-size: 1.3vw;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.second-simple-list {
+  list-style-type: disc;
+  padding-left: 2.5rem; 
+  font-size: 1vw;
+}
+
+.second-simple-list li + li {
+  margin-top: 0.5rem;
+}
