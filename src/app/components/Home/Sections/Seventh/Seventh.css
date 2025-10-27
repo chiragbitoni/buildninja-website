@@ -1,11 +1,11 @@
 .seventhSection {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100vw;
     max-width: 100%;
     height: auto;
-    padding: 2vw 12vw 0vw 14vw;
+    padding: 3vw 10vw;
     background: #FFFFFF;
     box-sizing: border-box;
     position: relative;
@@ -22,44 +22,29 @@
 }
 
 .seventhContent {
-    flex: 1 1 55%;
+    flex: 1;
     z-index: 2;
 }
 
 .seventhTitle {
-    font-size: 2.0vw;
+    font-size: 2vw;
     margin-bottom: 2vw;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .seventh-simple-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 2.4vw;
-}
-
-@media (min-width: 768px) {
-    .seventh-simple-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.seventh-simple-box:nth-child(2) {
-    justify-items: right;
-}
-
-@media (max-width: 768px) {
-    .seventh-simple-box:nth-child(2) {
-        justify-items: center;
-    }
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+    align-items: start;
 }
 
 .seventh-simple-box {
     align-items: center;
 }
 
+/* Problem / Result section */
 .pr-block {
     margin-bottom: 2vw;
 }
@@ -86,24 +71,138 @@
     flex: 1;
 }
 
+/* Card section */
 .approachContainer {
-    margin-right: 3vw;
     background-color: #F9F9F9;
-    height: 20vw;
-    width: 20vw;
+    height: auto;
+    width: 100%;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    padding: 1.5vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 2vw;
 }
 
 .seventhCardTitle {
     font-size: 1.5vw;
     font-weight: 600;
-    margin: 2vw 0 3.5vw 0;
-    line-height: 1.1;
+    margin-bottom: 1.5vw;
+    line-height: 1.2;
 }
 
 .seventhCardDescription {
-    font-size: 0.9vw;
+    font-size: 1vw;
+    color: #444;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .seventhSection {
+        padding: 8vw 6vw;
+        flex-direction: column;
+    }
+
+    .seventhTitle {
+        font-size: 6vw;
+        margin-bottom: 4vw;
+        text-align: center;
+    }
+
+    .seventh-simple-grid {
+        grid-template-columns: 1fr;
+        gap: 6vw;
+        margin: 0;
+    }
+
+    .pr-row {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    .pr-title {
+        font-size: 4.5vw;
+        min-width: auto;
+        text-align: center;
+    }
+
+    .pr-text {
+        font-size: 4vw;
+        text-align: justify;
+    }
+
+    .approachContainer {
+        width: 100%;
+        padding: 6vw;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .seventhCardTitle {
+        font-size: 5vw;
+        text-align: center;
+        margin-bottom: 3vw;
+    }
+
+    .seventhCardDescription {
+        font-size: 4vw;
+        text-align: justify;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .seventhSection {
+        padding: 6vw 8vw;
+    }
+
+    .seventhTitle {
+        font-size: 3.5vw;
+        text-align: left;
+    }
+
+    .seventh-simple-grid {
+        grid-template-columns: 1fr;
+        gap: 4vw;
+    }
+
+    .pr-title {
+        font-size: 2.5vw;
+    }
+
+    .pr-text {
+        font-size: 2.2vw;
+    }
+
+    .approachContainer {
+        width: 80%;
+        margin: 0 auto;
+        padding: 3vw;
+    }
+
+    .seventhCardTitle {
+        font-size: 3vw;
+    }
+
+    .seventhCardDescription {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width: 1280px) {
+    .seventhTitle {
+        font-size: 1.8vw;
+    }
+
+    .pr-title {
+        font-size: 1.2vw;
+    }
+
+    .pr-text {
+        font-size: 1vw;
+    }
+
+    .seventhCardTitle {
+        font-size: 1.3vw;
+    }
+
+    .seventhCardDescription {
+        font-size: 0.9vw;
+    }
 }

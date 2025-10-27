@@ -1,11 +1,8 @@
+/* Mobile-first base */
 .fourthSection {
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  width: 100vw;
-  max-width: 100%;
-  height: auto;
-  padding: 2vw 16vw 4vw 16vw;
+  display: block;
+  width: 100%;
+  padding: clamp(16px, 3vw, 40px) clamp(16px, 6vw, 128px) clamp(24px, 4vw, 64px) clamp(16px, 6vw, 128px);
   background: #FBFBFB;
   box-sizing: border-box;
   position: relative;
@@ -22,75 +19,104 @@
 }
 
 .fourthContent {
-  flex: 1 1 55%;
+  position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Title */
 .fourthTitle {
-  font-size: 3.0vw;
+  font-size: clamp(24px, 3.4vw, 44px);
   font-weight: 600;
-  margin: 0 0 3vw 0;
+  margin: 0 0 clamp(16px, 3vw, 32px) 0;
   text-align: center;
-  line-height: 1.1;
-  color: #202226;;
+  line-height: 1.15;
+  color: #202226;
 }
 
+/* Grid of cards */
 .fourth-simple-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.2rem;
-  margin:2.4vw;
+  gap: clamp(16px, 3.5vw, 32px);
+  margin: clamp(12px, 2.4vw, 28px);
+  align-items: stretch;
 }
 
-@media (min-width: 768px) {
-  .fourth-simple-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+/* Card */
 .fourth-simple-box {
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
-  padding: 0.6rem;
+  padding: clamp(12px, 2vw, 24px);
   text-align: center;
 }
 
-.fourth-simple-box-icon{
+/* Icon */
+.fourth-simple-box-icon {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.6vw;
-  margin-bottom: 1.1vw;
-  width: 4.5vw;
-  height: 4.5vw;
+  margin-top: clamp(12px, 2vw, 24px);
+  margin-bottom: clamp(8px, 1.8vw, 20px);
+  width: clamp(28px, 4vw, 56px);
+  height: clamp(28px, 4vw, 56px);
 }
 
+/* Step pill */
 .fourth-simple-box-button {
   display: inline-block;
   background: #D4335C;
   color: #fff;
   font-weight: 700;
-  font-size: 0.8vw;
-  padding: 0.2vw 1vw;
+  font-size: clamp(12px, 1.4vw, 14px);
+  padding: clamp(4px, 0.6vw, 8px) clamp(12px, 1.2vw, 18px);
   border-radius: 999px;
   border: none;
   cursor: default;
-  margin: 0 0 0.5vw 0;
+  margin: 0 0 clamp(8px, 1.2vw, 12px) 0;
 }
 
-.fourth-simple-box-heading{
-  font-size: 1.3vw;
+/* Card heading and text */
+.fourth-simple-box-heading {
+  font-size: clamp(16px, 1.6vw, 22px);
   font-weight: 600;
-  margin: 1vw 4vw 2vw 4vw;
+  margin: clamp(8px, 1.2vw, 12px) clamp(16px, 4vw, 32px) clamp(12px, 2vw, 20px) clamp(16px, 4vw, 32px);
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
-.fourth-simple-box-text{
-  font-size: 1vw;
-  line-height: 1.5;
+.fourth-simple-box-text {
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.6;
   text-align: center;
-  margin: 0 1.7vw 1vw 1.7vw;
+  margin: 0 clamp(12px, 2.4vw, 24px) clamp(12px, 2vw, 20px) clamp(12px, 2.4vw, 24px);
+}
+
+@media (min-width: 768px) {
+  .fourth-simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(18px, 3.5vw, 40px);
+  }
+  .fourthContent {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fourth-simple-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 48px);
+  }
+  .fourthContent {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .fourthContent {
+    max-width: 1280px;
+  }
 }

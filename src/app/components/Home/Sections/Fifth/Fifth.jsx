@@ -22,7 +22,13 @@ export default function Fifth() {
                     <ul className="simple-list">
                         {fifthSectionText.list2.map((item, index) => (
                             <li key={index} className="fifth-simple-box-text">
-                                <img src={`${paths.root}${item.icon}`} alt="" />
+                                <Image
+                                    src={`${paths.root}${item.icon}`}
+                                    alt=""
+                                    width={24}
+                                    height={24}
+                                    sizes="(max-width: 640px) 20px, 24px"
+                                />
                                 {item.description}
                             </li>
                         ))}
