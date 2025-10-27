@@ -1,13 +1,11 @@
 .secondSection {
-  display: flex;
-  justify-content: center;
+  display: block;
+  width: 100%;
+  padding: clamp(24px, 4vw, 64px) clamp(16px, 6vw, 128px);
   background: #FBFBFB;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  padding-block: clamp(16px, 4vw, 48px);
-  padding-inline: clamp(16px, 6vw, 128px);
-
 }
 
 .secondSection::before {
@@ -20,18 +18,16 @@
 }
 
 .secondContent {
-  flex: 1 1 auto;
+  position: relative;
   z-index: 2;
-
   max-width: 1200px;
-  width: 100%;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 .secondTitle {
-  font-size: clamp(24px, 4.5vw, 48px);
+  font-size: clamp(24px, 3.6vw, 44px);
   font-weight: 700;
-  margin: 0 0 clamp(8px, 1.2vw, 16px) 0;
+  margin: 0 0 1vw 0;
   text-align: center;
   line-height: 1.15;
   color: #202226;
@@ -40,26 +36,26 @@
 .secondSubtitle {
   text-align: center;
   font-weight: 700;
-  font-size: clamp(16px, 2.4vw, 28px);
+  font-size: clamp(16px, 2.2vw, 24px);
   color: #35363b;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .secondThirdSubtitle {
   text-align: center;
   font-weight: 700;
-  font-size: clamp(16px, 2.4vw, 28px);
+  font-size: clamp(16px, 2.2vw, 24px);
   margin: 0 0 clamp(16px, 2.5vw, 32px) 0;
   color: #35363b;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .subtitleParagraph {
   text-align: center;
   font-size: clamp(14px, 1.6vw, 18px);
-  margin: 0 0 clamp(12px, 2vw, 20px) 0;
+  margin: 0 0 clamp(16px, 2vw, 24px) 0;
   color: #35363b;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .heroHighlight {
@@ -70,21 +66,20 @@
 }
 
 .heroSubtitle {
-  font-size: clamp(14px, 1.6vw, 18px);
-  margin: 0 0 clamp(8px, 1.2vw, 16px) 0;
+  font-size: clamp(14px, 1.5vw, 18px);
+  margin: 0 0 clamp(8px, 1vw, 16px) 0;
   color: #35363b;
   font-weight: 400;
   line-height: 1.6;
 }
 
+/* Grid and cards */
 .simple-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  gap: clamp(16px, 3vw, 32px);
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 3.5vw, 32px);
 }
 
-/* Card */
 .simple-box {
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -94,20 +89,44 @@
 }
 
 .simple-box-heading {
-  font-size: clamp(16px, 1.8vw, 22px);
-  line-height: 1.4;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.6;
   font-weight: 600;
   margin-bottom: clamp(12px, 2vw, 24px);
   text-align: center;
 }
 
-/* Lists */
 .second-simple-list {
   list-style-type: disc;
-  padding-left: clamp(20px, 2.5vw, 32px);
-  font-size: clamp(14px, 1.4vw, 16px);
+  padding-left: clamp(18px, 2.5vw, 32px);
+  font-size: clamp(13px, 1.2vw, 16px);
 }
 
 .second-simple-list li + li {
-  margin-top: clamp(6px, 1vw, 10px);
+  margin-top: 0.5rem;
+}
+
+/* Breakpoints: mobile-first */
+@media (min-width: 767px) {
+  .simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .secondSection {
+    padding: clamp(32px, 4vw, 72px) clamp(24px, 6vw, 128px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .simple-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .secondSection {
+    padding: clamp(48px, 5vw, 96px) clamp(48px, 8vw, 160px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .secondContent {
+    max-width: 1280px;
+  }
 }
