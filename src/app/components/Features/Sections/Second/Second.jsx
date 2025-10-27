@@ -6,7 +6,7 @@ export default function Second() {
         <section className="secondFeaturesSection">
             <div className="secondFeaturesCardsContainer">
                 {secondSectionText.cards.map((card, idx) => (
-                    <div className="secondFeaturesCard">
+                    <div key={idx} className="secondFeaturesCard">
                         <img src={card.icon} alt={card.icon} className="secondFeaturesCardIcon" />
                         <h3 className="secondFeaturesCardTitle">{card.title}</h3>
                         <p className="secondFeaturesCardDescription">{card.description}</p>
