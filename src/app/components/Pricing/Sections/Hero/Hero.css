@@ -1,0 +1,140 @@
+.pricingHeroSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 100%;
+    height: 33vw;
+    padding: 2vw 12vw 2vw 12vw;
+    background: linear-gradient(120deg, #f8f4fd 0%, #f3f0ef 100%);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricingHeroSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('/resources/PricingHeroBG.png') center center / cover no-repeat;
+    /* opacity: 0.15;    */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pricingHeroContent {
+    z-index: 2;
+}
+
+.pricingHeroTitle {
+    font-size: 2.7vw;
+    font-weight: 700;
+    margin: 0 0 1vw 0;
+    line-height: 1.1;
+    text-align: center;
+    color: #202226;
+}
+
+.pricingHeroSubtitle {
+    font-size: 1.3vw;
+    padding: 0 15vw 0 15vw;
+    margin: 0 0 1vw 0;
+    color: #35363b;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.pricingPlanToggleSwitchContainer {
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    display: flex;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 3.5vw;
+    width: 32vw;
+    border: 1px solid #e2e8f0;
+    border-radius: 999vw;
+}
+
+.toggleSwitchOption1,
+.toggleSwitchOption2 {
+    font-size: 1vw;
+    margin: 0px 1vw;
+    padding: 0.5vw 1vw;
+    font-weight: 500
+}
+
+.toggleSwitchOption1 {
+    margin-right: 0vw;
+    margin-left: 0vw
+}
+
+.toggleSwitchOption2 {
+    background-color: #D4335C;
+    padding: 0.4vw 1.2vw;
+    border-radius: 999px;
+    color: #ffffff;
+}
+
+.toggleSwitchSavings {
+    color: #169000;
+    background-color: #DBFCE7;
+    font-size: 0.8vw;
+    font-weight: 500;
+    padding: 0.4vw 1.2vw;
+    border-radius: 999px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 1vw;
+    position: relative;
+    display: inline-block;
+    width: 3.5vw;
+    height: 2vw;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #F9F9F9;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked+.slider {
+    background: #D4335C;
+}
+
+
+.switch input:checked+.slider:before {
+    transform: translateX(1.6em);
+    width: 2em;
+    height: 2em;
+    bottom: 0;
+}

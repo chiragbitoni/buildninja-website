@@ -1,0 +1,41 @@
+.seventhPricingSection {
+    background-color: black;
+    height: auto;
+    padding: 3vw;
+}
+
+.seventhPricingTitle {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.4vw;
+}
+
+.seventhPricingButtonContainer {
+    display: flex;
+    gap:2vw;
+    justify-content: center;
+    margin-top:2vw;
+}
+
+.seventhPricingFreeButton,
+.seventhPricingShogunButton {
+    background-color: #D4335C;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 0.7vw 1.1vw;;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.seventhPricingFreeButton:hover,
+.seventhPricingShogunButton:hover {
+    background-color: #ea367d;
+}
+
+.seventhPricingDescription{
+    margin-top: 2vw;
+    font-size: 1vw;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+}

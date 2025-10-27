@@ -1,0 +1,71 @@
+.fourthfeatures-root {
+    background: #f9f9f9;
+    padding: 2.5vw 1.25vw;
+    border-radius: 0.625vw;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.fourthfeatures-title {
+    text-align: center;
+    font-size: 2.7vw;
+    font-weight: 500;
+    margin-bottom: 3vw;
+}
+
+.fourthfeatures-columns {
+    display: flex;
+    justify-content: center;
+    gap: 20vw;
+}
+
+.fourthfeatures-header {
+    display: flex;
+    gap: 0.8vw;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+.fourthPricingHeaderIcon {
+    width: auto;
+    height: 1.7vw;
+}
+
+.fourthfeatures-card-title {
+    font-size: 1.4vw;
+    font-weight: 500;
+}
+
+.fourthfeatures-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fourthfeatures-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 0.4vw;
+    padding-left: 0;
+    font-size: 1vw;
+    position: relative;
+}
+
+.fourthfeatures-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.31vw;
+    width: 0.94vw;
+    height: 0.94vw;
+}
+
+.fourthFeatureListContainer {
+    align-items: center;
+}
+
+.fourthPricingTickIcon {
+    object-fit: contain;
+    height: auto;
+    width:1.4vw;
+}

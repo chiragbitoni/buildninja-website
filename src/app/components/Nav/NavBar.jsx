@@ -24,13 +24,13 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const navItems = [
-    { name: "Pricing", path: "/pricing" },
-    { name: "Features", path: "/features" },
-    { name: "Demo", path: "/demo" },
-    { name: "Documentation", path: "/documentation" },
-    { name: "Install", path: "/install" },
-    { name: "Support", path: "/support" },
-    { name: "FAQ", path: "/faq" },
+    { name: "Pricing", path: "/Pricing" },
+    { name: "Features", path: "/Features" },
+    { name: "Demo", path: "/Demo" },
+    { name: "Documentation", path: "/Documentation" },
+    { name: "Install", path: "/Install" },
+    { name: "Support", path: "/Support" },
+    { name: "FAQ", path: "/Faq" },
   ];
 
   const handleNavigation = (path) => {
@@ -52,6 +52,7 @@ export default function Navbar() {
             width={120}
             height={40}
             className="object-contain"
+            onClick={()=>handleNavigation("/")}
           />
         </div>
 

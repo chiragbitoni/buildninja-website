@@ -1,0 +1,74 @@
+.thirdPricingFeatureComparisionHeading {
+    margin-top: 4vw;
+    text-align: center;
+    font-size: 2.7vw;
+    font-weight: 600;
+}
+
+.thirdPricing-container {
+    display: flex;
+    margin-top:2vw;
+    justify-content: center;
+    padding: 2vw;
+    background-color: #fff;
+}
+
+.thirdPricing-table {
+    width: 65vw;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.85vw;
+    color: #333;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.thirdPricing-table th,
+.thirdPricing-table td {
+    padding: 0.6vw 1vw;
+    text-align: center;
+    border-bottom: 1px solid #d9d9d9
+}
+
+.thirdPricing-table th:first-child,
+.thirdPricing-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.thirdPricing-table th {
+    background-color: #f6f6f6;
+    font-size: 1.1vw;
+    font-weight: 600;
+}
+
+.thirdPricing-table td {
+    background-color: #ffffff;
+}
+
+.thirdPricing-table tr:hover td {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+}
+
+.thirdPricing-table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.thirdPricing-table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.thirdPricing-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.thirdPricing-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.thirdPricing-table tr:last-child td {
+    border-bottom: none;
+}

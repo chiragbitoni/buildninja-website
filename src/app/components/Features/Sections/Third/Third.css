@@ -1,0 +1,41 @@
+.thirdFeaturesSection {
+    background-color: black;
+    height: auto;
+    padding: 3vw;
+}
+
+.thirdFeaturesTitle {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.4vw;
+}
+
+.thirdFeaturesButtonContainer {
+    display: flex;
+    gap:2vw;
+    justify-content: center;
+    margin-top:2vw;
+}
+
+.thirdFeaturesFreeButton,
+.thirdFeaturesShogunButton {
+    background-color: #D4335C;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 0.7vw 1.1vw;;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.thirdFeaturesFreeButton:hover,
+.thirdFeaturesShogunButton:hover {
+    background-color: #ea367d;
+}
+
+.thirdFeaturesDescription{
+    margin-top: 2vw;
+    font-size: 1vw;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+}
