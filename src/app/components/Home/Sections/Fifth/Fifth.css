@@ -27,12 +27,13 @@
 
 /* Title */
 .fifthTitle {
-  font-size: clamp(24px, 3.4vw, 44px);
+  font-size: clamp(24px, 7vw, 44px);
   font-weight: 600;
   margin: clamp(16px, 3vw, 32px) 0;
   text-align: center;
   line-height: 1.15;
   color: #202226;
+  margin-bottom: 10vw;
 }
 
 /* Grid */
@@ -49,10 +50,11 @@
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-  font-size: inherit; /* use item rule below */
+  font-size: inherit;
+  /* use item rule below */
 }
 
-.simple-list li + li {
+.simple-list li+li {
   margin-top: clamp(8px, 1.6vw, 14px);
 }
 
@@ -81,8 +83,14 @@
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(18px, 3.5vw, 40px);
   }
+
   .fifthContent {
     max-width: 1100px;
+  }
+
+  .fifthTitle {
+    font-size: 4.5vw;
+    margin: 5vw 0;
   }
 }
 
@@ -95,5 +103,10 @@
 @media (min-width: 1280px) {
   .fifthContent {
     max-width: 1280px;
+  }
+
+  .fifthTitle {
+    font-size: 44px;
+    margin: 0;
   }
 }
