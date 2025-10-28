@@ -6,8 +6,8 @@ export default function Sixth() {
     return (
         <section className="sixthSection">
             <div className="sixthContent">
-                <div className="iconContainer">
-                    <img src={paths.icons.target} className="iconsClass"></img>
+                <div className="sixthIconContainer">
+                    <img src={paths.icons.target} className="sixthIconsClass"></img>
                 </div>
                 <h1 className="sixthTitle">
                     {sixthSectionText.title1}<span className="text-green-600">{sixthSectionText.title2}</span>{sixthSectionText.title3}

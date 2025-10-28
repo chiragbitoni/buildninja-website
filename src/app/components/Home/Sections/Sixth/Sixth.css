@@ -26,26 +26,26 @@
 }
 
 /* Icon row */
-.iconContainer {
+.sixthIconContainer {
   display: grid;
   place-items: center;
   margin: clamp(12px, 3vw, 32px) 0 0 0;
 }
 
-/* If you want to size the target icon explicitly */
-.iconsClass {
-  width: clamp(28px, 4vw, 56px);
-  height: clamp(28px, 4vw, 56px);
+.sixthIconsClass {
+  width: 15vw;
+  height: 15vw;
 }
 
 /* Title */
 .sixthTitle {
-  font-size: clamp(24px, 3.4vw, 44px);
+  font-size: clamp(24px, 7vw, 44px);
   font-weight: 600;
   margin: clamp(12px, 2vw, 20px) 0 clamp(16px, 3vw, 32px) 0;
   text-align: center;
   line-height: 1.15;
   color: #202226;
+  margin: 5vw 0 10vw;
 }
 
 /* Main grid */
@@ -75,7 +75,7 @@
   gap: clamp(8px, 1.6vw, 16px);
 }
 
-.sixth-simple-list li + li {
+.sixth-simple-list li+li {
   margin-top: clamp(8px, 1.6vw, 14px);
 }
 
@@ -160,8 +160,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(18px, 3.5vw, 40px);
   }
+
   .sixthContent {
     max-width: 1100px;
+  }
+
+  .sixthTitle {
+    font-size: 4.5vw;
+    margin: 1vw 0 5vw 0;
+  }
+
+  .sixthIconsClass {
+    height: 10vw;
+    width: 10vw;
+    margin: 1vw 0 2vw 0;
   }
 }
 
@@ -174,5 +186,15 @@
 @media (min-width: 1280px) {
   .sixthContent {
     max-width: 1280px;
+  }
+
+  .sixthTitle {
+    font-size: 44px;
+    margin: 1.5vw;
+  }
+  .sixthIconsClass{
+    height: 5vw;
+    width: 5vw;
+    margin: 0;
   }
 }
