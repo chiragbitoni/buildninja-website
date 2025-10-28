@@ -1,138 +1,178 @@
+/* Mobile-first base */
 .sixthSection {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    max-width: 100%;
-    height: auto;
-    padding: 2vw 10vw 4vw 10vw;
-    background: #FBFBFB;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
+  display: block;
+  width: 100%;
+  padding: clamp(16px, 3vw, 40px) clamp(16px, 6vw, 120px) clamp(24px, 4vw, 64px);
+  background: #FBFBFB;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 .sixthSection::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.15;
-    z-index: 0;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .sixthContent {
-    flex: 1 1 55%;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.sixthTitle {
-    font-size: 3.0vw;
-    font-weight: 600;
-    margin: 1vw 0 3vw 0;
-    text-align: center;
-    line-height: 1.1;
-}
-
+/* Icon row */
 .iconContainer {
-    margin: 3vw 0 0 0;
-    justify-items: center;
+  display: grid;
+  place-items: center;
+  margin: clamp(12px, 3vw, 32px) 0 0 0;
 }
 
+/* If you want to size the target icon explicitly */
+.iconsClass {
+  width: clamp(28px, 4vw, 56px);
+  height: clamp(28px, 4vw, 56px);
+}
+
+/* Title */
+.sixthTitle {
+  font-size: clamp(24px, 3.4vw, 44px);
+  font-weight: 600;
+  margin: clamp(12px, 2vw, 20px) 0 clamp(16px, 3vw, 32px) 0;
+  text-align: center;
+  line-height: 1.15;
+  color: #202226;
+}
+
+/* Main grid */
 .sixth-simple-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 2.4vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 3.5vw, 32px);
+  margin: clamp(12px, 2.4vw, 28px);
 }
 
-@media (min-width: 768px) {
-    .sixth-simple-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* Box wrapper */
 .sixth-simple-box {
-    align-content: center;
+  align-content: center;
+}
+
+/* List area */
+.sixth-simple-list {
+  list-style: none;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.sixthListContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(8px, 1.6vw, 16px);
+}
+
+.sixth-simple-list li + li {
+  margin-top: clamp(8px, 1.6vw, 14px);
 }
 
 .sixth-simple-box-text {
-    font-size: 1vw;
-    line-height: 1.5;
-    text-align: left;
-    margin: 0 1.7vw 1vw 1.7vw;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+  text-align: left;
+  margin: 0 clamp(12px, 2.4vw, 24px) clamp(12px, 2vw, 20px);
 }
 
-.sixthListContainer{
-    align-items: baseline; 
-    display: flex;                                   
+/* Tick icon */
+.sixthTickIcon {
+  height: clamp(14px, 1.4vw, 18px);
+  width: auto;
+  flex: 0 0 auto;
+  margin-top: 2px;
 }
 
-.sixthTickIcon{
-    height:0.8vw;
-}
-
-.sixth-simple-list {
-    list-style: none;
-    font-size: 1vw;
-}
-
-.sixth-simple-list li+li {
-    margin-top: 0.5rem;
-}
-
+/* Smaller feature cards grid */
 .smaller-box-container {
-    display: grid;
-    height: 100%;
-    width: 85%;
-    row-gap: 1vw;
-    column-gap: 0vw;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  width: 100%;
+  row-gap: clamp(10px, 2vw, 16px);
+  column-gap: clamp(10px, 2vw, 16px);
+  grid-template-columns: 1fr;
+  margin: 0 auto;
 }
 
+/* Individual small card */
 .small-box {
-    background-color: #f0f0f0;
-    border-radius: 15px;
-    text-align: center;
-    height: 9vw;
-    width: 14vw;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  text-align: center;
+  min-height: clamp(88px, 12vw, 140px);
+  padding: clamp(12px, 2vw, 16px);
 }
 
+/* Icon inside small card */
 .sixth-simple-box-icon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1.2vw;
-    margin-bottom: 0.6vw;
-    width: 2.5vw;
-    height: 2.5vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: clamp(8px, 1.6vw, 14px);
+  margin-bottom: clamp(6px, 1.2vw, 10px);
+  width: clamp(24px, 3vw, 40px);
+  height: clamp(24px, 3vw, 40px);
 }
 
+/* Small card heading and text */
 .sixth-simple-box-heading {
-    font-size: 1.8vw;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.1;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .sixth-simple-small-box-text {
-    text-align: center;
-    font-size: 1vw;
-    ;
-    margin: 0.6vw 0 0 0;
+  text-align: center;
+  font-size: clamp(13px, 1.2vw, 16px);
+  margin: clamp(6px, 1.2vw, 10px) 0 0 0;
 }
 
+/* Emphasis card (3rd) */
 .sixth-simple-box .smaller-box-container .small-box:nth-child(3) {
-    background-color: #D4335C;
-    color:white;
-
+  background-color: #D4335C;
+  color: white;
 }
 
-.sixth-simple-box .smaller-box-container .small-box:nth-child(3) {
-    background-color: #D4335C;
-    color:white;   
+.sixth-simple-box:nth-child(2) {
+  display: grid;
+  justify-items: center;
 }
 
-.sixth-simple-box:nth-child(2){
-    justify-items: right;
+@media (min-width: 480px) {
+  .smaller-box-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .sixth-simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(18px, 3.5vw, 40px);
+  }
+  .sixthContent {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sixthContent {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sixthContent {
+    max-width: 1280px;
+  }
 }

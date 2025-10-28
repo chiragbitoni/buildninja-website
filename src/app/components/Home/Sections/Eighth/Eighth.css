@@ -1,11 +1,11 @@
 .eighthSection {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100vw;
     max-width: 100%;
     height: auto;
-    padding: 2vw 10vw 4vw 10vw;
+    padding: 4vw 10vw;
     background: #FBFBFB;
     box-sizing: border-box;
     position: relative;
@@ -22,37 +22,34 @@
 }
 
 .eighthContent {
-    flex: 1 1 55%;
+    flex: 1;
     z-index: 2;
 }
 
 .eighthTitle {
     text-align: center;
-    font-size: 3.0vw;
-     margin: 2vw 16vw;
+    font-size: 2.5vw;
+    margin: 2vw 16vw;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
-.eightSubTitle{
+.eightSubTitle {
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
     font-weight: 600;
-    margin:0 8vw 2vw 8vw;
-    /* margin-bottom: 2vw; */
-} 
-
-.eighth-inner-grid{
-    justify-self: center;
-    display: flex;
-    align-items: center; 
-    gap: 0.5vw; 
-    justify-content: center; 
+    margin: 0 8vw 2vw 8vw;
 }
 
+.eighth-inner-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
 
 .eightPrimaryBtn {
-    display: inline-block; 
+    display: inline-block;
     background: #D4335C;
     color: #fff;
     font-weight: 700;
@@ -60,8 +57,9 @@
     padding: 0.6vw 2.4vw;
     border-radius: 2.2vw;
     text-decoration: none;
+    border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-right: 1vw;
+    cursor: pointer;
 }
 
 .eightPrimaryBtn:hover {
@@ -71,69 +69,216 @@
 .eightDemoBtn {
     display: inline-block;
     background: #f6f6f6;
-    width: 18vw;
     color: #202226;
     font-weight: 700;
     font-size: 1.15vw;
     padding: 0.6vw 2.4vw;
     border-radius: 2.2vw;
-    text-decoration: none;
     border: 2px solid #d1d1d1;
-    transition: border 0.19s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 1vw;
+    cursor: pointer;
+    transition: border 0.19s;
 }
 
 .eightDemoBtn:hover {
     background: #fff;
 }
 
-.eighthSecondTitleContainer{
-    justify-self: center;
+.eighthSecondTitleContainer {
     display: flex;
-    align-items: center; 
-    gap: 0.5vw; 
-    justify-content: center; 
-    margin: 2vw 0 2vw 0;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8vw;
+    margin: 3vw 0 2vw 0;
 }
 
-.eightSecondTitleIcon{
-    height:2.5vw;
-    width: 2.5vw;
+.eightSecondTitleIcon {
+    height: 2.8vw;
+    width: 2.8vw;
 }
 
-.eightSecondTitle{
+.eightSecondTitle {
     text-align: center;
     font-size: 2vw;
     font-weight: 600;
 }
 
-.eightListContainer {
-    margin:0 8vw;
-  display: flex;
-  align-items: center;
-  gap: 0.5vw;
-  box-sizing: border-box;
-}
-
-.eightTickIcon {
-  height: 0.8vw;
-  width: 0.8vw;
-}
-
 .eightListGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5vw;
+    margin: 0 8vw;
 }
 
-.eighthList {
-  list-style-type: none;
-  font-size: 1vw;
-  margin: 0;
+.eightListContainer {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    box-sizing: border-box;
+    flex: 1 1 45%;
 }
 
 .eightListContainer.rightAlign {
-  justify-content: flex-end;
-  text-align: right;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.eightTickIcon {
+    height: 1.3vw;
+    width: 1.3vw;
+}
+
+.eighthList {
+    list-style-type: none;
+    font-size: 1.2vw;
+    margin: 0;
+    color: #222;
+}
+
+@media (max-width: 600px) {
+    .eighthSection {
+        padding: 10vw 6vw;
+    }
+
+    .eighthTitle {
+        font-size: 6vw;
+        margin: 4vw 0;
+        line-height: 1.3;
+    }
+
+    .eightSubTitle {
+        font-size: 3vw;
+        margin: 0 4vw 6vw 4vw;
+    }
+
+    .eighth-inner-grid {
+        flex-direction: column;
+        gap: 4vw;
+    }
+
+    .eightPrimaryBtn,
+    .eightDemoBtn {
+        border-radius: 6vw;
+        text-align: center;
+        font-size: 2.5vw;
+        padding: 1vw 8vw;
+    }
+
+    .eighthSecondTitleContainer {
+        flex-direction: column;
+        gap: 2vw;
+        margin: 6vw 0 4vw 0;
+    }
+
+    .eightSecondTitleIcon {
+        height: 8vw;
+        width: 8vw;
+    }
+
+    .eightSecondTitle {
+        font-size: 4vw;
+    }
+
+    .eightListGrid {
+        flex-direction: column;
+        gap: 5vw;
+        margin: 0;
+    }
+
+    .eightListContainer,
+    .eightListContainer.rightAlign {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .eightTickIcon {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .eighthList {
+        font-size: 3vw;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .eighthSection {
+        padding: 6vw 8vw;
+    }
+
+    .eighthTitle {
+        font-size: 4vw;
+        margin: 2vw 0;
+    }
+
+    .eightSubTitle {
+        font-size: 2.6vw;
+        margin: 5vw 0 3vw 0;
+    }
+
+    .eightPrimaryBtn,
+    .eightDemoBtn {
+        margin-top: 2vw;
+        font-size: 2.3vw;
+        padding: 1.4vw 4vw;
+        border-radius: 4vw;
+    }
+
+    .eightSecondTitleIcon {
+        height: 4.5vw;
+        width: 4.5vw;
+        margin-top: 2vw;
+    }
+
+    .eightSecondTitle {
+        margin-top: 2vw;
+        font-size: 3vw;
+    }
+
+    .eightListGrid {
+        justify-content: center;
+        gap: 3vw;
+    }
+
+    .eightListContainer {
+        flex: 1 1 45%;
+        justify-content: flex-start;
+        gap: 1.5vw;
+    }
+
+    .eightTickIcon {
+        height: 3vw;
+        width: 3vw;
+    }
+
+    .eighthList {
+        text-align: left;
+        font-size: 2vw;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 1280px) {
+    .eighthTitle {
+        font-size: 2.2vw;
+    }
+
+    .eightSubTitle {
+        font-size: 1.3vw;
+    }
+
+    .eightSecondTitle {
+        font-size: 1.8vw;
+    }
+
+    .eightTickIcon {
+        height: 1vw;
+        width: 1vw;
+    }
+
+    .eighthList {
+        font-size: 1.1vw;
+    }
 }
