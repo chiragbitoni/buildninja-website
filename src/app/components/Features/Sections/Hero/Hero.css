@@ -1,17 +1,18 @@
-.pricingHeroSection {
+.featuresHeroSection {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100vw;
     max-width: 100%;
     height: 25vw;
-    padding: 2vw 27vw;
+    padding: 2vw 12vw 2vw 12vw;
     background: linear-gradient(120deg, #f8f4fd 0%, #f3f0ef 100%);
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
 }
-.pricingHeroSection::before {
+
+.featuresHeroSection::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -21,11 +22,11 @@
     pointer-events: none;
 }
 
-.pricingHeroContent {
+.featuresHeroContent {
     z-index: 2;
 }
 
-.pricingHeroTitle {
+.featuresHeroTitle {
     font-size: 2.7vw;
     font-weight: 700;
     line-height: 1.1;
@@ -33,7 +34,7 @@
     color: #202226;
 }
 
-.pricingHeroSubtitle {
+.featuresHeroSubtitle {
     font-size: 1.3vw;
     margin: 1.5vw 0 0 0;
     color: #35363b;
