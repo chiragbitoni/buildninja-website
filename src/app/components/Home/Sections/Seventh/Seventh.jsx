@@ -2,40 +2,39 @@ import Image from "next/image";
 import './Seventh.css';
 import { seventhSectionText } from "../../../../../../public/static/homePageText";
 import { paths } from "../../../../../../public/static/paths";
+
 export default function Seventh() {
+    const cards = [
+        { icon: paths.icons.upward, title: seventhSectionText.card1.title, desc: seventhSectionText.card1.description },
+        { icon: paths.icons.clock, title: seventhSectionText.card2.title, desc: seventhSectionText.card2.description },
+        { icon: paths.icons.whiteShield, title: seventhSectionText.card3.title, desc: seventhSectionText.card3.description, highlight: true },
+        { icon: paths.icons.circleGreenCheck, title: seventhSectionText.card4.title, desc: seventhSectionText.card4.description },
+    ];
+
     return (
         <section className="seventhSection">
             <div className="seventhContent">
-                <div className="seventh-simple-grid">
-                    <div className="seventh-simple-box">
-                        <h1 className="seventhTitle">
-                            {seventhSectionText.title}
-                        </h1>
-                        <div className="seventh-inner-grid">
-                            <div className="pr-block">
-                                <div className="pr-row">
-                                    <div className="pr-title">{seventhSectionText.problem.title}</div>
-                                    <div className="pr-text">
-                                        {seventhSectionText.problem.description}
-                                    </div>
-                                </div>
+                <h1 className="seventhTitle">{seventhSectionText.title}</h1>
+
+                <p className="seventhIntro">{seventhSectionText.subTitle}</p>
+
+                <div className="seventhCards">
+                    {cards.map((c, idx) => (
+                        <div
+                            key={idx}
+                            className={`seventhCard ${c.highlight ? 'highlight' : ''}`}
+                            role="group"
+                            aria-label={c.title}
+                        >
+                            <div className="cardIcon">
+                                <Image src={c.icon} alt={`${c.title} icon`} width={48} height={48} />
                             </div>
-                            <div className="pr-block">
-                                <div className="pr-row">
-                                    <div className="pr-title">{seventhSectionText.result.title}</div>
-                                    <div className="pr-text">
-                                        {seventhSectionText.result.description}
-                                    </div>
-                                </div>
-                            </div>
+
+                            <div className="cardValue">{c.title}</div>
+
+                            <div className="cardLabel">{c.desc}</div>
                         </div>
-                    </div>
-                    <div className="seventh-simple-box">
-                        <div className="approachContainer">
-                            <h3 className="seventhCardTitle">{seventhSectionText.card.title}</h3>
-                            <p className="seventhCardDescription">{seventhSectionText.card.description}</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

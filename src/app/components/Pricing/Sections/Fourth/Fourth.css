@@ -1,71 +1,170 @@
+/* ===========================
+   Base (Mobile-first)
+=========================== */
 .fourthfeatures-root {
-    background: #f9f9f9;
-    padding: 2.5vw 1.25vw;
-    border-radius: 0.625vw;
-    font-family: 'Inter', Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 8vw 5vw;
+  border-radius: 2vw;
+  font-family: 'Inter', Arial, sans-serif;
+  text-align: center;
 }
 
 .fourthfeatures-title {
-    text-align: center;
-    font-size: 2.7vw;
-    font-weight: 500;
-    margin-bottom: 3vw;
+  font-size: 6vw;
+  font-weight: 600;
+  margin-bottom: 6vw;
+  color: #000;
 }
 
+/* Column container */
 .fourthfeatures-columns {
-    display: flex;
-    justify-content: center;
-    gap: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10vw;
 }
 
+/* Each feature card column */
+.fourthFeatureListContainer {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+/* Header */
 .fourthfeatures-header {
-    display: flex;
-    gap: 0.8vw;
-    align-items: center;
-    margin-bottom: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3vw;
+  margin-bottom: 3vw;
 }
 
 .fourthPricingHeaderIcon {
-    width: auto;
-    height: 1.7vw;
+  width: 7vw;
+  height: auto;
 }
 
 .fourthfeatures-card-title {
-    font-size: 1.4vw;
-    font-weight: 500;
+  font-size: 4.5vw;
+  font-weight: 600;
 }
 
+/* Feature list */
 .fourthfeatures-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .fourthfeatures-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.8vw;
-    margin-bottom: 0.4vw;
-    padding-left: 0;
-    font-size: 1vw;
-    position: relative;
-}
-
-.fourthfeatures-list li:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.31vw;
-    width: 0.94vw;
-    height: 0.94vw;
-}
-
-.fourthFeatureListContainer {
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  margin-bottom: 2.5vw;
+  font-size: 3.5vw;
+  position: relative;
 }
 
 .fourthPricingTickIcon {
-    object-fit: contain;
-    height: auto;
-    width:1.4vw;
+  width: 4vw;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===========================
+   Tablet (768px – 1023px)
+=========================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fourthfeatures-root {
+    padding: 5vw 3vw;
+    border-radius: 1vw;
+  }
+
+  .fourthfeatures-title {
+    font-size: 3vw;
+    margin-bottom: 3vw;
+  }
+
+  .fourthfeatures-columns {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5vw;
+  }
+
+  .fourthFeatureListContainer {
+    max-width: 300px;
+  }
+
+  .fourthfeatures-header {
+    gap: 1.5vw;
+    margin-bottom: 1.5vw;
+  }
+
+  .fourthPricingHeaderIcon {
+    width: 3vw;
+  }
+
+  .fourthfeatures-card-title {
+    font-size: 1.8vw;
+  }
+
+  .fourthfeatures-list li {
+    font-size: 1.4vw;
+    margin-bottom: 1vw;
+    gap: 1.2vw;
+  }
+
+  .fourthPricingTickIcon {
+    width: 1.6vw;
+  }
+}
+
+/* ===========================
+   Desktop (≥1024px)
+=========================== */
+@media (min-width: 1024px) {
+  .fourthfeatures-root {
+    padding: 4vw 2vw;
+    border-radius: 0.6vw;
+  }
+
+  .fourthfeatures-title {
+    font-size: 2vw;
+    margin-bottom: 2.5vw;
+  }
+
+  .fourthfeatures-columns {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12vw;
+  }
+
+  .fourthFeatureListContainer {
+    max-width: 22vw;
+  }
+
+  .fourthfeatures-header {
+    gap: 0.8vw;
+    margin-bottom: 1vw;
+  }
+
+  .fourthPricingHeaderIcon {
+    width: 1.8vw;
+  }
+
+  .fourthfeatures-card-title {
+    font-size: 1.3vw;
+  }
+
+  .fourthfeatures-list li {
+    font-size: 1vw;
+    margin-bottom: 0.5vw;
+    gap: 0.8vw;
+  }
+
+  .fourthPricingTickIcon {
+    width: 1vw;
+  }
 }

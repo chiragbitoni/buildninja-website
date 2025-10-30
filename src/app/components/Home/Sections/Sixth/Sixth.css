@@ -1,9 +1,9 @@
-/* Mobile-first base */
+/* ========== 1️⃣ MOBILE: Base (default) ========== */
 .sixthSection {
   display: block;
   width: 100%;
-  padding: clamp(16px, 3vw, 40px) clamp(16px, 6vw, 120px) clamp(24px, 4vw, 64px);
-  background: #FBFBFB;
+  padding: 8vw 4vw;
+  background: #262626;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -21,144 +21,62 @@
 .sixthContent {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
-/* Icon row */
-.sixthIconContainer {
-  display: grid;
-  place-items: center;
-  margin: clamp(12px, 3vw, 32px) 0 0 0;
-}
-
-.sixthIconsClass {
-  width: 15vw;
-  height: 15vw;
-}
-
-/* Title */
 .sixthTitle {
+  font-family: 'Inter', Arial, sans-serif;
   font-size: clamp(24px, 7vw, 44px);
   font-weight: 600;
-  margin: clamp(12px, 2vw, 20px) 0 clamp(16px, 3vw, 32px) 0;
   text-align: center;
-  line-height: 1.15;
-  color: #202226;
-  margin: 5vw 0 10vw;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 7vw;
 }
 
-/* Main grid */
 .sixth-simple-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(16px, 3.5vw, 32px);
-  margin: clamp(12px, 2.4vw, 28px);
+  align-items: start;
+  margin: 0 auto;
+  gap: 6vw;
 }
 
-/* Box wrapper */
-.sixth-simple-box {
-  align-content: center;
-}
-
-/* List area */
-.sixth-simple-list {
-  list-style: none;
-  font-size: inherit;
+.sixthSimple-list {
+  font-family: 'Inter', Arial, sans-serif;
+  list-style-type: none;
   padding: 0;
   margin: 0;
+  color: #FFFFFF;
 }
 
-.sixthListContainer {
-  display: flex;
-  align-items: flex-start;
-  gap: clamp(8px, 1.6vw, 16px);
-}
-
-.sixth-simple-list li+li {
-  margin-top: clamp(8px, 1.6vw, 14px);
+.sixthSimple-list li + li {
+  margin-top: 4vw;
 }
 
 .sixth-simple-box-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 3vw;
   font-size: clamp(14px, 1.2vw, 18px);
   line-height: 1.6;
   text-align: left;
-  margin: 0 clamp(12px, 2.4vw, 24px) clamp(12px, 2vw, 20px);
+  margin: 0;
 }
 
-/* Tick icon */
-.sixthTickIcon {
-  height: clamp(14px, 1.4vw, 18px);
-  width: auto;
-  flex: 0 0 auto;
-  margin-top: 2px;
+.sixth-simple-box-text img {
+  width: clamp(28px, 6vw, 38px);
+  height: clamp(28px, 6vw, 38px);
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-/* Smaller feature cards grid */
-.smaller-box-container {
-  display: grid;
-  width: 100%;
-  row-gap: clamp(10px, 2vw, 16px);
-  column-gap: clamp(10px, 2vw, 16px);
-  grid-template-columns: 1fr;
-  margin: 0 auto;
-}
 
-/* Individual small card */
-.small-box {
-  background-color: #f0f0f0;
-  border-radius: 15px;
-  text-align: center;
-  min-height: clamp(88px, 12vw, 140px);
-  padding: clamp(12px, 2vw, 16px);
-}
-
-/* Icon inside small card */
-.sixth-simple-box-icon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: clamp(8px, 1.6vw, 14px);
-  margin-bottom: clamp(6px, 1.2vw, 10px);
-  width: clamp(24px, 3vw, 40px);
-  height: clamp(24px, 3vw, 40px);
-}
-
-/* Small card heading and text */
-.sixth-simple-box-heading {
-  font-size: clamp(16px, 1.6vw, 20px);
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.2;
-}
-
-.sixth-simple-small-box-text {
-  text-align: center;
-  font-size: clamp(13px, 1.2vw, 16px);
-  margin: clamp(6px, 1.2vw, 10px) 0 0 0;
-}
-
-/* Emphasis card (3rd) */
-.sixth-simple-box .smaller-box-container .small-box:nth-child(3) {
-  background-color: #D4335C;
-  color: white;
-}
-
-.sixth-simple-box:nth-child(2) {
-  display: grid;
-  justify-items: center;
-}
-
-@media (min-width: 480px) {
-  .smaller-box-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* ========== 2️⃣ TABLET: ≥768px ========== */
 @media (min-width: 768px) {
-  .sixth-simple-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(18px, 3.5vw, 40px);
+  .sixthSection {
+    padding: 6vw 5vw;
   }
 
   .sixthContent {
@@ -166,35 +84,62 @@
   }
 
   .sixthTitle {
-    font-size: 4.5vw;
-    margin: 1vw 0 5vw 0;
+    font-size: clamp(32px, 4.5vw, 40px);
+    margin-bottom: 5vw;
   }
 
-  .sixthIconsClass {
-    height: 10vw;
-    width: 10vw;
-    margin: 1vw 0 2vw 0;
+  .sixth-simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+  }
+
+  .sixthSimple-list li + li {
+    margin-top: 2vw;
+  }
+
+  .sixth-simple-box-text {
+    gap: 1.5vw;
+    font-size: clamp(15px, 1.4vw, 18px);
+  }
+
+  .sixth-simple-box-text img {
+    width: clamp(28px, 3.5vw, 32px);
+    height: clamp(28px, 3.5vw, 32px);
   }
 }
 
-@media (min-width: 1024px) {
-  .sixthContent {
-    max-width: 1200px;
-  }
-}
 
+/* ========== 3️⃣ DESKTOP: ≥1280px ========== */
 @media (min-width: 1280px) {
+  .sixthSection {
+    padding: 4vw 6vw;
+  }
+
   .sixthContent {
     max-width: 1280px;
   }
 
   .sixthTitle {
     font-size: 44px;
-    margin: 1.5vw;
+    margin-bottom: 3vw;
   }
-  .sixthIconsClass{
-    height: 5vw;
-    width: 5vw;
-    margin: 0;
+
+  .sixth-simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5vw;
+  }
+
+  .sixthSimple-list li + li {
+    margin-top: 1.2vw;
+  }
+
+  .sixth-simple-box-text {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .sixth-simple-box-text img {
+    width: 32px;
+    height: 32px;
   }
 }

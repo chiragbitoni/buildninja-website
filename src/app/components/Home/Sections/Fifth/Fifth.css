@@ -1,112 +1,210 @@
-/* Mobile-first base */
-.fifthSection {
-  display: block;
+/* ========== 1️⃣ MOBILE (Base) ========== */
+.fifthHomeSection {
+  background: url("/resources/Home/fifthBG.png") center center / cover no-repeat fixed;
   width: 100%;
-  padding: clamp(16px, 3vw, 40px) clamp(16px, 6vw, 128px);
-  background: #FFFFFF;
+  height: auto;
+  padding: 10vw 0;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
+  color: #ffffff;
 }
 
-.fifthSection::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.fifthContent {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Title */
-.fifthTitle {
-  font-size: clamp(24px, 7vw, 44px);
-  font-weight: 600;
-  margin: clamp(16px, 3vw, 32px) 0;
+.fifthHomeTitle {
+  font-family: 'Inter', Arial, sans-serif;
   text-align: center;
-  line-height: 1.15;
-  color: #202226;
-  margin-bottom: 10vw;
+  font-size: clamp(28px, 7vw, 44px);
+  margin: 0 0 2vw;
+  font-weight: 600;
 }
 
-/* Grid */
-.fifth-simple-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(16px, 3.5vw, 32px);
-  margin: clamp(12px, 2.4vw, 28px);
-  align-items: start;
+.fifthHomeThirdTitle {
+  font-family: 'Inter', Arial, sans-serif;
+  text-align: center;
+  font-size: clamp(18px, 4.5vw, 28px);
+  margin: 3vw 0 6vw;
+  font-weight: 400;
 }
 
-/* Lists */
-.simple-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-  font-size: inherit;
-  /* use item rule below */
-}
-
-.simple-list li+li {
-  margin-top: clamp(8px, 1.6vw, 14px);
-}
-
-/* List item row: icon + text */
-.fifth-simple-box-text {
-  display: flex;
-  align-items: center;
-  gap: clamp(8px, 1.6vw, 16px);
-  font-size: clamp(14px, 1.2vw, 18px);
+.fifthHomeSubTitle {
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  font-size: clamp(14px, 2.8vw, 18px);
+  color: #ffffff;
+  margin-top: 2vw;
+  margin-bottom: 8vw;
+  padding: 0 6vw;
   line-height: 1.6;
-  text-align: left;
-  margin: 0 clamp(12px, 2.4vw, 24px) clamp(12px, 2vw, 20px) clamp(12px, 2.4vw, 24px);
 }
 
-/* Icon sizing inside list items */
-.fifth-simple-box-text img {
-  width: clamp(18px, 2.8vw, 28px);
-  height: clamp(18px, 2.8vw, 28px);
+/* ===== Cards Container ===== */
+.fifthHomeCardsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4vw;
+  margin-top: 4vw;
+  box-sizing: border-box;
+}
+
+/* ===== Card ===== */
+.fifthHomeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 12px;
+  width: clamp(220px, 22vw, 320px);
+  height: auto;
+  min-height: 220px;
+  gap: 16px;
+  padding: 4vw 2vw;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
+}
+
+.fifthHomeCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 65, 114, 0.5);
+}
+
+/* ===== Icons ===== */
+.fifthHomeCardIcon1,
+.fifthHomeCardIcon2 {
   object-fit: contain;
-  flex: 0 0 auto;
+  margin-bottom: 1.5vw;
+  width: auto;
 }
 
-/* Breakpoints: mobile-first */
-@media (min-width: 768px) {
-  .fifth-simple-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(18px, 3.5vw, 40px);
+.fifthHomeCardIcon1 {
+  height: clamp(50px, 8vw, 100px);
+  width: 60%;
+}
+
+.fifthHomeCardIcon2 {
+  height: clamp(70px, 10vw, 150px);
+}
+
+/* ===== Card Text ===== */
+.fifthHomeCardText {
+  font-family: 'Inter', Arial, sans-serif;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: clamp(13px, 2.5vw, 16px);
+  margin-top: auto;
+  max-width: 90%;
+}
+
+.fifthHomeCardText p {
+  display: inline;
+  margin: 0;
+}
+
+.fifthHomeCardText .text2 {
+  color: #FF4172;
+  font-weight: 600;
+}
+
+/* ========== 2️⃣ TABLET (≥768px) ========== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fifthHomeSection {
+    padding: 8vw 0;
   }
 
-  .fifthContent {
-    max-width: 1100px;
-  }
-
-  .fifthTitle {
+  .fifthHomeTitle {
     font-size: 4.5vw;
-    margin: 5vw 0;
+    margin-top: 3vw;
+  }
+
+  .fifthHomeThirdTitle {
+    margin: 2vw 0 5vw;
+    font-size: 2.8vw;
+  }
+
+  .fifthHomeSubTitle {
+    font-size: 16px;
+    margin-bottom: 5vw;
+    padding: 0 8vw;
+  }
+
+  .fifthHomeCard {
+    width: 40vw;
+    height: auto;
+    padding: 5vw 2vw;
+    gap: 10px;
+  }
+
+  .fifthHomeCardIcon1 {
+    height: 90px;
+  }
+
+  .fifthHomeCardIcon2 {
+    height: 100px;
+  }
+
+  .fifthHomeCardsContainer {
+    gap: 3vw;
   }
 }
 
+/* ========== 3️⃣ DESKTOP (≥1024px) ========== */
 @media (min-width: 1024px) {
-  .fifthContent {
-    max-width: 1200px;
+  .fifthHomeSection {
+    padding: 6vw 0;
+  }
+
+  .fifthHomeTitle {
+    font-size: 44px;
+    margin-top: 0;
+  }
+
+  .fifthHomeThirdTitle {
+    font-size: 1.7vw;
+    margin: 1.5vw 0;
+  }
+
+  .fifthHomeSubTitle {
+    font-size: 18px;
+    margin-bottom: 4vw;
+    padding: 0 24vw;
+  }
+
+  .fifthHomeCardsContainer {
+    gap: 2vw;
+    margin-bottom: 2vw;
+  }
+
+  .fifthHomeCard {
+    width: 18vw;
+    min-width: 240px;
+    height: 260px;
+    padding: 2vw 1.5vw;
+  }
+
+  .fifthHomeCardIcon1 {
+    height: 100px;
+    width: 50%;
+  }
+
+  .fifthHomeCardIcon2 {
+    height: 130px;
   }
 }
 
-@media (min-width: 1280px) {
-  .fifthContent {
-    max-width: 1280px;
+/* ========== 4️⃣ LARGE DESKTOP (≥1440px) ========== */
+@media (min-width: 1440px) {
+  .fifthHomeSection {
+    padding: 4vw 0;
   }
 
-  .fifthTitle {
-    font-size: 44px;
-    margin: 0;
+  .fifthHomeCard {
+    width: 15vw;
+    height: 260px;
+  }
+
+  .fifthHomeSubTitle {
+    padding: 0 20vw;
   }
 }
