@@ -2,7 +2,7 @@
    Base (Mobile-first)
 =========================== */
 .fourthfeatures-root {
-  background: #f9f9f9;
+  background: #262626;
   padding: 8vw 5vw;
   border-radius: 2vw;
   font-family: 'Inter', Arial, sans-serif;
@@ -13,45 +13,47 @@
   font-size: 6vw;
   font-weight: 600;
   margin-bottom: 6vw;
-  color: #000;
+  color: #ffffff;
 }
 
 /* Column container */
 .fourthfeatures-columns {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    gap: 10vw;
 }
 
 /* Each feature card column */
 .fourthFeatureListContainer {
-  width: 100%;
-  max-width: 400px;
-  text-align: left;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
 }
 
 /* Header */
 .fourthfeatures-header {
-  display: flex;
+    display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 3vw;
   margin-bottom: 3vw;
+  color: #ffffff;
 }
 
 .fourthPricingHeaderIcon {
-  width: 7vw;
-  height: auto;
+    width: 7vw;
+    height: auto;
 }
 
 .fourthfeatures-card-title {
-  font-size: 4.5vw;
-  font-weight: 600;
+    font-size: 4.5vw;
+    font-weight: 600;
 }
 
 /* Feature list */
 .fourthfeatures-list {
+    color: #ffffff;
   list-style: none;
   padding: 0;
   margin: 0;

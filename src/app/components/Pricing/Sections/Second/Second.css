@@ -9,6 +9,8 @@
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    color:white;
+    background-color: #090909;
 }
 
 .pricingSecondSection::before {
@@ -37,7 +39,7 @@
 .pricingMonthlyShogunCard {
     position: inherit;
     padding: 2vw;
-    background-color: #FFFFFF;
+    background-color: #262626;
     margin: 0 2vw;
     height: 33vw;
     width: 27vw;
@@ -69,6 +71,7 @@
 }
 
 .pricingMonthlyShogunCardHighlight {
+    color:#000000;
     background-color: #DFD9D9;
 }
 
@@ -101,6 +104,7 @@
     width: 100%;
     padding: 0.5vw 0;
     font-size: 1.1vw;
+    color:#000000;
 }
 
 .pricingMonthlyFreeCardButton:hover {
@@ -133,7 +137,7 @@
     height: 58vw;
     position: inherit;
     padding: 2vw;
-    background-color: #FFFFFF;
+    background-color: #262626;
     margin: 0 2vw;
     width: 27vw;
     border-radius: 10px;
@@ -169,7 +173,7 @@
 }
 
 .pricingAnnualMultiYearContainer {
-    background-color: #F6F6F6;
+    background-color: #161616;
     border-radius: 10px;
     height: 3vw;
     border: 2px solid #C2C2C2;
@@ -229,7 +233,7 @@
 .pricingAnnualMultiYearCard1,
 .pricingAnnualMultiYearCard2 {
     margin-top: 1vw;
-    background-color: #FFFFFF;
+    background-color: #262626;
     padding: 1vw;
     border-radius: 10px;
 }

@@ -1,16 +1,23 @@
+.thirdPricingFeatureSection {
+    background-color: #000000;
+    padding: 3vw 3vw;
+}
+
 .thirdPricingFeatureComparisionHeading {
-    margin-top: 4vw;
+    /* margin-top: 4vw; */
     text-align: center;
     font-size: 2.7vw;
     font-weight: 600;
+    color: #FFFFFF;
 }
 
 .thirdPricing-container {
+    margin-top: 2vw;
     display: flex;
-    margin-top:2vw;
+    margin-top: 2vw;
     justify-content: center;
     padding: 2vw;
-    background-color: #fff;
+    background-color: #000000;
 }
 
 .thirdPricing-table {
@@ -20,8 +27,8 @@
     border-collapse: separate;
     border-spacing: 0;
     font-size: 0.85vw;
-    color: #333;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    color: #ffffff;
+    box-shadow: 0 1px 6px rgba(240, 221, 221, 0.637);
     overflow: hidden;
 }
 
@@ -29,27 +36,28 @@
 .thirdPricing-table td {
     padding: 0.6vw 1vw;
     text-align: center;
-    border-bottom: 1px solid #d9d9d9
+    border-bottom: 1px solid #d9d9d9;
 }
 
 .thirdPricing-table th:first-child,
 .thirdPricing-table td:first-child {
+    background-color: #262626;
     text-align: left;
     font-weight: 500;
 }
 
 .thirdPricing-table th {
-    background-color: #f6f6f6;
+    background-color: #262626;
     font-size: 1.1vw;
     font-weight: 600;
 }
 
 .thirdPricing-table td {
-    background-color: #ffffff;
+    background-color: #262626;
 }
 
 .thirdPricing-table tr:hover td {
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     transition: background-color 0.2s ease;
 }
 

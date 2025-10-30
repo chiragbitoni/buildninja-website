@@ -3,7 +3,7 @@ import "./Third.css";
 
 export default function Third() {
     return (
-        <section>
+        <section className="thirdPricingFeatureSection">
 
             <div>
                 <h1 className="thirdPricingFeatureComparisionHeading">{thirdSectionText.heading}</h1>
