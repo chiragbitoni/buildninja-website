@@ -1,44 +1,283 @@
+/* ===============================
+   FEATURES HERO SECTION - BASE
+================================== */
 .featuresHeroSection {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    max-width: 100%;
-    height: 25vw;
-    padding: 2vw 12vw 2vw 12vw;
-    background: linear-gradient(120deg, #f8f4fd 0%, #f3f0ef 100%);
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 6vw 12vw;
+    /* background: linear-gradient(120deg, #f8f4fd 0%, #f3f0ef 100%); */
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    background-color: #000000;
+    background: url('/resources/Home/heroBG.png') center center / cover no-repeat;
+    background-attachment: fixed;
 }
 
 .featuresHeroSection::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: url('/resources/FeatureHeroBG.png') center center / cover no-repeat;
-    /* opacity: 0.15;    */
+    /* background: url('/resources/featuresHeroBG.png') center center / cover no-repeat; */
     z-index: 0;
+    opacity: 1;
     pointer-events: none;
 }
 
 .featuresHeroContent {
+    position: relative;
     z-index: 2;
+    text-align: center;
 }
 
+/* ===============================
+   TITLE & SUBTITLE
+================================== */
 .featuresHeroTitle {
-    font-size: 2.7vw;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 3vw;
     font-weight: 700;
+    margin: 0 0 1vw 0;
     line-height: 1.1;
-    text-align: center;
-    color: #202226;
+    color: #FFFFFF;
 }
 
 .featuresHeroSubtitle {
-    font-size: 1.3vw;
-    margin: 1.5vw 0 0 0;
-    color: #35363b;
+    font-size: 1.4vw;
+    font-family: "Segoe UI", Arial, sans-serif;
+    padding: 0 15vw;
+    margin: 0 0 2vw 0;
+    color: #FFFFFF;
     font-weight: 400;
     line-height: 1.6;
-    text-align: center;
+}
+
+/* ===============================
+   TOGGLE SWITCH CONTAINER
+================================== */
+.featuresPlanToggleSwitchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #262626;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 3.5vw;
+    width: 32vw;
+    border: 3px solid #333;
+    border-radius: 999vw;
+    margin: 2vw auto 0 auto;
+    gap: 1vw;
+}
+
+
+.toggleSwitchOption1,
+.toggleSwitchOption2 {
+    font-size: 1vw;
+    font-weight: 500;
+    margin: 0;
+    padding: 0.5vw 1vw;
+    color: #ffffff;
+}
+
+.toggleSwitchOption2 {
+    background-color: #D4335C;
+    padding: 0.4vw 1.2vw;
+    border-radius: 999px;
+}
+
+.toggleSwitchSavings {
+    color: #169000;
+    background-color: #DBFCE7;
+    font-size: 0.8vw;
+    font-weight: 500;
+    padding: 0.4vw 1.2vw;
+    border-radius: 999px;
+}
+
+.toggleSwitchRow1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+}
+
+/* ===============================
+   SWITCH STYLES
+================================== */
+.switch {
+    font-size: 1vw;
+    position: relative;
+    display: inline-block;
+    width: 3.5vw;
+    height: 2vw;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    /* background: #F9F9F9; */
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked+.slider {
+    background: #D4335C;
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(1.6em);
+    width: 2em;
+    height: 2em;
+    bottom: 0;
+}
+
+/* ===============================
+   TABLET VIEW (768px – 1023px)
+================================== */
+@media (max-width: 1023px) {
+    .featuresHeroSection {
+        padding: 10vw 6vw;
+        height: auto;
+    }
+
+    .featuresHeroTitle {
+        font-size: 5vw;
+        margin-bottom: 2vw;
+    }
+
+    .featuresHeroSubtitle {
+        font-size: 2.3vw;
+        padding: 0 6vw;
+        margin-bottom: 4vw;
+        line-height: 1.6;
+    }
+
+    .featuresPlanToggleSwitchContainer {
+        flex-direction: row;
+        height: 7vw;
+        width: 70%;
+        border-radius: 999vw;
+        gap: 2vw;
+    }
+
+    .toggleSwitchOption1,
+    .toggleSwitchOption2 {
+        font-size: 2vw;
+        padding: 1vw 2vw;
+    }
+
+    .toggleSwitchSavings {
+        font-size: 1.5vw;
+        padding: 0.7vw 2vw;
+    }
+
+    .switch {
+        width: 6vw;
+        height: 3.5vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slider:before {
+        height: 2.2vw;
+        width: 2.2vw;
+        left: 0.5vw;
+        bottom: 0.5vw;
+    }
+
+    .switch input:checked+.slider:before {
+        transform: translateX(1.8vw);
+        width: 3.7vw;
+        height: 3.7vw;
+        bottom: 0;
+    }
+}
+
+/* ===============================
+   MOBILE VIEW (≤767px)
+================================== */
+@media (max-width: 767px) {
+    .featuresHeroSection {
+        padding: 14vw 4vw;
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        gap: 6vw;
+    }
+
+    .featuresHeroTitle {
+        font-size: 7vw;
+        line-height: 1.2;
+        margin-bottom: 4vw;
+    }
+
+    .featuresHeroSubtitle {
+        font-size: 4vw;
+        padding: 0;
+        margin-bottom: 6vw;
+        line-height: 1.7;
+    }
+
+    .featuresPlanToggleSwitchContainer {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        gap: 3vw;
+        padding: 4vw 0;
+        border-radius: 8vw;
+    }
+
+    .toggleSwitchOption1,
+    .toggleSwitchOption2 {
+        font-size: 4vw;
+        padding: 2vw 5vw;
+    }
+
+    .toggleSwitchSavings {
+        font-size: 3.5vw;
+        padding: 2vw 5vw;
+    }
+
+    .switch {
+        width: 14vw;
+        height: 8vw;
+    }
+
+    .slider:before {
+        height: 6vw;
+        width: 6vw;
+        left: 0.8vw;
+        bottom: 0.8vw;
+    }
+    
+    .switch input:checked+.slider:before {
+        transform: translateX(5vw);
+        height: 8vw;
+        width: 8vw;
+    }
 }
