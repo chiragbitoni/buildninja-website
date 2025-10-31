@@ -1,71 +1,180 @@
+/* ===========================
+   Base (Mobile-first)
+=========================== */
 .fourthfeatures-root {
-    background: #f9f9f9;
-    padding: 2.5vw 1.25vw;
-    border-radius: 0.625vw;
-    font-family: 'Inter', Arial, sans-serif;
+  background: #262626;
+  padding: 8vw 5vw;
+  font-family: 'Inter', Arial, sans-serif;
+  text-align: center;
+  color: #ffffff;
 }
 
 .fourthfeatures-title {
-    text-align: center;
-    font-size: 2.7vw;
-    font-weight: 500;
-    margin-bottom: 3vw;
+  font-size: 6vw;
+  font-weight: 600;
+  margin-bottom: 6vw;
 }
 
+/* Column container */
 .fourthfeatures-columns {
-    display: flex;
-    justify-content: center;
-    gap: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+  gap: 10vw;
 }
 
+/* Each feature card */
+.fourthfeatures-card {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  /* background-color: #1a1a1a; */
+  border-radius: 1.5vw;
+  padding: 6vw 5vw;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fourthfeatures-card:hover {
+  transform: translateY(-0.8vw);
+  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); */
+}
+
+/* Header */
 .fourthfeatures-header {
-    display: flex;
-    gap: 0.8vw;
-    align-items: center;
-    margin-bottom: 1vw;
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  margin-bottom: 4vw;
 }
 
 .fourthPricingHeaderIcon {
-    width: auto;
-    height: 1.7vw;
+  width: 7vw;
+  height: auto;
 }
 
 .fourthfeatures-card-title {
-    font-size: 1.4vw;
-    font-weight: 500;
+  font-size: 4.5vw;
+  font-weight: 600;
 }
 
+/* Feature list */
 .fourthfeatures-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .fourthfeatures-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.8vw;
-    margin-bottom: 0.4vw;
-    padding-left: 0;
-    font-size: 1vw;
-    position: relative;
-}
-
-.fourthfeatures-list li:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.31vw;
-    width: 0.94vw;
-    height: 0.94vw;
-}
-
-.fourthFeatureListContainer {
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  margin-bottom: 3vw;
+  font-size: 3.5vw;
 }
 
 .fourthPricingTickIcon {
-    object-fit: contain;
-    height: auto;
-    width:1.4vw;
+  width: 4vw;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===========================
+   Tablet (768px – 1023px)
+=========================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fourthfeatures-root {
+    padding: 6vw 5vw;
+  }
+
+  .fourthfeatures-title {
+    font-size: 3.5vw;
+    margin-bottom: 4vw;
+  }
+
+  .fourthfeatures-columns {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4vw;
+  }
+
+  .fourthfeatures-card {
+    max-width: 320px;
+    padding: 3vw 2.5vw;
+    border-radius: 1vw;
+  }
+
+  .fourthfeatures-header {
+    gap: 1.8vw;
+    margin-bottom: 2vw;
+  }
+
+  .fourthPricingHeaderIcon {
+    width: 3.2vw;
+  }
+
+  .fourthfeatures-card-title {
+    font-size: 2vw;
+  }
+
+  .fourthfeatures-list li {
+    font-size: 1.5vw;
+    margin-bottom: 1.3vw;
+    gap: 1.5vw;
+  }
+
+  .fourthPricingTickIcon {
+    width: 1.6vw;
+  }
+}
+
+/* ===========================
+   Desktop (≥1024px)
+=========================== */
+@media (min-width: 1024px) {
+  .fourthfeatures-root {
+    padding: 4vw 2vw;
+  }
+
+  .fourthfeatures-title {
+    font-size: 2vw;
+    margin-bottom: 2.5vw;
+  }
+
+  .fourthfeatures-columns {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10vw;
+  }
+
+  .fourthfeatures-card {
+    max-width: 22vw;
+    padding: 2vw;
+    border-radius: 0.8vw;
+  }
+
+  .fourthfeatures-header {
+    gap: 0.8vw;
+    margin-bottom: 1.2vw;
+  }
+
+  .fourthPricingHeaderIcon {
+    width: 1.8vw;
+  }
+
+  .fourthfeatures-card-title {
+    font-size: 1.3vw;
+  }
+
+  .fourthfeatures-list li {
+    font-size: 1vw;
+    margin-bottom: 0.6vw;
+    gap: 0.8vw;
+  }
+
+  .fourthPricingTickIcon {
+    width: 1vw;
+  }
 }

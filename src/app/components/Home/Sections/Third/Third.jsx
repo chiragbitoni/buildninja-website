@@ -1,41 +1,36 @@
+import Image from "next/image";
 import './Third.css';
 import { thirdSectionText } from "../../../../../../public/static/homePageText";
 import { paths } from "../../../../../../public/static/paths";
-import Image from "next/image";
-
 export default function Third() {
     return (
         <section className="thirdSection">
             <div className="thirdContent">
-                <div className='thirdGrid'>
-                    <div className="thirdCol">
-                        <h3 className='thirdTitle'>{thirdSectionText.leftCell.title}</h3>
-                        <ul className="third-simple-list1">
-                            {thirdSectionText.leftCell.list.map((item, index) => (
-                                <div className="thirdListContainer" key={index}>
-                                    <li className="third-simple-box-text">{item}</li>
-                                </div>
-                            ))}
-                        </ul>
+                <h1 className="thirdTitle">
+                    {thirdSectionText.title}
+                </h1>
+
+                <div className="third-simple-grid">
+                    {/* Step 1 */}
+                    <div className="third-simple-box">
+                        <img src={paths.icons.cdsWhite} alt="CDS Icon" className="third-simple-box-icon" />
+                        <button className="third-simple-box-button" disabled>{thirdSectionText.card1Step}</button>
+                        <h3 className="third-simple-box-heading">{thirdSectionText.card1Title}</h3>
+                        <p className="third-simple-box-text">{thirdSectionText.card1Text}</p>
                     </div>
-                    <div className="thirdCol">
-                        <div className='rightCellContainer'>
-                            <h3 className='thirdTitle'>{thirdSectionText.rightCell.title}</h3>
-                            <ul className="third-simple-list2">
-                                {thirdSectionText.rightCell.list.map((item, index) => (
-                                    <div className="thirdListContainer" key={index}>
-                                        <Image
-                                            src={paths.icons.greenTick}
-                                            alt="Tick"
-                                            width={24}
-                                            height={24}
-                                            sizes="(max-width: 768px) 20px, 24px"
-                                            className="thirdTickIcon"
-                                        /><li className="third-simple-box-text">{item}</li>
-                                    </div>
-                                ))}
-                            </ul>
-                        </div>
+                    {/* Step 2 */}
+                    <div className="third-simple-box">
+                        <img src={paths.icons.versioningWhite} alt="Versioning Icon" className="third-simple-box-icon" />
+                        <button className="third-simple-box-button" disabled>{thirdSectionText.card2Step}</button>
+                        <h3 className="third-simple-box-heading">{thirdSectionText.card2Title}</h3>
+                        <p className="third-simple-box-text">{thirdSectionText.card2Text}</p>
+                    </div>
+                    {/* Step 3 */}
+                    <div className="third-simple-box">
+                        <img src={paths.icons.circleCheckWhite} alt="Circle Check Icon" className="third-simple-box-icon" />
+                        <button className="third-simple-box-button" disabled>{thirdSectionText.card3Step}</button>
+                        <h3 className="third-simple-box-heading">{thirdSectionText.card3Title}</h3>
+                        <p className="third-simple-box-text">{thirdSectionText.card3Text}</p>
                     </div>
                 </div>
             </div>

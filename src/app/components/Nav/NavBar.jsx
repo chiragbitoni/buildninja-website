@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="navbar-logo" onClick={() => handleNavigation("/")}>
           <Image
-            src="/resources/BuildNinja.png"
+            src="/resources/BuildNinjaDark.png"
             alt="BuildNinja Logo"
             width={120}
             height={40}

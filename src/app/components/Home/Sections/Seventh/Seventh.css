@@ -1,208 +1,221 @@
+/* ========== 1️⃣ MOBILE (Base) ========== */
 .seventhSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    max-width: 100%;
-    height: auto;
-    padding: 3vw 10vw;
-    background: #FFFFFF;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  padding: 10vw 6vw;
+  background: #0A0A0A;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
 }
 
 .seventhSection::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.15;
-    z-index: 0;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .seventhContent {
-    flex: 1;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
 }
 
+/* ===== Title & Intro ===== */
 .seventhTitle {
-    font-size: 2vw;
-    margin-bottom: 2vw;
-    font-weight: 600;
-    line-height: 1.2;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  margin: 0 0 5vw;
+  line-height: 1.1;
+  color: #FFFFFF;
+  font-size: clamp(26px, 7vw, 44px);
 }
 
-.seventh-simple-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3vw;
-    align-items: start;
+.seventhIntro {
+  font-family: "Segoe UI", Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto 8vw;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: clamp(14px, 3.5vw, 17px);
+  line-height: 1.6;
 }
 
-.seventh-simple-box {
-    align-items: center;
+/* ===== Cards Grid ===== */
+.seventhCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: stretch;
+  justify-items: center;
 }
 
-/* Problem / Result section */
-.pr-block {
-    margin-bottom: 2vw;
+/* ===== Individual Card ===== */
+.seventhCard {
+  width: 100%;
+  max-width: 320px;
+  background: #262626;
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.pr-row {
-    display: flex;
-    align-items: flex-start;
+/* Hover Lift (for desktop) */
+.seventhCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Icon Area ===== */
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+/* ===== Value Text ===== */
+.cardValue {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  margin-top: 6px;
+}
+
+/* ===== Label Text ===== */
+.cardLabel {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(12px, 2.8vw, 14px);
+  color: #bfbfbf;
+  margin-top: 4px;
+}
+
+/* ===== Highlighted (3rd) Card ===== */
+.seventhCard.highlight {
+  background: #D4335C;
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(212, 51, 92, 0.25);
+}
+
+.seventhCard.highlight .cardLabel {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========== 2️⃣ SMALL TABLET ≥560px ========== */
+@media (min-width: 560px) {
+  .seventhCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    justify-items: stretch;
+  }
+
+  .seventhCard {
+    max-width: none;
+  }
+}
+
+/* ========== 3️⃣ TABLET ≥768px ========== */
+@media (min-width: 768px) {
+  .seventhTitle {
+    font-size: clamp(30px, 4.5vw, 38px);
+  }
+
+  .seventhIntro {
+    font-size: 15px;
+    margin-bottom: 5vw;
+  }
+
+  .seventhCards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .seventhCard {
+    border-radius: 12px;
+    padding: 28px 22px;
+    min-height: 140px;
+  }
+
+  .cardIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cardValue {
+    font-size: clamp(26px, 3vw, 34px);
+  }
+
+  .cardLabel {
+    font-size: 13px;
+  }
+}
+
+/* ========== 4️⃣ DESKTOP ≥1024px ========== */
+@media (min-width: 1024px) {
+  .seventhSection {
+    padding: 6vw 8vw;
+  }
+
+  .seventhCards {
+    grid-template-columns: repeat(4, 1fr);
     gap: 2vw;
+  }
+
+  .seventhTitle {
+    font-size: 40px;
+    margin-bottom: 2vw;
+  }
+
+  .seventhIntro {
+    font-size: 16px;
+  }
+
+  .seventhCard {
+    padding: 30px 24px;
+    min-height: 150px;
+  }
+
+  .cardValue {
+    font-size: 32px;
+  }
 }
 
-.pr-title {
-    min-width: 8vw;
-    font-size: 1.3vw;
-    font-weight: 600;
-    font-family: inherit;
-    color: #222;
-}
-
-.pr-text {
-    font-size: 1.05vw;
-    color: #444;
-    line-height: 1.7;
-    font-family: inherit;
-    flex: 1;
-}
-
-/* Card section */
-.approachContainer {
-    background-color: #F9F9F9;
-    height: auto;
-    width: 100%;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    padding: 2vw;
-}
-
-.seventhCardTitle {
-    font-size: 1.5vw;
-    font-weight: 600;
-    margin-bottom: 1.5vw;
-    line-height: 1.2;
-}
-
-.seventhCardDescription {
-    font-size: 1vw;
-    color: #444;
-    line-height: 1.6;
-}
-
-@media (max-width: 600px) {
-    .seventhSection {
-        padding: 8vw 6vw;
-        flex-direction: column;
-    }
-
-    .seventhTitle {
-        font-size: 6vw;
-        margin-bottom: 4vw;
-        text-align: center;
-    }
-
-    .seventh-simple-grid {
-        grid-template-columns: 1fr;
-        gap: 6vw;
-        margin: 0;
-    }
-
-    .pr-row {
-        flex-direction: column;
-        gap: 2vw;
-    }
-
-    .pr-title {
-        font-size: 4.5vw;
-        min-width: auto;
-        text-align: center;
-    }
-
-    .pr-text {
-        font-size: 4vw;
-        text-align: justify;
-    }
-
-    .approachContainer {
-        width: 100%;
-        padding: 6vw;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .seventhCardTitle {
-        font-size: 5vw;
-        text-align: center;
-        margin-bottom: 3vw;
-    }
-
-    .seventhCardDescription {
-        font-size: 4vw;
-        text-align: justify;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-    .seventhSection {
-        padding: 6vw 8vw;
-    }
-
-    .seventhTitle {
-        font-size: 3.5vw;
-        text-align: left;
-    }
-
-    .seventh-simple-grid {
-        grid-template-columns: 1fr;
-        gap: 4vw;
-    }
-
-    .pr-title {
-        font-size: 2.5vw;
-    }
-
-    .pr-text {
-        font-size: 2.2vw;
-    }
-
-    .approachContainer {
-        width: 80%;
-        margin: 0 auto;
-        padding: 3vw;
-    }
-
-    .seventhCardTitle {
-        font-size: 3vw;
-    }
-
-    .seventhCardDescription {
-        font-size: 2vw;
-    }
-}
-
+/* ========== 5️⃣ LARGE SCREENS ≥1280px ========== */
 @media (min-width: 1280px) {
-    .seventhTitle {
-        font-size: 1.8vw;
-    }
+  .seventhSection {
+    padding: 4vw 10vw;
+  }
 
-    .pr-title {
-        font-size: 1.2vw;
-    }
+  .seventhTitle {
+    font-size: 44px;
+  }
 
-    .pr-text {
-        font-size: 1vw;
-    }
+  .seventhIntro {
+    font-size: 17px;
+    max-width: 980px;
+  }
 
-    .seventhCardTitle {
-        font-size: 1.3vw;
-    }
+  .seventhCard {
+    padding: 34px 26px;
+  }
 
-    .seventhCardDescription {
-        font-size: 0.9vw;
-    }
+  .cardValue {
+    font-size: 36px;
+  }
 }

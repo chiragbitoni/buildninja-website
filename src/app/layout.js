@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Nav/NavBar";
 import { ReduxProvider } from "@/redux/ReduxProvider";
+import { paths } from "../../public/static/paths";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "BuildNinja | Stop Fighting Your CI/CD Tool",
   description: "Build Ninja - The Ultimate Build System for Developers",
+  icons:{
+    icon: paths.icons.favicon
+  }
 };
 
 export default function RootLayout({ children }) {
