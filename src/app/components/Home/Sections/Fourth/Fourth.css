@@ -162,10 +162,6 @@
     transition: transform 0.3s ease;
 }
 
-.fourthFeature-img:hover {
-    box-shadow: 0 4px 12px rgba(255, 0, 90, 0.3);
-    transform: scale(1.03);
-}
 
 /* Responsive Design */
 
@@ -255,3 +251,23 @@
         flex: 0 0 60%;
     }
 }
+
+.fourthFeature-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fourthFeature-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(255, 65, 114, 0.3);
+}
+
+.fourthFeature-img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
