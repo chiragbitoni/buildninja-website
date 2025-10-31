@@ -16,7 +16,7 @@ export default function Sixth() {
                         <p className="sixth-pricing-simple-box-text">{sixthSectionText.card1Text}</p>
                     </div>
                     <div className="sixth-pricing-simple-box">
-                        <img src={paths.icons.thunderBlack} alt="Versioning Icon" className="sixth-pricing-simple-box-icon" />
+                        <img src={paths.icons.thunder} alt="Versioning Icon" className="sixth-pricing-simple-box-icon" />
                         <h3 className="sixth-pricing-simple-box-heading">{sixthSectionText.card2Title}</h3>
                         <p className="sixth-pricing-simple-box-text">{sixthSectionText.card2Text}</p>
                     </div>

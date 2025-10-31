@@ -157,6 +157,6 @@ export const sixthSectionText = {
 export const seventhSectionText = {
   title: "Ready to stop wasting tile on broken CI/CD?",
   button1: "Download Free (Solo Edition)",
-  button2: "Start 30 Dat Trial (Shogun Edition)",
+  button2: "Start 30 Day Trial (Shogun Edition)",
   description: "Risk-free promise: 30-day evaluation, cancel anytime, data export guaranteed"
 }

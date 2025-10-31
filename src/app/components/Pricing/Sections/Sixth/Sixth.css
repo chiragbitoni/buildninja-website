@@ -1,15 +1,13 @@
-    .sixthPricingSection {
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  width: 100vw;
-  max-width: 100%;
-  height: auto;
-  padding: 2vw 16vw 2vw 16vw;
-  background: #FBFBFB;
-  box-sizing: border-box;
+/* ===========================
+   1️⃣ Base (Mobile-first)
+=========================== */
+.sixthPricingSection {
+  width: 100%;
+  background: #1E1E1E;
+  padding: 10vw 4vw;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .sixthPricingSection::before {
@@ -22,62 +20,136 @@
 }
 
 .sixthPricingContent {
-  flex: 1 1 55%;
+  position: relative;
   z-index: 2;
-}
-
-.sixthPricingTitle {
-  font-size: 3.0vw;
-  font-weight: 600;
-  margin: 0 0 3vw 0;
+  max-width: 100%;
+  margin: 0 auto;
   text-align: center;
-  line-height: 1.1;
-  color: #202226;;
 }
 
+/* ===== Title ===== */
+.sixthPricingTitle {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(24px, 7vw, 44px);
+  font-weight: 600;
+  margin-top: 2vw;
+  margin-bottom: 8vw;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+/* ===== Grid Layout ===== */
 .sixth-pricing-simple-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.2rem;
-  margin:2.4vw;
+  gap: clamp(16px, 4vw, 32px);
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
+/* ===== Card ===== */
+.sixth-pricing-simple-box {
+  background-color: #131212;
+  border-radius: 0.75rem;
+  padding: clamp(16px, 3vw, 24px);
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sixth-pricing-simple-box:hover {
+  transform: translateY(-4px);
+  background-color: #181818;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Icon ===== */
+.sixth-pricing-simple-box-icon {
+  display: block;
+  margin: clamp(12px, 2vw, 24px) auto clamp(12px, 2vw, 20px);
+  width: clamp(40px, 6vw, 64px);
+  height: clamp(40px, 6vw, 64px);
+  object-fit: contain;
+}
+
+/* ===== Heading ===== */
+.sixth-pricing-simple-box-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 600;
+  color: #ffffff;
+  margin: clamp(8px, 1vw, 12px) clamp(16px, 3vw, 32px);
+  line-height: 1.3;
+}
+
+/* ===== Text ===== */
+.sixth-pricing-simple-box-text {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 0 clamp(12px, 2vw, 24px) clamp(16px, 2vw, 20px);
+  text-align: center;
+}
+
+/* ===========================
+   2️⃣ Tablet (≥768px)
+=========================== */
 @media (min-width: 768px) {
+  .sixthPricingSection {
+    padding: 6vw 4vw;
+  }
+
+  .sixthPricingContent {
+    max-width: 1000px;
+  }
+
+  .sixthPricingTitle {
+    font-size: clamp(28px, 4.5vw, 40px);
+    margin-bottom: 5vw;
+  }
+
   .sixth-pricing-simple-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 3vw, 40px);
   }
 }
 
-.sixth-pricing-simple-box {
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
-  padding: 1vw;
-  text-align: center;
-}
+/* ===========================
+   3️⃣ Desktop (≥1024px)
+=========================== */
+@media (min-width: 1024px) {
+  .sixthPricingSection {
+    padding: 4vw 2vw;
+  }
 
-.sixth-pricing-simple-box-icon{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.6vw;
-  margin-bottom: 1.1vw;
-  width: 4.5vw;
-  height: 4.5vw;
-}
+  .sixthPricingContent {
+    max-width: 1200px;
+  }
 
-.sixth-pricing-simple-box-heading{
-  font-size: 1.3vw;
-  font-weight: 600;
-  margin: 1vw 3vw 1vw 3vw;
-  text-align: center;
-  line-height: 1.1;
-}
+  .sixthPricingTitle {
+    font-size: 44px;
+    margin-top: 0;
+    margin-bottom: 3vw;
+  }
 
-.sixth-pricing-simple-box-text{
-  font-size: 1vw;
-  line-height: 1.5;
-  text-align: center;
-  margin: 0 1.7vw 1vw 1.7vw;
+  .sixth-pricing-simple-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5vw;
+  }
+
+  .sixth-pricing-simple-box {
+    padding: 2vw;
+  }
+
+  .sixth-pricing-simple-box-heading {
+    font-size: 22px;
+  }
+
+  .sixth-pricing-simple-box-text {
+    font-size: 16px;
+  }
 }

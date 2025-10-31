@@ -9,54 +9,54 @@ export const heroSectionText = {
 export const secondSectionText = {
   cards: [
     {
-      icon: paths.icons.thunderBlack,
+      icon: paths.icons.thunder,
       title: "Automated Builds",
       description:
         "Automatically triggers builds based on scheduled time and date.",
     },
     {
-      icon: paths.icons.versioning,
+      icon: paths.icons.versioningWhite,
       title: "Version Control Integration",
       description:
         "Integrates with Git, GitHub, GitLab, Bitbucket, and others to automate build, test, and deployment workflows.",
     },
     {
-      icon: paths.icons.artifactBox,
+      icon: paths.icons.artifactBoxWhite,
       title: "Artifact Management",
       description:
         "Stores build outputs for future deployment or distribution.",
     },
     {
-      icon: paths.icons.cds,
+      icon: paths.icons.cdsWhite,
       title: "Containerized Deployment Support",
       description:
         "Deploy and configure servers and agents on Kubernetes for scalable operations, or use Docker for local setups. Flexible infrastructure management.",
     },
     {
-      icon: paths.icons.globe,
+      icon: paths.icons.globeWhite,
       title: "Multi-Environment Support",
       description:
         "Manage deployments across dev, staging, and production with environment-specific logic, secrets, and conditions.",
     },
     {
-      icon: paths.icons.crossPlatform,
+      icon: paths.icons.crossPlatformWhite,
       title: "Cross-Platform Configuration",
       description: "Seamless setup across Windows, Linux, and macOS.",
     },
     {
-      icon: paths.icons.users,
+      icon: paths.icons.usersWhite,
       title: "Agent Management",
       description:
         "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
     },
     {
-      icon: paths.icons.gear,
+      icon: paths.icons.gearWhite,
       title: "Agent Requirements Configuration",
       description:
         "Specify agent capabilities to ensure builds run on appropriate agents.",
     },
     {
-      icon: paths.icons.chart,
+      icon: paths.icons.chartWhite,
       title: "Interactive Dashboard",
       description:
         "View and filter build metrics with customizable time ranges and auto-refresh.",
@@ -68,13 +68,13 @@ export const secondSectionText = {
         "Live logs and dashboards for monitoring builds and deployments.",
     },
     {
-      icon: paths.icons.email,
+      icon: paths.icons.emailWhite,
       title: "Email Notification System",
       description:
         "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
     },
     {
-      icon: paths.icons.puzzlePiece,
+      icon: paths.icons.puzzlePieceWhite,
       title: "Plugin & Integration Support",
       description:
         "Works with third-party tools like Docker, Kubernetes, and more.",
