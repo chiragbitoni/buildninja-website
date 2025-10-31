@@ -6,11 +6,14 @@ import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
+import { useRef } from "react";
+
 export default function Hero() {
     const images = [
         "/resources/Home/Slides/slide1.png",
         "/resources/Home/Slides/slide2.png",
     ];
+    const paginationRef = useRef(null);
     return (
         <section className="heroSection">
             <div className="heroContent">
@@ -25,23 +28,27 @@ export default function Hero() {
                     <button className="heroBtn">{heroSectionText.primaryButton}</button>
                     <button className="demoBtn">{heroSectionText.secondaryButton}</button>
                 </div>
+
                 <div className="heroCarousel">
-                    <Swiper
-                       modules={[Autoplay, EffectFade, Pagination]}
-                        slidesPerView={1}
-                        loop={true}
-                        effect="fade"
-                        autoplay={{ delay: 3000, disableOnInteraction: false }}
-                        pagination={{
-                            clickable: true,
-                            dynamicBullets: true,
-                        }}
-                        className="mySwiper"
-                    >
-                        {images.map((src, index) => (
-                            <SwiperSlide key={index}>
-                                <div className="star-border rounded-xl p-[1px] overflow-hidden dark:shadow-2xl dark:shadow-indigo-900/10">
-                                    <div className="star-inner rounded-lg">
+                    <div className="star-border rounded-xl p-[1px] overflow-hidden dark:shadow-2xl dark:shadow-indigo-900/10">
+                        <div className="star-inner rounded-lg">
+                            <Swiper
+                                modules={[Autoplay, EffectFade, Pagination]}
+                                slidesPerView={1}
+                                loop={true}
+                                effect="fade"
+                                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                                pagination={{
+                                    clickable: true,
+                                    el: paginationRef.current, 
+                                }}
+                                onBeforeInit={(swiper) => {
+                                    swiper.params.pagination.el = paginationRef.current;
+                                }}
+                                className="mySwiper"
+                            >
+                                {images.map((src, index) => (
+                                    <SwiperSlide key={index}>
                                         <Image
                                             src={src}
                                             alt={`Slide ${index + 1}`}
@@ -50,11 +57,12 @@ export default function Hero() {
                                             className="w-full h-auto"
                                             priority={index === 0}
                                         />
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
+                    </div>
+                    <div className="custom-pagination" ref={paginationRef}></div>
                 </div>
             </div>
         </section>

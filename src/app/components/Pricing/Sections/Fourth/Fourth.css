@@ -4,56 +4,63 @@
 .fourthfeatures-root {
   background: #262626;
   padding: 8vw 5vw;
-  border-radius: 2vw;
   font-family: 'Inter', Arial, sans-serif;
   text-align: center;
+  color: #ffffff;
 }
 
 .fourthfeatures-title {
   font-size: 6vw;
   font-weight: 600;
   margin-bottom: 6vw;
-  color: #ffffff;
 }
 
 /* Column container */
 .fourthfeatures-columns {
-    display: flex;
-    flex-direction: column;
-    align-items: top;
-    gap: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+  gap: 10vw;
 }
 
-/* Each feature card column */
-.fourthFeatureListContainer {
-    width: 100%;
-    max-width: 400px;
-    text-align: left;
+/* Each feature card */
+.fourthfeatures-card {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  /* background-color: #1a1a1a; */
+  border-radius: 1.5vw;
+  padding: 6vw 5vw;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fourthfeatures-card:hover {
+  transform: translateY(-0.8vw);
+  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); */
 }
 
 /* Header */
 .fourthfeatures-header {
-    display: flex;
+  display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 3vw;
-  margin-bottom: 3vw;
-  color: #ffffff;
+  margin-bottom: 4vw;
 }
 
 .fourthPricingHeaderIcon {
-    width: 7vw;
-    height: auto;
+  width: 7vw;
+  height: auto;
 }
 
 .fourthfeatures-card-title {
-    font-size: 4.5vw;
-    font-weight: 600;
+  font-size: 4.5vw;
+  font-weight: 600;
 }
 
 /* Feature list */
 .fourthfeatures-list {
-    color: #ffffff;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -63,9 +70,8 @@
   display: flex;
   align-items: center;
   gap: 3vw;
-  margin-bottom: 2.5vw;
+  margin-bottom: 3vw;
   font-size: 3.5vw;
-  position: relative;
 }
 
 .fourthPricingTickIcon {
@@ -79,43 +85,44 @@
 =========================== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .fourthfeatures-root {
-    padding: 5vw 3vw;
-    border-radius: 1vw;
+    padding: 6vw 5vw;
   }
 
   .fourthfeatures-title {
-    font-size: 3vw;
-    margin-bottom: 3vw;
+    font-size: 3.5vw;
+    margin-bottom: 4vw;
   }
 
   .fourthfeatures-columns {
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 5vw;
+    justify-content: center;
+    gap: 4vw;
   }
 
-  .fourthFeatureListContainer {
-    max-width: 300px;
+  .fourthfeatures-card {
+    max-width: 320px;
+    padding: 3vw 2.5vw;
+    border-radius: 1vw;
   }
 
   .fourthfeatures-header {
-    gap: 1.5vw;
-    margin-bottom: 1.5vw;
+    gap: 1.8vw;
+    margin-bottom: 2vw;
   }
 
   .fourthPricingHeaderIcon {
-    width: 3vw;
+    width: 3.2vw;
   }
 
   .fourthfeatures-card-title {
-    font-size: 1.8vw;
+    font-size: 2vw;
   }
 
   .fourthfeatures-list li {
-    font-size: 1.4vw;
-    margin-bottom: 1vw;
-    gap: 1.2vw;
+    font-size: 1.5vw;
+    margin-bottom: 1.3vw;
+    gap: 1.5vw;
   }
 
   .fourthPricingTickIcon {
@@ -129,7 +136,6 @@
 @media (min-width: 1024px) {
   .fourthfeatures-root {
     padding: 4vw 2vw;
-    border-radius: 0.6vw;
   }
 
   .fourthfeatures-title {
@@ -140,16 +146,18 @@
   .fourthfeatures-columns {
     flex-direction: row;
     justify-content: center;
-    gap: 12vw;
+    gap: 10vw;
   }
 
-  .fourthFeatureListContainer {
+  .fourthfeatures-card {
     max-width: 22vw;
+    padding: 2vw;
+    border-radius: 0.8vw;
   }
 
   .fourthfeatures-header {
     gap: 0.8vw;
-    margin-bottom: 1vw;
+    margin-bottom: 1.2vw;
   }
 
   .fourthPricingHeaderIcon {
@@ -162,7 +170,7 @@
 
   .fourthfeatures-list li {
     font-size: 1vw;
-    margin-bottom: 0.5vw;
+    margin-bottom: 0.6vw;
     gap: 0.8vw;
   }
 

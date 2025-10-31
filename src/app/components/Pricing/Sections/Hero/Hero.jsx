@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setBillingCycle, togglePlan } from '@/redux/slice/planSlice';
 export default function Hero() {
     const dispatch = useDispatch();
-    const isAnnual = useSelector((state)=> state.plan.isAnnual);
+    const isAnnual = useSelector((state) => state.plan.isAnnual);
 
-    const handleToggle = ()=>{
+    const handleToggle = () => {
         dispatch(togglePlan());
     }
     return (
@@ -19,13 +19,17 @@ export default function Hero() {
                     {heroSectionText.subtitle}<br />
                 </p>
                 <div className="pricingPlanToggleSwitchContainer">
-                    <p className="toggleSwitchOption1">{heroSectionText.toggleSwitch.option1}</p>
-                    <label className="switch">
-                        <input type="checkbox" checked={isAnnual} onChange={handleToggle}></input>
-                        <span className="slider"></span>
-                    </label>
-                    <p className="toggleSwitchOption2">{heroSectionText.toggleSwitch.option2}</p>
-                    <p className="toggleSwitchSavings">{heroSectionText.toggleSwitch.savings}</p>
+                    <div className='toggleSwitchRow1'>
+                        <p className="toggleSwitchOption1">{heroSectionText.toggleSwitch.option1}</p>
+                        <label className="switch">
+                            <input type="checkbox" checked={isAnnual} onChange={handleToggle}></input>
+                            <span className="slider"></span>
+                        </label>
+                        <p className="toggleSwitchOption2">{heroSectionText.toggleSwitch.option2}</p>
+                    </div>
+                    <div className='toggleSwitchRow2'>
+                        <p className="toggleSwitchSavings">{heroSectionText.toggleSwitch.savings}</p>
+                    </div>
                 </div>
             </div>
         </section>
