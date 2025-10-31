@@ -97,7 +97,7 @@ export const fourthSectionText = {
         "Search, filter, and organize triggers effortlessly",
         "Support for custom, daily, and weekly schedules",
         "Real-time status and next-run visibility",
-        "Configure agent-sOne-click trigger management and configurationpecific parameters",
+        "Configure agent-sOne-click trigger management and configuration specific parameters",
       ],
       image: "/resources/Home/FeatureImages/image3.jpg",
     },
@@ -149,7 +149,7 @@ export const fifthSectionText = {
     },
     {
       icon: paths.icons.integration,
-      text: "Integration with  popular development tools and platforms",
+      text: "Integration with popular development tools and platforms",
     },
   ],
   secondTitle: "24/7",
@@ -215,81 +215,6 @@ export const seventhSectionText = {
     description: "Failed Deployments",
   },
 };
-export const ninthSectionText = {
-  title: "Ready to Focus on Code Instead of Tools?",
-  subtitle:
-    "Join 500+ engineering teams who've eliminated deployment anxiety and shipped 10x faster with BuildNinja. Get your CI/CD pipeline running in under 5 minutes.",
-  primaryButton: "Start Free Trial",
-  secondaryButton: "See the 5-Minute Demo",
-  secondTitle: "Risk-Free Guarantee",
-  list: [
-    "30-day free trial, no credit card required",
-    "Cancel anytime, keep your deployments running",
-    "Migration support from our engineering team",
-    "99.9% uptime SLA with automatic compensation",
-  ],
-};
-// export const secondSectionText = {
-//   title: "For Engineering Teams Who Want to Deploy, Not Debug",
-//   secondaryTitle: "Focus on Building, Not Maintaining",
-//   subtitle1: "BuildNinja",
-//   subtitle2:
-//     " takes care of the complexity of CI/CD, so your team can concentrate on what matters most",
-//   subtitle3: "—shipping features",
-//   subtitle4: " that delight users and driving",
-//   subtitle5: " real business",
-//   subtitle6: " results.",
-//   thirdTitle: "Stop Wasting Developer Time on Broken CI/CD Tools",
-//   externalProblems: {
-//     title: "External Problems",
-//     problems: [
-//       "Deployment failures at the worst possible moment",
-//       "Complex configuration that breaks when you need it most",
-//       "Vendor lock-in with proprietary tools",
-//       "Unpredictable costs that spike during peak usage",
-//     ],
-//   },
-//   internalProblems: {
-//     title: "Internal Problems",
-//     problems: [
-//       "Developers spending 40% of time on DevOps instead of features",
-//       "Knowledge silos where only one person knows the pipeline",
-//       "Inconsistent environments causing production bugs",
-//       "Endless meetings about infrastructure instead of product",
-//     ],
-//   },
-//   philosophicalProblems: {
-//     title: "Philosophical Problems",
-//     problems: [
-//       "CI/CD shouldn't require a PhD in DevOps",
-//       "Simple deployments shouldn't cost enterprise prices",
-//       "Teams deserve tools that work, not endless troubleshooting",
-//       "Building software should be about solving problems, not fighting tools",
-//     ],
-//   },
-// };
-
-// export const thirdSectionText = {
-//     leftCell: {
-//     title: "We Get It",
-//     list: [
-//       "We understand the frustration of deployment anxiety.",
-//       "We know what it's like when your CI/CD tool becomes the bottleneck.",
-//       "We've felt the pain of complex configurations that break at 2 AM.",
-//       "We recognize that your time should be spent building, not troubleshooting.",
-//     ],
-//   },
-//   rightCell: {
-//     title: "Why Teams Trust BuildNinja",
-//     list: [
-//       "Built by engineers who've deployed thousands of applications",
-//       "Trusted by 500+ engineering teams across startups to enterprise",
-//       "Integration with  popular development tools and platforms",
-//       "24/7 expert support from actual engineers, not chatbots",
-//     ],
-//   },
-// }
-
 export const eighthSectionText = {
   title: "Built by Engineers Who Use Their Own Tools",
   approach: {
@@ -311,5 +236,17 @@ export const eighthSectionText = {
       "A CI/CD platform that works the way engineers think. No YAML wizardry required. No PhD in DevOps necessary. Just reliable, fast deployments that let you focus on building great software.",
   },
 };
-
-
+export const ninthSectionText = {
+  title: "Ready to Focus on Code Instead of Tools?",
+  subtitle:
+    "Join 500+ engineering teams who've eliminated deployment anxiety and shipped 10x faster with BuildNinja. Get your CI/CD pipeline running in under 5 minutes.",
+  primaryButton: "Start Free Trial",
+  secondaryButton: "See the 5-Minute Demo",
+  secondTitle: "Risk-Free Guarantee",
+  list: [
+    "30-day free trial, no credit card required",
+    "Cancel anytime, keep your deployments running",
+    "Migration support from our engineering team",
+    "99.9% uptime SLA with automatic compensation",
+  ],
+};
