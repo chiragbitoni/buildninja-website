@@ -1,6 +1,5 @@
-import { secondSectionText } from "../../../../../../public/static/featuresPageText";
-import { paths } from "../../../../../../public/static/paths";
 import "./Second.css";
+import { secondSectionText } from "../../../../../../public/static/featuresPageText";
 export default function Second() {
     return (
         <section className="secondFeaturesSection">
