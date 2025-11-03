@@ -1,9 +1,11 @@
 import "./Second.css";
-import { secondSectionText } from "../../../../../../public/static/pricingPageText";
+import { secondSectionTextIndia, secondSectionTextGlobal } from "../../../../../../public/static/pricingPageText";
 import { useSelector } from "react-redux";
 import { paths } from "../../../../../../public/static/paths";
 export default function Second() {
     const isAnnual = useSelector((state) => state.plan.isAnnual);
+    const region = useSelector((state) => state.region.region);
+    const secondSectionText = region === "india" ? secondSectionTextIndia : secondSectionTextGlobal;
     const monthlyPlanFreeCard = (<div className="pricingMonthlyFreeCard">
         <p className="pricingMonthlyFreeCardHighlight">{secondSectionText.monthCards.soloEditionCard.highlight}</p>
         <h3 className="pricingMonthlyFreeCardEdition">{secondSectionText.monthCards.soloEditionCard.edition}</h3>

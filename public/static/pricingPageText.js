@@ -9,7 +9,7 @@ export const heroSectionText = {
   },
 };
 
-export const secondSectionText = {
+export const secondSectionTextIndia = {
   monthCards: {
     soloEditionCard: {
       highlight: "START WITH CONFIDENCE",
@@ -26,7 +26,7 @@ export const secondSectionText = {
     shogunEditionCard: {
       highlight: "POPULAR",
       edition: "Shogun Edition",
-      price: "₹11,416/month",
+      price: "₹16,999/month",
       list: [
         "Unlimited users & projects",
         "Unlimited concurrent builds",
@@ -63,6 +63,65 @@ export const secondSectionText = {
         price: "₹7,638/month",
         savings: "SAVE ₹1,13,989",
         total: "₹274,999 total",
+      },
+    },
+    buttonText: "Start 30-Day Trial",
+  },
+};
+export const secondSectionTextGlobal = {
+  monthCards: {
+    soloEditionCard: {
+      highlight: "START WITH CONFIDENCE",
+      edition: "Solo Edition",
+      price: "FREE",
+      list: [
+        "Up to 10 users",
+        "3 concurrent builds",
+        "Docker support",
+        "30-day grace period",
+      ],
+      buttonText: "Download Free",
+    },
+    shogunEditionCard: {
+      highlight: "POPULAR",
+      edition: "Shogun Edition",
+      price: "$199/month",
+      list: [
+        "Unlimited users & projects",
+        "Unlimited concurrent builds",
+        "Perpetual build history",
+        "Priority business support",
+        "Professional services included",
+      ],
+      buttonText: "Start 30-Day Trial",
+    },
+  },
+  annualCard: {
+    highlight: "POPULAR",
+    edition: "Shogun Edition",
+    price: "$133/month",
+    description: "$1,599 billed annually",
+    savings: "SAVE ₹$789/year",
+    list: [
+      "Unlimited users & projects",
+      "Unlimited concurrent builds",
+      "Perpetual build history",
+      "Priority business support",
+      "Professional services included",
+    ],
+    card: {
+      title: "Multi-Year Savings",
+      card1: {
+        title: "2-Year Upfront",
+        price: "$107/month",
+        savings: "SAVE $1,218",
+        total: "$2,558 total",
+      },
+      card2: {
+        title: "3-Year Upfront",
+        price: "$89/month",
+        savings: "SAVE $1,320",
+        total: "$3,198 total",
       },
     },
     buttonText: "Start 30-Day Trial",
