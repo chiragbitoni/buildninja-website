@@ -1,0 +1,101 @@
+/* ===============================
+   SECOND SECTION - BASE
+================================== */
+.installSecondSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 3vw 8vw;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background-color: #B9385F;
+}
+
+.installSecondSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.installSecondContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ===============================
+   TITLE & SUBTITLE
+================================== */
+.installSecondTitle {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: clamp(26px, 3vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 1.5vw;
+    word-break: break-word;
+}
+
+.installSecondSubtitle {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: clamp(15px, 1.4vw, 22px);
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-top: 1.5vw;
+    margin-bottom: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===============================
+   TABLET VIEW (768px – 1023px)
+================================== */
+@media (max-width: 1023px) {
+    .installSecondSection {
+        padding: 10vw 6vw;
+    }
+
+    .installSecondTitle {
+        font-size: clamp(28px, 4.5vw, 40px);
+        margin-bottom: 2vw;
+    }
+
+    .installSecondSubtitle {
+        font-size: clamp(16px, 2.3vw, 20px);
+        line-height: 1.6;
+        margin-top: 3vw;
+    }
+}
+
+/* ===============================
+   MOBILE VIEW (≤767px)
+================================== */
+@media (max-width: 767px) {
+    .installSecondSection {
+        padding: 16vw 5vw;
+        gap: 5vw;
+        text-align: center;
+    }
+
+    .installSecondTitle {
+        font-size: 7vw;
+        line-height: 1.3;
+        margin-bottom: 4vw;
+    }
+
+    .installSecondSubtitle {
+        font-size: 4.4vw;
+        line-height: 1.7;
+        margin-top: 4vw;
+        padding: 0;
+    }
+}
