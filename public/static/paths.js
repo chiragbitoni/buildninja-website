@@ -54,6 +54,7 @@ export const paths = {
     approach: "/resources/icons/approach.svg",
     result: "/resources/icons/result.svg",
     problem: "/resources/icons/problem.svg",
-    downArrow: "/resources/icons/downArrow.svg"
+    downArrow: "/resources/icons/downArrow.svg",
+    minimumRequirements: "/resources/icons/minimumRequirements.svg",
   },
 };
