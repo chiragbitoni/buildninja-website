@@ -174,8 +174,6 @@ export const fourthSectionText = {
         "Docker container support",
         "Multi-platform agents",
         "GitHub/GitLab/Bitbucket integration",
-        "Health checks & rollbacks",
-        "Custom workflows",
         "Monitoring & analytics",
         "Email/Slack/Teams notifications",
       ],

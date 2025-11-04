@@ -49,10 +49,10 @@ export const fourthSectionText = {
       buttonText: "Read Docs",
     },
     {
-      icon: paths.icons.circleCheckWhite,
-      title: "Community Support",
-      description: "Get help from our community and engineering team",
-      buttonText: "Join Forum",
+      icon: paths.icons.emailWhite,
+      title: "Email Support",
+      description: "Get help from our support team via email",
+      buttonText: "Contact Support",
     },
   ],
 };
