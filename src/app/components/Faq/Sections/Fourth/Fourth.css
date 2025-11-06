@@ -3,7 +3,7 @@
 =========================== */
 .faqFourthSection {
     width: 100%;
-    background: #1E1E1E;
+    background: #2c2c2c;
     padding: 10vw 4vw;
     position: relative;
     overflow: hidden;
@@ -49,7 +49,7 @@
 
 /* ===== Card ===== */
 .faqFourthBox {
-    background-color: #131212;
+    background-color: #1e1e1e;
     border-radius: 0.75rem;
     padding: clamp(20px, 3vw, 32px);
     color: #ffffff;
@@ -92,7 +92,7 @@
 
 /* ===== Button ===== */
 .faqFourthBtn {
-    background-color: #1E1E1E;
+    background-color: #2c2c2c;
     border: 1px solid #444;
     color: #ffffff;
     font-size: clamp(14px, 1.1vw, 16px);
