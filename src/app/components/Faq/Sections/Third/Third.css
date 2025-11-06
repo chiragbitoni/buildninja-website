@@ -6,7 +6,8 @@
   background: #262626;
   color: #fff;
   font-family: "Inter", sans-serif;
-  padding: 6vw 8vw;
+  padding: 0vw 8vw;
+  padding-bottom: 6vw;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
