@@ -1,0 +1,114 @@
+/* ===============================
+   HERO SECTION - BASE
+================================== */
+.faqHeroSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 30vh;
+  padding: 6vw 10vw;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background: url('/resources/faqHeroBG.png') center center / cover no-repeat;
+  background-color: #000000;
+}
+
+.faqHeroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.faqHeroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.faqHeroHighlight {
+  color: #313131;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 0.6vw 2vw;
+  border-radius: 999px;
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 600;
+}
+
+/* ===============================
+   TITLE & SUBTITLE
+================================== */
+.faqHeroTitle {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: clamp(24px, 3vw, 48px);
+  font-weight: 700;
+  margin: 2.5vw 0 0 0;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.faqHeroSubtitle {
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 1.5vw 0 0 0;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1.6;
+  /* max-width: 800px; */
+}
+
+/* ===============================
+   TABLET VIEW (768px – 1023px)
+================================== */
+@media (max-width: 1023px) {
+  .faqHeroSection {
+    padding: 12vw 8vw;
+    background-attachment: scroll; /* prevents jittery scrolling on iOS */
+  }
+
+  .faqHeroTitle {
+    font-size: clamp(28px, 5vw, 40px);
+  }
+
+  .faqHeroSubtitle {
+    font-size: clamp(16px, 2.3vw, 22px);
+    line-height: 1.6;
+  }
+}
+
+/* ===============================
+   MOBILE VIEW (≤767px)
+================================== */
+@media (max-width: 767px) {
+  .faqHeroSection {
+    padding: 18vw 6vw;
+    text-align: center;
+    gap: 5vw;
+    background-attachment: scroll;
+  }
+
+  .faqHeroHighlight {
+    padding: 2vw 5vw;
+    font-size: 4vw;
+  }
+
+  .faqHeroTitle {
+    font-size: 8vw;
+    line-height: 1.3;
+    margin-bottom: 3vw;
+  }
+
+  .faqHeroSubtitle {
+    font-size: 4.2vw;
+    margin-top: 3vw;
+    line-height: 1.7;
+    padding: 0;
+  }
+}

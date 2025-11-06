@@ -1,7 +1,7 @@
 /* ======================================== */
 /* Base (Mobile-first) */
 /* ======================================== */
-.thirdFeaturesSection {
+.faqFifthSection {
     font-family: 'Inter', Arial, sans-serif;
     background-color: #000;
     height: auto;
@@ -15,7 +15,7 @@
     overflow: hidden;
 }
 
-.thirdFeaturesSection::before {
+.faqFifthSection::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -25,7 +25,7 @@
 }
 
 /* Title */
-.thirdFeaturesTitle {
+.faqFifthTitle {
     color: #FFFFFF;
     text-align: center;
     font-size: 6vw;
@@ -35,7 +35,7 @@
 }
 
 /* Buttons */
-.thirdFeaturesButtonContainer {
+.faqFifthButtonContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,8 +44,7 @@
     z-index: 2;
 }
 
-.thirdFeaturesFreeButton,
-.thirdFeaturesShogunButton {
+.faqFifthFreeButton {
     background-color: #D4335C;
     color: #FFFFFF;
     border-radius: 8vw;
@@ -57,13 +56,30 @@
     transition: all 0.3s ease;
 }
 
-.thirdFeaturesFreeButton:hover,
-.thirdFeaturesShogunButton:hover {
+.faqFifthFreeButton:hover
+ {
     background-color: #ea367d;
 }
 
+.faqFifthShogunButton{
+     background-color: #2c2c2c;
+    color: #FFFFFF;
+    border-radius: 8vw;
+    padding: 2.5vw 8vw;
+    font-size: 4vw;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.faqFifthShogunButton:hover{
+background-color: #262626;
+}
+
 /* Description */
-.thirdFeaturesDescription {
+.faqFifthDescription {
     margin-top: 6vw;
     font-size: 3.8vw;
     font-weight: 400;
@@ -77,30 +93,30 @@
 /* Tablet (768px – 1023px) */
 /* ======================================== */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .thirdFeaturesSection {
+    .faqFifthSection {
         padding: 6vw 8vw;
     }
 
-    .thirdFeaturesTitle {
+    .faqFifthTitle {
         font-size: 4vw;
         margin: 0;
     }
 
-    .thirdFeaturesButtonContainer {
+    .faqFifthButtonContainer {
         flex-direction: row;
         justify-content: center;
         gap: 3vw;
         margin-top: 2vw;
     }
 
-    .thirdFeaturesFreeButton,
-    .thirdFeaturesShogunButton {
+    .faqFifthFreeButton,
+    .faqFifthShogunButton {
         font-size: 2vw;
         padding: 1.2vw 4vw;
         border-radius: 4vw;
     }
 
-    .thirdFeaturesDescription {
+    .faqFifthDescription {
         margin-top: 3.5vw;
         font-size: 2vw;
         max-width: 80%;
@@ -111,30 +127,30 @@
 /* Desktop (≥1024px) */
 /* ======================================== */
 @media (min-width: 1024px) {
-    .thirdFeaturesSection {
+    .faqFifthSection {
         padding: 3vw 10vw;
     }
 
-    .thirdFeaturesTitle {
+    .faqFifthTitle {
         font-size: 40px;
         margin: 0;
     }
 
-    .thirdFeaturesButtonContainer {
+    .faqFifthButtonContainer {
         flex-direction: row;
         justify-content: center;
         gap: 1.5vw;
         margin-top: 1.5vw;
     }
 
-    .thirdFeaturesFreeButton,
-    .thirdFeaturesShogunButton {
+    .faqFifthFreeButton,
+    .faqFifthShogunButton {
         font-size: 18px;
         padding: 0.9vw 3vw;
         border-radius: 2vw;
     }
 
-    .thirdFeaturesDescription {
+    .faqFifthDescription {
         margin-top: 2vw;
         font-size: 18px;
         max-width: 60%;
