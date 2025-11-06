@@ -59,6 +59,14 @@
   color: #d4335c;
 }
 
+.navbar-link.active-link {
+  color: #d4335c;
+  border-bottom: 2px solid #d4335c;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-bottom 0.3s;
+}
+
+
 /* ==== Hamburger (hidden on desktop) ==== */
 .hamburger {
   display: none;

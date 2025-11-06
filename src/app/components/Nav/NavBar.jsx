@@ -2,7 +2,7 @@
 import "./NavBar.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [show, setShow] = useState(true);
@@ -10,6 +10,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter();
+  const pathname = usePathname(); // 👈 Get current path
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +70,8 @@ export default function Navbar() {
           {navItems.map((item) => (
             <li
               key={item.name}
-              className="navbar-link"
+              className={`navbar-link ${pathname === item.path ? "active-link" : ""
+                }`} // 👈 Highlight active link
               onClick={() => handleNavigation(item.path)}
             >
               {item.name}
