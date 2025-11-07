@@ -58,5 +58,8 @@ export const paths = {
     minimumRequirements: "/resources/icons/minimumRequirements.svg",
     documentWhite: "/resources/icons/documentWhite.svg",
     searchWhite: "/resources/icons/searchWhite.svg",
+    emailBlue: "/resources/icons/emailBlue.svg",
+    documentpurple: "/resources/icons/documentPurple.svg",
+    recorderRed: "/resources/icons/recorderRed.svg"
   },
 };

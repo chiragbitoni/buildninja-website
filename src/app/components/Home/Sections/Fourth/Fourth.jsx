@@ -37,7 +37,7 @@ export default function Fourth() {
                                     <p className="fourthFeature-description">{f.description}</p>
                                     <ul className="fourthFeature-points">
                                         {f.list.map((point, i) => (
-                                            <li key={i}>{point}</li>
+                                            <li key={i}><b>{point.title}</b> - {point.desc}</li>
                                         ))}
                                     </ul>
                                 </div>

@@ -28,21 +28,21 @@
 
 /* ===== Title & Intro ===== */
 .seventhTitle {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
   margin: 0 0 5vw;
   line-height: 1.1;
   color: #FFFFFF;
-  font-size: clamp(26px, 7vw, 44px);
+  font-size: 26px;
 }
 
 .seventhIntro {
   font-family: "Segoe UI", Arial, sans-serif;
-  max-width: 900px;
-  margin: 0 auto 8vw;
+  /* max-width: 900px; */
+  margin: 0 auto 10vw;
   color: #FFFFFF;
   font-weight: 400;
-  font-size: clamp(14px, 3.5vw, 17px);
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -91,8 +91,8 @@
 
 /* ===== Value Text ===== */
 .cardValue {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(24px, 5vw, 36px);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 26px;
   font-weight: 700;
   color: #fff;
   margin-top: 6px;
@@ -100,8 +100,8 @@
 
 /* ===== Label Text ===== */
 .cardLabel {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(12px, 2.8vw, 14px);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
   color: #bfbfbf;
   margin-top: 4px;
 }
@@ -133,12 +133,12 @@
 /* ========== 3️⃣ TABLET ≥768px ========== */
 @media (min-width: 768px) {
   .seventhTitle {
-    font-size: clamp(30px, 4.5vw, 38px);
+    font-size: 32px;
   }
 
   .seventhIntro {
-    font-size: 15px;
-    margin-bottom: 5vw;
+    font-size: 18px;
+    margin-bottom: 3vw;
   }
 
   .seventhCards {
@@ -158,18 +158,18 @@
   }
 
   .cardValue {
-    font-size: clamp(26px, 3vw, 34px);
+    font-size: 32px;
   }
 
   .cardLabel {
-    font-size: 13px;
+    font-size: 18px;
   }
 }
 
 /* ========== 4️⃣ DESKTOP ≥1024px ========== */
 @media (min-width: 1024px) {
   .seventhSection {
-    padding: 6vw 8vw;
+    padding: 5vw 3vw;
   }
 
   .seventhCards {
@@ -183,7 +183,8 @@
   }
 
   .seventhIntro {
-    font-size: 16px;
+    font-size: 20px;
+
   }
 
   .seventhCard {
@@ -192,30 +193,10 @@
   }
 
   .cardValue {
-    font-size: 32px;
-  }
-}
-
-/* ========== 5️⃣ LARGE SCREENS ≥1280px ========== */
-@media (min-width: 1280px) {
-  .seventhSection {
-    padding: 4vw 10vw;
+    font-size: 40px;
   }
 
-  .seventhTitle {
-    font-size: 44px;
-  }
-
-  .seventhIntro {
-    font-size: 17px;
-    max-width: 980px;
-  }
-
-  .seventhCard {
-    padding: 34px 26px;
-  }
-
-  .cardValue {
-    font-size: 36px;
+  .cardLabel {
+    font-size: 20px;
   }
 }

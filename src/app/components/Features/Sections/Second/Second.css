@@ -49,7 +49,7 @@
 
 /* ===== Title ===== */
 .secondFeaturesCardTitle {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: clamp(18px, 1.6vw, 24px);
   font-weight: 600;
   margin: clamp(8px, 1vw, 12px) 0;
@@ -59,7 +59,7 @@
 
 /* ===== Description ===== */
 .secondFeaturesCardDescription {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: clamp(14px, 1.2vw, 16px);
   color: #e0e0e0;
   line-height: 1.6;

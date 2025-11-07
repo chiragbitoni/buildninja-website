@@ -2,7 +2,7 @@
    BASE STYLES (Mobile-first)
 ======================================== */
 .pricingSecondSection {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   display: flex;
   align-items: flex-start;
   justify-content: center;

@@ -20,7 +20,7 @@
 
 /* ===== Title ===== */
 .installFourthTitle {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: clamp(24px, 6vw, 42px);
     font-weight: 600;
     margin-bottom: 8vw;
@@ -64,7 +64,7 @@
 
 /* ===== Heading ===== */
 .installFourthHeading {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: clamp(18px, 1.5vw, 22px);
     font-weight: 600;
     margin-bottom: clamp(8px, 1vw, 12px);
@@ -73,7 +73,7 @@
 
 /* ===== Text ===== */
 .installFourthText {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: clamp(14px, 1.2vw, 16px);
     color: #ffffff;
     line-height: 1.6;
@@ -86,7 +86,7 @@
     border: 1px solid #444;
     color: #ffffff;
     font-size: clamp(14px, 1.1vw, 16px);
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     border-radius: 6px;
     padding: clamp(8px, 1vw, 12px) clamp(16px, 2vw, 24px);
     cursor: pointer;

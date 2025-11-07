@@ -1,6 +1,6 @@
 /* Base (Mobile-first) */
 .ninthSection {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,20 +30,20 @@
 
 /* Headings */
 .ninthTitle {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: #FFFFFF;
     text-align: center;
-    font-size: 7vw;
+    font-size: 26px;
     font-weight: 600;
     margin: 5vw 0 3vw 0;
     line-height: 1.3;
 }
 
 .ninthSubTitle {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: #FFFFFF;
     text-align: center;
-    font-size: 4.5vw;
+    font-size: 18px;
     font-weight: 400;
     margin: 0 0 8vw 0;
 }
@@ -58,9 +58,9 @@
 
 .ninthPrimaryBtn,
 .ninthDemoBtn {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: 4.5vw;
+    font-size: 16px;
     padding: 2.5vw 9vw;
     border-radius: 8vw;
     border: none;
@@ -94,7 +94,7 @@
     justify-content: center;
     gap: 2vw;
     color: #FFFFFF;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 8vw 0 4vw 0;
 }
 
@@ -104,7 +104,7 @@
 }
 
 .ninthSecondTitle {
-    font-size: 5vw;
+    font-size: 20px;
     font-weight: 600;
     text-align: center;
 }
@@ -131,9 +131,9 @@
 
 .ninthList {
     list-style-type: none;
-    font-size: 3.5vw;
+    font-size: 16px;
     color: #FFFFFF;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -146,12 +146,12 @@
     }
 
     .ninthTitle {
-        font-size: 4.5vw;
+        font-size: 32px;
         margin: 3vw 0 2vw 0;
     }
 
     .ninthSubTitle {
-        font-size: 2.8vw;
+        font-size: 24px;
         margin-bottom: 5vw;
     }
 
@@ -163,7 +163,7 @@
 
     .ninthPrimaryBtn,
     .ninthDemoBtn {
-        font-size: 2vw;
+        font-size: 17px;
         padding: 1.2vw 4vw;
         border-radius: 4vw;
     }
@@ -179,7 +179,7 @@
     }
 
     .ninthSecondTitle {
-        font-size: 3vw;
+        font-size: 24px;
     }
 
     .ninthListGrid {
@@ -200,7 +200,7 @@
     }
 
     .ninthList {
-        font-size: 1.9vw;
+        font-size: 18px;
     }
 }
 
@@ -213,12 +213,12 @@
     }
 
     .ninthTitle {
-        font-size: 44px;
+        font-size: 40px;
         margin: 2vw 0;
     }
 
     .ninthSubTitle {
-        font-size: 20px;
+        font-size: 28px;
         margin-bottom: 3vw;
     }
 
@@ -271,6 +271,6 @@
     }
 
     .ninthList {
-        font-size: 18px;
+        font-size: 20px;
     }
 }

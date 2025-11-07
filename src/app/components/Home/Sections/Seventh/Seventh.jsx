@@ -15,9 +15,7 @@ export default function Seventh() {
         <section className="seventhSection">
             <div className="seventhContent">
                 <h1 className="seventhTitle">{seventhSectionText.title}</h1>
-
                 <p className="seventhIntro">{seventhSectionText.subTitle}</p>
-
                 <div className="seventhCards">
                     {cards.map((c, idx) => (
                         <div

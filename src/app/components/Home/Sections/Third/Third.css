@@ -4,7 +4,7 @@
 .thirdSection {
   width: 100%;
   background: #1F1F1F;
-  padding: 10vw 4vw;
+  padding: 12vw 2vw;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -28,13 +28,12 @@
 
 /* Title */
 .thirdTitle {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(24px, 7vw, 44px);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 26px;
   font-weight: 600;
-  margin-top: 2vw;
-  margin-bottom: 8vw;
+  margin: 0vw 0 10vw 0;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.3;
   color: #FFFFFF;
 }
 
@@ -42,16 +41,16 @@
 .third-simple-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(16px, 4vw, 32px);
-  align-items: stretch;
-  justify-content: center;
+  gap: clamp(16px, 5vw, 32px);
+  justify-items: center;
 }
 
 /* Card */
 .third-simple-box {
   background-color: #131212;
   border-radius: 0.75rem;
-  padding: clamp(16px, 3vw, 24px);
+  width: 100%;
+  padding: clamp(16px, 4vw, 24px);
   text-align: center;
   transition: transform 0.3s ease, background 0.3s ease;
 }
@@ -60,6 +59,7 @@
   transform: translateY(-4px);
   background-color: #181818;
 }
+
 
 /* Icon */
 .third-simple-box-icon {
@@ -72,94 +72,140 @@
 
 /* Step pill */
 .third-simple-box-button {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   display: inline-block;
   background: #D4335C;
   color: #131212;
   font-weight: 700;
-  font-size: clamp(12px, 1.4vw, 14px);
-  padding: clamp(6px, 1vw, 10px) clamp(14px, 2vw, 18px);
+  font-size: 16px;
+  padding: clamp(6px, 1.2vw, 10px) clamp(14px, 3vw, 20px);
   border-radius: 999px;
   border: none;
-  margin-bottom: clamp(8px, 1.2vw, 12px);
+  margin-bottom: clamp(8px, 1.5vw, 14px);
   cursor: default;
 }
 
 /* Card heading */
 .third-simple-box-heading {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(18px, 1.6vw, 24px);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 20px;
   color: #ffffff;
   font-weight: 600;
-  margin: clamp(8px, 1vw, 12px) clamp(16px, 3vw, 32px);
+  margin: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 24px);
   line-height: 1.3;
 }
 
 /* Card text */
 .third-simple-box-text {
-  font-family: 'Inter', Arial, sans-serif;
-  color: #ffffff;
-  font-size: clamp(14px, 1.2vw, 16px);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #e0e0e0;
+  font-size: 16px;
   line-height: 1.6;
+  margin: 0 clamp(12px, 3vw, 28px) clamp(16px, 3vw, 24px);
   text-align: center;
-  margin: 0 clamp(12px, 2vw, 24px) clamp(16px, 2vw, 20px);
+}
+
+pre {
+  background-color: #1e1e1e;
+  color: #00ff9c;
+  padding: 5px 16px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  overflow-x: auto;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+  max-width: 100%;  
 }
 
 /* ===========================
-   2️⃣ Tablet (≥768px)
+   2️⃣ Tablet (≥600px)
 =========================== */
-@media (min-width: 768px) {
+@media (min-width: 720px) {
   .thirdSection {
-    padding: 6vw 4vw;
-  }
-
-  .thirdContent {
-    max-width: 1000px;
+    padding: 8vw 5vw;
   }
 
   .thirdTitle {
-    font-size: clamp(28px, 4.5vw, 40px);
-    margin-bottom: 5vw;
+    font-size: 32px;
+    margin-bottom: 6vw;
   }
 
   .third-simple-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(20px, 3vw, 40px);
-  }
-}
-
-/* ===========================
-   3️⃣ Desktop (≥1024px)
-=========================== */
-@media (min-width: 1024px) {
-  .thirdSection {
-    padding: 4vw 2vw;
-  }
-
-  .thirdContent {
-    max-width: 1200px;
-  }
-
-  .thirdTitle {
-    font-size: 44px;
-    margin-top: 0;
-    margin-bottom: 3vw;
-  }
-
-  .third-simple-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5vw;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: clamp(24px, 4vw, 36px);
   }
 
   .third-simple-box {
+    max-width: 100%;
+  }
+
+  .third-simple-box-button {
+    font-size: 17px;
+  }
+
+  /* Card heading */
+  .third-simple-box-heading {
+    font-size: 24px;
+  }
+
+  /* Card text */
+  .third-simple-box-text {
+    font-size: 18px;
+  }
+
+  pre {
+    font-size: 18px;
+  }
+}
+
+
+/* ===========================
+   4️⃣ Desktop (≥1200px)
+=========================== */
+@media (min-width: 1660px) {
+  .thirdSection {
+    padding: 5vw 4vw;
+  }
+
+  .thirdContent {
+    max-width: 1500px;
+  }
+
+  .thirdTitle {
+    font-size: 40px;
+    margin-bottom: 3vw;
+  }
+
+  /* 👇 Cards made wider by reducing columns & expanding min width */
+  .third-simple-grid {
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .third-simple-box {
+    max-width: 100%;
     padding: 2vw;
   }
 
   .third-simple-box-heading {
-    font-size: 22px;
+    font-size: 28px;
   }
 
   .third-simple-box-text {
-    font-size: 16px;
+    font-size: 20px;
+  }
+
+  .third-simple-box-button {
+    font-size: 18px;
+  }
+
+  pre {
+    font-size: 20px;
   }
 }

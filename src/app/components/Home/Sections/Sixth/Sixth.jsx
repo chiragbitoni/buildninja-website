@@ -6,9 +6,12 @@ export default function Sixth() {
     return (
         <section className="sixthSection">
             <div className="sixthContent">
-                <h1 className="sixthTitle">
+                <h2 className="sixthTitle">
                     {sixthSectionText.title}
-                </h1>
+                </h2>
+                <h3 className="sixthSubTitle">
+                    {sixthSectionText.subTitle}
+                </h3>
                 <div className="sixth-simple-grid">
                     <ul className="sixthSimple-list">
                         {sixthSectionText.list1.map((item, index) => (

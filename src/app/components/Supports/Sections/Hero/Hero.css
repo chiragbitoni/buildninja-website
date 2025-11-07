@@ -1,0 +1,323 @@
+/* ===========================
+   SUPPORT HERO SECTION
+=========================== */
+
+/* 1️⃣ Base (Mobile-first) */
+.supportHero {
+  background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+  background-image: url("/resources/GenericHeroBG.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 12vw 6vw;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.supportHeroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADINGS */
+.supportHeroHeading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.supportHeroSubheading {
+  text-align: center;
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 4vw;
+  padding: 0 2vw;
+}
+
+/* LEFT SIDE */
+.supportHeroLeft {
+  text-align: center;
+}
+
+.supportHeroHelp {
+  margin-top: 2rem;
+}
+
+.supportHeroHelp h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.supportHeroHelp p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #eee;
+}
+
+/* OPTIONS */
+.supportHeroOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.supportHeroOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.supportHeroIcon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+}
+
+.supportHeroOption h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.supportHeroOption p {
+  margin: 0.3rem 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.supportHeroOption a {
+  color: #ff4172;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.supportHeroOption a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT SIDE (Form) */
+.supportHeroRight {
+  background: #1a1a1a;
+  border: 2px solid #ff4172;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.supportHeroRight h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.supportHeroForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.supportHeroForm label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.supportHeroForm input,
+.supportHeroForm textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #000;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: border 0.3s ease, outline 0.3s ease;
+}
+
+.supportHeroForm input:focus,
+.supportHeroForm textarea:focus {
+  outline: 2px solid #ff4172;
+}
+
+.supportHeroForm textarea {
+  resize: vertical;
+  min-height: 160px;
+  max-height: 280px;
+  line-height: 1.5;
+}
+
+/* Side-by-side Name & Email (Desktop) */
+.supportHeroRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Checkbox + Button */
+.supportHeroCheckbox {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 0.6rem;
+  color: #ffffff;
+}
+
+.supportHeroForm button {
+  background: #ff4172;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.supportHeroForm button:hover {
+  background: #ff3f6a;
+}
+
+.supportHeroFormCaptcha{
+  align-self: center;
+}
+
+/* ===========================
+   2️⃣ Tablets (≥768px)
+=========================== */
+@media (min-width: 768px) {
+  .supportHero {
+    padding: 10vw 6vw;
+    text-align: left;
+  }
+
+  .supportHeroHeading {
+    font-size: 2.2rem;
+  }
+
+  .supportHeroSubheading {
+    font-size: 1.1rem;
+    padding: 0 6vw;
+  }
+
+  .supportHeroHelp h3 {
+    text-align: left;
+    font-size: 1.3rem;
+  }
+
+  .supportHeroHelp p {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  /* Keep stacked layout on tablets */
+  .supportHeroContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .supportHeroLeft,
+  .supportHeroRight {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  /* ✅ Show options in a row for tablets */
+.supportHeroOptions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* ✅ instead of center */
+  gap: 2rem;
+}
+
+  .supportHeroOption {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  /* Two-column row for name/email */
+  .supportHeroRow {
+    flex-direction: row;
+  }
+
+  .supportHeroRow label {
+    flex: 1;
+  }
+
+  .supportHeroForm textarea {
+    min-height: 180px;
+  }
+}
+
+/* ===========================
+   3️⃣ Desktop (≥1024px)
+=========================== */
+@media (min-width: 1024px) {
+  .supportHero {
+    padding: 6vw 8vw;
+  }
+
+  .supportHeroContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .supportHeroLeft {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .supportHeroRight {
+    flex: 1;
+  }
+
+  .supportHeroHeading {
+    font-size: 2.8rem;
+  }
+
+  .supportHeroSubheading {
+    font-size: 1.2rem;
+    padding: 0 16vw;
+  }
+
+  .supportHeroOptions h4 {
+    font-size: 1.2rem;
+  }
+
+  .supportHeroOptions p {
+    font-size: 1rem;
+  }
+
+  .supportHeroForm textarea {
+    min-height: 200px;
+  }
+}
+
+/* ===========================
+   4️⃣ Large Desktop (≥1440px)
+=========================== */
+@media (min-width: 1440px) {
+  .supportHero {
+    padding: 4vw 10vw;
+  }
+
+  .supportHeroHeading {
+    font-size: 3.2rem;
+  }
+
+  .supportHeroSubheading {
+    font-size: 1.3rem;
+  }
+}

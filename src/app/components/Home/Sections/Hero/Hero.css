@@ -19,7 +19,6 @@
   position: absolute;
   inset: 0;
   background: url('/resources/Home/heroBG.png') center center / cover no-repeat;
-  background-attachment: fixed;
   z-index: 1;
   opacity: 1;
   pointer-events: none;
@@ -41,7 +40,7 @@
 /* Title & Subtitle */
 .heroTitle {
     font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 3vw;
+    font-size: 48px;
     font-weight: 600;
     margin: 0 0 1vw 0;
     line-height: 1.1;
@@ -50,11 +49,11 @@
 }
 
 .heroSubtitle {
-    font-size: 1.5vw;
+    font-size: 26px;
     font-family: "Segoe UI", Arial, sans-serif;
     margin: 0 19vw 2vw 19vw;
     color: #FFFFFF;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.6;
     text-align: center;
 }
@@ -73,7 +72,7 @@
 .demoBtn {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 600;
-    font-size: 1.15vw;
+    font-size: 20px;
     padding: 0.8vw 2.4vw;
     border-radius: 2.2vw;
     text-decoration: none;
@@ -256,13 +255,13 @@
     }
 
     .heroTitle {
-        font-size: 6vw;
+        font-size: 42px;
         margin-bottom: 2vw;
     }
 
     .heroSubtitle {
         margin: 0;
-        font-size: 2.7vw !important;
+        font-size: 22px;
         margin-bottom: 3vw;
         line-height: 1.7;
     }
@@ -278,7 +277,7 @@
 
     .heroBtn,
     .demoBtn {
-        font-size: 2.1vw;
+        font-size: 17px;
         padding: 1.5vw 3vw;
         border-radius: 4vw;
     }
@@ -311,13 +310,13 @@
     }
 
     .heroTitle {
-        font-size: 6.5vw;
+        font-size: 32px;
         line-height: 1.2;
         margin-bottom: 4vw;
     }
 
     .heroSubtitle {
-        font-size: 4vw !important;
+        font-size: 18px;
         line-height: 1.7;
         margin-bottom: 6vw;
         padding: 0;
@@ -333,7 +332,7 @@
 
     .heroBtn,
     .demoBtn {
-        font-size: 4.5vw;
+        font-size: 14px;
         padding: 2vw 9vw;
         border-radius: 8vw;
     }
