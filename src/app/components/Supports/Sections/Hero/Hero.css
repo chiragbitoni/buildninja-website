@@ -12,6 +12,7 @@
   padding: 12vw 6vw;
   text-align: center;
   box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .supportHeroContainer {
@@ -25,7 +26,7 @@
 
 /* HEADINGS */
 .supportHeroHeading {
-  font-size: 1.8rem;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 0.8rem;
   text-align: center;
@@ -33,7 +34,7 @@
 
 .supportHeroSubheading {
   text-align: center;
-  font-size: 1rem;
+  font-size: 16px;
   color: #ddd;
   line-height: 1.6;
   margin-bottom: 4vw;
@@ -50,12 +51,12 @@
 }
 
 .supportHeroHelp h3 {
-  font-size: 1.2rem;
+  font-size: 20px;
   margin-bottom: 0.5rem;
 }
 
 .supportHeroHelp p {
-  font-size: 1rem;
+  font-size: 16px;
   margin-bottom: 1rem;
   color: #eee;
 }
@@ -79,22 +80,23 @@
   width: 65px;
   height: 65px;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .supportHeroOption h4 {
-  font-size: 1rem;
+  font-size: 20px;
   margin: 0;
 }
 
 .supportHeroOption p {
   margin: 0.3rem 0;
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 16px;
 }
 
 .supportHeroOption a {
   color: #ff4172;
-  font-size: 0.9rem;
+  font-size: 13px;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -113,7 +115,7 @@
 }
 
 .supportHeroRight h3 {
-  font-size: 1.3rem;
+  font-size: 20px;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -128,7 +130,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #ffffff;
 }
 
@@ -141,7 +143,7 @@
   border-radius: 6px;
   background: #000;
   color: #ffffff;
-  font-size: 0.95rem;
+  font-size: 16px;
   transition: border 0.3s ease, outline 0.3s ease;
 }
 
@@ -168,7 +170,7 @@
 .supportHeroCheckbox {
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 16px;
   gap: 0.6rem;
   color: #ffffff;
 }
@@ -179,7 +181,7 @@
   border: none;
   padding: 1rem;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -188,7 +190,7 @@
   background: #ff3f6a;
 }
 
-.supportHeroFormCaptcha{
+.supportHeroFormCaptcha {
   align-self: center;
 }
 
@@ -202,22 +204,22 @@
   }
 
   .supportHeroHeading {
-    font-size: 2.2rem;
+    font-size: 32px;
   }
 
   .supportHeroSubheading {
-    font-size: 1.1rem;
+    font-size: 18px;
     padding: 0 6vw;
   }
 
   .supportHeroHelp h3 {
     text-align: left;
-    font-size: 1.3rem;
+    font-size: 24px;
   }
 
   .supportHeroHelp p {
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 
   /* Keep stacked layout on tablets */
@@ -232,13 +234,12 @@
     max-width: 700px;
   }
 
-  /* ✅ Show options in a row for tablets */
-.supportHeroOptions {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start; /* ✅ instead of center */
-  gap: 2rem;
-}
+  .supportHeroOptions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
 
   .supportHeroOption {
     flex: 1 1 45%;
@@ -267,6 +268,7 @@
     padding: 6vw 8vw;
   }
 
+
   .supportHeroContainer {
     flex-direction: row;
     justify-content: space-between;
@@ -284,40 +286,27 @@
   }
 
   .supportHeroHeading {
-    font-size: 2.8rem;
+    font-size: 40px;
   }
 
   .supportHeroSubheading {
-    font-size: 1.2rem;
+    font-size: 24px;
     padding: 0 16vw;
   }
 
+  .supportHeroOptions {
+    flex-direction: column;
+  }
+
   .supportHeroOptions h4 {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 
   .supportHeroOptions p {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .supportHeroForm textarea {
     min-height: 200px;
-  }
-}
-
-/* ===========================
-   4️⃣ Large Desktop (≥1440px)
-=========================== */
-@media (min-width: 1440px) {
-  .supportHero {
-    padding: 4vw 10vw;
-  }
-
-  .supportHeroHeading {
-    font-size: 3.2rem;
-  }
-
-  .supportHeroSubheading {
-    font-size: 1.3rem;
   }
 }

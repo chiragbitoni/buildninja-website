@@ -54,8 +54,8 @@ export const supportHeroText = {
     {
       icon: paths.icons.emailBlue,
       title: "Email Support",
-      desc: "hello@grapehub.io",
-      // linkText: "hello@grapehub.io",
+      // desc: "hello@grapehub.io",
+      linkText: "hello@grapehub.io",
       mail:true,
     },
     {

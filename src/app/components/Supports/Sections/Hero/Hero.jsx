@@ -34,8 +34,9 @@ export default function SupportHero() {
                                 <img className="supportHeroIcon" src={opt.icon}></img>
                                 <div>
                                     <h4>{opt.title}</h4>
-                                    <p>{opt.desc}</p>
-                                    {opt.mail ? (<a href={`mailto:${opt.desc}`}>{opt.desc}</a>) : null}                                    {opt.linkText && <a href="#">{opt.linkText}</a>}
+                                    <p>{opt.desc ? opt.desc : null}</p>
+                                    {opt.mail ? (<a href={`mailto:${opt.linkText}`}>{opt.linkText}</a>) : null}
+                                    {!opt.mail && opt.linkText && <a href="#">{opt.linkText}</a>}
                                 </div>
                             </div>
                         ))}
@@ -66,8 +67,9 @@ export default function SupportHero() {
                             <textarea placeholder={t.form.fields.message}></textarea>
                         </label>
                         <ReCAPTCHA
-                        className="supportHeroFormCaptcha"
-                            sitekey="6LdgEAUsAAAAAG48dPEwkeXgFKCAaBlPZPpOLk5o"
+                            className="supportHeroFormCaptcha"
+                            theme="dark"
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                             onChange={(token) => setCaptchaToken(token)}
                         />
                         <button type="submit">{t.form.button}</button>
