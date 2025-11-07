@@ -207,15 +207,18 @@ export const fifthSectionText = {
     },
     {
       icon: paths.icons.integration,
-      text: "Single binary simplicity – No plugin dependency chaos",
+      boldText: "Single binary simplicity - ",
+      text: "No plugin dependency chaos",
     },
     {
       icon: paths.icons.integration,
-      text: "Predictable pricing – $199/month unlimited users, not per-seat",
+      boldText: "Predictable pricing – ",
+      text: "$199/month unlimited users, not per-seat",
     },
     {
       icon: paths.icons.integration,
-      text: "Your infrastructure – Complete control without vendor lock-in",
+      boldText: "Your infrastructure – ",
+      text: "Complete control without vendor lock-in",
     },
   ],
   secondTitle: "24/7",
