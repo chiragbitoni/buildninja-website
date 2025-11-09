@@ -1,85 +1,187 @@
-/* Base (mobile-first) */
+/* ==========================
+   1️⃣ Base (Mobile-First)
+========================== */
 .eighthSection {
-    background-color: #262626;
-    color: #ffffff;
+    background-color: #1e1e1e;
+    color: #fff;
     text-align: center;
-    padding: 10vw 6vw;
+    padding: 12vw 5vw;
+    font-family: 'Segoe UI', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .eighthTitle {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 8vw;
+    margin-bottom: 10vw;
+    line-height: 1.4;
 }
 
-.eighthItem {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    max-width: 600px;
+/* Card container */
+.eighthCards {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: 2000px;
 }
 
-.eightHomedownArrowIcon {
-    margin: 10vw;
+/* Individual card */
+.eighthCard {
+    background-color: #202020;
+    border-radius: 10px;
+    padding: 8vw 6vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Header row with number + icon */
+.eighthCardHeader {
+    gap:3vw;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+.eighthNumber {
+    background-color: #ff4172;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.eighthCard.problem .eighthNumber {
+    background-color: #ff4172;
+}
+
+.eighthCard.approach .eighthNumber {
+    background-color: #4395ff;
+}
+
+.eighthCard.result .eighthNumber {
+    background-color: #40ff1e;
 }
 
 .eighthIcon {
-    width: 16vw;
-    height: 16vw;
-    margin-bottom: 4vw;
+    width: 40px;
+    height: 40px;
 }
 
 .eighthHeading {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: 600;
     font-size: 20px;
-    margin-bottom: 3vw;
+    font-weight: 600;
+    margin-bottom: 2vw;
 }
 
-.eighthHeading.problem {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #FF4172;
+.eighthCard.problem .eighthHeading {
+    color: #ff4172;
 }
 
-.eighthHeading.approach {
-    font-family: 'Segoe UI', Arial, sans-serif;
+.eighthCard.approach .eighthHeading {
     color: #4395ff;
 }
 
-.eighthHeading.result {
+.eighthCard.result .eighthHeading {
     color: #40ff1e;
 }
 
 .eighthText {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #ffffff;
     font-size: 16px;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
-/* ==================================== */
-/* Tablet (768px – 1023px) */
-/* ==================================== */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* ==========================
+   2️⃣ Tablet (601px–1024px)
+========================== */
+@media (min-width: 601px) and (max-width: 1024px) {
     .eighthSection {
-        padding: 6vw 8vw;
+        padding: 8vw 6vw;
+        gap: 6vw;
     }
 
     .eighthTitle {
-        font-size: 32px;
-        margin-bottom: 6vw;
+        font-size: 30px;
+        margin-bottom: 5vw;
+    }
+
+    .eighthCards {
+        gap: 4vw;
+    }
+
+    .eighthCard {
+        padding: 4vw 3vw;
+        border-radius: 12px;
+    }
+
+    .eighthCardHeader {
+        gap: 2vw;
+        margin-bottom: 0.5vw;
     }
 
     .eighthIcon {
-        width: 8vw;
-        height: 8vw;
-        margin-bottom: 2vw;
+        width: 45px;
+        height: 45px;
+    }
+
+    .eighthHeading {
+        font-size: 22px;
+    }
+
+    .eighthText {
+        font-size: 17px;
+    }
+}
+
+/* ==========================
+   3️⃣ Desktop (≥1025px)
+========================== */
+@media (min-width: 1025px) {
+    .eighthSection {
+        padding: 3vw 5vw;
+    }
+
+    .eighthTitle {
+        font-size: 36px;
+        margin-bottom: 3vw;
+    }
+
+    .eighthCards {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2vw;
+    }
+
+    .eighthCard {
+        flex: 1;
+        max-width: 450px;
+        padding: 3vw 2.5vw;
+    }
+
+    .eighthCardHeader {
+        gap: 1.2vw;
+        margin-bottom: 0.2vw;
+    }
+
+    .eighthNumber {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .eighthIcon {
+        width: 50px;
+        height: 50px;
     }
 
     .eighthHeading {
@@ -89,45 +191,5 @@
 
     .eighthText {
         font-size: 18px;
-        max-width: 550px;
-    }
-
-    .eightHomedownArrowIcon {
-        margin: 5vw;
-    }
-}
-
-/* ==================================== */
-/* Desktop (≥1024px) */
-/* ==================================== */
-@media (min-width: 1024px) {
-    .eighthSection {
-        padding: 5vw 0;
-    }
-
-    .eighthTitle {
-        font-size: 40px;
-        margin-bottom: 3vw;
-    }
-
-    .eighthIcon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1.5vw;
-    }
-
-    .eighthHeading {
-        font-size: 28px;
-        margin-bottom: 1vw;
-    }
-
-    .eighthText {
-        font-size: 20px;
-        line-height: 1.6;
-        max-width: 600px;
-    }
-
-    .eightHomedownArrowIcon {
-        margin: 2vw;
     }
 }

@@ -1,11 +1,11 @@
-/* ========== 1️⃣ MOBILE (Base) ========== */
+/* ============================
+   1️⃣ MOBILE (Base)
+============================ */
 .fifthHomeSection {
   background: url("/resources/Home/fifthBG.png") center center / cover no-repeat;
   width: 100%;
-  height: auto;
   padding: 10vw 0;
   box-sizing: border-box;
-  position: relative;
   color: #ffffff;
 }
 
@@ -13,25 +13,23 @@
   font-family: 'Segoe UI', Arial, sans-serif;
   text-align: center;
   font-size: 26px;
-  margin: 0 0 2vw;
+  margin: 0 0 4vw;
   font-weight: 600;
 }
 
 .fifthHomeThirdTitle {
   font-family: 'Segoe UI', Arial, sans-serif;
   text-align: center;
-  font-size: 26px;
-  margin: 3vw 0 6vw;
+  font-size: 24px;
+  margin: 6vw 0;
   font-weight: 400;
 }
 
 .fifthHomeSubTitle {
   font-family: "Segoe UI", Arial, sans-serif;
   text-align: center;
-  font-size: 20px;
-  color: #ffffff;
-  margin-top: 2vw;
-  margin-bottom: 8vw;
+  font-size: 18px;
+  margin: 4vw 0 8vw;
   padding: 0 6vw;
   line-height: 1.6;
 }
@@ -39,11 +37,10 @@
 /* ===== Cards Container ===== */
 .fifthHomeCardsContainer {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4vw;
-  margin: 4vw 2vw 0 2vw;
-  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  gap: 6vw;
+  margin: 0 4vw;
 }
 
 /* ===== Card ===== */
@@ -51,16 +48,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 280px;
-  justify-content: flex-start;
+  width: 90%;
   background-color: rgba(0, 0, 0, 1);
   border-radius: 12px;
-  height: auto;
-  min-height: 220px;
+  padding: 10vw 4vw;
   gap: 16px;
-  padding: 12vw 0vw;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-align: center;
+  /* transition: transform 0.25s ease, box-shadow 0.25s ease; */
 }
 
 
@@ -69,26 +63,23 @@
 .fifthHomeCardIcon2 {
   object-fit: contain;
   margin-bottom: 1.5vw;
-  width: auto;
 }
 
 .fifthHomeCardIcon1 {
-  height: clamp(50px, 8vw, 100px);
+  height: clamp(60px, 10vw, 100px);
   width: 60%;
 }
 
 .fifthHomeCardIcon2 {
-  height: clamp(70px, 10vw, 150px);
+  height: clamp(80px, 12vw, 130px);
 }
 
-/* ===== Card Text ===== */
+/* ===== Text ===== */
 .fifthHomeCardText {
   font-family: 'Segoe UI', Arial, sans-serif;
-  text-align: center;
   color: #ffffff;
+  font-size: 16px;
   line-height: 1.5;
-  font-size: c20px;
-  margin-top: auto;
   max-width: 90%;
 }
 
@@ -97,143 +88,115 @@
   margin: 0;
 }
 
-.fifthHomeCardText .text2 {
-  color: #FF4172;
-  font-weight: 600;
-}
-
-/* ========== 2️⃣ TABLET (≥768px) ========== */
+/* ============================
+   2️⃣ TABLET (768px – 1023px)
+============================ */
 @media (min-width: 768px) and (max-width: 1023px) {
   .fifthHomeSection {
-    padding: 8vw 0;
+    padding: 7vw 0;
   }
 
-  .fifthHomeTitle {
-    font-size: 32px;
-    margin-top: 3vw;
-  }
-
+  .fifthHomeTitle,
   .fifthHomeThirdTitle {
-    margin: 2vw 0 5vw;
     font-size: 32px;
   }
 
   .fifthHomeSubTitle {
     font-size: 18px;
-    margin-bottom: 5vw;
-    padding: 0 8vw;
+    padding: 0 10vw;
+  }
+
+  .fifthHomeCardsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4vw;
+  }
+
+  .fifthHomeCard {
+    width: 42%;
+    padding: 5vw 3vw;
   }
 
   .fifthHomeCardText {
     font-size: 18px;
   }
-
-  .fifthHomeCard {
-    width: 40vw;
-    height: auto;
-    padding: 5vw 2vw;
-    gap: 10px;
-  }
-
-  .fifthHomeCardIcon1 {
-    height: 90px;
-  }
-
-  .fifthHomeCardIcon2 {
-    height: 100px;
-  }
-
-  .fifthHomeCardsContainer {
-    gap: 3vw;
-  }
 }
-/* ========== 3️⃣ DESKTOP (≥1024px) ========== */
+
+/* ============================
+   3️⃣ DESKTOP (≥1024px)
+============================ */
 @media (min-width: 1024px) {
   .fifthHomeSection {
-    padding: 6vw 0;
+    padding: 3vw 0;
   }
 
   .fifthHomeTitle {
     font-size: 40px;
-    margin-top: 0;
+    margin-bottom: 2vw;
   }
 
   .fifthHomeThirdTitle {
-    font-size: 40px;
-    margin: 1.5vw 0;
+    font-size: 36px;
+    margin: 1vw 0 1vw;
   }
 
   .fifthHomeSubTitle {
-    font-size: 24px;
-    margin-bottom: 4vw;
-    /* padding: 0 24vw; */
+    font-size: 22px;
+    margin-bottom: 2vw;
+    padding: 0 16vw;
   }
 
-  /* 🧩 Card Container - better spacing for multi-column layout */
+  /* 🧩 All cards in one single row */
   .fifthHomeCardsContainer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: stretch;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 2vw;
-    margin: 0 auto 2vw auto;
-    max-width: 1200px;
-    box-sizing: border-box;
+    margin: 0 auto 4vw auto;
+    max-width: 1400px;
   }
 
   .fifthHomeCard {
-    flex: 1 1 22%; 
-    max-width: 280px; 
-    min-width: 240px;
-    background-color: rgba(0, 0, 0, 0.9);
+    flex: 1 1 auto;
+    max-width: 300px;
+    padding: 2.5vw 3vw;
+    background-color: rgba(0, 0, 0, 1);
     border-radius: 16px;
-    padding: 2.5vw 1.8vw;
-    box-sizing: border-box;
-    text-align: center;
-    overflow: hidden; 
-    word-wrap: break-word; 
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    /* transition: transform 0.25s ease, box-shadow 0.25s ease; */
   }
-
 
   .fifthHomeCardText {
     font-size: 18px;
     color: #fff;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 90%;
   }
 
   .fifthHomeCardIcon1 {
     height: 100px;
-    width: 60%;
   }
 
   .fifthHomeCardIcon2 {
-    height: 130px;
+    height: 120px;
   }
 }
 
-/* ========== 4️⃣ LARGE DESKTOP (≥1440px) ========== */
+/* ============================
+   4️⃣ LARGE DESKTOP (≥1440px)
+============================ */
 @media (min-width: 1440px) {
-  .fifthHomeSection {
-    padding: 4vw 0;
-  }
-
   .fifthHomeCardsContainer {
-    max-width: 1400px;
-    gap: 2vw;
+    max-width: 1600px;
+    gap: 0.5vw;
   }
 
   .fifthHomeCard {
-    flex: 1 1 18%; 
     max-width: 300px;
-    min-height: 260px;
-    height: auto;
-    padding: 2vw 1.5vw;
+    padding: 1.5vw 1.7vw;
   }
 
   .fifthHomeSubTitle {
-    padding: 0 16vw;
+    padding: 0 18vw;
   }
 }

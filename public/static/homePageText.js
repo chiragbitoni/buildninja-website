@@ -4,7 +4,8 @@ export const heroSectionText = {
   title1: "Self-Hosted CI/CD That Just Works",
   title2: "Out of the Box",
   subtitle:
-    "You know how growing engineering teams waste time maintaining complex CI/CD tools or paying high per-seat costs just to deploy code? BuildNinja provides self-hosted CI/CD that just works out of the box — deploy in minutes with Docker for $199/month unlimited users — so you can focus on shipping features with predictable costs and complete infrastructure control.",
+    "You know how growing engineering teams waste time maintaining complex CI/CD tools or paying high per-seat costs just to deploy code?",
+    subtitle2: "BuildNinja provides self-hosted CI/CD that just works out of the box, deploy in minutes with Docker for $199/month unlimited users, so you can focus on shipping features with predictable costs and complete infrastructure control.",
   primaryButton: "Start Your 30–Day Free Trial",
   secondaryButton: "See the 5-Minute Demo",
 };
@@ -29,7 +30,7 @@ export const secondSectionText = {
       hover: "Click to preview ",
     },
     {
-      title: "Know When Builds Complete—Automatically",
+      title: "Know When Builds Complete Automatically",
       desc: "Get instant email alerts for build success or failure, included out of the box. No complex setup, no additional costs.",
       icon: paths.icons.notification,
       img: "/resources/Home/SecondSectionImages/image2.png",
@@ -191,32 +192,33 @@ export const fourthSectionText = {
 export const fifthSectionText = {
   title: "We Understand Your CI/CD Pain",
   subTitle:
-    "We understand how frustrating it is when CI/CD tools break right before critical releases. Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows. We've seen how cloud vendor lock-in limits your infrastructure choices.",
+    "We understand how frustrating it is when CI/CD tools break right before critical releases.",
+    subTitle2: "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows. We've seen how cloud vendor lock-in limits your infrastructure choices.",
   cards: [
     {
-      icon: paths.icons.rocket,
+      icon: paths.icons.twentyFivePlus,
       text: "25+ years building developer tools (GrapeCity)",
     },
     {
-      icon: paths.icons.fiveHundredPlus,
+      icon: paths.icons.japanFlag,
       text: "Japanese engineering culture of reliability",
     },
     {
-      icon: paths.icons.nintyNine,
+      icon: paths.icons.customerStars,
       text: "Thousands of enterprise customers worldwide",
     },
     {
-      icon: paths.icons.integration,
+      icon: paths.icons.singleBinary,
       boldText: "Single binary simplicity - ",
       text: "No plugin dependency chaos",
     },
     {
-      icon: paths.icons.integration,
+      icon: paths.icons.gearInHand,
       boldText: "Predictable pricing – ",
       text: "$199/month unlimited users, not per-seat",
     },
     {
-      icon: paths.icons.integration,
+      icon: paths.icons.infrastructure,
       boldText: "Your infrastructure – ",
       text: "Complete control without vendor lock-in",
     },
@@ -227,7 +229,6 @@ export const fifthSectionText = {
 
 export const sixthSectionText = {
   title: "Don't Let Your CI/CD Tool Become Your Biggest Bottleneck",
-  subTitle: "What You Avoid with BuildNinja",
   list1: [
     {
       description:
@@ -267,7 +268,9 @@ export const sixthSectionText = {
 export const seventhSectionText = {
   title: "Ship Features, Not Pipeline Fixes",
   subTitle:
-    "Become productive teams shipping features instead of fixing pipelines. Deploy with confidence in critical moments. Budget predictably without per-seat growth taxation. Own your infrastructure with self-hosted control. Lead your competition deploying faster with reliable tools.",
+    "Become productive teams shipping features instead of fixing pipelines.",
+    subTitle2: "Deploy with confidence in critical moments. Budget predictably without per-seat growth taxation.",
+    subTitle3: "Own your infrastructure with self-hosted control. Lead your competition deploying faster with reliable tools.",
   card1: {
     title: "Free",
     description: "Up to 3 Agents",
@@ -289,21 +292,21 @@ export const eighthSectionText = {
   title: "Built by Engineers Who Use Their Own Tools",
   approach: {
     icon: paths.icons.approach,
-    title: "Our Approach",
+    title: "The Flow",
     description:
-      "We built BuildNinja with a simple philosophy: if it's not simple enough for a new engineer to understand in 5 minutes, it's too complex. We eat our own dog food—BuildNinja deploys itself.",
+      "We built BuildNinja with one rule: if a new engineer can't understand it in 5 minutes, it's too complex. <strong>We use BuildNinja to deploy BuildNinja</strong> because we refuse to sell anything we wouldn't trust with our own production deployments.",
   },
   problem: {
     icon: paths.icons.problem,
-    title: "The Problem",
+    title: "The Friction",
     description:
-      "We were tired of CI/CD tools that promised simplicity but delivered complexity — plugin dependency chaos, expensive per-seat licensing, and cloud vendor lock-in. Every deployment was a gamble, every configuration change a potential disaster.",
+      "We were tired of CI/CD tools that promised simplicity but delivered complexity. Every deployment felt like a gamble. Every configuration change risked breaking everything. <strong>Your team deserves better than spending hours debugging pipelines instead of shipping features.</strong>",
   },
   result: {
     icon: paths.icons.result,
-    title: "The Result",
+    title: "The Velocity",
     description:
-      "A CI/CD platform that works the way engineers think. No YAML wizardry required. No PhD in DevOps necessary. Just reliable, fast deployments that let you focus on building great software.",
+      "<strong>Imagine your team shipping features confidently, multiple times a day.</strong> No YAML headaches. No PhD in DevOps required. No deployment anxiety. Just reliable, fast deployments that let you focus on what actually matters—building software your customers love.	",
   },
 };
 export const ninthSectionText = {

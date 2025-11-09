@@ -60,6 +60,12 @@ export const paths = {
     searchWhite: "/resources/icons/searchWhite.svg",
     emailBlue: "/resources/icons/emailBlue.svg",
     documentpurple: "/resources/icons/documentPurple.svg",
-    recorderRed: "/resources/icons/recorderRed.svg"
+    recorderRed: "/resources/icons/recorderRed.svg",
+    twentyFivePlus: "/resources/icons/twentyFivePlus.svg",
+    singleBinary: "/resources/icons/singleBinary.svg",
+    japanFlag: "/resources/icons/japanFlag.svg",
+    infrastructure: "/resources/icons/infrastructure.svg",
+    gearInHand: "/resources/icons/gearInHand.svg",
+    customerStars: "/resources/icons/customerStars.svg",
   },
 };
