@@ -211,18 +211,15 @@
     padding: 0.7rem 0.8rem;
   }
 }
-/* ==========================
-   SEARCH HIGHLIGHT STYLE
-========================== */
+
 .faq-highlight {
-  background-color: #00bfff33; /* Light blue transparent background */
-  color: #00bfff; /* Highlighted text color */
+  background-color: #00bfff33;
+  color: #00bfff; 
   font-weight: 600;
   padding: 0 2px;
   border-radius: 3px;
 }
 
-/* Optional: adjust highlight color for dark mode readability */
 @media (max-width: 480px) {
   .faq-highlight {
     background-color: #007acc33;
