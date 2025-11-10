@@ -10,7 +10,8 @@ export default function Ninth() {
                     {ninthSectionText.title}
                 </h1>
                 <h3 className="ninthSubTitle">
-                    {ninthSectionText.subtitle}
+                    {ninthSectionText.subtitle}<br/>
+                    {ninthSectionText.subtitle2}
                 </h3>
                 <div className="ninth-inner-grid">
                     <button className="ninthPrimaryBtn">{ninthSectionText.primaryButton}</button>

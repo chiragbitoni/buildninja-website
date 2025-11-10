@@ -5,8 +5,8 @@ export const heroSectionText = {
   title2: "Out of the Box",
   subtitle:
     "Growing teams waste time on complex CI/CD tools and per-seat pricing",
-    subtitle2: "Deploy BuildNinja in minutes for $199/month unlimited users",
-    subtitle3: "Ship features, not infrastructure.",
+  subtitle2: "Deploy BuildNinja in minutes for $199/month unlimited users",
+  subtitle3: "Ship features, not infrastructure.",
   primaryButton: "Start Your 30–Day Free Trial",
   secondaryButton: "See the 5-Minute Demo",
 };
@@ -51,8 +51,7 @@ export const thirdSectionText = {
   card1Title: "Pull and Run",
   card1Step: "STEP 1",
   card1command: "docker pull buildninja/buildninja ",
-  card1Text:
-    "Deploy in minutes, not weeks of complex setup",
+  card1Text: "Deploy in minutes, not weeks of complex setup",
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
   card2Text: "Works with GitHub, GitLab, Bitbucket — no vendor lock-in",
@@ -194,7 +193,8 @@ export const fifthSectionText = {
   title: "We Understand Your CI/CD Pain",
   subTitle:
     "We understand how frustrating it is when CI/CD tools break right before critical releases.",
-    subTitle2: "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows. We've seen how cloud vendor lock-in limits your infrastructure choices.",
+  subTitle2:
+    "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows. We've seen how cloud vendor lock-in limits your infrastructure choices.",
   cards: [
     {
       icon: paths.icons.twentyFivePlus,
@@ -255,8 +255,7 @@ export const sixthSectionText = {
     },
     {
       icon: "service.svg",
-      description:
-        "Paying escalating per-seat costs as your team grows",
+      description: "Paying escalating per-seat costs as your team grows",
     },
     {
       icon: "stopWatch.svg",
@@ -270,8 +269,10 @@ export const seventhSectionText = {
   title: "Ship Features, Not Pipeline Fixes",
   subTitle:
     "Become productive teams shipping features instead of fixing pipelines.",
-    subTitle2: "Deploy with confidence in critical moments. Budget predictably without per-seat growth taxation.",
-    subTitle3: "Own your infrastructure with self-hosted control. Lead your competition deploying faster with reliable tools.",
+  subTitle2:
+    "Deploy with confidence in critical moments. Budget predictably without per-seat growth taxation.",
+  subTitle3:
+    "Own your infrastructure with self-hosted control. Lead your competition deploying faster with reliable tools.",
   card1: {
     title: "Free",
     description: "Up to 3 Agents",
@@ -313,7 +314,9 @@ export const eighthSectionText = {
 export const ninthSectionText = {
   title: "Stop Fighting Your CI/CD Tool. Start Shipping Code.",
   subtitle:
-    "Built by engineers who've deployed thousands of applications at GrapeCity. Get your CI/CD pipeline running in under 5 minutes — free for 3 agents, $199/month unlimited as you scale",
+    "Built by engineers who've deployed thousands of applications at GrapeCity.",
+  subtitle2:
+    "Get your CI/CD pipeline running in under 5 minutes — free for 3 agents, $199/month unlimited as you scale",
   primaryButton: "Start Your 30-Day Free Trial",
   secondaryButton: "See the 5-Minute Demo",
   secondTitle: "Risk-Free Guarantee",
