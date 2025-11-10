@@ -7,16 +7,19 @@ export default function Third() {
   const [activeIndex, setActiveIndex] = useState({ category: null, index: null });
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Filter FAQs by question or answer
-  const filteredFaqs = thirdSectionText.faqs.map(category => ({
-    ...category,
-    faqs: category.faqs.filter(
-      faq =>
-        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-    ),
-  }));
+  // Filter FAQs by question or answer, keeping only categories that have matches
+  const filteredFaqs = thirdSectionText.faqs
+    .map(category => ({
+      ...category,
+      faqs: category.faqs.filter(
+        faq =>
+          faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    }))
+    .filter(category => category.faqs.length > 0); // ✅ remove empty categories
 
+  // Toggle FAQ expand/collapse
   const toggleFAQ = (categoryIndex, faqIndex) => {
     setActiveIndex(prev =>
       prev.category === categoryIndex && prev.index === faqIndex
@@ -24,22 +27,26 @@ export default function Third() {
         : { category: categoryIndex, index: faqIndex }
     );
   };
-const highlightText = (text, query) => {
-  if (!query) return text;
-  const parts = text.split(new RegExp(`(${query})`, "gi"));
-  return parts.map((part, i) =>
-    part.toLowerCase() === query.toLowerCase() ? (
-      <mark key={i} className="faq-highlight">
-        {part}
-      </mark>
-    ) : (
-      part
-    )
-  );
-};
+
+  // Highlight search term inside text
+  const highlightText = (text, query) => {
+    if (!query) return text;
+    const parts = text.split(new RegExp(`(${query})`, "gi"));
+    return parts.map((part, i) =>
+      part.toLowerCase() === query.toLowerCase() ? (
+        <mark key={i} className="faq-highlight">
+          {part}
+        </mark>
+      ) : (
+        part
+      )
+    );
+  };
+
   return (
     <section className="faqThirdSection">
       <div className="faqThirdContent">
+        {/* 🔍 Search Input */}
         <div className="faq-search-container">
           <input
             type="text"
@@ -49,22 +56,25 @@ const highlightText = (text, query) => {
             className="faq-search-input"
           />
         </div>
-        {filteredFaqs.map((category, catIdx) => (
-          <div key={catIdx} className="faq-category">
-            {category.catrgory && (
-              <h2 className="faq-category-title"> {category.catrgory}</h2>
-            )}
-            {category.faqs.length === 0 ? (
-              <p className="faq-no-results">No FAQs found.</p>
-            ) : (
+
+        {/* 🧭 Categories */}
+        {filteredFaqs.length === 0 ? (
+          <p className="faq-no-results">No FAQs found.</p>
+        ) : (
+          filteredFaqs.map((category, catIdx) => (
+            <div key={catIdx} className="faq-category">
+              {category.catrgory && (
+                <h2 className="faq-category-title">{category.catrgory}</h2>
+              )}
               <div className="faq-category-list">
                 {category.faqs.map((faq, faqIdx) => (
                   <div
                     key={faqIdx}
-                    className={`faq-item ${activeIndex.category === catIdx && activeIndex.index === faqIdx
-                      ? "active"
-                      : ""
-                      }`}
+                    className={`faq-item ${
+                      activeIndex.category === catIdx && activeIndex.index === faqIdx
+                        ? "active"
+                        : ""
+                    }`}
                   >
                     <button
                       className="faq-question"
@@ -79,14 +89,13 @@ const highlightText = (text, query) => {
                     </button>
                     <div className="faq-answer">
                       <p>{highlightText(faq.answer, searchTerm)}</p>
-
                     </div>
                   </div>
                 ))}
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))
+        )}
       </div>
     </section>
   );
