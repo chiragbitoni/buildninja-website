@@ -4,6 +4,7 @@ import Navbar from "./components/Nav/NavBar";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import RegionProvider from "./providers/RegionProvider";
+import Footer from "./components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           <RegionProvider>
             <Navbar />
             <main className="pt-16">{children}</main>
+            <Footer />
           </RegionProvider>
         </ReduxProvider>
       </body>

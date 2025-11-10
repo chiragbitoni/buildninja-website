@@ -14,8 +14,8 @@
     position: relative;
     overflow: hidden;
     background-color: #000000;
-    background: url('/resources/Home/heroBG.png') center center / cover no-repeat;
-    background-attachment: fixed;
+    background: url('/resources/GenericHeroBG.png') center center / cover no-repeat;
+    /* background-attachment: fixed; */
 }
 
 .featuresHeroSection::before {

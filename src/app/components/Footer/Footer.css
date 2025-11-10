@@ -1,0 +1,205 @@
+/* =========================
+   1️⃣ BASE — Mobile First
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.footerContainer {
+  background-color: #1f1f1f;
+  color: #cfcfcf;
+  padding: 6vw 4vw; /* tighter mobile padding */
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.45;
+}
+
+/* center content and prevent touching edges */
+.footerWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* main content stacks vertically on mobile */
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+/* BRAND */
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.footerLogoContainer{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footerLogo {
+  width: 30px;
+  height: 30px;
+  /* background-color: #f4f4f4; */
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Name + desc in one block for small screens */
+.footerTitle {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.footerDesc {
+  color: #bdbdbd;
+  font-size: 13px;
+  margin: 0.2rem 0 0;
+  max-width: 100%;
+  /* allow text to wrap safely on small screens */
+  word-break: break-word;
+}
+
+/* copyright smaller and muted */
+.footerCopy {
+  margin-top: 0.8rem;
+  color: #8e8e8e;
+  font-size: 12px;
+}
+
+/* LINKS — stacked full-width on mobile */
+.footerLinksContainer {
+  display: grid;
+  grid-template-columns: 1fr; /* single column on mobile */
+  gap: 1.4rem;
+  width: 100%;
+}
+
+/* each column becomes a card-like vertical block on mobile */
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footerHeading {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+}
+
+.footerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerListItem {
+  margin: 0.22rem 0;
+}
+
+.footerLink {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+/* subtle hover focus styles */
+.footerLink:hover,
+.footerLink:focus {
+  color: #ffffff;
+  transform: translateX(2px);
+  outline: none;
+}
+
+/* Prevent horizontal scroll on very small screens */
+html, body {
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   2️⃣ Small Tablet / Landscape Mobile (≥600px)
+========================= */
+@media (min-width: 600px) {
+  .footerContainer {
+    padding: 5vw 5vw;
+  }
+
+  /* links become two columns */
+  .footerLinksContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .footerTitle {
+    font-size: 19px;
+  }
+
+  .footerDesc {
+    font-size: 14px;
+    max-width: 320px;
+  }
+}
+
+/* =========================
+   3️⃣ Tablet / Small Desktop (≥768px)
+========================= */
+@media (min-width: 768px) {
+  .footerContent {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .footerBrand {
+    flex: 0 0 320px; /* fixed-ish left column */
+  }
+
+  /* links now 3 columns to match design */
+  .footerLinksContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.8rem;
+    align-items: start;
+  }
+}
+
+/* =========================
+   4️⃣ Desktop (≥1024px)
+========================= */
+@media (min-width: 1024px) {
+  .footerContainer {
+    padding: 4vw 6vw;
+  }
+
+  .footerTitle {
+    font-size: 20px;
+  }
+
+  .footerDesc {
+    font-size: 15px;
+  }
+
+  .footerHeading {
+    font-size: 16px;
+  }
+
+  .footerLink {
+    font-size: 15px;
+  }
+
+  .footerBrand {
+    padding-right: 1.2rem;
+  }
+}
