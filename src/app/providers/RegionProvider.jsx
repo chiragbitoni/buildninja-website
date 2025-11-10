@@ -19,14 +19,11 @@ export default function RegionProvider({ children }) {
         const res = await fetch("/api/region", { cache: "no-store" });
         
         const data = await res.json();
-
-        console.log("🌍 Region API response:", data);
         
         // ✅ If region is undefined or API fails, default to global
         const region = data?.region || "global";
         dispatch(setRegionSuccess(region));
     } catch (error) {
-          console.error("❌ Error detecting region:", error);
         dispatch(setRegionError(error.message));
       }
     };

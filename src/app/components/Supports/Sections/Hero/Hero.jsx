@@ -12,8 +12,6 @@ export default function SupportHero() {
             alert("Please verify that you are not a robot!");
             return;
         }
-        // ✅ send captchaToken to backend for verification
-        console.log("Captcha Token:", captchaToken);
     };
     return (
         <section className="supportHero">
