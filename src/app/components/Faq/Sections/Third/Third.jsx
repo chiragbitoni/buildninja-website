@@ -24,7 +24,19 @@ export default function Third() {
         : { category: categoryIndex, index: faqIndex }
     );
   };
-
+const highlightText = (text, query) => {
+  if (!query) return text;
+  const parts = text.split(new RegExp(`(${query})`, "gi"));
+  return parts.map((part, i) =>
+    part.toLowerCase() === query.toLowerCase() ? (
+      <mark key={i} className="faq-highlight">
+        {part}
+      </mark>
+    ) : (
+      part
+    )
+  );
+};
   return (
     <section className="faqThirdSection">
       <div className="faqThirdContent">
@@ -58,7 +70,7 @@ export default function Third() {
                       className="faq-question"
                       onClick={() => toggleFAQ(catIdx, faqIdx)}
                     >
-                      <span>{faq.question}</span>
+                      <span>{highlightText(faq.question, searchTerm)}</span>
                       <span className="faq-icon">
                         {activeIndex.category === catIdx && activeIndex.index === faqIdx
                           ? "▾"
@@ -66,7 +78,8 @@ export default function Third() {
                       </span>
                     </button>
                     <div className="faq-answer">
-                      <p>{faq.answer}</p>
+                      <p>{highlightText(faq.answer, searchTerm)}</p>
+
                     </div>
                   </div>
                 ))}
