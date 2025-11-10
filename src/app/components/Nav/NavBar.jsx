@@ -27,18 +27,18 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const navItems = [
-    { name: "Pricing", path: "/Pricing" },
-    { name: "Features", path: "/Features" },
-    { name: "Demo", path: "/Demo" },
-    { name: "Documentation", path: "/Documentation" },
-    { name: "Install", path: "/Install" },
-    { name: "Support", path: "/Support" },
-    { name: "FAQ", path: "/Faq" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Features", path: "/features" },
+    { name: "Demo", path: "/demo" },
+    { name: "Documentation", path: "/documentation" },
+    { name: "Download", path: "/download" },
+    { name: "Support", path: "/support" },
+    { name: "FAQ", path: "/faq" },
   ];
 
   const handleNavigation = (path) => {
     router.push(path);
-    setMenuOpen(false); // close menu after navigation
+    setMenuOpen(false);
   };
 
   return (

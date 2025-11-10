@@ -38,7 +38,7 @@
   display: inline-block;
   padding: 0.6vw 2vw;
   border-radius: 999px;
-  font-size: clamp(14px, 1.2vw, 18px);
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -47,7 +47,7 @@
 ================================== */
 .faqHeroTitle {
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: clamp(24px, 3vw, 48px);
+  font-size: 40px;
   font-weight: 700;
   margin: 2.5vw 0 0 0;
   line-height: 1.2;
@@ -55,7 +55,7 @@
 }
 
 .faqHeroSubtitle {
-  font-size: clamp(14px, 1.5vw, 20px);
+  font-size: 28px;
   font-family: "Segoe UI", Arial, sans-serif;
   margin: 1.5vw 0 0 0;
   color: #ffffff;
@@ -74,11 +74,11 @@
   }
 
   .faqHeroTitle {
-    font-size: clamp(28px, 5vw, 40px);
+    font-size: 32px;
   }
 
   .faqHeroSubtitle {
-    font-size: clamp(16px, 2.3vw, 22px);
+    font-size: 24px;
     line-height: 1.6;
   }
 }
@@ -96,17 +96,17 @@
 
   .faqHeroHighlight {
     padding: 2vw 5vw;
-    font-size: 4vw;
+    font-size: 18px;
   }
 
   .faqHeroTitle {
-    font-size: 8vw;
+    font-size: 26px;
     line-height: 1.3;
     margin-bottom: 3vw;
   }
 
   .faqHeroSubtitle {
-    font-size: 4.2vw;
+    font-size: 18px;
     margin-top: 3vw;
     line-height: 1.7;
     padding: 0;
