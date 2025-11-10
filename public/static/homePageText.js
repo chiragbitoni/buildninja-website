@@ -4,8 +4,9 @@ export const heroSectionText = {
   title1: "Self-Hosted CI/CD That Just Works",
   title2: "Out of the Box",
   subtitle:
-    "You know how growing engineering teams waste time maintaining complex CI/CD tools or paying high per-seat costs just to deploy code?",
-    subtitle2: "BuildNinja provides self-hosted CI/CD that just works out of the box, deploy in minutes with Docker for $199/month unlimited users, so you can focus on shipping features with predictable costs and complete infrastructure control.",
+    "Growing teams waste time on complex CI/CD tools and per-seat pricing",
+    subtitle2: "Deploy BuildNinja in minutes for $199/month unlimited users",
+    subtitle3: "Ship features, not infrastructure.",
   primaryButton: "Start Your 30–Day Free Trial",
   secondaryButton: "See the 5-Minute Demo",
 };

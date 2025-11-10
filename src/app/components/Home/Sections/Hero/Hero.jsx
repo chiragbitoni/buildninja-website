@@ -23,7 +23,8 @@ export default function Hero() {
                 </h1>
                 <p className="heroSubtitle">
                     {heroSectionText.subtitle}<br/>
-                    {heroSectionText.subtitle2}
+                    {heroSectionText.subtitle2}<br />
+                    {heroSectionText.subtitle3}
                 </p>
                 <div className="heroButtons">
                     <button className="heroBtn">{heroSectionText.primaryButton}</button>
