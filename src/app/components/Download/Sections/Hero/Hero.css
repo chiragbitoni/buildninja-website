@@ -1,0 +1,260 @@
+/* =====================================
+   1️⃣ BASE (MOBILE-FIRST)
+===================================== */
+.downloadHeroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 30vh;
+    padding: 14vw 6vw;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: url('/resources/GenericHeroBG.png') center center / cover no-repeat;
+    background-color: #000000;
+}
+
+.downloadHeroSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.downloadHeroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.downloadHeroHighlight {
+    color: #313131;
+    background-color: #ffffff;
+    display: inline-block;
+    padding: 2vw 5vw;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.downloadHeroTitle {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 4vw 0 2vw 0;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+.downloadHeroSubtitle {
+    font-size: 18px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 5vw 0;
+}
+
+/* =====================================
+   EMAIL CONTAINER
+===================================== */
+.downloadHeroEmailContainer {
+    background-color: #0D0D0D;
+    padding: 6vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* max-width: 600px; */
+    margin: 0 auto;
+}
+
+.downloadHeroEmailInput {
+    background-color: #1b1b1b;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 4vw;
+}
+
+.downloadHeroEmailButton {
+    background-color: #FF4172;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 16px;
+    width: 100%;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-bottom: 5vw;
+    transition: background-color 0.3s ease;
+}
+
+.downloadHeroEmailButton:hover {
+    background-color: #ff5b88;
+}
+
+/* =====================================
+   ICON + TEXT CONTAINER
+===================================== */
+.downloadHeroEmailIconTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #FFFFFF;
+    gap: 20px;
+    text-align: center;
+}
+
+.downloadHeroEmailIconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.downloadHeroEmailIcon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    justify-self: center;
+}
+
+.downloadHeroEmailIconTextItem {
+    width: fit-content;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* =====================================
+   2️⃣ TABLET VIEW (≥768px)
+===================================== */
+@media (min-width: 768px) {
+    .downloadHeroSection {
+        padding: 10vw 8vw;
+    }
+
+    .downloadHeroHighlight {
+        font-size: 18px;
+        padding: 1vw 3vw;
+    }
+
+    .downloadHeroTitle {
+        font-size: 32px;
+        margin: 2vw 0;
+    }
+
+    .downloadHeroSubtitle {
+        font-size: 22px;
+        margin-bottom: 3vw;
+    }
+
+    .downloadHeroEmailContainer {
+        padding: 4vw;
+    }
+
+    .downloadHeroEmailInput,
+    .downloadHeroEmailButton {
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+
+    .downloadHeroEmailIconTextContainer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .downloadHeroEmailIconContainer {
+        flex: 1 1 30%;
+        min-width: 180px;
+        justify-content: center;
+        display: grid;
+    }
+
+    .downloadHeroEmailIconTextItem {
+        font-size: 15px;
+    }
+
+    .downloadHeroEmailIcon {
+        justify-self: center;
+    }
+}
+
+/* =====================================
+   3️⃣ DESKTOP VIEW (≥1024px)
+===================================== */
+@media (min-width: 1024px) {
+    .downloadHeroSection {
+        padding: 6vw 10vw;
+    }
+
+    .downloadHeroHighlight {
+        font-size: 18px;
+        padding: 0.5vw 2vw;
+    }
+
+    .downloadHeroTitle {
+        font-size: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .downloadHeroSubtitle {
+        font-size: 26px;
+        margin-bottom: 2vw;
+    }
+
+    .downloadHeroEmailContainer {
+        justify-self: center;
+        padding: 2vw;
+        margin:0;
+        width: 80%;
+    }
+
+    .downloadHeroEmailInput,
+    .downloadHeroEmailButton {
+        font-size: 18px;
+        padding: 15px 24px;
+        margin-bottom: 40px
+    }
+
+    .downloadHeroEmailIconTextContainer {
+        display: flex;
+        gap: 0px;
+        flex-wrap: nowrap;
+    }
+
+    .downloadHeroEmailIconContainer {
+        align-items: top;
+        gap: 10px;
+    }
+
+    .downloadHeroEmailIcon {
+        width: 35px;
+        height: 35px;
+        align-self: center;
+    }
+
+    .downloadHeroEmailIconTextItem {
+        font-size: 16px;
+        text-align: center;
+        width: fit-content
+    }
+}
