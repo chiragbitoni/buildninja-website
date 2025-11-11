@@ -1,6 +1,6 @@
 import Hero from "../components/Download/Sections/Hero/Hero";
 
-export default function Faq() {
+export default function Download() {
     return (
         <div>
             <Hero />

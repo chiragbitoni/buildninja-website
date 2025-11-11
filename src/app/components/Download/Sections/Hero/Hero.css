@@ -237,14 +237,13 @@
 
     .downloadHeroEmailIconTextContainer {
         display: flex;
-        gap: 40px;
+        gap: 0px;
         flex-wrap: nowrap;
     }
 
     .downloadHeroEmailIconContainer {
         align-items: top;
         gap: 10px;
-        max-width: 200px;
     }
 
     .downloadHeroEmailIcon {
@@ -256,5 +255,6 @@
     .downloadHeroEmailIconTextItem {
         font-size: 16px;
         text-align: center;
+        width: fit-content
     }
 }
