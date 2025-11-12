@@ -1,3 +1,4 @@
+"use client"
 import Fifth from "../components/Faq/Sections/Fifth/Fifth";
 import Fourth from "../components/Faq/Sections/Fourth/Fourth";
 import Hero from "../components/Faq/Sections/Hero/Hero";
