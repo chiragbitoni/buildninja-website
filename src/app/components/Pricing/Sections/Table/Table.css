@@ -1,0 +1,109 @@
+/* =============================
+   BASE STYLES
+============================= */
+.pricingTableSection {
+  background-color: #0a0a0a;
+  color: #FFFFFFCC;
+  font-family: 'Inter', Arial, sans-serif;
+  padding: 10vw 5vw;
+  box-sizing: border-box;
+}
+
+.pricingTableHeader {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricingTableHeader h2 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.pricingTableHeader p {
+  font-size: 16px;
+  color: #FFFFFF99;
+  ;
+}
+
+.pricingTableWrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.pricingTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+  background-color: #0a0a0a;
+}
+
+/* =============================
+   TABLE CELLS
+============================= */
+.pricingTable th,
+.pricingTable td {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #FFFFFF1A;
+  vertical-align: middle;
+}
+
+.pricingTable th {
+  background-color: #131313;
+  font-weight: 600;
+  color: #FFFFFFCC;
+}
+
+.pricingTable td small {
+  display: block;
+  font-size: 16px;
+  color: #FFFFFFCC;
+  margin-top: 0.3rem;
+}
+
+/* ✅ Alignment */
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+/* ✅ Tick + Text Horizontal Flex */
+.pricingTableTickText {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pricingTableTick {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (min-width: 600px) {
+  .pricingTableHeader h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .pricingTableSection {
+    padding: 6vw 18vw;
+  }
+
+  .pricingTable th,
+  .pricingTable td {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .pricingTable {
+    min-width: 900px;
+  }
+}

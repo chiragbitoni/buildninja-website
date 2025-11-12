@@ -68,6 +68,7 @@ export const paths = {
     gearInHand: "/resources/icons/gearInHand.svg",
     customerStars: "/resources/icons/customerStars.svg",
     greenCircleTickOverLap: "/resources/icons/greenCircleTickOverLap.svg",
-    navigation: "/resources/icons/navigation.svg"
+    navigation: "/resources/icons/navigation.svg",
+    greenTickWithBG: "/resources/icons/greenTickWithBG.svg"
   },
 };
