@@ -1,3 +1,4 @@
+"use client"
 import './Hero.css';
 import { heroSectionText } from "../../../../../../public/static/faqPageText";
 export default function Hero() {
