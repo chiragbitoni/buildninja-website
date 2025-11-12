@@ -65,6 +65,8 @@
    EMAIL CONTAINER
 ===================================== */
 .downloadHeroEmailContainer {
+    align-self: center;
+    justify-self: center;
     background-color: #0D0D0D;
     padding: 6vw;
     border-radius: 20px;
@@ -72,7 +74,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* max-width: 600px; */
     margin: 0 auto;
 }
 
@@ -108,6 +109,7 @@
    ICON + TEXT CONTAINER
 ===================================== */
 .downloadHeroEmailIconTextContainer {
+    align-self:center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -223,9 +225,10 @@
 
     .downloadHeroEmailContainer {
         justify-self: center;
+        align-content: center;
         padding: 2vw;
         margin:0;
-        width: 80%;
+        width: 90%;
     }
 
     .downloadHeroEmailInput,

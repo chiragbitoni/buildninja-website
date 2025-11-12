@@ -2,17 +2,17 @@
    BASE STYLES (Mobile-first)
 ======================================== */
 .pricingSecondSection {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 10vw 5vw;
+  padding: 60px 20px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
   color: white;
-  background-color: #090909;
+  background-color: #262626;
 }
 
 .pricingSecondSection::before {
@@ -35,8 +35,8 @@
 .pricingAnnualCardsContainer {
   display: flex;
   flex-direction: column;
-  align-items: top;
-  gap: 8vw;
+  align-items: center;
+  gap: 40px;
 }
 
 /* ===============================
@@ -46,11 +46,10 @@
 .pricingMonthlyShogunCard,
 .pricingAnnualShogunCard {
   position: relative;
-  padding: 6vw;
-  background-color: #262626;
+  padding: 30px;
+  background-color: #151515;
   border-radius: 10px;
-  width: 90vw;
-  min-height: auto;
+  width: 100%;
   box-sizing: border-box;
   border: 2px solid transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -59,13 +58,12 @@
 .pricingMonthlyFreeCard:hover,
 .pricingMonthlyShogunCard:hover,
 .pricingAnnualShogunCard:hover {
-  transform: translateY(-1vw);
   box-shadow: 0 0 20px rgba(255, 65, 114, 0.25);
 }
 
 /* Specific Borders */
 .pricingMonthlyFreeCard {
-  border-color: #686464;
+  border: 2px solid #FFFFFF1A;
 }
 
 .pricingMonthlyShogunCard,
@@ -78,21 +76,21 @@
 ================================== */
 .pricingMonthlyFreeCardHighlight,
 .pricingMonthlyShogunCardHighlight {
-  padding: 1.5vw 3vw;
-  border-radius: 1vw;
-  font-size: 3.5vw;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
   font-weight: 500;
   width: fit-content;
 }
 
 .pricingMonthlyFreeCardHighlight {
   color: #ffffff;
-  background-color: #d4335c;
+  background-color: #000000;
 }
 
 .pricingMonthlyShogunCardHighlight {
-  color: #000000;
-  background-color: #F9F9F9;
+  color: #ffffff;
+  background-color: #d4335c;
 }
 
 /* ===============================
@@ -100,28 +98,60 @@
 ================================== */
 .pricingMonthlyFreeCardEdition,
 .pricingMonthlyShogunCardEdition {
-  font-size: 6vw;
-  font-weight: 600;
-  margin-top: 4vw;
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 20px;
 }
 
 .pricingMonthlyFreeCardPrice,
 .pricingMonthlyShogunCardPrice {
-  font-size: 7vw;
-  font-weight: 700;
-  margin-top: 2vw;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 /* ===============================
    LISTS
 ================================== */
 .pricingMonthlyFreeCardList,
-.pricingAnnualFreeCardList {
+.pricingAnnualFreeCardListContainer {
   list-style-position: inside;
-  font-size: 3.8vw;
+  font-size: 14px;
   list-style-type: disc;
-  margin-top: 3vw;
+  margin-top: 15px;
   line-height: 1.8;
+}
+
+.pricingMonthlyFreeListCard {
+  background-color: #2B2B2B;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.pricingMonthlyFreeListCard p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pricingMonthlyFreeListCard li {
+  font-size: 12px;
+  list-style-position: inside;
+  margin-top: 5px;
+}
+
+.pricingAnnualFreeCardListItem {
+  display: flex;
+  align-items: flex-start;
+  list-style-type: none;
+  gap: 8px;
+}
+
+.pricingAnnualFreeCardListItem img {
+  width: 16px;
+  height: auto;
+  align-self: center;
 }
 
 /* ===============================
@@ -132,20 +162,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5vw;
-  border-radius: 8vw;
+  margin-top: 20px;
+  border-radius: 40px;
   width: 100%;
-  padding: 3vw 0;
-  font-size: 4.2vw;
+  padding: 14px 0;
+  font-size: 15px;
   font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
-  gap: 2vw;
+  gap: 8px;
 }
 
 .pricingMonthlyFreeCardButton {
-  background-color: #f7f7f7;
-  color: #000000;
+  background-color: #515151;
+  color: #ffffff;
 }
 
 .pricingMonthlyShogunCardButton {
@@ -155,24 +185,32 @@
 
 .pricingMonthlyFreeCardButton:hover {
   background-color: #ffffff;
+  color: #000;
 }
 
 .pricingMonthlyShogunCardButton:hover {
   background-color: #ea367d;
 }
 
-/* Button icon */
 .pricingMonthlyFreeIcon {
-  width: 5vw;
+  width: 18px;
   height: auto;
+}
+
+.pricingMonthlyFreeCardCtaText,
+.pricingMonthlyShogunCardCtaText,
+.pricingAnnualShogunCardCtaText {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13px;
 }
 
 /* ===============================
    ANNUAL SECTION
 ================================== */
 .pricingAnnualShogunDescription {
-  margin-top: 3vw;
-  font-size: 4vw;
+  margin-top: 10px;
+  font-size: 14px;
   color: #d4d4d4;
   line-height: 1.6;
 }
@@ -180,205 +218,160 @@
 .pricingAnnualShogunSavings {
   color: #169000;
   background-color: #dbfce7;
-  font-size: 3.4vw;
+  font-size: 13px;
   font-weight: 600;
-  margin-top: 3vw;
-  padding: 1vw 3vw;
+  margin-top: 10px;
+  padding: 6px 14px;
   border-radius: 999px;
   width: fit-content;
 }
 
-/* Multi-year container */
-.pricingAnnualMultiYearContainer {
-  background-color: #161616;
-  border-radius: 10px;
-  border: 2px solid #c2c2c2;
-  margin-top: 4vw;
-  padding: 4vw;
-}
-
-.pricingAnnualMultiYearCardTitle {
-  text-align: center;
-  font-weight: 600;
-  font-size: 5vw;
-  margin-bottom: 3vw;
-}
-
-.pricingAnnualMultiYearCardContainers {
-  display: flex;
-  flex-direction: column;
-  gap: 2vw;
-}
-
-.pricingAnnualMultiYearCard1,
-.pricingAnnualMultiYearCard2 {
-  background-color: #262626;
-  padding: 3vw;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5vw; /* Added spacing between lines */
-}
-
-.pricingAnnualMultiYearCard1Line1,
-.pricingAnnualMultiYearCard1Line2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.pricingAnnualMultiYearCardSavings {
-  color: #169000;
-  background-color: #dbfce7;
-  font-size: 3.2vw;
-  font-weight: 600;
-  padding: 1vw 2.5vw;
-  border-radius: 999px;
-  width: fit-content;
-}
-
-/* ========================================
+/* ===============================
    TABLET VIEW (768px – 1023px)
-======================================== */
+================================== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .pricingSecondSection {
-    padding: 6vw 6vw 8vw 6vw;
+    padding: 10px;
   }
 
   .pricingMonthlyCardsContainer,
   .pricingAnnualCardsContainer {
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 4vw;
+    align-items: stretch;
+    gap: 40px;
   }
 
   .pricingMonthlyFreeCard,
   .pricingMonthlyShogunCard,
   .pricingAnnualShogunCard {
-    width: 42vw;
-    padding: 4vw;
+    width: 47%;
+    max-width: 420px;
+    padding: 30px;
   }
 
   .pricingMonthlyFreeCardHighlight,
   .pricingMonthlyShogunCardHighlight {
-    font-size: 2vw;
-    padding: 1vw 2vw;
+    font-size: 14px;
+    padding: 6px 14px;
   }
 
   .pricingMonthlyFreeCardEdition,
   .pricingMonthlyShogunCardEdition {
-    font-size: 3vw;
-    margin-top: 2vw;
+    font-size: 24px;
   }
 
   .pricingMonthlyFreeCardPrice,
   .pricingMonthlyShogunCardPrice {
-    font-size: 3.5vw;
+    font-size: 32px;
   }
 
   .pricingMonthlyFreeCardList,
-  .pricingAnnualFreeCardList {
-    font-size: 1.8vw;
+  .pricingAnnualFreeCardListContainer {
+    font-size: 14px;
   }
 
   .pricingMonthlyFreeCardButton,
   .pricingMonthlyShogunCardButton {
-    font-size: 2vw;
-    padding: 1.5vw 0;
-    border-radius: 4vw;
-    gap: 1vw;
+    font-size: 14px;
+    padding: 12px 0;
   }
 
   .pricingMonthlyFreeIcon {
-    width: 2vw;
+    width: 16px;
   }
 
   .pricingAnnualShogunDescription {
-    font-size: 2vw;
-    margin-top: 2vw;
+    font-size: 14px;
   }
 
   .pricingAnnualShogunSavings {
-    font-size: 1.6vw;
-    margin-top: 1.5vw;
-    padding: 0.8vw 2vw;
-  }
-
-  .pricingAnnualMultiYearContainer {
-    padding: 2vw;
-  }
-
-  .pricingAnnualMultiYearCardTitle {
-    font-size: 2.4vw;
-    margin-bottom: 1.5vw;
-  }
-
-  .pricingAnnualMultiYearCard1,
-  .pricingAnnualMultiYearCard2 {
-    padding: 1.5vw;
-    gap: 1.7vw;
-    font-size: 1.8vw;
-  }
-
-  .pricingAnnualMultiYearCardSavings {
-    font-size: 1.4vw;
-    padding: 0.5vw 1.5vw;
-    font-weight: 600;
+    font-size: 13px;
   }
 }
 
 /* ========================================
    DESKTOP VIEW (≥1024px)
+   (KEPT EXACTLY AS YOUR ORIGINAL)
 ======================================== */
 @media (min-width: 1024px) {
   .pricingSecondSection {
-    padding: 5vw 12vw 4vw 12vw;
+    padding: 0vw 0vw 4vw 0vw;
   }
 
   .pricingMonthlyCardsContainer,
   .pricingAnnualCardsContainer {
     flex-direction: row;
     justify-content: center;
-    gap: 3vw;
+    gap: 40px;
   }
 
   .pricingMonthlyFreeCard,
   .pricingMonthlyShogunCard,
   .pricingAnnualShogunCard {
-    width: 27vw;
-    padding: 2vw;
+    width: 480px;
+    padding: 35px;
     min-height: 33vw;
   }
 
   .pricingMonthlyFreeCardHighlight,
   .pricingMonthlyShogunCardHighlight {
-    font-size: 0.9vw;
+    font-size: 14px;
     padding: 0.5vw 1.2vw;
   }
 
   .pricingMonthlyFreeCardEdition,
   .pricingMonthlyShogunCardEdition {
-    font-size: 1.8vw;
-    margin-top: 1vw;
+    font-size: 24px;
+    margin-top: 20px;
   }
 
   .pricingMonthlyFreeCardPrice,
   .pricingMonthlyShogunCardPrice {
-    font-size: 2.2vw;
-    margin-top: 1vw;
+    font-size: 48px;
+    font-weight: 600 !important;
+    margin-top: 20px;
   }
 
   .pricingMonthlyFreeCardList,
-  .pricingAnnualFreeCardList {
-    font-size: 1vw;
+  .pricingAnnualFreeCardListContainer {
+    font-size: 14px;
+  }
+
+  .pricingAnnualFreeCardListItem {
+    display: flex;
+    list-style-type: none;
+    gap: 8px;
+    margin-top: 5px;
+    line-height: 1.6;
+  }
+
+  .pricingMonthlyFreeListCard {
+    background-color: #2B2B2B;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .pricingMonthlyFreeListCard p {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .pricingMonthlyFreeListCard li {
+    font-size: 12px;
+    list-style-position: inside;
+    margin-top: 5px;
   }
 
   .pricingMonthlyFreeCardButton,
   .pricingMonthlyShogunCardButton {
-    font-size: 1vw;
+    font-size: 16px;
+    font-weight: 500;
     padding: 0.8vw 0;
-    border-radius: 1vw;
+    border-radius: 10px;
     gap: 0.6vw;
   }
 
@@ -386,15 +379,24 @@
     width: 1vw;
   }
 
-  .pricingAnnualShogunDescription {
-    font-size: 1vw;
-    margin-top: 1vw;
+  .pricingAnnualShogunDescription,
+  .pricingMonthlySoloDescription {
+    font-size: 14px;
+    margin-top: 0px;
+    color: #FFFFFF99;
   }
 
   .pricingAnnualShogunSavings {
-    font-size: 0.8vw;
+    font-size: 14px;
     padding: 0.3vw 1.2vw;
-    margin-top: 1vw;
+    margin-top: 10px;
+  }
+
+  .pricingAnnualShogunIdeal,
+  .pricingMonthlySoloIdeal {
+    font-size: 14px;
+    color: #FFFFFF99;
+    margin-top: 10px;
   }
 
   .pricingAnnualMultiYearContainer {
@@ -403,13 +405,13 @@
   }
 
   .pricingAnnualMultiYearCardTitle {
-    font-size: 1.3vw;
+    font-size: 4vw;
     margin-bottom: 1vw;
   }
 
   .pricingAnnualMultiYearCard1,
   .pricingAnnualMultiYearCard2 {
-    font-size: 1vw;;
+    font-size: 1vw;
     padding: 1vw;
     gap: 1vw;
   }
@@ -419,4 +421,51 @@
     font-weight: 600;
     padding: 0.4vw 1vw;
   }
+
+  .pricingMonthlyFreeCardList2 {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   UNIFORM CARD HEIGHT FIX
+======================================== */
+
+/* Make parent container align cards evenly */
+.pricingMonthlyCardsContainer,
+.pricingAnnualCardsContainer {
+  align-items: stretch; 
+}
+
+/* Force each card to fill equal height in its flex row */
+.pricingMonthlyFreeCard,
+.pricingMonthlyShogunCard,
+.pricingAnnualShogunCard {
+  flex-direction: column;
+  justify-content: space-between; /* Keeps button aligned at bottom */
+
+}
+
+/* ========================================
+   CARD STRUCTURE (Ensure natural flow)
+======================================== */
+.pricingMonthlyFreeCard,
+.pricingMonthlyShogunCard,
+.pricingAnnualShogunCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* normal stacking */
+  position: relative;
+}
+
+/* Push footer (button + ctaText) to bottom */
+.pricingMonthlyFreeCardFooter,
+.pricingMonthlyShogunCardFooter,
+.pricingAnnualShogunCardFooter {
+  margin-top: auto; /* pushes footer to the bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }

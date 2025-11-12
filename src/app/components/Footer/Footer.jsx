@@ -52,7 +52,7 @@ export default function Footer() {
                     {/* Left Section */}
                     <div className="footerBrand">
                         <div className="footerLogoContainer">
-                            <div className="footerLogo"> <img src="resources/Favicon/faviconWhite.png" alt="BuildNinja Logo" /></div>
+                            <div className="footerLogo"> <img src="/resources/Favicon/faviconWhite.png" alt="BuildNinja Logo" /></div>
                             <h3 className="footerTitle">{footerText.company.name}</h3>
                         </div>
                         <div>

@@ -1,36 +1,53 @@
-import { thirdSectionText } from "../../../../../../public/static/pricingPageText";
+// app/components/pricing/Third.js
+import { paths } from "../../../../../../public/static/paths";
 import "./Third.css";
 
 export default function Third() {
-  return (
-    <section className="thirdPricingFeatureSection">
-      <div>
-        <h1 className="thirdPricingFeatureComparisionHeading">
-          {thirdSectionText.heading}
-        </h1>
+    return (
+        <section className="pricingThirdSection">
+            <h2 className="pricingThirdTitle">What Makes BuildNinja Different</h2>
 
-        {/* ✅ New scroll wrapper */}
-        <div className="thirdPricing-scrollWrapper">
-          <table className="thirdPricing-table">
-            <thead>
-              <tr>
-                {thirdSectionText.tableHeaders.map((item) => (
-                  <th key={item}>{item}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {thirdSectionText.tableData.map((row, index) => (
-                <tr key={index}>
-                  <td>{row.feature}</td>
-                  <td>{row.solo}</td>
-                  <td>{row.shogun}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  );
+            <div className="pricingThirdCardsContainer">
+                <div className="pricingThirdCard">
+                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <div className="pricingThirdText">
+                        <h3 className="pricingThirdCardTitle">Unlimited Build Agents</h3>
+                        <p className="pricingThirdCardDesc">
+                            Connect as many machines as you want (both editions)
+                        </p>
+                    </div>
+                </div>
+
+                <div className="pricingThirdCard">
+                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <div className="pricingThirdText">
+                        <h3 className="pricingThirdCardTitle">No Per-Seat Costs</h3>
+                        <p className="pricingThirdCardDesc">
+                            Add unlimited users without price increases (Shogun)
+                        </p>
+                    </div>
+                </div>
+
+                <div className="pricingThirdCard">
+                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <div className="pricingThirdText">
+                        <h3 className="pricingThirdCardTitle">Self-Hosted Control</h3>
+                        <p className="pricingThirdCardDesc">
+                            Your infrastructure, your data, complete sovereignty
+                        </p>
+                    </div>
+                </div>
+
+                <div className="pricingThirdCard">
+                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <div className="pricingThirdText">
+                        <h3 className="pricingThirdCardTitle">30-Day Risk-Free Trial</h3>
+                        <p className="pricingThirdCardDesc">
+                            Test everything before committing
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }

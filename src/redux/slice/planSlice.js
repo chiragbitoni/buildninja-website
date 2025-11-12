@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const planSlice = createSlice({
   name: "plan",
   initialState: {
-    isAnnual: false, // false = Monthly, true = Annual
+    isAnnual: true, // false = Monthly, true = Annual
   },
   reducers: {
     togglePlan: (state) => {

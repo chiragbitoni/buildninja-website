@@ -20,7 +20,6 @@ export default function RegionProvider({ children }) {
         
         const data = await res.json();
         
-        // ✅ If region is undefined or API fails, default to global
         const region = data?.region || "global";
         dispatch(setRegionSuccess(region));
     } catch (error) {

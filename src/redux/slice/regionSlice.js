@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  region: "global", // default region
+  region: "india",
   loading: false,
   error: null,
 };

@@ -1,3 +1,4 @@
+
 export const heroSectionText = {
   title: "CI/CD That Just Works – Pick Your Plan",
   subtitle:
@@ -9,124 +10,214 @@ export const heroSectionText = {
   },
 };
 
+// ===========================
+// 🇮🇳 INDIA PRICING STRUCTURE
+// ===========================
 export const secondSectionTextIndia = {
   monthCards: {
     soloEditionCard: {
       highlight: "START WITH CONFIDENCE",
       edition: "Solo Edition",
       price: "FREE",
-      list: [
+      priceDescription: "Forever free, no credit card required",
+      ideal: "Ideal for: Individual developers and small growing teams (up to 10 users)",
+      list1: [
         "Up to 10 users",
-        "3 concurrent builds",
-        "Docker support",
-        "30-day grace period",
+        "3 concurrent agents — Run 3 builds simultaneously",
+        "Unlimited build agents — Connect as many machines as you want",
+      ],
+      listCard: {
+        title: "Additional concurrent capacity (per agent)",
+        list: [
+          "₹2,199/month",
+          "₹16,999/year (save ₹9,389)",
+          "₹26,999/2-year (save ₹24,777)",
+          "₹37,999/3-year (save ₹39,565)",
+        ],
+      },
+      list2: [
+        "Docker support included",
+        "30-day build history",
+        "Up to 100 projects",
+        "Up to 100 configurations",
+        "Community support",
+        "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
+        "30-day grace period to test everything",
       ],
       buttonText: "Download Free",
+      ctaText: "No strings attached. Solo Edition stays free forever.",
     },
+
     shogunEditionCard: {
-      highlight: "POPULAR",
+      highlight: "MOST POPULAR",
       edition: "Shogun Edition",
       price: "₹16,999/month",
+      ideal:
+        "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
       list: [
-        "Unlimited users & projects",
-        "Unlimited concurrent builds",
-        "Perpetual build history",
-        "Priority business support",
-        "Professional services included",
+        "<strong>Unlimited users</strong> — No per-seat costs as you grow",
+        "<strong>Unlimited projects</strong> — No artificial limits",
+        "<strong>Unlimited configurations</strong> — Scale without restrictions",
+        "<strong>Unlimited concurrent agents</strong> — Run as many builds simultaneously as your infrastructure supports",
+        "<strong>Unlimited build agents</strong> — Connect as many machines as you want",
+        "<strong>Perpetual build history</strong> — Complete audit trail forever",
+        "<strong>All 5 SSO providers</strong> — Microsoft, GitHub, GitLab, Bitbucket, and Google",
+        "<strong>Priority business support</strong> — Direct engineering team access",
       ],
       buttonText: "Start 30-Day Trial",
+      ctaText: "Full Shogun access during trial. No credit card required.",
     },
   },
+
+  // Annual Plan
   annualCard: {
-    highlight: "POPULAR",
+    highlight: "MOST POPULAR",
     edition: "Shogun Edition",
-    price: "₹11,416/month",
-    description: "₹136,999 billed annually",
+    price: "₹1,36,999/year",
+    description: "(₹11,416/month equivalent)",
     savings: "SAVE ₹67,989/year",
+    ideal: "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
     list: [
-      "Unlimited users & projects",
-      "Unlimited concurrent builds",
-      "Perpetual build history",
-      "Priority business support",
-      "Professional services included",
+      "<strong>Unlimited users</strong> — No per-seat costs as you grow",
+      "<strong>Unlimited projects</strong> — No artificial limits",
+      "<strong>Unlimited configurations</strong> — Scale without restrictions",
+      "<strong>Unlimited concurrent agents</strong> — Run as many builds simultaneously as your infrastructure supports",
+      "<strong>Unlimited build agents</strong> — Connect as many machines as you want",
+      "<strong>Perpetual build history</strong> — Complete audit trail forever",
+      "<strong>All 5 SSO providers</strong> — Microsoft, GitHub, GitLab, Bitbucket, and Google",
+      "<strong>Priority business support</strong> — Direct engineering team access",
     ],
-    card: {
-      title: "Multi-Year Savings",
-      card1: {
-        title: "2-Year Upfront",
-        price: "₹9,166/month",
-        savings: "SAVE ₹1,04,989",
-        total: "₹219,999 total",
-      },
-      card2: {
-        title: "3-Year Upfront",
-        price: "₹7,638/month",
-        savings: "SAVE ₹1,13,989",
-        total: "₹274,999 total",
-      },
-    },
     buttonText: "Start 30-Day Trial",
+    ctaText: "Full Shogun access during trial. No credit card required.",
+  },
+
+  // Multi-year plans
+  multiYearCards: {
+    twoYear: {
+      highlight: "BEST VALUE",
+      edition: "Shogun Edition — 2-Year Upfront",
+      price: "₹2,19,999 (₹9,166/month)",
+      description: "Billed upfront for 2 years",
+      savings: "SAVE ₹1,04,989/year",
+      buttonText: "Start 30-Day Trial",
+      ctaText: "Full Shogun access during trial. No credit card required.",
+    },
+    threeYear: {
+      highlight: "MAXIMUM SAVINGS",
+      edition: "Shogun Edition — 3-Year Upfront",
+      price: "₹2,74,999 (₹7,638/month)",
+      description: "Billed upfront for 3 years",
+      savings: "SAVE ₹1,13,989/year",
+      buttonText: "Start 30-Day Trial",
+      ctaText: "Full Shogun access during trial. No credit card required.",
+    },
   },
 };
+
+// ===========================
+// 🌍 WORLDWIDE PRICING STRUCTURE
+// ===========================
 export const secondSectionTextGlobal = {
   monthCards: {
     soloEditionCard: {
       highlight: "START WITH CONFIDENCE",
       edition: "Solo Edition",
       price: "FREE",
-      list: [
+      priceDescription: "Forever free, no credit card required",
+      ideal: "Ideal for: Individual developers and small growing teams (up to 10 users)",
+      list1: [
         "Up to 10 users",
-        "3 concurrent builds",
-        "Docker support",
-        "30-day grace period",
+        "3 concurrent agents — Run 3 builds simultaneously",
+        "Unlimited build agents — Connect as many machines as you want",
+      ],
+      listCard: {
+        title: "Additional concurrent capacity (per agent)",
+        list: [
+          "$29/month",
+          "$249/year (save $99)",
+          "$429/2-year (save $269)",
+          "$599/3-year (save $449)",
+        ],
+      },
+      list2: [
+        "Docker support included",
+        "30-day build history",
+        "Up to 100 projects",
+        "Up to 100 configurations",
+        "Community support",
+        "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
+        "30-day grace period to test everything",
       ],
       buttonText: "Download Free",
+      ctaText: "No strings attached. Solo Edition stays free forever.",
     },
+
     shogunEditionCard: {
-      highlight: "POPULAR",
+      highlight: "MOST POPULAR",
       edition: "Shogun Edition",
       price: "$199/month",
+      ideal:
+        "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
       list: [
-        "Unlimited users & projects",
-        "Unlimited concurrent builds",
-        "Perpetual build history",
-        "Priority business support",
-        "Professional services included",
+        "<strong>Unlimited users</strong> — No per-seat costs as you grow",
+        "<strong>Unlimited projects</strong> — No artificial limits",
+        "<strong>Unlimited configurations</strong> — Scale without restrictions",
+        "<strong>Unlimited concurrent agents</strong> — Run as many builds simultaneously as your infrastructure supports",
+        "<strong>Unlimited build agents</strong> — Connect as many machines as you want",
+        "<strong>Perpetual build history</strong> — Complete audit trail forever",
+        "<strong>All 5 SSO providers</strong> — Microsoft, GitHub, GitLab, Bitbucket, and Google",
+        "<strong>Priority business support</strong> — Direct engineering team access",
       ],
       buttonText: "Start 30-Day Trial",
+      ctaText: "Full Shogun access during trial. No credit card required.",
     },
   },
+
+  // Annual Plan
   annualCard: {
-    highlight: "POPULAR",
+    highlight: "MOST POPULAR",
     edition: "Shogun Edition",
-    price: "$133/month",
-    description: "$1,599 billed annually",
-    savings: "SAVE ₹$789/year",
+    price: "$2,388/year ($199/month)",
+    description: "Annual billing — SAVE $592/year",
+    savings: "SAVE $592/year",
+    ideal: "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
     list: [
-      "Unlimited users & projects",
-      "Unlimited concurrent builds",
-      "Perpetual build history",
-      "Priority business support",
-      "Professional services included",
+      "<strong>Unlimited users</strong> — No per-seat costs as you grow",
+      "<strong>Unlimited projects</strong> — No artificial limits",
+      "<strong>Unlimited configurations</strong> — Scale without restrictions",
+      "<strong>Unlimited concurrent agents</strong> — Run as many builds simultaneously as your infrastructure supports",
+      "<strong>Unlimited build agents</strong> — Connect as many machines as you want",
+      "<strong>Perpetual build history</strong> — Complete audit trail forever",
+      "<strong>All 5 SSO providers</strong> — Microsoft, GitHub, GitLab, Bitbucket, and Google",
+      "<strong>Priority business support</strong> — Direct engineering team access",
     ],
-    card: {
-      title: "Multi-Year Savings",
-      card1: {
-        title: "2-Year Upfront",
-        price: "$107/month",
-        savings: "SAVE $1,218",
-        total: "$2,558 total",
-      },
-      card2: {
-        title: "3-Year Upfront",
-        price: "$89/month",
-        savings: "SAVE $1,320",
-        total: "$3,198 total",
-      },
-    },
     buttonText: "Start 30-Day Trial",
+    ctaText: "Full Shogun access during trial. No credit card required.",
+  },
+
+  // Multi-year Plans
+  multiYearCards: {
+    twoYear: {
+      highlight: "BEST VALUE",
+      edition: "Shogun Edition — 2-Year Upfront",
+      price: "$4,200 ($175/month)",
+      description: "Billed upfront for 2 years",
+      savings: "SAVE $1,272/year",
+      buttonText: "Start 30-Day Trial",
+      ctaText: "Full Shogun access during trial. No credit card required.",
+    },
+    threeYear: {
+      highlight: "MAXIMUM SAVINGS",
+      edition: "Shogun Edition — 3-Year Upfront",
+      price: "$5,700 ($158/month)",
+      description: "Billed upfront for 3 years",
+      savings: "SAVE $1,764/year",
+      buttonText: "Start 30-Day Trial",
+      ctaText: "Full Shogun access during trial. No credit card required.",
+    },
   },
 };
+
 
 export const thirdSectionText = {
   heading: "Feature Comparision",
