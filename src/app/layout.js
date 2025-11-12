@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "./components/Nav/NavBar";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
-import RegionProvider from "./providers/RegionProvider";
 import Footer from "./components/Footer/Footer";
 
 const geistSans = Geist({
@@ -31,11 +30,9 @@ export default function RootLayout({ children }) {
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
         <ReduxProvider>
-          <RegionProvider>
             <Navbar />
             <main className="pt-16">{children}</main>
             <Footer />
-          </RegionProvider>
         </ReduxProvider>
       </body>
     </html>

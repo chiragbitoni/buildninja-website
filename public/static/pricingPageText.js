@@ -21,7 +21,8 @@ export const secondSectionTextIndia = {
       edition: "Solo Edition",
       price: "FREE",
       priceDescription: "Forever free, no credit card required",
-      ideal: "Ideal for: Individual developers and small growing teams (up to 10 users)",
+      ideal:
+        "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
         "3 concurrent agents — Run 3 builds simultaneously",
@@ -77,7 +78,8 @@ export const secondSectionTextIndia = {
     price: "₹1,36,999/year",
     description: "(₹11,416/month equivalent)",
     savings: "SAVE ₹67,989/year",
-    ideal: "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
+    ideal:
+      "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
     list: [
       "<strong>Unlimited users</strong> — No per-seat costs as you grow",
       "<strong>Unlimited projects</strong> — No artificial limits",
@@ -125,7 +127,8 @@ export const secondSectionTextGlobal = {
       edition: "Solo Edition",
       price: "FREE",
       priceDescription: "Forever free, no credit card required",
-      ideal: "Ideal for: Individual developers and small growing teams (up to 10 users)",
+      ideal:
+        "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
         "3 concurrent agents — Run 3 builds simultaneously",
@@ -181,7 +184,8 @@ export const secondSectionTextGlobal = {
     price: "$2,388/year ($199/month)",
     description: "Annual billing — SAVE $592/year",
     savings: "SAVE $592/year",
-    ideal: "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
+    ideal:
+      "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
     list: [
       "<strong>Unlimited users</strong> — No per-seat costs as you grow",
       "<strong>Unlimited projects</strong> — No artificial limits",
@@ -219,11 +223,11 @@ export const secondSectionTextGlobal = {
   },
 };
 
-
 // pricingFourthText.js
 
 export const pricingFourthText = {
-  title: "Pricing That Makes Sense <span class='pricingFourthpinkColorText'>as You Grow</span>",
+  title:
+    "Pricing That Makes Sense <span class='pricingFourthpinkColorText'>as You Grow</span>",
   subtitle: "Simple, transparent, and predictable for teams of any size.",
 
   problemTitle: "The Problem",
@@ -236,16 +240,14 @@ export const pricingFourthText = {
       icon: paths.icons.usersPink,
       title: "No Per-Seat Taxation",
       tag: "Scale Freely",
-      desc:
-        "Pay for your infrastructure scale, not your team size. Add 10 developers or 100, your BuildNinja cost stays the same.",
+      desc: "Pay for your infrastructure scale, not your team size. Add 10 developers or 100, your BuildNinja cost stays the same.",
       link: "Learn more →",
     },
     {
       icon: paths.icons.serverPink,
       title: "Self-Hosted Freedom",
       tag: "Full Control",
-      desc:
-        "Run on your infrastructure with complete control. No vendor lock-in, no data sovereignty concerns, no surprise cloud bills.",
+      desc: "Run on your infrastructure with complete control. No vendor lock-in, no data sovereignty concerns, no surprise cloud bills.",
       link: "Learn more →",
     },
     {
@@ -253,135 +255,220 @@ export const pricingFourthText = {
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
-      desc:
-        "Free up to 3 concurrent agents. ₹16,999/month unlimited users beyond that. No hidden costs, no complex calculations.",
+      desc: "Free up to 3 concurrent agents. ₹16,999/month unlimited users beyond that. No hidden costs, no complex calculations.",
       link: "Learn more →",
     },
     {
       icon: paths.icons.headphonesPink,
       title: "Professional Support Included",
       tag: "Partnership",
-      desc:
-        "Annual, 2-year, and 3-year plans include free migration assistance for 10 projects, 20 hours of professional services, and license buyout credits, not upsells, but true partnership.",
+      desc: "Annual, 2-year, and 3-year plans include free migration assistance for 10 projects, 20 hours of professional services, and license buyout credits, not upsells, but true partnership.",
       link: "Learn more →",
     },
     {
       icon: paths.icons.syncPink,
       title: "Risk-Free Switching",
       tag: "30-Day Demo",
-      desc:
-        "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and a 30-day demo to validate everything works. We remove barriers that keep teams stuck on expensive tools.",
+      desc: "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and a 30-day demo to validate everything works. We remove barriers that keep teams stuck on expensive tools.",
       badges: ["Migration Support", "License Credits", "Zero Risk Trial"],
     },
   ],
 };
 
+// pricingFourthText.js
 
+export const pricingFifthText = {
+  title: "Every Feature Built to Solve Real Problems",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const thirdSectionText = {
-  heading: "Feature Comparision",
-  tableHeaders: ["Feature", "Solo Edition", "Shogun Edition"],
-  tableData: [
-    { feature: "Monthly Price", solo: "FREE", shogun: "₹11,416" },
-    { feature: "Annual Price", solo: "FREE", shogun: "₹11,416" },
-    { feature: "Users", solo: "Up to 10", shogun: "Unlimited" },
-    { feature: "Build Agents", solo: "Unlimited", shogun: "Unlimited" },
-    { feature: "Concurrent Agents", solo: "3", shogun: "Unlimited" },
-    { feature: "Additional Agents", solo: "₹2,199/month", shogun: "Included" },
-    { feature: "Projects", solo: "Up to 100", shogun: "Unlimited" },
-    { feature: "Build History", solo: "30 days", shogun: "Perpetual" },
-    {
-      feature: "SSO Integrations",
-      solo: "1 provider",
-      shogun: "All 5 providers",
-    },
-    {
-      feature: "Support",
-      solo: "Community",
-      shogun: "Priority business hours",
-    },
-    {
-      feature: "Migration Help",
-      solo: "Self-service",
-      shogun: "Free assistance (annual)",
-    },
-    {
-      feature: "Professional Services",
-      solo: "-",
-      shogun: "20 hours (annual)",
-    },
-    { feature: "License Buyout", solo: "-", shogun: "25% credit (annual)" },
-  ],
-};
-
-export const fourthSectionText = {
-  title: "All Features Included",
   columns: [
     {
-      heading: "Core Platform",
-      features: [
-        "Self-hosted deployment & data control",
-        "Docker container support",
-        "Multi-platform agents",
-        "GitHub/GitLab/Bitbucket integration",
-        "Monitoring & analytics",
-        "Email/Slack/Teams notifications",
+      title: "Core Platform Features",
+      sections: [
+        {
+          heading: "Self-Hosted Deployment & Data Control",
+          list: [
+            "Run on your infrastructure",
+            "Complete data sovereignty",
+            "No cloud vendor lock-in",
+          ],
+        },
+        {
+          heading: "Docker Container Support",
+          list: [
+            "Deploy in minutes with docker pull",
+            "Single binary simplicity",
+            "Multi-platform agents (Windows, Linux, macOS)",
+          ],
+        },
+        {
+          heading: "Version Control Integration",
+          list: [
+            "GitHub, GitLab, Bitbucket support",
+            "No vendor lock-in",
+            "Works with your existing workflow",
+          ],
+        },
+        {
+          heading: "Monitoring & Analytics",
+          list: [
+            "Real-time build visibility",
+            "Detailed execution logs",
+            "Build duration trends",
+          ],
+        },
+        {
+          heading: "Smart Notifications",
+          list: [
+            "Email, Slack, Teams integration",
+            "Customizable triggers",
+            "Multi-recipient support",
+          ],
+        },
       ],
     },
     {
-      heading: "Enterprise Security",
-      features: [
-        "Role-based access control",
-        "SSO integrations",
-        "Audit logs",
-        "Data sovereignty",
+      title: "Enterprise Security Features",
+      sections: [
+        {
+          heading: "Role-Based Access Control",
+          list: [
+            "Granular permissions management",
+            "Team-level security controls",
+            "Project access management",
+          ],
+        },
+        {
+          heading: "SSO Integrations",
+          list: [
+            "Solo: 1 provider (choose your primary)",
+            "Shogun: All 5 providers (Microsoft, Azure AD, Google, GitHub, GitLab)",
+          ],
+        },
+        {
+          heading: "Audit Logs",
+          list: [
+            "Complete activity tracking",
+            "Compliance-ready logging",
+            "Security event monitoring",
+          ],
+        },
+        {
+          heading: "Data Sovereignty",
+          list: [
+            "Self-hosted deployment",
+            "Your infrastructure, your control",
+            "No data leaving your network",
+          ],
+        },
       ],
     },
   ],
 };
 
-export const fifthSectionText = {
-  highlight: "Limited Time: First 1,000 Customers",
-  heading: "Early Adopter Program",
-  list: [
-    "Price lock guarantee for multi-year plans",
-    "Priority feature requests",
-    "Direct access to BuildNinja engineering team",
+// SixthText.js
+export const pricingSixthText = {
+  headline: "Early Adopter Program for first 1,000 Customers",
+  subheadline: "LIMITED TIME",
+  features: [
+    { title: "Price lock guarantee for multi-year plans" },
+    { title: "Priority feature requests, influence our roadmap" },
+    { title: "Direct access to BuildNinja engineering team" },
+    { title: "Founding customer recognition" },
   ],
-  progressBarHeading: "Spots remaining:"
+  spotsRemaining: "Spots remaining",
+  footer:
+    "Lock in today's pricing forever. Join engineering teams building with BuildNinja from day one.",
 };
 
-export const sixthSectionText = {
-  title: "Licensing & Evaluation",
-  card1Title: "30-Day Grace Period",
-  card1Text: "Download immediately, no license key for first 30 days",
-  card2Title: "Try Shogun Risk-Free",
-  card2Text: "Full access to all Shogun features during trial period",
-  card3Title: "Try Shogun Risk-Free",
-  card3Text: "Solo Edition stays free forever, no strings attached",
-}
+export const pricingSeventhText = {
+  india: {
+    title: "Quick FAQ",
+    faqs: [
+      {
+        question: "What happens when my team grows?",
+        answer:
+          "Nothing to your BuildNinja price. Add 10 or 100 developers, still ₹16,999/month for unlimited users.",
+      },
+      {
+        question: "Is the free Solo Edition really free forever?",
+        answer:
+          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent agents forever.",
+      },
+      {
+        question:
+          "What's the difference between build agents and concurrent agents?",
+        answer:
+          "Build agents = machines you connect (unlimited). Concurrent agents = builds running at the same time (3 in Solo, unlimited in Shogun).",
+      },
+      {
+        question: "Can I try before buying?",
+        answer:
+          "Yes! 30-day demo with full feature access. No credit card required.",
+      },
+      {
+        question: "What if I need to cancel?",
+        answer:
+          "Cancel anytime. You keep full control of your self-hosted setup and all your data.",
+      },
+    ],
+    button: "View Complete FAQ →",
+  },
 
-export const seventhSectionText = {
-  title: "Ready to stop wasting time on broken CI/CD?",
-  button1: "Download Free (Solo Edition)",
-  button2: "Start 30 Day Trial (Shogun Edition)",
-  description: "Risk-free promise: 30-day evaluation, cancel anytime, data export guaranteed"
-}
+  global: {
+    title: "Quick FAQ",
+    faqs: [
+      {
+        question: "What happens when my team grows?",
+        answer:
+          "Nothing to your BuildNinja price. Add 10 or 100 developers, still $199/month for unlimited users.",
+      },
+      {
+        question: "Is the free Solo Edition really free forever?",
+        answer:
+          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent agents forever.",
+      },
+      {
+        question:
+          "What's the difference between build agents and concurrent agents?",
+        answer:
+          "Build agents = machines you connect (unlimited). Concurrent agents = builds running at the same time (3 in Solo, unlimited in Shogun).",
+      },
+      {
+        question: "Can I try before buying?",
+        answer:
+          "Yes! 30-day demo with full feature access. No credit card required.",
+      },
+      {
+        question: "What if I need to cancel?",
+        answer:
+          "Cancel anytime. You keep full control of your self-hosted setup and all your data.",
+      },
+    ],
+    button: "View Complete FAQ →",
+  },
+};
+export const pricingEighthText = {
+  title: "Stop Paying Per-Seat. Start Shipping Code.",
+  subtitle:
+    "Join 153+ engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. Get your CI/CD pipeline running in under 5 minutes.",
+  solo: {
+    title: "Solo Edition",
+    description: "No credit card. No time limit. Start in minutes.",
+    buttonText: "Download Free",
+  },
+  shogun: {
+    title: "Shogun Edition",
+    description: "Full access. Cancel anytime.",
+    buttonText: "Start 30-Day Trial",
+  },
+  features: [
+    "Free forever — Solo Edition",
+    "₹16,999/month unlimited",
+    "30-day trial",
+    "5-minute setup",
+    "Self-hosted control",
+    "Direct support",
+  ],
+};
+
+

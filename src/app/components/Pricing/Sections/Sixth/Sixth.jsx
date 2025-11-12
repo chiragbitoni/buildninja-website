@@ -1,32 +1,46 @@
-import './Sixth.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import { pricingSixthText} from "../../../../../../public/static/pricingPageText";
+import "./Sixth.css";
 import { paths } from "../../../../../../public/static/paths";
-import { sixthSectionText } from '../../../../../../public/static/pricingPageText';
-export default function Sixth() {
-    return (
-        <section className="sixthPricingSection">
-            <div className="sixthPricingContent">
-                <h1 className="sixthPricingTitle">
-                    {sixthSectionText.title}
-                </h1>
 
-                <div className="sixth-pricing-simple-grid">
-                    <div className="sixth-pricing-simple-box">
-                        <img src={paths.icons.clock} alt="CDS Icon" className="sixth-pricing-simple-box-icon" />
-                        <h3 className="sixth-pricing-simple-box-heading">{sixthSectionText.card1Title}</h3>
-                        <p className="sixth-pricing-simple-box-text">{sixthSectionText.card1Text}</p>
+function Sixth() {
+    const { region, billing, multiYear } = useSelector((state) => state.pricing);
+
+    // Example pricing logic based on region (optional)
+    const spots = region === "india" ? 847 : 912;
+
+    return (
+        <section className="pricingSixthSection">
+            <div className="pricingSixthHeader">
+                <span className="pricingSixthBadge">{pricingSixthText.subheadline}</span>
+                <h2 className="pricingSixthHeadline">{pricingSixthText.headline}</h2>
+            </div>
+
+            <div className="pricingSixthCards">
+                {pricingSixthText.features.map((feature, index) => (
+                    <div className="pricingSixthCard" key={index}>
+                        <img src={paths.icons.greenTickWithBG} alt="tick" className="pricingSixthTick" />
+                        <p>{feature.title}</p>
                     </div>
-                    <div className="sixth-pricing-simple-box">
-                        <img src={paths.icons.thunder} alt="Versioning Icon" className="sixth-pricing-simple-box-icon" />
-                        <h3 className="sixth-pricing-simple-box-heading">{sixthSectionText.card2Title}</h3>
-                        <p className="sixth-pricing-simple-box-text">{sixthSectionText.card2Text}</p>
-                    </div>
-                    <div className="sixth-pricing-simple-box">
-                        <img src={paths.icons.circleGreenCheck} alt="Circle Check Icon" className="sixth-pricing-simple-box-icon" />
-                        <h3 className="sixth-pricing-simple-box-heading">{sixthSectionText.card3Title}</h3>
-                        <p className="sixth-pricing-simple-box-text">{sixthSectionText.card3Text}</p>
-                    </div>
+                ))}
+            </div>
+
+            <div className="pricingSixthProgressContainer">
+                <p className="pricingSixthSpots">
+                    {pricingSixthText.spotsRemaining}: <span>{spots}</span>/1000
+                </p>
+                <div className="pricingSixthProgressBar">
+                    <div
+                        className="pricingSixthProgressFill"
+                        style={{ width: `${(spots / 1000) * 100}%` }}
+                    ></div>
                 </div>
             </div>
+
+            <p className="pricingSixthFooter">{pricingSixthText.footer}</p>
         </section>
     );
 }
+
+export default Sixth;

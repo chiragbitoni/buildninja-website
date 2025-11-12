@@ -1,142 +1,112 @@
-/* ======================================== */
-/* Base (Mobile-first) */
-/* ======================================== */
-.seventhPricingSection {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #000;
-    height: auto;
-    padding: 8vw 6vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
+/* ===========================
+   Base Styles (Mobile First)
+=========================== */
+.pricingSeventhSection {
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.seventhPricingSection::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.15;
-    z-index: 0;
-    pointer-events: none;
+.pricingSeventhInner {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* Title */
-.seventhPricingTitle {
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 6vw;
-    font-weight: 600;
-    margin: 4vw 0 3vw 0;
-    line-height: 1.3;
+.pricingSeventhTitle {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
-/* Buttons */
-.seventhPricingButtonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4vw;
-    margin-top: 3vw;
-    z-index: 2;
+/* ===========================
+   GRID CONTAINER
+=========================== */
+.pricingSeventhGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-.seventhPricingFreeButton,
-.seventhPricingShogunButton {
-    background-color: #D4335C;
-    color: #FFFFFF;
-    border-radius: 8vw;
-    padding: 2.5vw 8vw;
-    font-size: 4vw;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* ===========================
+   CARD STYLES
+=========================== */
+.pricingSeventhCard {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  transition: background 0.3s ease;
 }
 
-.seventhPricingFreeButton:hover,
-.seventhPricingShogunButton:hover {
-    background-color: #ea367d;
+.pricingSeventhCard:hover {
+  background-color: #262626;
 }
 
-/* Description */
-.seventhPricingDescription {
-    margin-top: 6vw;
-    font-size: 3.8vw;
-    font-weight: 400;
-    color: #FFFFFF;
-    text-align: center;
-    max-width: 90%;
-    line-height: 1.5;
+.pricingSeventhQuestion {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
 }
 
-/* ======================================== */
-/* Tablet (768px – 1023px) */
-/* ======================================== */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .seventhPricingSection {
-        padding: 6vw 8vw;
-    }
-
-    .seventhPricingTitle {
-        font-size: 4vw;
-        margin: 3vw 0 2vw 0;
-    }
-
-    .seventhPricingButtonContainer {
-        flex-direction: row;
-        justify-content: center;
-        gap: 3vw;
-        margin-top: 2vw;
-    }
-
-    .seventhPricingFreeButton,
-    .seventhPricingShogunButton {
-        font-size: 2vw;
-        padding: 1.2vw 4vw;
-        border-radius: 4vw;
-    }
-
-    .seventhPricingDescription {
-        margin-top: 3.5vw;
-        font-size: 2vw;
-        max-width: 80%;
-    }
+.pricingSeventhAnswer {
+  font-size: 0.9rem;
+  color: #c5c5c5;
+  line-height: 1.5;
 }
 
-/* ======================================== */
-/* Desktop (≥1024px) */
-/* ======================================== */
+/* ===========================
+   VIEW COMPLETE FAQ CARD
+=========================== */
+.pricingSeventhViewCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pricingSeventhButton {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pricingSeventhButton:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (min-width: 768px) {
+  .pricingSeventhGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .pricingSeventhTitle {
+    font-size: 2rem;
+  }
+
+  /* ✅ Ensure even rows — no full-width expansion */
+  .pricingSeventhViewCard {
+    grid-column: auto;
+  }
+}
+
 @media (min-width: 1024px) {
-    .seventhPricingSection {
-        padding: 3vw 10vw;
-    }
+  .pricingSeventhSection {
+    padding: 60px 80px;
+  }
 
-    .seventhPricingTitle {
-        font-size: 40px;
-        margin: 2vw 0;
-    }
-
-    .seventhPricingButtonContainer {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.5vw;
-        margin-top: 1.5vw;
-    }
-
-    .seventhPricingFreeButton,
-    .seventhPricingShogunButton {
-        font-size: 18px;
-        padding: 0.9vw 3vw;
-        border-radius: 2vw;
-    }
-
-    .seventhPricingDescription {
-        margin-top: 2vw;
-        font-size: 18px;
-        max-width: 60%;
-    }
+  .pricingSeventhCard {
+    padding: 24px;
+  }
 }

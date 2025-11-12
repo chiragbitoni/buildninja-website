@@ -1,15 +1,45 @@
+import React from "react";
 import "./Seventh.css";
-import { seventhSectionText } from "../../../../../../public/static/pricingPageText";
+import { useSelector } from "react-redux";
+import { pricingSeventhText } from "../../../../../../public/static/pricingPageText";
 
-export default function Seventh(){
-    return (
-        <section className="seventhPricingSection">
-            <h2 className="seventhPricingTitle">{seventhSectionText.title}</h2>
-            <div className="seventhPricingButtonContainer">
-                <button className="seventhPricingFreeButton">{seventhSectionText.button1}</button>
-                <button className="seventhPricingShogunButton">{seventhSectionText.button2}</button>
+function Seventh() {
+  const { region, billing, multiYear } = useSelector((state) => state.pricing);
+  const text = pricingSeventhText[region] || pricingSeventhText.global;
+
+  // Combine all FAQs + button card into same list
+  const faqsWithButton = [
+    ...text.faqs,
+    { isButton: true, question: "", answer: "" },
+  ];
+
+  return (
+    <section className="pricingSeventhSection">
+      <div className="pricingSeventhInner">
+        <h2 className="pricingSeventhTitle">{text.title}</h2>
+
+        <div className="pricingSeventhGrid">
+          {faqsWithButton.map((faq, index) => (
+            <div
+              className={`pricingSeventhCard ${
+                faq.isButton ? "pricingSeventhViewCard" : ""
+              }`}
+              key={index}
+            >
+              {faq.isButton ? (
+                <button className="pricingSeventhButton">{text.button}</button>
+              ) : (
+                <>
+                  <h3 className="pricingSeventhQuestion">{faq.question}</h3>
+                  <p className="pricingSeventhAnswer">{faq.answer}</p>
+                </>
+              )}
             </div>
-            <p className="seventhPricingDescription">{seventhSectionText.description}</p>
-        </section>
-    )
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
+
+export default Seventh;

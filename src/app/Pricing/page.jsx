@@ -7,6 +7,7 @@ import Fourth from "../components/Pricing/Sections/Fourth/Fourth";
 import Fifth from "../components/Pricing/Sections/Fifth/Fifth";
 import Sixth from "../components/Pricing/Sections/Sixth/Sixth";
 import Seventh from "../components/Pricing/Sections/Seventh/Seventh";
+import Eighth from "../components/Pricing/Sections/Eighth/Eighth";
 export default function Pricing() {
   return (
     <div >
@@ -18,6 +19,7 @@ export default function Pricing() {
       <Fifth />
       <Sixth />
       <Seventh />
+      <Eighth />
     </div>
   );
 }

@@ -46,7 +46,7 @@ export default function Fourth() {
             {card.badges && (
               <div className="cardBadges">
                 {card.badges.map((b, i) => (
-                  <div>
+                  <div key={i}>
                     <span key={i} className="badge">
                       <img src={paths.icons.shield}></img><p>
                         {b}
