@@ -69,6 +69,11 @@ export const paths = {
     customerStars: "/resources/icons/customerStars.svg",
     greenCircleTickOverLap: "/resources/icons/greenCircleTickOverLap.svg",
     navigation: "/resources/icons/navigation.svg",
-    greenTickWithBG: "/resources/icons/greenTickWithBG.svg"
+    greenTickWithBG: "/resources/icons/greenTickWithBG.svg",
+    usersPink: "/resources/icons/usersPink.svg",
+    syncPink: "/resources/icons/syncPink.svg",
+    serverPink: "/resources/icons/serverPink.svg",
+    headphonesPink: "/resources/icons/headphonesPink.svg",
+    calculatorPink: "/resources/icons/calculatorPink.svg",
   },
 };

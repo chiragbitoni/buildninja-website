@@ -1,3 +1,4 @@
+import { paths } from "./paths";
 
 export const heroSectionText = {
   title: "CI/CD That Just Works – Pick Your Plan",
@@ -217,6 +218,82 @@ export const secondSectionTextGlobal = {
     },
   },
 };
+
+
+// pricingFourthText.js
+
+export const pricingFourthText = {
+  title: "Pricing That Makes Sense <span class='pricingFourthpinkColorText'>as You Grow</span>",
+  subtitle: "Simple, transparent, and predictable for teams of any size.",
+
+  problemTitle: "The Problem",
+  problemTag: "Legacy Pricing",
+  problemDesc:
+    "Most CI/CD tools <strong>punish team growth</strong> with escalating per-seat costs. You're forced to choose between expensive cloud platforms that bill per user or complex self-hosted setups that drain DevOps time. Either way, <strong>costs become unpredictable.</strong>",
+
+  cards: [
+    {
+      icon: paths.icons.usersPink,
+      title: "No Per-Seat Taxation",
+      tag: "Scale Freely",
+      desc:
+        "Pay for your infrastructure scale, not your team size. Add 10 developers or 100, your BuildNinja cost stays the same.",
+      link: "Learn more →",
+    },
+    {
+      icon: paths.icons.serverPink,
+      title: "Self-Hosted Freedom",
+      tag: "Full Control",
+      desc:
+        "Run on your infrastructure with complete control. No vendor lock-in, no data sovereignty concerns, no surprise cloud bills.",
+      link: "Learn more →",
+    },
+    {
+      icon: paths.icons.calculatorPink,
+      title: "Simple, Transparent Pricing",
+      tag: "Predictable",
+      // region-based text will override this in Fourth.js
+      desc:
+        "Free up to 3 concurrent agents. ₹16,999/month unlimited users beyond that. No hidden costs, no complex calculations.",
+      link: "Learn more →",
+    },
+    {
+      icon: paths.icons.headphonesPink,
+      title: "Professional Support Included",
+      tag: "Partnership",
+      desc:
+        "Annual, 2-year, and 3-year plans include free migration assistance for 10 projects, 20 hours of professional services, and license buyout credits, not upsells, but true partnership.",
+      link: "Learn more →",
+    },
+    {
+      icon: paths.icons.syncPink,
+      title: "Risk-Free Switching",
+      tag: "30-Day Demo",
+      desc:
+        "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and a 30-day demo to validate everything works. We remove barriers that keep teams stuck on expensive tools.",
+      badges: ["Migration Support", "License Credits", "Zero Risk Trial"],
+    },
+  ],
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export const thirdSectionText = {
