@@ -1,0 +1,313 @@
+/* =========================================================
+   BASE — Mobile First (0px – 639px)
+========================================================= */
+
+.downloadDashboardHeroSection {
+    width: 100%;
+    padding: 40px 20px;
+    color: white;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #202020 100%),
+        #0d0d0d url('/resources/GenericHeroBG.png') center center / cover no-repeat fixed;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.downloadDashboardHeroContent {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.downloadDashboardHeroHeader {
+    text-align: center;
+}
+
+/* Breadcrumb */
+.downloadDashboardHeroBreadcrumb {
+    font-weight: 600;
+    justify-self: center;
+    color: #313131;
+    background-color: #ffffff;
+    padding: 6px 14px;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Title */
+.downloadDashboardHeroTitle {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* ======================
+   TOP CARD
+====================== */
+.downloadDashboardHeroCard {
+    background: #1E1E1E;
+    border: 4px solid #2BA216;
+    border-radius: 16px;
+    margin-top: 40px;
+    padding: 24px;
+}
+
+/* Versions Grid */
+.downloadDashboardHeroVersions {
+    margin-top: 20px;
+    position: relative;
+    display: grid;
+    gap: 20px;
+    text-align: left;
+}
+
+.downloadDashboardHeroVersions p {
+    color: #C5C5C5;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.downloadDashboardHeroVersions h3 {
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+
+.downloadDashboardHeroButtonTitle {
+    font-size: 22px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.downloadDashboardHeroCardTitleContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.downloadDashboardHeroCardTitle {
+    font-size: 32px;
+}
+
+/* Badge */
+.downloadDashboardHeroBadge {
+    background: #2BA216;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+    height: fit-content;
+}
+
+/* ======================
+   BUTTONS
+====================== */
+.downloadDashboardHeroButtons {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.downloadDashboardPinkBtn {
+    width: 100%;
+    background: #FF4172;
+    border: none;
+    padding: 14px;
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    justify-content: center;
+}
+
+/* ======================
+   DOCKER COMMANDS
+====================== */
+.downloadDashboardHeroDocker {
+    margin-top: 30px;
+    display: grid;
+    gap: 18px;
+    text-align: left;
+}
+
+.dockerItem label {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.dockerBox {
+    background: #1d2333;
+    padding: 14px;
+    margin-top: 6px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===============================
+   INSTALLATION METHODS
+================================ */
+.downloadDashboardHeroMethodsTitle {
+    margin-top: 50px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.downloadDashboardHeroMethods {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.methodCard {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* ===============================
+   PREVIOUS VERSIONS
+================================ */
+.downloadDashboardHeroPrevTitle {
+    margin-top: 60px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.downloadDashboardHeroVersionList {
+    margin-top: 20px;
+    display: grid;
+    gap: 16px;
+}
+
+.versionRow {
+    padding: 18px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    display: grid;
+    gap: 18px;
+}
+
+/* ===============================
+   SYSTEM REQUIREMENTS
+================================= */
+.downloadDashboardHeroSystemCard {
+    background: #151515;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 60px;
+    border: 1px solid #333;
+}
+
+/* ===============================
+   SUPPORT RESOURCES
+================================= */
+.supportTitle {
+    margin-top: 60px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.downloadDashboardHeroSupportGrid {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+}
+
+/* ======================================================================================
+   TABLET — Medium Screens (640px – 1023px)
+====================================================================================== */
+
+@media (min-width: 640px) {
+
+    .downloadDashboardHeroSection {
+        padding: 60px 30px;
+        text-align: left;
+    }
+
+    .downloadDashboardHeroTitle {
+        font-size: 40px;
+    }
+
+    .downloadDashboardHeroVersions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .downloadDashboardHeroButtons {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .downloadDashboardHeroDocker {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .downloadDashboardHeroMethods {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .downloadDashboardHeroSupportGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .versionRow {
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+    }
+}
+
+
+/* ======================================================================================
+   DESKTOP — Large Screens (1024px+)
+====================================================================================== */
+
+@media (min-width: 1024px) {
+
+    .downloadDashboardHeroContent {
+        width: 80%;
+        margin: auto;
+    }
+
+    .downloadDashboardHeroSection {
+        padding: 80px 40px;
+    }
+
+    .downloadDashboardHeroBreadcrumb {
+        font-size: 20px;
+    }
+
+    .downloadDashboardHeroTitle {
+        font-size: 48px;
+    }
+
+    .downloadDashboardHeroButtonTitle {
+        font-size: 24px;
+    }
+
+    .downloadDashboardHeroBadge {
+        font-size: 12px;
+    }
+
+    .downloadDashboardHeroMethods {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .downloadDashboardHeroSupportGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .versionRow {
+        grid-template-columns: 1fr 1fr 1fr auto;
+    }
+}

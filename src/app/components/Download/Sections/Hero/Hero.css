@@ -13,8 +13,7 @@
     position: relative;
     overflow: hidden;
     text-align: center;
-    background: url('/resources/GenericHeroBG.png') center center / cover no-repeat;
-    background-color: #000000;
+    background: linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #202020 100%), #0d0d0d url('/resources/GenericHeroBG.png') center center / cover no-repeat;
 }
 
 .downloadHeroSection::before {
@@ -267,3 +266,5 @@
         width: fit-content
     }
 }
+
+

@@ -1,5 +1,5 @@
 "use client"
-import Hero from "@/app/components/Download/Sections/Hero/Hero"
+import Hero from "@/app/components/Download/Dashboard/Sections/Hero/Hero"
 export default function Dashboard() {
     return (
         <div>
