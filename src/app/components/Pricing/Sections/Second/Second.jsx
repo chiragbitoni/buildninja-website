@@ -169,8 +169,8 @@ export default function Second() {
         <h4 className="pricingSecondAnnualEnterpriseCardTitle">{secondSectionEnterpriseCardText.title}</h4>
         <p className="pricingSecondAnnualEnterpriseCardDescription">{secondSectionEnterpriseCardText.description}</p>
         <div className="pricingSecondAnnualEnterpriseCardButtonsContainer">
-        <button className="pricingSecondAnnualEnterpriseCardButton">{secondSectionEnterpriseCardText.buttonText}</button>
-        <p className="pricingSecondAnnualEnterpriseCardResponseTimeText">{secondSectionEnterpriseCardText.responseTimeText}</p>
+          <button className="pricingSecondAnnualEnterpriseCardButton">{secondSectionEnterpriseCardText.buttonText}</button>
+          <p className="pricingSecondAnnualEnterpriseCardResponseTimeText">{secondSectionEnterpriseCardText.responseTimeText}</p>
         </div>
       </div>
 
@@ -213,7 +213,9 @@ export default function Second() {
           </div>
         )}
       </div>
-      <EnterpriseCard />
+      {billing === "annual" ?
+        <EnterpriseCard />
+        : null}
     </section>
   );
 }
