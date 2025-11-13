@@ -75,5 +75,9 @@ export const paths = {
     serverPink: "/resources/icons/serverPink.svg",
     headphonesPink: "/resources/icons/headphonesPink.svg",
     calculatorPink: "/resources/icons/calculatorPink.svg",
+    infinite: "/resources/icons/infinite.svg",
+    restricted: "/resources/icons/restricted.svg",
+    shieldPink: "/resources/icons/shieldPink.svg",
+    clockPink: "/resources/icons/clockPink.svg",
   },
 };

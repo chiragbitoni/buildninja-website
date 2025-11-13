@@ -1,5 +1,5 @@
 import "./Second.css";
-import { secondSectionTextIndia, secondSectionTextGlobal } from "../../../../../../public/static/pricingPageText";
+import { secondSectionTextIndia, secondSectionTextGlobal, secondSectionEnterpriseCardText } from "../../../../../../public/static/pricingPageText";
 import { useSelector } from "react-redux";
 import { paths } from "../../../../../../public/static/paths";
 import { useEffect } from "react";
@@ -160,10 +160,27 @@ export default function Second() {
     );
   };
 
+  const EnterpriseCard = () => {
+    return (
+      <div className="pricingSecondAnnualEnterpriseCard">
+        <p className="pricingSecondAnnualEnterpriseCardHighlight">
+          {secondSectionEnterpriseCardText.highlight}
+        </p>
+        <h4 className="pricingSecondAnnualEnterpriseCardTitle">{secondSectionEnterpriseCardText.title}</h4>
+        <p className="pricingSecondAnnualEnterpriseCardDescription">{secondSectionEnterpriseCardText.description}</p>
+        <div className="pricingSecondAnnualEnterpriseCardButtonsContainer">
+        <button className="pricingSecondAnnualEnterpriseCardButton">{secondSectionEnterpriseCardText.buttonText}</button>
+        <p className="pricingSecondAnnualEnterpriseCardResponseTimeText">{secondSectionEnterpriseCardText.responseTimeText}</p>
+        </div>
+      </div>
+
+    );
+  }
+
   // ------------------------
   // MAIN RETURN SECTION
   // ------------------------
-  useEffect(() => {}, [multiYear]);
+  useEffect(() => { }, [multiYear]);
 
   return (
     <section className="pricingSecondSection">
@@ -196,6 +213,7 @@ export default function Second() {
           </div>
         )}
       </div>
+      <EnterpriseCard />
     </section>
   );
 }

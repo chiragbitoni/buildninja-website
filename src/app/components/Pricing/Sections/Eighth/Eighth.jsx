@@ -3,7 +3,7 @@ import "./Eighth.css";
 import { pricingEighthText } from "../../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../../public/static/paths";
 
-function Eighth() {
+export default function Eighth() {
   const text = pricingEighthText;
 
   return (
@@ -41,5 +41,3 @@ function Eighth() {
     </section>
   );
 }
-
-export default Eighth;

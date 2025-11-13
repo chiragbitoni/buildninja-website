@@ -9,7 +9,7 @@ export default function Third() {
 
             <div className="pricingThirdCardsContainer">
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.infinite}></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Unlimited Build Agents</h3>
                         <p className="pricingThirdCardDesc">
@@ -19,7 +19,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.restricted}></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">No Per-Seat Costs</h3>
                         <p className="pricingThirdCardDesc">
@@ -29,7 +29,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.shieldPink}></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Self-Hosted Control</h3>
                         <p className="pricingThirdCardDesc">
@@ -39,7 +39,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.greenTick}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.clockPink}></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">30-Day Risk-Free Trial</h3>
                         <p className="pricingThirdCardDesc">
