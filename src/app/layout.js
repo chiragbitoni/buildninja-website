@@ -30,9 +30,9 @@ export default function RootLayout({ children }) {
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
         <ReduxProvider>
-            <Navbar />
-            <main className="pt-16">{children}</main>
-            <Footer />
+          <Navbar />
+          <main className="pt-16">{children}</main>
+          <Footer />
         </ReduxProvider>
       </body>
     </html>

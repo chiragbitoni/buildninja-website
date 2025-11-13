@@ -79,5 +79,10 @@ export const paths = {
     restricted: "/resources/icons/restricted.svg",
     shieldPink: "/resources/icons/shieldPink.svg",
     clockPink: "/resources/icons/clockPink.svg",
+    greenCircleTickOverLapWithBG: "/resources/icons/greenCircleTickOverLapWithBG.svg",
+    downloadWhite: "/resources/icons/downloadWhite.svg",
+    book: "/resources/icons/book.svg",
+    codeFile: "/resources/icons/codeFile.svg",
+    database: "/resources/icons/database.svg",
   },
 };

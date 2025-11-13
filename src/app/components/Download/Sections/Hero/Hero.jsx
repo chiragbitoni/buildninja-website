@@ -1,6 +1,9 @@
 import './Hero.css';
 import { heroSectionText } from "../../../../../../public/static/downloadPageText";
 export default function Hero() {
+    const handleSubmit = (e)=>{
+        
+    }
     return (
         <section className="downloadHeroSection">
             <div className="downloadHeroContent">
@@ -12,16 +15,18 @@ export default function Hero() {
                     {heroSectionText.subTitle}<br />
                 </p>
                 <div className="downloadHeroEmailContainer">
-                    <input
-                        name='email'
-                        type="email"
-                        autoComplete="email"
-                        className="downloadHeroEmailInput"
-                        placeholder={heroSectionText.downloadCContainerText.placeHolder}
-                    />
-                    <button className="downloadHeroEmailButton">
-                        {heroSectionText.downloadCContainerText.buttonText}
-                    </button>
+                    <form className="downloadHeroEmailForm" onSubmit={handleSubmit}>
+                        <input
+                            name='email'
+                            type="email"
+                            autoComplete="email"
+                            className="downloadHeroEmailInput"
+                            placeholder={heroSectionText.downloadCContainerText.placeHolder}
+                        />
+                        <button className="downloadHeroEmailButton">
+                            {heroSectionText.downloadCContainerText.buttonText}
+                        </button>
+                    </form>
                     <div className="downloadHeroEmailIconTextContainer">
                         {heroSectionText.downloadCContainerText.iconText.map((text, index) => (
                             <div className='downloadHeroEmailIconContainer' key={index} >

@@ -18,14 +18,14 @@ export const secondSectionText = {
   featuresCard: [
     {
       title: "See What Happened Without the Detective Work",
-      desc: "Track every build with detailed logs and duration analytics in one clean interface—no hunting through scattered settings or plugin outputs.",
+      desc: "Track every build with detailed logs and duration analytics in one clean interface, no hunting through scattered settings or plugin outputs.",
       icon: paths.icons.buildHistory,
       img: "/resources/Home/SecondSectionImages/image2.png",
       hover: "Click to preview ",
     },
     {
       title: "Own Your Infrastructure Without the Headache",
-      desc: "Monitor all your build agents in real-time with full visibility and control—see status, capacity, and health without complexity.",
+      desc: "Monitor all your build agents in real-time with full visibility and control, see status, capacity, and health without complexity.",
       icon: paths.icons.agentManagement,
       img: "/resources/Home/SecondSectionImages/image2.png",
       hover: "Click to preview ",
@@ -54,7 +54,7 @@ export const thirdSectionText = {
   card1Text: "Deploy in minutes, not weeks of complex setup",
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
-  card2Text: "Works with GitHub, GitLab, Bitbucket — no vendor lock-in",
+  card2Text: "Works with GitHub, GitLab, Bitbucket - no vendor lock-in",
   card3Title: "Deploy with Confidence",
   card3Step: "STEP 3",
   card3Text: "Built-in reliability without complexity or escalating costs",
@@ -94,7 +94,7 @@ export const fourthSectionText = {
     {
       title: "Everything in One Place",
       description:
-        "Configure your entire pipeline from a single, intuitive interface. VCS settings, build steps, artifacts—all organized logically so you know exactly where everything is.",
+        "Configure your entire pipeline from a single, intuitive interface. VCS settings, build steps, artifacts. All organized logically so you know exactly where everything is.",
       list: [
         {
           title: " No scattered settings",
@@ -142,7 +142,7 @@ export const fourthSectionText = {
     {
       title: "Complete Visibility Into Your Build Capacity",
       description:
-        "See which agents are online, idle, or running builds at a glance. Manage your entire build infrastructure from one dashboard—no SSH needed, no guesswork.",
+        "See which agents are online, idle, or running builds at a glance. Manage your entire build infrastructure from one dashboard, no SSH needed, no guesswork.",
       list: [
         {
           title: "Always know agent status",
@@ -308,7 +308,7 @@ export const eighthSectionText = {
     icon: paths.icons.result,
     title: "The Velocity",
     description:
-      "<strong>Imagine your team shipping features confidently, multiple times a day.</strong> No YAML headaches. No PhD in DevOps required. No deployment anxiety. Just reliable, fast deployments that let you focus on what actually matters—building software your customers love.	",
+      "<strong>Imagine your team shipping features confidently, multiple times a day.</strong> No YAML headaches. No PhD in DevOps required. No deployment anxiety. Just reliable, fast deployments that let you focus on what actually matters, building software your customers love.	",
   },
 };
 export const ninthSectionText = {
@@ -316,14 +316,14 @@ export const ninthSectionText = {
   subtitle:
     "Built by engineers who've deployed thousands of applications at GrapeCity.",
   subtitle2:
-    "Get your CI/CD pipeline running in under 5 minutes — free for 3 agents, $199/month unlimited as you scale",
+    "Get your CI/CD pipeline running in under 5 minutes. Free for 3 agents, $199/month unlimited as you scale",
   primaryButton: "Start Your 30-Day Free Trial",
   secondaryButton: "See the 5-Minute Demo",
   secondTitle: "Risk-Free Guarantee",
   list: [
     "30-day free trial, no credit card required",
     "Cancel anytime, keep full control of your setup",
-    "Deploy in minutes with Docker—test on your infrastructure",
+    "Deploy in minutes with Docker and test on your infrastructure",
     "Direct support from our engineering team",
   ],
 };
