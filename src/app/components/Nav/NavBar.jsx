@@ -76,6 +76,7 @@ export default function Navbar() {
               {item.name}
             </li>
           ))}
+          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/download")}>Start Free Trial</button>
         </ul>
       </div>
     </nav>

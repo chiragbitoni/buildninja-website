@@ -3,12 +3,15 @@ import { secondSectionTextIndia, secondSectionTextGlobal, secondSectionEnterpris
 import { useSelector } from "react-redux";
 import { paths } from "../../../../../../public/static/paths";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Second() {
   const { region, billing, multiYear } = useSelector((state) => state.pricing);
-
+  const router = useRouter();
   const secondSectionText = region === "india" ? secondSectionTextIndia : secondSectionTextGlobal;
-
+  const handleButtonClick = (e) => {
+    router.push(e);
+  }
   // ------------------------
   // SOLO EDITION CARD (Free)
   // ------------------------
@@ -60,7 +63,7 @@ export default function Second() {
 
       {/* Footer */}
       <div className="pricingMonthlyFreeCardFooter">
-        <button className="pricingMonthlyFreeCardButton">
+        <button className="pricingMonthlyFreeCardButton" onClick={()=>{handleButtonClick("/download")}}>
           {secondSectionText.monthCards.soloEditionCard.buttonText}
           <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
         </button>
@@ -95,7 +98,7 @@ export default function Second() {
         ))}
       </div>
       <div className="pricingMonthlyFreeCardFooter">
-        <button className="pricingMonthlyShogunCardButton">
+        <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/download")}}>
           {secondSectionText.monthCards.shogunEditionCard.buttonText}
           <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
         </button>
@@ -144,7 +147,7 @@ export default function Second() {
         </div>
 
         <div className="pricingMonthlyFreeCardFooter">
-          <button className="pricingMonthlyShogunCardButton">
+          <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/download")}}>
             {plan.buttonText}
             <img
               className="pricingMonthlyFreeIcon"
@@ -169,7 +172,7 @@ export default function Second() {
         <h4 className="pricingSecondAnnualEnterpriseCardTitle">{secondSectionEnterpriseCardText.title}</h4>
         <p className="pricingSecondAnnualEnterpriseCardDescription">{secondSectionEnterpriseCardText.description}</p>
         <div className="pricingSecondAnnualEnterpriseCardButtonsContainer">
-          <button className="pricingSecondAnnualEnterpriseCardButton">{secondSectionEnterpriseCardText.buttonText}</button>
+          <button className="pricingSecondAnnualEnterpriseCardButton" onClick={()=>{handleButtonClick("/support")}}>{secondSectionEnterpriseCardText.buttonText}</button>
           <p className="pricingSecondAnnualEnterpriseCardResponseTimeText">{secondSectionEnterpriseCardText.responseTimeText}</p>
         </div>
       </div>

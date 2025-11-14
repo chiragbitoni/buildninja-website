@@ -37,13 +37,16 @@
 }
 
 .seventhIntro {
-  font-family: "Segoe UI", Arial, sans-serif;
   /* max-width: 900px; */
   margin: 0 auto 10vw;
-  color: #FFFFFF;
+  color: #FFFFFFB2;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.6;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-style: Regular;
+
+
 }
 
 /* ===== Cards Grid ===== */
@@ -75,7 +78,6 @@
 
 /* Hover Lift (for desktop) */
 .seventhCard:hover {
-  transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
 }
 
@@ -91,11 +93,15 @@
 
 /* ===== Value Text ===== */
 .cardValue {
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 26px;
   font-weight: 700;
   color: #fff;
   margin-top: 6px;
+
+  font-family: Segoe UI;
+  font-weight: 700;
+  font-style: Bold;
+
 }
 
 /* ===== Label Text ===== */
@@ -173,30 +179,32 @@
   }
 
   .seventhCards {
+    justify-self: center;
+    width: 1100px;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2vw;
+    gap: 20px;
   }
 
   .seventhTitle {
-    font-size: 40px;
-    margin-bottom: 2vw;
+    font-size: 28px;
+    margin-bottom: 10px;
   }
 
   .seventhIntro {
-    font-size: 20px;
-
+    font-size: 16px;
+    margin-bottom: 40px;
   }
 
   .seventhCard {
-    padding: 30px 24px;
+    padding: 10px 10px 30px 10px;
     min-height: 150px;
   }
 
   .cardValue {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .cardLabel {
-    font-size: 20px;
+    font-size: 14px;
   }
 }

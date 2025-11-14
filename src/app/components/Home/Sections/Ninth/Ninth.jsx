@@ -2,7 +2,9 @@ import Image from "next/image";
 import './Ninth.css';
 import { ninthSectionText } from "../../../../../../public/static/homePageText";
 import { paths } from "../../../../../../public/static/paths";
+import { useRouter } from "next/navigation";
 export default function Ninth() {
+    const router = useRouter();
     return (
         <section className="ninthSection">
             <div className="ninthContent">
@@ -14,8 +16,8 @@ export default function Ninth() {
                     {ninthSectionText.subtitle2}
                 </h3>
                 <div className="ninth-inner-grid">
-                    <button className="ninthPrimaryBtn">{ninthSectionText.primaryButton}</button>
-                    <button className="ninthDemoBtn">{ninthSectionText.secondaryButton}</button>
+                    <button className="ninthPrimaryBtn" onClick={()=>{router.push("/download")}}>{ninthSectionText.primaryButton}</button>
+                    {/* <button className="ninthDemoBtn">{ninthSectionText.secondaryButton}</button> */}
                 </div>
                 <div className="ninthSecondTitleContainer">
                     <img src={paths.icons.greenShield} className="ninthSecondTitleIcon"></img>

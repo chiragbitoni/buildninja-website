@@ -7,19 +7,23 @@
   padding: 10vw 0;
   box-sizing: border-box;
   color: #ffffff;
+  /* background: #0F0F0FCC; */
+
 }
 
 /* ===== Titles ===== */
 .fifthHomeTitle {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: Segoe UI;
+  font-style: Regular;
   text-align: center;
   font-size: 26px;
   margin: 0 0 5vw;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .fifthHomeSecondTitle {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: Segoe UI;
+  font-style: Regular;
   text-align: center;
   font-size: 26px;
   margin-top: 8vw;
@@ -28,7 +32,8 @@
 }
 
 .fifthHomeThirdTitle {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: Segoe UI;
+  font-style: Regular;
   text-align: center;
   font-size: 24px;
   margin: 4vw 0;
@@ -85,7 +90,8 @@
 
 /* ===== Text ===== */
 .fifthHomeCardText {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: Segoe UI;
+  font-style: Regular;
   color: #ffffff;
   font-size: 16px;
   line-height: 1.5;
@@ -134,91 +140,41 @@
   }
 }
 
-/* ============================
-   3️⃣ SMALL DESKTOP (1024px – 1279px)
-   👉 2 Rows × 3 Columns Layout
-============================ */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .fifthHomeSection {
-    padding: 4vw 4vw;
-  }
+@media (min-width: 1024px) {
+  /* ===============================
+   Fifth Home Section (Cleaned)
+================================ */
 
-  .fifthHomeTitle {
-    font-size: 38px;
-    margin-bottom: 2vw;
-  }
-
-  .fifthHomeSecondTitle {
-    font-size: 38px;
-    margin-top: 4vw;
-    margin-bottom: 1.5vw;
-  }
-
-  .fifthHomeThirdTitle {
-    font-size: 34px;
-    margin: 1.5vw 0;
-  }
-
-  .fifthHomeSubTitle {
-    font-size: 20px;
-    margin: 1vw 0 3vw;
-    padding: 0 8vw;
-  }
-
-  /* ✅ 2 rows × 3 columns layout */
-  .fifthHomeCardsContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5vw 2vw;
-    padding: 0 4vw;
-    justify-items: center;
-    align-items: stretch;
-    max-width: 1200px;
-    margin: 0 auto 4vw auto;
-  }
-
-  .fifthHomeCard {
-    width: 100%;
-    padding: 3vw 2vw;
-    border-radius: 14px;
-  }
-
-  .fifthHomeCardText {
-    font-size: 18px;
-  }
-}
-
-/* ============================
-   4️⃣ DESKTOP (≥1280px)
-============================ */
-@media (min-width: 1280px) {
   .fifthHomeSection {
     padding: 3vw 2vw;
   }
 
+  /* ---------- Titles ---------- */
+
   .fifthHomeTitle {
-    font-size: 40px;
-    margin-bottom: 2vw;
+    font-size: 28px;
+    margin-bottom: 0;
   }
 
   .fifthHomeSecondTitle {
-    font-size: 40px;
-    margin-top: 4vw;
-    margin-bottom: 1vw;
-  }
-
-  .fifthHomeThirdTitle {
     font-size: 36px;
-    margin: 1vw 0;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
+  .fifthHomeThirdTitle {
+    font-size: 20px;
+    margin: 0;
   }
 
   .fifthHomeSubTitle {
-    font-size: 22px;
-    margin: 1vw 0 3vw;
-    padding: 0 8vw;
+    font-size: 16px;
+    margin: 10px 0 60px 0;
+    padding: 0 18vw;
   }
 
-  /* 🧩 Single row for large desktop */
+  /* ---------- Cards Container (Desktop) ---------- */
+
   .fifthHomeCardsContainer {
     margin: 0 auto 2vw auto;
     display: flex;
@@ -226,20 +182,24 @@
     justify-content: center;
     align-items: stretch;
     flex-wrap: nowrap;
-    gap: 2vw;
-    max-width: 1400px;
+    gap: 0.5vw;
+    max-width: 1500px;
+    padding: 0 4vw;
   }
+
+  /* ---------- Individual Cards ---------- */
 
   .fifthHomeCard {
     flex: 1 1 auto;
     max-width: 300px;
-    padding: 2.5vw 3vw;
-    background-color: rgba(0, 0, 0, 1);
+    padding: 1.5vw 1.7vw;
     border-radius: 16px;
+    background-color: rgba(0, 0, 0, 1);
+    gap: 0px;
   }
 
   .fifthHomeCardText {
-    font-size: 18px;
+    font-size: 14px;
     color: #fff;
   }
 
@@ -250,27 +210,5 @@
   .fifthHomeCardIcon2 {
     height: 120px;
   }
-}
 
-/* ============================
-   5️⃣ LARGE DESKTOP (≥1440px)
-============================ */
-@media (min-width: 1440px) {
-  .fifthHomeSection {
-    padding: 3vw 2vw;
-  }
-
-  .fifthHomeCardsContainer {
-    max-width: 1600px;
-    gap: 0.5vw;
-  }
-
-  .fifthHomeCard {
-    max-width: 300px;
-    padding: 1.5vw 1.7vw;
-  }
-
-  .fifthHomeSubTitle {
-    padding: 0 18vw;
-  }
 }

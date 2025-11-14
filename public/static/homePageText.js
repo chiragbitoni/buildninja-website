@@ -54,7 +54,7 @@ export const thirdSectionText = {
   card1Text: "Deploy in minutes, not weeks of complex setup",
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
-  card2Text: "Works with GitHub, GitLab, Bitbucket - no vendor lock-in",
+  card2Text: "Works with GitHub, GitLab, Bitbucket - no vendor <br/> lock-in",
   card3Title: "Deploy with Confidence",
   card3Step: "STEP 3",
   card3Text: "Built-in reliability without complexity or escalating costs",

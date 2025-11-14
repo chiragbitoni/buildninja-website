@@ -17,6 +17,7 @@ export default function Fourth() {
         alt: f.title,
     }));
 
+
     return (
         <section className="fourthSection">
             <div className="fourthSectionContent">

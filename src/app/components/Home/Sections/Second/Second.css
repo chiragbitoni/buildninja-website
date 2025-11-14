@@ -12,12 +12,12 @@
 
 /* Title & Subtitle */
 .secondSectionTitle {
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-weight: 600;
   font-size: 26px;
+  font-weight: 600;
   color: #ffffff;
   margin-bottom: 2vw;
   line-height: 1.2;
+
 }
 
 .secondSectionTitlePink {
@@ -25,12 +25,16 @@
 }
 
 .secondSectionSubTitle {
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-weight: 400;
   font-size: 18px;
   color: #ffffff;
   margin-bottom: 8vw;
-  opacity: 0.9;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+
 }
 
 /* ===========================
@@ -192,21 +196,25 @@
   }
 
   .secondSectionTitle {
-    font-size: 40px;
     margin-bottom: 1vw;
+    font-size: 28px;
+    line-height: 42px;
+    letter-spacing: 0%;
+    text-align: center;
   }
 
   .secondSectionSubTitle {
-    font-size: 28px;
     margin-bottom: 3vw;
+    font-size: 16px;
   }
 
-    .feature-title {
-    font-size: 26px;
+  .feature-title {
+    font-size: 20px;
+
   }
 
   .feature-desc {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .features-section {
@@ -216,5 +224,6 @@
 
   .feature-card {
     padding: 2rem;
+    font-size: 16px;
   }
 }

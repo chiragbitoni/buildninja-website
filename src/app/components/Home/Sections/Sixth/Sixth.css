@@ -127,7 +127,7 @@
 
 
 /* ========== 3️⃣ DESKTOP: ≥1280px ========== */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .sixthSection {
     padding: 4vw 6vw;
   }
@@ -137,18 +137,19 @@
   }
 
   .sixthTitle {
-    font-size: 40px;
+    font-size: 28px;
     margin-bottom: 3vw;
   }
 
   .sixthSubTitle {
-    font-size: 28px;
+    font-size: 14px;
     margin-bottom: 3vw;
   }
 
   .sixth-simple-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5vw;
+    gap: 60px;
+    width: 900px
   }
 
   .sixthSimple-list li+li {
@@ -156,7 +157,7 @@
   }
 
   .sixth-simple-box-text {
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1.7;
   }
 

@@ -44,8 +44,7 @@ export default function Third() {
             <h3 className="third-simple-box-heading">
               {thirdSectionText.card2Title}
             </h3>
-            <p className="third-simple-box-text">
-              {thirdSectionText.card2Text}
+            <p className="third-simple-box-text" dangerouslySetInnerHTML={{__html:thirdSectionText.card2Text}}>
             </p>
           </div>
 

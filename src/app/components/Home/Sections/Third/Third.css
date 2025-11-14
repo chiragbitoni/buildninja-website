@@ -28,13 +28,18 @@
 
 /* Title */
 .thirdTitle {
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 26px;
-  font-weight: 600;
   margin: 0vw 0 10vw 0;
-  text-align: center;
   line-height: 1.3;
   color: #FFFFFF;
+
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+
 }
 
 /* Grid container */
@@ -119,7 +124,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-word;
   overflow-x: auto;
-  max-width: 100%;  
+  max-width: 100%;
 }
 
 /* ===========================
@@ -177,15 +182,26 @@ pre {
   }
 
   .thirdTitle {
-    font-size: 40px;
+    font-size: 28px;
     margin-bottom: 3vw;
   }
 
   /* 👇 Cards made wider by reducing columns & expanding min width */
   .third-simple-grid {
-    grid-template-columns: repeat(4, minmax(300px, 1fr));
-    gap: 20px;
+    width: 1200px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 10px;
+    justify-self: center;
     justify-content: center;
+  }
+
+  div.third-simple-box {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px 30px;
+    gap: 17px;
+
   }
 
   .third-simple-box {
@@ -193,12 +209,22 @@ pre {
     padding: 2vw;
   }
 
+  img.third-simple-box-icon {
+    width: 48;
+    height: 48;
+  }
+
+  button.third-simple-box-button {
+    font-size: 12px;
+    padding: 5px 20px;
+  }
+
   .third-simple-box-heading {
-    font-size: 28px;
+    font-size: 16px;
   }
 
   .third-simple-box-text {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .third-simple-box-button {
@@ -206,6 +232,6 @@ pre {
   }
 
   pre {
-    font-size: 20px;
+    font-size: 12px;
   }
 }

@@ -80,12 +80,12 @@
 
     .pricingThirdCardsContainer {
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: center;
         gap: 0vw;
     }
 
     .pricingThirdCard {
-        width: 22%;
+        width: 300px;
         flex-direction: row;
     }
 
@@ -99,5 +99,11 @@
 
     .pricingThirdTitle {
         font-size: 2rem;
+        margin-bottom: 50px;
+    }
+
+    .pricingThirdIcon {
+        width: 25px;
+        align-self: top;
     }
 }

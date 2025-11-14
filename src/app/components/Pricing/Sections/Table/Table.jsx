@@ -34,7 +34,8 @@ export default function Table() {
           shogun: (
             <>
               ₹1,36,999/year
-              <small>(₹11,416/month) — SAVE ₹67,989/year</small>
+              <small>(₹11,416/month</small>
+                SAVE ₹67,989/year
             </>
           ),
         },
@@ -44,7 +45,8 @@ export default function Table() {
           shogun: (
             <>
               ₹2,19,999
-              <small>(₹9,166/month) — SAVE ₹1,04,989/year</small>
+              <small>(₹9,166/month)</small>
+                SAVE ₹1,04,989/year
             </>
           ),
         },
@@ -54,7 +56,8 @@ export default function Table() {
           shogun: (
             <>
               ₹2,74,999
-              <small>(₹7,638/month) — SAVE ₹1,13,899/year</small>
+              <small>(₹7,638/month)</small>
+                SAVE ₹1,13,899/year
             </>
           ),
         },

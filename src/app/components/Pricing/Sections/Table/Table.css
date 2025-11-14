@@ -48,6 +48,10 @@
   vertical-align: middle;
 }
 
+.pricingTable tr:hover {
+  background-color: #131313;
+}
+
 .pricingTable th {
   background-color: #131313;
   font-weight: 600;

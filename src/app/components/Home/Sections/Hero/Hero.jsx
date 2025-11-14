@@ -7,8 +7,10 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+      const router = useRouter();
     const images = [
         "/resources/Home/Slides/slide1.png",
         "/resources/Home/Slides/slide2.png",
@@ -27,8 +29,8 @@ export default function Hero() {
                     {heroSectionText.subtitle3}
                 </p>
                 <div className="heroButtons">
-                    <button className="heroBtn">{heroSectionText.primaryButton}</button>
-                    <button className="demoBtn">{heroSectionText.secondaryButton}</button>
+                    <button className="demoBtn" onClick={()=>{router.push("/download")}}>{heroSectionText.primaryButton}</button>
+                    {/* <button className="heroBtn">{heroSectionText.secondaryButton}</button> */}
                 </div>
 
                 <div className="heroCarousel">

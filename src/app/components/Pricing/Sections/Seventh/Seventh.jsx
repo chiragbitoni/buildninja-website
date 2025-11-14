@@ -2,6 +2,7 @@ import React from "react";
 import "./Seventh.css";
 import { useSelector } from "react-redux";
 import { pricingSeventhText } from "../../../../../../public/static/pricingPageText";
+import { useRouter } from "next/navigation";
 
 function Seventh() {
   const { region, billing, multiYear } = useSelector((state) => state.pricing);
@@ -12,7 +13,10 @@ function Seventh() {
     ...text.faqs,
     { isButton: true, question: "", answer: "" },
   ];
-
+  const router = useRouter();
+  const handleButtonClick = (e)=>{
+    router.push(e);
+  }
   return (
     <section className="pricingSeventhSection">
       <div className="pricingSeventhInner">
@@ -27,7 +31,7 @@ function Seventh() {
               key={index}
             >
               {faq.isButton ? (
-                <button className="pricingSeventhButton">{text.button}</button>
+                <button className="pricingSeventhButton" onClick={()=>{handleButtonClick("/faq")}}>{text.button}</button>
               ) : (
                 <>
                   <h3 className="pricingSeventhQuestion">{faq.question}</h3>

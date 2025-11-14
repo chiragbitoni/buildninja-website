@@ -2,10 +2,14 @@ import React from "react";
 import "./Eighth.css";
 import { pricingEighthText } from "../../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../../public/static/paths";
+import { useRouter } from "next/navigation";
 
 export default function Eighth() {
   const text = pricingEighthText;
-
+  const router = useRouter();
+  const handleButtonClick = (e) => {
+    router.push(e);
+  }
   return (
     <section className="pricingEighthSection">
       <h2 className="pricingEighthTitle">{text.title}</h2>
@@ -16,7 +20,7 @@ export default function Eighth() {
         <div className="pricingEighthCard">
           <h3 className="pricingEighthCardTitle">{text.solo.title}</h3>
           <p className="pricingEighthCardDesc">{text.solo.description}</p>
-          <button className="pricingEighthButton pricingEighthButtonGray">
+          <button className="pricingEighthButton pricingEighthButtonGray" onClick={()=>handleButtonClick("/download")}>
             {text.solo.buttonText}<img src={paths.icons.navigation}></img>
           </button>
         </div>
@@ -25,7 +29,7 @@ export default function Eighth() {
         <div className="pricingEighthCard">
           <h3 className="pricingEighthCardTitle">{text.shogun.title}</h3>
           <p className="pricingEighthCardDesc">{text.shogun.description}</p>
-          <button className="pricingEighthButton pricingEighthButtonPink">
+          <button className="pricingEighthButton pricingEighthButtonPink" onClick={()=>handleButtonClick("/download")}>
             {text.shogun.buttonText}<img src={paths.icons.navigation}></img>
           </button>
         </div>

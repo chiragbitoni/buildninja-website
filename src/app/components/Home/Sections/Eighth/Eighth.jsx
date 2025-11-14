@@ -18,7 +18,6 @@ export default function Eighth() {
                 {cards.map((card) => (
                     <div key={card.id} className={`eighthCard ${card.key}`}>
                         <div className="eighthCardHeader">
-                            <div className="eighthNumber">{card.id}</div>
                             <Image
                                 src={card.icon}
                                 alt={card.title}
