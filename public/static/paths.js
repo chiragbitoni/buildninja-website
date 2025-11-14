@@ -69,6 +69,7 @@ export const paths = {
     customerStars: "/resources/icons/customerStars.svg",
     greenCircleTickOverLap: "/resources/icons/greenCircleTickOverLap.svg",
     navigation: "/resources/icons/navigation.svg",
+    navigation2: "/resources/icons/navigation2.svg",
     greenTickWithBG: "/resources/icons/greenTickWithBG.svg",
     usersPink: "/resources/icons/usersPink.svg",
     syncPink: "/resources/icons/syncPink.svg",
@@ -83,6 +84,7 @@ export const paths = {
     downloadWhite: "/resources/icons/downloadWhite.svg",
     book: "/resources/icons/book.svg",
     codeFile: "/resources/icons/codeFile.svg",
+    codeFile2: "/resources/icons/codeFile2.svg",
     database: "/resources/icons/database.svg",
   },
 };

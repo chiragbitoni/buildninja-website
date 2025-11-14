@@ -73,7 +73,8 @@
 }
 
 
-.downloadDashboardHeroButtonTitle {
+.downloadDashboardHeroButtonTitle,
+.downloadDashboardHeroDockerTitle {
     font-size: 22px;
     margin-top: 20px;
     font-weight: 600;
@@ -129,20 +130,27 @@
 /* ======================
    DOCKER COMMANDS
 ====================== */
+
+.downloadDashboardHeroDockerTitle {}
+
 .downloadDashboardHeroDocker {
     margin-top: 30px;
-    display: grid;
+    /* display: grid; */
     gap: 18px;
     text-align: left;
 }
 
 .dockerItem label {
     font-size: 14px;
-    opacity: 0.7;
+    color: #ffffff;
+}
+
+.dockerBox p {
+    font-size: 16px;
 }
 
 .dockerBox {
-    background: #1d2333;
+    background: #222631;
     padding: 14px;
     margin-top: 6px;
     border-radius: 8px;
@@ -156,8 +164,8 @@
 ================================ */
 .downloadDashboardHeroMethodsTitle {
     margin-top: 50px;
-    font-size: 26px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .downloadDashboardHeroMethods {
@@ -167,62 +175,222 @@
 }
 
 .methodCard {
-    background: #111;
+    background: #2c2c2c;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
+    justify-content: space-between;
+    display: flex;
+    border: 1px solid #FFFFFF33;
+    flex-direction: column;
+}
+
+.methodCard h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.methodCard ul {
+    margin-bottom: 40px;
+}
+
+.methodCard a {
+    text-decoration: underline;
+}
+
+.methodCard:not(:nth-child(3)) li {
+    font-size: 16px;
+    list-style-type: disc;
+    line-height: 1.8;
+    list-style-position: inside;
+}
+
+.methodCard button {
+    margin-top: auto;
+    gap: 10px;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid #FFFFFF33;
+    background-color: #343434;
+    display: flex;
+}
+
+.methodCard img {
+    width: 20px;
+    height: 20px;
 }
 
 /* ===============================
    PREVIOUS VERSIONS
 ================================ */
 .downloadDashboardHeroPrevTitle {
-    margin-top: 60px;
-    font-size: 26px;
-    font-weight: 600;
-    text-align: left;
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .downloadDashboardHeroVersionList {
-    margin-top: 20px;
+    margin-top: 30px;
     display: grid;
     gap: 16px;
 }
 
+
 .versionRow {
     padding: 18px;
-    background: #1a1a1a;
-    border: 1px solid #333;
+    background: #1E1E1E;
+    border: 1px solid #FFFFFF33;
     border-radius: 10px;
     display: grid;
     gap: 18px;
+}
+
+.versionRow p {
+    font-size: 20px;
+}
+
+.versionRow h4 {
+    font-size: 16px;
+}
+
+.versionBtns {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.versionBtns button {
+    padding: 10px 30px;
+    background-color: #343434;
+    color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #FFFFFF33
+}
+
+.versionBtns img {
+    align-self: center;
+    height: 20px;
+    width: 20px;
+}
+
+.downloadDashboardHeroLoadMoreContainer {
+    justify-self: center;
+    margin-top: 40px;
+}
+
+.downloadDashboardHeroLoadMoreContainer button {
+    border: 1px solid #FFFFFF33;
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: #343434;
+    border-radius: 8px;
 }
 
 /* ===============================
    SYSTEM REQUIREMENTS
 ================================= */
 .downloadDashboardHeroSystemCard {
-    background: #151515;
-    border-radius: 12px;
+    background: #1e1e1e;
+    border-radius: 10px;
     padding: 30px;
     margin-top: 60px;
     border: 1px solid #333;
+}
+
+h2.systemTitle {
+    font-size: 24px;
+}
+
+.mongoBox {
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #3800D1;
+    background-color: #0E1220;
+}
+
+.mongoBox h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.systemTable {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.systemTable th {
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #FFFFFF33;
+    line-height: 2.5;
+}
+
+.systemTable td {
+    font-size: 16px;
+    border-bottom: 1px solid #FFFFFF33;
+    padding-left: 20px;
+    font-weight: 400;
+    line-height: 2.5;
 }
 
 /* ===============================
    SUPPORT RESOURCES
 ================================= */
 .supportTitle {
-    margin-top: 60px;
-    font-size: 26px;
-    font-weight: 600;
-    text-align: left;
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .downloadDashboardHeroSupportGrid {
     margin-top: 20px;
     display: grid;
     gap: 20px;
+}
+
+.supportCard {
+    background-color: #2C2C2C;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF33;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.supportCard h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.supportCard p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.supportCard button {
+    background-color: #343434;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #FFFFFF33;
+    margin-top: auto;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supportCard button img {
+    height: 20px;
+    width: 20px;
 }
 
 /* ======================================================================================
@@ -247,10 +415,6 @@
     .downloadDashboardHeroButtons {
         flex-direction: row;
         gap: 16px;
-    }
-
-    .downloadDashboardHeroDocker {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .downloadDashboardHeroMethods {
@@ -291,7 +455,8 @@
         font-size: 48px;
     }
 
-    .downloadDashboardHeroButtonTitle {
+    .downloadDashboardHeroButtonTitle,
+    .downloadDashboardHeroDockerTitle {
         font-size: 24px;
     }
 

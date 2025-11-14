@@ -37,19 +37,20 @@ export default function Hero() {
                         <button className="downloadDashboardPinkBtn"><img src={paths.icons.downloadWhite}></img>{text.versionsInfo.winAgentExe}</button>
                     </div>
                     {/* Docker */}
+                    <h4 className="downloadDashboardHeroDockerTitle">{text.versionsInfo.docker.title}</h4>
                     <div className="downloadDashboardHeroDocker">
                         <div className="dockerItem">
                             <label>{text.versionsInfo.docker.serverLabel}</label>
                             <div className="dockerBox">
                                 <p>{text.versionsInfo.docker.serverCmd}</p>
-                                <span className="copyIcon">📋</span>
+                                {/* <span className="copyIcon">📋</span> */}
                             </div>
                         </div>
                         <div className="dockerItem">
                             <label>{text.versionsInfo.docker.agentLabel}</label>
                             <div className="dockerBox">
                                 <p>{text.versionsInfo.docker.agentCmd}</p>
-                                <span className="copyIcon">📋</span>
+                                {/* <span className="copyIcon">📋</span> */}
                             </div>
                         </div>
                     </div>
@@ -58,22 +59,26 @@ export default function Hero() {
                 <h2 className="downloadDashboardHeroMethodsTitle">{text.methods.title}</h2>
                 <div className="downloadDashboardHeroMethods">
                     <div className="methodCard">
+                        <h4>{text.methods.windows.title}</h4>
                         <ul>
                             {text.methods.windows.steps.map((i) => <li key={i}>{i}</li>)}
                         </ul>
-                        <button>{text.methods.windows.button}</button>
+                        <button><img src={text.methods.windows.icon}></img>{text.methods.windows.button}</button>
                     </div>
                     <div className="methodCard">
+                        <h4>{text.methods.docker.title}</h4>
                         <ul>
                             {text.methods.docker.steps.map((i) => <li key={i}>{i}</li>)}
+                            <li><a>{text.methods.docker.step3}</a></li>
                         </ul>
-                        <button>{text.methods.docker.button}</button>
+                        <button><img src={text.methods.docker.icon}></img>{text.methods.docker.button}</button>
                     </div>
                     <div className="methodCard">
+                        <h4>{text.methods.kubernetes.title}</h4>
                         <ul>
                             {text.methods.kubernetes.steps.map((i) => <li key={i}>{i}</li>)}
                         </ul>
-                        <button>{text.methods.kubernetes.button}</button>
+                        <button><img src={text.methods.kubernetes.icon}></img>{text.methods.kubernetes.button}</button>
                     </div>
                 </div>
                 {/* Previous Versions */}
@@ -96,14 +101,16 @@ export default function Hero() {
                             <div className="versionBtns">
                                 <button>Server</button>
                                 <button>Agent</button>
-                                <span className="versionOpen">↗</span>
+                                <img className="versionOpen" src={paths.icons.navigation}></img>
                             </div>
                         </div>
                     ))}
                 </div>
-                <button className="downloadDashboardHeroLoadMore">
-                    {text.previousVersions.loadMore}
-                </button>
+                <div className="downloadDashboardHeroLoadMoreContainer">
+                    <button className="downloadDashboardHeroLoadMore">
+                        {text.previousVersions.loadMore}
+                    </button>
+                </div>
                 {/* System Requirements */}
                 <div className="downloadDashboardHeroSystemCard">
                     <h2 className="systemTitle">{text.systemRequirements.title}</h2>
@@ -135,7 +142,7 @@ export default function Hero() {
                         <div key={i} className="supportCard">
                             <h3>{card.title}</h3>
                             <p>{card.desc}</p>
-                            <button>{card.btn}</button>
+                            <button><img src={paths.icons.navigation}></img>{card.btn}</button>
                         </div>
                     ))}
                 </div>
