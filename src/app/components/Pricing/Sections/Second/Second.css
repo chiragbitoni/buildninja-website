@@ -532,3 +532,8 @@
   align-items: center;
   gap: 10px;
 }
+
+.pricingSecondAnnualEnterpriseCard {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

@@ -5,6 +5,9 @@ import { paths } from "../../../../../../../public/static/paths";
 export default function Hero() {
 
     const text = downloadAccessHeroText;
+    const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text); 
+    };
 
     return (
         <section className="downloadAccessHeroSection">
@@ -49,13 +52,36 @@ export default function Hero() {
 
                     <div className="downloadAccessHeroDockerBlock">
                         <p className="downloadAccessHeroDockerLabel">{text.docker.serverLabel}</p>
-                        <code className="downloadAccessHeroDockerCmd">{text.docker.serverCmd}</code>
+
+                        <div className="downloadAccessHeroDockerCmdRow">
+                            <code className="downloadAccessHeroDockerCmd">{text.docker.serverCmd}</code>
+
+                            <button
+                                className="downloadAccessHeroCopyBtn"
+                                onClick={() => copyToClipboard(text.docker.serverCmd)}
+                            >
+                                <img src={paths.icons.copy}></img>
+
+                            </button>
+                        </div>
                     </div>
 
                     <div className="downloadAccessHeroDockerBlock">
                         <p className="downloadAccessHeroDockerLabel">{text.docker.agentLabel}</p>
-                        <code className="downloadAccessHeroDockerCmd">{text.docker.agentCmd}</code>
+
+                        <div className="downloadAccessHeroDockerCmdRow">
+                            <code className="downloadAccessHeroDockerCmd">{text.docker.agentCmd}</code>
+
+                            <button
+                                className="downloadAccessHeroCopyBtn"
+                                onClick={() => copyToClipboard(text.docker.agentCmd)}
+                            >
+                                <img src={paths.icons.copy}></img>
+
+                            </button>
+                        </div>
                     </div>
+
                 </div>
 
                 {/* Next Steps */}

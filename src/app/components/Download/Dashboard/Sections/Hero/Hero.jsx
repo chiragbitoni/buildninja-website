@@ -3,7 +3,9 @@ import { downloadDashboardData as text } from "../../../../../../../public/stati
 import { paths } from "../../../../../../../public/static/paths";
 
 export default function Hero() {
-
+    const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text);
+    };
     return (
         <section className="downloadDashboardHeroSection">
             <div className="downloadDashboardHeroContent">
@@ -43,16 +45,28 @@ export default function Hero() {
                             <label>{text.versionsInfo.docker.serverLabel}</label>
                             <div className="dockerBox">
                                 <p>{text.versionsInfo.docker.serverCmd}</p>
-                                {/* <span className="copyIcon">📋</span> */}
+                                <button
+                                    className="copyBtn"
+                                    onClick={() => copyToClipboard(text.versionsInfo.docker.serverCmd)}
+                                >
+                                    <img src={paths.icons.copy}></img>
+                                </button>
                             </div>
                         </div>
+
                         <div className="dockerItem">
                             <label>{text.versionsInfo.docker.agentLabel}</label>
                             <div className="dockerBox">
                                 <p>{text.versionsInfo.docker.agentCmd}</p>
-                                {/* <span className="copyIcon">📋</span> */}
+                                <button
+                                    className="copyBtn"
+                                    onClick={() => copyToClipboard(text.versionsInfo.docker.agentCmd)}
+                                >
+                                     <img src={paths.icons.copy}></img>
+                                </button>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 {/* Installation Methods */}

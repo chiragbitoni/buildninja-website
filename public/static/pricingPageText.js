@@ -120,9 +120,10 @@ export const secondSectionTextIndia = {
 export const secondSectionEnterpriseCardText = {
   highlight: "ENTERPRISE",
   title: "Enterprise Customers with Special Needs?",
-  description: "Need custom deployment, dedicated support, SLA guarantees, or special compliance requirements? We'll create a tailored solution that fits your organization's unique needs.",
+  description:
+    "Need custom deployment, dedicated support, SLA guarantees, or special compliance requirements? We'll create a tailored solution that fits your organization's unique needs.",
   buttonText: "Contact Us for Custom Pricing",
-  responseTimeText: "Response within 24 hours"
+  responseTimeText: "Response within 24 hours",
 };
 // ===========================
 // 🌍 WORLDWIDE PRICING STRUCTURE
@@ -348,7 +349,7 @@ export const pricingFifthText = {
           heading: "SSO Integrations",
           list: [
             "Solo: 1 provider (choose your primary)",
-            "Shogun: All 5 providers (Microsoft, Azure AD, Google, GitHub, GitLab)",
+            "Shogun: All 5 providers (Microsoft, <br/>Azure AD, Google, GitHub, GitLab)",
           ],
         },
         {

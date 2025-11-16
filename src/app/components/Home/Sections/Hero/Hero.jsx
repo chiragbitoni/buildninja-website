@@ -14,6 +14,7 @@ export default function Hero() {
     const images = [
         "/resources/Home/Slides/slide1.png",
         "/resources/Home/Slides/slide2.png",
+        "/resources/Home/Slides/slide3.png",
     ];
     const paginationRef = useRef(null);
     return (

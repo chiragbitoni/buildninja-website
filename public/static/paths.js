@@ -86,5 +86,6 @@ export const paths = {
     codeFile: "/resources/icons/codeFile.svg",
     codeFile2: "/resources/icons/codeFile2.svg",
     database: "/resources/icons/database.svg",
+    copy: "/resources/icons/copy.svg",
   },
 };

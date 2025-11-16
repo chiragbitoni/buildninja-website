@@ -4,6 +4,7 @@
 .faqThirdSection {
   width: 100%;
   background: #262626;
+;
   color: #fff;
   font-family: "Inter", sans-serif;
   padding: 0vw 8vw;
@@ -40,7 +41,7 @@
 /* Each FAQ item */
 .faq-item {
   background: #2c2c2c;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid #FFFFFF1A;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -171,7 +172,7 @@
   max-width: 500px;
   padding: 0.9rem 1rem;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #FFFFFF1A;
   background-color: #1c1c1c;
   color: #fff;
   font-size: 1rem;
@@ -214,7 +215,7 @@
 
 .faq-highlight {
   background-color: #00bfff33;
-  color: #00bfff; 
+  color: #00bfff;
   font-weight: 600;
   padding: 0 2px;
   border-radius: 3px;

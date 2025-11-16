@@ -1,12 +1,16 @@
 /* =========================================================
    BASE — Mobile First (0px – 639px)
+   
 ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .downloadAccessHeroSection {
     width: 100%;
     padding: 40px 20px;
     box-sizing: border-box;
     color: white;
-    font-family: "Inter", sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     background: linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #202020 100%), #0d0d0d url('/resources/GenericHeroBG.png') center center / cover no-repeat;
     display: flex;
     flex-direction: column;
@@ -106,7 +110,8 @@
 .downloadAccessHeroDockerCmd {
     display: block;
     padding: 10px;
-    background: #000;
+    background: #222631;
+    ;
     border-radius: 8px;
     font-size: 14px;
     overflow-x: auto;
@@ -219,8 +224,8 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .downloadAccessHeroBtn{
-        width:fit-content;
+    .downloadAccessHeroBtn {
+        width: fit-content;
     }
 
     /* Make 3 cards only if space allows */
@@ -238,17 +243,20 @@
 @media (min-width: 1024px) {
     .downloadAccessHeroSection {
         width: 100%;
-        padding: 60px 40px;       /* keeps section full-width */
+        padding: 60px 40px;
+        /* keeps section full-width */
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        align-items: center;      /* centers inner content */
+        align-items: center;
+        /* centers inner content */
     }
 
     /* Inner content max width */
-    .downloadAccessHeroSection > * {
+    .downloadAccessHeroSection>* {
         width: 100%;
-        max-width: 1200px;        /* perfect desktop width */
+        max-width: 1200px;
+        /* perfect desktop width */
     }
 
     .downloadAccessHeroTick {
@@ -279,3 +287,24 @@
 }
 
 
+.downloadAccessHeroDockerCmdRow {
+    background: #222631;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.downloadAccessHeroDockerCmd {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.downloadAccessHeroCopyBtn:hover {
+    opacity: 0.7;
+}

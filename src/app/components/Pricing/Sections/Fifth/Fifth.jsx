@@ -29,7 +29,7 @@ export default function Fifth() {
                         alt="tick"
                         className="pricingFifthIcon"
                       />
-                      <span>{item}</span>
+                      <span dangerouslySetInnerHTML={{ __html: item }}></span>
                     </li>
                   ))}
                 </ul>

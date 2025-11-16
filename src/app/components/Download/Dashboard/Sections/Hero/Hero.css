@@ -9,7 +9,8 @@
     box-sizing: border-box;
     background: linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #202020 100%),
         #0d0d0d url('/resources/GenericHeroBG.png') center center / cover no-repeat fixed;
-    font-family: "Inter", sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     text-align: center;
 }
 
@@ -448,11 +449,11 @@ h2.systemTitle {
     }
 
     .downloadDashboardHeroBreadcrumb {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .downloadDashboardHeroTitle {
-        font-size: 48px;
+        font-size: 40px;
     }
 
     .downloadDashboardHeroButtonTitle,
@@ -475,4 +476,17 @@ h2.systemTitle {
     .versionRow {
         grid-template-columns: 1fr 1fr 1fr auto;
     }
+}
+
+
+.copyBtn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.copyBtn:hover {
+    opacity: 0.7;
 }
