@@ -3,7 +3,7 @@
 /* ======================================== */
 .thirdFeaturesSection {
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background-color: #262626;
+    background-color: #000000;
     height: auto;
     padding: 8vw 6vw;
     display: flex;
@@ -131,7 +131,7 @@
     .thirdFeaturesShogunButton {
         font-size: 20px;
         padding: 15px 40px;
-        border-radius: 2vw;
+        border-radius: 8px;
     }
 
     .thirdFeaturesDescription {

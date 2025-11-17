@@ -4,6 +4,7 @@ export const heroSectionText = {
   title: "Powerful Features to Supercharge Your CI/CD",
   subtitle:
     "From automated builds to enterprise-grade security, everything you need to build, test, and deploy with confidence.",
+    
 };
 
 export const secondSectionText = {

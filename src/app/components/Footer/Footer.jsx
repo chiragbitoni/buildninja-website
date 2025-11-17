@@ -1,7 +1,7 @@
 "use client";
 import "./Footer.css";
 import { useRouter } from "next/navigation";
-
+const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 const footerText = {
     company: {
         name: "BuildNinja",
@@ -15,10 +15,7 @@ const footerText = {
             links: [
                 { label: "Features", link: "/features" },
                 { label: "Pricing", link: "/pricing" },
-                {
-                    label: "Documentation",
-                    link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`,
-                },
+                { label: "Documentation", link: `${DOCS_URL}/docs/overview` },
                 { label: "Download", link: "/download" },
                 { label: "Support", link: "/support" },
                 { label: "FAQ", link: "/faq" },
@@ -27,7 +24,7 @@ const footerText = {
         {
             title: "Docs & Support",
             links: [
-                { label: "Getting Started", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`,  },
+                { label: "Getting Started", link: `${DOCS_URL}/docs/overview` },
                 { label: "Integrations", link: "#" },
                 { label: "Tutorials", link: "#" },
                 { label: "Community", link: "#" },
@@ -68,7 +65,7 @@ export default function Footer() {
         <footer className="footerContainer">
             <div className="footerWrapper">
                 <div className="footerContent">
-                    
+
                     {/* Left Section */}
                     <div className="footerBrand">
                         <div className="footerLogoContainer">
