@@ -45,7 +45,6 @@
 .navbar-links {
   align-items: center;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-
   display: flex;
   gap: 24px;
   list-style: none;
@@ -56,7 +55,7 @@
 .navbar-link {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   color: #FFFFFFB2;
   cursor: pointer;
   transition: color 0.2s;
@@ -77,9 +76,9 @@
 .navbarStartTrialButton {
   border-radius: 999px;
   color: #ffffff;
-  background-color: #000000;
+  background-color: #d4335c;
   width: fit-content;
-  padding: 2px 20px;
+  padding: 5px 20px;
 }
 
 .navbarStartTrialButton:hover {
