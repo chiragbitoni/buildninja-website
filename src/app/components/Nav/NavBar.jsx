@@ -11,6 +11,11 @@ export default function Navbar() {
 
   const router = useRouter();
   const pathname = usePathname(); // 👈 Get current path
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,8 +58,6 @@ export default function Navbar() {
             className="logo-image"
           />
         </div>
-
-        {/* Hamburger icon (mobile) */}
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -66,16 +69,20 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <ul className={`navbar-links ${menuOpen ? "menu-active" : ""}`}>
-          {navItems.map((item) => (
-            <li
-              key={item.name}
-              className={`navbar-link ${pathname === item.path ? "active-link" : ""
-                }`} // 👈 Highlight active link
-              onClick={() => { if (item.path) { handleNavigation(item.path) } else { window.location.href = item.link } }}
-            >
-              {item.name}
-            </li>
-          ))}
+          {mounted &&
+            navItems.map((item) => (
+              <li
+                key={item.name}
+                className={`navbar-link ${item.path && pathname.startsWith(item.path) ? "active-link" : ""
+                  }`}
+                onClick={() => {
+                  if (item.path) handleNavigation(item.path);
+                  else window.location.href = item.link;
+                }}
+              >
+                {item.name}
+              </li>
+            ))}
           <button className="navbarStartTrialButton" onClick={() => handleNavigation("/download")}>Start Free Trial</button>
         </ul>
       </div>

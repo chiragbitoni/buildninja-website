@@ -57,7 +57,7 @@
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #FFFFFFB2;
   cursor: pointer;
   transition: color 0.2s;
 }
@@ -71,6 +71,7 @@
   border-bottom: 2px solid #d4335c;
   padding-bottom: 2px;
   transition: color 0.2s, border-bottom 0.3s;
+  font-weight: 700;
 }
 
 .navbarStartTrialButton {

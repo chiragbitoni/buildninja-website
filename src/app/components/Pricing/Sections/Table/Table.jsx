@@ -23,7 +23,7 @@ export default function Table() {
 
   const pricingData = {
     india: {
-      title: "Everything You Need — Choose Your Scale",
+      title: "Everything You Need, Choose Your Scale",
       subtitle:
         "Select your region to see pricing in your currency. Currently showing India (₹ INR) pricing",
       rows: [

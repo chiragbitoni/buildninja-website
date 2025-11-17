@@ -25,8 +25,8 @@ export const secondSectionTextIndia = {
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
-        "3 concurrent agents — Run 3 builds simultaneously",
-        "Unlimited build agents — Connect as many machines as you want",
+        "3 concurrent agents - Run 3 builds simultaneously",
+        "Unlimited build agents - Connect as many machines as you want",
       ],
       listCard: {
         title: "Additional concurrent capacity (per agent)",
@@ -98,7 +98,7 @@ export const secondSectionTextIndia = {
   multiYearCards: {
     twoYear: {
       highlight: "BEST VALUE",
-      edition: "Shogun Edition — 2-Year Upfront",
+      edition: "Shogun Edition - 2-Year Upfront",
       price: "₹2,19,999 (₹9,166/month)",
       description: "Billed upfront for 2 years",
       savings: "SAVE ₹1,04,989/year",
@@ -107,7 +107,7 @@ export const secondSectionTextIndia = {
     },
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
-      edition: "Shogun Edition — 3-Year Upfront",
+      edition: "Shogun Edition - 3-Year Upfront",
       price: "₹2,74,999 (₹7,638/month)",
       description: "Billed upfront for 3 years",
       savings: "SAVE ₹1,13,989/year",
@@ -139,8 +139,8 @@ export const secondSectionTextGlobal = {
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
-        "3 concurrent agents — Run 3 builds simultaneously",
-        "Unlimited build agents — Connect as many machines as you want",
+        "3 concurrent agents - Run 3 builds simultaneously",
+        "Unlimited build agents - Connect as many machines as you want",
       ],
       listCard: {
         title: "Additional concurrent capacity (per agent)",
@@ -190,7 +190,7 @@ export const secondSectionTextGlobal = {
     highlight: "MOST POPULAR",
     edition: "Shogun Edition",
     price: "$2,388/year ($199/month)",
-    description: "Annual billing — SAVE $592/year",
+    description: "Annual billing - SAVE $592/year",
     savings: "SAVE $592/year",
     ideal:
       "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
@@ -212,7 +212,7 @@ export const secondSectionTextGlobal = {
   multiYearCards: {
     twoYear: {
       highlight: "BEST VALUE",
-      edition: "Shogun Edition — 2-Year Upfront",
+      edition: "Shogun Edition - 2-Year Upfront",
       price: "$4,200 ($175/month)",
       description: "Billed upfront for 2 years",
       savings: "SAVE $1,272/year",
@@ -221,7 +221,7 @@ export const secondSectionTextGlobal = {
     },
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
-      edition: "Shogun Edition — 3-Year Upfront",
+      edition: "Shogun Edition - 3-Year Upfront",
       price: "$5,700 ($158/month)",
       description: "Billed upfront for 3 years",
       savings: "SAVE $1,764/year",
@@ -470,7 +470,7 @@ export const pricingEighthText = {
     buttonText: "Start 30-Day Trial",
   },
   features: [
-    "Free forever — Solo Edition",
+    "Free forever - Solo Edition",
     "₹16,999/month unlimited",
     "30-day trial",
     "5-minute setup",
