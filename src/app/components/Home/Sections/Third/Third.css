@@ -172,7 +172,7 @@ pre {
 /* ===========================
    4️⃣ Desktop (≥1200px)
 =========================== */
-@media (min-width: 1660px) {
+@media (min-width: 1200px) {
   .thirdSection {
     padding: 5vw 4vw;
   }

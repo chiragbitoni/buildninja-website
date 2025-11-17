@@ -6,8 +6,8 @@ import { eighthSectionText } from "../../../../../../public/static/homePageText"
 export default function Eighth() {
     const cards = [
         { id: 1, key: "problem", color: "#FF4172", ...eighthSectionText.problem },
-        { id: 2, key: "approach", color: "#4395FF", ...eighthSectionText.approach },
-        { id: 3, key: "result", color: "#40FF1E", ...eighthSectionText.result },
+        { id: 2, key: "approach", color: "#FF4172", ...eighthSectionText.approach },
+        { id: 3, key: "result", color: "#FF4172", ...eighthSectionText.result },
     ];
 
     return (

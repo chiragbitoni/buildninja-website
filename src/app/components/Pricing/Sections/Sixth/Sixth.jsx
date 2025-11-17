@@ -7,9 +7,6 @@ import { paths } from "../../../../../../public/static/paths";
 function Sixth() {
     const { region, billing, multiYear } = useSelector((state) => state.pricing);
 
-    // Example pricing logic based on region (optional)
-    const spots = region === "india" ? 847 : 912;
-
     return (
         <section className="pricingSixthSection">
             <div className="pricingSixthHeader">
@@ -24,18 +21,6 @@ function Sixth() {
                         <p>{feature.title}</p>
                     </div>
                 ))}
-            </div>
-
-            <div className="pricingSixthProgressContainer">
-                <p className="pricingSixthSpots">
-                    {pricingSixthText.spotsRemaining}: <span>{spots}</span>/1000
-                </p>
-                <div className="pricingSixthProgressBar">
-                    <div
-                        className="pricingSixthProgressFill"
-                        style={{ width: `${(spots / 1000) * 100}%` }}
-                    ></div>
-                </div>
             </div>
 
             <p className="pricingSixthFooter">{pricingSixthText.footer}</p>

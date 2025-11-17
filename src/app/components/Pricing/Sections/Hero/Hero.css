@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 .pricingHeroSection {
     background: linear-gradient(180deg, #00000000 -50%, #262626 70%);
     background-image: url("/resources/PricingHeroBG.png");
@@ -7,7 +8,8 @@
     color: #fff;
     text-align: center;
     padding: 2rem 0.5rem;
-    font-family: "Inter", sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
 }
 
 .pricingHeroContent {

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 /* ========================================
    BASE STYLES (Mobile-first)
 ======================================== */
@@ -5,7 +6,7 @@
     background-color: #121212;
     color: white;
     padding: 12vw 6vw;
-    font-family: "Inter", Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 .pricingThirdTitle {

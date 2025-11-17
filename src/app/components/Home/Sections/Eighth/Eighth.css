@@ -67,11 +67,11 @@
 }
 
 .eighthCard.approach .eighthNumber {
-    background-color: #4395ff;
+    background-color: #FF4172;
 }
 
 .eighthCard.result .eighthNumber {
-    background-color: #40ff1e;
+    background-color: #FF4172;
 }
 
 .eighthIcon {
@@ -94,11 +94,11 @@
 }
 
 .eighthCard.approach .eighthHeading {
-    color: #4395ff;
+    color: #FF4172;
 }
 
 .eighthCard.result .eighthHeading {
-    color: #40ff1e;
+    color: #FF4172;
 }
 
 .eighthText {

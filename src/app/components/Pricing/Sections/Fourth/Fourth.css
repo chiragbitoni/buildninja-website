@@ -1,11 +1,13 @@
 /* ================================
    BASE STYLES (Mobile First)
 ================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .pricingFourthSection {
   background-color: #1c1c1c;
   color: #f4f4f4;
   padding: 60px 20px;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   text-align: center;
 }
 
@@ -14,10 +16,12 @@
   color: #ffffff;
   font-weight: 600;
 }
-.pricingFourthpinkColorText{
+
+.pricingFourthpinkColorText {
   color: #FF4D7A;
 
 }
+
 .pricingFourthHeader p {
   font-size: 0.95rem;
   color: #cfcfcf;

@@ -1,10 +1,12 @@
 /* ===========================
    Base Styles (Mobile First)
 =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .pricingSeventhSection {
   background-color: #0f0f0f;
   color: #fff;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   padding: 40px 20px;
   text-align: center;
 }
@@ -94,7 +96,9 @@
   .pricingSeventhTitle {
     font-size: 2rem;
   }
-e
+
+  e
+
   /* ✅ Ensure even rows — no full-width expansion */
   .pricingSeventhViewCard {
     grid-column: auto;

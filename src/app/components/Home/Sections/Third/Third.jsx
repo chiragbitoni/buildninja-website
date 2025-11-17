@@ -69,7 +69,7 @@ export default function Third() {
           {/* Step 4 */}
           <div className="third-simple-box">
             <img
-              src={paths.icons.upward}
+              src={paths.icons.expand}
               alt="Upward Icon"
               className="third-simple-box-icon"
             />
