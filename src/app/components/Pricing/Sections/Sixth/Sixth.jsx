@@ -5,8 +5,6 @@ import "./Sixth.css";
 import { paths } from "../../../../../../public/static/paths";
 
 function Sixth() {
-    const { region, billing, multiYear } = useSelector((state) => state.pricing);
-
     return (
         <section className="pricingSixthSection">
             <div className="pricingSixthHeader">
