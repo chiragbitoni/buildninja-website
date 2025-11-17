@@ -12,22 +12,15 @@ export const supportHeroText = {
       title: "Email Support",
       // desc: "hello@grapehub.io",
       linkText: "hello@grapehub.io",
-      mail:true,
+      mail: true,
     },
     {
       icon: paths.icons.documentpurple,
       title: "Documentation",
       desc: "Browse guides and tutorials",
       linkText: "View Documentation →",
-      mail:false,
-    },
-    
-    {
-      icon: paths.icons.recorderRed,
-      title: "Video Tutorials",
-      desc: "Watch setup guides",
-      linkText: "Watch Tutorials →",
-      mail:false,
+      mail: false,
+      link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`,
     },
   ],
   form: {

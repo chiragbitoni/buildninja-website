@@ -103,16 +103,13 @@ export const downloadDashboardData = {
         title: "Installation Documentation",
         desc: "Comprehensive guides for all installation methods",
         btn: "View Documentation",
-      },
-      {
-        title: "Community Forum",
-        desc: "Get help from the BuildNinja community",
-        btn: "Visit Forum",
+        link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`
       },
       {
         title: "Contact Support",
         desc: "Direct assistance from our support team",
         btn: "Get Support",
+        router: "/support"
       },
     ],
   },

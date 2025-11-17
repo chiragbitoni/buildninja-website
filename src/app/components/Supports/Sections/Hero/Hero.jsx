@@ -34,7 +34,7 @@ export default function SupportHero() {
                                     <h4>{opt.title}</h4>
                                     <p>{opt.desc ? opt.desc : null}</p>
                                     {opt.mail ? (<a href={`mailto:${opt.linkText}`}>{opt.linkText}</a>) : null}
-                                    {!opt.mail && opt.linkText && <a href="#">{opt.linkText}</a>}
+                                    {!opt.mail && opt.linkText && <a href={opt.link}>{opt.linkText}</a>}
                                 </div>
                             </div>
                         ))}

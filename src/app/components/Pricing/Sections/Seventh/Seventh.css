@@ -79,7 +79,7 @@
 
 .pricingSeventhButton:hover {
   background-color: #333;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 /* ===========================
@@ -94,7 +94,7 @@
   .pricingSeventhTitle {
     font-size: 2rem;
   }
-
+e
   /* ✅ Ensure even rows — no full-width expansion */
   .pricingSeventhViewCard {
     grid-column: auto;

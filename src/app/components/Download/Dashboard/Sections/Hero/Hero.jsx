@@ -1,8 +1,13 @@
 import "./Hero.css";
 import { downloadDashboardData as text } from "../../../../../../../public/static/downloadDashboardPageText";
 import { paths } from "../../../../../../../public/static/paths";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+    const router = useRouter();
+    const handleRoute = (e) => {
+        router.push(e);
+    }
     const copyToClipboard = (text) => {
         navigator.clipboard.writeText(text);
     };
@@ -62,7 +67,7 @@ export default function Hero() {
                                     className="copyBtn"
                                     onClick={() => copyToClipboard(text.versionsInfo.docker.agentCmd)}
                                 >
-                                     <img src={paths.icons.copy}></img>
+                                    <img src={paths.icons.copy}></img>
                                 </button>
                             </div>
                         </div>
@@ -77,7 +82,7 @@ export default function Hero() {
                         <ul>
                             {text.methods.windows.steps.map((i) => <li key={i}>{i}</li>)}
                         </ul>
-                        <button><img src={text.methods.windows.icon}></img>{text.methods.windows.button}</button>
+                        <button onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`; }}><img src={text.methods.windows.icon}></img>{text.methods.windows.button}</button>
                     </div>
                     <div className="methodCard">
                         <h4>{text.methods.docker.title}</h4>
@@ -85,14 +90,14 @@ export default function Hero() {
                             {text.methods.docker.steps.map((i) => <li key={i}>{i}</li>)}
                             <li><a>{text.methods.docker.step3}</a></li>
                         </ul>
-                        <button><img src={text.methods.docker.icon}></img>{text.methods.docker.button}</button>
+                        <button onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/getting-started/quick-setup-guide/configure-server-and-agent-with-docker-&-kubernetes/configure-and-deploy-with-docker`; }}><img src={text.methods.docker.icon}></img>{text.methods.docker.button}</button>
                     </div>
                     <div className="methodCard">
                         <h4>{text.methods.kubernetes.title}</h4>
                         <ul>
                             {text.methods.kubernetes.steps.map((i) => <li key={i}>{i}</li>)}
                         </ul>
-                        <button><img src={text.methods.kubernetes.icon}></img>{text.methods.kubernetes.button}</button>
+                        <button onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/getting-started/quick-setup-guide/configure-server-and-agent-with-docker-&-kubernetes/configure-and-deploy-with-kubernetes`; }}><img src={text.methods.kubernetes.icon}></img>{text.methods.kubernetes.button}</button>
                     </div>
                 </div>
                 {/* Previous Versions */}
@@ -130,7 +135,7 @@ export default function Hero() {
                     <h2 className="systemTitle">{text.systemRequirements.title}</h2>
                     <div className="mongoBox">
                         <h3>{text.systemRequirements.mongoRequired}</h3>
-                        <a href="#">{text.systemRequirements.mongoDownload}</a>
+                        <a href="https://www.mongodb.com/">{text.systemRequirements.mongoDownload}</a>
                     </div>
                     <table className="systemTable">
                         <thead>
@@ -156,7 +161,9 @@ export default function Hero() {
                         <div key={i} className="supportCard">
                             <h3>{card.title}</h3>
                             <p>{card.desc}</p>
-                            <button><img src={paths.icons.navigation}></img>{card.btn}</button>
+                            {card.router ?
+                                <button onClick={() => { handleRoute(card.router) }}><img src={paths.icons.navigation}></img>{card.btn}</button> :
+                                <button onClick={() => { window.location.href = card.link }}><img src={paths.icons.navigation}></img>{card.btn}</button>}
                         </div>
                     ))}
                 </div>

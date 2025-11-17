@@ -1,8 +1,10 @@
 "use client";
 import "./Fourth.css";
 import { fourthSectionText } from "../../../../../../public/static/faqPageText";
+import { useRouter } from "next/navigation";
 
 export default function Fourth() {
+  const router = useRouter();
   return (
     <section className="faqFourthSection">
       <div className="faqFourthContent">
@@ -18,7 +20,10 @@ export default function Fourth() {
               />
               <h3 className="faqFourthHeading">{card.title}</h3>
               <p className="faqFourthText">{card.description}</p>
-              <button className="faqFourthBtn">{card.buttonText}</button>
+              {card.link ?
+                <button className="faqFourthBtn" onClick={()=>{window.location.href = card.link}}>{card.buttonText}</button> :
+                <button className="faqFourthBtn" onClick={()=>{router.push(card.router)}}>{card.buttonText}</button>
+              }
             </div>
           ))}
         </div>

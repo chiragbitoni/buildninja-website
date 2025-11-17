@@ -364,6 +364,7 @@ h2.systemTitle {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
 }
 
 .supportCard h3 {
@@ -392,6 +393,10 @@ h2.systemTitle {
 .supportCard button img {
     height: 20px;
     width: 20px;
+}
+
+.mongoBox a {
+    text-decoration: underline;
 }
 
 /* ======================================================================================
@@ -470,8 +475,9 @@ h2.systemTitle {
     }
 
     .downloadDashboardHeroSupportGrid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+
 
     .versionRow {
         grid-template-columns: 1fr 1fr 1fr auto;

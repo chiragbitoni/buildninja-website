@@ -220,17 +220,20 @@ export const fourthSectionText = {
       title: "Documentation",
       description: "Comprehensive guides and API references",
       buttonText: "View Docs",
+       link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`
     },
     {icon:paths.icons.emailWhite,
       title: "Email Support",
       description: "Get help from our support team",
       buttonText: "Contact Us",
+      router: "/support"
     },
     {
       icon: paths.icons.searchWhite,
       title: "Search Docs",
       description: "Find answers quickly in our knowledge base",
       buttonText: "Search",
+       link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`
     },
   ],
 };

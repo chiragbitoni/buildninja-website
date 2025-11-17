@@ -29,7 +29,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Pricing", path: "/pricing" },
     { name: "Features", path: "/features" },
-    { name: "Documentation", path: "/documentation" },
+    { name: "Documentation", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
     { name: "Download", path: "/download" },
     { name: "Support", path: "/support" },
     { name: "FAQ", path: "/faq" },
@@ -71,7 +71,7 @@ export default function Navbar() {
               key={item.name}
               className={`navbar-link ${pathname === item.path ? "active-link" : ""
                 }`} // 👈 Highlight active link
-              onClick={() => handleNavigation(item.path)}
+              onClick={() => { if (item.path) { handleNavigation(item.path) } else { window.location.href = item.link } }}
             >
               {item.name}
             </li>

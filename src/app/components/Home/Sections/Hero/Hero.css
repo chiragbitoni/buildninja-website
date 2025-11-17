@@ -1,8 +1,10 @@
 /* ===============================
    HERO SECTION STYLES
 ================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 .heroSection {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +41,6 @@
 
 /* Title & Subtitle */
 .heroTitle {
-
     font-size: 40px;
     font-weight: 600;
     margin: 0 0 1vw 0;

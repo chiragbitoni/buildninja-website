@@ -1,13 +1,18 @@
 import "./Hero.css";
 import { downloadAccessHeroText } from "../../../../../../../public/static/downloadAccessPageText";
 import { paths } from "../../../../../../../public/static/paths";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
 
     const text = downloadAccessHeroText;
     const copyToClipboard = (text) => {
-        navigator.clipboard.writeText(text); 
+        navigator.clipboard.writeText(text);
     };
+    const router = useRouter();
+    const handleButtonClick = (e) => {
+        router.push(e);
+    }
 
     return (
         <section className="downloadAccessHeroSection">
@@ -119,21 +124,21 @@ export default function Hero() {
                         <img src={paths.icons.codeFile}></img>
                         <h3>{text.bottomLinks.guide}</h3>
                         <p>{text.bottomLinks.guideDesc}</p>
-                        <button>{text.bottomLinks.guideButton}</button>
+                        <button onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/category/quick-setup-guide`; }}>{text.bottomLinks.guideButton}</button>
                     </div>
 
                     <div className="downloadAccessHeroBottomItem">
                         <img src={paths.icons.book}></img>
                         <h3>{text.bottomLinks.docs}</h3>
                         <p>{text.bottomLinks.docsDesc}</p>
-                        <button>{text.bottomLinks.guideButton}</button>
+                        <button onClick={() => {window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`;}}>{text.bottomLinks.guideButton}</button>
                     </div>
 
                     <div className="downloadAccessHeroBottomItem">
                         <img src={paths.icons.database}></img>
                         <h3>{text.bottomLinks.support}</h3>
                         <p>{text.bottomLinks.supportDesc}</p>
-                        <button>{text.bottomLinks.supportButton}</button>
+                        <button onClick={()=>handleButtonClick("/support")}>{text.bottomLinks.supportButton}</button>
                     </div>
                 </div>
             </div>
