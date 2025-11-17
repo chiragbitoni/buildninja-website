@@ -11,7 +11,7 @@
     box-sizing: border-box;
     color: white;
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #202020 100%), #0d0d0d url('/resources/GenericHeroBG.png') center center / cover no-repeat;
+    background: linear-gradient(180deg, rgba(32, 32, 32, 0) -150%, #202020 100%), #0d0d0d url('/resources/GenericHeroBG.png') center center / cover no-repeat;
     display: flex;
     flex-direction: column;
     gap: 32px;
