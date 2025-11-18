@@ -8,7 +8,7 @@ export default function Download() {
     const router = useRouter();
     useEffect(()=>{
         if(getToken()){
-            // router.replace("/download/dashboard")
+            router.replace("/download/dashboard")
         }
     },[]);
     return (

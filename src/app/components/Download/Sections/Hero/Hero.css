@@ -83,8 +83,12 @@
     display: flex;
     flex-direction: column;
 }
-
-.downloadHeroEmailInput {
+.downloadHeroEmailInput,
+.downloadHeroEmailInput:focus,
+.downloadHeroEmailInput:active,
+.downloadHeroEmailInput:invalid,
+.downloadHeroEmailInput:valid,
+.downloadHeroEmailInput:-webkit-autofill {
     background-color: #1b1b1b;
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -93,8 +97,10 @@
     font-size: 16px;
     color: #FFFFFF;
     margin-bottom: 4vw;
+    -webkit-text-fill-color: #FFFFFF !important; /* Autofill text color */
+    caret-color: #FFFFFF;                       /* Cursor color */
+    box-shadow: 0 0 0px 1000px #1b1b1b inset !important; /* Override yellow autofill */
 }
-
 .downloadHeroEmailButton {
     background-color: #FF4172;
     border: none;

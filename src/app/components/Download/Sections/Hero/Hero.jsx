@@ -19,8 +19,7 @@ export default function Hero() {
         console.log(res)
         if (res.value?.accessToken) {
             saveToken(res.value.accessToken);
-            // router.push("/download/access");
-            alert("success")
+            router.push("/download/access");
         }
 
     }
