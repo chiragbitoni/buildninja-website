@@ -2,7 +2,8 @@
 .fourthSection {
     background-color: #0A0A0A;
     height: auto;
-    font-family: "Segoe UI", Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     padding: 10vw 2vw;
 }
 
@@ -11,7 +12,8 @@
     font-size: 26px;
     font-weight: 600;
     color: #ffffff;
-    font-family: Segoe UI;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-style: Semibold;
     line-height: 42px;
 
@@ -22,7 +24,8 @@
 }
 
 .fourthSectionSubTitle {
-    font-family: "Segoe UI", Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-weight: 400;
     text-align: center;
     font-size: 18px;
@@ -75,7 +78,8 @@
     flex-direction: column;
     gap: 6rem;
     color: #f5f5f5;
-    font-family: Segoe UI;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-style: Regular;
     box-sizing: border-box;
 }
@@ -101,7 +105,8 @@
 }
 
 .fourthFeature-title {
-    font-family: Segoe UI;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-style: Regular;
     font-size: 20px;
     font-weight: 600;
@@ -110,7 +115,8 @@
 }
 
 .fourthFeature-description {
-    font-family: Segoe UI;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-style: Regular;
     font-size: 16px;
     line-height: 1.6;
@@ -120,7 +126,8 @@
 }
 
 .fourthFeature-points {
-    font-family: Segoe UI;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-style: Regular;
     list-style: none;
     padding: 0;

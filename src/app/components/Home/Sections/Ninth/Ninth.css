@@ -1,6 +1,6 @@
 /* Base (Mobile-first) */
 .ninthSection {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +30,8 @@
 
 /* Headings */
 .ninthTitle {
-    font-family: Segoe UI;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-style: Semi Bold;
     color: #FFFFFF;
     text-align: center;
@@ -42,7 +43,8 @@
 }
 
 .ninthSubTitle {
-    font-family: Segoe UI;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     color: #FFFFFF;
     text-align: center;
     font-size: 18px;
@@ -62,7 +64,8 @@
 
 .ninthPrimaryBtn,
 .ninthDemoBtn {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-weight: 600;
     font-size: 16px;
     padding: 2.5vw 9vw;
@@ -98,7 +101,8 @@
     justify-content: center;
     gap: 2vw;
     color: #FFFFFF;
-    font-family: 'Segoe UI', Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     margin: 8vw 0 4vw 0;
 }
 
@@ -137,7 +141,7 @@
     list-style-type: none;
     font-size: 16px;
     color: #FFFFFF;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -219,7 +223,7 @@
     .ninthTitle {
         font-size: 28px;
         margin: 0vw 0 10px 0;
-        
+
     }
 
     .ninthSubTitle {
@@ -236,7 +240,7 @@
     .ninthPrimaryBtn,
     .ninthDemoBtn {
         font-size: 20px;
-        padding:15px 40px;
+        padding: 15px 40px;
         border-radius: 2vw;
     }
 
@@ -246,8 +250,8 @@
     }
 
     .ninthSecondTitleIcon {
-        height:35px;
-        width:35px;
+        height: 35px;
+        width: 35px;
     }
 
     .ninthSecondTitle {
@@ -255,15 +259,13 @@
     }
 
     .ninthListGrid {
-        justify-self: center;
         width: 900px;
-        flex-direction: row;
-        gap: 3vw;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
         gap: 2vw;
-        margin: 0 8vw;
     }
 
     .ninthListContainer {

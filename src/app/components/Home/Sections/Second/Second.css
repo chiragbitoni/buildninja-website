@@ -1,7 +1,10 @@
 /* ===========================
    1️⃣ Base (Mobile-first)
 =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .secondSection {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   background-color: #0a0a0a;
   padding: 10vw 4vw;
   text-align: center;
@@ -17,6 +20,7 @@
   color: #ffffff;
   margin-bottom: 2vw;
   line-height: 1.2;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
 }
 
@@ -28,12 +32,11 @@
   font-size: 18px;
   color: #ffffff;
   margin-bottom: 8vw;
-  font-family: Segoe UI;
   font-weight: 400;
-  font-style: Regular;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
 }
 
@@ -92,15 +95,19 @@
 
 /* Title & Description */
 .feature-title {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 0.8rem;
   line-height: 1.3;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
 }
 
 .feature-desc {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   color: #b0b0b0;
   font-size: 16px;
   line-height: 1.6;
@@ -123,7 +130,8 @@
 /* Hover footer (Learn more / arrow etc.) */
 .feature-card-hover-container {
   display: flex;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   font-weight: 500;
   align-items: center;
   gap: 10px;

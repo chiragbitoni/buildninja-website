@@ -33,7 +33,8 @@
    TITLE & SUBTITLE
 ================================== */
 .faqSecondContent {
-    font-family: "Segoe UI", Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-size: clamp(20px, 3vw, 30px);
     font-weight: 700;
     line-height: 1.2;

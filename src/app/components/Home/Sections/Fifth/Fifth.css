@@ -13,7 +13,8 @@
 
 /* ===== Titles ===== */
 .fifthHomeTitle {
-  font-family: Segoe UI;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   font-style: Regular;
   text-align: center;
   font-size: 26px;
@@ -22,7 +23,8 @@
 }
 
 .fifthHomeSecondTitle {
-  font-family: Segoe UI;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   font-style: Regular;
   text-align: center;
   font-size: 26px;
@@ -32,7 +34,8 @@
 }
 
 .fifthHomeThirdTitle {
-  font-family: Segoe UI;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   font-style: Regular;
   text-align: center;
   font-size: 24px;
@@ -42,7 +45,8 @@
 
 /* ===== Subtitle ===== */
 .fifthHomeSubTitle {
-  font-family: "Segoe UI", Arial, sans-serif;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   text-align: center;
   font-size: 18px;
   margin: 2vw 0 6vw;
@@ -90,7 +94,8 @@
 
 /* ===== Text ===== */
 .fifthHomeCardText {
-  font-family: Segoe UI;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   font-style: Regular;
   color: #ffffff;
   font-size: 16px;
