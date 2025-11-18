@@ -1,6 +1,8 @@
 /* ============================
    1️⃣ MOBILE (Base)
 ============================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .fifthHomeSection {
   background: url("/resources/Home/fifthBG.png") center center / cover no-repeat;
   width: 100%;
