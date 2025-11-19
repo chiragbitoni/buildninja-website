@@ -2,7 +2,6 @@
 import './Hero.css';
 import { heroSectionText } from "../../../../../../public/static/downloadPageText";
 import { useRouter } from 'next/navigation';
-import { saveToken } from '@/lib/auth';
 import { useState } from 'react';
 
 export default function Hero() {
@@ -11,17 +10,15 @@ export default function Hero() {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const res = await fetch(process.env.NEXT_PUBLIC_EMAIL_SIGNUP_API, {
+        const res = await fetch("/api/Auth/email-signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, source: 1 }),
         }).then(r => r.json());
         console.log(res)
-        if (res.value?.accessToken) {
-            saveToken(res.value.accessToken);
+        if (res.success) {
             router.push("/download/access");
         }
-
     }
     return (
         <section className="downloadHeroSection">
