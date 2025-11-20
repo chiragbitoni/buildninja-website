@@ -4,6 +4,7 @@ import Navbar from "./components/Nav/NavBar";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import Footer from "./components/Footer/Footer";
+import ClientAuthProvider from "./ClientAuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,11 @@ export default function RootLayout({ children }) {
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
         <ReduxProvider>
-          <Navbar />
-          <main className="pt-16">{children}</main>
-          <Footer />
+          <ClientAuthProvider>
+            <Navbar />
+            <main className="pt-16">{children}</main>
+            <Footer />
+          </ClientAuthProvider>
         </ReduxProvider>
       </body>
     </html>

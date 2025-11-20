@@ -31,7 +31,6 @@ export default function Hero() {
                 }),
             }).then((r) => r.json());
 
-            console.log("Signup response:", res);
 
             // 🚀 3. Handle success
             if (res?.success) {

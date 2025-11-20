@@ -3,6 +3,7 @@ import "./NavBar.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
+import AvatarMenu from "./AvatarMenu";
 
 export default function Navbar() {
   const [show, setShow] = useState(true);
@@ -85,6 +86,7 @@ export default function Navbar() {
             ))}
           <button className="navbarStartTrialButton" onClick={() => handleNavigation("/download")}>Start Free Trial</button>
         </ul>
+        <AvatarMenu />
       </div>
     </nav>
   );

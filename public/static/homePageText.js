@@ -212,7 +212,7 @@ export const fifthSectionText = {
       icon: paths.icons.singleBinary,
       boldText: "Single binary simplicity ",
       text: "No plugin dependency chaos",
-    },
+    },  
     {
       icon: paths.icons.predictablePricing,
       boldText: "Predictable pricing ",

@@ -1,0 +1,90 @@
+/* ===== Avatar Wrapper ===== */
+.am-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Login Button ===== */
+.am-login-btn {
+  background: #d4335c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.am-login-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* ===== Avatar Circle ===== */
+.am-avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d4335c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.am-avatar-img {
+  border-radius: 50%;
+}
+
+/* Initials */
+.am-avatar-initials {
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ===== Dropdown Menu ===== */
+.am-dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 230px;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 8px 0;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.am-dropdown-header {
+  padding: 10px 16px;
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+}
+
+.am-dropdown-header p {
+  font-size: 13px;
+  color: #8f8f8f;
+  margin-top: 5px;
+}
+
+/* Dropdown items */
+.am-dropdown-item {
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.am-dropdown-item:hover {
+  background: #292929;
+}
+
+/* Logout */
+.am-logout {
+  color: #ff4d4d !important;
+}
