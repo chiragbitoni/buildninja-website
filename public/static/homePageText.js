@@ -214,7 +214,7 @@ export const fifthSectionText = {
       text: "No plugin dependency chaos",
     },
     {
-      icon: paths.icons.gearInHand,
+      icon: paths.icons.predictablePricing,
       boldText: "Predictable pricing – ",
       text: "$199/month unlimited users, not per-seat",
     },
@@ -296,19 +296,19 @@ export const eighthSectionText = {
     icon: paths.icons.approach,
     title: "The Flow",
     description:
-      "We built BuildNinja with one rule: if a new engineer can't understand it in 5 minutes, it's too complex. <strong>We use BuildNinja to deploy BuildNinja</strong> because we refuse to sell anything we wouldn't trust with our own production deployments.",
+      "Our rule: if a new engineer can't understand it in 5 minutes, it's too complex. We use BuildNinja to deploy BuildNinja. We only sell what we trust with our own production.",
   },
   problem: {
     icon: paths.icons.problem,
     title: "The Friction",
     description:
-      "We were tired of CI/CD tools that promised simplicity but delivered complexity. Every deployment felt like a gamble. Every configuration change risked breaking everything. <strong>Your team deserves better than spending hours debugging pipelines instead of shipping features.</strong>",
+      "CI/CD tools that promise simplicity but deliver complexity. Deployments that feel like gambling. Your team deserves better than debugging pipelines instead of shipping features.",
   },
   result: {
     icon: paths.icons.result,
     title: "The Velocity",
     description:
-      "<strong>Imagine your team shipping features confidently, multiple times a day.</strong> No YAML headaches. No PhD in DevOps required. No deployment anxiety. Just reliable, fast deployments that let you focus on what actually matters, building software your customers love.	",
+      "Ship features confidently, multiple times daily. No YAML headaches. No DevOps PhD required. Just reliable deployments so you can build software customers love.",
   },
 };
 export const ninthSectionText = {

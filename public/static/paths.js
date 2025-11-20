@@ -88,5 +88,6 @@ export const paths = {
     database: "/resources/icons/database.svg",
     copy: "/resources/icons/copy.svg",
     expand: "/resources/icons/expand.svg",
+    predictablePricing: "/resources/icons/predictablePricing.svg",
   },
 };

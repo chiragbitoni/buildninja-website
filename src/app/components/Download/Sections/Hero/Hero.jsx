@@ -8,7 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 export default function Hero() {
     const router = useRouter();
     const [email, setEmail] = useState("");
-    const [captchaToken, setCaptchaToken] = useState(null);
+    const [captchaToken, setCaptchaToken] = useState(true);
 
     async function handleSubmit(e) {
         e.preventDefault();

@@ -7,22 +7,23 @@ export async function POST(req) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
-  }).then(r => r.json());
+  }).then((r) => r.json());
 
   if (apiRes?.value?.accessToken) {
     const response = NextResponse.json({
       success: true,
-      accessToken: apiRes.value.accessToken
+      accessToken: apiRes.value.accessToken,
     });
 
     response.cookies.set({
       name: "buildNinjaAccess",
       value: apiRes.value.accessToken,
       httpOnly: true,
-      secure: false,     // ⚠️ Enable true only in production HTTPS
-      sameSite: "lax",
+      secure: true,
+      sameSite: "None",
+      domain: ".grapehub.io",
       path: "/",
-      maxAge: 60 * 60 * 24 // 1 day
+      maxAge: 60 * 60 * 24, // 1 day
     });
 
     return response;

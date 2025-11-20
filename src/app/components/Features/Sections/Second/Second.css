@@ -37,7 +37,7 @@
 }
 
 .secondFeaturesCard:hover {
-  transform: translateY(-4px);
+  /* transform: translateY(-4px); */
   background-color: #2E2E2E;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }

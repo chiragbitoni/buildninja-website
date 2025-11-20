@@ -13,9 +13,9 @@ export default function Home() {
     <div className="homePage">
       <Hero />
       <Second />
+      <Fifth />
       <Third />
       <Fourth />
-      <Fifth />
       <Sixth />
       <Seventh />
       <Eighth />

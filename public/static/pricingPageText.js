@@ -99,8 +99,8 @@ export const secondSectionTextIndia = {
     twoYear: {
       highlight: "BEST VALUE",
       edition: "Shogun Edition - 2-Year Upfront",
-      price: "₹2,19,999 (₹9,166/month)",
-      description: "Billed upfront for 2 years",
+      price: "₹2,19,999 ",
+      description: "(₹9,166/month equivalent)",
       savings: "SAVE ₹1,04,989/year",
       buttonText: "Start 30-Day Trial",
       ctaText: "Full Shogun access during trial. No credit card required.",
@@ -108,8 +108,8 @@ export const secondSectionTextIndia = {
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
       edition: "Shogun Edition - 3-Year Upfront",
-      price: "₹2,74,999 (₹7,638/month)",
-      description: "Billed upfront for 3 years",
+      price: "₹2,74,999",
+      description: "(₹7,638/month) equivalent",
       savings: "SAVE ₹1,13,989/year",
       buttonText: "Start 30-Day Trial",
       ctaText: "Full Shogun access during trial. No credit card required.",
@@ -189,8 +189,8 @@ export const secondSectionTextGlobal = {
   annualCard: {
     highlight: "MOST POPULAR",
     edition: "Shogun Edition",
-    price: "$2,388/year ($199/month)",
-    description: "Annual billing - SAVE $592/year",
+    price: "$2,388/year",
+    description: "($199/month) equivalent",
     savings: "SAVE $592/year",
     ideal:
       "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
@@ -213,8 +213,8 @@ export const secondSectionTextGlobal = {
     twoYear: {
       highlight: "BEST VALUE",
       edition: "Shogun Edition - 2-Year Upfront",
-      price: "$4,200 ($175/month)",
-      description: "Billed upfront for 2 years",
+      price: "$4,200",
+      description: " ($175/month) equivalent",
       savings: "SAVE $1,272/year",
       buttonText: "Start 30-Day Trial",
       ctaText: "Full Shogun access during trial. No credit card required.",
@@ -222,8 +222,8 @@ export const secondSectionTextGlobal = {
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
       edition: "Shogun Edition - 3-Year Upfront",
-      price: "$5,700 ($158/month)",
-      description: "Billed upfront for 3 years",
+      price: "$5,700",
+      description: "($158/month) equivalent",
       savings: "SAVE $1,764/year",
       buttonText: "Start 30-Day Trial",
       ctaText: "Full Shogun access during trial. No credit card required.",

@@ -66,7 +66,7 @@ export default function Table() {
           solo: "Individual developers & small teams",
           shogun: "Enterprise organizations",
         },
-        { feature: "Users", solo: "Up to 10", shogun: "Unlimited" },
+        { feature: "Users", solo: "Up to 10", shogun: <TickText>Unlimited</TickText>},
         {
           feature: "Build Agents",
           solo: <TickText>Unlimited</TickText>,
