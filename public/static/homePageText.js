@@ -210,17 +210,17 @@ export const fifthSectionText = {
     },
     {
       icon: paths.icons.singleBinary,
-      boldText: "Single binary simplicity - ",
+      boldText: "Single binary simplicity",
       text: "No plugin dependency chaos",
     },
     {
       icon: paths.icons.predictablePricing,
-      boldText: "Predictable pricing – ",
+      boldText: "Predictable pricing",
       text: "$199/month unlimited users, not per-seat",
     },
     {
       icon: paths.icons.infrastructure,
-      boldText: "Your infrastructure – ",
+      boldText: "Your infrastructure",
       text: "Complete control without vendor lock-in",
     },
   ],
