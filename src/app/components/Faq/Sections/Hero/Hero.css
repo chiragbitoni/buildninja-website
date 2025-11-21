@@ -14,10 +14,9 @@
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  background: url('/resources/faqHeroBG.png') center center / cover no-repeat;
   background-color: #000000;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-
+  background: url('/resources/faqHeroBG.png') top center / cover no-repeat;
 }
 
 .faqHeroSection::before {

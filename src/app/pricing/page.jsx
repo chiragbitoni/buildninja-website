@@ -1,6 +1,6 @@
 "use client";
 import Hero from "../components/Pricing/Sections/Hero/Hero";
-import Second from "../components/Pricing/Sections/Second/Second";
+// import Second from "../components/Pricing/Sections/Second/Second";
 import Third from "../components/Pricing/Sections/Third/Third";
 import Table from "../components/Pricing/Sections/Table/Table";
 import Fourth from "../components/Pricing/Sections/Fourth/Fourth";
@@ -12,7 +12,7 @@ export default function Pricing() {
   return (
     <div >
       <Hero />
-      <Second />
+      {/* <Second /> */}
       <Third />
       <Table />
       <Fourth />
