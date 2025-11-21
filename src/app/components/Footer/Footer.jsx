@@ -15,31 +15,38 @@ const footerText = {
             links: [
                 { label: "Features", link: "/features" },
                 { label: "Pricing", link: "/pricing" },
-                { label: "Documentation", link: `${DOCS_URL}/docs/overview` },
-                { label: "Download", link: "/download" },
-                { label: "Support", link: "/support" },
+                { label: "Install", link: "/install" },
                 { label: "FAQ", link: "/faq" },
+                { label: "Roadmap", link: "/roadmap" },
             ],
         },
         {
-            title: "Docs & Support",
+            title: "Documentation",
             links: [
-                { label: "Getting Started", link: `${DOCS_URL}/docs/overview` },
-                { label: "Integrations", link: "#" },
+                { label: "Documentation", link: `${DOCS_URL}/docs/overview` },
+                { label: "Getting Started", link: "#" },
                 { label: "Tutorials", link: "#" },
-                { label: "Community", link: "#" },
-                { label: "Status Page", link: "#" },
+                { label: "Licensing", link: "#" },
+                { label: "Release Notes", link: "#" },
             ],
         },
         {
             title: "Company",
             links: [
                 { label: "About Us", link: "#" },
-                { label: "Careers", link: "#" },
                 { label: "Blog", link: "#" },
+                { label: "Contact", link: "#" },
+                { label: "Support", link: "#" },
+            ],
+        },
+        {
+            title: "Legal",
+            links: [
                 { label: "Privacy Policy", link: "#" },
                 { label: "Terms of Service", link: "#" },
-                { label: "Contact", link: "#" },
+                { label: "EULA", link: "#" },
+                { label: "Refund & Cancellation", link: "#" },
+                { label: "Shipping Policy", link: "#" },
             ],
         },
     ],
@@ -83,7 +90,6 @@ export default function Footer() {
                         {footerText.sections.map((section, idx) => (
                             <div className="footerColumn" key={idx}>
                                 <h4 className="footerHeading">{section.title}</h4>
-
                                 <ul className="footerList">
                                     {section.links.map((item, i) => (
                                         <li key={i} className="footerListItem">

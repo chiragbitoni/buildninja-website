@@ -12,7 +12,7 @@ export default function Dashboard() {
     async function verify() {
       const loggedIn = await checkAuth();
 
-      if (!loggedIn) router.replace("/download");
+      if (!loggedIn) router.replace("/install");
     }
     verify();
   }, []);

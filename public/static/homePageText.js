@@ -89,7 +89,7 @@ export const fourthSectionText = {
           desc: "Quick access to build details",
         },
       ],
-      image: "/resources/Home/FeatureImages/image1.jpg",
+      image: "/resources/Home/FeatureImages/image1.png",
     },
     {
       title: "Everything in One Place",
@@ -113,7 +113,7 @@ export const fourthSectionText = {
           desc: "Artifact and output settings",
         },
       ],
-      image: "/resources/Home/FeatureImages/image2.jpg",
+      image: "/resources/Home/FeatureImages/image2.png",
     },
     {
       title: "Automate Builds That Actually Run",
@@ -137,7 +137,7 @@ export const fourthSectionText = {
           desc: "One-click trigger and agent parameter management.",
         },
       ],
-      image: "/resources/Home/FeatureImages/image3.jpg",
+      image: "/resources/Home/FeatureImages/image3.png",
     },
     {
       title: "Complete Visibility Into Your Build Capacity",
@@ -161,7 +161,7 @@ export const fourthSectionText = {
           desc: "One-click configuration and control.",
         },
       ],
-      image: "/resources/Home/FeatureImages/image4.jpg",
+      image: "/resources/Home/FeatureImages/image4.png",
     },
     {
       title: "Stay Informed Without Constant Monitoring",
@@ -185,7 +185,7 @@ export const fourthSectionText = {
           desc: "Multi-recipient support.",
         },
       ],
-      image: "/resources/Home/FeatureImages/image5.jpg",
+      image: "/resources/Home/FeatureImages/image5.png",
     },
   ],
 };
@@ -194,25 +194,24 @@ export const fifthSectionText = {
   subTitle:
     "We understand how frustrating it is when CI/CD tools break right before critical releases.",
   subTitle2:
-    "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows. We've seen how cloud vendor lock-in limits your infrastructure choices.",
+    "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows.",
+  subTitle3:
+    "We've seen how cloud vendor lock-in limits your infrastructure choices.",
   cards: [
     {
       icon: paths.icons.twentyFivePlus,
       text: "25+ years building developer tools (GrapeCity)",
     },
-    {
-      icon: paths.icons.japanFlag,
-      text: "Japanese engineering culture of reliability",
-    },
+
     {
       icon: paths.icons.customerStars,
       text: "Thousands of enterprise customers worldwide",
     },
     {
       icon: paths.icons.singleBinary,
-      boldText: "Single binary simplicity ",
+      boldText: "Single binary ",
       text: "No plugin dependency chaos",
-    },  
+    },
     {
       icon: paths.icons.predictablePricing,
       boldText: "Predictable pricing ",
@@ -224,7 +223,7 @@ export const fifthSectionText = {
       text: "Complete control without vendor lock-in",
     },
   ],
-  secondTitle: "24/7",
+  secondTitle: "Business Hours Support",
   thirdTitle: "Expert support from actual engineers, not chatbots",
 };
 
@@ -315,8 +314,8 @@ export const ninthSectionText = {
   title: "Stop Fighting Your CI/CD Tool. Start Shipping Code.",
   subtitle:
     "Built by engineers who've deployed thousands of applications at GrapeCity.",
-  subtitle2:
-    "Get your CI/CD pipeline running in under 5 minutes. Free for 3 agents, $199/month unlimited as you scale",
+  subtitle2: "Get your CI/CD pipeline running in under 5 minutes.",
+  subtitle3: "Free for 3 agents, $199/month unlimited as you scale",
   primaryButton: "Start Your 30-Day Free Trial",
   secondaryButton: "See the 5-Minute Demo",
   secondTitle: "Risk-Free Guarantee",

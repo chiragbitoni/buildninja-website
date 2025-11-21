@@ -9,7 +9,7 @@ export default function Third(){
             <h2 className="thirdFeaturesTitle">{thirdSectionText.title}</h2>
             <p className="thirdFeaturesDescription">{thirdSectionText.description}</p>
             <div className="thirdFeaturesButtonContainer">
-                <button className="thirdFeaturesFreeButton" onClick={()=>{router.push("/download")}}>{thirdSectionText.button1}</button>
+                <button className="thirdFeaturesFreeButton" onClick={()=>{router.push("/install")}}>{thirdSectionText.button1}</button>
                 {/* <button className="thirdFeaturesShogunButton">{thirdSectionText.button2}</button> */}
             </div>
         </section>

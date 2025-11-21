@@ -13,10 +13,11 @@ export default function Ninth() {
                 </h1>
                 <h3 className="ninthSubTitle">
                     {ninthSectionText.subtitle}<br/>
-                    {ninthSectionText.subtitle2}
+                    {ninthSectionText.subtitle2}<br />
+                    {ninthSectionText.subtitle3}
                 </h3>
                 <div className="ninth-inner-grid">
-                    <button className="ninthPrimaryBtn" onClick={()=>{router.push("/download")}}>{ninthSectionText.primaryButton}</button>
+                    <button className="ninthPrimaryBtn" onClick={()=>{router.push("/install")}}>{ninthSectionText.primaryButton}</button>
                     {/* <button className="ninthDemoBtn">{ninthSectionText.secondaryButton}</button> */}
                 </div>
                 <div className="ninthSecondTitleContainer">

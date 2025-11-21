@@ -11,7 +11,7 @@ export default function Download() {
   useEffect(() => {
     async function verify() {
       const loggedIn = await checkAuth();
-      if (loggedIn) router.replace("/download/dashboard");
+      if (loggedIn) router.replace("/install/dashboard");
     }
     verify();
   }, []);

@@ -9,7 +9,7 @@ export default function Fifth(){
             <h2 className="faqFifthTitle">{fifthSectionText.title}</h2>
             <p className="faqFifthDescription">{fifthSectionText.description}</p>
             <div className="faqFifthButtonContainer">
-                <button className="faqFifthFreeButton" onClick={()=>{router.push("/download")}}>{fifthSectionText.button1}</button>
+                <button className="faqFifthFreeButton" onClick={()=>{router.push("/install")}}>{fifthSectionText.button1}</button>
             </div>
         </section>
     )

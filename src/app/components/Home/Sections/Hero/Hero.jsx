@@ -30,7 +30,7 @@ export default function Hero() {
                     {heroSectionText.subtitle3}
                 </p>
                 <div className="heroButtons">
-                    <button className="demoBtn" onClick={()=>{router.push("/download")}}>{heroSectionText.primaryButton}</button>
+                    <button className="demoBtn" onClick={()=>{router.push("/install")}}>{heroSectionText.primaryButton}</button>
                     {/* <button className="heroBtn">{heroSectionText.secondaryButton}</button> */}
                 </div>
 

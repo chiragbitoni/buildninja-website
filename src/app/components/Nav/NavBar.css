@@ -94,6 +94,9 @@ ul.navbar-links {
   background-color: #d4335c;
   width: fit-content;
   padding: 5px 20px;
+  font-size: 15px;
+  cursor: pointer;
+
 }
 
 .navbarStartTrialButton:hover {

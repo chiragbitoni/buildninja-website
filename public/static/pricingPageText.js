@@ -32,9 +32,9 @@ export const secondSectionTextIndia = {
         title: "Additional concurrent capacity (per agent)",
         list: [
           "₹2,199/month",
-          "₹16,999/year (save ₹9,389)",
-          "₹26,999/2-year (save ₹24,777)",
-          "₹37,999/3-year (save ₹39,565)",
+          "₹16,999/year (save 36%)",
+          "₹26,999/2-year (save 49%)",
+          "₹37,999/3-year (save 52%)",
         ],
       },
       list2: [
@@ -67,7 +67,7 @@ export const secondSectionTextIndia = {
         "<strong>Priority business support</strong> - Direct engineering team access",
       ],
       buttonText: "Start 30-Day Trial",
-      ctaText: "Full Shogun access during trial. No credit card required.",
+      ctaText: "No credit card. No commitment.",
     },
   },
 
@@ -77,7 +77,7 @@ export const secondSectionTextIndia = {
     edition: "Shogun Edition",
     price: "₹1,36,999/year",
     description: "(₹11,416/month equivalent)",
-    savings: "SAVE ₹67,989/year",
+    savings: "Save 33%",
     ideal:
       "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
     list: [
@@ -91,7 +91,7 @@ export const secondSectionTextIndia = {
       "<strong>Priority business support</strong> - Direct engineering team access",
     ],
     buttonText: "Start 30-Day Trial",
-    ctaText: "Full Shogun access during trial. No credit card required.",
+    ctaText: "No credit card. No commitment.",
   },
 
   // Multi-year plans
@@ -101,18 +101,18 @@ export const secondSectionTextIndia = {
       edition: "Shogun Edition - 2-Year Upfront",
       price: "₹2,19,999 ",
       description: "(₹9,166/month equivalent)",
-      savings: "SAVE ₹1,04,989/year",
+      savings: "Save 46%",
       buttonText: "Start 30-Day Trial",
-      ctaText: "Full Shogun access during trial. No credit card required.",
+      ctaText: "No credit card. No commitment.",
     },
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
       edition: "Shogun Edition - 3-Year Upfront",
       price: "₹2,74,999",
       description: "(₹7,638/month) equivalent",
-      savings: "SAVE ₹1,13,989/year",
+      savings: "Save 55%",
       buttonText: "Start 30-Day Trial",
-      ctaText: "Full Shogun access during trial. No credit card required.",
+      ctaText: "No credit card. No commitment.",
     },
   },
 };
@@ -145,10 +145,10 @@ export const secondSectionTextGlobal = {
       listCard: {
         title: "Additional concurrent capacity (per agent)",
         list: [
-          "$29/month",
-          "$249/year (save $99)",
-          "$429/2-year (save $269)",
-          "$599/3-year (save $449)",
+          "$25/month",
+          "$199/year (save 34%)",
+          "$318/2-year (save 47%)",
+          "$448/3-year (save 50%)",
         ],
       },
       list2: [
@@ -181,7 +181,7 @@ export const secondSectionTextGlobal = {
         "<strong>Priority business support</strong> - Direct engineering team access",
       ],
       buttonText: "Start 30-Day Trial",
-      ctaText: "Full Shogun access during trial. No credit card required.",
+      ctaText: "No credit card. No commitment.",
     },
   },
 
@@ -189,9 +189,9 @@ export const secondSectionTextGlobal = {
   annualCard: {
     highlight: "MOST POPULAR",
     edition: "Shogun Edition",
-    price: "$2,388/year",
-    description: "($199/month) equivalent",
-    savings: "SAVE $592/year",
+    price: "$1,599/year",
+    description: "($133/month) equivalent",
+    savings: "SAVE 33%",
     ideal:
       "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
     list: [
@@ -205,7 +205,7 @@ export const secondSectionTextGlobal = {
       "<strong>Priority business support</strong> - Direct engineering team access",
     ],
     buttonText: "Start 30-Day Trial",
-    ctaText: "Full Shogun access during trial. No credit card required.",
+    ctaText: "No credit card. No commitment.",
   },
 
   // Multi-year Plans
@@ -213,20 +213,20 @@ export const secondSectionTextGlobal = {
     twoYear: {
       highlight: "BEST VALUE",
       edition: "Shogun Edition - 2-Year Upfront",
-      price: "$4,200",
-      description: " ($175/month) equivalent",
-      savings: "SAVE $1,272/year",
+      price: "$2,558",
+      description: "($107/month equivalent)",
+      savings: "SAVE 46%",
       buttonText: "Start 30-Day Trial",
-      ctaText: "Full Shogun access during trial. No credit card required.",
+      ctaText: "No credit card. No commitment.",
     },
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
       edition: "Shogun Edition - 3-Year Upfront",
-      price: "$5,700",
-      description: "($158/month) equivalent",
-      savings: "SAVE $1,764/year",
+      price: "$3,198",
+      description: "($89/month equivalent)",
+      savings: "SAVE 55%",
       buttonText: "Start 30-Day Trial",
-      ctaText: "Full Shogun access during trial. No credit card required.",
+      ctaText: "No credit card. No commitment.",
     },
   },
 };

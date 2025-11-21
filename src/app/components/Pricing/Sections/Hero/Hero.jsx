@@ -13,24 +13,24 @@ export default function PricingHero() {
     const text = {
         heading: "Self-Hosted CI/CD Without Per-Seat Pricing Surprises",
         description:
-            "You know how CI/CD costs spiral out of control as your team grows? <br/> BuildNinja offers transparent, predictable pricing, free with unlimited build agents but limited to three concurrent builds. When you need more, you can scale to unlimited concurrent capacity with unlimited users. This way, you can budget confidently without the burden of per-seat taxation.",
+            "CI/CD costs shouldn't spiral as your team grows. BuildNinja is free with unlimited agents (up to 3 concurrent builds). <br/>Need more? Scale to unlimited concurrency , still no per-seat pricing, ever.",
         regionIndia: "₹ India",
         regionWorldwide: "$ Worldwide",
         billingMonthly: "Monthly",
         billingAnnual: "Annual",
         annual: {
             title: "Annual:",
-            saving: "Save ₹67,989/year",
+            saving: "Save 33%",
             savingGlobal: "Save $592/year"
         },
         twoYear: {
             title: "2-Year Upfront:",
-            saving: "Save ₹1,04,989/year",
+            saving: "Save 46%",
             savingGlobal: "Save $1,272/year"
         },
         threeYear: {
             title: "3-Year Upfront:",
-            saving: "Save ₹1,13,989/year",
+            saving: "Save 55%",
             savingGlobal: "Save $1,764/year"
         },
         footer:
@@ -96,7 +96,7 @@ export default function PricingHero() {
 
             {/* Footer */}
             <div className="pricingMonthlyFreeCardFooter">
-                <button className="pricingMonthlyFreeCardButton" onClick={() => { handleButtonClick("/download") }}>
+                <button className="pricingMonthlyFreeCardButton" onClick={() => { handleButtonClick("/install") }}>
                     {secondSectionText.monthCards.soloEditionCard.buttonText}
                     <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
                 </button>
@@ -131,7 +131,7 @@ export default function PricingHero() {
                 ))}
             </div>
             <div className="pricingMonthlyFreeCardFooter">
-                <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/download") }}>
+                <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                     {secondSectionText.monthCards.shogunEditionCard.buttonText}
                     <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
                 </button>
@@ -180,7 +180,7 @@ export default function PricingHero() {
                 </div>
 
                 <div className="pricingMonthlyFreeCardFooter">
-                    <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/download") }}>
+                    <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                         {plan.buttonText}
                         <img
                             className="pricingMonthlyFreeIcon"

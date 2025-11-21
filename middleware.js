@@ -3,19 +3,19 @@ import { NextResponse } from "next/server";
 export function middleware(req) {
   const token = req.cookies.get("buildNinjaAccess")?.value;
 
-  // Protect /download/access and /download/dashboard
-  if (!token && req.nextUrl.pathname.startsWith("/download")) {
+  // Protect /install/access and /install/dashboard
+  if (!token && req.nextUrl.pathname.startsWith("/install")) {
     if (
-      req.nextUrl.pathname === "/download/access" ||
-      req.nextUrl.pathname === "/download/dashboard"
+      req.nextUrl.pathname === "/install/access" ||
+      req.nextUrl.pathname === "/install/dashboard"
     ) {
-      return NextResponse.redirect(new URL("/download", req.url));
+      return NextResponse.redirect(new URL("/install", req.url));
     }
   }
 
-  // If already logged in, block /download
-  if (token && req.nextUrl.pathname === "/download") {
-    return NextResponse.redirect(new URL("/download/dashboard", req.url));
+  // If already logged in, block /install
+  if (token && req.nextUrl.pathname === "/install") {
+    return NextResponse.redirect(new URL("/install/dashboard", req.url));
   }
 
   return NextResponse.next();
@@ -23,8 +23,8 @@ export function middleware(req) {
 
 export const config = {
   matcher: [
-    "/download",
-    "/download/access",
-    "/download/dashboard",
+    "/installd",
+    "/install/access",
+    "/install/dashboard",
   ],
 };

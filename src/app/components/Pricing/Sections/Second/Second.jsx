@@ -63,7 +63,7 @@ export default function Second() {
 
       {/* Footer */}
       <div className="pricingMonthlyFreeCardFooter">
-        <button className="pricingMonthlyFreeCardButton" onClick={()=>{handleButtonClick("/download")}}>
+        <button className="pricingMonthlyFreeCardButton" onClick={()=>{handleButtonClick("/install")}}>
           {secondSectionText.monthCards.soloEditionCard.buttonText}
           <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
         </button>
@@ -98,7 +98,7 @@ export default function Second() {
         ))}
       </div>
       <div className="pricingMonthlyFreeCardFooter">
-        <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/download")}}>
+        <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/install")}}>
           {secondSectionText.monthCards.shogunEditionCard.buttonText}
           <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
         </button>
@@ -147,7 +147,7 @@ export default function Second() {
         </div>
 
         <div className="pricingMonthlyFreeCardFooter">
-          <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/download")}}>
+          <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/install")}}>
             {plan.buttonText}
             <img
               className="pricingMonthlyFreeIcon"

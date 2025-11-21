@@ -6,9 +6,6 @@ import { paths } from "../../../../../../public/static/paths";
 export default function Table() {
   const { region } = useSelector((state) => state.pricing);
 
-
-
-
   const TickText = ({ children }) => (
     <span className="pricingTableTickText">
       <img
@@ -35,7 +32,7 @@ export default function Table() {
             <>
               ₹1,36,999/year
               <small>(₹11,416/month</small>
-                SAVE ₹67,989/year
+                Save 33%
             </>
           ),
         },
@@ -46,7 +43,7 @@ export default function Table() {
             <>
               ₹2,19,999
               <small>(₹9,166/month)</small>
-                SAVE ₹1,04,989/year
+                Save 46%
             </>
           ),
         },
@@ -57,14 +54,14 @@ export default function Table() {
             <>
               ₹2,74,999
               <small>(₹7,638/month)</small>
-                SAVE ₹1,13,899/year
+                SAVE 55%
             </>
           ),
         },
         {
           feature: "Best For",
           solo: "Individual developers & small teams",
-          shogun: "Enterprise organizations",
+          shogun: "Growing Teams",
         },
         { feature: "Users", solo: "Up to 10", shogun: <TickText>Unlimited</TickText>},
         {
@@ -81,7 +78,7 @@ export default function Table() {
           feature: "Additional Concurrent",
           solo: (
             <>
-              ₹12,199/month <br />₹16,999/year <br />₹26,999/2-year <br />₹37,999/3-year
+              ₹2,199/month <br />₹16,999/year <br />₹26,999/2-year <br />₹37,999/3-year
             </>
           ),
           shogun: <TickText>Included</TickText>,
@@ -148,16 +145,16 @@ export default function Table() {
           <thead>
             <tr>
               <th className="alignLeft">Feature</th>
-              <th className="alignLeft">Solo Edition</th>
               <th className="alignLeft">Shogun Edition</th>
+              <th className="alignLeft">Solo Edition</th>
             </tr>
           </thead>
           <tbody>
             {table.rows.map((row, index) => (
               <tr key={index}>
                 <td className="alignLeft">{row.feature}</td>
-                <td className="alignLeft">{row.solo}</td>
                 <td className="alignLeft">{row.shogun}</td>
+                <td className="alignLeft">{row.solo}</td>
               </tr>
             ))}
           </tbody>

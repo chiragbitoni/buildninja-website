@@ -36,7 +36,7 @@ export default function Navbar() {
     { name: "Pricing", path: "/pricing" },
     { name: "Features", path: "/features" },
     { name: "Documentation", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
-    { name: "Download", path: "/download" },
+    { name: "Install", path: "/install" },
     { name: "Support", path: "/support" },
     { name: "FAQ", path: "/faq" },
   ];
@@ -84,7 +84,7 @@ export default function Navbar() {
                 {item.name}
               </li>
             ))}
-          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/download")}>Start Free Trial</button>
+          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Start Free Trial</button>
         </ul>
         <AvatarMenu />
       </div>

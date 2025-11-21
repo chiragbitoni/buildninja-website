@@ -10,9 +10,15 @@
   background: #d4335c;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 5px 20px;
   border-radius: 999px;
   cursor: pointer;
+  font-size: 15px;
+  border-radius: 999px;
+  color: #ffffff;
+  background-color: #d4335c;
+  width: fit-content;
+  padding: 5px 20px;
   font-size: 15px;
 }
 
@@ -23,8 +29,8 @@
 
 /* ===== Avatar Circle ===== */
 .am-avatar-circle {
-  width: 40px;
-  height: 40px;
+  width: 32.5px;
+  height: 32.5px;
   border-radius: 50%;
   background: #d4335c;
   display: flex;
@@ -32,10 +38,11 @@
   align-items: center;
   cursor: pointer;
   overflow: hidden;
+  padding: 0px;
 }
 
 .am-avatar-img {
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
 /* Initials */

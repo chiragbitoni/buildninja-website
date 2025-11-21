@@ -21,7 +21,7 @@ export default function Hero() {
             const res = await emailSignup(email);
             console.log("API Response:", res);
             if (res?.value?.accessToken) {
-                router.push("/download/access");
+                router.push("/install/access");
             } else {
                 alert(res?.message || "Signup failed. Try again.");
             }

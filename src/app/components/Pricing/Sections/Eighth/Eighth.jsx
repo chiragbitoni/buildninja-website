@@ -20,7 +20,7 @@ export default function Eighth() {
         <div className="pricingEighthCard">
           <h3 className="pricingEighthCardTitle">{text.solo.title}</h3>
           <p className="pricingEighthCardDesc">{text.solo.description}</p>
-          <button className="pricingEighthButton pricingEighthButtonGray" onClick={()=>handleButtonClick("/download")}>
+          <button className="pricingEighthButton pricingEighthButtonGray" onClick={()=>handleButtonClick("/install")}>
             {text.solo.buttonText}<img src={paths.icons.navigation}></img>
           </button>
         </div>
@@ -29,7 +29,7 @@ export default function Eighth() {
         <div className="pricingEighthCard">
           <h3 className="pricingEighthCardTitle">{text.shogun.title}</h3>
           <p className="pricingEighthCardDesc">{text.shogun.description}</p>
-          <button className="pricingEighthButton pricingEighthButtonPink" onClick={()=>handleButtonClick("/download")}>
+          <button className="pricingEighthButton pricingEighthButtonPink" onClick={()=>handleButtonClick("/install")}>
             {text.shogun.buttonText}<img src={paths.icons.navigation}></img>
           </button>
         </div>
