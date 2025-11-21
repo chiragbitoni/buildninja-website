@@ -164,8 +164,6 @@
 
 .pricingHeroAndSecondSection {
     width: 100%;
-    /* background: linear-gradient(180deg, #00000000 -50%, #262626 70%); */
-    /* background-image: url("/resources/PricingHeroBG.png"); */
     background: url('/resources/PricingHeroBG.png') center top / cover no-repeat fixed;
 }
 
