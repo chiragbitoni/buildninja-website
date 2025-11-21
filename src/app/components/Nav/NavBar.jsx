@@ -11,7 +11,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter();
-  const pathname = usePathname(); // 👈 Get current path
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -33,12 +33,13 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const navItems = [
-    { name: "Pricing", path: "/pricing" },
+    { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
-    { name: "Documentation", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+    { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+    { name: "Pricing", path: "/pricing" },
     { name: "Install", path: "/install" },
     { name: "Support", path: "/support" },
-    { name: "FAQ", path: "/faq" },
+    // { name: "FAQ", path: "/faq" },
   ];
 
   const handleNavigation = (path) => {
@@ -74,8 +75,13 @@ export default function Navbar() {
             navItems.map((item) => (
               <li
                 key={item.name}
-                className={`navbar-link ${item.path && pathname.startsWith(item.path) ? "active-link" : ""
+                className={`navbar-link ${item.path === "/"
+                    ? pathname === "/" ? "active-link" : ""
+                    : pathname.startsWith(item.path)
+                      ? "active-link"
+                      : ""
                   }`}
+
                 onClick={() => {
                   if (item.path) handleNavigation(item.path);
                   else window.location.href = item.link;
