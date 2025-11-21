@@ -3,16 +3,17 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Hero from "../../components/Download/Access/Sections/Hero/Hero";
+import { checkAuth } from "@/services/auth/check";
 
 export default function Access() {
   const router = useRouter();
 
   useEffect(() => {
-    async function check() {
-      const res = await fetch("/api/check-token").then(r => r.json());
-      if (!res.token) router.replace("/download");
+    async function verify() {
+      const loggedIn = await checkAuth();
+      if (!loggedIn) router.replace("/download");
     }
-    check();
+    verify();
   }, []);
 
   return <Hero />;

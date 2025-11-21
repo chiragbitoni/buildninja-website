@@ -6,6 +6,7 @@ import "./AvatarMenu.css";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "@/redux/slice/authSlice";
 import { useRouter } from "next/navigation";
+import { logoutUserAPI } from "@/services/auth/logout";
 
 export default function AvatarMenu() {
   const dispatch = useDispatch();
@@ -46,6 +47,21 @@ export default function AvatarMenu() {
       </button>
 
     );
+  }
+  async function handleLogout() {
+    try {
+      const userId = user?.userId;
+
+      const res = await logoutUserAPI(userId);
+      console.log("Logout API:", res);
+
+      // treat logout as always successful
+      dispatch(logoutUser());
+      // window.location.href = process.env.NEXT_PUBLIC_MYACCOUNT_GRAPEHUB_LOGIN_URL;
+
+    } catch (err) {
+      console.error("Logout error:", err);
+    }
   }
 
   return (
@@ -119,17 +135,7 @@ export default function AvatarMenu() {
             My Licenses
           </div>
 
-          <div
-            className="am-dropdown-item am-logout"
-            onClick={async () => {
-              await fetch("/api/Auth/logout", { method: "POST" }); 
-              dispatch(logoutUser()); // clear redux
-              setMenuOpen(false);
-              window.location.href = process.env.NEXT_PUBLIC_MYACCOUNT_GRAPEHUB_LOGIN_URL;
-            }}
-
-
-          >
+          <div className="am-dropdown-item am-logout" onClick={handleLogout}>
             Logout
           </div>
         </div>

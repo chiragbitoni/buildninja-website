@@ -3,19 +3,21 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "@/redux/slice/authSlice";
+import { fetchUser } from "@/services/auth/me";
 
 export default function ClientAuthProvider({ children }) {
     const dispatch = useDispatch();
+
     useEffect(() => {
         async function loadUser() {
             try {
-                const res = await fetch("/api/Auth/me", { cache: "no-store" });
-                const data = await res.json();
+                const data = await fetchUser();
 
-                if (data?.user) {
+                // check correct backend response shape
+                if (data?.userId) {
                     dispatch(
                         loginSuccess({
-                            user: data.user,
+                            user: data,    // full response IS the user
                             token: "exists",
                         })
                     );
@@ -24,6 +26,7 @@ export default function ClientAuthProvider({ children }) {
                 console.error("User fetch failed:", err);
             }
         }
+
         loadUser();
     }, []);
 

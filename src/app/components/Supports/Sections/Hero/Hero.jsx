@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Hero.css";
 import { supportHeroText } from "../../../../../../public/static/supportPageText";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import { sendSupportEmail } from "@/services/email/sendEmail";
 export default function SupportHero() {
     const t = supportHeroText;
 
@@ -27,35 +27,23 @@ export default function SupportHero() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!captchaToken) {
-            alert("Please verify that you are not a robot!");
+        if (captchaToken) {
+            alert("Please verify you are not a robot!");
             return;
         }
 
         setLoading(true);
 
-        const payload = {
-            name: form.name,
-            email: form.email,
-            subject: form.subject,
-            message: form.message,
-        };
+        const { success, message } = await sendSupportEmail(form);
 
-        const res = await fetch("/api/Email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-        });
-
-        const data = await res.json();
         setLoading(false);
 
-        if (data.success) {
+        if (success) {
             alert("Your message was sent successfully!");
             setForm({ name: "", email: "", subject: "", message: "" });
             setCaptchaToken(null);
         } else {
-            alert("Failed to send message. Try again later.");
+            alert(message || "Failed to send message. Try again later.");
         }
     };
 

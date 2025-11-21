@@ -4,36 +4,23 @@ import { heroSectionText } from "../../../../../../public/static/downloadPageTex
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { emailSignup } from "@/services/auth/emailSignup";
 
 export default function Hero() {
     const router = useRouter();
     const [email, setEmail] = useState("");
-    const [captchaToken, setCaptchaToken] = useState(true);
+    const [captchaToken, setCaptchaToken] = useState(null);
 
     async function handleSubmit(e) {
         e.preventDefault();
-
-        // 🚀 1. Check captcha BEFORE API submit
         if (!captchaToken) {
             alert("Please verify that you are not a robot!");
             return;
         }
-
-        // 🚀 2. API Request
         try {
-            const res = await fetch("/api/Auth/email-signup", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    email,
-                    source: 1,
-                    captchaToken, // optional backend validation
-                }),
-            }).then((r) => r.json());
-
-
-            // 🚀 3. Handle success
-            if (res?.success) {
+            const res = await emailSignup(email);
+            console.log("API Response:", res);
+            if (res?.value?.accessToken) {
                 router.push("/download/access");
             } else {
                 alert(res?.message || "Signup failed. Try again.");
@@ -43,6 +30,7 @@ export default function Hero() {
             alert("Something went wrong. Try again.");
         }
     }
+
 
     return (
         <section className="downloadHeroSection">
