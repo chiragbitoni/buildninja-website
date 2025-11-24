@@ -55,7 +55,7 @@ export const thirdSectionText = {
   card1Text: "Deploy in minutes, not weeks of complex setup.",
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
-  card2Text: "Works with GitHub, GitLab, Bitbucket - no vendor <br/> lock-in",
+  card2Text: "Works with GitHub, GitLab, Bitbucket - no vendor lock-in",
   card3Title: "Deploy with Confidence",
   card3Step: "STEP 3",
   card3Text: "Built-in reliability without complexity or escalating costs",
@@ -198,6 +198,7 @@ export const fifthSectionText = {
     "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows.",
   subTitle3:
     "We've seen how cloud vendor lock-in limits your infrastructure choices.",
+  
   cards: [
     {
       icon: paths.icons.twentyFivePlus,

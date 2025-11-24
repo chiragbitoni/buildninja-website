@@ -125,7 +125,6 @@ export default function Table() {
           solo: "–",
           shogun: <TickText>25% credit (annual/2-year/3-year)</TickText>,
         },
-        { feature: "Trial Period", solo: "30 days demo", shogun: "30 days demo" },
         { feature: "Grace Period", solo: "7 days", shogun: "7 days" },
       ],
     },

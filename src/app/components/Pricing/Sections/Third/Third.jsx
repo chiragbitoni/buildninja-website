@@ -41,9 +41,9 @@ export default function Third() {
                 <div className="pricingThirdCard">
                     <img className="pricingThirdIcon" src={paths.icons.clockPink}></img>
                     <div className="pricingThirdText">
-                        <h3 className="pricingThirdCardTitle">30-Day Risk-Free Trial</h3>
+                        <h3 className="pricingThirdCardTitle">Start with Trial License</h3>
                         <p className="pricingThirdCardDesc">
-                            Test everything before committing
+                            30 days free: 10 users, 10 projects, 3 concurrent builds
                         </p>
                     </div>
                 </div>

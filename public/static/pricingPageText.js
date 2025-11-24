@@ -353,14 +353,6 @@ export const pricingFifthText = {
           ],
         },
         {
-          heading: "Audit Logs",
-          list: [
-            "Complete activity tracking",
-            "Compliance-ready logging",
-            "Security event monitoring",
-          ],
-        },
-        {
           heading: "Data Sovereignty",
           list: [
             "Self-hosted deployment",
@@ -411,7 +403,7 @@ export const pricingSeventhText = {
       {
         question: "Can I try before buying?",
         answer:
-          "Yes! 30-day demo with full feature access. No credit card required.",
+          "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required.",
       },
       {
         question: "What if I need to cancel?",
@@ -444,7 +436,7 @@ export const pricingSeventhText = {
       {
         question: "Can I try before buying?",
         answer:
-          "Yes! 30-day demo with full feature access. No credit card required.",
+          "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required.",
       },
       {
         question: "What if I need to cancel?",
