@@ -316,7 +316,7 @@ export const eighthSectionText = {
 export const ninthSectionText = {
   title: "Stop Fighting Your CI/CD Tool. Start Shipping Code.",
   subtitle:
-    "Built by engineers who've deployed thousands of applications at GrapeCity.",
+    "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
   subtitle2: "Get your CI/CD pipeline running in under 5 minutes.",
   subtitle3: "Free for 3 agents, $199/month unlimited as you scale",
   primaryButton: "Start Your 30-Day Free Trial",
