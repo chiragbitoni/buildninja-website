@@ -19,6 +19,7 @@ export default function Fifth() {
                         {fifthSectionText.subTitle3}
                     </p>
                 </div>
+                <h4>{fifthSectionText.subHeading}</h4>
 
                 {/* CARDS */}
                 <div className="fifthHomeCardsContainer">

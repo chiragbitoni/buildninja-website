@@ -403,11 +403,7 @@ export const pricingSeventhText = {
       {
         question: "Can I try before buying?",
         answer:
-<<<<<<< HEAD
           "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required.",
-=======
-          "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required",
->>>>>>> e0974b896081b43bf97eaa8bbff119f4cb7e68fd
       },
       {
         question: "What if I need to cancel?",

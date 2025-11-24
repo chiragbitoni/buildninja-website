@@ -198,7 +198,7 @@ export const fifthSectionText = {
     "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows.",
   subTitle3:
     "We've seen how cloud vendor lock-in limits your infrastructure choices.",
-  
+  subHeading: "Built by GrapeCity India -Trusted partner to global enterprises since 2000",
   cards: [
     {
       icon: paths.icons.twentyFivePlus,
