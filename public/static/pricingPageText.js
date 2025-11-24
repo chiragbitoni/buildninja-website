@@ -338,11 +338,11 @@ export const pricingFifthText = {
       title: "Enterprise Security Features",
       sections: [
         {
-          heading: "Role-Based Access Control",
+          heading: "User Administration",
           list: [
-            "Granular permissions management",
-            "Team-level security controls",
-            "Project access management",
+            "Approve or reject user registration requests",
+            "Block/unblock users and reset passwords",
+            "Export logs for compliance and monitoring",
           ],
         },
         {
@@ -403,7 +403,11 @@ export const pricingSeventhText = {
       {
         question: "Can I try before buying?",
         answer:
+<<<<<<< HEAD
           "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required.",
+=======
+          "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required",
+>>>>>>> e0974b896081b43bf97eaa8bbff119f4cb7e68fd
       },
       {
         question: "What if I need to cancel?",
