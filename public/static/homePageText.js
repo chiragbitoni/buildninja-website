@@ -207,7 +207,7 @@ export const fifthSectionText = {
 
     {
       icon: paths.icons.customerStars,
-      boldText: "Trusted partner to global enterprises",
+      boldText: "Trusted partner to global enterprises ",
       text: "Delivering software excellence worldwide ",
     },
     {
