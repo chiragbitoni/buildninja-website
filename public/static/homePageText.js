@@ -1,8 +1,8 @@
 import { paths } from "./paths";
 
 export const heroSectionText = {
-  title1: "Self-Hosted CI/CD That Just Works",
-  title2: "Out of the Box",
+  title1: "Self-Hosted CI/CD ",
+  title2: "That Just Works Out of the Box",
   subtitle:
     "Growing teams waste time on complex CI/CD tools and per-seat pricing",
   subtitle2: "Deploy BuildNinja in minutes for $199/month unlimited users",
