@@ -56,12 +56,12 @@ export const thirdSectionText = {
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
   card2Text: "Works with GitHub, GitLab, Bitbucket - no vendor lock-in",
-  card3Title: "Deploy with Confidence",
+  card3Title: "Configure Your Pipeline",
   card3Step: "STEP 3",
-  card3Text: "Built-in reliability without complexity or escalating costs",
-  card4Title: "Scale Predictably",
+  card3Text: "Set up builds, triggers, and notifications - no complexity",
+  card4Title: "Deploy and Scale",
   card4Step: "STEP 4",
-  card4Text: "$199/month unlimited users as you grow",
+  card4Text: "Ship confidently with $199/month unlimited users",
 };
 export const fourthSectionText = {
   title1: "Powerful Features,",
