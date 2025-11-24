@@ -26,6 +26,9 @@ export default function Third() {
             <pre>
               <code>{thirdSectionText.card1command}</code>
             </pre>
+            <p className="third-simple-box-heading">
+              {thirdSectionText.card1Requirements}
+            </p>
             <p className="third-simple-box-text">
               {thirdSectionText.card1Text}
             </p>

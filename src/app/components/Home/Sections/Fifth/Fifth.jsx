@@ -36,7 +36,7 @@ export default function Fifth() {
                                 }
                             />
                             <div className="fifthHomeCardText">
-                                {data.boldText && <strong>{data.boldText}</strong>}
+                                {data.boldText && <strong dangerouslySetInnerHTML={{__html:data.boldText}}></strong>}
                                 <p>{data.text}</p>
                             </div>
                         </div>

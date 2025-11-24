@@ -21,17 +21,17 @@ export default function PricingHero() {
         annual: {
             title: "Annual:",
             saving: "Save 33%",
-            savingGlobal: "Save $592/year"
+            savingGlobal: "Save 33%"
         },
         twoYear: {
             title: "2-Year Upfront:",
             saving: "Save 46%",
-            savingGlobal: "Save $1,272/year"
+            savingGlobal: "Save 46%"
         },
         threeYear: {
             title: "3-Year Upfront:",
             saving: "Save 55%",
-            savingGlobal: "Save $1,764/year"
+            savingGlobal: "Save 55%"
         },
         footer:
             "All features identical across regions. Prices display based on your selection.",

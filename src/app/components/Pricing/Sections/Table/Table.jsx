@@ -78,7 +78,7 @@ export default function Table() {
           feature: "Additional Concurrent",
           solo: (
             <>
-              ₹2,199/month <br />₹16,999/year <br />₹26,999/2-year <br />₹37,999/3-year
+              ₹2,199/month <br />₹16,999/year (SAVE 36%)<br />₹26,999/2-year (SAVE 49%)<br />₹37,999/3-year (SAVE 52%)
             </>
           ),
           shogun: <TickText>Included</TickText>,
