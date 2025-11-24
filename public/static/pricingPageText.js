@@ -338,11 +338,11 @@ export const pricingFifthText = {
       title: "Enterprise Security Features",
       sections: [
         {
-          heading: "Role-Based Access Control",
+          heading: "User Administration",
           list: [
-            "Granular permissions management",
-            "Team-level security controls",
-            "Project access management",
+            "Approve or reject user registration requests",
+            "Block/unblock users and reset passwords",
+            "Export logs for compliance and monitoring",
           ],
         },
         {
@@ -350,14 +350,6 @@ export const pricingFifthText = {
           list: [
             "Solo: 1 provider (choose your primary)",
             "Shogun: All 5 providers (Microsoft, <br/>Azure AD, Google, GitHub, GitLab)",
-          ],
-        },
-        {
-          heading: "Audit Logs",
-          list: [
-            "Complete activity tracking",
-            "Compliance-ready logging",
-            "Security event monitoring",
           ],
         },
         {
