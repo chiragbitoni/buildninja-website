@@ -207,7 +207,8 @@ export const fifthSectionText = {
 
     {
       icon: paths.icons.customerStars,
-      text: "Thousands of enterprise customers worldwide",
+      boldText: "Trusted partner to global enterprises",
+      text: "Delivering software excellence worldwide ",
     },
     {
       icon: paths.icons.singleBinary,

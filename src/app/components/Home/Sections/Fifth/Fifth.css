@@ -15,7 +15,7 @@
 
 /* ===== Titles ===== */
 .fifthHomeTitle {
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   font-style: Regular;
   text-align: center;
@@ -25,7 +25,7 @@
 }
 
 .fifthHomeSecondTitle {
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   font-style: Regular;
   text-align: center;
@@ -36,7 +36,17 @@
 }
 
 .fifthHomeThirdTitle {
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  font-style: Regular;
+  text-align: center;
+  font-size: 24px;
+  margin: 4vw 0;
+  font-weight: 400;
+}
+
+.fifthHomeThirdSubHeading {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   font-style: Regular;
   text-align: center;
@@ -47,7 +57,7 @@
 
 /* ===== Subtitle ===== */
 .fifthHomeSubTitle {
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   text-align: center;
   font-size: 18px;
@@ -96,7 +106,7 @@
 
 /* ===== Text ===== */
 .fifthHomeCardText {
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   font-style: Regular;
   color: #ffffff;
@@ -110,6 +120,7 @@
   margin: 0;
 }
 
+
 /* ============================
    2️⃣ TABLET (768px – 1023px)
 ============================ */
@@ -122,6 +133,10 @@
   .fifthHomeSecondTitle,
   .fifthHomeThirdTitle {
     font-size: 32px;
+  }
+
+  .fifthHomeThirdSubHeading {
+    font-size:24px;
   }
 
   .fifthHomeSubTitle {
@@ -149,7 +164,7 @@
 
 @media (min-width: 1024px) {
   /* ===============================
-   Fifth Home Section (Cleaned)
+   Fifth Home Section
 ================================ */
 
   .fifthHomeSection {
@@ -174,9 +189,14 @@
     margin: 0;
   }
 
+  .fifthHomeThirdSubHeading {
+    font-size: 20px;
+    margin: 20px;
+  }
+
   .fifthHomeSubTitle {
     font-size: 16px;
-    margin: 10px 0 60px 0;
+    margin: 10px 0 20px 0;
     padding: 0 18vw;
   }
 
