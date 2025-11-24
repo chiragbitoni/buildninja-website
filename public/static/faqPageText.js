@@ -49,30 +49,25 @@ export const thirdSectionText = {
         },
         {
           question: "What are the System Requirements?",
-                      answer:(<><strong>Server</strong>: Minimum 2-core CPU (x64/AMD64), 4GB RAM, 20GB storage. 
-                Recommended: 4+ cores, 8-16GB RAM, 100GB+ SSD. Requires MongoDB and Docker.<p></p>
-                <br></br><strong>Build Agents</strong>: Minimum 2-core CPU, 2GB RAM, 10GB storage. 
-                Recommended: 4+ cores, 4-8GB RAM, 50GB+ storage. Supports Windows 10/11, Linux, 
-                and macOS. See complete system requirements for network, browser compatibility, 
-                and additional tools</>)
-           
+          answer:
+            "**Server Requirements**:\n" +
+            "- Minimum: 2-core CPU (x64/AMD64), 4GB RAM, 20GB storage\n" +
+            "- Recommended: 4+ cores, 8–16GB RAM, 100GB+ SSD\n" +
+            "- Requires MongoDB and Docker\n\n" +
+            "**Build Agents**:\n" +
+            "- Minimum: 2-core CPU, 2GB RAM, 10GB storage\n" +
+            "- Recommended: 4+ cores, 4–8GB RAM, 50GB+ storage\n" +
+            "- Supports Windows 10/11, Linux, and macOS\n\n" +
+            "See documentation for full system requirements (network, browser compatibility, tools).",
         },
         {
           question: "Do I need a license to use BuildNinja?",
-           answer: (
-                    <>
-                      Your first download includes a trial license (30 days, 10 users, 3 concurrent builds) - no license key needed.
-                      <br /><br />
-                      After the trial, acquire a license through the BuildNinja License Portal:
-                      <br />
-                      <ul style={{ marginLeft: '20px', marginTop: '10px' }}>
-                        <li><strong>Solo Edition (Free forever)</strong>: Register and generate your free license key</li>
-                        <li><strong>Shogun Edition (₹1699/month)</strong>: Purchase and generate your license key</li>
-                      </ul>
-                      <br />
-                      Activate your license through Settings &gt; Manage License (online or offline activation available)
-                    </>
-  )
+          answer:
+            "Your first download includes a trial license (30 days, 10 users, 3 concurrent builds) — no license key needed.\n\n" +
+            "After the trial, acquire a license through the BuildNinja License Portal:\n\n" +
+            "- **Solo Edition (Free forever)**: Register and generate your free license key\n" +
+            "- **Shogun Edition (₹1699/month)**: Purchase and generate your license key\n\n" +
+            "Activate your license through **Settings > Manage License** (online or offline activation available).",
         },
         {
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
@@ -233,24 +228,26 @@ export const fourthSectionText = {
   title: "Still Need Help?",
   subTitle: "Explore additional resources or get in touch with our team",
   cards: [
-    {icon: paths.icons.documentWhite,
+    {
+      icon: paths.icons.documentWhite,
       title: "Documentation",
       description: "Comprehensive guides and API references",
       buttonText: "View Docs",
-       link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`
+      link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`,
     },
-    {icon:paths.icons.emailWhite,
+    {
+      icon: paths.icons.emailWhite,
       title: "Email Support",
       description: "Get help from our support team",
       buttonText: "Contact Us",
-      router: "/support"
+      router: "/support",
     },
     {
       icon: paths.icons.searchWhite,
       title: "Search Docs",
       description: "Find answers quickly in our knowledge base",
       buttonText: "Search",
-       link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`
+      link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`,
     },
   ],
 };
