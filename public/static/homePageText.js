@@ -5,9 +5,9 @@ export const heroSectionText = {
   title2: "That Just Works Out of the Box",
   subtitle:
     "Growing teams waste time on complex CI/CD tools and per-seat pricing",
-  subtitle2: "Deploy BuildNinja in minutes for $199/month unlimited users",
-  subtitle3: "Ship features, not infrastructure.",
-  primaryButton: "Start Your 30–Day Free Trial",
+  subtitle2: "Start free up to 3 agents • $199/month unlimited as you scale",
+  subtitle3: "Deploy in minutes. Ship features, not infrastructure.",
+  primaryButton: "Install BuildNinja Free",
   secondaryButton: "See the 5-Minute Demo",
 };
 
