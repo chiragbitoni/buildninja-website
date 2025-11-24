@@ -464,7 +464,7 @@ export const pricingEighthText = {
   features: [
     "Free forever - Solo Edition",
     "₹16,999/month unlimited",
-    "30-day trial",
+    " 30-day trial license",
     "5-minute setup",
     "Self-hosted control",
     "Direct support",
