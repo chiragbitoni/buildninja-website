@@ -77,12 +77,12 @@ export const thirdSectionText = {
         {
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
           answer:
-            "Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. You can import your existing repositories and configure build workflows using our intuitive interface. Our documentation includes migration guides from popular CI/CD platforms.",
+            "Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at hello@grapehub.io",
         },
         {
           question: "Is there Docker support?",
           answer:
-            "Absolutely! BuildNinja offers official Docker images with multi-architecture support (x64, ARM). You can deploy via Docker Compose or Kubernetes. The containerized version supports environment-based configuration and is production-ready.",
+            "Yes! BuildNinja offers official Docker images. Deploy via Docker Compose or Kubernetes with environment-based configuration",
         },
       ],
     },
