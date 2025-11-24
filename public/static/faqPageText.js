@@ -48,9 +48,14 @@ export const thirdSectionText = {
             "Installation typically takes 10-15 minutes. For Windows, download the executable and run the installer wizard. For Docker deployments, pull the official image and configure environment variables. Our installation guide provides step-by-step instructions for all platforms.",
         },
         {
-          question: "What are the system requirements?",
-          answer:
-            "Minimum: 2 CPU cores (x64/ARM64), 4GB RAM, 10GB storage, Windows 10/11, Linux, or macOS. Recommended: 4+ cores, 8GB+ RAM, 50GB+ SSD storage, Docker latest version, and a valid SSL certificate for production environments.",
+          question: "What are the System Requirements?",
+                      answer:(<><strong>Server</strong>: Minimum 2-core CPU (x64/AMD64), 4GB RAM, 20GB storage. 
+                Recommended: 4+ cores, 8-16GB RAM, 100GB+ SSD. Requires MongoDB and Docker.<p></p>
+                <br></br><strong>Build Agents</strong>: Minimum 2-core CPU, 2GB RAM, 10GB storage. 
+                Recommended: 4+ cores, 4-8GB RAM, 50GB+ storage. Supports Windows 10/11, Linux, 
+                and macOS. See complete system requirements for network, browser compatibility, 
+                and additional tools</>)
+           
         },
         {
           question: "Do I need a license to use BuildNinja?",
