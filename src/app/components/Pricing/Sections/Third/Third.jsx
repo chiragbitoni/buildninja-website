@@ -5,7 +5,7 @@ import "./Third.css";
 export default function Third() {
     return (
         <section className="pricingThirdSection">
-            <h2 className="pricingThirdTitle">What Makes BuildNinja Different</h2>
+            <h2 className="pricingThirdTitle">Your Infrastructure. Your Rules. Zero Surprises.</h2>
 
             <div className="pricingThirdCardsContainer">
                 <div className="pricingThirdCard">

@@ -11,7 +11,7 @@ const footerText = {
     },
     sections: [
         {
-            title: "Navigation",
+            title: "Product",
             links: [
                 { label: "Features", link: "/features" },
                 { label: "Pricing", link: "/pricing" },
