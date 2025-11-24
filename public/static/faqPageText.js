@@ -59,8 +59,20 @@ export const thirdSectionText = {
         },
         {
           question: "Do I need a license to use BuildNinja?",
-          answer:
-            "Yes, all installations require a license key. The Solo plan is free and includes a license for single-user setups with up to 3 concurrent builds. When you download BuildNinja, your license key is automatically sent to your email within 5 minutes.",
+           answer: (
+                    <>
+                      Your first download includes a trial license (30 days, 10 users, 3 concurrent builds) - no license key needed.
+                      <br /><br />
+                      After the trial, acquire a license through the BuildNinja License Portal:
+                      <br />
+                      <ul style={{ marginLeft: '20px', marginTop: '10px' }}>
+                        <li><strong>Solo Edition (Free forever)</strong>: Register and generate your free license key</li>
+                        <li><strong>Shogun Edition (₹1699/month)</strong>: Purchase and generate your license key</li>
+                      </ul>
+                      <br />
+                      Activate your license through Settings &gt; Manage License (online or offline activation available)
+                    </>
+  )
         },
         {
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
