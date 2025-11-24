@@ -193,7 +193,7 @@ pre {
 
   /* 👇 Cards made wider by reducing columns & expanding min width */
   .third-simple-grid {
-    width: 1200px;
+    width: 1400px;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
     gap: 10px;
     justify-self: center;
@@ -201,7 +201,7 @@ pre {
   }
 
   div.third-simple-box {
-    width: 300px;
+    width: 350px;
     height: auto;
     border-radius: 10px;
     padding: 20px 30px;

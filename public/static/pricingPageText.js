@@ -66,7 +66,7 @@ export const secondSectionTextIndia = {
         "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
         "<strong>Priority business support</strong> - Direct engineering team access",
       ],
-      buttonText: "Start 30-Day Trial",
+      buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
   },
@@ -90,7 +90,7 @@ export const secondSectionTextIndia = {
       "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
       "<strong>Priority business support</strong> - Direct engineering team access",
     ],
-    buttonText: "Start 30-Day Trial",
+    buttonText: "Start with Trial License",
     ctaText: "No credit card. No commitment.",
   },
 
@@ -102,7 +102,7 @@ export const secondSectionTextIndia = {
       price: "₹2,19,999 ",
       description: "(₹9,166/month equivalent)",
       savings: "Save 46%",
-      buttonText: "Start 30-Day Trial",
+      buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
     threeYear: {
@@ -111,7 +111,7 @@ export const secondSectionTextIndia = {
       price: "₹2,74,999",
       description: "(₹7,638/month) equivalent",
       savings: "Save 55%",
-      buttonText: "Start 30-Day Trial",
+      buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
   },
@@ -180,7 +180,7 @@ export const secondSectionTextGlobal = {
         "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
         "<strong>Priority business support</strong> - Direct engineering team access",
       ],
-      buttonText: "Start 30-Day Trial",
+      buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
   },
@@ -204,7 +204,7 @@ export const secondSectionTextGlobal = {
       "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
       "<strong>Priority business support</strong> - Direct engineering team access",
     ],
-    buttonText: "Start 30-Day Trial",
+    buttonText: "Start with Trial License",
     ctaText: "No credit card. No commitment.",
   },
 
@@ -216,7 +216,7 @@ export const secondSectionTextGlobal = {
       price: "$2,558",
       description: "($107/month equivalent)",
       savings: "SAVE 46%",
-      buttonText: "Start 30-Day Trial",
+      buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
     threeYear: {
@@ -225,7 +225,7 @@ export const secondSectionTextGlobal = {
       price: "$3,198",
       description: "($89/month equivalent)",
       savings: "SAVE 55%",
-      buttonText: "Start 30-Day Trial",
+      buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
   },
@@ -304,7 +304,7 @@ export const pricingFifthText = {
           heading: "Docker Container Support",
           list: [
             "Deploy in minutes with docker pull",
-            "Single binary simplicity",
+            "Self-contained deployment",
             "Multi-platform agents (Windows, Linux, macOS)",
           ],
         },
@@ -327,7 +327,7 @@ export const pricingFifthText = {
         {
           heading: "Smart Notifications",
           list: [
-            "Email, Slack, Teams integration",
+            "Email",
             "Customizable triggers",
             "Multi-recipient support",
           ],
@@ -375,7 +375,7 @@ export const pricingFifthText = {
 
 // SixthText.js
 export const pricingSixthText = {
-  headline: "Early Adopter Program for first 1,000 Customers",
+  headline: "Early Adopter Program for first 100 Customers",
   subheadline: "LIMITED TIME",
   features: [
     { title: "Price lock guarantee for multi-year plans" },
@@ -467,7 +467,7 @@ export const pricingEighthText = {
   shogun: {
     title: "Shogun Edition",
     description: "Full access. Cancel anytime.",
-    buttonText: "Start 30-Day Trial",
+    buttonText: "Start with Trial License",
   },
   features: [
     "Free forever - Solo Edition",
