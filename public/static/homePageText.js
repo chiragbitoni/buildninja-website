@@ -319,11 +319,11 @@ export const ninthSectionText = {
     "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
   subtitle2: "Get your CI/CD pipeline running in under 5 minutes.",
   subtitle3: "Free for 3 agents, $199/month unlimited as you scale",
-  primaryButton: "Start Your 30-Day Free Trial",
+  primaryButton: "Get Started Free",
   secondaryButton: "See the 5-Minute Demo",
   secondTitle: "Risk-Free Guarantee",
   list: [
-    "30-day free trial, no credit card required",
+    "30-day free trial License, no credit card required",
     "Cancel anytime, keep full control of your setup",
     "Deploy in minutes with Docker and test on your infrastructure",
     "Direct support from our engineering team",
