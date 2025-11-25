@@ -49,26 +49,37 @@ export const thirdSectionText = {
         },
         {
           question: "What are the System Requirements?",
-          answer:
-            "**Server Requirements**:\n" +
-            "- Minimum: 2-core CPU (x64/AMD64), 4GB RAM, 20GB storage\n" +
-            "- Recommended: 4+ cores, 8–16GB RAM, 100GB+ SSD\n" +
-            "- Requires MongoDB and Docker\n\n" +
-            "**Build Agents**:\n" +
-            "- Minimum: 2-core CPU, 2GB RAM, 10GB storage\n" +
-            "- Recommended: 4+ cores, 4–8GB RAM, 50GB+ storage\n" +
-            "- Supports Windows 10/11, Linux, and macOS\n\n" +
-            "See documentation for full system requirements (network, browser compatibility, tools).",
+          answer: `
+            **Server Requirements**  
+            - Minimum: 2-core CPU (x64/AMD64), 4GB RAM, 20GB storage  
+            - Recommended: 4+ cores, 8–16GB RAM, 100GB+ SSD  
+            - Requires MongoDB and Docker  
+
+            **Build Agents**  
+            - Minimum: 2-core CPU, 2GB RAM, 10GB storage  
+            - Recommended: 4+ cores, 4–8GB RAM, 50GB+ storage  
+            - Supports Windows 10/11, Linux, and macOS  
+
+            See complete system requirements for network, browser compatibility, and additional tools.
+            `,
         },
         {
           question: "Do I need a license to use BuildNinja?",
-          answer:
-            "Your first download includes a trial license (30 days, 10 users, 3 concurrent builds) — no license key needed.\n\n" +
-            "After the trial, acquire a license through the BuildNinja License Portal:\n\n" +
-            "- **Solo Edition (Free forever)**: Register and generate your free license key\n" +
-            "- **Shogun Edition (₹1699/month)**: Purchase and generate your license key\n\n" +
-            "Activate your license through **Settings > Manage License** (online or offline activation available).",
+          answer: `
+Your first download includes a **30-day trial** (10 users, 3 concurrent builds) — no license key needed.
+
+After the trial:
+
+  
+- **Solo Edition (Free forever):** Register and generate your free license key  
+- **Shogun Edition (₹1699/month):** Purchase and generate your license key  
+
+
+Activate your license via **Settings → Manage License**  
+(online and offline activation supported).
+`,
         },
+
         {
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
           answer:

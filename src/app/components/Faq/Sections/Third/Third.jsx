@@ -70,11 +70,10 @@ export default function Third() {
                 {category.faqs.map((faq, faqIdx) => (
                   <div
                     key={faqIdx}
-                    className={`faq-item ${
-                      activeIndex.category === catIdx && activeIndex.index === faqIdx
-                        ? "active"
-                        : ""
-                    }`}
+                    className={`faq-item ${activeIndex.category === catIdx && activeIndex.index === faqIdx
+                      ? "active"
+                      : ""
+                      }`}
                   >
                     <button
                       className="faq-question"
@@ -88,7 +87,8 @@ export default function Third() {
                       </span>
                     </button>
                     <div className="faq-answer">
-                      <p>{highlightText(faq.answer, searchTerm)}</p>
+                      {/* <p>{highlightText(faq.answer, searchTerm)}</p> */}
+                      <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, "<br>") }} />
                     </div>
                   </div>
                 ))}

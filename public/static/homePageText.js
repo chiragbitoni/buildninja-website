@@ -195,10 +195,14 @@ export const fifthSectionText = {
   subTitle:
     "We understand how frustrating it is when CI/CD tools break right before critical releases.",
   subTitle2:
-    "Like you, we believe deploying code shouldn't require a PhD in DevOps. We know how expensive per-seat licensing gets as your team grows.",
+    "Like you, we believe deploying code shouldn't require a PhD in DevOps.",
   subTitle3:
+    "We know how expensive per-seat licensing gets as your team grows.",
+  subTitle4:
     "We've seen how cloud vendor lock-in limits your infrastructure choices.",
-  subHeading: "Built by GrapeCity India -Trusted partner to global enterprises since 2000",
+  subHeading1: "Built by ",
+  subHeading2: "India -",
+  subHeading3: "Trusted partner to global enterprises since 2000",
   cards: [
     {
       icon: paths.icons.twentyFivePlus,

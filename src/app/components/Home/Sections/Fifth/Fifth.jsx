@@ -13,13 +13,20 @@ export default function Fifth() {
                 <div className="fifthHomeSubTitle">
                     <p>
                         {fifthSectionText.subTitle}
-                        <br />
+                        {/* <br /> */}
                         {fifthSectionText.subTitle2}
-                        <br />
+                        {/* <br /> */}
                         {fifthSectionText.subTitle3}
+                        {/* <br /> */}
+                        {fifthSectionText.subTitle4}
                     </p>
                 </div>
-                <h4 className="fifthHomeThirdSubHeading">{fifthSectionText.subHeading}</h4>
+                <div className="fifthHomeThirdSubHeading">
+                    <h4 className="fifthHomeThirdSubHeading1">{fifthSectionText.subHeading1}</h4>
+                    <img className="fifthHomeThirdSubHeadingImage" src="/resources/GrapecityWhite.png"></img>
+                    <h4 className="fifthHomeThirdSubHeading1">{fifthSectionText.subHeading2}</h4>
+                    <h4 className="fifthHomeThirdSubHeading2">{fifthSectionText.subHeading3}</h4>
+                </div>
 
                 {/* CARDS */}
                 <div className="fifthHomeCardsContainer">
@@ -37,7 +44,7 @@ export default function Fifth() {
                                 }
                             />
                             <div className="fifthHomeCardText">
-                                {data.boldText && <strong dangerouslySetInnerHTML={{__html:data.boldText}}></strong>}
+                                {data.boldText && <strong dangerouslySetInnerHTML={{ __html: data.boldText }}></strong>}
                                 <p>{data.text}</p>
                             </div>
                         </div>
