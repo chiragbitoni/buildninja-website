@@ -57,6 +57,17 @@
   width: 60%
 }
 
+.footerGCSocial {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 25px;
+}
+
+.footerSocialIcons {
+  cursor: pointer;
+}
+
 /* Name + desc in one block for small screens */
 .footerTitle {
   color: #ffffff;

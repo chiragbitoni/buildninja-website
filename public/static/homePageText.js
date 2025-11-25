@@ -195,9 +195,9 @@ export const fifthSectionText = {
   subTitle:
     "We understand how frustrating it is when CI/CD tools break right before critical releases.",
   subTitle2:
-    "Like you, we believe deploying code shouldn't require a PhD in DevOps.",
+    "Like you, We believe deploying code shouldn't require a PhD in DevOps.",
   subTitle3:
-    "We know how expensive per-seat licensing gets as your team grows.",
+    "We know how expensive per-seat licensing gets as your team grows. ",
   subTitle4:
     "We've seen how cloud vendor lock-in limits your infrastructure choices.",
   subHeading1: "Built by ",

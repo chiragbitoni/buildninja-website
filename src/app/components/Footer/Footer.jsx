@@ -55,16 +55,13 @@ const footerText = {
 
 export default function Footer() {
     const router = useRouter();
-
     const handleClick = (link) => {
         if (!link) return;
-
         // External link (starts with http)
         if (link.startsWith("http")) {
             window.location.href = link;
             return;
         }
-
         // Internal navigation
         router.push(link);
     };
@@ -73,7 +70,6 @@ export default function Footer() {
         <footer className="footerContainer">
             <div className="footerWrapper">
                 <div className="footerContent">
-
                     {/* Left Section */}
                     <div className="footerBrand">
                         <div className="footerLogoContainer">
@@ -84,9 +80,14 @@ export default function Footer() {
                         </div>
                         <p className="footerDesc">{footerText.company.description}</p>
                         <img src="/resources/GrapecityWhite.png" alt="BuildNinja Logo" className="footerGCLogo" />
+                        <div className="footerGCSocial">
+                            <img src="/resources/Footer/social/linkedin.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></img>
+                            <img src="/resources/Footer/social/instagram.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></img>
+                            <img src="/resources/Footer/social/facebook.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></img>
+                            <img src="/resources/Footer/social/youtube.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@grapecityindiapvtltd" }}></img>
+                        </div>
                         <p className="footerCopy">{footerText.company.copyright}</p>
                     </div>
-
                     {/* Links Sections */}
                     <div className="footerLinksContainer">
                         {footerText.sections.map((section, idx) => (
@@ -95,20 +96,13 @@ export default function Footer() {
                                 <ul className="footerList">
                                     {section.links.map((item, i) => (
                                         <li key={i} className="footerListItem">
-                                            <button
-                                                onClick={() => handleClick(item.link)}
-                                                className="footerLink btnLink"
-                                            >
-                                                {item.label}
-                                            </button>
+                                            <button onClick={() => handleClick(item.link)} className="footerLink btnLink"> {item.label}</button>
                                         </li>
                                     ))}
                                 </ul>
-
                             </div>
                         ))}
                     </div>
-
                 </div>
             </div>
         </footer>
