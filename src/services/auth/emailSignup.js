@@ -8,7 +8,7 @@ export async function emailSignup(customerEmail) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
-    body: data
+    body: data,
   });
 
   return res.json();

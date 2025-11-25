@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Hero from "@/app/components/Download/Dashboard/Sections/Hero/Hero";
@@ -11,7 +10,6 @@ export default function Dashboard() {
   useEffect(() => {
     async function verify() {
       const loggedIn = await checkAuth();
-
       if (!loggedIn) router.replace("/install");
     }
     verify();

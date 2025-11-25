@@ -2,7 +2,7 @@
 import './Hero.css';
 import { heroSectionText } from "../../../../../../public/static/downloadPageText";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { emailSignup } from "@/services/auth/emailSignup";
 
@@ -11,16 +11,33 @@ export default function Hero() {
     const [email, setEmail] = useState("");
     const [captchaToken, setCaptchaToken] = useState(null);
 
+    // 🚀 If already logged in → redirect to dashboard
+    useEffect(() => {
+        const userId = localStorage.getItem("userId");
+        if (userId) {
+            router.replace("/dashboard");
+        }
+    }, []);
+
     async function handleSubmit(e) {
         e.preventDefault();
+
         if (!captchaToken) {
             alert("Please verify that you are not a robot!");
             return;
         }
+
         try {
             const res = await emailSignup(email);
             console.log("API Response:", res);
-            if (res?.value?.accessToken) {
+
+            const userId = res?.value?.user?.userId;
+
+            if (userId) {
+                // ⭐ Store userId locally
+                localStorage.setItem("userId", userId);
+
+                // Redirect to Access page
                 router.push("/install/access");
             } else {
                 alert(res?.message || "Signup failed. Try again.");
@@ -31,17 +48,12 @@ export default function Hero() {
         }
     }
 
-
     return (
         <section className="downloadHeroSection">
             <div className="downloadHeroContent">
                 <p className="downloadHeroHighlight">{heroSectionText.highlight}</p>
-                <h1 className="downloadHeroTitle">
-                    {heroSectionText.title} <br />
-                </h1>
-                <p className="downloadHeroSubtitle">
-                    {heroSectionText.subTitle}<br />
-                </p>
+                <h1 className="downloadHeroTitle">{heroSectionText.title}<br /></h1>
+                <p className="downloadHeroSubtitle">{heroSectionText.subTitle}<br /></p>
 
                 <div className="downloadHeroEmailContainer">
                     <form className="downloadHeroEmailForm" onSubmit={handleSubmit}>
@@ -70,10 +82,8 @@ export default function Hero() {
                     <div className="downloadHeroEmailIconTextContainer">
                         {heroSectionText.downloadCContainerText.iconText.map((text, index) => (
                             <div className="downloadHeroEmailIconContainer" key={index}>
-                                <img
-                                    className="downloadHeroEmailIcon"
-                                    src={heroSectionText.downloadCContainerText.iconPath}
-                                />
+                                <img className="downloadHeroEmailIcon"
+                                     src={heroSectionText.downloadCContainerText.iconPath} />
                                 <div className="downloadHeroEmailIconTextItem">{text}</div>
                             </div>
                         ))}
