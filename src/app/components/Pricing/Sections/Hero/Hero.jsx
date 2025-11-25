@@ -25,12 +25,12 @@ export default function PricingHero() {
         },
         twoYear: {
             title: "2-Year Upfront:",
-            saving: "Save 46%",
-            savingGlobal: "Save 46%"
+            saving: "Save 48%",
+            savingGlobal: "Save 48%"
         },
         threeYear: {
             title: "3-Year Upfront:",
-            saving: "Save 55%",
+            saving: "Save 56%",
             savingGlobal: "Save 55%"
         },
         footer:
@@ -77,7 +77,7 @@ export default function PricingHero() {
                 <div className="pricingMonthlyFreeListCard">
                     <p>{secondSectionText.monthCards.soloEditionCard.listCard.title}</p>
                     {secondSectionText.monthCards.soloEditionCard.listCard.list.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <li key={index}>{item.price}<span className="pricingHeroYearButtonSavings">{item.saving}</span></li>
                     ))}
                 </div>
             )}
@@ -279,7 +279,7 @@ export default function PricingHero() {
                                         }`}
                                     onClick={() => dispatch(setMultiYear(option.key))}
                                 >
-                                    {option.label}<br />{option.description}
+                                    {option.label}<br /><span className="pricingHeroYearButtonSavings">{option.description}</span>
                                 </button>
                             ))}
                         </div>

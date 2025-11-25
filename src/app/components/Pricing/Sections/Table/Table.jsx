@@ -24,15 +24,15 @@ export default function Table() {
       subtitle:
         "Select your region to see pricing in your currency. Currently showing India (₹ INR) pricing",
       rows: [
-        { feature: "Monthly Price", solo: "FREE", shogun: "₹16,999" },
+        { feature: "Monthly Price", solo: "FREE", shogun: "₹17,499" },
         {
           feature: "Annual Price",
           solo: "FREE",
           shogun: (
             <>
-              ₹1,36,999/year
-              <small>(₹11,416/month</small>
-                Save 33%
+              ₹1,39,999/year
+              <small>(₹11,666/month)</small>
+              Save 33%
             </>
           ),
         },
@@ -43,7 +43,7 @@ export default function Table() {
             <>
               ₹2,19,999
               <small>(₹9,166/month)</small>
-                Save 46%
+              Save 48%
             </>
           ),
         },
@@ -52,9 +52,9 @@ export default function Table() {
           solo: "FREE",
           shogun: (
             <>
-              ₹2,74,999
-              <small>(₹7,638/month)</small>
-                SAVE 55%
+              ₹2,79,999
+              <small>(₹7,777/month)</small>
+              SAVE 56%
             </>
           ),
         },
@@ -63,7 +63,7 @@ export default function Table() {
           solo: "Individual developers & small teams",
           shogun: "Growing Teams",
         },
-        { feature: "Users", solo: "Up to 10", shogun: <TickText>Unlimited</TickText>},
+        { feature: "Users", solo: "Up to 10", shogun: <TickText>Unlimited</TickText> },
         {
           feature: "Build Agents",
           solo: <TickText>Unlimited</TickText>,
@@ -78,7 +78,116 @@ export default function Table() {
           feature: "Additional Concurrent",
           solo: (
             <>
-              ₹2,199/month <br />₹16,999/year (SAVE 36%)<br />₹26,999/2-year (SAVE 49%)<br />₹37,999/3-year (SAVE 52%)
+              ₹2,199/month <br />₹16,999/year (SAVE 36%)<br />₹25,999/2-year (SAVE 51%)<br />₹34,999/3-year (SAVE 56%)
+            </>
+          ),
+          shogun: <TickText>Included</TickText>,
+        },
+        { feature: "Projects", solo: "Up to 100", shogun: <TickText>Unlimited</TickText> },
+        {
+          feature: "Configurations",
+          solo: "Up to 100",
+          shogun: <TickText>Unlimited</TickText>,
+        },
+        {
+          feature: "Build History",
+          solo: "30 days",
+          shogun: <TickText>Perpetual (forever)</TickText>,
+        },
+        {
+          feature: "SSO Integrations",
+          solo: "1 provider",
+          shogun: <TickText>All 5 providers</TickText>,
+        },
+        {
+          feature: "Support",
+          solo: "Community",
+          shogun: <TickText>Priority business hours</TickText>,
+        },
+        {
+          feature: "Migration Assistance",
+          solo: "Self-service guides",
+          shogun: (
+            <TickText>
+              Free for 10 projects (annual/2-year/3-year)
+            </TickText>
+          ),
+        },
+        {
+          feature: "Professional Services",
+          solo: "–",
+          shogun: (
+            <TickText>20 hours/year (annual/2-year/3-year)</TickText>
+          ),
+        },
+        {
+          feature: "License Buyout Credit",
+          solo: "–",
+          shogun: <TickText>25% credit (annual/2-year/3-year)</TickText>,
+        },
+        { feature: "Grace Period", solo: "7 days", shogun: "7 days" },
+      ],
+    },
+    global:{
+      title: "Everything You Need, Choose Your Scale",
+      subtitle:
+        "Select your region to see pricing in your currency. Currently showing India (₹ INR) pricing",
+      rows: [
+        { feature: "Monthly Price", solo: "FREE", shogun: "$199" },
+        {
+          feature: "Annual Price",
+          solo: "FREE",
+          shogun: (
+            <>
+              $1,599/year
+              <small>($133/month)</small>
+              Save 33%
+            </>
+          ),
+        },
+        {
+          feature: "2-Year Upfront",
+          solo: "FREE",
+          shogun: (
+            <>
+               $2,499/year
+              <small>($104/month)</small>
+              Save 48%
+            </>
+          ),
+        },
+        {
+          feature: "3-Year Upfront",
+          solo: "FREE",
+          shogun: (
+            <>
+             $3,199/year
+              <small>($89/month)</small>
+              Save 55%
+            </>
+          ),
+        },
+        {
+          feature: "Best For",
+          solo: "Individual developers & small teams",
+          shogun: "Growing Teams",
+        },
+        { feature: "Users", solo: "Up to 10", shogun: <TickText>Unlimited</TickText> },
+        {
+          feature: "Build Agents",
+          solo: <TickText>Unlimited</TickText>,
+          shogun: <TickText>Unlimited</TickText>,
+        },
+        {
+          feature: "Concurrent Agents",
+          solo: "3 builds at same time",
+          shogun: <TickText>Unlimited builds at same time</TickText>,
+        },
+        {
+          feature: "Additional Concurrent",
+          solo: (
+            <>
+              $25/month <br />$199/year (SAVE 34%)<br />$299/2-year (SAVE 50%)<br />$399/3-year (SAVE 56%)
             </>
           ),
           shogun: <TickText>Included</TickText>,
@@ -130,14 +239,18 @@ export default function Table() {
     },
   };
 
-  const table = pricingData[region] || pricingData.india;
+
+  const table =
+  region === "india"
+    ? pricingData.india
+    : pricingData.global;
 
   return (
     <section className="pricingTableSection">
       <div className="pricingTableHeader">
         <h2>{table.title}</h2>
         <p>{table.subtitle}</p>
-      </div>
+      </div>F
 
       <div className="pricingTableWrapper">
         <table className="pricingTable">

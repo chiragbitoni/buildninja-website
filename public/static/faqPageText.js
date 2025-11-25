@@ -98,7 +98,7 @@ Activate your license through Settings > Manage License (online or offline activ
             `BuildNinja offers two plans: 
 
             **Solo (Free)/strong – perfect for individual developers, includes 1 user, 3 concurrent builds, and essential features. 
-            **Shogun (₹16,999/month)/strong – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at ₹2,399/build/month), SSO support, priority support, and all features.`,
+            **Shogun (₹17,499/month)/strong – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at ₹2,399/build/month), SSO support, priority support, and all features.`,
         },
         {
           question: "Is the Solo plan really free forever?",

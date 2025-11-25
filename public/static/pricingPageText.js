@@ -31,10 +31,10 @@ export const secondSectionTextIndia = {
       listCard: {
         title: "Additional concurrent capacity (per agent)",
         list: [
-          "₹2,199/month",
-          "₹16,999/year (save 36%)",
-          "₹26,999/2-year (save 49%)",
-          "₹37,999/3-year (save 52%)",
+          { price: "₹2,199/month" },
+          { price: "₹16,999/year ", saving: "(Save 36%)" },
+          { price: "₹25,999/2-year ", saving: "(Save 51%)" },
+          { price: "$34,999/3-year ", saving: "(Save 56%)" },
         ],
       },
       list2: [
@@ -53,7 +53,7 @@ export const secondSectionTextIndia = {
     shogunEditionCard: {
       highlight: "MOST POPULAR",
       edition: "Shogun Edition",
-      price: "₹16,999/month",
+      price: "₹17,499/month",
       ideal:
         "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
       list: [
@@ -75,8 +75,8 @@ export const secondSectionTextIndia = {
   annualCard: {
     highlight: "MOST POPULAR",
     edition: "Shogun Edition",
-    price: "₹1,36,999/year",
-    description: "(₹11,416/month equivalent)",
+    price: "₹1,39,999/year",
+    description: "(₹11,666/month equivalent)",
     savings: "Save 33%",
     ideal:
       "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
@@ -101,16 +101,16 @@ export const secondSectionTextIndia = {
       edition: "Shogun Edition - 2-Year Upfront",
       price: "₹2,19,999 ",
       description: "(₹9,166/month equivalent)",
-      savings: "Save 46%",
+      savings: "Save 48%",
       buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
       edition: "Shogun Edition - 3-Year Upfront",
-      price: "₹2,74,999",
-      description: "(₹7,638/month) equivalent",
-      savings: "Save 55%",
+      price: "₹2,79,999",
+      description: "(₹7,777/month) equivalent",
+      savings: "Save 56%",
       buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
@@ -145,10 +145,10 @@ export const secondSectionTextGlobal = {
       listCard: {
         title: "Additional concurrent capacity (per agent)",
         list: [
-          "$25/month",
-          "$199/year (save 34%)",
-          "$318/2-year (save 47%)",
-          "$448/3-year (save 50%)",
+          { price: "$25/month" },
+          { price: "$199/year ", saving: "(Save 34%)" },
+          { price: "$299/2-year ", saving: "(Save 50%)" },
+          { price: "$399/3-year ", saving: "(Save 56%)" },
         ],
       },
       list2: [
@@ -213,16 +213,16 @@ export const secondSectionTextGlobal = {
     twoYear: {
       highlight: "BEST VALUE",
       edition: "Shogun Edition - 2-Year Upfront",
-      price: "$2,558",
-      description: "($107/month equivalent)",
-      savings: "SAVE 46%",
+      price: "$2,499",
+      description: "($104/month equivalent)",
+      savings: "SAVE 48%",
       buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
     threeYear: {
       highlight: "MAXIMUM SAVINGS",
       edition: "Shogun Edition - 3-Year Upfront",
-      price: "$3,198",
+      price: "$3,199",
       description: "($89/month equivalent)",
       savings: "SAVE 55%",
       buttonText: "Start with Trial License",
@@ -263,7 +263,7 @@ export const pricingFourthText = {
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
-      desc: "Free up to 3 concurrent agents. ₹16,999/month unlimited users beyond that. No hidden costs, no complex calculations.",
+      desc: "Free up to 3 concurrent agents. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations.",
       link: "Learn more →",
     },
     {
@@ -326,11 +326,7 @@ export const pricingFifthText = {
         },
         {
           heading: "Smart Notifications",
-          list: [
-            "Email",
-            "Customizable triggers",
-            "Multi-recipient support",
-          ],
+          list: ["Email", "Customizable triggers", "Multi-recipient support"],
         },
       ],
     },
@@ -387,7 +383,7 @@ export const pricingSeventhText = {
       {
         question: "What happens when my team grows?",
         answer:
-          "Nothing to your BuildNinja price. Add 10 or 100 developers, still ₹16,999/month for unlimited users.",
+          "Nothing to your BuildNinja price. Add 10 or 100 developers, still ₹17,499/month for unlimited users.",
       },
       {
         question: "Is the free Solo Edition really free forever?",
@@ -463,7 +459,7 @@ export const pricingEighthText = {
   },
   features: [
     "Free forever - Solo Edition",
-    "₹16,999/month unlimited",
+    "₹17,499/month unlimited",
     " 30-day trial license",
     "5-minute setup",
     "Self-hosted control",

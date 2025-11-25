@@ -98,6 +98,10 @@
     background: #151515;
 }
 
+.pricingHeroYearButtonSavings{
+    color: #1AB000;
+}
+
 /* Footer */
 .pricingHeroFooter {
     font-size: 16px;
@@ -360,8 +364,8 @@
 }
 
 .pricingAnnualShogunSavings {
-    color: #169000;
-    background-color: #dbfce7;
+    color: #1AB000;
+    background-color: #313131;
     font-size: 13px;
     font-weight: 600;
     margin-top: 10px;
