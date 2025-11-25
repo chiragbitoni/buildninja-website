@@ -7,7 +7,8 @@ const footerText = {
     company: {
         name: "BuildNinja",
         description:
-            "CI/CD that just works. Deploy with confidence, scale with ease.",
+            "CI/CD that just works.",
+        description2: " Deploy with confidence, scale with ease.",
         copyright: "© 2025 GrapeCity India Pvt Ltd. All Rights Reserved.",
     },
     sections: [
@@ -78,7 +79,7 @@ export default function Footer() {
                             </div>
                             <h3 className="footerTitle">{footerText.company.name}</h3>
                         </div>
-                        <p className="footerDesc">{footerText.company.description}</p>
+                        <p className="footerDesc">{footerText.company.description}<br/>{footerText.company.description2}</p>
                         <img src="/resources/GrapecityWhite.png" alt="BuildNinja Logo" className="footerGCLogo" />
                         <div className="footerGCSocial">
                             <img src="/resources/Footer/social/linkedin.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></img>
