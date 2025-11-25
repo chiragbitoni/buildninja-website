@@ -2,6 +2,7 @@
 import "./Footer.css";
 import { useRouter } from "next/navigation";
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
+const GRAPEHUB_URL = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "";
 const footerText = {
     company: {
         name: "BuildNinja",
@@ -23,7 +24,7 @@ const footerText = {
         {
             title: "Documentation",
             links: [
-                { label: "Documentation", link: `${DOCS_URL}/docs` },
+                { label: "Documentation", link: `${DOCS_URL}/docs/overview` },
                 { label: "Getting Started", link: `${DOCS_URL}/docs/category/getting-started` },
                 { label: "Tutorials", link: `${DOCS_URL}/docs/category/quick-setup-guide` },
                 { label: "Licensing", link: `${DOCS_URL}/docs/category/licensing` },
@@ -33,20 +34,20 @@ const footerText = {
         {
             title: "Company",
             links: [
-                { label: "About Us", link: "/about" },
-                { label: "Blog", link: "/blog" },
-                { label: "Contact", link: "/contact" },
-                { label: "Support", link: "/support" },
+                { label: "About Us", link: `${GRAPEHUB_URL}/about` },
+                { label: "Blog", link: `${GRAPEHUB_URL}/blog` },
+                { label: "Contact", link: `${GRAPEHUB_URL}/contact` },
+                { label: "Support", link: `/support` },
             ],
         },
         {
             title: "Legal",
             links: [
-                { label: "Privacy Policy", link: "/privacy-policy" },
-                { label: "Terms of Service", link: "/terms-of-service" },
-                { label: "EULA", link: "/eula" },
-                { label: "Refund & Cancellation", link: "/refund-and-cancellation-policy" },
-                { label: "Shipping Policy", link: "/shipping-policy" },
+                { label: "Privacy Policy", link: `${GRAPEHUB_URL}/privacy-policy` },
+                { label: "Terms of Service", link: `${GRAPEHUB_URL}/terms-of-service` },
+                { label: "EULA", link: `${GRAPEHUB_URL}/eula` },
+                { label: "Refund & Cancellation", link: `${GRAPEHUB_URL}/refund-and-cancellation-policy` },
+                { label: "Shipping Policy", link: `${GRAPEHUB_URL}/shipping-policy` },
             ],
         },
     ],
