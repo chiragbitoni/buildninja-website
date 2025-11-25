@@ -10,8 +10,9 @@
 .footerContainer {
   background-color: #1f1f1f;
   color: #cfcfcf;
-  padding: 6vw 4vw; /* tighter mobile padding */
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  padding: 6vw 4vw;
+  /* tighter mobile padding */
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   line-height: 1.45;
 }
@@ -37,10 +38,10 @@
   align-items: flex-start;
 }
 
-.footerLogoContainer{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.footerLogoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footerLogo {
@@ -49,6 +50,11 @@
   /* background-color: #f4f4f4; */
   border-radius: 6px;
   flex-shrink: 0;
+}
+
+.footerGCLogo {
+  margin-top: 10px;
+  width: 60%
 }
 
 /* Name + desc in one block for small screens */
@@ -78,7 +84,8 @@
 /* LINKS — stacked full-width on mobile */
 .footerLinksContainer {
   display: grid;
-  grid-template-columns: 1fr; /* single column on mobile */
+  grid-template-columns: 1fr;
+  /* single column on mobile */
   gap: 1.4rem;
   width: 100%;
 }
@@ -125,7 +132,8 @@
 }
 
 /* Prevent horizontal scroll on very small screens */
-html, body {
+html,
+body {
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
 }
@@ -152,6 +160,11 @@ html, body {
     font-size: 14px;
     max-width: 320px;
   }
+
+  .footerGCLogo {
+    margin-top: 10px;
+    width: 30%
+  }
 }
 
 /* =========================
@@ -165,7 +178,8 @@ html, body {
   }
 
   .footerBrand {
-    flex: 0 0 320px; /* fixed-ish left column */
+    flex: 0 0 320px;
+    /* fixed-ish left column */
   }
 
   /* links now 3 columns to match design */
@@ -174,6 +188,11 @@ html, body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.8rem;
     align-items: start;
+  }
+
+  .footerGCLogo {
+    margin-top: 10px;
+    width: 60%
   }
 }
 
@@ -204,10 +223,16 @@ html, body {
   .footerBrand {
     padding-right: 1.2rem;
   }
+
   .footerLinksContainer {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2.8rem;
     align-items: start;
+  }
+
+  .footerGCLogo {
+    margin-top: 10px;
+    width: 60%
   }
 }

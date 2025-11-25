@@ -7,7 +7,7 @@ const footerText = {
         name: "BuildNinja",
         description:
             "CI/CD that just works. Deploy with confidence, scale with ease.",
-        copyright: "© 2025 BuildNinja. All rights reserved.",
+        copyright: "© 2025 GrapeCity India Pvt Ltd. All Rights Reserved.",
     },
     sections: [
         {
@@ -82,6 +82,7 @@ export default function Footer() {
                             <h3 className="footerTitle">{footerText.company.name}</h3>
                         </div>
                         <p className="footerDesc">{footerText.company.description}</p>
+                        <img src="/resources/GrapecityWhite.png" alt="BuildNinja Logo" className="footerGCLogo" />
                         <p className="footerCopy">{footerText.company.copyright}</p>
                     </div>
 
