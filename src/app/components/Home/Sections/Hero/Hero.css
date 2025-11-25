@@ -82,7 +82,7 @@
 
 .heroBtn,
 .demoBtn {
-    padding: 0.8vw 2.4vw;
+    padding: 16px 40px;
     border-radius: 2.2vw;
     text-decoration: none;
     transition: all 0.2s ease;

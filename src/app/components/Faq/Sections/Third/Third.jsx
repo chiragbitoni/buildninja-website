@@ -88,7 +88,7 @@ export default function Third() {
                     </button>
                     <div className="faq-answer">
                       {/* <p>{highlightText(faq.answer, searchTerm)}</p> */}
-                      <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, "<br>") }} />
+                      <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, "<br>").replaceAll("**", "<strong>").replaceAll("/strong","</strong>")}} />
                     </div>
                   </div>
                 ))}

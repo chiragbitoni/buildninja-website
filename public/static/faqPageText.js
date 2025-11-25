@@ -50,12 +50,12 @@ export const thirdSectionText = {
         {
           question: "What are the System Requirements?",
           answer: `
-            **Server Requirements**  
+            **Server Requirements/strong  
             - Minimum: 2-core CPU (x64/AMD64), 4GB RAM, 20GB storage  
             - Recommended: 4+ cores, 8–16GB RAM, 100GB+ SSD  
             - Requires MongoDB and Docker  
 
-            **Build Agents**  
+            **Build Agents/strong
             - Minimum: 2-core CPU, 2GB RAM, 10GB storage  
             - Recommended: 4+ cores, 4–8GB RAM, 50GB+ storage  
             - Supports Windows 10/11, Linux, and macOS  
@@ -65,18 +65,15 @@ export const thirdSectionText = {
         },
         {
           question: "Do I need a license to use BuildNinja?",
-          answer: `
-Your first download includes a **30-day trial** (10 users, 3 concurrent builds) — no license key needed.
+          answer: `<p>
+Your first download includes a trial license (30 days, 10 users, 3 concurrent builds) — no license key needed.
 
-After the trial:
+After the trial, acquire a license through the BuildNinja License Portal:
 
-  
-- **Solo Edition (Free forever):** Register and generate your free license key  
-- **Shogun Edition (₹1699/month):** Purchase and generate your license key  
+- **Solo Edition (Free forever):/strong Register and generate your free license key  
+- **Shogun Edition (₹1699/month):/strong Purchase and generate your license key  
 
-
-Activate your license via **Settings → Manage License**  
-(online and offline activation supported).
+Activate your license through Settings > Manage License (online or offline activation available).</p>
 `,
         },
 
@@ -98,7 +95,10 @@ Activate your license via **Settings → Manage License**
         {
           question: "How much does BuildNinja cost?",
           answer:
-            "BuildNinja offers two plans: Solo (Free) – perfect for individual developers, includes 1 user, 3 concurrent builds, and essential features. Shogun (₹16,999/month) – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at ₹2,399/build/month), SSO support, priority support, and all features.",
+            `BuildNinja offers two plans: 
+
+            **Solo (Free)/strong – perfect for individual developers, includes 1 user, 3 concurrent builds, and essential features. 
+            **Shogun (₹16,999/month)/strong – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at ₹2,399/build/month), SSO support, priority support, and all features.`,
         },
         {
           question: "Is the Solo plan really free forever?",
