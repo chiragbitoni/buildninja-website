@@ -4,13 +4,15 @@ export const downloadAccessHeroText = {
   subHeading: "Choose your preferred installation method below",
 
   windows: {
-    title: "Windows Installers",
-    serverName: "BuildNinjaServer.exe",
-    serverVersion: "Version 2025.2.0.11",
-    agentName: "BuildNinjaAgent.exe",
-    agentVersion: "Version 2025.2.0.3",
-    downloadBtn: "Download"
-  },
+      title: "Windows Installers",
+      serverName: "BuildNinjaServer.exe",
+      serverVersion: "Version 2025.2.0.15",
+      serverDownloadUrl: "/api/installers/download/BuildNinjaServer_2025.2.0.15.exe",
+      agentName: "BuildNinjaAgent.exe",
+      agentVersion: "Version 2025.2.0.10",
+      agentDownloadUrl: "/api/installers/download/BuildNinjaAgent_2025.2.0.10.exe",
+      releasedOn: "2025-11-25T10:20:50Z"
+    },
 
   docker: {
     title: "Docker",

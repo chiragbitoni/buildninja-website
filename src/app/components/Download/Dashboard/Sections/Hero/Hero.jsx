@@ -1,173 +1,228 @@
 import "./Hero.css";
-import { downloadDashboardData as text } from "../../../../../../../public/static/downloadDashboardPageText";
-import { paths } from "../../../../../../../public/static/paths";
+import { useEffect, useState } from "react";
+import { downloadDashboardData as staticData } from "../../../../../../../public/static/downloadDashboardPageText";
 import { useRouter } from "next/navigation";
+import { paths } from "../../../../../../../public/static/paths";
+import { fetchInstallers, downloadInstaller } from "@/services/auth/installers";
 
 export default function Hero() {
-    const router = useRouter();
-    const handleRoute = (e) => {
-        router.push(e);
+  const router = useRouter();
+
+  const [data, setData] = useState(staticData);
+  const [loading, setLoading] = useState(true);
+  const [hasHistory, setHasHistory] = useState(false);
+
+  const copyToClipboard = (t) => navigator.clipboard.writeText(t);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const api = await fetchInstallers();
+        setData(api);               // Replace with API
+        setHasHistory(api.history && api.history.length > 0);
+      } catch (err) {
+        console.error("Installer fetch failed, using fallback", err);
+        setHasHistory(false);
+      } finally {
+        setLoading(false);
+      }
     }
-    const copyToClipboard = (text) => {
-        navigator.clipboard.writeText(text);
-    };
-    return (
-        <section className="downloadDashboardHeroSection">
-            <div className="downloadDashboardHeroContent">
-                <div className="downloadDashboardHeroHeader">
-                    <p className="downloadDashboardHeroBreadcrumb">{text.breadcrumb}</p>
-                    <h1 className="downloadDashboardHeroTitle">{text.title}</h1>
-                </div>
-                {/* --- VERSION CARD --- */}
-                <div className="downloadDashboardHeroCard">
-                    <div className="downloadDashboardHeroCardTitleContainer">
-                        <h4 className="downloadDashboardHeroCardTitle">{text.versionsInfo.title}</h4>
-                        <span className="downloadDashboardHeroBadge">CURRENT VERSION</span>
-                    </div>
-                    <div className="downloadDashboardHeroVersions">
-                        <div>
-                            <p>{text.versionsInfo.serverLabel}</p>
-                            <h3>{text.versionsInfo.server}</h3>
-                        </div>
-                        <div>
-                            <p>{text.versionsInfo.agentLabel}</p>
-                            <h3>{text.versionsInfo.agent}</h3>
-                        </div>
-                        <div>
-                            <p>{text.versionsInfo.releaseLabel}</p>
-                            <h3>{text.versionsInfo.releaseDate}</h3>
-                        </div>
-                    </div>
-                    <p className="downloadDashboardHeroButtonTitle">{text.versionsInfo.windownInstallerTitle}</p>
-                    <div className="downloadDashboardHeroButtons">
-                        <button className="downloadDashboardPinkBtn"><img src={paths.icons.downloadWhite}></img>{text.versionsInfo.winServerExe}</button>
-                        <button className="downloadDashboardPinkBtn"><img src={paths.icons.downloadWhite}></img>{text.versionsInfo.winAgentExe}</button>
-                    </div>
-                    {/* Docker */}
-                    <h4 className="downloadDashboardHeroDockerTitle">{text.versionsInfo.docker.title}</h4>
-                    <div className="downloadDashboardHeroDocker">
-                        <div className="dockerItem">
-                            <label>{text.versionsInfo.docker.serverLabel}</label>
-                            <div className="dockerBox">
-                                <p>{text.versionsInfo.docker.serverCmd}</p>
-                                <button
-                                    className="copyBtn"
-                                    onClick={() => copyToClipboard(text.versionsInfo.docker.serverCmd)}
-                                >
-                                    <img src={paths.icons.copy}></img>
-                                </button>
-                            </div>
-                        </div>
+    load();
+  }, []);
 
-                        <div className="dockerItem">
-                            <label>{text.versionsInfo.docker.agentLabel}</label>
-                            <div className="dockerBox">
-                                <p>{text.versionsInfo.docker.agentCmd}</p>
-                                <button
-                                    className="copyBtn"
-                                    onClick={() => copyToClipboard(text.versionsInfo.docker.agentCmd)}
-                                >
-                                    <img src={paths.icons.copy}></img>
-                                </button>
-                            </div>
-                        </div>
+  const latest = data.latest?.windows;
 
-                    </div>
-                </div>
-                {/* Installation Methods */}
-                <h2 className="downloadDashboardHeroMethodsTitle">{text.methods.title}</h2>
-                <div className="downloadDashboardHeroMethods">
-                    <div className="methodCard">
-                        <h4>{text.methods.windows.title}</h4>
-                        <ul>
-                            {text.methods.windows.steps.map((i) => <li key={i}>{i}</li>)}
-                        </ul>
-                        <button onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`; }}><img src={text.methods.windows.icon}></img>{text.methods.windows.button}</button>
-                    </div>
-                    <div className="methodCard">
-                        <h4>{text.methods.docker.title}</h4>
-                        <ul>
-                            {text.methods.docker.steps.map((i) => <li key={i}>{i}</li>)}
-                            <li><a>{text.methods.docker.step3}</a></li>
-                        </ul>
-                        <button onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/getting-started/quick-setup-guide/configure-server-and-agent-with-docker-&-kubernetes/configure-and-deploy-with-docker`; }}><img src={text.methods.docker.icon}></img>{text.methods.docker.button}</button>
-                    </div>
-                    <div className="methodCard">
-                        <h4>{text.methods.kubernetes.title}</h4>
-                        <ul>
-                            {text.methods.kubernetes.steps.map((i) => <li key={i}>{i}</li>)}
-                        </ul>
-                        <button onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/getting-started/quick-setup-guide/configure-server-and-agent-with-docker-&-kubernetes/configure-and-deploy-with-kubernetes`; }}><img src={text.methods.kubernetes.icon}></img>{text.methods.kubernetes.button}</button>
-                    </div>
-                </div>
-                {/* Previous Versions */}
-                <h2 className="downloadDashboardHeroPrevTitle">{text.previousVersions.title}</h2>
-                <div className="downloadDashboardHeroVersionList">
-                    {text.previousVersions.list.map((v, i) => (
-                        <div key={i} className="versionRow">
-                            <div className="versionBlock">
-                                <p>Server Version</p>
-                                <h4>{v.server}</h4>
-                            </div>
-                            <div className="versionBlock">
-                                <p>Agent Version</p>
-                                <h4>{v.agent}</h4>
-                            </div>
-                            <div className="versionBlock">
-                                <p>Released</p>
-                                <h4>{v.released}</h4>
-                            </div>
-                            <div className="versionBtns">
-                                <button>Server</button>
-                                <button>Agent</button>
-                                <img className="versionOpen" src={paths.icons.navigation}></img>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="downloadDashboardHeroLoadMoreContainer">
-                    <button className="downloadDashboardHeroLoadMore">
-                        {text.previousVersions.loadMore}
-                    </button>
-                </div>
-                {/* System Requirements */}
-                <div className="downloadDashboardHeroSystemCard">
-                    <h2 className="systemTitle">{text.systemRequirements.title}</h2>
-                    <div className="mongoBox">
-                        <h3>{text.systemRequirements.mongoRequired}</h3>
-                        <a href="https://www.mongodb.com/">{text.systemRequirements.mongoDownload}</a>
-                    </div>
-                    <table className="systemTable">
-                        <thead>
-                            <tr>
-                                <th>Component</th>
-                                <th>Minimum Specs</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {text.systemRequirements.rows.map((row, i) => (
-                                <tr key={i}>
-                                    <td>{row.comp}</td>
-                                    <td>{row.spec}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-                {/* Support Resources */}
-                <h2 className="supportTitle">{text.support.title}</h2>
-                <div className="downloadDashboardHeroSupportGrid">
-                    {text.support.cards.map((card, i) => (
-                        <div key={i} className="supportCard">
-                            <h3>{card.title}</h3>
-                            <p>{card.desc}</p>
-                            {card.router ?
-                                <button onClick={() => { handleRoute(card.router) }}><img src={paths.icons.navigation}></img>{card.btn}</button> :
-                                <button onClick={() => { window.location.href = card.link }}><img src={paths.icons.navigation}></img>{card.btn}</button>}
-                        </div>
-                    ))}
-                </div>
+  return (
+    <section className="downloadDashboardHeroSection">
+      <div className="downloadDashboardHeroContent">
+
+        {/* Breadcrumb & Title */}
+        <div className="downloadDashboardHeroHeader">
+          <p className="downloadDashboardHeroBreadcrumb">{staticData.breadcrumb}</p>
+          <h1 className="downloadDashboardHeroTitle">{staticData.title}</h1>
+        </div>
+
+        {/* VERSION CARD */}
+        <div className="downloadDashboardHeroCard">
+          <div className="downloadDashboardHeroCardTitleContainer">
+            <h4 className="downloadDashboardHeroCardTitle">Current Release</h4>
+            <span className="downloadDashboardHeroBadge">CURRENT VERSION</span>
+          </div>
+
+          <div className="downloadDashboardHeroVersions">
+            <div>
+              <p>Server Version</p>
+              <h3>{latest?.serverVersion || "—"}</h3>
             </div>
-        </section>
-    );
+            <div>
+              <p>Agent Version</p>
+              <h3>{latest?.agentVersion || "—"}</h3>
+            </div>
+            <div>
+              <p>Release Date</p>
+              <h3>{latest?.releasedOn ? new Date(latest.releasedOn).toDateString() : "—"}</h3>
+            </div>
+          </div>
+
+          {/* Windows Buttons */}
+          <p className="downloadDashboardHeroButtonTitle">Windows Installers</p>
+
+          <div className="downloadDashboardHeroButtons">
+            <button
+              className="downloadDashboardPinkBtn"
+              onClick={() =>
+                downloadInstaller(latest.serverDownloadUrl.split("/").pop())
+              }
+            >
+              <img src={paths.icons.downloadWhite} />
+              {latest?.serverName}
+            </button>
+
+            <button
+              className="downloadDashboardPinkBtn"
+              onClick={() =>
+                downloadInstaller(latest.agentDownloadUrl.split("/").pop())
+              }
+            >
+              <img src={paths.icons.downloadWhite} />
+              {latest?.agentName}
+            </button>
+          </div>
+
+          {/* Docker */}
+          <h4 className="downloadDashboardHeroDockerTitle">Docker Commands</h4>
+
+          <div className="downloadDashboardHeroDocker">
+            <div className="dockerItem">
+              <label>Server Image</label>
+              <div className="dockerBox">
+                <p>{staticData.docker.serverCmd}</p>
+                <button
+                  className="copyBtn"
+                  onClick={() => copyToClipboard(staticData.docker.serverCmd)}
+                >
+                  <img src={paths.icons.copy} />
+                </button>
+              </div>
+            </div>
+
+            <div className="dockerItem">
+              <label>Agent Image</label>
+              <div className="dockerBox">
+                <p>{staticData.docker.agentCmd}</p>
+                <button
+                  className="copyBtn"
+                  onClick={() => copyToClipboard(staticData.docker.agentCmd)}
+                >
+                  <img src={paths.icons.copy} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Previous Versions — Render ONLY if exists */}
+        {hasHistory && (
+          <>
+            <h2 className="downloadDashboardHeroPrevTitle">Previous Versions</h2>
+
+            <div className="downloadDashboardHeroVersionList">
+              {data.history.map((v, i) => (
+                <div key={i} className="versionRow">
+                  <div className="versionBlock">
+                    <p>Server Version</p>
+                    <h4>{v.serverVersion}</h4>
+                  </div>
+
+                  <div className="versionBlock">
+                    <p>Agent Version</p>
+                    <h4>{v.agentVersion}</h4>
+                  </div>
+
+                  <div className="versionBlock">
+                    <p>Released</p>
+                    <h4>{new Date(v.releasedOn).toDateString()}</h4>
+                  </div>
+
+                  <div className="versionBtns">
+                    <button
+                      onClick={() =>
+                        downloadInstaller(v.serverDownloadUrl.split("/").pop())
+                      }
+                    >
+                      Server
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        downloadInstaller(v.agentDownloadUrl.split("/").pop())
+                      }
+                    >
+                      Agent
+                    </button>
+
+                    <img className="versionOpen" src={paths.icons.navigation} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* System Requirements */}
+        <div className="downloadDashboardHeroSystemCard">
+          <h2 className="systemTitle">{staticData.systemRequirements.title}</h2>
+
+          <div className="mongoBox">
+            <h3>{staticData.systemRequirements.mongoRequired}</h3>
+            <a href="https://www.mongodb.com/">
+              {staticData.systemRequirements.mongoDownload}
+            </a>
+          </div>
+
+          <table className="systemTable">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Minimum Specs</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {staticData.systemRequirements.rows.map((row, i) => (
+                <tr key={i}>
+                  <td>{row.comp}</td>
+                  <td>{row.spec}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Support */}
+        <h2 className="supportTitle">{staticData.support.title}</h2>
+
+        <div className="downloadDashboardHeroSupportGrid">
+          {staticData.support.cards.map((card, i) => (
+            <div key={i} className="supportCard">
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+
+              {card.router ? (
+                <button onClick={() => router.push(card.router)}>
+                  <img src={paths.icons.navigation} />
+                  {card.btn}
+                </button>
+              ) : (
+                <button onClick={() => (window.location.href = card.link)}>
+                  <img src={paths.icons.navigation} />
+                  {card.btn}
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
