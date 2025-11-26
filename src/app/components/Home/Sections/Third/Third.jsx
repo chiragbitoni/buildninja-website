@@ -13,7 +13,7 @@ export default function Third() {
           {/* Step 1 */}
           <div className="third-simple-box">
             <img
-              src={paths.icons.cdsWhite}
+              src={paths.icons.pullAndRun}
               alt="CDS Icon"
               className="third-simple-box-icon"
             />
@@ -37,7 +37,7 @@ export default function Third() {
           {/* Step 2 */}
           <div className="third-simple-box">
             <img
-              src={paths.icons.versioningWhite}
+              src={paths.icons.connectCode}
               alt="Versioning Icon"
               className="third-simple-box-icon"
             />
@@ -54,7 +54,7 @@ export default function Third() {
           {/* Step 3 */}
           <div className="third-simple-box">
             <img
-              src={paths.icons.circleCheckWhite}
+              src={paths.icons.configuration}
               alt="Circle Check Icon"
               className="third-simple-box-icon"
             />

@@ -89,5 +89,9 @@ export const paths = {
     copy: "/resources/icons/copy.svg",
     expand: "/resources/icons/expand.svg",
     predictablePricing: "/resources/icons/predictablePricing.svg",
+    pullAndRun: "/resources/icons/pullAndRun.svg",
+    connectCode: "/resources/icons/connectCode.svg",
+    configuration: "/resources/icons/configuration.svg",
+    cardPricingShield: "/resources/icons/cardPricingShield.svg",
   },
 };

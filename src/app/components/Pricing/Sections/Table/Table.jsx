@@ -32,7 +32,7 @@ export default function Table() {
             <>
               ₹1,39,999/year
               <small>(₹11,666/month)</small>
-              Save 33%
+              <span className="pricingTableGreenText">Save 33%</span>
             </>
           ),
         },
@@ -43,7 +43,7 @@ export default function Table() {
             <>
               ₹2,19,999
               <small>(₹9,166/month)</small>
-              Save 48%
+              <span className="pricingTableGreenText">Save 48%</span>
             </>
           ),
         },
@@ -54,7 +54,7 @@ export default function Table() {
             <>
               ₹2,79,999
               <small>(₹7,777/month)</small>
-              SAVE 56%
+              <span className="pricingTableGreenText">SAVE 56%</span>
             </>
           ),
         },
@@ -78,7 +78,7 @@ export default function Table() {
           feature: "Additional Concurrent",
           solo: (
             <>
-              ₹2,199/month <br />₹16,999/year (SAVE 36%)<br />₹25,999/2-year (SAVE 51%)<br />₹34,999/3-year (SAVE 56%)
+              ₹2,199/month <br />₹16,999/year <span className="pricingTableGreenText">(SAVE 36%)</span><br />₹25,999/2-year <span className="pricingTableGreenText">(SAVE 51%)</span><br />₹34,999/3-year <span className="pricingTableGreenText">(SAVE 56%)</span>
             </>
           ),
           shogun: <TickText>Included</TickText>,
@@ -141,7 +141,7 @@ export default function Table() {
             <>
               $1,599/year
               <small>($133/month)</small>
-              Save 33%
+              <span className="pricingTableGreenText">Save 33%</span>
             </>
           ),
         },
@@ -152,7 +152,7 @@ export default function Table() {
             <>
                $2,499/year
               <small>($104/month)</small>
-              Save 48%
+              <span className="pricingTableGreenText">Save 48%</span>
             </>
           ),
         },
@@ -163,7 +163,7 @@ export default function Table() {
             <>
              $3,199/year
               <small>($89/month)</small>
-              Save 55%
+              <span className="pricingTableGreenText">Save 55%</span>
             </>
           ),
         },
@@ -187,7 +187,7 @@ export default function Table() {
           feature: "Additional Concurrent",
           solo: (
             <>
-              $25/month <br />$199/year (SAVE 34%)<br />$299/2-year (SAVE 50%)<br />$399/3-year (SAVE 56%)
+              $25/month <br />$199/year <span className="pricingTableGreenText">(SAVE 34%)</span><br />$299/2-year <span className="pricingTableGreenText">(SAVE 50%)</span><br />$399/3-year <span className="pricingTableGreenText">(SAVE 56%)</span>
             </>
           ),
           shogun: <TickText>Included</TickText>,

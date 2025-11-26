@@ -229,18 +229,18 @@ export default function PricingHero() {
                     <div className="pricingHeroToggleContainer">
                         <div className="pricingHeroToggleGroup">
                             <button
-                                className={`pricingHeroToggleButton ${region === "india" ? "active" : ""
-                                    }`}
-                                onClick={() => dispatch(setRegion("india"))}
-                            >
-                                {text.regionIndia}
-                            </button>
-                            <button
                                 className={`pricingHeroToggleButton ${region === "worldwide" ? "active" : ""
                                     }`}
                                 onClick={() => dispatch(setRegion("worldwide"))}
                             >
                                 {text.regionWorldwide}
+                            </button>
+                            <button
+                                className={`pricingHeroToggleButton ${region === "india" ? "active" : ""
+                                    }`}
+                                onClick={() => dispatch(setRegion("india"))}
+                            >
+                                {text.regionIndia}
                             </button>
                         </div>
 

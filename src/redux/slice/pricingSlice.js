@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  region: "india",       // 'india' or 'worldwide'
+  region: "worldwide",       // 'india' or 'worldwide'
   billing: "annual",     // 'monthly' or 'annual'
   multiYear: "annual",   // 'annual', 'twoYear', 'threeYear'
 };

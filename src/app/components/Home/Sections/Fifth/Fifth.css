@@ -52,7 +52,7 @@
   /* ← allows automatic wrapping on mobile */
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0px;
   /* Even spacing */
   text-align: center;
   padding: 10px 20px;
@@ -68,8 +68,8 @@
   white-space: nowrap;
 }
 
-.fifthHomeThirdSubHeading2 {
-  color: #FF4172;
+.fifthHomeThirdSubHeading1 {
+  margin-right: 10px;
 }
 
 /* IMAGE */

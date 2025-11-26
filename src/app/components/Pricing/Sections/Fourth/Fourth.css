@@ -133,6 +133,7 @@
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .badge {
@@ -140,7 +141,7 @@
   display: flex;
   border: 1px solid #666;
   border-radius: 999px;
-  gap: 5px;
+  gap: 1px;
   font-size: 0.75rem;
   padding: 6px 6px;
   align-items: center;
@@ -154,6 +155,7 @@
 .pricingFourthCard:last-child {
   grid-column: 1 / -1;
 }
+
 
 /* ================================
    RESPONSIVE STYLES
@@ -180,5 +182,9 @@
 
   .pricingFourthCard {
     padding: 24px 28px;
+  }
+
+  .pricingFourthCardShield{
+    height: 20px !important;
   }
 }

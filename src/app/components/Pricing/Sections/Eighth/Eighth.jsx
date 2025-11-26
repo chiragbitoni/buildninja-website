@@ -15,17 +15,10 @@ export default function Eighth() {
   return (
     <section className="pricingEighthSection">
       <h2 className="pricingEighthTitle">{text.title}</h2>
-      <p className="pricingEighthSubtitle">{text.subtitle}</p>
+      <p className="pricingEighthSubtitle" dangerouslySetInnerHTML={{__html: text.subtitle}}></p>
 
       <div className="pricingEighthCards">
-        {/* Solo Edition */}
-        <div className="pricingEighthCard">
-          <h3 className="pricingEighthCardTitle">{text.solo.title}</h3>
-          <p className="pricingEighthCardDesc">{text.solo.description}</p>
-          <button className="pricingEighthButton pricingEighthButtonGray" onClick={() => handleButtonClick("/install")}>
-            {text.solo.buttonText}<img src={paths.icons.navigation}></img>
-          </button>
-        </div>
+      
 
         {/* Shogun Edition */}
         <div className="pricingEighthCard">
@@ -33,6 +26,15 @@ export default function Eighth() {
           <p className="pricingEighthCardDesc">{text.shogun.description}</p>
           <button className="pricingEighthButton pricingEighthButtonPink" onClick={() => handleButtonClick("/install")}>
             {text.shogun.buttonText}<img src={paths.icons.navigation}></img>
+          </button>
+        </div>
+
+          {/* Solo Edition */}
+        <div className="pricingEighthCard">
+          <h3 className="pricingEighthCardTitle">{text.solo.title}</h3>
+          <p className="pricingEighthCardDesc">{text.solo.description}</p>
+          <button className="pricingEighthButton pricingEighthButtonGray" onClick={() => handleButtonClick("/install")}>
+            {text.solo.buttonText}<img src={paths.icons.navigation}></img>
           </button>
         </div>
       </div>

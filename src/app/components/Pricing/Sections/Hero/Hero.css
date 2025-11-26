@@ -90,6 +90,9 @@
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pricingHeroYearButton.active {
@@ -98,8 +101,18 @@
     background: #151515;
 }
 
-.pricingHeroYearButtonSavings{
-    color: #1AB000;
+.pricingHeroYearButtonSavings {
+    color: #169000;
+}
+
+.pricingHeroYearButton .pricingHeroYearButtonSavings {
+    background-color: #313131;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    width: fit-content;
+    margin-top: 5px;
 }
 
 /* Footer */
@@ -120,6 +133,7 @@
     .pricingHeroMultiYearContainer {
         flex-direction: row;
         justify-content: center;
+
     }
 
     .pricingHeroYearButton {
@@ -364,7 +378,7 @@
 }
 
 .pricingAnnualShogunSavings {
-    color: #1AB000;
+    color: #169000;
     background-color: #313131;
     font-size: 13px;
     font-weight: 600;
@@ -384,8 +398,8 @@
 }
 
 .pricingSecondAnnualEnterpriseCardHighlight {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #FF4D7A33;
+    color: #FF4172;
     padding: 5px 12px;
     width: fit-content;
     border-radius: 999px;

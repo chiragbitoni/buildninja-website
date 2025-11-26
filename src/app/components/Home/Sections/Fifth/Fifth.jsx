@@ -15,7 +15,7 @@ export default function Fifth() {
                         {fifthSectionText.subTitle}
                         {/* <br /> */}
                         {fifthSectionText.subTitle2}
-                        {/* <br /> */}
+                        <br />
                         {fifthSectionText.subTitle3}
                         {/* <br /> */}
                         {fifthSectionText.subTitle4}
@@ -24,8 +24,8 @@ export default function Fifth() {
                 <div className="fifthHomeThirdSubHeading">
                     <h4 className="fifthHomeThirdSubHeading1">{fifthSectionText.subHeading1}</h4>
                     <img className="fifthHomeThirdSubHeadingImage" src="/resources/GrapecityWhite.png"></img>
-                    <h4 className="fifthHomeThirdSubHeading1">{fifthSectionText.subHeading2}</h4>
-                    <h4 className="fifthHomeThirdSubHeading2">{fifthSectionText.subHeading3}</h4>
+                    <h4 className="fifthHomeThirdSubHeading2">{fifthSectionText.subHeading2}</h4>
+                    {/* <h4 className="fifthHomeThirdSubHeading2">{fifthSectionText.subHeading3}</h4> */}
                 </div>
 
                 {/* CARDS */}

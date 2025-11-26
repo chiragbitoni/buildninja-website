@@ -446,15 +446,15 @@ export const pricingSeventhText = {
 export const pricingEighthText = {
   title: "Stop Paying Per-Seat. Start Shipping Code.",
   subtitle:
-    "Join 153+ engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. Get your CI/CD pipeline running in under 5 minutes.",
+    "Join engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. <br/>Get your CI/CD pipeline running in under 5 minutes.",
   solo: {
     title: "Solo Edition",
-    description: "No credit card. No time limit. Start in minutes.",
+    description: "No strings attached. Solo Edition stays free forever.",
     buttonText: "Download Free",
   },
   shogun: {
     title: "Shogun Edition",
-    description: "Full access. Cancel anytime.",
+    description: "No credit card. No commitment.",
     buttonText: "Start with Trial License",
   },
   features: [
