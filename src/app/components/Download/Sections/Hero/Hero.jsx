@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { emailSignup } from "@/services/auth/emailSignup";
+import { checkAuth } from '@/services/auth/check';
 
 export default function Hero() {
     const router = useRouter();
@@ -13,10 +14,11 @@ export default function Hero() {
 
     // 🚀 If already logged in → redirect to dashboard
     useEffect(() => {
-        const userId = localStorage.getItem("userId");
-        if (userId) {
-            router.replace("/dashboard");
+        async function verify() {
+            const loggedIn = await checkAuth();
+            if (loggedIn) router.replace("/install/dashboard");
         }
+        verify();
     }, []);
 
     async function handleSubmit(e) {
@@ -32,10 +34,15 @@ export default function Hero() {
             console.log("API Response:", res);
 
             const userId = res?.value?.user?.userId;
+            const userEmail = res?.value?.user?.email;
 
-            if (userId) {
+            if (userId && userEmail) {
                 // ⭐ Store userId locally
-                localStorage.setItem("userId", userId);
+                localStorage.setItem(
+                    "bNEmail",
+                    JSON.stringify({ userId: userId, email: userEmail })
+                );
+
 
                 // Redirect to Access page
                 router.push("/install/access");
@@ -83,7 +90,7 @@ export default function Hero() {
                         {heroSectionText.downloadCContainerText.iconText.map((text, index) => (
                             <div className="downloadHeroEmailIconContainer" key={index}>
                                 <img className="downloadHeroEmailIcon"
-                                     src={heroSectionText.downloadCContainerText.iconPath} />
+                                    src={heroSectionText.downloadCContainerText.iconPath} />
                                 <div className="downloadHeroEmailIconTextItem">{text}</div>
                             </div>
                         ))}
