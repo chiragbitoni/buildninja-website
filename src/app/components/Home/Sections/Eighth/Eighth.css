@@ -55,7 +55,7 @@
 }
 
 .eighthNumber {
-    background-color: #ff4172;
+    background-color: #FF4172;
     color: #fff;
     font-weight: 700;
     border-radius: 50%;
@@ -68,7 +68,7 @@
 }
 
 .eighthCard.problem .eighthNumber {
-    background-color: #ff4172;
+    background-color: #FF4172;
 }
 
 .eighthCard.approach .eighthNumber {
@@ -96,7 +96,7 @@
 }
 
 .eighthCard.problem .eighthHeading {
-    color: #ff4172;
+    color: #FF4172;
 }
 
 .eighthCard.approach .eighthHeading {

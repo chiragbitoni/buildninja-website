@@ -82,7 +82,7 @@
     .pricingThirdCardsContainer {
         flex-wrap: nowrap;
         justify-content: center;
-        gap: 0vw;
+        gap: 10px;
     }
 
     .pricingThirdCard {

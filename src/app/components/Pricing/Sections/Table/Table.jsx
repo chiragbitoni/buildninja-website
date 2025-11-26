@@ -250,7 +250,7 @@ export default function Table() {
       <div className="pricingTableHeader">
         <h2>{table.title}</h2>
         <p>{table.subtitle}</p>
-      </div>F
+      </div>
 
       <div className="pricingTableWrapper">
         <table className="pricingTable">

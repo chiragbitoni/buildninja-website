@@ -70,7 +70,7 @@
 
 .pricingMonthlyShogunCard,
 .pricingAnnualShogunCard {
-  border-color: #d4335c;
+  border-color: #FF4172;
 }
 
 /* ===============================
@@ -92,7 +92,7 @@
 
 .pricingMonthlyShogunCardHighlight {
   color: #ffffff;
-  background-color: #d4335c;
+  background-color: #FF4172;
 }
 
 /* ===============================
@@ -181,7 +181,7 @@
 }
 
 .pricingMonthlyShogunCardButton {
-  background-color: #d4335c;
+  background-color: #FF4172;
   color: white;
 }
 

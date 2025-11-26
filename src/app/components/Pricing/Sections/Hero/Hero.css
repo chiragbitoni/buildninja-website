@@ -93,7 +93,7 @@
 }
 
 .pricingHeroYearButton.active {
-    border-color: #ff4d7a;
+    border-color: #ff5b88;
     color: #fff;
     background: #151515;
 }
@@ -216,7 +216,7 @@
 
 .pricingMonthlyShogunCard,
 .pricingAnnualShogunCard {
-    border-color: #d4335c;
+    border-color: #FF4172;
 }
 
 /* ===============================
@@ -238,7 +238,7 @@
 
 .pricingMonthlyShogunCardHighlight {
     color: #ffffff;
-    background-color: #d4335c;
+    background-color: #FF4172;
 }
 
 /* ===============================
@@ -327,7 +327,7 @@
 }
 
 .pricingMonthlyShogunCardButton {
-    background-color: #d4335c;
+    background-color: #FF4172;
     color: white;
 }
 
@@ -337,7 +337,7 @@
 }
 
 .pricingMonthlyShogunCardButton:hover {
-    background-color: #ea367d;
+    background-color: #ff5b88;
 }
 
 .pricingMonthlyFreeIcon {
@@ -421,7 +421,7 @@
 .pricingSecondAnnualEnterpriseCardButton {
     font-size: 16px;
     font-weight: 600;
-    background-color: #FF4D7A;
+    background-color: #FF4172;
     padding: 10px;
     border-radius: 6px;
 }

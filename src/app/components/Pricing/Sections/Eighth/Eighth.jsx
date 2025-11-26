@@ -44,7 +44,7 @@ export default function Eighth() {
           if (feature.includes("17,499") || feature.includes("$199")) {
             updatedFeature =
               region === "india"
-                ? "₹17,999/month unlimited"
+                ? "₹17,499/month unlimited"
                 : "$199/month unlimited";
           }
 

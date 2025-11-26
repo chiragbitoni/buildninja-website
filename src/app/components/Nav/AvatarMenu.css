@@ -7,7 +7,7 @@
 
 /* ===== Login Button ===== */
 .am-login-btn {
-  background: #d4335c;
+  background: #FF4172;
   color: white;
   border: none;
   padding: 5px 20px;
@@ -16,7 +16,7 @@
   font-size: 15px;
   border-radius: 999px;
   color: #ffffff;
-  background-color: #d4335c;
+  background-color: #FF4172;
   width: fit-content;
   padding: 5px 20px;
   font-size: 15px;
@@ -32,7 +32,7 @@
   width: 32.5px;
   height: 32.5px;
   border-radius: 50%;
-  background: #d4335c;
+  background: #FF4172;
   display: flex;
   justify-content: center;
   align-items: center;

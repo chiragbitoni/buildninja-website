@@ -19,7 +19,7 @@ const footerText = {
                 { label: "Pricing", link: "/pricing" },
                 { label: "Install", link: "/install" },
                 { label: "FAQ", link: "/faq" },
-                { label: "Roadmap", link: "/roadmap" },
+                // { label: "Roadmap", link: "/roadmap" },
             ],
         },
         {

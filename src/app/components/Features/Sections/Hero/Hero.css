@@ -88,7 +88,7 @@ TITLE & SUBTITLE
 }
 
 .toggleSwitchOption2 {
-    background-color: #D4335C;
+    background-color: #FF4172;
     padding: 0.4vw 1.2vw;
     border-radius: 999px;
 }
@@ -150,7 +150,7 @@ TITLE & SUBTITLE
 }
 
 .switch input:checked+.slider {
-    background: #D4335C;
+    background: #FF4172;
 }
 
 .switch input:checked+.slider:before {

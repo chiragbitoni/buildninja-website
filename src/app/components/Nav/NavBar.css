@@ -70,12 +70,12 @@
 }
 
 .navbar-link:hover {
-  color: #d4335c;
+  color: #FF4172;
 }
 
 .navbar-link.active-link {
-  color: #d4335c;
-  border-bottom: 2px solid #d4335c;
+  color: #FF4172;
+  border-bottom: 2px solid #FF4172;
   padding-bottom: 2px;
   transition: color 0.2s, border-bottom 0.3s;
   font-weight: 700;
@@ -91,7 +91,7 @@ ul.navbar-links {
 .navbarStartTrialButton {
   border-radius: 999px;
   color: #ffffff;
-  background-color: #d4335c;
+  background-color: #FF4172;
   width: fit-content;
   padding: 5px 20px;
   font-size: 15px;
