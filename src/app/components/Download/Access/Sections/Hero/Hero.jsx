@@ -14,6 +14,7 @@ export default function Hero() {
     const copyToClipboard = (text) => navigator.clipboard.writeText(text);
 
     useEffect(() => {
+        router.push("/download")
         async function load() {
             try {
                 const data = await fetchInstallers();

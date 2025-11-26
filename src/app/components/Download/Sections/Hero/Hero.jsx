@@ -42,10 +42,8 @@ export default function Hero() {
                     "bNEmail",
                     JSON.stringify({ userId: userId, email: userEmail })
                 );
-
-
                 // Redirect to Access page
-                router.push("/install/access");
+                router.push("/install/dashboard");
             } else {
                 alert(res?.message || "Signup failed. Try again.");
             }
