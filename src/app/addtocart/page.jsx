@@ -13,12 +13,12 @@ import { Slider } from "@/components/ui/slider";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import TailwindPageWrapper from "@/components/TailwindPageWrapper";
-// import { Header } from "@/components/Header";
 // import { useAuth } from "@/lib/contexts/AuthContext";
 import { apiService } from "@/lib/services/api";
 import { Source } from "@/lib/types/enums";
 import { getCurrency, sortBy } from "@/lib/utils";
 import { useSearchParams, useRouter } from "next/navigation";
+import { env } from "@/lib/config/env";
 
 export default function AddToCartPage() {
   const searchParams = useSearchParams();
@@ -184,7 +184,15 @@ export default function AddToCartPage() {
   useEffect(() => {
     loadSubscriptionData();
   }, [planId]);
-
+  /* ---------------- Submit Button ------------ */
+  const handleSubmit = () => {
+    let _url = `/order?planId=${currentPlan.id}`;
+    if (extra > 0) {
+      const addOnIds = currentPlan.addons[0].id;
+      _url += `&addOns=${extra}&addOnIds=${addOnIds}`;
+    }
+    router.push(env.MY_ACCOUNT + _url);
+  };
   /* ---------------- Components ---------------- */
 
   const PlanHeader = () => (
@@ -248,18 +256,16 @@ export default function AddToCartPage() {
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="radio" checked={selected} readOnly />
               {plan.billingCycle}
-              {/* { ( */}
+              {i == 1 && <>&nbsp;&nbsp;</>}
               <span
-                className={`px-1 rounded-full text-sm ${
+                className={`px-2 pb-0.5 rounded-full text-sm ${
                   getSavings(plan) !== 0 &&
                   "text-green-700 bg-green-100 dark:text-green-600 dark:bg-[#22E1001A]"
                 }`}
               >
-                &nbsp;
                 {getSavings(plan) !== 0 &&
                   `Save ${Math.round(getSavings(plan))}%`}
               </span>
-              {/* )} */}
             </label>
 
             <span>
@@ -302,7 +308,7 @@ export default function AddToCartPage() {
               </span>
             </div>
 
-            <span className="flex justify-between text-sm text-gray-500 dark:text-gray-500">
+            <span className="flex justify-between text-sm text-gray-500 dark:text-gray-500 px-2">
               <span></span>+{gst}% GST calculated automatically
             </span>
 
@@ -342,7 +348,10 @@ export default function AddToCartPage() {
 
   const BottomStickyButton = () => (
     <div className="mt-[15px]">
-      <Button className="w-full bg-[#D4335C] hover:bg-[#D4335C]/80 text-lg text-white py-6 px-9">
+      <Button
+        onClick={handleSubmit}
+        className="w-full bg-[#D4335C] hover:bg-[#D4335C]/80 text-lg text-white py-6 px-9"
+      >
         {currentPlan &&
           (currentPlan.name === "Solo" && value[0] === baseFree
             ? "Using Free Plan"
@@ -429,13 +438,8 @@ export default function AddToCartPage() {
             </Card>
 
             {/* RIGHT */}
-            {/* <Card className="p-1 bg-gray-50 dark:bg-[#262626] text-gray-900 dark:text-gray-200 rounded-b-xl md:rounded-r-xl flex flex-col h-full"> */}
-            <Card
-              className="px-2 py-7 bg-gray-50 text-gray-900 border-gray-200 
-  dark:bg-[#262626] dark:text-gray-200 border-none  
-  rounded-b-xl rounded-t-none md:rounded-r-xl md:rounded-l-none 
-  flex flex-col h-full"
-            >
+            <Card className="px-2 py-7 bg-gray-50 text-gray-900 border-gray-200 dark:bg-[#262626] dark:text-gray-200 border-none rounded-b-xl rounded-t-none md:rounded-r-xl md:rounded-l-none flex flex-col h-full">
+              {/* Right Header (Price/Build section) */}
               <CardHeader>
                 {currentPlan?.name === "Solo" && (
                   <CardTitle className="text-xl font-medium">
@@ -455,23 +459,25 @@ export default function AddToCartPage() {
                       {currentPlan.billingCycle.replace("ly", "").toLowerCase()}
                     </span>
                   )}
-                {currentPlan && currentPlan.billingCycle !== "Monthly" && extra != 0 && (
-                  <>
-                    <span className="">
-                      {getCurrency(
-                        currentPlan.currency,
-                        getPrice(currentPlan) /
-                          getMonths(currentPlan.billingCycle)
-                      )}
-                      /month equivalent{" "}
-                      {getSavings(currentPlan) !== 0 && (
-                        <span className="ml-3 px-3 py-1 mt-2 rounded-full text-sm text-green-700 bg-green-100 dark:text-green-600 dark:bg-[#22E1001A]">
-                          SAVE {Math.round(getSavings(currentPlan))}%
-                        </span>
-                      )}
-                    </span>
-                  </>
-                )}
+                {currentPlan &&
+                  currentPlan.billingCycle !== "Monthly" &&
+                  extra != 0 && (
+                    <>
+                      <span className="">
+                        {getCurrency(
+                          currentPlan.currency,
+                          getPrice(currentPlan) /
+                            getMonths(currentPlan.billingCycle)
+                        )}
+                        /month equivalent{" "}
+                        {getSavings(currentPlan) !== 0 && (
+                          <span className="ml-3 px-3 py-1 mt-2 rounded-full text-sm text-green-700 bg-green-100 dark:text-green-600 dark:bg-[#22E1001A]">
+                            SAVE {Math.round(getSavings(currentPlan))}%
+                          </span>
+                        )}
+                      </span>
+                    </>
+                  )}
 
                 {gst !== 0 && extra !== 0 && (
                   <CardDescription className="text-gray-500 dark:text-gray-400 text-base">
