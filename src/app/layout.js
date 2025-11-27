@@ -5,6 +5,7 @@ import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import Footer from "./components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
+import GA from "./components/Analytics/GA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,10 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <ClientAuthProvider>
             <Navbar />
-            <main className="pt-16">{children}</main>
+            <main className="pt-16">
+              <GA />
+              {children}
+            </main>
             <Footer />
           </ClientAuthProvider>
         </ReduxProvider>
