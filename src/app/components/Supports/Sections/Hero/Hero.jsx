@@ -27,15 +27,12 @@ export default function SupportHero() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (captchaToken) {
+        if (!captchaToken) {
             alert("Please verify you are not a robot!");
             return;
         }
-
         setLoading(true);
-
         const { success, message } = await sendSupportEmail(form);
-
         setLoading(false);
 
         if (success) {

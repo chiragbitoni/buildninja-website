@@ -24,6 +24,7 @@ export async function sendSupportEmail({ name, email, subject, message }) {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_EMAIL_API_ACCESS_TOKEN}`,
       },
       body: JSON.stringify(payload),
     });

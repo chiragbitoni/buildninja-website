@@ -131,6 +131,10 @@ export default function PricingHero() {
                 ))}
             </div>
             <div className="pricingMonthlyFreeCardFooter">
+                <button className="pricingMonthlyShogunCardButton" onClick={() => {}}>
+                    Buy Now
+                    <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
+                </button>
                 <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                     {secondSectionText.monthCards.shogunEditionCard.buttonText}
                     <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
@@ -180,6 +184,14 @@ export default function PricingHero() {
                 </div>
 
                 <div className="pricingMonthlyFreeCardFooter">
+                    <button className="pricingMonthlyShogunCardButton" onClick={() => {}}>
+                        Buy Now
+                        <img
+                            className="pricingMonthlyFreeIcon"
+                            src={paths.icons.navigation}
+                            alt="Trial Icon"
+                        />
+                    </button>
                     <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                         {plan.buttonText}
                         <img

@@ -345,6 +345,12 @@
     color: white;
 }
 
+.pricingMonthlyShogunCardButton:nth-child(2) {
+    color: white;
+    border: 2px solid #D4335C;
+    background-color: transparent;
+}
+
 .pricingMonthlyFreeCardButton:hover {
     background-color: #ffffff;
     color: #000;

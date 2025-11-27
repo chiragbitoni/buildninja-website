@@ -191,11 +191,11 @@ pre {
 
   /* 👇 Cards made wider by reducing columns & expanding min width */
   .third-simple-grid {
-    width: 1400px;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
-    gap: 10px;
-    justify-self: center;
-    justify-content: center;
+    max-width: 1400px;     
+    width: 100%;            
+    margin: 0 auto;        
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 20px;
   }
 
   div.third-simple-box {

@@ -100,6 +100,8 @@
   font-size: 13px;
   text-decoration: none;
   transition: 0.3s;
+  width: fit-content;
+  white-space: nowrap;
 }
 
 .supportHeroOption a:hover {
