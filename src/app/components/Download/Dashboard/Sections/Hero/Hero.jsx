@@ -30,7 +30,9 @@ export default function Hero() {
     load();
   }, []);
 
-  const latest = data.latest?.windows;
+  const latestWindows = data.latest?.windows;
+  const latestLinux = data.latest?.linux;
+
 
   return (
     <section className="downloadDashboardHeroSection">
@@ -49,43 +51,84 @@ export default function Hero() {
             <span className="downloadDashboardHeroBadge">CURRENT VERSION</span>
           </div>
 
+          <p className="downloadDashboardHeroButtonTitle">{latestWindows?.title}</p>
           <div className="downloadDashboardHeroVersions">
             <div>
               <p>Server Version</p>
-              <h3>{latest?.serverVersion || "—"}</h3>
+              <h3>{latestWindows?.serverVersion || "—"}</h3>
             </div>
             <div>
               <p>Agent Version</p>
-              <h3>{latest?.agentVersion || "—"}</h3>
+              <h3>{latestWindows?.agentVersion || "—"}</h3>
             </div>
             <div>
               <p>Release Date</p>
-              <h3>{latest?.releasedOn ? new Date(latest.releasedOn).toDateString() : "—"}</h3>
+              <h3>{latestWindows?.releasedOn ? new Date(latestWindows.releasedOn).toDateString() : "—"}</h3>
             </div>
           </div>
 
           {/* Windows Buttons */}
-          <p className="downloadDashboardHeroButtonTitle">Windows Installers</p>
 
           <div className="downloadDashboardHeroButtons">
             <button
               className="downloadDashboardPinkBtn"
               onClick={() =>
-                downloadInstaller(latest.serverDownloadUrl.split("/").pop())
+                downloadInstaller(latestWindows.serverDownloadUrl.split("/").pop())
               }
             >
               <img src={paths.icons.downloadWhite} />
-              {latest?.serverName}
+              {latestWindows?.serverName}
             </button>
 
             <button
               className="downloadDashboardPinkBtn"
               onClick={() =>
-                downloadInstaller(latest.agentDownloadUrl.split("/").pop())
+                downloadInstaller(latestWindows.agentDownloadUrl.split("/").pop())
               }
             >
               <img src={paths.icons.downloadWhite} />
-              {latest?.agentName}
+              {latestWindows?.agentName}
+            </button>
+          </div>
+
+          <p className="downloadDashboardHeroButtonTitle">{latestLinux?.title}</p>
+           <div className="downloadDashboardHeroVersions">
+            <div>
+              <p>Server Version</p>
+              <h3>{latestLinux?.serverVersion || "—"}</h3>
+            </div>
+            <div>
+              <p>Agent Version</p>
+              <h3>{latestLinux?.agentVersion || "—"}</h3>
+            </div>
+            <div>
+              <p>Release Date</p>
+              <h3>{latestLinux?.releasedOn ? new Date(latestLinux.releasedOn).toDateString() : "—"}</h3>
+            </div>
+          </div>
+          
+
+          {/* Linux Buttons */}
+
+          <div className="downloadDashboardHeroButtons">
+            <button
+              className="downloadDashboardPinkBtn"
+              onClick={() =>
+                downloadInstaller(latestLinux.serverDownloadUrl.split("/").pop())
+              }
+            >
+              <img src={paths.icons.downloadWhite} />
+              {latestLinux?.serverName}
+            </button>
+
+            <button
+              className="downloadDashboardPinkBtn"
+              onClick={() =>
+                downloadInstaller(latestLinux.agentDownloadUrl.split("/").pop())
+              }
+            >
+              <img src={paths.icons.downloadWhite} />
+              {latestLinux?.agentName}
             </button>
           </div>
 
