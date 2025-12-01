@@ -36,8 +36,10 @@ export default function RootLayout({ children }) {
           <ClientAuthProvider>
             <Navbar />
             <main className="pt-16">
-               <GoogleAnalytics GA_ID={process.env.NEXT_PUBLIC_GA_ID} />
-               <PageViewListener />
+              <GoogleAnalytics GA_ID={process.env.NEXT_PUBLIC_GA_ID} />
+              <Suspense fallback={null}>
+                <PageViewListener />
+              </Suspense>
               {children}
             </main>
             <Footer />
