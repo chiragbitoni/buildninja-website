@@ -1,4 +1,5 @@
 "use client";
+
 import "./page.css";
 import { useEffect, useState } from "react";
 import { Check, InfinityIcon, Server, Shield } from "lucide-react";
@@ -17,12 +18,15 @@ import TailwindPageWrapper from "@/components/TailwindPageWrapper";
 import { apiService } from "@/lib/services/api";
 import { Source } from "@/lib/types/enums";
 import { getCurrency, sortBy } from "@/lib/utils";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { env } from "@/lib/config/env";
-
+const useSearchParams = (query) => {
+  if (typeof window === "undefined") return null;
+  return new URLSearchParams(window.location.search);
+};
 export default function AddToCartPage() {
   const searchParams = useSearchParams();
-  const planId = searchParams.get("planid");
+  const planId = searchParams?.get("planid");
 
   const { user } = {}; //useAuth();
   const router = useRouter();
