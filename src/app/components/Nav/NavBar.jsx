@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import AvatarMenu from "./AvatarMenu";
-
+import { fetchPlansFromAPI } from "../../../services/plans/plans";
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -17,6 +17,23 @@ export default function Navbar() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    const storedPlans = localStorage.getItem("plans");
+
+    // If plans already exist → do not fetch
+    if (storedPlans) return;
+
+    async function init() {
+      const plans = await fetchPlansFromAPI();
+      if (plans) {
+        localStorage.setItem("plans", JSON.stringify(plans));
+      }
+    }
+
+    init();
+  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,10 +93,10 @@ export default function Navbar() {
               <li
                 key={item.name}
                 className={`navbar-link ${item.path === "/"
-                    ? pathname === "/" ? "active-link" : ""
-                    : pathname.startsWith(item.path)
-                      ? "active-link"
-                      : ""
+                  ? pathname === "/" ? "active-link" : ""
+                  : pathname.startsWith(item.path)
+                    ? "active-link"
+                    : ""
                   }`}
 
                 onClick={() => {
