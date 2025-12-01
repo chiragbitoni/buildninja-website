@@ -5,7 +5,8 @@ import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import Footer from "./components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
-import GA from "./components/Analytics/GA";
+import PageViewListener from "./components/Analytics/PageViewListener";
+import GoogleAnalytics from "./components/Analytics/GA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,8 @@ export default function RootLayout({ children }) {
           <ClientAuthProvider>
             <Navbar />
             <main className="pt-16">
-              <GA />
+               <GoogleAnalytics GA_ID={process.env.NEXT_PUBLIC_GA_ID} />
+               <PageViewListener />
               {children}
             </main>
             <Footer />
