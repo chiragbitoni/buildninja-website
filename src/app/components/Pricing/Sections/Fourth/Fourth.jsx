@@ -9,7 +9,7 @@ export default function Fourth() {
   const text = JSON.parse(JSON.stringify(pricingFourthText));
   text.cards[2].desc =
     region === "india"
-      ? "Free up to 3 concurrent agents. ₹16,999/month unlimited users beyond that. No hidden costs, no complex calculations."
+      ? "Free up to 3 concurrent agents. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations."
       : "Free up to 3 concurrent agents. $199/month unlimited users beyond that. No hidden costs, no complex calculations.";
 
   return (
