@@ -9,7 +9,7 @@ export const heroSectionText = {
 
 export const secondSectionText = {
   content:
-    "Get clear answers about BuildNinja’s features, setup, pricing, and support.",
+    "Get clear answers about BuildNinja's features, setup, pricing, and support.",
 };
 
 export const thirdSectionText = {
@@ -50,12 +50,12 @@ export const thirdSectionText = {
         {
           question: "What are the System Requirements?",
           answer: `
-            **Server Requirements/strong  
+            **Server Requirements**  
             - Minimum: 2-core CPU (x64/AMD64), 4GB RAM, 20GB storage  
             - Recommended: 4+ cores, 8–16GB RAM, 100GB+ SSD  
             - Requires MongoDB and Docker  
 
-            **Build Agents/strong
+            **Build Agents**
             - Minimum: 2-core CPU, 2GB RAM, 10GB storage  
             - Recommended: 4+ cores, 4–8GB RAM, 50GB+ storage  
             - Supports Windows 10/11, and Linux.
@@ -70,8 +70,8 @@ Your first download includes a trial license (30 days, 10 users, 3 concurrent bu
 
 After the trial, acquire a license through the BuildNinja License Portal:
 
-- **Solo Edition (Free forever):/strong Register and generate your free license key  
-- **Shogun Edition ($199/month):/strong Purchase and generate your license key  
+- **Solo Edition (Free forever):** Register and generate your free license key  
+- **Shogun Edition ($199/month):** Purchase and generate your license key  
 
 Activate your license through Settings > Manage License (online or offline activation available).</p>
 `,
@@ -83,8 +83,7 @@ Activate your license through Settings > Manage License (online or offline activ
     <p>The key advantage: you control your infrastructure costs with no per-minute build charges, no data egress fees, and no surprise cloud bills. Use existing servers at zero additional cost, or deploy on cloud infrastructure you already manage.</p>
     <p>See complete system requirements in our documentation.</p>
   `,
-        }
-
+        },
         {
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
           answer:
@@ -105,9 +104,8 @@ Activate your license through Settings > Manage License (online or offline activ
           answer:
             `BuildNinja offers two plans: 
 
-            **Solo (Free)/strong – perfect for individual developers, includes 1 user, 3 concurrent builds, and essential features. 
-            **Shogun (
-            $199/month)/strong – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at $25/build/month), SSO support, priority support, and all features.`,
+            **Solo (Free)** – perfect for individual developers, includes 1 user, 3 concurrent builds, and essential features. 
+            **Shogun ($199/month)** – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at $25/build/month), SSO support, priority support, and all features.`,
         },
         {
           question: "How does pricing work for growing teams?",
@@ -115,7 +113,7 @@ Activate your license through Settings > Manage License (online or offline activ
     <p>BuildNinja charges based on concurrent agents, not team size. Shogun Edition ($199/month) includes unlimited users and unlimited concurrent agents. Add your 11th, 50th, or 500th developer—your price stays the same.</p>
     <p>Solo Edition supports up to 10 users with 3 concurrent agents (additional agents at $25/month). You only pay for infrastructure capacity, never per developer.</p>
   `,
-        }
+        },
         {
           question: "Is the Solo plan really free forever?",
           answer:
@@ -142,7 +140,7 @@ Activate your license through Settings > Manage License (online or offline activ
         </ul>
         <p>As an early adopter benefit, the first 100 customers receive price lock guarantees on multi-year plans, plus free migration assistance and 20 hours of professional services with annual subscriptions.</p>
   `,
-        }, ,
+        },
         {
           question: "What payment methods do you accept?",
           answer:
@@ -192,8 +190,7 @@ Activate your license through Settings > Manage License (online or offline activ
     <p>Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, and an Artifacts tab for generated files.</p>
     <p><strong>Note:</strong> Logs are limited to 16 MiB per build.</p>
   `,
-        }
-
+        },
       ],
     },
     {
@@ -233,7 +230,7 @@ Activate your license through Settings > Manage License (online or offline activ
       ],
     },
     {
-      catrgory: "",
+      catrgory: "Support & Resources",
       faqs: [
         {
           question: "What support is included?",
@@ -263,7 +260,7 @@ Activate your license through Settings > Manage License (online or offline activ
     <p>After 20 hours, additional services available at $150/hour. Plus, get 25% credit for your remaining CI/CD license value (max 50% of BuildNinja subscription).</p>
     <p>Contact hello@grapehub.io to get started.</p>
   `,
-        }
+        },
       ],
     },
   ],
