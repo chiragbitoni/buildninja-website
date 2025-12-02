@@ -336,26 +336,29 @@
 }
 
 .pricingMonthlyFreeCardButton:nth-child(1) {
-    background-color: #313131;
+    background-color: #515151;
     color: #ffffff;
+    border: 1px solid #0000001A
 }
 
 .pricingMonthlyFreeCardButton:nth-child(2) {
-    background-color: #000000;
     color: white;
-    border: 2px solid #D4335C;
+    border: 2px solid #3D3D3D;
+    background-color: #212020;
+
 }
 
 
 .pricingMonthlyShogunCardButton {
     background-color: #FF4172;
     color: white;
+    border: 1px solid #0000001A
 }
 
 .pricingMonthlyShogunCardButton:nth-child(2) {
     color: white;
-    border: 2px solid #D4335C;
-    background-color: transparent;
+    border: 2px solid #3D3D3D;
+    background-color: #212020;
 }
 
 .pricingMonthlyFreeCardButton:hover {
