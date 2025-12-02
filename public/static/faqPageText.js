@@ -231,7 +231,7 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
           question: "What's included in professional services and migration assistance?",
           answer: `<p>Annual Shogun subscriptions include 20 hours of professional services covering setup consultation, custom workflow configuration, best practices review, and troubleshooting.</p>
 <p>Free migration assistance helps you move up to 10 projects from Jenkins, GitLab CI, Azure DevOps, or other platforms - including pipeline conversion guidance and initial configuration.</p>
-<p>After 20 hours, additional services available at $150/hour. Plus, get 25% credit for your remaining CI/CD license value (max 50% of BuildNinja subscription).</p>
+<p>Plus, get 25% credit for your remaining CI/CD license value (max 50% of BuildNinja subscription).</p>
 <p>Contact hello@grapehub.io to get started.</p>`,
         },
       ],
