@@ -40,9 +40,6 @@ export default function RootLayout({ children }) {
           <ClientAuthProvider>
             <Navbar />
             <main className="pt-16">
-              <Suspense fallback={null}>
-                <PageViewListener />
-              </Suspense>
               {children}
             </main>
             <Footer />
