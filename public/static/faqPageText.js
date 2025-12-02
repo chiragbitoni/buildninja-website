@@ -118,9 +118,16 @@ Activate your license through Settings > Manage License (online or offline activ
         },
         {
           question: "Do you offer annual billing or discounts?",
-          answer:
-            "Yes! Annual billing saves you 33% compared to monthly - just $133/month (billed annually at $1,599) versus $199/month. We also offer multi-year plans with even greater savings: 2-year upfront at $107/month (save $1,218) and 3-year upfront at $89/month (save $1,320). As an early adopter benefit, the first 100 customers receive price lock guarantees on multi-year plans, plus free migration assistance and 20 hours of professional services with annual subscriptions.",
-        },
+          answer: `
+        <p>Yes! Annual billing saves you 33% compared to monthly - just $133/month (billed annually at $1,599) versus $199/month.</p>
+        <p>We also offer multi-year plans with even greater savings:</p>
+        <ul>
+          <li>2-year upfront at $107/month (save $1,218)</li>
+          <li>3-year upfront at $89/month (save $1,320)</li>
+        </ul>
+        <p>As an early adopter benefit, the first 100 customers receive price lock guarantees on multi-year plans, plus free migration assistance and 20 hours of professional services with annual subscriptions.</p>
+  `,
+        }, ,
         {
           question: "What payment methods do you accept?",
           answer:
@@ -138,8 +145,10 @@ Activate your license through Settings > Manage License (online or offline activ
         },
         {
           question: "How does agent management work?",
-          answer:
-            "BuildNinja provides a centralized management interface for all your build agents. When a new agent registers with the server, it appears in an unauthorized state - you must explicitly authorize it before it can execute builds. Once authorized, you can enable/disable agents, refresh configurations, reset status, delete agents, and filter by operating system or status. Agents support Windows and Linux, giving you flexibility to match build requirements with the right platform.",
+          answer: `
+    <p>BuildNinja provides a centralized management interface for all your build agents. When a new agent registers with the server, it appears in an unauthorized state - you must explicitly authorize it before it can execute builds.</p>
+    <p>Once authorized, you can enable/disable agents, refresh configurations, reset status, delete agents, and filter by operating system or status. Agents support Windows and Linux, giving you flexibility to match build requirements with the right platform.</p>
+  `,
         },
         {
           question: "Does BuildNinja support Kubernetes?",
@@ -148,13 +157,18 @@ Activate your license through Settings > Manage License (online or offline activ
         },
         {
           question: "What kind of notifications does BuildNinja send?",
-          answer:
-            "BuildNinja sends email notifications for build events configured at the build configuration level. You can set up notifications for build success, failure, or completion with customizable recipients (To, CC, BCC), email templates, subject lines, and trigger conditions. Multiple notifications can be configured for different events within the same build configuration. Administrators configure the system-wide SMTP notifier, while project users create notification rules using that configuration.",
+          answer: `
+    <p>BuildNinja sends email notifications for build events configured at the build configuration level. You can set up notifications for build success, failure, or completion with customizable recipients (To, CC, BCC), email templates, subject lines, and trigger conditions.</p>
+    <p>Multiple notifications can be configured for different events within the same build configuration. Administrators configure the system-wide SMTP notifier, while project users create notification rules using that configuration.</p>
+  `,
         },
         {
           question: "Can I see real-time build logs?",
-          answer:
-            "Yes! BuildNinja provides detailed execution logs with timestamped, step-by-step records of your build process. You can search logs using keywords, filter by category (VCS, Runner, or System), and export complete logs as CSV files for offline analysis. Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, and an Artifacts tab for generated files. Note that logs are limited to 16 MiB per build.",
+          answer: `
+    <p>Yes! BuildNinja provides detailed execution logs with timestamped, step-by-step records of your build process. You can search logs using keywords, filter by category (VCS, Runner, or System), and export complete logs as CSV files for offline analysis.</p>
+    <p>Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, and an Artifacts tab for generated files.</p>
+    <p><strong>Note:</strong> Logs are limited to 16 MiB per build.</p>
+  `,
         }
 
       ],
@@ -169,8 +183,11 @@ Activate your license through Settings > Manage License (online or offline activ
         },
         {
           question: "Does BuildNinja support Single Sign-On (SSO)?",
-          answer:
-            "Yes! BuildNinja supports SSO integration with five major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket. Solo Edition includes 1 SSO provider, while Shogun Edition includes all 5 providers. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords. Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.",
+          answer: `
+    <p>Yes! BuildNinja supports SSO integration with five major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
+    <p>Solo Edition includes 1 SSO provider, while Shogun Edition includes all 5 providers. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
+    <p>Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.</p>
+  `,
         },
         {
           question: "How are secrets and credentials managed?",
@@ -179,8 +196,11 @@ Activate your license through Settings > Manage License (online or offline activ
         },
         {
           question: "Can I control user permissions and access?",
-          answer:
-            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. Solo Edition supports up to 10 users, while Shogun Edition supports unlimited users. Role-based access control (RBAC) is planned for a future release.",
+          answer: `
+    <p>Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance.</p>
+    <p>Solo Edition supports up to 10 users, while Shogun Edition supports unlimited users.</p>
+    <p><em>Note: Role-based access control (RBAC) is planned for a future release.</em></p>
+  `,
         },
         {
           question: "Is BuildNinja compliant with industry standards?",
