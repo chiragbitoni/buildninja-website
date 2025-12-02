@@ -71,7 +71,7 @@ Your first download includes a trial license (30 days, 10 users, 3 concurrent bu
 After the trial, acquire a license through the BuildNinja License Portal:
 
 - **Solo Edition (Free forever):/strong Register and generate your free license key  
-- **Shogun Edition (₹1699/month):/strong Purchase and generate your license key  
+- **Shogun Edition ($199/month):/strong Purchase and generate your license key  
 
 Activate your license through Settings > Manage License (online or offline activation available).</p>
 `,
@@ -98,7 +98,8 @@ Activate your license through Settings > Manage License (online or offline activ
             `BuildNinja offers two plans: 
 
             **Solo (Free)/strong – perfect for individual developers, includes 1 user, 3 concurrent builds, and essential features. 
-            **Shogun (₹17,499/month)/strong – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at ₹2,399/build/month), SSO support, priority support, and all features.`,
+            **Shogun (
+            $199/month)/strong – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at $25/build/month), SSO support, priority support, and all features.`,
         },
         {
           question: "Is the Solo plan really free forever?",
@@ -108,7 +109,7 @@ Activate your license through Settings > Manage License (online or offline activ
         {
           question: "What happens if I need more concurrent builds?",
           answer:
-            "For the Shogun plan, the first 3 concurrent builds are included. You can add additional concurrent builds at ₹2,399 per build per month. Use our interactive pricing calculator on the Pricing page to estimate costs based on your team's needs.",
+            "For the Shogun plan, the first 3 concurrent builds are included. You can add additional concurrent builds at $25 per build per month. ",
         },
         {
           question: "Can I upgrade from Solo to Shogun?",
@@ -118,7 +119,7 @@ Activate your license through Settings > Manage License (online or offline activ
         {
           question: "Do you offer annual billing or discounts?",
           answer:
-            "Currently, pricing is on a monthly subscription basis. For enterprise customers with specific needs or large-scale deployments, please contact our sales team for custom pricing and volume discounts.",
+            "Yes! Annual billing saves you 33% compared to monthly - just $133/month (billed annually at $1,599) versus $199/month. We also offer multi-year plans with even greater savings: 2-year upfront at $107/month (save $1,218) and 3-year upfront at $89/month (save $1,320). As an early adopter benefit, the first 100 customers receive price lock guarantees on multi-year plans, plus free migration assistance and 20 hours of professional services with annual subscriptions.",
         },
         {
           question: "What payment methods do you accept?",
@@ -133,38 +134,29 @@ Activate your license through Settings > Manage License (online or offline activ
         {
           question: "What version control systems does BuildNinja support?",
           answer:
-            "BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other popular version control systems. You can configure webhooks for automatic build triggers on commits, pull requests, or scheduled intervals.",
-        },
-        {
-          question: "Can I deploy to multiple environments?",
-          answer:
-            "Yes! BuildNinja supports multi-environment deployments with environment-specific configurations. Manage separate pipelines for development, staging, and production, each with their own secrets, conditions, and deployment logic.",
+            "BuildNinja supports all Git-based version control systems including GitHub, GitLab, Bitbucket",
         },
         {
           question: "How does agent management work?",
           answer:
-            "BuildNinja includes comprehensive agent management capabilities. You can authorize agents, enable/disable them, refresh configurations, reset status, and filter by operating system or status. Agents can run on Windows or Linux, and you control which builds run on which agents based on requirements.",
+            "BuildNinja provides a centralized management interface for all your build agents. When a new agent registers with the server, it appears in an unauthorized state - you must explicitly authorize it before it can execute builds. Once authorized, you can enable/disable agents, refresh configurations, reset status, delete agents, and filter by operating system or status. Agents support Windows and Linux, giving you flexibility to match build requirements with the right platform.",
         },
         {
           question: "Does BuildNinja support Kubernetes?",
           answer:
-            "Yes! BuildNinja supports containerized deployments on Kubernetes for scalable operations. You can deploy build agents as pods, manage them through the dashboard, and leverage Kubernetes' orchestration capabilities for your CI/CD workflows.",
+            "Yes! BuildNinja is fully compatible with Kubernetes deployments. Both the BuildNinja Server and Agents can be deployed as containerized workloads using Kubernetes manifests. This enables scalable, high-availability CI/CD infrastructure with automated orchestration across multiple environments. Our documentation includes complete Kubernetes deployment guides with sample manifests for server and agent configurations.",
         },
         {
           question: "What kind of notifications does BuildNinja send?",
           answer:
-            "BuildNinja includes a comprehensive email notification system that alerts you about key events: user registrations, password resets, approval requests, build results (success/failure), and agent disconnections. Notifications are configurable via SMTP settings.",
+            "BuildNinja sends email notifications for build events configured at the build configuration level. You can set up notifications for build success, failure, or completion with customizable recipients (To, CC, BCC), email templates, subject lines, and trigger conditions. Multiple notifications can be configured for different events within the same build configuration. Administrators configure the system-wide SMTP notifier, while project users create notification rules using that configuration.",
         },
         {
           question: "Can I see real-time build logs?",
           answer:
-            "Absolutely! BuildNinja provides real-time logs and interactive dashboards for monitoring builds and deployments. View live progress, filter by time ranges, set up auto-refresh, and access detailed build metrics – all from a single interface.",
-        },
-        {
-          question: "Does BuildNinja support plugins?",
-          answer:
-            "Yes, BuildNinja supports plugin and integration capabilities, working seamlessly with third-party tools like Docker, Kubernetes, and various deployment platforms. Everything you need is built-in, but extensibility is available when needed.",
-        },
+            "Yes! BuildNinja provides detailed execution logs with timestamped, step-by-step records of your build process. You can search logs using keywords, filter by category (VCS, Runner, or System), and export complete logs as CSV files for offline analysis. Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, and an Artifacts tab for generated files. Note that logs are limited to 16 MiB per build.",
+        }
+
       ],
     },
     {
@@ -178,22 +170,22 @@ Activate your license through Settings > Manage License (online or offline activ
         {
           question: "Does BuildNinja support Single Sign-On (SSO)?",
           answer:
-            "Yes, the Shogun plan includes SSO support with multiple providers (available on the Shogun plan). This enables streamlined authentication and centralized user management for your organization.",
+            "Yes! BuildNinja supports SSO integration with five major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket. Solo Edition includes 1 SSO provider, while Shogun Edition includes all 5 providers. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords. Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.",
         },
         {
           question: "How are secrets and credentials managed?",
           answer:
-            "BuildNinja provides secure secret management for environment-specific credentials. Secrets are encrypted at rest and can be scoped to specific environments, preventing accidental exposure across development, staging, and production.",
+            "A dedicated secrets management feature is currently in development and will be available in an upcoming release. In the meantime, please contact our team to discuss your specific security and credential management requirements.",
         },
         {
           question: "Can I control user permissions and access?",
           answer:
-            "Yes, BuildNinja includes role-based access control. The Shogun plan supports up to 10 users, and you can manage permissions, project access, and approval workflows through the dashboard.",
+            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. Solo Edition supports up to 10 users, while Shogun Edition supports unlimited users. Role-based access control (RBAC) is planned for a future release.",
         },
         {
           question: "Is BuildNinja compliant with industry standards?",
           answer:
-            "Since BuildNinja is deployed on your infrastructure, compliance depends on your deployment environment. We provide the tools for audit logs, access controls, and secure configurations to help you meet your specific compliance requirements (SOC 2, ISO 27001, GDPR, etc.).",
+            "BuildNinja is a self-hosted platform deployed entirely on your infrastructure, giving you complete control over data sovereignty and compliance requirements. Since it runs in your environment, compliance with standards like SOC 2, ISO 27001, or GDPR depends on your deployment infrastructure and organizational policies. BuildNinja provides SSO integration and user management controls to support your security framework.",
         },
       ],
     },
@@ -203,33 +195,23 @@ Activate your license through Settings > Manage License (online or offline activ
         {
           question: "What support is included?",
           answer:
-            "The Solo plan includes community support through our forums and comprehensive documentation. The Shogun plan includes priority email support with faster response times and dedicated assistance from our engineering team.",
+            "Solo Edition includes community support and comprehensive documentation. Shogun Edition includes priority email support during business hours. Annual Shogun plans also include free migration assistance and 20 hours of professional services to help with setup and configuration.",
         },
         {
           question: "Where can I find documentation?",
           answer:
-            "Comprehensive documentation is available on our website, including installation guides, configuration references, API documentation, and best practices. The docs cover all features and include practical examples.",
+            "Comprehensive documentation is available on our website, including installation guides, configuration references and best practices. The docs cover all features and include practical examples.",
         },
         {
           question: "What if I encounter a bug or issue?",
           answer:
-            "Report issues through our support channels. Solo plan users can post in the community forum, while Shogun plan users get priority support via email. We actively monitor all channels and provide regular updates and patches.",
-        },
-        {
-          question: "Do you offer onboarding or training?",
-          answer:
-            "Yes! We provide setup assistance documentation, video tutorials, and configuration examples. Enterprise customers can request dedicated onboarding sessions and custom training for their teams.",
-        },
-        {
-          question: "Can I get help with custom integrations?",
-          answer:
-            "Absolutely! While BuildNinja works with most standard tools out of the box, our support team can help with custom integrations. Enterprise customers with the Shogun plan receive priority assistance for complex deployment scenarios.",
+            "You can report issues by submitting a support ticket through our portal or by emailing hello@grapehub.io. Solo Edition users receive community support, while Shogun Edition users receive priority support during business hours. We actively work on resolving reported issues and provide regular updates and patches.",
         },
         {
           question: "How often is BuildNinja updated?",
           answer:
-            "We release regular updates with new features, performance improvements, and security patches. Updates are announced via email, and you can choose when to upgrade based on your release schedule.",
-        },
+            "Updates are regularly published to Docker Hub and announced on our blog. Since BuildNinja is self-hosted, you have full control over when to upgrade and can update on your own schedule.",
+        }
       ],
     },
   ],
