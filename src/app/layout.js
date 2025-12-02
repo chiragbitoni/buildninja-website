@@ -5,9 +5,7 @@ import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import Footer from "./components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
-import PageViewListener from "./components/Analytics/PageViewListener";
 import GoogleAnalytics from "./components/Analytics/GA";
-import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
