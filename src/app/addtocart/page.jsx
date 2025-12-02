@@ -20,12 +20,9 @@ import { Source } from "@/lib/types/enums";
 import { getCurrency, sortBy } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { env } from "@/lib/config/env";
-const useSearchParams = (query) => {
-  if (typeof window === "undefined") return null;
-  return new URLSearchParams(window.location.search);
-};
+import { useQueryParams } from "@/hooks/useQueryParams";
 export default function AddToCartPage() {
-  const searchParams = useSearchParams();
+  const searchParams = useQueryParams();
   const planId = searchParams?.get("planid");
 
   const { user } = {}; //useAuth();
