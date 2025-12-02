@@ -86,6 +86,6 @@ export const secondSectionText = {
 export const thirdSectionText = {
   title: "Ready to streamline your deployments?",
   description: "Start your free trial and experience CI/CD that just works.",
-  button1: "Start Free Trial",
+  button1: "Try BuildNinja Free",
   button2: "Request a Demo",
 };
