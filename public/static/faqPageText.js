@@ -76,6 +76,14 @@ After the trial, acquire a license through the BuildNinja License Portal:
 Activate your license through Settings > Manage License (online or offline activation available).</p>
 `,
         },
+        {
+          question: "What infrastructure do I need for BuildNinja?",
+          answer: `
+    <p>BuildNinja runs on your infrastructure—whether that's existing on-premise servers, AWS, Azure, GCP, or any Docker-compatible environment. Minimum requirements: 2-core CPU, 4GB RAM for the server, and 2GB RAM per build agent.</p>
+    <p>The key advantage: you control your infrastructure costs with no per-minute build charges, no data egress fees, and no surprise cloud bills. Use existing servers at zero additional cost, or deploy on cloud infrastructure you already manage.</p>
+    <p>See complete system requirements in our documentation.</p>
+  `,
+        }
 
         {
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
@@ -101,6 +109,13 @@ Activate your license through Settings > Manage License (online or offline activ
             **Shogun (
             $199/month)/strong – designed for teams, includes 10 users, 3 concurrent builds (with option to add more at $25/build/month), SSO support, priority support, and all features.`,
         },
+        {
+          question: "How does pricing work for growing teams?",
+          answer: `
+    <p>BuildNinja charges based on concurrent agents, not team size. Shogun Edition ($199/month) includes unlimited users and unlimited concurrent agents. Add your 11th, 50th, or 500th developer—your price stays the same.</p>
+    <p>Solo Edition supports up to 10 users with 3 concurrent agents (additional agents at $25/month). You only pay for infrastructure capacity, never per developer.</p>
+  `,
+        }
         {
           question: "Is the Solo plan really free forever?",
           answer:
@@ -154,6 +169,14 @@ Activate your license through Settings > Manage License (online or offline activ
           question: "Does BuildNinja support Kubernetes?",
           answer:
             "Yes! BuildNinja is fully compatible with Kubernetes deployments. Both the BuildNinja Server and Agents can be deployed as containerized workloads using Kubernetes manifests. This enables scalable, high-availability CI/CD infrastructure with automated orchestration across multiple environments. Our documentation includes complete Kubernetes deployment guides with sample manifests for server and agent configurations.",
+        },
+        {
+          question: "What is a concurrent agent and how many do I need?",
+          answer: `
+    <p>A concurrent agent is one build agent executing a build at the same time. With 3 concurrent agents, you can run 3 builds simultaneously—additional builds queue automatically.</p>
+    <p><strong>Example:</strong> A team of 20 developers typically runs fine with 3-5 concurrent agents, while 50+ developers may need 5-10.</p>
+    <p>Solo Edition includes 3 concurrent agents (add more at $25/agent/month). Shogun Edition includes unlimited concurrent agents—scale without limits.</p>
+  `,
         },
         {
           question: "What kind of notifications does BuildNinja send?",
@@ -231,6 +254,15 @@ Activate your license through Settings > Manage License (online or offline activ
           question: "How often is BuildNinja updated?",
           answer:
             "Updates are regularly published to Docker Hub and announced on our blog. Since BuildNinja is self-hosted, you have full control over when to upgrade and can update on your own schedule.",
+        },
+        {
+          question: "What's included in professional services and migration assistance?",
+          answer: `
+    <p>Annual Shogun subscriptions include 20 hours of professional services covering setup consultation, custom workflow configuration, best practices review, and troubleshooting.</p>
+    <p>Free migration assistance helps you move up to 10 projects from Jenkins, GitLab CI, Azure DevOps, or other platforms—including pipeline conversion guidance and initial configuration.</p>
+    <p>After 20 hours, additional services available at $150/hour. Plus, get 25% credit for your remaining CI/CD license value (max 50% of BuildNinja subscription).</p>
+    <p>Contact hello@grapehub.io to get started.</p>
+  `,
         }
       ],
     },
