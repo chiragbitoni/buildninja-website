@@ -448,7 +448,7 @@ export const pricingSeventhText = {
 export const pricingEighthText = {
   title: "Stop Paying Per-Seat. Start Shipping Code.",
   subtitle:
-    "Join engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. <br/>Get your CI/CD pipeline running in under 5 minutes.",
+    "Join engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. <br/>Get your CI/CD build process running in under 5 minutes.",
   solo: {
     title: "Solo Edition",
     description: "No strings attached. Solo Edition stays free forever.",

@@ -56,7 +56,7 @@ export const thirdSectionText = {
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
   card2Text: "Works with GitHub, GitLab, Bitbucket - no vendor lock-in",
-  card3Title: "Configure Your Pipeline",
+  card3Title: "Configure Your Build Process",
   card3Step: "STEP 3",
   card3Text: "Set up builds, triggers, and notifications - no complexity",
   card4Title: "Deploy and Scale",
@@ -95,7 +95,7 @@ export const fourthSectionText = {
     {
       title: "Everything in One Place",
       description:
-        "Configure your entire pipeline from a single, intuitive interface. VCS settings, build steps, artifacts. All organized logically so you know exactly where everything is.",
+        "Configure your entire build process from a single, intuitive interface. VCS settings, build steps, artifacts. All organized logically so you know exactly where everything is.",
       list: [
         {
           title: " No scattered settings",
@@ -320,7 +320,7 @@ export const ninthSectionText = {
   title: "Stop Fighting Your CI/CD Tool. Start Shipping Code.",
   subtitle:
     "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
-  subtitle2: "Get your CI/CD pipeline running in under 5 minutes.",
+  subtitle2: "Get your CI/CD build process running in under 5 minutes.",
   subtitle3: "Free for 3 agents, $199/month unlimited as you scale",
   primaryButton: "Get Started Free",
   secondaryButton: "See the 5-Minute Demo",
