@@ -61,7 +61,7 @@ export const thirdSectionText = {
   card3Text: "Set up builds, triggers, and notifications - no complexity",
   card4Title: "Deploy and Scale",
   card4Step: "STEP 4",
-  card4Text: "Ship confidently with $199/month unlimited users",
+  card4Text: "Ship confidently with $199/month unlimited users.",
 };
 export const fourthSectionText = {
   title1: "Powerful Features,",
@@ -230,7 +230,7 @@ export const fifthSectionText = {
     },
   ],
   secondTitle: "Business Hours Support",
-  thirdTitle: "Expert support from actual engineers, not chatbots",
+  thirdTitle: "Expert support from actual engineers, not chatbots.",
 };
 
 export const sixthSectionText = {
