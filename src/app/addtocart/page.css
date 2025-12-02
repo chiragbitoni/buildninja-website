@@ -1,3 +1,4 @@
+@custom-variant dark (&:where(.dark, .dark *));
 /* @import "tailwindcss"; */
 /* Load Tailwind v4 */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -22,41 +23,11 @@
 }
 
 /* =========================================
-   COLOR SYSTEM (Converted to Tailwind v4)
+   COLOR VARIABLES RELOCATED TO .tw-root
 ========================================= */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 4px);
-  --radius-sm: calc(var(--radius) - 2px);
-}
-
-/* LIGHT THEME VARIABLES */
-:root {
+/* Light theme inside wrapper */
+.tw-root {
   --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);
   --card: hsl(0 0% 100%);
@@ -85,8 +56,8 @@
   --chart-5: 27 87% 67%;
 }
 
-/* DARK THEME VARIABLES */
-.dark {
+/* Dark theme inside wrapper */
+.tw-root.dark {
   --background: hsl(0 0% 18%);
   --foreground: hsl(0 0% 98%);
   --card: hsl(0 0% 3.9%);
@@ -115,88 +86,51 @@
 }
 
 /* =========================================
-   BASE STYLES (rewritten for Tailwind v4)
-========================================== */
-
-/* Replace @apply border-border → raw CSS */
-/* * {
-  border-color: hsl(var(--border));
-} */
-/* .border{
-  border-color: rgba(128, 128, 128, 0.555);
-} */
-/* Replace @apply bg-background text-foreground */
-body {
+   APPLY COLORS TO WRAPPER (not body)
+========================================= */
+.tw-root {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  min-height: 100vh;
+}
+
+/* Body must NOT override wrapper colors */
+body {
+  background: transparent !important;
+  color: inherit !important;
 }
 
 /* =========================================
-   SLIDER STYLES — unchanged (pure CSS)
-========================================== */
+   SLIDER STYLES (unchanged)
+========================================= */
 .slider {
   --slider-thumb: #D4335C;
   --slider-range: #D4335C;
   --slider-track: #545454;
 }
 
-
-/* Track */
 .slider .relative.w-full.h-2.rounded-full.bg-secondary {
   background-color: var(--slider-track) !important;
 }
 
-/* Filled range */
 .slider .absolute.h-full.bg-primary {
   background-color: var(--slider-range) !important;
 }
 
-/* Thumb */
 .slider .block.h-4.w-4.rounded-full.border-2.border-primary.bg-background {
   background-color: var(--slider-thumb) !important;
   border-color: var(--slider-thumb) !important;
 }
 
-/* Role-based thumb */
 .slider [role="slider"] {
   background-color: var(--slider-thumb) !important;
   border-color: var(--slider-thumb) !important;
 }
 
-/* Filled bar */
 .slider .bg-primary {
   background-color: var(--slider-thumb) !important;
 }
 
-/* Track bar */
 .slider .bg-secondary {
   background-color: var(--slider-track) !important;
 }
-
-/* DARK MODE SLIDER */
-/* 
-.dark .slider {
-  --slider-thumb: #DF5B7D;
-  --slider-range: #DF5B7D;
-  --slider-track: #E5E7EB;
-}
-.dark .slider .relative.w-full.h-2.rounded-full.bg-secondary {
-  background-color: var(--slider-track) !important;
-}
-
-.dark .slider .absolute.h-full.bg-primary {
-  background-color: var(--slider-range) !important;
-}
-
-.dark .slider [role="slider"] {
-  background-color: var(--slider-thumb) !important;
-  border-color: var(--slider-thumb) !important;
-}
-
-.dark .slider .bg-primary {
-  background-color: var(--slider-thumb) !important;
-}
-
-.dark .slider .bg-secondary {
-  background-color: var(--slider-track) !important;
-} */
