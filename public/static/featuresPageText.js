@@ -42,7 +42,7 @@ export const secondSectionText = {
     {
       icon: paths.icons.crossPlatformWhite,
       title: "Cross-Platform Configuration",
-      description: "Seamless setup across Windows, Linux, and macOS.",
+      description: "Seamless setup across Windows, Linux, and .",
     },
     {
       icon: paths.icons.usersWhite,

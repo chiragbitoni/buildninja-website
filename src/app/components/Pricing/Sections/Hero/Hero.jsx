@@ -83,8 +83,9 @@ export default function PricingHero() {
         const selectedPlan = findSelectedPlan(planName);
 
         if (!selectedPlan) {
-            console.log("AVAILABLE PLANS:", plans);
-            alert(`Plan not found: ${planName}`);
+            // console.log("AVAILABLE PLANS:", plans);
+            // alert(`Plan not found: ${planName}`);
+            console.error(`Plan not found: ${planName}`);
             return;
         }
 

@@ -307,7 +307,7 @@ export const pricingFifthText = {
           list: [
             "Deploy in minutes with docker pull",
             "Self-contained deployment",
-            "Multi-platform agents (Windows, Linux, macOS)",
+            "Multi-platform agents (Windows, Linux)",
           ],
         },
         {

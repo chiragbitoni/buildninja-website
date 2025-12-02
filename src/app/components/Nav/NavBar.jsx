@@ -93,15 +93,19 @@ export default function Navbar() {
               <li
                 key={item.name}
                 className={`navbar-link ${item.path === "/"
-                  ? pathname === "/" ? "active-link" : ""
-                  : pathname.startsWith(item.path)
-                    ? "active-link"
-                    : ""
+                    ? pathname === "/" ? "active-link" : ""
+                    : pathname.startsWith(item.path)
+                      ? "active-link"
+                      : ""
                   }`}
-
                 onClick={() => {
-                  if (item.path) handleNavigation(item.path);
-                  else window.location.href = item.link;
+                  if (item.path) {
+                    // Internal route = same tab
+                    handleNavigation(item.path);
+                  } else if (item.link) {
+                    // External URL = new tab
+                    window.open(item.link, "_blank", "noopener,noreferrer");
+                  }
                 }}
               >
                 {item.name}
