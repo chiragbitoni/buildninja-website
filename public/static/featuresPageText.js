@@ -75,12 +75,6 @@ export const secondSectionText = {
         "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
     },
     {
-      icon: paths.icons.puzzlePieceWhite,
-      title: "Plugin & Integration Support",
-      description:
-        "Works with third-party tools like Docker, Kubernetes, and more.",
-    },
-    {
       icon: paths.icons.shield,
       title: "Single Sign-On (SSO) Support",
       description:
