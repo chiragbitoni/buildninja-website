@@ -157,44 +157,48 @@ If Licensee elects not to renew Upgrade Subscription, Licensee retains the perpe
 
 <h3>7.1 License Fees</h3>
 <p>
-Licensee agrees to pay all fees specified in the License Certificate. Fees are due within 30 days from invoice date and are non-cancelable and non-refundable.
+Licensee agrees to pay all fees specified in the License Certificate. Fees are: 
 </p>
+<ul class="inline-list-disc">
+<li>Due within thirty (30) days from invoice date else late payments may incur interest at 1.5% per month or maximum allowed by law</li>
+<li>Non-cancelable and non-refundable</li>
+<li>Exclusive of applicable taxes, which are Licensee's responsibility</li>
+</ul>
 
 <h3>7.2 Pricing Structure</h3>
-<p>
-Indian customers receive INR pricing; global customers receive USD pricing; pricing is determined by business location.
-</p>
+<ul class="inline-list-disc">
+<li>Indian customers receive INR pricing</li>
+<li>Global customers receive USD pricing</li>
+<li>Pricing is determined by customer's business location</li>
+</ul>
+
 
 <h3>7.3 License Compliance and Overuse</h3>
-<p>
-If Licensee exceeds authorized usage, Licensee must pay excess usage fees. Licensor may terminate this Agreement for non-payment.
-</p>
+<p>If Licensee exceeds authorized usage:</p>
 
-<h3>7.4 Payment Methods</h3>
-<p>
-All payments must be made through secure channels designated by Licensor. Licensor is not liable for issues arising from unauthorized payment methods.
-</p>
+<ul class="inline-list-disc">
+<li>Licensee agrees to promptly pay applicable fees for excess usage at standard rates</li>
+<li>Licensee agrees to pay additional fees if extra licenses are required</li>
+<li>Licensor may terminate this Agreement upon Licensee's failure to pay required fees</li>
+</ul>
+<h3>7.4 Payment Methods and Security</h3>
+<p>All payments due under this Agreement shall be made only through secure, authorized payment channels designated by Licensor. Licensee is responsible for ensuring that payment information is accurate and submitted through the approved secure channels. Licensor shall not be liable for any losses, delays, or errors arising from payments made through unauthorized or insecure methods.</p>
 
 <h3>7.5 Audit Rights</h3>
-<p>
-Licensor may audit Licensee's Software use upon 30 days’ notice, not more than once annually unless prior audit revealed material non-compliance.
-</p>
+<p>Licensor may audit Licensee's Software use upon 30 days' notice, not more than once annually unless prior audit revealed material non-compliance. Licensee shall maintain accurate usage records and cooperate with audits. Third-party auditors must execute confidentiality agreements. If audit reveals excess use exceeding 10%, Licensee shall pay shortfall plus audit costs within 30 days.</p>
 
 <h2>8. INDEMNIFICATION</h2>
 
 <h3>8.1 Customer Indemnification</h3>
-<p>
-Licensee agrees to defend, indemnify, and hold harmless GrapeCity India Private Limited and its officers, directors, employees, and agents from any claims arising from:
-</p>
-<ol type="a">
+<p>Licensee agrees to defend, indemnify, and hold harmless GrapeCity India Private Limited, its officers, directors, employees, and agents from any claims, damages, losses, and expenses (including reasonable attorney fees) arising from:</p>
+<ul class="inline-list-disc">
   <li>Licensee's material breach of this Agreement</li>
   <li>Unauthorized distribution or sharing of the Software or License Keys</li>
-</ol>
+</ul>
 
 <h3>8.2 Mutual Indemnification Process</h3>
 <p>
-The indemnified party must promptly notify the indemnifying party, cooperate, and allow the indemnifying party to control defense and settlement.
-</p>
+The indemnified party must promptly notify the indemnifying party of any claim and provide reasonable cooperation. The indemnifying party controls the defense and settlement, provided settlements requiring non-monetary obligations need the indemnified party's consent.</p>
 <h2>9. DATA PROTECTION AND RETENTION</h2>
 
 <h3>9.1 Data Collection</h3>
@@ -202,9 +206,7 @@ The indemnified party must promptly notify the indemnifying party, cooperate, an
   <li>
     Licensee retains all rights to User Data. Licensor processes User Data solely to provide Software per Licensee's instructions.
   </li>
-  <li>
-    Software collects analytics data such as usage statistics, performance metrics, system information, error logs, IP addresses, and license validation data. Data collected does not include source code or build artifacts unless provided in error reports.
-  </li>
+  <li>Software collects analytics data such as usage statistics, performance metrics, system information, error logs, IP addresses, and license validation data. Does not include source code or build artifacts unless in error reports.</li>
   <li>
     Analytics is used for license validation, Software improvement, support services, feature development, and aggregated statistics.
   </li>
@@ -217,35 +219,15 @@ The indemnified party must promptly notify the indemnifying party, cooperate, an
 
 <h3>9.3 Compliance</h3>
 <ol type="a">
-  <li>
-    Parties comply with:
-    Digital Personal Data Protection Act 2023 (India);
-    IT Act 2000 (India);
-    GDPR (EU);
-    UK GDPR;
-    CCPA/CPRA (California)
-    and other applicable laws.
-  </li>
-  <li>
-    Licensor shall:
-    <ol type="i">
-      <li>Implement appropriate security measures per Section 9.4;</li>
-      <li>Ensure personnel confidentiality;</li>
-      <li>Assist with data subject requests within 10 days;</li>
-      <li>Notify Licensee of law enforcement disclosure requests unless prohibited;</li>
-      <li>Assist with compliance obligations;</li>
-      <li>Delete or return Personal Data upon termination per Licensee instructions;</li>
-      <li>Provide compliance information and allow audits.</li>
-    </ol>
-  </li>
-  <li>
-    Sub-processors:
-    Licensor will provide 30 days' notice of new sub-processors. Licensee may object within 15 days.
-  </li>
-  <li>
-    Audits:
-    Upon request, not more than annually, Licensor will provide certifications (ISO 27001, SOC 2) or audit summaries. If concerns remain, Licensee may conduct an audit at its expense.
-  </li>
+  <li>Parties comply with: Digital Personal Data Protection Act 2023 (India); IT Act 2000 (India); GDPR (EU); UK GDPR; CCPA/CPRA (California) and/or relevant laws.
+<li> Licensor shall:</li>
+  <ol type="i">
+  <li>implement appropriate security measures per Section 9.4;</li> 
+  <li>ensure personnel confidentiality;</li> 
+  <li>assist with data subject requests within 10 days;</li> <li>notify Licensee of law enforcement disclosure requests unless prohibited;</li><li> assist with compliance obligations;</li><li> delete or return Personal Data upon termination per Licensee's election;</li><li> provide compliance information and allow audits.</li>
+</ol>
+  <li>Sub processors: Licensor provides 30 days' notice of new sub processors. Licensee may object within 15 days.</li>
+<li> Audits: Upon request, not more than annually, Licensor provides certifications (ISO 27001, SOC 2) or audit summaries. For reasonable non-compliance concerns, Licensee may audit at Licensee's expense.</li>
 </ol>
 
 <h3>9.4 Security Measures Implemented by Licensor</h3>
@@ -262,50 +244,40 @@ The indemnified party must promptly notify the indemnifying party, cooperate, an
 
 <h3>9.5 Data Retention</h3>
 <ol type="a">
-  <li>User Data retained during License Term + 30 days for retrieval. Analytics retained 24 months then deleted or anonymized.</li>
+  <li>User Data retained during License Term plus 30 days for retrieval. Analytics retained 24 months then deleted or anonymized.</li>
   <li>
     Within 30 days of termination, Licensor shall delete or return User Data per Licensee's written election and provide certification.
   </li>
-  <li>Data may be retained longer as required by law.</li>
+  <li>Data may be retained longer as legally required.</li>
   <li>Backup data deleted within 90 days per standard rotation.</li>
 </ol>
 
 <h3>9.6 Data Location</h3>
 <p>
-BuildNinja is deployed on Customer’s infrastructure. Customer controls data location, storage, and backups.
-Licensor only receives:
+BuildNinja is deployed on Customer’s infrastructure. Customer maintains full controlover data location, storage, and backups. No customer data is transmitted to or stored by GrapeCity India Private Limited except:
 </p>
-<ul>
-  <li>Anonymous telemetry (if enabled)</li>
-  <li>License validation data</li>
-  <li>Support diagnostics when explicitly shared</li>
+<ul class="inline-list-disc">
+  <li>Anonymous usage telemetry (if enabled)</li>
+  <li>License validation data (license key, installation count)</li>
+  <li>Support diagnostics (only when explicitly shared by Customer)</li>
 </ul>
+<p>All product data, build artifacts, logs, and user information remain within Customer's infrastructure.</p>
 
 <h2>10. LIMITED WARRANTY AND ENHANCED DISCLAIMERS</h2>
 <p>
-SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES. LICENSOR DISCLAIMS ALL WARRANTIES,
-INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES. TO THE MAXIMUM EXTENT PERMITTED BY LAW, LICENSOR DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
 </p>
-<p>
-Licensor does not warrant uninterrupted or error-free operation. Performance may be affected by factors outside Licensor’s control.
-</p>
-<p>
-Licensee is solely responsible for maintaining backups. Licensor is not liable for data loss.
-</p>
-<p>
-Software is not suitable for safety-critical uses. Such uses are prohibited.
-</p>
+<p>The Licensor does not warrant that the Software will be uninterrupted or error-free, or that any defects will be corrected. Performance of the Software may be affected by factors outside the Licensor's control.</p>
+<p>The Licensee acknowledges and agrees that it is solely responsible for maintaining adequate and up-to-date backups of all data, systems, and content used in connection with the Software. The Licensor shall have no liability for any loss, corruption, or damage to data arising from the use of the Software or from the Licensee's failure to maintain proper backups.</p>
+<p>Important: Software is not designed or suitable for safety-critical applications, hazardous environments, or any use where failure could result in death, personal injury, or severe property or environmental damage. Such uses are prohibited.</p>
 
 <h2>11. DISCLAIMER OF DAMAGES</h2>
 <ol type="a">
   <li>
-    TO THE MAXIMUM EXTENT PERMITTED BY LAW, LICENSOR WILL NOT BE LIABLE FOR ANY SPECIAL,
-    INCIDENTAL, INDIRECT, CONSEQUENTIAL, OR SIMILAR DAMAGES (INCLUDING LOSS OF PROFITS,
-    BUSINESS INTERRUPTION, LOSS OF DATA, OR OTHER PECUNIARY LOSS).
+    TO THE MAXIMUM EXTENT PERMITTED BY LAW, LICENSOR WILL NOT BE LIABLE FOR ANY DAMAGES, INCLUDING SPECIAL, INCIDENTAL, INDIRECT, CONSEQUENTIAL, OR SIMILAR DAMAGES (INCLUDING LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF DATA, OR OTHER PECUNIARY LOSS) ARISING OUT OF USE OR INABILITY TO USE SOFTWARE.
   </li>
   <li>
-    LICENSOR'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY LICENSEE DURING THE
-    12 MONTHS PRECEDING THE CLAIM.
+    LICENSOR'S ENTIRE LIABILITY WILL BE LIMITED TO THE AMOUNT ACTUALLY PAID BY LICENSEE FOR SOFTWARE DURING THE 12 MONTHS PRECEDING THE CLAIM.
   </li>
 </ol>
 
@@ -323,24 +295,16 @@ or prohibited persons, or use Software for activities prohibited by export contr
 <h2>13. TERM AND TERMINATION</h2>
 
 <h3>13.1 Term</h3>
-<p>
-Unless indicated otherwise in the License Certificate, each license is perpetual, subject to compliance with this Agreement.
-</p>
+<p>Unless indicated otherwise in License Certificate, each license is valid for a perpetual term, subject to compliance with this Agreement.</p>
 
 <h3>13.2 Termination for Breach</h3>
-<p>
-Either party may terminate this Agreement for material breach not cured within 30 days of written notice.
-</p>
+<p>If either party materially breaches this Agreement and fails to cure within thirty (30) days of written notice, the non-breaching party may terminate this Agreement.</p>
 
 <h3>13.3 Effect of Termination</h3>
 <ol type="a">
-  <li>Licensee must immediately stop using Software, uninstall it, and return/destroy Confidential Information.</li>
-  <li>
-    Licensor may disable Software upon 15 days’ notice (or immediately in emergencies or material breach).
-  </li>
-  <li>
-    For 30 days post-termination, Licensee may request User Data export. After 30 days, data may be deleted per Section 9.5.
-  </li>
+  <li>Upon termination: Licensee immediately ceases use, uninstalls Software, and returns or destroys Confidential Information.</li>
+  <li>Licensor may disable Software upon 15 days' notice (no notice for emergencies or material breach) via license revocation or technical restrictions.</li>
+  <li>Data Retrieval: For 30 days post-termination, Licensor shall, at Licensee's written request and expense, provide User Data download in machine-readable format. After 30 days, Licensor may delete per Section 9.5.</li>
 </ol>
 
 <h2>14. GENERAL</h2>
@@ -348,103 +312,74 @@ Either party may terminate this Agreement for material breach not cured within 3
 <h3>14.1 Dispute Resolution</h3>
 
 <p><strong>a. Governing Law</strong></p>
-<p>This Agreement is governed by Indian law. Courts in Delhi have exclusive jurisdiction.</p>
+<p>
+This Agreement is governed by the laws of India. Parties consent to the exclusive jurisdiction and venue of courts in Delhi, India.
+</p>
 
 <p><strong>b. Arbitration</strong></p>
-<p>
-Either party may elect arbitration at Delhi International Arbitration Centre under Arbitration and Conciliation Act 1996.
-Seat: Delhi. Language: English. Award is final. Proceedings are confidential.
-</p>
+<p>Either party may elect Delhi International Arbitration Centre under Arbitration and Conciliation Act 1996. The seat of arbitration shall be Delhi in English language. The award shall be final and binding, each party bears own costs unless arbitrator awards costs. This shall be confidential proceedings.</p>
 
 <p><strong>c. Litigation</strong></p>
-<p>
-If arbitration is not resolved within 45 days (or extended period), either party may proceed to courts in Delhi.
-Parties waive jurisdiction objections. Emergency injunctive relief is permitted.
-</p>
+<p>If arbitration does not resolve dispute within 45 days (or extended period), either party may commence litigation. Parties submit to exclusive jurisdiction of courts in Delhi, India and waive objections to jurisdiction or venue. Nothing in this sub section shall preclude any party from approaching an appropriate court for obtaining injunctive reliefs.</p>
 
 <h3>14.2 Entire Agreement</h3>
-<p>
-This Agreement is the entire agreement and supersedes prior agreements on the subject matter.
-</p>
+<p>This Agreement constitutes the entire agreement concerning Licensee's use of Software and supersedes prior agreements regarding the same subject matter.</p>
 
 <h3>14.3 Modifications</h3>
-<p>
-Licensor may update this Agreement with 30 days’ notice. Continued use after effective date constitutes acceptance.
-</p>
+<p>Licensor may update this Agreement with thirty (30) days' written notice. Continued Software use after the effective date constitutes acceptance.</p>
 
 <h3>14.4 Assignment Restrictions</h3>
-<p>
-Licensee may not assign without Licensor’s written consent. Unauthorized assignment is grounds for termination.
-Licensor may assign due to mergers, acquisitions, or asset transfers.
-</p>
+<p>Licensee shall not assign this Agreement without Licensor's prior written consent. Unauthorized assignment is grounds for termination. Licensor may assign in connection with mergers, acquisitions, or sale of substantially all assets without Licensee consent.</p>
 
 <h3>14.5 Equitable Relief</h3>
-<p>
-Licensor may seek equitable relief for unauthorized disclosure or breach.
-</p>
+<p>Licensee acknowledges unauthorized disclosure or breach could cause substantial harm. Licensor is entitled to seek equitable relief in addition to other remedies.</p>
 
 <h3>14.6 Severability</h3>
 <p>
-If any provision is invalid, the remaining provisions remain in effect.
+If any provision is invalid, the remainder remains in full force and effect.
 </p>
 
 <h2>15. FORCE MAJEURE</h2>
 
 <ol type="a">
-  <li>
-    Neither party is liable for failure to perform (except payment obligations) caused by events beyond reasonable control:
-    natural disasters, pandemics, war, terrorism, civil unrest, strikes, government actions, utility failures, fire, flood, earthquake.
-  </li>
-  <li>
-    Affected party must notify the other, mitigate, and resume performance when possible.
-  </li>
-  <li>
-    If Force Majeure persists over 60 days, the unaffected party may terminate. Licensor will refund prepaid fees pro-rata.
-  </li>
+  <li>Neither party liable for failure to perform (except payments) due to events beyond reasonable control: acts of God, natural disasters, pandemics, war, terrorism, civil unrest, strikes, government actions, utility failures, fire, flood, earthquake.</li>
+  <li>Affected party shall:</li> <ol type="i">
+  <li>Promptly notify </li><li>Use reasonable efforts to mitigate and resume</li><li> Provide regular updates.</li></ol>
+  <li>If Force Majeure exceeds 60 days, unaffected party may terminate and Licensor refunds prepaid fees pro-rata.</li>
 </ol>
 
 <h2>16. CONFIDENTIALITY</h2>
 
 <h3>16.1 Obligations</h3>
-<p>
-Receiving Party shall protect Confidential Information using reasonable care, use it only for exercising rights
-or performing obligations, and restrict access to those with a need-to-know under confidentiality obligations.
-</p>
+<p>Receiving Party shall: (a) protect using same care as own confidential information, minimum reasonable care; (b) use only to exercise rights or perform obligations under Agreement; (c) limit disclosure to employees, contractors with need-to-know under confidentiality obligations; (d) not disclose to third parties except per 16.3.</p>
 
 <h3>16.2 Permitted Disclosures</h3>
-<p>
-Disclosure is permitted to legal advisors, auditors, or as required by law with prompt notice unless prohibited.
-</p>
-
+<p>May disclose to: 
+<ol type="a">
+<li>Legal advisors, auditors under confidentiality </li><li>As required by law with prompt notice to Disclosing Party (unless prohibited).</li>
+</ol>
 <h3>16.3 Exclusions</h3>
-<p>
-Confidential Information excludes information that is:
-publicly available, previously known, rightfully received from a third party, or independently developed.
-</p>
+<p>Excludes information: </p>
+<ol type="a"> <li>Publicly available without breach</li><li>Rightfully possessed before disclosure</li><li>Rightfully received from third party</li><li>independently developed with written proof.</li>
+</ol>
 
 <h3>16.4 Return</h3>
-<p>
-Upon request or termination, Confidential Information must be returned or destroyed. Retained copies must remain confidential.
-</p>
+<p>Upon termination or request, Receiving Party returns or destroys Confidential Information and certifies compliance. May retain as legally required under continued confidentiality.</p>
 
 <h3>16.5 Remedies</h3>
-<p>
-Unauthorized disclosure causes irreparable harm. Disclosing Party may seek injunctive relief.
-</p>
+<p>Unauthorized disclosure causes irreparable harm. Disclosing Party entitled to injunctive relief plus other remedies.</p>
 
 <h3>16.6 Survival</h3>
-<p>
-Confidentiality obligations survive 5 years after termination; trade secrets survive indefinitely.
-</p>
+<p>Obligations survive 5 years post-termination; trade secrets protected while they remain trade secrets.</p>
 
 <h2>17. CONTACT INFORMATION</h2>
 
-<p>GrapeCity India Private Limited</p>
+<h4><strong>GrapeCity India Private Limited</strong></h4>
 <p>Address: A-15, Noida Sector 62, Uttar Pradesh, India</p>
 <p>Email: hello@grapehub.io</p>
 <p>Website: grapehub.io</p>
 
-<p>
+<h4>
 By using the Software, you acknowledge that you have read, understood, and agree to be bound by this Agreement.
-</p>
+</h4>
 `;
