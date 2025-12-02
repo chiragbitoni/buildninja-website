@@ -6,7 +6,7 @@ export function cn(...inputs) {
 }
 
 export const getCurrency = (currency, price) => {
-  return new Intl.NumberFormat(undefined, {
+  return new Intl.NumberFormat(currency == "INR" ? undefined : "en-US", {
     style: "currency",
     currency: currency ?? "USD",
   })
