@@ -187,7 +187,7 @@ export default function AddToCartContent() {
   /* ---------------- Submit Button ------------ */
   const handleSubmit = () => {
     let _url = `/order?planId=${currentPlan.id}`;
-    if (extra > 0) {
+    if (currentPlan.name.trim().toLowerCase()=="solo" && extra > 0) {
       const addOnIds = currentPlan.addons[0].id;
       _url += `&addOns=${extra}&addOnIds=${addOnIds}`;
     }
