@@ -30,6 +30,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics GA_ID={process.env.NEXT_PUBLIC_GA_ID} />
+      </head>
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
@@ -37,7 +40,6 @@ export default function RootLayout({ children }) {
           <ClientAuthProvider>
             <Navbar />
             <main className="pt-16">
-              <GoogleAnalytics GA_ID={process.env.NEXT_PUBLIC_GA_ID} />
               <Suspense fallback={null}>
                 <PageViewListener />
               </Suspense>
