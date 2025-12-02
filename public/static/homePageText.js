@@ -205,7 +205,7 @@ export const fifthSectionText = {
   cards: [
     {
       icon: paths.icons.twentyFivePlus,
-      text: "25+ years building developer tools (GrapeCity)",
+      text: "25+ years into developer tools (GrapeCity)",
     },
 
     {
