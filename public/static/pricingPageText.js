@@ -19,7 +19,7 @@ export const secondSectionTextIndia = {
     soloEditionCard: {
       highlight: "START WITH CONFIDENCE",
       edition: "Solo Edition",
-      price: "FREE",
+      price: "Free Forever",
       priceDescription: "Forever free, no credit card required",
       ideal:
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
