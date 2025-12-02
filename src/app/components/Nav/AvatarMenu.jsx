@@ -7,10 +7,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "@/redux/slice/authSlice";
 import { useRouter } from "next/navigation";
 import { logoutUserAPI } from "@/services/auth/logout";
+import { usePathname } from "next/navigation";
 
 export default function AvatarMenu() {
   const dispatch = useDispatch();
   const router = useRouter();
+  const pathname = usePathname();
 
   const { user, isLoggedIn } = useSelector((state) => state.auth);
 
@@ -41,7 +43,11 @@ export default function AvatarMenu() {
     return (
       <button
         className="am-login-btn"
-        onClick={() => (window.location.href = process.env.NEXT_PUBLIC_MYACCOUNT_GRAPEHUB_LOGIN_URL)}
+        onClick={() => {
+          (window.location.href =
+            `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/login?redirect=${window.location.href}`);
+        }}
+
       >
         Login
       </button>
@@ -53,11 +59,11 @@ export default function AvatarMenu() {
       const userId = user?.userId;
 
       const res = await logoutUserAPI(userId);
-      console.log("Logout API:", res);
+      // console.log("Logout API:", res);
 
       // treat logout as always successful
       dispatch(logoutUser());
-      // window.location.href = process.env.NEXT_PUBLIC_MYACCOUNT_GRAPEHUB_LOGIN_URL;
+      // window.location.href = process.env.NEXT_PUBLIC_MYACCOUNT_URL;
 
     } catch (err) {
       console.error("Logout error:", err);

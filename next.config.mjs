@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // required when using export and Next Image
   },
-  trailingSlash: true, // optional: adds / to URLs for static hosting
+  trailingSlash: false, // optional: adds / to URLs for static hosting
 };
 
 export default nextConfig;

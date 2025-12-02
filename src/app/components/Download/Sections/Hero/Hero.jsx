@@ -31,7 +31,7 @@ export default function Hero() {
 
         try {
             const res = await emailSignup(email);
-            console.log("API Response:", res);
+            // console.log("API Response:", res);
 
             const userId = res?.value?.user?.userId;
             const userEmail = res?.value?.user?.email;

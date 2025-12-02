@@ -21,7 +21,7 @@ export const thirdSectionText = {
     CPU: "2 cores (x64/ARM64)",
     RAM: "4 GB",
     Storage: "10 GB free space",
-    OS: "Windows 10/11, Linux, macOS",
+    OS: "Windows 10/11, Linux",
     Network: "Internet connection required",
   },
   card2: {

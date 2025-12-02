@@ -58,7 +58,7 @@ export const thirdSectionText = {
             **Build Agents/strong
             - Minimum: 2-core CPU, 2GB RAM, 10GB storage  
             - Recommended: 4+ cores, 4–8GB RAM, 50GB+ storage  
-            - Supports Windows 10/11, Linux, and macOS  
+            - Supports Windows 10/11, and Linux.
 
             See complete system requirements for network, browser compatibility, and additional tools.
             `,
@@ -143,7 +143,7 @@ Activate your license through Settings > Manage License (online or offline activ
         {
           question: "How does agent management work?",
           answer:
-            "BuildNinja includes comprehensive agent management capabilities. You can authorize agents, enable/disable them, refresh configurations, reset status, and filter by operating system or status. Agents can run on Windows, Linux, or macOS, and you control which builds run on which agents based on requirements.",
+            "BuildNinja includes comprehensive agent management capabilities. You can authorize agents, enable/disable them, refresh configurations, reset status, and filter by operating system or status. Agents can run on Windows or Linux, and you control which builds run on which agents based on requirements.",
         },
         {
           question: "Does BuildNinja support Kubernetes?",

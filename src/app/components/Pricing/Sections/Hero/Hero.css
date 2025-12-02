@@ -335,20 +335,30 @@
     gap: 8px;
 }
 
-.pricingMonthlyFreeCardButton {
+.pricingMonthlyFreeCardButton:nth-child(1) {
     background-color: #515151;
     color: #ffffff;
+    border: 1px solid #0000001A
 }
+
+.pricingMonthlyFreeCardButton:nth-child(2) {
+    color: white;
+    border: 2px solid #3D3D3D;
+    background-color: #212020;
+
+}
+
 
 .pricingMonthlyShogunCardButton {
     background-color: #FF4172;
     color: white;
+    border: 1px solid #0000001A
 }
 
 .pricingMonthlyShogunCardButton:nth-child(2) {
     color: white;
-    border: 2px solid #D4335C;
-    background-color: transparent;
+    border: 2px solid #3D3D3D;
+    background-color: #212020;
 }
 
 .pricingMonthlyFreeCardButton:hover {
@@ -708,4 +718,21 @@
 
 .pricingSecondSection::before {
     background: transparent !important;
+}
+
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -47,6 +47,7 @@ export const secondSectionTextIndia = {
         "30-day grace period to test everything",
       ],
       buttonText: "Download Free",
+      buttonText2: "Start with Trial License",
       ctaText: "No strings attached. Solo Edition stays free forever.",
     },
 
@@ -161,6 +162,7 @@ export const secondSectionTextGlobal = {
         "30-day grace period to test everything",
       ],
       buttonText: "Download Free",
+      buttonText2: "Start with Trial License",
       ctaText: "No strings attached. Solo Edition stays free forever.",
     },
 
@@ -305,7 +307,7 @@ export const pricingFifthText = {
           list: [
             "Deploy in minutes with docker pull",
             "Self-contained deployment",
-            "Multi-platform agents (Windows, Linux, macOS)",
+            "Multi-platform agents (Windows, Linux)",
           ],
         },
         {
