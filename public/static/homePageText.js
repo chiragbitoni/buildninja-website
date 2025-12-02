@@ -14,7 +14,7 @@ export const heroSectionText = {
 export const secondSectionText = {
   title1: "Deploy with Confidence ",
   title2: "Without the Complexity",
-  subtitle: "Powerful features that let you ship code, not fix pipelines",
+  subtitle: "Powerful features that let you ship code, not fix pipelines.",
   featuresCard: [
     {
       title: "See What Happened Without the Detective Work",
@@ -66,7 +66,7 @@ export const thirdSectionText = {
 export const fourthSectionText = {
   title1: "Powerful Features,",
   title2: "Without the Maintenance Burden",
-  subtitle: "All the capabilities you need, none of the plugin chaos",
+  subtitle: "All the capabilities you need, none of the plugin chaos.",
   featuresCard: [
     {
       title: "Find Issues Fast When They Happen",
@@ -321,7 +321,7 @@ export const ninthSectionText = {
   subtitle:
     "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
   subtitle2: "Get your CI/CD build process running in under 5 minutes.",
-  subtitle3: "Free for 3 agents, $199/month unlimited as you scale",
+  subtitle3: "Free for 3 agents, $199/month unlimited as you scale.",
   primaryButton: "Try BuildNinja Free",
   secondaryButton: "See the 5-Minute Demo",
   secondTitle: "Risk-Free Guarantee",
