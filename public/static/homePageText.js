@@ -322,7 +322,7 @@ export const ninthSectionText = {
     "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
   subtitle2: "Get your CI/CD build process running in under 5 minutes.",
   subtitle3: "Free for 3 agents, $199/month unlimited as you scale",
-  primaryButton: "Get Started Free",
+  primaryButton: "Try BuildNinja Free",
   secondaryButton: "See the 5-Minute Demo",
   secondTitle: "Risk-Free Guarantee",
   list: [
