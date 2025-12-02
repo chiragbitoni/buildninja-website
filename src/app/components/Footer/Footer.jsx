@@ -46,7 +46,7 @@ const footerText = {
             links: [
                 { label: "Privacy Policy", link: `${GRAPEHUB_URL}/privacy-policy` },
                 { label: "Terms of Service", link: `${GRAPEHUB_URL}/terms-of-service` },
-                { label: "EULA", link: `${GRAPEHUB_URL}/eula` },
+                { label: "EULA", link: `/eula` },
                 { label: "Refund & Cancellation", link: `${GRAPEHUB_URL}/refund-and-cancellation-policy` },
                 { label: "Shipping Policy", link: `${GRAPEHUB_URL}/shipping-policy` },
             ],
