@@ -23,14 +23,12 @@ export default function Navbar() {
 
     // If plans already exist → do not fetch
     if (storedPlans) return;
-
     async function init() {
       const plans = await fetchPlansFromAPI();
       if (plans) {
         localStorage.setItem("plans", JSON.stringify(plans));
       }
     }
-
     init();
   }, []);
 
@@ -93,10 +91,10 @@ export default function Navbar() {
               <li
                 key={item.name}
                 className={`navbar-link ${item.path === "/"
-                    ? pathname === "/" ? "active-link" : ""
-                    : pathname.startsWith(item.path)
-                      ? "active-link"
-                      : ""
+                  ? pathname === "/" ? "active-link" : ""
+                  : pathname.startsWith(item.path)
+                    ? "active-link"
+                    : ""
                   }`}
                 onClick={() => {
                   if (item.path) {

@@ -6,11 +6,16 @@ import { useRouter } from "next/navigation";
 import { secondSectionTextIndia, secondSectionTextGlobal, secondSectionEnterpriseCardText } from "../../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../../public/static/paths";
 import { useEffect, useState } from "react";
+import { fetchPlansFromAPI } from "@/services/plans/plans";
 export default function PricingHero() {
     const dispatch = useDispatch();
     const { region, billing, multiYear } = useSelector((state) => state.pricing);
     const [plans, setPlans] = useState([]);
+    const [loadingPlans, setLoadingPlans] = useState(true);
     const router = useRouter();
+    const Spinner = () => (
+        <div className="spinner"></div>
+    );
 
 
     const text = {
@@ -39,12 +44,37 @@ export default function PricingHero() {
         footer:
             "All features identical across regions. Prices display based on your selection.",
     };
+    async function fetchAndStorePlans() {
+        setLoadingPlans(true);
+        const fetched = await fetchPlansFromAPI();
 
+        if (fetched && Array.isArray(fetched)) {
+            localStorage.setItem("plans", JSON.stringify(fetched));
+            setPlans(fetched);
+        }
+
+        setLoadingPlans(false);
+    }
     useEffect(() => {
         const stored = localStorage.getItem("plans");
-        if (stored) {
-            setPlans(JSON.parse(stored));
+
+        if (!stored) {
+            fetchAndStorePlans();
+            return;
         }
+
+        try {
+            const parsed = JSON.parse(stored);
+            if (!Array.isArray(parsed) || parsed.length === 0) {
+                fetchAndStorePlans();
+                return;
+            }
+            setPlans(parsed);
+        } catch {
+            fetchAndStorePlans();
+        }
+
+        setLoadingPlans(false);
     }, []);
 
     const getCurrency = () => {
@@ -80,6 +110,7 @@ export default function PricingHero() {
     };
 
     const handleBuyNow = (planName) => {
+
         const selectedPlan = findSelectedPlan(planName);
 
         if (!selectedPlan) {
@@ -150,9 +181,16 @@ export default function PricingHero() {
 
             {/* Footer */}
             <div className="pricingMonthlyFreeCardFooter">
-                <button className="pricingMonthlyFreeCardButton" onClick={() => handleBuyNow("Solo")}>
-                    {secondSectionText.monthCards.soloEditionCard.buttonText}
-                    <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
+
+                <button className="pricingMonthlyFreeCardButton" disabled={loadingPlans} onClick={() => handleBuyNow("Solo")}>
+                    {loadingPlans ? (
+                        <Spinner />
+                    ) : (
+                        <>
+                            {secondSectionText.monthCards.soloEditionCard.buttonText}
+                            <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
+                        </>
+                    )}
                 </button>
                 <button className="pricingMonthlyFreeCardButton" onClick={() => { handleButtonClick("/install") }}>
                     {secondSectionText.monthCards.soloEditionCard.buttonText2}
@@ -193,8 +231,14 @@ export default function PricingHero() {
                     className="pricingMonthlyShogunCardButton"
                     onClick={() => handleBuyNow("Shogun")}
                 >
-                    Buy Now
-                    <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
+                    {loadingPlans ? (
+                        <Spinner />
+                    ) : (
+                        <>
+                            Buy Now
+                            <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
+                        </>
+                    )}
                 </button>
                 <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                     {secondSectionText.monthCards.shogunEditionCard.buttonText}
@@ -250,8 +294,14 @@ export default function PricingHero() {
                         onClick={() => handleBuyNow("Shogun")}
 
                     >
-                        Buy Now
-                        <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
+                        {loadingPlans ? (
+                            <Spinner />
+                        ) : (
+                            <>
+                                Buy Now
+                                <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
+                            </>
+                        )}
                     </button>
                     <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                         {plan.buttonText}
