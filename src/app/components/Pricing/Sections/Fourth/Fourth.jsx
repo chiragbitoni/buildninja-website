@@ -15,7 +15,7 @@ export default function Fourth() {
   return (
     <section className="pricingFourthSection">
       <div className="pricingFourthHeader">
-        <h2 dangerouslySetInnerHTML={{__html:text.title}}></h2>
+        <h2 dangerouslySetInnerHTML={{ __html: text.title }}></h2>
         <p>{text.subtitle}</p>
       </div>
 
@@ -24,7 +24,7 @@ export default function Fourth() {
           <p className="problemLabel">{text.problemTitle}</p>
           <span className="problemTag">{text.problemTag}</span>
         </div>
-        <p className="problemDesc" dangerouslySetInnerHTML={{__html:text.problemDesc}}></p>
+        <p className="problemDesc" dangerouslySetInnerHTML={{ __html: text.problemDesc }}></p>
       </div>
 
       <div className="pricingFourthCards">
@@ -39,9 +39,7 @@ export default function Fourth() {
             </div>
             <p className="cardDesc">{card.desc}</p>
             {card.link && (
-              <a href="#" className="cardLink">
-                {card.link}
-              </a>
+              <a href={`/faq?open=${card.id}`} className="cardLink">Learn more</a>
             )}
             {card.badges && (
               <div className="cardBadges">

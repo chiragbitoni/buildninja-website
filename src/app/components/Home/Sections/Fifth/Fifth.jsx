@@ -17,7 +17,7 @@ export default function Fifth() {
                         {fifthSectionText.subTitle2}
                         <br />
                         {fifthSectionText.subTitle3}
-                        {/* <br /> */}
+                        <br />
                         {fifthSectionText.subTitle4}
                     </p>
                 </div>

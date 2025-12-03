@@ -83,6 +83,11 @@
   gap: 10px;
 }
 
+.cardHeader .cardTag {
+  margin-left: 5px;
+  white-space: nowrap;
+}
+
 .cardIcon {
   font-size: 1.8rem;
 }
@@ -147,8 +152,9 @@
   align-items: center;
   color: #fff;
 }
-.badge img{
-  height:30px;
+
+.badge img {
+  height: 30px;
   width: 30px;
 }
 
@@ -184,7 +190,7 @@
     padding: 24px 28px;
   }
 
-  .pricingFourthCardShield{
+  .pricingFourthCardShield {
     height: 20px !important;
   }
 }

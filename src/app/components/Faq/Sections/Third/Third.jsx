@@ -1,11 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { thirdSectionText } from "../../../../../../public/static/faqPageText";
 import "./Third.css";
+import { useSearchParams } from "next/navigation";
 
 export default function Third() {
   const [activeIndex, setActiveIndex] = useState({ category: null, index: null });
   const [searchTerm, setSearchTerm] = useState("");
+  const faqRefs = useRef({});
+  const searchParams = useSearchParams();
+  const [hasAutoScrolled, setHasAutoScrolled] = useState(false);
 
   // Filter FAQs by question or answer, keeping only categories that have matches
   const filteredFaqs = thirdSectionText.faqs
@@ -17,7 +21,7 @@ export default function Third() {
           faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
-    .filter(category => category.faqs.length > 0); // ✅ remove empty categories
+    .filter(category => category.faqs.length > 0); 
 
   // Toggle FAQ expand/collapse
   const toggleFAQ = (categoryIndex, faqIndex) => {
@@ -42,6 +46,29 @@ export default function Third() {
       )
     );
   };
+  useEffect(() => {
+    if (hasAutoScrolled) return; // ⛔ stop re-scroll
+
+    const openId = searchParams.get("open");
+    if (!openId) return;
+
+    filteredFaqs.forEach((cat, catIndex) => {
+      cat.faqs.forEach((faq, faqIndex) => {
+        if (faq.id === openId) {
+          setActiveIndex({ category: catIndex, index: faqIndex });
+
+          setTimeout(() => {
+            faqRefs.current[openId]?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }, 200);
+
+          setHasAutoScrolled(true);
+        }
+      });
+    });
+  }, [filteredFaqs, hasAutoScrolled]);
 
   return (
     <section className="faqThirdSection">
@@ -70,6 +97,9 @@ export default function Third() {
                 {category.faqs.map((faq, faqIdx) => (
                   <div
                     key={faqIdx}
+                    ref={(el) => {
+                      faqRefs.current[faq.id] = el;
+                    }}
                     className={`faq-item ${activeIndex.category === catIdx && activeIndex.index === faqIdx
                       ? "active"
                       : ""
@@ -88,7 +118,7 @@ export default function Third() {
                     </button>
                     <div className="faq-answer">
                       {/* <p>{highlightText(faq.answer, searchTerm)}</p> */}
-                      <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, "<br>").replaceAll("**", "<strong>").replaceAll("/strong","</strong>")}} />
+                      <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, "<br>").replaceAll("**", "<strong>").replaceAll("/strong", "</strong>") }} />
                     </div>
                   </div>
                 ))}

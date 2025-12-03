@@ -252,6 +252,7 @@ export const pricingFourthText = {
       tag: "Scale Freely",
       desc: "Pay for your infrastructure scale, not your team size. Add 10 developers or 100, your BuildNinja cost stays the same.",
       link: "Learn more →",
+      id: "pricing-for-teams",
     },
     {
       icon: paths.icons.serverPink,
@@ -259,6 +260,7 @@ export const pricingFourthText = {
       tag: "Full Control",
       desc: "Run on your infrastructure with complete control. No vendor lock-in, no data sovereignty concerns, no surprise cloud bills.",
       link: "Learn more →",
+      id: "infrastructure-needed",
     },
     {
       icon: paths.icons.calculatorPink,
@@ -267,6 +269,7 @@ export const pricingFourthText = {
       // region-based text will override this in Fourth.js
       desc: "Free up to 3 concurrent agents. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations.",
       link: "Learn more →",
+      id: "what-is-concurrent-agent"
     },
     {
       icon: paths.icons.headphonesPink,
@@ -274,6 +277,7 @@ export const pricingFourthText = {
       tag: "Partnership",
       desc: "Annual, 2-year, and 3-year plans include free migration assistance for 10 projects, 20 hours of professional services, and license buyout credits, not upsells, but true partnership.",
       link: "Learn more →",
+      id: "professional-services"
     },
     {
       icon: paths.icons.syncPink,
@@ -281,6 +285,7 @@ export const pricingFourthText = {
       tag: "30-Day Demo",
       desc: "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and a 30-day demo to validate everything works. We remove barriers that keep teams stuck on expensive tools.",
       badges: ["Migration Support", "License Credits", "Zero Risk Trial"],
+      // id: ""
     },
   ],
 };
