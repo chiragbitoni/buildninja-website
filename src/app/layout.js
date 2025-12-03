@@ -6,6 +6,7 @@ import { paths } from "../../public/static/paths";
 import Footer from "./components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
 import GoogleAnalytics from "./components/Analytics/GA";
+import YouTubePopup from "./components/YouTubePopup/YouTubePopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
           <ClientAuthProvider>
             <Navbar />
             <main className="pt-16">
+              <YouTubePopup />
               {children}
             </main>
             <Footer />

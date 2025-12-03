@@ -8,9 +8,12 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
+import { openVideo } from "@/redux/slice/videoPopupSlice";
+import { useDispatch } from "react-redux";
 
 export default function Hero() {
-      const router = useRouter();
+    const router = useRouter();
+    const dispatch = useDispatch();
     const images = [
         "/resources/Home/Slides/slide1.png",
         "/resources/Home/Slides/slide2.png",
@@ -25,13 +28,13 @@ export default function Hero() {
                     {heroSectionText.title2}
                 </h1>
                 <p className="heroSubtitle">
-                    {heroSectionText.subtitle}<br/>
+                    {heroSectionText.subtitle}<br />
                     {heroSectionText.subtitle2}<br />
                     {heroSectionText.subtitle3}
                 </p>
                 <div className="heroButtons">
-                    <button className="demoBtn" onClick={()=>{router.push("/install")}}>{heroSectionText.primaryButton}</button>
-                    {/* <button className="heroBtn">{heroSectionText.secondaryButton}</button> */}
+                    <button className="demoBtn" onClick={() => { router.push("/install") }}>{heroSectionText.primaryButton}</button>
+                    <button className="heroBtn" onClick={() => dispatch(openVideo(process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID))}>{heroSectionText.secondaryButton}</button>
                 </div>
 
                 <div className="heroCarousel">
@@ -45,7 +48,7 @@ export default function Hero() {
                                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                                 pagination={{
                                     clickable: true,
-                                    el: paginationRef.current, 
+                                    el: paginationRef.current,
                                 }}
                                 onBeforeInit={(swiper) => {
                                     swiper.params.pagination.el = paginationRef.current;
