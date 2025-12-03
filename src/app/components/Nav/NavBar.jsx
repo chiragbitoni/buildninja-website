@@ -109,7 +109,7 @@ export default function Navbar() {
                 {item.name}
               </li>
             ))}
-          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Start Shipping Faster</button>
+          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
         </ul>
         <AvatarMenu />
       </div>

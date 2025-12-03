@@ -22,7 +22,7 @@ THE SOFTWARE.
 <p>Server: The server part of Software that enables administration of User accounts, manages Build Agents, and performs other services as specified in the documentation.</p>
 <p>Build Agent: An auxiliary part of the Software that performs functions requested by the Server as specified in the documentation.</p>
 <p>Build Configuration: A set of build parameters and instructions defining how a software build should be executed on the Server.</p>
-<p>Concurrent Agents: The maximum number of Build Agents that can execute build tasks simultaneously at any given time.</p>
+<p>Concurrent Builds: The maximum number of build tasks that can execute simultaneously at any given time across all connected Build Agents.</p>
 <p>Grace Period: The 7-day period after license key installation during which the Software will continue to function even if there are licensing issues, allowing time to resolve any problems.</p>
 <p>License Certificate: Evidence of a license provided by Licensor to Licensee in electronic or printed form.</p>
 <p>License Key: A unique key-code that enables Licensee to run the Software. Only Licensor and/or its representatives are permitted to produce License Keys.</p>
@@ -65,8 +65,9 @@ THE SOFTWARE.
 <ul class="inline-list-disc">
   <li>Install and run unlimited number of Servers</li>
   <li>Use up to 10 Users per installation</li>
-  <li>Connect up to 3 Concurrent Agents per Server at no additional cost</li>
-  <li>Purchase additional Concurrent Agents at published rates if more than 3 are needed</li>
+  <li>Execute up to three (3) concurrent builds per Server without additional fees</li>
+  <li>Connect unlimited Build Agents to the Server</li>
+  <li>Purchase additional concurrent build licenses at published rates if capacity beyond three (3) simultaneous builds is required</li>
   <li>Create up to 100 Build Configurations per Server</li>
   <li>Retain build history for 30 days</li>
   <li>Use any 1 SSO integration provider (Microsoft, GitLab, Bitbucket, GitHub, or Google)</li>
@@ -77,12 +78,13 @@ THE SOFTWARE.
 <ul class="inline-list-disc">
   <li>Install and run unlimited number of Servers</li>
   <li>Use unlimited Users</li>
-  <li>Connect unlimited Concurrent Agents per Server</li>
+  <li>Use more Concurrent builds than granted under the applicable License without purchasing additional build capacity (Solo Edition only)</li>
+  <li>Connect unlimited Build Agents per Server</li>
   <li>Create unlimited Build Configurations per Server</li>
   <li>Retain build history for extended periods subject to reasonable storage capacity limits</li>
   <li>Use all 5 SSO integration providers (Microsoft, GitLab, Bitbucket, GitHub, and Google)</li>
   <li>Receive priority business hours support</li>
-  <li>Access 20 hours of remote CI/CD migration assistance (annual subscriptions only), once hours are exhausted, contact sales for additional services</li>
+  <li>Access twenty (20) hours of remote CI/CD migration assistance (annual subscriptions only). Upon exhaustion of included hours, Licensee may purchase additional services by contacting sales.</li>
   <li>Receive free migration assistance (annual subscriptions only)</li>
 </ul>
 
@@ -97,7 +99,7 @@ THE SOFTWARE.
 <ol type="I">
   <li>Sell, redistribute, encumber, give, lend, rent, lease, sublicense, or transfer Software or any portion thereof without prior written consent of Licensor</li>
   <li>Reverse engineer, decompile, disassemble, modify, translate, attempt to discover source code, or create derivative works from Software</li>
-  <li>Use more Concurrent Agents than granted under the applicable license without purchasing additional licenses (Solo Edition) or without appropriate Shogun Edition licensing</li>
+  <li>Use more Concurrent builds than granted under the applicable License without purchasing additional build capacity (Solo Edition only)</li>
   <li>Use more Build Configurations per Server than allowed under Solo Edition License</li>
   <li>Use the same License Key for multiple Server installations</li>
   <li>Remove, alter, or obscure any proprietary or copyright notices in the Software</li>
@@ -152,7 +154,7 @@ Licensor will provide generally available Software upgrades as follows:
 <li><strong>Shogun Edition:</strong> Free upgrades during a 1-year period following initial license purchase ("Upgrade Subscription"). Licensee may renew for additional 1-year periods by paying renewal fees on Licensor's website.</li>
 </ul>
 <p>
-If Licensee elects not to renew Upgrade Subscription, Licensee retains the perpetual right to continue using the most recent version released during the applicable Upgrade Subscription term.</p>
+In the event Licensee does not renew the Upgrade Subscription, Licensee shall retain a perpetual license to use the most recent Software version released during the applicable Upgrade Subscription term.</p>
 <h2>7. FEES AND PAYMENT</h2>
 
 <h3>7.1 License Fees</h3>
@@ -252,16 +254,17 @@ The indemnified party must promptly notify the indemnifying party of any claim a
   <li>Backup data deleted within 90 days per standard rotation.</li>
 </ol>
 
-<h3>9.6 Data Location</h3>
-<p>
-BuildNinja is deployed on Customer’s infrastructure. Customer maintains full controlover data location, storage, and backups. No customer data is transmitted to or stored by GrapeCity India Private Limited except:
-</p>
-<ul class="inline-list-disc">
-  <li>Anonymous usage telemetry (if enabled)</li>
-  <li>License validation data (license key, installation count)</li>
-  <li>Support diagnostics (only when explicitly shared by Customer)</li>
-</ul>
-<p>All product data, build artifacts, logs, and user information remain within Customer's infrastructure.</p>
+<h3>9.6 Data Location and Control</h3>
+<ol type="a">
+  <li>The Software shall be deployed exclusively on Licensee's infrastructure. Licensee maintains full control over data location, storage, backup procedures, and data management.</li>
+  <li>No User Data shall be transmitted to or stored by Licensor except:</li>
+  <ol type="i">
+    <li>Anonymous usage telemetry (if enabled by Licensee);</li>
+    <li>License validation data (license key and installation count);</li>
+    <li>Support diagnostic information (only when explicitly provided by Licensee).</li>
+  </ol>
+  <li>All product data, build artifacts, logs, and user information shall remain within Licensee's infrastructure under Licensee's exclusive custody.</li>
+</ol>
 
 <h2>10. LIMITED WARRANTY AND ENHANCED DISCLAIMERS</h2>
 <p>

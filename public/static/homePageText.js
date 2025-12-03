@@ -14,7 +14,7 @@ export const heroSectionText = {
 export const secondSectionText = {
   title1: "Deploy with Confidence ",
   title2: "Without the Complexity",
-  subtitle: "Powerful features that let you ship code, not fix pipelines",
+  subtitle: "Powerful features that let you ship code, not fix pipelines.",
   featuresCard: [
     {
       title: "See What Happened Without the Detective Work",
@@ -61,12 +61,12 @@ export const thirdSectionText = {
   card3Text: "Set up builds, triggers, and notifications - no complexity",
   card4Title: "Deploy and Scale",
   card4Step: "STEP 4",
-  card4Text: "Ship confidently with $199/month unlimited users",
+  card4Text: "Ship confidently with $199/month unlimited users.",
 };
 export const fourthSectionText = {
   title1: "Powerful Features,",
   title2: "Without the Maintenance Burden",
-  subtitle: "All the capabilities you need, none of the plugin chaos",
+  subtitle: "All the capabilities you need, none of the plugin chaos.",
   featuresCard: [
     {
       title: "Find Issues Fast When They Happen",
@@ -205,7 +205,7 @@ export const fifthSectionText = {
   cards: [
     {
       icon: paths.icons.twentyFivePlus,
-      text: "25+ years building developer tools (GrapeCity)",
+      text: "25+ years into developer tools (GrapeCity)",
     },
 
     {
@@ -230,7 +230,7 @@ export const fifthSectionText = {
     },
   ],
   secondTitle: "Business Hours Support",
-  thirdTitle: "Expert support from actual engineers, not chatbots",
+  thirdTitle: "Expert support from actual engineers, not chatbots.",
 };
 
 export const sixthSectionText = {
@@ -321,8 +321,8 @@ export const ninthSectionText = {
   subtitle:
     "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
   subtitle2: "Get your CI/CD build process running in under 5 minutes.",
-  subtitle3: "Free for 3 agents, $199/month unlimited as you scale",
-  primaryButton: "Get Started Free",
+  subtitle3: "Free for 3 agents, $199/month unlimited as you scale.",
+  primaryButton: "Try BuildNinja Free",
   secondaryButton: "See the 5-Minute Demo",
   secondTitle: "Risk-Free Guarantee",
   list: [

@@ -40,7 +40,6 @@ export default function Hero() {
 
         {/* Breadcrumb & Title */}
         <div className="downloadDashboardHeroHeader">
-          <p className="downloadDashboardHeroBreadcrumb">{staticData.breadcrumb}</p>
           <h1 className="downloadDashboardHeroTitle">{staticData.title}</h1>
         </div>
 
