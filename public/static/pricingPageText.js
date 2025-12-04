@@ -144,7 +144,7 @@ export const secondSectionTextGlobal = {
         "Unlimited build agents - Connect as many machines as you want",
       ],
       listCard: {
-        title: "Additional concurrent capacity (per agent)",
+        title: "Additional concurrent build slot",
         list: [
           { price: "$25/month" },
           { price: "$199/year ", saving: "(Save 34%)" },
