@@ -4,7 +4,7 @@ import { thirdSectionText } from "../../../../../../public/static/faqPageText";
 import "./Third.css";
 import { useSearchParams } from "next/navigation";
 
-export default function Third() {
+export default function ThirdContent() {
   const [activeIndex, setActiveIndex] = useState({ category: null, index: null });
   const [searchTerm, setSearchTerm] = useState("");
   const faqRefs = useRef({});
