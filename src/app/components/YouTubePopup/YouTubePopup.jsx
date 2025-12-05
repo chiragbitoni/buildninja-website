@@ -7,23 +7,32 @@ export default function YouTubePopup() {
   const dispatch = useDispatch();
   const { isOpen, videoId } = useSelector((state) => state.videoPopup);
 
-  if (!isOpen) return null; // do not render if closed
+  if (!isOpen) return null;
 
   return (
     <div className="popup-overlay" onClick={() => dispatch(closeVideo())}>
+      
+      {/* Close button - now positioned on top-left of screen */}
+      <button
+        className="close-btn-global"
+        onClick={(e) => {
+          e.stopPropagation();
+          dispatch(closeVideo());
+        }}
+      >
+        ×
+      </button>
+
       <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={() => dispatch(closeVideo())}>
-          ×
-        </button>
         <iframe
           src={`https://www.youtube.com/embed/${videoId}?si=CZmwaHZbVM43ONPr`}
           className="youtube-frame"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   );
