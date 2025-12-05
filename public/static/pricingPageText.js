@@ -159,7 +159,7 @@ export const secondSectionTextGlobal = {
         "Up to 100 configurations",
         "Standard Email support",
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
-        "30-day grace period to test everything",
+      
       ],
       buttonText: "Download Free",
       buttonText2: "Start with Trial License",
@@ -275,7 +275,7 @@ export const pricingFourthText = {
       icon: paths.icons.headphonesPink,
       title: "Professional Support Included",
       tag: "Partnership",
-      desc: "Annual, 2-year, and 3-year plans include free migration assistance for 10 projects, 20 hours of professional services, and license buyout credits, not upsells, but true partnership.",
+      desc: "Annual, 2-year, and 3-year plans include free migration assistance for 3 projects,4 hours of professional services, not upsells, but true partnership.",
       link: "Learn more →",
       id: "professional-services"
     },
@@ -457,7 +457,7 @@ export const pricingEighthText = {
   solo: {
     title: "Solo Edition",
     description: "No strings attached. Solo Edition stays free forever.",
-    buttonText: "Download Free",
+    buttonText: "Get your Free key now",
   },
   shogun: {
     title: "Shogun Edition",
