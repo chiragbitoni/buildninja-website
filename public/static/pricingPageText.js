@@ -44,7 +44,6 @@ export const secondSectionTextIndia = {
         "Up to 100 configurations",
         "Standard Email support",
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
-        "7-day grace period to test everything",
       ],
       buttonText: "Get Your Free Key Now",
       buttonText2: "Start with Trial License",
