@@ -11,7 +11,7 @@ export default function YouTubePopup() {
 
   return (
     <div className="popup-overlay" onClick={() => dispatch(closeVideo())}>
-      
+
       {/* Close button - now positioned on top-left of screen */}
       <button
         className="close-btn-global"
@@ -25,7 +25,7 @@ export default function YouTubePopup() {
 
       <div className="popup-box" onClick={(e) => e.stopPropagation()}>
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}?si=CZmwaHZbVM43ONPr`}
+          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
           className="youtube-frame"
           title="YouTube video player"
           frameBorder="0"
