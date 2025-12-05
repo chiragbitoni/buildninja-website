@@ -1,5 +1,5 @@
 export async function fetchInstallers() {
-  const res = await fetch(process.env.NEXT_PUBLIC_INSTALLER_LIST_URL, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/list`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
@@ -20,7 +20,7 @@ export async function downloadInstaller(fileName) {
     const user = JSON.parse(saved); // { userId, email }
 
     // Build full URL using env variable
-    const url = `${process.env.NEXT_PUBLIC_INSTALLER_DOWNLOAD_URL}${fileName}`;
+    const url = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/download/${fileName}`;
 
     const res = await fetch(url, {
       method: "POST",

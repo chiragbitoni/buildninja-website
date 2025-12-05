@@ -1,5 +1,5 @@
 export async function fetchUser() {
-  const API_URL = process.env.NEXT_PUBLIC_AUTH_ME_API_URL;
+  const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Auth/me`;
   try {
     const res = await fetch(API_URL, {
       method: "POST",

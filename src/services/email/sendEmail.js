@@ -1,5 +1,5 @@
 export async function sendSupportEmail({ name, email, subject, message }) {
-  const API_URL = process.env.NEXT_PUBLIC_EMAIL_WITH_CC_API_URL;
+  const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
 
   const htmlContent = `
     <h3>New Support Request</h3>
