@@ -103,7 +103,7 @@ export default function AvatarMenu() {
           <div
             className="am-dropdown-item"
             onClick={() => {
-              window.location.href = "https://dev-myaccount.grapehub.io/profile";
+              window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/profile`;
               setMenuOpen(false);
             }}
           >
@@ -113,7 +113,7 @@ export default function AvatarMenu() {
           <div
             className="am-dropdown-item"
             onClick={() => {
-              window.location.href = "https://dev-myaccount.grapehub.io/profile?tab=subscription";
+              window.location.href =`${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/profile?tab=subscription`;
               setMenuOpen(false);
             }}
           >
@@ -123,7 +123,7 @@ export default function AvatarMenu() {
           <div
             className="am-dropdown-item"
             onClick={() => {
-              window.location.href = "https://dev-myaccount.grapehub.io/orders";
+              window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/orders`;
               setMenuOpen(false);
             }}
           >
@@ -133,8 +133,7 @@ export default function AvatarMenu() {
           <div
             className="am-dropdown-item"
             onClick={() => {
-              window.location.href = "https://dev-myaccount.grapehub.io/orders?tab=licenses";
-              router.push("/licenses");
+              window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/orders?tab=licenses`;
               setMenuOpen(false);
             }}
           >
