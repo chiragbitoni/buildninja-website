@@ -537,7 +537,7 @@ export default function AddToCartContent() {
                           Unlock unlimited agents with the{" "}
                           <a
                             className="text-[#D4335C]"
-                            href={`/preorder?planid=${getEquivalentShogun(currentPlan)?.id
+                            href={`/addtocart?planid=${getEquivalentShogun(currentPlan)?.id
                               }`}
                           >
                             Shogun Edition
