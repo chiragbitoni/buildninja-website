@@ -15,13 +15,15 @@ export default function YouTubePopup() {
         <button className="close-btn" onClick={() => dispatch(closeVideo())}>
           ×
         </button>
-
         <iframe
+          src={`https://www.youtube.com/embed/${videoId}?si=CZmwaHZbVM43ONPr`}
           className="youtube-frame"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        ></iframe>
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   );

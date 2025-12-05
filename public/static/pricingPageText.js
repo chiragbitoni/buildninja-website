@@ -25,11 +25,11 @@ export const secondSectionTextIndia = {
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
-        "3 concurrent agents - Run 3 builds simultaneously",
+        "3 concurrent builds - Run 3 builds simultaneously",
         "Unlimited build agents - Connect as many machines as you want",
       ],
       listCard: {
-        title: "Additional concurrent capacity (per agent)",
+        title: "Additional concurrent build slot",
         list: [
           { price: "₹2,199/month" },
           { price: "₹16,999/year ", saving: "(Save 36%)" },
@@ -42,7 +42,7 @@ export const secondSectionTextIndia = {
         "30-day build history",
         "Up to 100 projects",
         "Up to 100 configurations",
-        "Community support",
+        "Standard Email support",
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
         "30-day grace period to test everything",
       ],
@@ -61,7 +61,7 @@ export const secondSectionTextIndia = {
         "<strong>Unlimited users</strong> - No per-seat costs as you grow",
         "<strong>Unlimited projects</strong> - No artificial limits",
         "<strong>Unlimited configurations</strong> - Scale without restrictions",
-        "<strong>Unlimited concurrent agents</strong> - Run as many builds simultaneously as your infrastructure supports",
+        "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
         "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
         "<strong>Perpetual build history</strong> - Complete audit trail forever",
         "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
@@ -85,7 +85,7 @@ export const secondSectionTextIndia = {
       "<strong>Unlimited users</strong> - No per-seat costs as you grow",
       "<strong>Unlimited projects</strong> - No artificial limits",
       "<strong>Unlimited configurations</strong> - Scale without restrictions",
-      "<strong>Unlimited concurrent agents</strong> - Run as many builds simultaneously as your infrastructure supports",
+      "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
       "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
       "<strong>Perpetual build history</strong> - Complete audit trail forever",
       "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
@@ -140,11 +140,11 @@ export const secondSectionTextGlobal = {
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
-        "3 concurrent agents - Run 3 builds simultaneously",
+        "3 concurrent builds - Run 3 builds simultaneously",
         "Unlimited build agents - Connect as many machines as you want",
       ],
       listCard: {
-        title: "Additional concurrent capacity (per agent)",
+        title: "Additional concurrent build slot",
         list: [
           { price: "$25/month" },
           { price: "$199/year ", saving: "(Save 34%)" },
@@ -157,7 +157,7 @@ export const secondSectionTextGlobal = {
         "30-day build history",
         "Up to 100 projects",
         "Up to 100 configurations",
-        "Community support",
+        "Standard Email support",
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
         "30-day grace period to test everything",
       ],
@@ -176,7 +176,7 @@ export const secondSectionTextGlobal = {
         "<strong>Unlimited users</strong> - No per-seat costs as you grow",
         "<strong>Unlimited projects</strong> - No artificial limits",
         "<strong>Unlimited configurations</strong> - Scale without restrictions",
-        "<strong>Unlimited concurrent agents</strong> - Run as many builds simultaneously as your infrastructure supports",
+        "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
         "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
         "<strong>Perpetual build history</strong> - Complete audit trail forever",
         "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
@@ -200,7 +200,7 @@ export const secondSectionTextGlobal = {
       "<strong>Unlimited users</strong> - No per-seat costs as you grow",
       "<strong>Unlimited projects</strong> - No artificial limits",
       "<strong>Unlimited configurations</strong> - Scale without restrictions",
-      "<strong>Unlimited concurrent agents</strong> - Run as many builds simultaneously as your infrastructure supports",
+      "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
       "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
       "<strong>Perpetual build history</strong> - Complete audit trail forever",
       "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
@@ -267,7 +267,7 @@ export const pricingFourthText = {
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
-      desc: "Free up to 3 concurrent agents. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations.",
+      desc: "Free up to 3 concurrent builds. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations.",
       link: "Learn more →",
       id: "what-is-concurrent-agent"
     },
@@ -395,13 +395,13 @@ export const pricingSeventhText = {
       {
         question: "Is the free Solo Edition really free forever?",
         answer:
-          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent agents forever.",
+          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent builds forever.",
       },
       {
         question:
-          "What's the difference between build agents and concurrent agents?",
+          "What's the difference between build agents and concurrent builds?",
         answer:
-          "Build agents = machines you connect (unlimited). Concurrent agents = builds running at the same time (3 in Solo, unlimited in Shogun).",
+          "Build agents = machines you connect (unlimited). Concurrent builds = builds running at the same time (3 in Solo, unlimited in Shogun).",
       },
       {
         question: "Can I try before buying?",
@@ -428,13 +428,13 @@ export const pricingSeventhText = {
       {
         question: "Is the free Solo Edition really free forever?",
         answer:
-          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent agents forever.",
+          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent builds forever.",
       },
       {
         question:
-          "What's the difference between build agents and concurrent agents?",
+          "What's the difference between build agents and concurrent builds?",
         answer:
-          "Build agents = machines you connect (unlimited). Concurrent agents = builds running at the same time (3 in Solo, unlimited in Shogun).",
+          "Build agents = machines you connect (unlimited). Concurrent builds = builds running at the same time (3 in Solo, unlimited in Shogun).",
       },
       {
         question: "Can I try before buying?",

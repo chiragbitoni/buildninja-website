@@ -8,7 +8,7 @@ export const heroSectionText = {
   subtitle2: "Start free up to 3 agents • $199/month unlimited as you scale",
   subtitle3: "Deploy in minutes. Ship features, not infrastructure.",
   primaryButton: "Install BuildNinja Free",
-  secondaryButton: "See the 5-Minute Demo",
+  secondaryButton: "See the 3-Minute Demo",
 };
 
 export const secondSectionText = {
@@ -323,7 +323,7 @@ export const ninthSectionText = {
   subtitle2: "Get your CI/CD build process running in under 5 minutes.",
   subtitle3: "Free for 3 agents, $199/month unlimited as you scale.",
   primaryButton: "Try BuildNinja Free",
-  secondaryButton: "See the 5-Minute Demo",
+  secondaryButton: "See the 3-Minute Demo",
   secondTitle: "Risk-Free Guarantee",
   list: [
     "30-day free trial License, no credit card required",
