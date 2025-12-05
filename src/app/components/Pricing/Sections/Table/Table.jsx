@@ -210,7 +210,7 @@ export default function Table() {
         },
         {
           feature: "Support",
-          solo: "Community",
+          solo: "Standard Email Support",
           shogun: <TickText>Priority business hours</TickText>,
         },
         {
