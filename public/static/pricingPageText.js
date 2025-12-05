@@ -25,16 +25,16 @@ export const secondSectionTextIndia = {
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
-        "3 concurrent builds - Run 3 builds simultaneously",
         "Unlimited build agents - Connect as many machines as you want",
+        "Execute up to 3 builds concurrently - Run 3 builds at the same time",
       ],
       listCard: {
         title: "Additional concurrent build slot",
         list: [
           { price: "₹2,199/month" },
-          { price: "₹16,999/year ", saving: "(Save 36%)" },
-          { price: "₹25,999/2-year ", saving: "(Save 51%)" },
-          { price: "$34,999/3-year ", saving: "(Save 56%)" },
+          { price: "₹16,999/year ", saving: "(SAVE 36%)" },
+          { price: "₹25,999/2-year ", saving: "(SAVE 51%)" },
+          { price: "$34,999/3-year ", saving: "(SAVE 56%)" },
         ],
       },
       list2: [
@@ -44,9 +44,8 @@ export const secondSectionTextIndia = {
         "Up to 100 configurations",
         "Standard Email support",
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
-        "30-day grace period to test everything",
       ],
-      buttonText: "Download Free",
+      buttonText: "Get Your Free Key Now",
       buttonText2: "Start with Trial License",
       ctaText: "No strings attached. Solo Edition stays free forever.",
     },
@@ -78,7 +77,7 @@ export const secondSectionTextIndia = {
     edition: "Shogun Edition",
     price: "₹1,39,999/year",
     description: "(₹11,666/month equivalent)",
-    savings: "Save 33%",
+    savings: "SAVE 33%",
     ideal:
       "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
     list: [
@@ -102,7 +101,7 @@ export const secondSectionTextIndia = {
       edition: "Shogun Edition - 2-Year Upfront",
       price: "₹2,19,999 ",
       description: "(₹9,166/month equivalent)",
-      savings: "Save 48%",
+      savings: "SAVE 48%",
       buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
@@ -111,7 +110,7 @@ export const secondSectionTextIndia = {
       edition: "Shogun Edition - 3-Year Upfront",
       price: "₹2,79,999",
       description: "(₹7,777/month) equivalent",
-      savings: "Save 56%",
+      savings: "SAVE 56%",
       buttonText: "Start with Trial License",
       ctaText: "No credit card. No commitment.",
     },
@@ -140,16 +139,16 @@ export const secondSectionTextGlobal = {
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
       list1: [
         "Up to 10 users",
-        "3 concurrent builds - Run 3 builds simultaneously",
         "Unlimited build agents - Connect as many machines as you want",
+        "Execute up to 3 builds concurrently - Run 3 builds at the same time",
       ],
       listCard: {
         title: "Additional concurrent build slot",
         list: [
           { price: "$25/month" },
-          { price: "$199/year ", saving: "(Save 34%)" },
-          { price: "$299/2-year ", saving: "(Save 50%)" },
-          { price: "$399/3-year ", saving: "(Save 56%)" },
+          { price: "$199/year ", saving: "(SAVE 34%)" },
+          { price: "$299/2-year ", saving: "(SAVE 50%)" },
+          { price: "$399/3-year ", saving: "(SAVE 56%)" },
         ],
       },
       list2: [
@@ -161,7 +160,7 @@ export const secondSectionTextGlobal = {
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
       
       ],
-      buttonText: "Download Free",
+      buttonText: "Get Your Free Key Now",
       buttonText2: "Start with Trial License",
       ctaText: "No strings attached. Solo Edition stays free forever.",
     },
@@ -457,7 +456,7 @@ export const pricingEighthText = {
   solo: {
     title: "Solo Edition",
     description: "No strings attached. Solo Edition stays free forever.",
-    buttonText: "Get your Free key now",
+    buttonText: "Get Your Free Key Now",
   },
   shogun: {
     title: "Shogun Edition",

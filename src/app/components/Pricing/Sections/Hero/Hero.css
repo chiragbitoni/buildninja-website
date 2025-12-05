@@ -336,7 +336,7 @@
 }
 
 .pricingMonthlyFreeCardButton:nth-child(1) {
-    background-color: #515151;
+    background-color: #FF4172;
     color: #ffffff;
     border: 1px solid #0000001A
 }
@@ -362,8 +362,8 @@
 }
 
 .pricingMonthlyFreeCardButton:hover {
-    background-color: #ffffff;
-    color: #000;
+    background-color: #ff5b88;
+    /* color: #000; */
 }
 
 .pricingMonthlyShogunCardButton:hover {
