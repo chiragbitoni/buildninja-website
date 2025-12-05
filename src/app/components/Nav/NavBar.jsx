@@ -70,8 +70,8 @@ export default function Navbar() {
           <Image
             src="/resources/BuildNinjaDark.png"
             alt="BuildNinja Logo"
-            width={120}
-            height={40}
+            width={178}
+            height={48.5}
             className="logo-image"
           />
         </div>
