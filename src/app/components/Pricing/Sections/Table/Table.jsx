@@ -218,7 +218,7 @@ export default function Table() {
           solo: "Self-service guides",
           shogun: (
             <TickText>
-              Free for 10 projects (annual/2-year/3-year)
+              Free for 3 projects (annual/2-year/3-year)
             </TickText>
           ),
         },
@@ -226,13 +226,8 @@ export default function Table() {
           feature: "Professional Services",
           solo: "–",
           shogun: (
-            <TickText>20 hours/year (annual/2-year/3-year)</TickText>
+            <TickText>4 hours/year (annual/2-year/3-year)</TickText>
           ),
-        },
-        {
-          feature: "License Buyout Credit",
-          solo: "–",
-          shogun: <TickText>25% credit (annual/2-year/3-year)</TickText>,
         },
         { feature: "Grace Period", solo: "7 days", shogun: "7 days" },
       ],
