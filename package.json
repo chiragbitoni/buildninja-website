@@ -20,6 +20,7 @@
     "lucide-react": "^0.555.0",
     "marked": "^17.0.1",
     "next": "15.5.4",
+    "posthog-js": "^1.302.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-google-recaptcha": "^3.1.0",

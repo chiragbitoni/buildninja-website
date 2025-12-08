@@ -7,6 +7,8 @@ import Footer from "./components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
 import GoogleAnalytics from "./components/Analytics/GA";
 import YouTubePopup from "./components/YouTubePopup/YouTubePopup";
+import PHProviderWrapper from "./components/Analytics/Providers";
+import PostHogPageView from "./components/Analytics/posthog-pageview";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,16 +37,19 @@ export default function RootLayout({ children }) {
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
-        <ReduxProvider>
-          <ClientAuthProvider>
-            <Navbar />
-            <main className="pt-16">
-              <YouTubePopup />
-              {children}
-            </main>
-            <Footer />
-          </ClientAuthProvider>
-        </ReduxProvider>
+        <PHProviderWrapper>
+          <PostHogPageView />
+          <ReduxProvider>
+            <ClientAuthProvider>
+              <Navbar />
+              <main className="pt-16">
+                <YouTubePopup />
+                {children}
+              </main>
+              <Footer />
+            </ClientAuthProvider>
+          </ReduxProvider>
+        </PHProviderWrapper>
       </body>
     </html>
   );
