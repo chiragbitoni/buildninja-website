@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import AvatarMenu from "./AvatarMenu";
 import { fetchPlansFromAPI } from "../../../services/plans/plans";
+import Banner from "./Banner/Banner";
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -113,6 +114,7 @@ export default function Navbar() {
         </ul>
         <AvatarMenu />
       </div>
+      <Banner />
     </nav>
   );
 }

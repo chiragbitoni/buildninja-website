@@ -1,0 +1,21 @@
+.navbarBannerSection {
+    background: #019715;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding: 5px 20px;
+    /* white-space: nowrap; */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbarBannerSection {
+        font-size: 20px;
+    }
+}
+
+/* Desktop: Minimum width 1024px */
+@media (min-width: 1024px) {
+    .navbarBannerSection {
+        font-size: 16px;
+    }
+}
