@@ -93,5 +93,6 @@ export const paths = {
     connectCode: "/resources/icons/connectCode.svg",
     configuration: "/resources/icons/configuration.svg",
     cardPricingShield: "/resources/icons/cardPricingShield.svg",
+    license: "/resources/icons/licenses.svg",
   },
 };

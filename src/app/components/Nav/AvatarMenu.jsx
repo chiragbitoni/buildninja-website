@@ -8,6 +8,8 @@ import { logoutUser } from "@/redux/slice/authSlice";
 import { useRouter } from "next/navigation";
 import { logoutUserAPI } from "@/services/auth/logout";
 import { usePathname } from "next/navigation";
+import { User, CreditCard, Package, LucideLogOut } from 'lucide-react';
+import { paths } from "../../../../public/static/paths";
 
 export default function AvatarMenu() {
   const dispatch = useDispatch();
@@ -107,17 +109,17 @@ export default function AvatarMenu() {
               setMenuOpen(false);
             }}
           >
-            My Profile
+            <User />My Profile
           </div>
 
           <div
-            className="am-dropdown-item"
+            className="am-dropdown-item am-dropdown-item-bottom-border"
             onClick={() => {
-              window.location.href =`${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/profile?tab=subscription`;
+              window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/profile?tab=subscription`;
               setMenuOpen(false);
             }}
           >
-            My Subscriptions
+            <CreditCard />My Subscriptions
           </div>
 
           <div
@@ -127,21 +129,21 @@ export default function AvatarMenu() {
               setMenuOpen(false);
             }}
           >
-            My Orders
+            <Package />My Orders
           </div>
 
           <div
-            className="am-dropdown-item"
+            className="am-dropdown-item am-dropdown-item-bottom-border"
             onClick={() => {
               window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/orders?tab=licenses`;
               setMenuOpen(false);
             }}
           >
-            My Licenses
+            <img src={paths.icons.license}></img>My Licenses
           </div>
 
           <div className="am-dropdown-item am-logout" onClick={handleLogout}>
-            Logout
+            <LucideLogOut /> Logout
           </div>
         </div>
       )}
