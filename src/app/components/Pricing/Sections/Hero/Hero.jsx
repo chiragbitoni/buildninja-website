@@ -145,6 +145,15 @@ export default function PricingHero() {
                 <p className="pricingMonthlySoloIdeal">{secondSectionText.monthCards.soloEditionCard.ideal}</p>
             )}
 
+            {/* Additional concurrent capacity */}
+            {secondSectionText.monthCards.soloEditionCard.listCard && (
+                <div className="pricingMonthlyFreeListCard">
+                    <p>{secondSectionText.monthCards.soloEditionCard.listCard.title}</p>
+                    {secondSectionText.monthCards.soloEditionCard.listCard.list.map((item, index) => (
+                        <li key={index}>{item.price}<span className="pricingHeroYearButtonSavings">{item.saving}</span></li>
+                    ))}
+                </div>
+            )}
             {/* List 1 */}
             {secondSectionText.monthCards.soloEditionCard.list1 && (
                 <div className="pricingMonthlyFreeCardList">
@@ -157,15 +166,6 @@ export default function PricingHero() {
                 </div>
             )}
 
-            {/* Additional concurrent capacity */}
-            {secondSectionText.monthCards.soloEditionCard.listCard && (
-                <div className="pricingMonthlyFreeListCard">
-                    <p>{secondSectionText.monthCards.soloEditionCard.listCard.title}</p>
-                    {secondSectionText.monthCards.soloEditionCard.listCard.list.map((item, index) => (
-                        <li key={index}>{item.price}<span className="pricingHeroYearButtonSavings">{item.saving}</span></li>
-                    ))}
-                </div>
-            )}
 
             {/* List 2 */}
             {secondSectionText.monthCards.soloEditionCard.list2 && (

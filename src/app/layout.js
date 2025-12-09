@@ -9,6 +9,8 @@ import GoogleAnalytics from "./components/Analytics/GA";
 import YouTubePopup from "./components/YouTubePopup/YouTubePopup";
 import PHProviderWrapper from "./components/Analytics/Providers";
 import PostHogPageView from "./components/Analytics/posthog-pageview";
+import { Suspense } from "react";
+import PosthogWrapper from "./components/Analytics/PostHogWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +40,7 @@ export default function RootLayout({ children }) {
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
         <PHProviderWrapper>
-          <PostHogPageView />
+            <PosthogWrapper />
           <ReduxProvider>
             <ClientAuthProvider>
               <Navbar />

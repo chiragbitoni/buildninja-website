@@ -45,7 +45,7 @@ export const secondSectionTextIndia = {
         "Standard Email support",
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
       ],
-      buttonText: "Get Your Free Key Now",
+      buttonText: "Get Your Free Key",
       buttonText2: "Start with Trial License",
       ctaText: "No strings attached. Solo Edition stays free forever.",
     },
@@ -160,7 +160,7 @@ export const secondSectionTextGlobal = {
         "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
       
       ],
-      buttonText: "Get Your Free Key Now",
+      buttonText: "Get Your Free Key",
       buttonText2: "Start with Trial License",
       ctaText: "No strings attached. Solo Edition stays free forever.",
     },
@@ -456,7 +456,7 @@ export const pricingEighthText = {
   solo: {
     title: "Solo Edition",
     description: "No strings attached. Solo Edition stays free forever.",
-    buttonText: "Get Your Free Key Now",
+    buttonText: "Get Your Free Key",
   },
   shogun: {
     title: "Shogun Edition",
