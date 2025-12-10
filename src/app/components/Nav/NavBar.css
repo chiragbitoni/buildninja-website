@@ -46,6 +46,8 @@
 
 .logo-image {
   object-fit: contain;
+  height: 48.5px !important;
+  width: 178px !important;
 }
 
 /* ==== Links ==== */
@@ -175,11 +177,6 @@ ul.navbar-links {
 
 .logo-image {
   transition: opacity 0.3s ease;
-}
-
-.logo-image:hover {
-  content: url("/resources/BuildNinjaPink.png");
-  /* swap image */
 }
 
 .navbar-container:nth-child(2) {

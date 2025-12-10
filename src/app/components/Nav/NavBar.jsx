@@ -10,14 +10,9 @@ export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [isHover, setHover] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const storedPlans = localStorage.getItem("plans");
@@ -69,11 +64,13 @@ export default function Navbar() {
         {/* Logo */}
         <div className="navbar-logo" onClick={() => handleNavigation("/")}>
           <Image
-            src="/resources/BuildNinjaDark.png"
+            src={isHover ? "/resources/BuildNinjaPink.png" : "/resources/BuildNinjaDark.png"}
             alt="BuildNinja Logo"
             width={178}
             height={48.5}
             className="logo-image"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
           />
         </div>
         <div
@@ -87,7 +84,7 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <ul className={`navbar-links ${menuOpen ? "menu-active" : ""}`}>
-          {mounted &&
+          {
             navItems.map((item) => (
               <li
                 key={item.name}
