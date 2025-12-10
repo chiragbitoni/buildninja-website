@@ -37,9 +37,14 @@ export async function sendSupportEmail({ name, email, subject, message }) {
   </div>
 `;
 
+  const rawCCs = [process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID, email];
+
+  // Filter out null, undefined, empty strings, and whitespace-only strings
+  const toCCs = rawCCs.filter((cc) => cc && cc.trim() !== "");
+
   const payload = {
     toEmails: [process.env.NEXT_PUBLIC_SUPPORT_EMAIL_ID],
-    toCCs: [process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID, email],
+    toCCs,
     subject,
     htmlContent,
   };
