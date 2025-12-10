@@ -308,12 +308,14 @@
     align-items: flex-start;
     list-style-type: none;
     gap: 8px;
+    align-items: top;
 }
 
 .pricingAnnualFreeCardListItem img {
     width: 16px;
+    margin-top: 7px;
     height: auto;
-    align-self: center;
+    /* align-self: center; */
 }
 
 /* ===============================

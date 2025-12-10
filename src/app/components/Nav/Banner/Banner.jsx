@@ -9,7 +9,7 @@ export default function Banner() {
 
     return (
         <section className="navbarBannerSection">
-            <div dangerouslySetInnerHTML={{ __html: "<strong>BuildNinja 1.0</strong> Now Available | <strong>Unlimited</strong> Agents | <strong>Free</strong> up to 3 concurrent builds" }}>
+            <div dangerouslySetInnerHTML={{ __html: "<strong>BuildNinja 1.0.0</strong> Now Available | <strong>Unlimited</strong> Agents | <strong>Free</strong> up to 3 concurrent builds" }}>
             </div>
         </section>
     );
