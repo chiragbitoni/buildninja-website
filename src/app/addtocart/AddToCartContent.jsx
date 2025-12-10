@@ -21,13 +21,13 @@ import { getCurrency, sortBy } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { env } from "@/lib/config/env";
 import { useQueryParams } from "@/hooks/useQueryParams";
+import { shogunFeatures, soloFeatures } from "../../../public/static/addToCartPageText";
 export default function AddToCartContent() {
   const searchParams = useQueryParams();
   const planId = searchParams?.get("planid");
 
   const { user } = {}; //useAuth();
   const router = useRouter();
-
   const [value, setValue] = useState([3]);
   const [ticks, setTicks] = useState([]);
 
@@ -40,19 +40,19 @@ export default function AddToCartContent() {
   const [planFeatures, setPlanFeatures] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [gst, setGst] = useState(0);
-
+  const [staticFeature, setStaticFeature] = useState([]);
   const count = value[0];
   const extra = count - baseFree;
 
   /* ---------------- Helper Functions ---------------- */
 
   const getMonths = (cycle) =>
-    ({
-      Monthly: 1,
-      Yearly: 12,
-      "2-Years": 24,
-      "3-Years": 36,
-    }[cycle] ?? 1);
+  ({
+    Monthly: 1,
+    Yearly: 12,
+    "2-Years": 24,
+    "3-Years": 36,
+  }[cycle] ?? 1);
 
   const getPrice = (plan, agents = 1) =>
     plan && plan.name === "Solo" ? plan.addons[0].price * agents : plan?.price;
@@ -97,10 +97,9 @@ export default function AddToCartContent() {
     const features = [];
 
     features.push(
-      `${
-        plan.allowedUsers !== 999999
-          ? "Up to " + plan.allowedUsers
-          : "Unlimited"
+      `${plan.allowedUsers !== 999999
+        ? "Up to " + plan.allowedUsers
+        : "Unlimited"
       } users`
     );
 
@@ -135,7 +134,7 @@ export default function AddToCartContent() {
       } else {
         const [userSubs, fetchedPlans] = await Promise.all([
           user &&
-            apiService.getUserSubscriptions(user.userId, Source.BuildNinja),
+          apiService.getUserSubscriptions(user.userId, Source.BuildNinja),
           apiService.getSubscriptionPlans(Source.BuildNinja),
         ]);
 
@@ -155,7 +154,13 @@ export default function AddToCartContent() {
         (x) => x.featureName.trim().toLowerCase() === "concurrent builds"
       )?.value;
 
-      if (selected.name === "Solo") setBaseFree(Number(base));
+      if (selected.name === "Solo") {
+        setBaseFree(Number(base));
+        setStaticFeature(soloFeatures);
+      }
+      else{
+        setStaticFeature(shogunFeatures);
+      }
       setTicks(
         Array.from(
           { length: 12 - Number(base) + 1 },
@@ -190,8 +195,8 @@ export default function AddToCartContent() {
       setLoadingSubscriptions(false);
     }
   };
-
   useEffect(() => {
+    // SET feature list statically
     loadSubscriptionData();
   }, [planId]);
   /* ---------------- Submit Button ------------ */
@@ -222,16 +227,15 @@ export default function AddToCartContent() {
       </p>
     </div>
   );
-
   const FeatureList = () => (
     <ul className="space-y-2">
-      {planFeatures.map((item, i) => (
+      {staticFeature.map((item, i) => (
         <li key={i} className="flex items-start space-x-3">
           <Check
             className="text-green-600 dark:text-green-500 mt-1"
             size={18}
           />
-          <span>{item}</span>
+          <span dangerouslySetInnerHTML={{__html:item}}></span>
         </li>
       ))}
     </ul>
@@ -256,11 +260,10 @@ export default function AddToCartContent() {
           }}
           className={`cursor-pointer py-1 px-2 my-1 bg-white border text-gray-900 dark:text-gray-100 
                 dark:bg-[#0f0f0f]
-                ${
-                  selected
-                    ? "border-[#D4335C]/80 dark:border-[#D4335C]/80"
-                    : "border-gray-300 dark:border-gray-700"
-                }`}
+                ${selected
+              ? "border-[#D4335C]/80 dark:border-[#D4335C]/80"
+              : "border-gray-300 dark:border-gray-700"
+            }`}
         >
           <div className="flex justify-between px-4 py-2 items-center">
             <label className="flex items-center gap-2 cursor-pointer">
@@ -268,10 +271,9 @@ export default function AddToCartContent() {
               {plan.billingCycle}
               {i == 1 && <>&nbsp;&nbsp;</>}
               <span
-                className={`px-2 pb-0.5 rounded-full text-sm ${
-                  getSavings(plan) !== 0 &&
+                className={`px-2 pb-0.5 rounded-full text-sm ${getSavings(plan) !== 0 &&
                   "text-green-700 bg-green-100 dark:text-green-600 dark:bg-[#22E1001A]"
-                }`}
+                  }`}
               >
                 {getSavings(plan) !== 0 &&
                   `Save ${Math.round(getSavings(plan))}%`}
@@ -477,7 +479,7 @@ export default function AddToCartContent() {
                         {getCurrency(
                           currentPlan.currency,
                           getPrice(currentPlan) /
-                            getMonths(currentPlan.billingCycle)
+                          getMonths(currentPlan.billingCycle)
                         )}
                         /month equivalent{" "}
                         {getSavings(currentPlan) !== 0 && (
@@ -501,15 +503,15 @@ export default function AddToCartContent() {
                   {/* SOLO Slider */}
                   {currentPlan?.name === "Solo" && (
                     <>
-                      
-                        <Slider
-                          className="slider"
-                          value={value}
-                          max={maxVal}
-                          min={baseFree}
-                          step={1}
-                          onValueChange={setValue}
-                        />
+
+                      <Slider
+                        className="slider"
+                        value={value}
+                        max={maxVal}
+                        min={baseFree}
+                        step={1}
+                        onValueChange={setValue}
+                      />
 
                       <div className="flex justify-between text-xs text-white/80 mt-2">
                         <span>{baseFree}</span>
@@ -555,9 +557,8 @@ export default function AddToCartContent() {
                         Unlock unlimited agents with the{" "}
                         <a
                           className="text-[#D4335C]"
-                          href={`/addtocart?planid=${
-                            getEquivalentShogun(currentPlan)?.id
-                          }`}
+                          href={`/addtocart?planid=${getEquivalentShogun(currentPlan)?.id
+                            }`}
                         >
                           Shogun Edition
                         </a>{" "}

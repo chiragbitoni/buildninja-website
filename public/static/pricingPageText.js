@@ -157,7 +157,7 @@ export const secondSectionTextGlobal = {
         "Up to 100 projects",
         "Up to 100 configurations",
         "Standard Email support",
-        "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
+        "Any 1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
       
       ],
       buttonText: "Get Your Free Key",
