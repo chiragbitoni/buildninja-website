@@ -1,6 +1,8 @@
 /* Base (Mobile-first) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .ninthSection {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,23 +32,29 @@
 
 /* Headings */
 .ninthTitle {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    font-style: Semi Bold;
     color: #FFFFFF;
     text-align: center;
-    font-size: 7vw;
+    font-size: 26px;
     font-weight: 600;
     margin: 5vw 0 3vw 0;
     line-height: 1.3;
+
 }
 
 .ninthSubTitle {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     color: #FFFFFF;
     text-align: center;
-    font-size: 4.5vw;
+    font-size: 18px;
     font-weight: 400;
     margin: 0 0 8vw 0;
+
 }
+
 
 /* Button group */
 .ninth-inner-grid {
@@ -58,9 +66,10 @@
 
 .ninthPrimaryBtn,
 .ninthDemoBtn {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-weight: 600;
-    font-size: 4.5vw;
+    font-size: 16px;
     padding: 2.5vw 9vw;
     border-radius: 8vw;
     border: none;
@@ -94,7 +103,8 @@
     justify-content: center;
     gap: 2vw;
     color: #FFFFFF;
-    font-family: 'Inter', Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     margin: 8vw 0 4vw 0;
 }
 
@@ -104,7 +114,7 @@
 }
 
 .ninthSecondTitle {
-    font-size: 5vw;
+    font-size: 20px;
     font-weight: 600;
     text-align: center;
 }
@@ -131,9 +141,9 @@
 
 .ninthList {
     list-style-type: none;
-    font-size: 3.5vw;
+    font-size: 16px;
     color: #FFFFFF;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -146,12 +156,12 @@
     }
 
     .ninthTitle {
-        font-size: 4.5vw;
+        font-size: 32px;
         margin: 3vw 0 2vw 0;
     }
 
     .ninthSubTitle {
-        font-size: 2.8vw;
+        font-size: 24px;
         margin-bottom: 5vw;
     }
 
@@ -163,7 +173,7 @@
 
     .ninthPrimaryBtn,
     .ninthDemoBtn {
-        font-size: 2vw;
+        font-size: 17px;
         padding: 1.2vw 4vw;
         border-radius: 4vw;
     }
@@ -179,7 +189,7 @@
     }
 
     .ninthSecondTitle {
-        font-size: 3vw;
+        font-size: 24px;
     }
 
     .ninthListGrid {
@@ -200,7 +210,7 @@
     }
 
     .ninthList {
-        font-size: 1.9vw;
+        font-size: 18px;
     }
 }
 
@@ -213,13 +223,14 @@
     }
 
     .ninthTitle {
-        font-size: 44px;
-        margin: 2vw 0;
+        font-size: 28px;
+        margin: 0vw 0 10px 0;
+
     }
 
     .ninthSubTitle {
-        font-size: 20px;
-        margin-bottom: 3vw;
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 
     .ninth-inner-grid {
@@ -230,33 +241,33 @@
 
     .ninthPrimaryBtn,
     .ninthDemoBtn {
-        font-size: 18px;
-        padding: 0.9vw 3vw;
+        font-size: 20px;
+        padding: 10px 40px;
         border-radius: 2vw;
     }
 
     .ninthSecondTitleContainer {
-        margin: 3vw 0 2vw 0;
+        margin: 30px 0 30px 0;
         gap: 1vw;
     }
 
     .ninthSecondTitleIcon {
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
     }
 
     .ninthSecondTitle {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .ninthListGrid {
-        flex-direction: row;
-        gap: 3vw;
+        width: 900px;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
         gap: 2vw;
-        margin: 0 8vw;
     }
 
     .ninthListContainer {
@@ -271,6 +282,6 @@
     }
 
     .ninthList {
-        font-size: 18px;
+        font-size: 16px;
     }
 }

@@ -4,6 +4,7 @@ export const heroSectionText = {
   title: "Powerful Features to Supercharge Your CI/CD",
   subtitle:
     "From automated builds to enterprise-grade security, everything you need to build, test, and deploy with confidence.",
+    
 };
 
 export const secondSectionText = {
@@ -41,7 +42,7 @@ export const secondSectionText = {
     {
       icon: paths.icons.crossPlatformWhite,
       title: "Cross-Platform Configuration",
-      description: "Seamless setup across Windows, Linux, and macOS.",
+      description: "Seamless setup across Windows, Linux, and .",
     },
     {
       icon: paths.icons.usersWhite,
@@ -74,12 +75,6 @@ export const secondSectionText = {
         "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
     },
     {
-      icon: paths.icons.puzzlePieceWhite,
-      title: "Plugin & Integration Support",
-      description:
-        "Works with third-party tools like Docker, Kubernetes, and more.",
-    },
-    {
       icon: paths.icons.shield,
       title: "Single Sign-On (SSO) Support",
       description:
@@ -91,6 +86,6 @@ export const secondSectionText = {
 export const thirdSectionText = {
   title: "Ready to streamline your deployments?",
   description: "Start your free trial and experience CI/CD that just works.",
-  button1: "Start Free Trial",
+  button1: "Try BuildNinja Free",
   button2: "Request a Demo",
 };

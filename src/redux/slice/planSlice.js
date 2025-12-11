@@ -1,19 +1,22 @@
+// src/redux/slices/authSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-const planSlice = createSlice({
-  name: "plan",
-  initialState: {
-    isAnnual: false, // false = Monthly, true = Annual
-  },
+const initialState = {
+  user: null, // null means not logged in
+};
+
+const authSlice = createSlice({
+  name: "auth",
+  initialState,
   reducers: {
-    togglePlan: (state) => {
-      state.isAnnual = !state.isAnnual;
+    login(state, action) {
+      state.user = action.payload; // e.g., { name: "Chirag" }
     },
-    setPlan: (state, action) => {
-      state.isAnnual = action.payload;
+    logout(state) {
+      state.user = null;
     },
   },
 });
 
-export const { togglePlan, setPlan } = planSlice.actions;
-export default planSlice.reducer;
+export const { login, logout } = authSlice.actions;
+export default authSlice.reducer;

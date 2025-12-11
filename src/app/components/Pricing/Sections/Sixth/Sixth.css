@@ -1,155 +1,164 @@
-/* ===========================
-   1️⃣ Base (Mobile-first)
-=========================== */
-.sixthPricingSection {
-  width: 100%;
-  background: #1E1E1E;
-  padding: 10vw 4vw;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.sixthPricingSection::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.sixthPricingContent {
-  position: relative;
-  z-index: 2;
-  max-width: 100%;
-  margin: 0 auto;
+/* ========================================
+   BASE STYLES (Mobile-first)
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+.pricingSixthSection {
+  background-color: #121212;
+  color: #fff;
   text-align: center;
+  padding: 40px 20px;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* ===== Title ===== */
-.sixthPricingTitle {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(24px, 7vw, 44px);
+.pricingSixthBadge {
+  background-color: #FF4172;
+  color: white;
   font-weight: 600;
-  margin-top: 2vw;
-  margin-bottom: 8vw;
-  line-height: 1.2;
-  color: #FFFFFF;
+  border-radius: 25px;
+  padding: 8px 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
 }
 
-/* ===== Grid Layout ===== */
-.sixth-pricing-simple-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(16px, 4vw, 32px);
-  justify-content: center;
+.pricingSixthHeadline {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+/* Cards Container */
+.pricingSixthCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
   margin: 0 auto;
-  max-width: 1200px;
 }
 
-/* ===== Card ===== */
-.sixth-pricing-simple-box {
-  background-color: #131212;
-  border-radius: 0.75rem;
-  padding: clamp(16px, 3vw, 24px);
+/* Individual Card */
+.pricingSixthCard {
+  background-color: #1b1b1b;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Align content to top */
+  gap: 12px;
+  box-sizing: border-box;
+  min-height: 140px;
   text-align: center;
-  color: #ffffff;
-  border: 1px solid #333;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sixth-pricing-simple-box:hover {
-  transform: translateY(-4px);
-  background-color: #181818;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* ===== Icon ===== */
-.sixth-pricing-simple-box-icon {
+/* Tick Icon */
+.pricingSixthTick {
+  width: 45px;
+  height: 45px;
   display: block;
-  margin: clamp(12px, 2vw, 24px) auto clamp(12px, 2vw, 20px);
-  width: clamp(40px, 6vw, 64px);
-  height: clamp(40px, 6vw, 64px);
-  object-fit: contain;
+  margin-bottom: 10px;
 }
 
-/* ===== Heading ===== */
-.sixth-pricing-simple-box-heading {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(18px, 1.6vw, 24px);
-  font-weight: 600;
-  color: #ffffff;
-  margin: clamp(8px, 1vw, 12px) clamp(16px, 3vw, 32px);
-  line-height: 1.3;
+/* Card text */
+.pricingSixthCard p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #dcdcdc;
 }
 
-/* ===== Text ===== */
-.sixth-pricing-simple-box-text {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(14px, 1.2vw, 16px);
-  color: #e0e0e0;
-  line-height: 1.6;
-  margin: 0 clamp(12px, 2vw, 24px) clamp(16px, 2vw, 20px);
-  text-align: center;
+/* Progress Container */
+.pricingSixthProgressContainer {
+  margin-top: 30px;
 }
 
-/* ===========================
-   2️⃣ Tablet (≥768px)
-=========================== */
+.pricingSixthSpots {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.pricingSixthSpots span {
+  color: #32cd32;
+  font-weight: 700;
+}
+
+.pricingSixthProgressBar {
+  width: 100%;
+  max-width: 300px;
+  height: 6px;
+  background: #333;
+  margin: 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pricingSixthProgressFill {
+  background-color: #32cd32;
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+.pricingSixthFooter {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 25px;
+  color: #d3d3d3;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   TABLET STYLES
+======================================== */
 @media (min-width: 768px) {
-  .sixthPricingSection {
-    padding: 6vw 4vw;
+  .pricingSixthHeadline {
+    font-size: 1.8rem;
   }
 
-  .sixthPricingContent {
-    max-width: 1000px;
+  .pricingSixthCards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
 
-  .sixthPricingTitle {
-    font-size: clamp(28px, 4.5vw, 40px);
-    margin-bottom: 5vw;
-  }
-
-  .sixth-pricing-simple-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(20px, 3vw, 40px);
+  .pricingSixthCard {
+    flex: 1 1 45%;
+    max-width: 280px;
+    min-height: 160px;
   }
 }
 
-/* ===========================
-   3️⃣ Desktop (≥1024px)
-=========================== */
+/* ========================================
+   DESKTOP STYLES
+======================================== */
 @media (min-width: 1024px) {
-  .sixthPricingSection {
-    padding: 4vw 2vw;
+  .pricingSixthSection {
+    padding: 80px 60px;
   }
 
-  .sixthPricingContent {
-    max-width: 1200px;
+  .pricingSixthHeadline {
+    font-size: 2rem;
   }
 
-  .sixthPricingTitle {
-    font-size: 44px;
-    margin-top: 0;
-    margin-bottom: 3vw;
+  .pricingSixthCards {
+    gap: 25px;
   }
 
-  .sixth-pricing-simple-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5vw;
+  .pricingSixthCard {
+    max-width: 240px;
+    padding: 40px 25px;
   }
 
-  .sixth-pricing-simple-box {
-    padding: 2vw;
-  }
-
-  .sixth-pricing-simple-box-heading {
-    font-size: 22px;
-  }
-
-  .sixth-pricing-simple-box-text {
-    font-size: 16px;
+  .pricingSixthFooter {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 30px auto 0;
   }
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* ========== 1️⃣ MOBILE (Base) ========== */
 .seventhSection {
   width: 100%;
@@ -28,22 +30,24 @@
 
 /* ===== Title & Intro ===== */
 .seventhTitle {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   font-weight: 600;
   margin: 0 0 5vw;
   line-height: 1.1;
   color: #FFFFFF;
-  font-size: clamp(26px, 7vw, 44px);
+  font-size: 26px;
 }
 
 .seventhIntro {
-  font-family: "Segoe UI", Arial, sans-serif;
-  max-width: 900px;
-  margin: 0 auto 8vw;
-  color: #FFFFFF;
+  /* max-width: 900px; */
+  margin: 0 auto 10vw;
+  color: #FFFFFFB2;
   font-weight: 400;
-  font-size: clamp(14px, 3.5vw, 17px);
-  line-height: 1.6;
+  font-size: 16px;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-style: Regular;
 }
 
 /* ===== Cards Grid ===== */
@@ -53,6 +57,7 @@
   gap: 18px;
   align-items: stretch;
   justify-items: center;
+  margin: 0 auto;
 }
 
 /* ===== Individual Card ===== */
@@ -75,7 +80,6 @@
 
 /* Hover Lift (for desktop) */
 .seventhCard:hover {
-  transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
 }
 
@@ -91,24 +95,30 @@
 
 /* ===== Value Text ===== */
 .cardValue {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(24px, 5vw, 36px);
+  font-size: 26px;
   font-weight: 700;
   color: #fff;
   margin-top: 6px;
+
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  font-weight: 700;
+  font-style: Bold;
+
 }
 
 /* ===== Label Text ===== */
 .cardLabel {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(12px, 2.8vw, 14px);
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 16px;
   color: #bfbfbf;
   margin-top: 4px;
 }
 
 /* ===== Highlighted (3rd) Card ===== */
 .seventhCard.highlight {
-  background: #D4335C;
+  background: #FF4172;
   color: #ffffff;
   box-shadow: 0 10px 30px rgba(212, 51, 92, 0.25);
 }
@@ -133,12 +143,12 @@
 /* ========== 3️⃣ TABLET ≥768px ========== */
 @media (min-width: 768px) {
   .seventhTitle {
-    font-size: clamp(30px, 4.5vw, 38px);
+    font-size: 32px;
   }
 
   .seventhIntro {
-    font-size: 15px;
-    margin-bottom: 5vw;
+    font-size: 18px;
+    margin-bottom: 3vw;
   }
 
   .seventhCards {
@@ -158,64 +168,47 @@
   }
 
   .cardValue {
-    font-size: clamp(26px, 3vw, 34px);
+    font-size: 32px;
   }
 
   .cardLabel {
-    font-size: 13px;
+    font-size: 18px;
   }
 }
 
 /* ========== 4️⃣ DESKTOP ≥1024px ========== */
 @media (min-width: 1024px) {
   .seventhSection {
-    padding: 6vw 8vw;
+    padding: 5vw 3vw;
   }
 
   .seventhCards {
+    justify-self: center;
+    width: 1100px;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2vw;
+    gap: 20px;
   }
 
   .seventhTitle {
-    font-size: 40px;
-    margin-bottom: 2vw;
+    font-size: 28px;
+    margin-bottom: 10px;
   }
 
   .seventhIntro {
     font-size: 16px;
+    margin-bottom: 40px;
   }
 
   .seventhCard {
-    padding: 30px 24px;
+    padding: 10px 10px 30px 10px;
     min-height: 150px;
   }
 
   .cardValue {
     font-size: 32px;
   }
-}
 
-/* ========== 5️⃣ LARGE SCREENS ≥1280px ========== */
-@media (min-width: 1280px) {
-  .seventhSection {
-    padding: 4vw 10vw;
-  }
-
-  .seventhTitle {
-    font-size: 44px;
-  }
-
-  .seventhIntro {
-    font-size: 17px;
-    max-width: 980px;
-  }
-
-  .seventhCard {
-    padding: 34px 26px;
-  }
-
-  .cardValue {
-    font-size: 36px;
+  .cardLabel {
+    font-size: 14px;
   }
 }

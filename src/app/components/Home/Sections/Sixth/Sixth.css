@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 /* ========== 1️⃣ MOBILE: Base (default) ========== */
 .sixthSection {
   display: block;
   width: 100%;
-  padding: 8vw 4vw;
+  padding: 10vw 4vw;
   background: #262626;
   box-sizing: border-box;
   position: relative;
@@ -26,13 +27,25 @@
 }
 
 .sixthTitle {
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(24px, 7vw, 44px);
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 26px;
   font-weight: 600;
   text-align: center;
   line-height: 1.2;
   color: #FFFFFF;
   margin-bottom: 7vw;
+}
+
+.sixthSubTitle {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 10vw;
 }
 
 .sixth-simple-grid {
@@ -44,14 +57,15 @@
 }
 
 .sixthSimple-list {
-  font-family: 'Inter', Arial, sans-serif;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
   list-style-type: none;
   padding: 0;
   margin: 0;
   color: #FFFFFF;
 }
 
-.sixthSimple-list li + li {
+.sixthSimple-list li+li {
   margin-top: 4vw;
 }
 
@@ -59,7 +73,7 @@
   display: flex;
   align-items: flex-start;
   gap: 3vw;
-  font-size: clamp(14px, 1.2vw, 18px);
+  font-size: 16px;
   line-height: 1.6;
   text-align: left;
   margin: 0;
@@ -70,6 +84,7 @@
   height: clamp(28px, 6vw, 38px);
   object-fit: contain;
   flex-shrink: 0;
+  align-self: center;
 }
 
 
@@ -84,7 +99,12 @@
   }
 
   .sixthTitle {
-    font-size: clamp(32px, 4.5vw, 40px);
+    font-size: 32px;
+    margin-bottom: 5vw;
+  }
+
+  .sixthSubTitle {
+    font-size: 24px;
     margin-bottom: 5vw;
   }
 
@@ -93,13 +113,13 @@
     gap: 3vw;
   }
 
-  .sixthSimple-list li + li {
+  .sixthSimple-list li+li {
     margin-top: 2vw;
   }
 
   .sixth-simple-box-text {
     gap: 1.5vw;
-    font-size: clamp(15px, 1.4vw, 18px);
+    font-size: 18px;
   }
 
   .sixth-simple-box-text img {
@@ -109,8 +129,9 @@
 }
 
 
+
 /* ========== 3️⃣ DESKTOP: ≥1280px ========== */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .sixthSection {
     padding: 4vw 6vw;
   }
@@ -120,21 +141,27 @@
   }
 
   .sixthTitle {
-    font-size: 44px;
+    font-size: 28px;
+    margin-bottom: 3vw;
+  }
+
+  .sixthSubTitle {
+    font-size: 14px;
     margin-bottom: 3vw;
   }
 
   .sixth-simple-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5vw;
+    gap: 60px;
+    width: 900px
   }
 
-  .sixthSimple-list li + li {
+  .sixthSimple-list li+li {
     margin-top: 1.2vw;
   }
 
   .sixth-simple-box-text {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.7;
   }
 

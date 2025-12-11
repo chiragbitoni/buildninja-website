@@ -1,132 +1,110 @@
-.thirdPricingFeatureSection {
-  background-color: #000000;
-  padding: 3vw 3vw;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* ========================================
+   BASE STYLES (Mobile-first)
+======================================== */
+.pricingThirdSection {
+    background-color: #121212;
+    color: white;
+    padding: 12vw 6vw;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Heading */
-.thirdPricingFeatureComparisionHeading {
-  text-align: center;
-  font-size: 2.7vw;
-  font-weight: 600;
-  color: #FFFFFF;
+.pricingThirdTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    align-items: center !important;
+    text-align: center;
 }
 
-/* ✅ Scroll wrapper */
-.thirdPricing-scrollWrapper {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  margin-top: 2vw;
-
-  display: flex;               /* ✅ ensure centering of table */
-  justify-content: center;     /* ✅ center the table horizontally */
+/* Cards container */
+.pricingThirdCardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0vw;
+    align-items: flex-start;
 }
 
-/* Scrollbar styling (optional) */
-.thirdPricing-scrollWrapper::-webkit-scrollbar {
-  height: 6px;
-}
-.thirdPricing-scrollWrapper::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 3px;
-}
-.thirdPricing-scrollWrapper::-webkit-scrollbar-track {
-  background: #1a1a1a;
+/* Card layout */
+.pricingThirdCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
 }
 
-/* Table */
-.thirdPricing-table {
-  width: 100%;                 /* ✅ takes full width when possible */
-  max-width: 1000px;           /* ✅ limit width for desktop */
-  min-width: 650px;            /* ✅ ensure scroll trigger on mobile */
-  border: 1px solid #d9d9d9;
-  border-radius: 10px;
-  border-collapse: separate;
-  border-spacing: 0;
-  color: #ffffff;
-  box-shadow: 0 1px 6px rgba(240, 221, 221, 0.637);
-  background-color: #262626;
-  font-size: 0.9vw;
+.pricingThirdIcon {
+    color: #1db954;
+    margin-top: 8px;
+    flex-shrink: 0;
 }
 
-.thirdPricing-table th,
-.thirdPricing-table td {
-  padding: 0.8vw 1.2vw;
-  text-align: center;
-  border-bottom: 1px solid #d9d9d9;
+.pricingThirdCardTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem 0;
 }
 
-.thirdPricing-table th:first-child,
-.thirdPricing-table td:first-child {
-  text-align: left;
-  font-weight: 500;
+.pricingThirdCardDesc {
+    font-size: 0.9rem;
+    color: #d0d0d0;
+    margin: 0;
 }
 
-.thirdPricing-table th {
-  background-color: #1a1a1a;
-  font-weight: 600;
+/* ========================================
+   TABLET
+======================================== */
+@media (min-width: 600px) {
+    .pricingThirdCardsContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4vw;
+    }
+
+    .pricingThirdCard {
+        width: 45%;
+    }
+
+    .pricingThirdTitle {
+        font-size: 1.75rem;
+        margin-bottom: 5vw;
+    }
 }
 
-.thirdPricing-table tr:last-child td {
-  border-bottom: none;
-}
+/* ========================================
+   DESKTOP
+======================================== */
+@media (min-width: 1024px) {
+    .pricingThirdSection {
+        padding: 6vw 10vw;
+    }
 
-/* Rounded corners */
-.thirdPricing-table th:first-child {
-  border-top-left-radius: 10px;
-}
-.thirdPricing-table th:last-child {
-  border-top-right-radius: 10px;
-}
-.thirdPricing-table tr:last-child td:first-child {
-  border-bottom-left-radius: 10px;
-}
-.thirdPricing-table tr:last-child td:last-child {
-  border-bottom-right-radius: 10px;
-}
+    .pricingThirdCardsContainer {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 10px;
+    }
 
-/* 🔹 Tablet (768–1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .thirdPricingFeatureComparisionHeading {
-    font-size: 3.5vw;
-  }
+    .pricingThirdCard {
+        width: 300px;
+        flex-direction: row;
+    }
 
-  .thirdPricing-scrollWrapper {
-    justify-content: center;   /* ✅ still centered */
-    padding: 0 3vw;
-  }
+    .pricingThirdCardTitle {
+        font-size: 16px;
+    }
 
-  .thirdPricing-table {
-    width: 90%;                /* ✅ fills tablet width neatly */
-    min-width: unset;          /* allow natural sizing */
-    font-size: 1.4vw;
-  }
+    .pricingThirdCardDesc {
+        font-size: 0.95rem;
+    }
 
-  .thirdPricing-table th,
-  .thirdPricing-table td {
-    padding: 2vw 2.5vw;
-  }
-}
+    .pricingThirdTitle {
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
 
-/* 🔹 Mobile (<768px) */
-@media (max-width: 767px) {
-  .thirdPricingFeatureComparisionHeading {
-    font-size: 6vw;
-  }
-
-  .thirdPricing-scrollWrapper {
-    justify-content: flex-start; /* ✅ allow scroll instead of center */
-    padding: 0 2vw;
-  }
-
-  .thirdPricing-table {
-    min-width: 600px;
-    font-size: 3.5vw;
-  }
-
-  .thirdPricing-table th,
-  .thirdPricing-table td {
-    padding: 3vw 4vw;
-  }
+    .pricingThirdIcon {
+        width: 25px;
+        align-self: top;
+    }
 }

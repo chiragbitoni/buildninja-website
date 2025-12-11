@@ -1,180 +1,196 @@
-/* ===========================
-   Base (Mobile-first)
-=========================== */
-.fourthfeatures-root {
-  background: #262626;
-  padding: 8vw 5vw;
-  font-family: 'Inter', Arial, sans-serif;
+/* ================================
+   BASE STYLES (Mobile First)
+================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.pricingFourthSection {
+  background-color: #1c1c1c;
+  color: #f4f4f4;
+  padding: 60px 20px;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   text-align: center;
+}
+
+.pricingFourthHeader h2 {
+  font-size: 1.4rem;
   color: #ffffff;
-}
-
-.fourthfeatures-title {
-  font-size: 6vw;
   font-weight: 600;
-  margin-bottom: 6vw;
 }
 
-/* Column container */
-.fourthfeatures-columns {
+.pricingFourthpinkColorText {
+  color: #FF4D7A;
+
+}
+
+.pricingFourthHeader p {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  margin-top: 4px;
+}
+
+/* Problem Section */
+.pricingFourthProblem {
+  margin: 30px auto;
+  max-width: 650px;
+}
+
+.pricingFourthFlex {
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  align-items: top;
   justify-content: center;
-  gap: 10vw;
 }
 
-/* Each feature card */
-.fourthfeatures-card {
-  width: 100%;
-  max-width: 400px;
+.problemLabel {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.problemTag {
+  background-color: #FF417233;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 6px 10px;
+  margin-left: 6px;
+}
+
+.problemDesc {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* Cards Grid */
+.pricingFourthCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.pricingFourthCard {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 18px 20px;
   text-align: left;
-  /* background-color: #1a1a1a; */
-  border-radius: 1.5vw;
-  padding: 6vw 5vw;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-.fourthfeatures-card:hover {
-  transform: translateY(-0.8vw);
-  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); */
-}
-
-/* Header */
-.fourthfeatures-header {
+.cardHeader {
   display: flex;
   align-items: center;
-  gap: 3vw;
-  margin-bottom: 4vw;
+  gap: 10px;
 }
 
-.fourthPricingHeaderIcon {
-  width: 7vw;
-  height: auto;
+.cardHeader .cardTag {
+  margin-left: 5px;
+  white-space: nowrap;
 }
 
-.fourthfeatures-card-title {
-  font-size: 4.5vw;
-  font-weight: 600;
+.cardIcon {
+  font-size: 1.8rem;
 }
 
-/* Feature list */
-.fourthfeatures-list {
-  list-style: none;
-  padding: 0;
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cardTitleRow h3 {
+  font-size: 1rem;
+  color: #fff;
   margin: 0;
 }
 
-.fourthfeatures-list li {
+.cardTag {
+  background-color: #FF417233;
+  color: #fff;
+  font-size: 0.7rem;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.cardLink {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+}
+
+.cardBadges {
   display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.badge {
+  background-color: #3F3F3F;
+  display: flex;
+  border: 1px solid #666;
+  border-radius: 999px;
+  gap: 1px;
+  font-size: 0.75rem;
+  padding: 6px 6px;
   align-items: center;
-  gap: 3vw;
-  margin-bottom: 3vw;
-  font-size: 3.5vw;
+  color: #fff;
 }
 
-.fourthPricingTickIcon {
-  width: 4vw;
-  height: auto;
-  object-fit: contain;
+.badge img {
+  height: 30px;
+  width: 30px;
 }
 
-/* ===========================
-   Tablet (768px – 1023px)
-=========================== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .fourthfeatures-root {
-    padding: 6vw 5vw;
-  }
+.pricingFourthCard:last-child {
+  grid-column: 1 / -1;
+}
 
-  .fourthfeatures-title {
-    font-size: 3.5vw;
-    margin-bottom: 4vw;
-  }
 
-  .fourthfeatures-columns {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4vw;
-  }
-
-  .fourthfeatures-card {
-    max-width: 320px;
-    padding: 3vw 2.5vw;
-    border-radius: 1vw;
-  }
-
-  .fourthfeatures-header {
-    gap: 1.8vw;
-    margin-bottom: 2vw;
-  }
-
-  .fourthPricingHeaderIcon {
-    width: 3.2vw;
-  }
-
-  .fourthfeatures-card-title {
-    font-size: 2vw;
-  }
-
-  .fourthfeatures-list li {
-    font-size: 1.5vw;
-    margin-bottom: 1.3vw;
-    gap: 1.5vw;
-  }
-
-  .fourthPricingTickIcon {
-    width: 1.6vw;
+/* ================================
+   RESPONSIVE STYLES
+================================== */
+@media (min-width: 600px) {
+  .pricingFourthCards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ===========================
-   Desktop (≥1024px)
-=========================== */
-@media (min-width: 1024px) {
-  .fourthfeatures-root {
-    padding: 4vw 2vw;
+@media (min-width: 992px) {
+  .pricingFourthSection {
+    padding: 80px 20vw;
   }
 
-  .fourthfeatures-title {
-    font-size: 2vw;
-    margin-bottom: 2.5vw;
+  .pricingFourthHeader h2 {
+    font-size: 1.8rem;
   }
 
-  .fourthfeatures-columns {
-    flex-direction: row;
-    justify-content: center;
-    gap: 10vw;
+  .pricingFourthCards {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 20px;
   }
 
-  .fourthfeatures-card {
-    max-width: 22vw;
-    padding: 2vw;
-    border-radius: 0.8vw;
+  .pricingFourthCard {
+    padding: 24px 28px;
   }
 
-  .fourthfeatures-header {
-    gap: 0.8vw;
-    margin-bottom: 1.2vw;
-  }
-
-  .fourthPricingHeaderIcon {
-    width: 1.8vw;
-  }
-
-  .fourthfeatures-card-title {
-    font-size: 1.3vw;
-  }
-
-  .fourthfeatures-list li {
-    font-size: 1vw;
-    margin-bottom: 0.6vw;
-    gap: 0.8vw;
-  }
-
-  .fourthPricingTickIcon {
-    width: 1vw;
+  .pricingFourthCardShield {
+    height: 20px !important;
   }
 }

@@ -2,14 +2,32 @@
 import "./NavBar.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-
+import { useRouter, usePathname } from "next/navigation";
+import AvatarMenu from "./AvatarMenu";
+import { fetchPlansFromAPI } from "../../../services/plans/plans";
+import Banner from "./Banner/Banner";
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [isHover, setHover] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const storedPlans = localStorage.getItem("plans");
+
+    // If plans already exist → do not fetch
+    if (storedPlans) return;
+    async function init() {
+      const plans = await fetchPlansFromAPI();
+      if (plans) {
+        localStorage.setItem("plans", JSON.stringify(plans));
+      }
+    }
+    init();
+  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,18 +44,18 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const navItems = [
-    { name: "Pricing", path: "/Pricing" },
-    { name: "Features", path: "/Features" },
-    { name: "Demo", path: "/Demo" },
-    { name: "Documentation", path: "/Documentation" },
-    { name: "Install", path: "/Install" },
-    { name: "Support", path: "/Support" },
-    { name: "FAQ", path: "/Faq" },
+    { name: "Home", path: "/" },
+    { name: "Features", path: "/features" },
+    { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Install", path: "/install" },
+    { name: "Support", path: "/support" },
+    // { name: "FAQ", path: "/faq" },
   ];
 
   const handleNavigation = (path) => {
     router.push(path);
-    setMenuOpen(false); // close menu after navigation
+    setMenuOpen(false);
   };
 
   return (
@@ -46,15 +64,15 @@ export default function Navbar() {
         {/* Logo */}
         <div className="navbar-logo" onClick={() => handleNavigation("/")}>
           <Image
-            src="/resources/BuildNinjaDark.png"
+            src={isHover ? "/resources/BuildNinjaPink.png" : "/resources/BuildNinjaDark.png"}
             alt="BuildNinja Logo"
-            width={120}
-            height={40}
+            width={178}
+            height={48.5}
             className="logo-image"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
           />
         </div>
-
-        {/* Hamburger icon (mobile) */}
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -66,17 +84,34 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <ul className={`navbar-links ${menuOpen ? "menu-active" : ""}`}>
-          {navItems.map((item) => (
-            <li
-              key={item.name}
-              className="navbar-link"
-              onClick={() => handleNavigation(item.path)}
-            >
-              {item.name}
-            </li>
-          ))}
+          {
+            navItems.map((item) => (
+              <li
+                key={item.name}
+                className={`navbar-link ${item.path === "/"
+                  ? pathname === "/" ? "active-link" : ""
+                  : pathname.startsWith(item.path)
+                    ? "active-link"
+                    : ""
+                  }`}
+                onClick={() => {
+                  if (item.path) {
+                    // Internal route = same tab
+                    handleNavigation(item.path);
+                  } else if (item.link) {
+                    // External URL = new tab
+                    window.open(item.link, "_blank", "noopener,noreferrer");
+                  }
+                }}
+              >
+                {item.name}
+              </li>
+            ))}
+          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
         </ul>
+        <AvatarMenu />
       </div>
+      <Banner />
     </nav>
   );
 }

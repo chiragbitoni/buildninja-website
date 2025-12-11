@@ -1,283 +1,740 @@
-/* ===============================
-   PRICING HERO SECTION - BASE
-================================== */
-.pricingHeroSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    padding: 6vw 12vw;
-    /* background: linear-gradient(120deg, #f8f4fd 0%, #f3f0ef 100%); */
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    background-color: #000000;
-    background: url('/resources/Home/heroBG.png') center center / cover no-repeat;
-    background-attachment: fixed;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-.pricingHeroSection::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* background: url('/resources/PricingHeroBG.png') center center / cover no-repeat; */
-    z-index: 0;
-    opacity: 1;
-    pointer-events: none;
+.pricingHeroSection {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0.5rem;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 .pricingHeroContent {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* ===============================
-   TITLE & SUBTITLE
-================================== */
-.pricingHeroTitle {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 3vw;
-    font-weight: 700;
-    margin: 0 0 1vw 0;
-    line-height: 1.1;
-    color: #FFFFFF;
+.pricingHeroHeading {
+    background: #FF4D7A1A;
+    display: inline-block;
+    padding: 10px 2ch;
+    border-radius: 999px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FF4D7A;
+    margin-bottom: 1rem;
 }
 
-.pricingHeroSubtitle {
-    font-size: 1.4vw;
-    font-family: "Segoe UI", Arial, sans-serif;
-    padding: 0 15vw;
-    margin: 0 0 2vw 0;
-    color: #FFFFFF;
-    font-weight: 400;
+.pricingHeroDescription {
+    font-size: 16px;
     line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 2rem;
 }
 
-/* ===============================
-   TOGGLE SWITCH CONTAINER
-================================== */
-.pricingPlanToggleSwitchContainer {
+/* Toggle Buttons */
+.pricingHeroToggleContainer {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
     justify-content: center;
-    background-color: #262626;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 3.5vw;
-    width: 32vw;
-    border: 3px solid #333;
-    border-radius: 999vw;
-    margin: 2vw auto 0 auto;
-    gap: 1vw;
+    align-items: center;
 }
 
+.pricingHeroToggleGroup {
+    display: flex;
+    background: #000000;
+    border: 2px solid #FFFFFF0D;
+    border-radius: 999px;
+    overflow: hidden;
+}
 
-.toggleSwitchOption1,
-.toggleSwitchOption2 {
-    font-size: 1vw;
-    font-weight: 500;
-    margin: 0;
-    padding: 0.5vw 1vw;
+.pricingHeroToggleButton {
+    padding: 0.6rem 1.2rem;
+    margin: 0.6rem;
+    font-size: 16px;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pricingHeroToggleButton.active {
+    background: #D4335C;
+    color: #fff;
+    border-radius: 999px;
+}
+
+.pricingHeroSubtext {
+    margin-top: 1.5rem;
+    font-size: 16px;
     color: #ffffff;
 }
 
-.toggleSwitchOption2 {
-    background-color: #D4335C;
-    padding: 0.4vw 1.2vw;
-    border-radius: 999px;
-}
-
-.toggleSwitchSavings {
-    color: #169000;
-    background-color: #DBFCE7;
-    font-size: 0.8vw;
-    font-weight: 500;
-    padding: 0.4vw 1.2vw;
-    border-radius: 999px;
-}
-
-.toggleSwitchRow1 {
+/* Multi-Year Buttons */
+.pricingHeroMultiYearContainer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.pricingHeroYearButton {
+    border: 3px solid #FFFFFF1A;
+    background: #1b1b1b;
+    color: #ffffff;
+    padding: 0.8rem 3rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1vw;
+}
+
+.pricingHeroYearButton.active {
+    border-color: #ff5b88;
+    color: #fff;
+    background: #151515;
+}
+
+.pricingHeroYearButtonSavings {
+    color: #169000;
+}
+
+.pricingHeroYearButton .pricingHeroYearButtonSavings {
+    background-color: #313131;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    width: fit-content;
+    margin-top: 5px;
+}
+
+/* Footer */
+.pricingHeroFooter {
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 1rem;
+}
+
+/* Tablet and Up */
+@media (min-width: 600px) {
+    .pricingHeroToggleContainer {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .pricingHeroMultiYearContainer {
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    .pricingHeroYearButton {
+        min-width: 200px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .pricingHeroSection {
+        padding: 4rem 2rem;
+    }
+
+    .pricingHeroHeading {
+        font-size: 1rem;
+    }
+
+    .pricingHeroDescription {
+        font-size: 1rem;
+    }
+}
+
+
+.pricingSecondSection {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    /* display: flex; */
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    /* background-color: #262626; */
+}
+
+.pricingSecondSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    /* display: none; */
+}
+
+.pricingHeroAndSecondSection {
+    width: 100%;
+    background: url('/resources/PricingHeroBG.png') center top / cover no-repeat fixed;
+}
+
+.pricingSecondContent {
+    z-index: 2;
+    width: 100%;
 }
 
 /* ===============================
-   SWITCH STYLES
+   CARD CONTAINERS
 ================================== */
-.switch {
-    font-size: 1vw;
+.pricingMonthlyCardsContainer,
+.pricingAnnualCardsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===============================
+   INDIVIDUAL CARD STYLES
+================================== */
+.pricingMonthlyFreeCard,
+.pricingMonthlyShogunCard,
+.pricingAnnualShogunCard {
     position: relative;
-    display: inline-block;
-    width: 3.5vw;
-    height: 2vw;
+    padding: 30px;
+    background-color: #151515;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.pricingMonthlyFreeCard:hover,
+.pricingMonthlyShogunCard:hover,
+.pricingAnnualShogunCard:hover {
+    box-shadow: 0 0 20px rgba(255, 65, 114, 0.25);
 }
 
-.slider {
-    position: absolute;
+/* Specific Borders */
+.pricingMonthlyFreeCard {
+    border: 2px solid #FFFFFF1A;
+}
+
+.pricingMonthlyShogunCard,
+.pricingAnnualShogunCard {
+    border-color: #FF4172;
+}
+
+/* ===============================
+   HIGHLIGHT LABELS
+================================== */
+.pricingMonthlyFreeCardHighlight,
+.pricingMonthlyShogunCardHighlight {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.pricingMonthlyFreeCardHighlight {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.pricingMonthlyShogunCardHighlight {
+    color: #ffffff;
+    background-color: #FF4172;
+}
+
+/* ===============================
+   TITLES & PRICES
+================================== */
+.pricingMonthlyFreeCardEdition,
+.pricingMonthlyShogunCardEdition {
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.pricingMonthlyFreeCardPrice,
+.pricingMonthlyShogunCardPrice {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* ===============================
+   LISTS
+================================== */
+.pricingMonthlyFreeCardList,
+.pricingAnnualFreeCardListContainer {
+    list-style-position: inside;
+    font-size: 14px;
+    list-style-type: disc;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.pricingMonthlyFreeListCard {
+    background-color: #2B2B2B;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.pricingMonthlyFreeListCard p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricingMonthlyFreeListCard li {
+    font-size: 12px;
+    list-style-position: inside;
+    margin-top: 5px;
+}
+
+.pricingAnnualFreeCardListItem {
+    display: flex;
+    align-items: flex-start;
+    list-style-type: none;
+    gap: 8px;
+    align-items: top;
+}
+
+.pricingAnnualFreeCardListItem img {
+    width: 16px;
+    margin-top: 7px;
+    height: auto;
+    /* align-self: center; */
+}
+
+/* ===============================
+   BUTTONS
+================================== */
+.pricingMonthlyFreeCardButton,
+.pricingMonthlyShogunCardButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 40px;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
     cursor: pointer;
-    inset: 0;
-    /* background: #F9F9F9; */
-    border: 1px solid #e2e8f0;
+    gap: 8px;
+}
+
+.pricingMonthlyFreeCardButton:nth-child(1) {
+    background-color: #FF4172;
+    color: #ffffff;
+    border: 1px solid #0000001A
+}
+
+.pricingMonthlyFreeCardButton:nth-child(2) {
+    color: white;
+    border: 2px solid #3D3D3D;
+    background-color: #212020;
+
+}
+
+
+.pricingMonthlyShogunCardButton {
+    background-color: #FF4172;
+    color: white;
+    border: 1px solid #0000001A
+}
+
+.pricingMonthlyShogunCardButton:nth-child(2) {
+    color: white;
+    border: 2px solid #3D3D3D;
+    background-color: #212020;
+}
+
+.pricingMonthlyFreeCardButton:hover {
+    background-color: #ff5b88;
+    /* color: #000; */
+}
+
+.pricingMonthlyShogunCardButton:hover {
+    background-color: #ff5b88;
+}
+
+.pricingMonthlyFreeIcon {
+    width: 18px;
+    height: auto;
+}
+
+.pricingMonthlyFreeCardCtaText,
+.pricingMonthlyShogunCardCtaText,
+.pricingAnnualShogunCardCtaText {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+/* ===============================
+   ANNUAL SECTION
+================================== */
+.pricingAnnualShogunDescription {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #d4d4d4;
+    line-height: 1.6;
+}
+
+.pricingAnnualShogunSavings {
+    color: #169000;
+    background-color: #313131;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 6px 14px;
     border-radius: 999px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    width: fit-content;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 1.4em;
-    width: 1.4em;
-    left: 0.3em;
-    bottom: 0.3em;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.4);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.pricingSecondAnnualEnterpriseCard {
+    margin-top: 8vw;
+    background-color: #191919;
+    width: 100%;
+    border: 1px solid #FFFFFF33;
+    padding: 50px;
+    border-radius: 20px;
 }
 
-.switch input:checked+.slider {
-    background: #D4335C;
+.pricingSecondAnnualEnterpriseCardHighlight {
+    background-color: #FF4D7A33;
+    color: #FF4172;
+    padding: 5px 12px;
+    width: fit-content;
+    border-radius: 999px;
+    display: block;
+    margin: 0 auto;
 }
 
-.switch input:checked+.slider:before {
-    transform: translateX(1.6em);
-    width: 2em;
-    height: 2em;
-    bottom: 0;
+.pricingSecondAnnualEnterpriseCardTitle {
+    font-size: 20px;
+    font-weight: 600;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+}
+
+.pricingSecondAnnualEnterpriseCardDescription {
+    font-size: 16px;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    color: #FFFFFFB2;
+}
+
+.pricingSecondAnnualEnterpriseCardButtonsContainer {
+    justify-self: center;
+    /* display: flex; */
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pricingSecondAnnualEnterpriseCardButton {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #FF4172;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.pricingSecondAnnualEnterpriseCardResponseTimeText {
+    font-size: 16px;
+    padding: 10px;
+    color: #FFFFFFB2;
+
 }
 
 /* ===============================
    TABLET VIEW (768px – 1023px)
 ================================== */
-@media (max-width: 1023px) {
-    .pricingHeroSection {
-        padding: 10vw 6vw;
-        height: auto;
+@media (min-width: 768px) and (max-width: 1023px) {
+    .pricingSecondSection {
+        padding: 10px;
     }
 
-    .pricingHeroTitle {
-        font-size: 5vw;
-        margin-bottom: 2vw;
-    }
-
-    .pricingHeroSubtitle {
-        font-size: 2.3vw;
-        padding: 0 6vw;
-        margin-bottom: 4vw;
-        line-height: 1.6;
-    }
-
-    .pricingPlanToggleSwitchContainer {
+    .pricingMonthlyCardsContainer,
+    .pricingAnnualCardsContainer {
         flex-direction: row;
-        height: 7vw;
-        width: 70%;
-        border-radius: 999vw;
-        gap: 2vw;
-    }
-
-    .toggleSwitchOption1,
-    .toggleSwitchOption2 {
-        font-size: 2vw;
-        padding: 1vw 2vw;
-    }
-
-    .toggleSwitchSavings {
-        font-size: 1.5vw;
-        padding: 0.7vw 2vw;
-    }
-
-    .switch {
-        width: 6vw;
-        height: 3.5vw;
-        align-items: center;
+        flex-wrap: wrap;
         justify-content: center;
+        align-items: stretch;
+        gap: 40px;
     }
 
-    .slider:before {
-        height: 2.2vw;
-        width: 2.2vw;
-        left: 0.5vw;
-        bottom: 0.5vw;
+    .pricingMonthlyFreeCard,
+    .pricingMonthlyShogunCard,
+    .pricingAnnualShogunCard {
+        width: 47%;
+        max-width: 420px;
+        padding: 30px;
     }
 
-    .switch input:checked+.slider:before {
-        transform: translateX(1.8vw);
-        width: 3.7vw;
-        height: 3.7vw;
-        bottom: 0;
+    .pricingMonthlyFreeCardHighlight,
+    .pricingMonthlyShogunCardHighlight {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
+
+    .pricingMonthlyFreeCardEdition,
+    .pricingMonthlyShogunCardEdition {
+        font-size: 24px;
+    }
+
+    .pricingMonthlyFreeCardPrice,
+    .pricingMonthlyShogunCardPrice {
+        font-size: 32px;
+    }
+
+    .pricingMonthlyFreeCardList,
+    .pricingAnnualFreeCardListContainer {
+        font-size: 14px;
+    }
+
+    .pricingMonthlyFreeCardButton,
+    .pricingMonthlyShogunCardButton {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+
+    .pricingMonthlyFreeIcon {
+        width: 16px;
+    }
+
+    .pricingAnnualShogunDescription {
+        font-size: 14px;
+    }
+
+    .pricingAnnualShogunSavings {
+        font-size: 13px;
+    }
+
+    .pricingSecondAnnualEnterpriseCardButtonsContainer {
+        display: flex;
     }
 }
 
-/* ===============================
-   MOBILE VIEW (≤767px)
-================================== */
-@media (max-width: 767px) {
-    .pricingHeroSection {
-        padding: 14vw 4vw;
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        gap: 6vw;
+/* ========================================
+   DESKTOP VIEW (≥1024px)
+   (KEPT EXACTLY AS YOUR ORIGINAL)
+======================================== */
+@media (min-width: 1024px) {
+    .pricingSecondSection {
+        padding: 0vw 0vw 4vw 0vw;
     }
 
-    .pricingHeroTitle {
-        font-size: 7vw;
-        line-height: 1.2;
-        margin-bottom: 4vw;
+    .pricingMonthlyCardsContainer,
+    .pricingAnnualCardsContainer {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
     }
 
-    .pricingHeroSubtitle {
+    .pricingMonthlyFreeCard,
+    .pricingMonthlyShogunCard,
+    .pricingAnnualShogunCard {
+        width: 480px;
+        padding: 35px;
+        min-height: 33vw;
+    }
+
+    .pricingMonthlyFreeCardHighlight,
+    .pricingMonthlyShogunCardHighlight {
+        font-size: 14px;
+        padding: 0.5vw 1.2vw;
+    }
+
+    .pricingMonthlyFreeCardEdition,
+    .pricingMonthlyShogunCardEdition {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .pricingMonthlyFreeCardPrice,
+    .pricingMonthlyShogunCardPrice {
+        font-size: 48px;
+        font-weight: 600 !important;
+        margin-top: 20px;
+    }
+
+    .pricingMonthlyFreeCardList,
+    .pricingAnnualFreeCardListContainer {
+        font-size: 14px;
+    }
+
+    .pricingAnnualFreeCardListItem {
+        display: flex;
+        list-style-type: none;
+        gap: 8px;
+        margin-top: 5px;
+        line-height: 1.6;
+    }
+
+    .pricingMonthlyFreeListCard {
+        background-color: #2B2B2B;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .pricingMonthlyFreeListCard p {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .pricingMonthlyFreeListCard li {
+        font-size: 12px;
+        list-style-position: inside;
+        margin-top: 5px;
+    }
+
+    .pricingMonthlyFreeCardButton,
+    .pricingMonthlyShogunCardButton {
+        font-size: 16px;
+        font-weight: 500;
+        padding: 0.8vw 0;
+        border-radius: 10px;
+        gap: 0.6vw;
+    }
+
+    .pricingMonthlyFreeIcon {
+        width: 1vw;
+    }
+
+    .pricingAnnualShogunDescription,
+    .pricingMonthlySoloDescription {
+        font-size: 14px;
+        margin-top: 0px;
+        color: #FFFFFF99;
+    }
+
+    .pricingAnnualShogunSavings {
+        font-size: 14px;
+        padding: 0.3vw 1.2vw;
+        margin-top: 10px;
+    }
+
+    .pricingAnnualShogunIdeal,
+    .pricingMonthlySoloIdeal {
+        font-size: 14px;
+        color: #FFFFFF99;
+        margin-top: 10px;
+    }
+
+    .pricingAnnualMultiYearContainer {
+        padding: 1vw;
+        margin-top: 1.5vw;
+    }
+
+    .pricingAnnualMultiYearCardTitle {
         font-size: 4vw;
-        padding: 0;
-        margin-bottom: 6vw;
-        line-height: 1.7;
+        margin-bottom: 1vw;
     }
 
-    .pricingPlanToggleSwitchContainer {
-        flex-direction: column;
-        width: 90%;
-        height: auto;
-        gap: 3vw;
-        padding: 4vw 0;
-        border-radius: 8vw;
+    .pricingAnnualMultiYearCard1,
+    .pricingAnnualMultiYearCard2 {
+        font-size: 1vw;
+        padding: 1vw;
+        gap: 1vw;
     }
 
-    .toggleSwitchOption1,
-    .toggleSwitchOption2 {
-        font-size: 4vw;
-        padding: 2vw 5vw;
+    .pricingAnnualMultiYearCardSavings {
+        font-size: 1vw;
+        font-weight: 600;
+        padding: 0.4vw 1vw;
     }
 
-    .toggleSwitchSavings {
-        font-size: 3.5vw;
-        padding: 2vw 5vw;
+    .pricingMonthlyFreeCardList2 {
+        margin-top: 5px;
+        font-size: 14px;
     }
 
-    .switch {
-        width: 14vw;
-        height: 8vw;
+    .pricingSecondAnnualEnterpriseCard {
+        margin-top: 2vw;
+        justify-self: center;
+        width: 750px;
     }
 
-    .slider:before {
-        height: 6vw;
-        width: 6vw;
-        left: 0.8vw;
-        bottom: 0.8vw;
+    .pricingSecondAnnualEnterpriseCardButtonsContainer {
+        display: flex;
     }
-    
-    .switch input:checked+.slider:before {
-        transform: translateX(5vw);
-        height: 8vw;
-        width: 8vw;
+}
+
+.pricingMonthlyCardsContainer,
+.pricingAnnualCardsContainer {
+    align-items: stretch;
+}
+
+.pricingMonthlyFreeCard,
+.pricingMonthlyShogunCard,
+.pricingAnnualShogunCard {
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.pricingMonthlyFreeCard,
+.pricingMonthlyShogunCard,
+.pricingAnnualShogunCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.pricingMonthlyFreeCardFooter,
+.pricingMonthlyShogunCardFooter,
+.pricingAnnualShogunCardFooter {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.pricingSecondAnnualEnterpriseCard {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.pricingSecondSection::before {
+    background: transparent !important;
+}
+
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }

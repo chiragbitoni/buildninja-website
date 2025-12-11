@@ -1,31 +1,38 @@
 /* Base (mobile-first) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .fourthSection {
     background-color: #0A0A0A;
     height: auto;
-    padding: 5vw 0 0 0;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    padding: 10vw 2vw;
 }
 
 .fourthSectionTitle {
-    font-family: "Segoe UI", Arial, sans-serif;
     text-align: center;
-    margin-top: 5vw;
-    font-size: 7vw;
+    font-size: 26px;
     font-weight: 600;
     color: #ffffff;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    font-style: Semibold;
+    line-height: 42px;
+
 }
 
 .fourthSectionTitlePink {
-    font-family: "Segoe UI", Arial, sans-serif;
     color: #FF4172;
 }
 
 .fourthSectionSubTitle {
-    font-family: "Segoe UI", Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
     font-weight: 400;
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     color: #ffffff;
-    margin-top: 1vw;
+    margin-top: 0vw;
     margin-bottom: 10vw;
 }
 
@@ -36,17 +43,16 @@
     .fourthSection {
         background-color: #0A0A0A;
         height: auto;
-        padding: 3vw 0;
+        padding: 7vw 0;
     }
 
     .fourthSectionTitle {
-        margin-top: 3vw;
         font-size: 4.5vw;
     }
 
     .fourthSectionSubTitle {
-        font-size: 18px;
-        margin-bottom: 5vw;
+        font-size: 24px;
+        margin-bottom: 2vw;
     }
 }
 
@@ -60,12 +66,12 @@
 
     .fourthSectionTitle {
         margin-top: 0vw;
-        font-size: 44px;
+        font-size: 28px;
     }
 
     .fourthSectionSubTitle {
-        font-size: 20px;
-        margin-bottom: 4vw;
+        font-size: 16px;
+        margin-bottom: 3vw;
     }
 }
 
@@ -74,7 +80,9 @@
     flex-direction: column;
     gap: 6rem;
     color: #f5f5f5;
-    font-family: 'Inter', Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    font-style: Regular;
     box-sizing: border-box;
 }
 
@@ -99,23 +107,30 @@
 }
 
 .fourthFeature-title {
-    font-family: 'Inter', Arial, sans-serif;
-    font-size: 1.8rem;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    font-style: Regular;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #ffffff;
 }
 
 .fourthFeature-description {
-    font-family: 'Inter', Arial, sans-serif;
-    font-size: 1rem;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    font-style: Regular;
+    font-size: 16px;
     line-height: 1.6;
-    color: #cccccc;
     margin-bottom: 1.5rem;
+    color: #FFFFFFB2;
+
 }
 
 .fourthFeature-points {
-    font-family: 'Inter', Arial, sans-serif;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    font-style: Regular;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -125,7 +140,7 @@
     position: relative;
     margin-bottom: 0.8rem;
     padding-left: 1.8rem;
-    font-size: 0.95rem;
+    font-size: 14px;
     color: #d1d1d1;
 }
 
@@ -137,11 +152,11 @@
 .fourthFeature-points li::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: -3;
     top: 50%;
     transform: translateY(-50%);
-    width: 1rem;
-    height: 1rem;
+    width: 20px;
+    height: 20px;
     background-image: url("/resources/icons/bulletcheckpink.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -162,10 +177,7 @@
     transition: transform 0.3s ease;
 }
 
-.fourthFeature-img:hover {
-    box-shadow: 0 4px 12px rgba(255, 0, 90, 0.3);
-    transform: scale(1.03);
-}
+
 
 /* Responsive Design */
 
@@ -193,17 +205,17 @@
     }
 
     .fourthFeature-title {
-        font-size: 1.6rem;
+        font-size: 24px;
         margin-top: 3rem;
     }
 
 
     .fourthFeature-description {
-        font-size: 0.95rem;
+        font-size: 18px;
     }
 
     .fourthFeature-points li {
-        font-size: 0.9rem;
+        font-size: 14px;
     }
 }
 
@@ -220,15 +232,15 @@
 
     .fourthFeature-title {
         margin-top: 2rem;
-        font-size: 4.5vw;
+        font-size: 20px;
     }
 
     .fourthFeature-description {
-        font-size: 0.9rem;
+        font-size: 18px;
     }
 
     .fourthFeature-points li {
-        font-size: 0.85rem;
+        font-size: 13px;
     }
 
     .fourthFeature-card {
@@ -240,7 +252,8 @@
     .fourthFeature-img {
         border-radius: 8px;
     }
-    .fourthFeature-img:hover{
+
+    .fourthFeature-img:hover {
         box-shadow: 0 3px 8px rgba(255, 0, 90, 0.25);
     }
 }
@@ -254,4 +267,23 @@
     .fourthFeature-image {
         flex: 0 0 60%;
     }
+}
+
+.fourthFeature-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fourthFeature-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba(255, 65, 114, 0.3);
+}
+
+.fourthFeature-img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
