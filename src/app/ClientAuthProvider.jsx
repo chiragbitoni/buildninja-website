@@ -15,6 +15,17 @@ export default function ClientAuthProvider({ children }) {
 
                 // check correct backend response shape
                 if (data?.userId) {
+                    const existingUser = localStorage.getItem("bNEmail");
+
+                    if (!existingUser && data?.userId && data?.email) {
+                        localStorage.setItem(
+                            "bNEmail",
+                            JSON.stringify({
+                                userId: data.userId,
+                                email: data.email,
+                            })
+                        );
+                    }
                     dispatch(
                         loginSuccess({
                             user: data,    // full response IS the user
