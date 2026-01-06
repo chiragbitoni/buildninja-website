@@ -46,7 +46,8 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
-    { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+    // { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+    { name: "Docs", path:"/docs" },
     { name: "Pricing", path: "/pricing" },
     { name: "Install", path: "/install" },
     { name: "Support", path: "/support" },
@@ -59,7 +60,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${show ? "navbar-show" : "navbar-hide"}`}>
+    //For Non-sticky
+    // <nav className={`navbar ${show ? "navbar-show" : "navbar-hide"}`}> 
+    //For Sticky
+    <nav className={"navbar"}>
       <div className="navbar-container">
         {/* Logo */}
         <div className="navbar-logo" onClick={() => handleNavigation("/")}>
