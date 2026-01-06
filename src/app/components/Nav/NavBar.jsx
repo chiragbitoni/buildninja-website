@@ -7,8 +7,8 @@ import AvatarMenu from "./AvatarMenu";
 import { fetchPlansFromAPI } from "../../../services/plans/plans";
 import Banner from "./Banner/Banner";
 export default function Navbar() {
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [show, setShow] = useState(true);
+  // const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHover, setHover] = useState(false);
   const router = useRouter();
@@ -28,20 +28,20 @@ export default function Navbar() {
     init();
   }, []);
 
+// uncomment this for sticky navbar
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > lastScrollY && window.scrollY > 50) {
+  //       setShow(false);
+  //     } else {
+  //       setShow(true);
+  //     }
+  //     setLastScrollY(window.scrollY);
+  //   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        setShow(false);
-      } else {
-        setShow(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [lastScrollY]);
 
   const navItems = [
     { name: "Home", path: "/" },

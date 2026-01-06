@@ -2,7 +2,7 @@
 
 /* ==== Base Navbar ==== */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,14 +12,14 @@
   transition: transform 0.3s ease-in-out;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
-
-.navbar-show {
+/* Uncomment for stiky navbar */
+/* .navbar-show {
   transform: translateY(0);
 }
 
 .navbar-hide {
   transform: translateY(-100%);
-}
+} */
 
 .navbar-container {
   max-width: 1200px;
