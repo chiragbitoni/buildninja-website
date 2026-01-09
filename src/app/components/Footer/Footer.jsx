@@ -36,7 +36,7 @@ const footerText = {
             title: "Company",
             links: [
                 { label: "About Us", link: `${GRAPEHUB_URL}/about` },
-                { label: "Blog", link: `${GRAPEHUB_URL}/blog` },
+                { label: "Blog", link: `${GRAPEHUB_URL}/blog/categories/buildninja` },
                 { label: "Contact", link: `${GRAPEHUB_URL}/contact` },
                 { label: "Support", link: `/support` },
             ],
