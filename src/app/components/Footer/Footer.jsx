@@ -3,13 +3,15 @@ import "./Footer.css";
 import { useRouter } from "next/navigation";
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 const GRAPEHUB_URL = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "";
+const today = new Date();
+console.log(today.getFullYear());
 const footerText = {
     company: {
         name: "BuildNinja",
         description:
             "CI/CD that just works.",
         description2: " Deploy with confidence, scale with ease.",
-        copyright: "© 2025 GrapeCity India Pvt Ltd. All Rights Reserved.",
+        copyright: "© " + today.getFullYear().toString() + " GrapeCity India Pvt Ltd. All Rights Reserved.",
     },
     sections: [
         {
