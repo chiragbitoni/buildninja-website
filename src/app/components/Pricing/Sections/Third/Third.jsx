@@ -9,7 +9,7 @@ export default function Third() {
 
             <div className="pricingThirdCardsContainer">
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.infinite}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.infinite} alt="Grapecity Pink Infinity Icon"></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Unlimited Build Agents</h3>
                         <p className="pricingThirdCardDesc">
@@ -19,7 +19,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.restricted}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.restricted} alt="Grapecity Pink Restricted Icon"></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">No Per-Seat Costs</h3>
                         <p className="pricingThirdCardDesc">
@@ -29,7 +29,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.shieldPink}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.shieldPink} alt="Grapecity Pink Shield Icon"></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Self-Hosted Control</h3>
                         <p className="pricingThirdCardDesc">
@@ -39,7 +39,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.clockPink}></img>
+                    <img className="pricingThirdIcon" src={paths.icons.clockPink} alt="Grapecity Pink Clock Icon"></img>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Start with Trial License</h3>
                         <p className="pricingThirdCardDesc">

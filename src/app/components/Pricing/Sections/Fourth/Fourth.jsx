@@ -31,7 +31,7 @@ export default function Fourth() {
         {text.cards.map((card, index) => (
           <div className="pricingFourthCard" key={index}>
             <div className="cardHeader">
-              <img className="cardIcon" src={card.icon}></img>
+              <img className="cardIcon" src={card.icon} alt={card.alt}></img>
               <div className="cardTitleRow">
                 <h3>{card.title}</h3>
                 {card.tag && <span className="cardTag">{card.tag}</span>}
@@ -46,7 +46,7 @@ export default function Fourth() {
                 {card.badges.map((b, i) => (
                   <div key={i}>
                     <span key={i} className="badge">
-                      <img className="pricingFourthCardShield" src={paths.icons.cardPricingShield}></img><p>
+                      <img className="pricingFourthCardShield" src={paths.icons.cardPricingShield} alt="Grapecity white shield icon"></img><p>
                         {b}
                       </p>
                     </span>

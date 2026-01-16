@@ -120,7 +120,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <img src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestWindows?.serverName}
             </button>
 
@@ -134,7 +134,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <img src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestWindows?.agentName}
             </button>
           </div>
@@ -169,7 +169,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <img src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestLinux?.serverName}
             </button>
 
@@ -183,7 +183,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <img src={paths.icons.downloadWhite} alt="Grapecity White Download Icon"/>
               {latestLinux?.agentName}
             </button>
           </div>
@@ -202,7 +202,7 @@ export default function Hero() {
                     copyToClipboard(staticData.docker.serverCmd, "server")
                   }
                 >
-                  <img src={paths.icons.copy} />
+                  <img src={paths.icons.copy} alt="Grapecity Copy Icon"/>
                 </button>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function Hero() {
                     copyToClipboard(staticData.docker.agentCmd, "agent")
                   }
                 >
-                  <img src={paths.icons.copy} />
+                  <img src={paths.icons.copy} alt="Grapecity Copy Icon"/>
                 </button>
               </div>
             </div>
@@ -274,7 +274,7 @@ export default function Hero() {
                       Agent
                     </button>
 
-                    <img className="versionOpen" src={paths.icons.navigation} />
+                    <img className="versionOpen" src={paths.icons.navigation} alt="Grapecity Navigation Icon"/>
                   </div>
                 </div>
               ))}
@@ -346,7 +346,7 @@ export default function Hero() {
                       : (window.location.href = card.link);
                   }}
                 >
-                  <img src={paths.icons.navigation} />
+                  <img src={paths.icons.navigation} alt="Grapecity Navigation Icon"/>
                   {card.btn}
                 </button>
               ) : (
@@ -361,7 +361,7 @@ export default function Hero() {
                     window.location.href = card.link;
                   }}
                 >
-                  <img src={paths.icons.navigation} />
+                  <img src={paths.icons.navigation} alt="Grapecity Navigation Icon"/>
                   {card.btn}
                 </button>
               )}

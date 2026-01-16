@@ -64,7 +64,7 @@ export default function SupportHero() {
                     <div className="supportHeroOptions">
                         {t.options.map((opt, index) => (
                             <div key={index} className="supportHeroOption">
-                                <img className="supportHeroIcon" src={opt.icon} />
+                                <img className="supportHeroIcon" src={opt.icon} alt={opt.alt}/>
                                 <div>
                                     <h4>{opt.title}</h4>
                                     <p>{opt.desc || null}</p>

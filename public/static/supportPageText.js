@@ -9,6 +9,7 @@ export const supportHeroText = {
   options: [
     {
       icon: paths.icons.emailBlue,
+      alt:"Grapecity blue email icon",
       title: "Email Support",
       // desc: "hello@grapehub.io",
       linkText: "hello@grapehub.io",
@@ -16,6 +17,7 @@ export const supportHeroText = {
     },
     {
       icon: paths.icons.documentpurple,
+      alt:"Grapecity purple document icon",
       title: "Documentation",
       desc: "Browse guides and tutorials",
       linkText: "View Documentation →",

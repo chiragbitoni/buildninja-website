@@ -139,7 +139,7 @@ export default function AvatarMenu() {
               setMenuOpen(false);
             }}
           >
-            <img src={paths.icons.license}></img>My Licenses
+            <img src={paths.icons.license} alt="Grapecity License Icon"></img>My Licenses
           </div>
 
           <div className="am-dropdown-item am-logout" onClick={handleLogout}>

@@ -9,12 +9,6 @@ import Sixth from "../components/Pricing/Sections/Sixth/Sixth";
 import Seventh from "../components/Pricing/Sections/Seventh/Seventh";
 import Eighth from "../components/Pricing/Sections/Eighth/Eighth";
 
-export const metadata = {
-  alternates: {
-    canonical: "https://buildninja.grapehub.io/pricing",
-  },
-};
-
 export default function Pricing() {
   return (
     <div >

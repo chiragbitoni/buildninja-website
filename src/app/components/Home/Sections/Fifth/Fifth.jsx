@@ -23,7 +23,7 @@ export default function Fifth() {
                 </div>
                 <div className="fifthHomeThirdSubHeading">
                     <h4 className="fifthHomeThirdSubHeading1">{fifthSectionText.subHeading1}</h4>
-                    <img className="fifthHomeThirdSubHeadingImage" src="/resources/GrapecityWhite.png"></img>
+                    <img className="fifthHomeThirdSubHeadingImage" src="/resources/GrapecityWhite.png" alt="Grapecity White Icon"></img>
                     <h4 className="fifthHomeThirdSubHeading2">{fifthSectionText.subHeading2}</h4>
                     {/* <h4 className="fifthHomeThirdSubHeading2">{fifthSectionText.subHeading3}</h4> */}
                 </div>
