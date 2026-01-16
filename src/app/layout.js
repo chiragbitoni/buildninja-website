@@ -8,8 +8,6 @@ import ClientAuthProvider from "./ClientAuthProvider";
 import GoogleAnalytics from "./components/Analytics/GA";
 import YouTubePopup from "./components/YouTubePopup/YouTubePopup";
 import PHProviderWrapper from "./components/Analytics/Providers";
-import PostHogPageView from "./components/Analytics/posthog-pageview";
-import { Suspense } from "react";
 import PosthogWrapper from "./components/Analytics/PostHogWrapper";
 
 const geistSans = Geist({
@@ -28,6 +26,9 @@ export const metadata = {
   icons: {
     icon: paths.icons.favicon,
   },
+  alternates: {
+    canonical: "https://buildninja.grapehub.io",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -40,7 +41,7 @@ export default function RootLayout({ children }) {
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
         <PHProviderWrapper>
-            <PosthogWrapper />
+          <PosthogWrapper />
           <ReduxProvider>
             <ClientAuthProvider>
               <Navbar />

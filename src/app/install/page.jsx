@@ -6,6 +6,12 @@ import Hero from "../components/Download/Sections/Hero/Hero";
 import { checkAuth } from "@/services/auth/check";
 import { useSelector } from "react-redux";
 
+export const metadata = {
+  alternates: {
+    canonical: "https://buildninja.grapehub.io/install",
+  },
+};
+
 export default function Download() {
   const router = useRouter();
       const { isLoggedIn } = useSelector((state) => state.auth);
