@@ -15,7 +15,7 @@ function Sixth() {
             <div className="pricingSixthCards">
                 {pricingSixthText.features.map((feature, index) => (
                     <div className="pricingSixthCard" key={index}>
-                        <img src={paths.icons.greenTickWithBG} alt="tick" className="pricingSixthTick" />
+                        <img src={paths.icons.greenTickWithBG} alt="Green tick icon indicating success, approval, or completion" className="pricingSixthTick" />
                         <p>{feature.title}</p>
                     </div>
                 ))}

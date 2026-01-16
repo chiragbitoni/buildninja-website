@@ -194,8 +194,7 @@ export const fifthSectionText = {
   title: "We Understand Your CI/CD Pain",
   subTitle:
     "We understand how frustrating it is when CI/CD tools break right before critical releases. ",
-  subTitle2:
-    "We believe deploying code shouldn't require a PhD in DevOps. ",
+  subTitle2: "We believe deploying code shouldn't require a PhD in DevOps. ",
   subTitle3:
     "We know how expensive per-seat licensing gets as your team grows. ",
   subTitle4:
@@ -240,16 +239,19 @@ export const sixthSectionText = {
       description:
         "Spending weeks configuring Jenkins or other complex CI/CD tools",
       icon: "calendar.svg",
+      alt: "Calendar icon representing scheduling or date management",
     },
     {
       icon: "box.svg",
       description:
         "Dealing with deployment failures during critical business moments",
+      alt: "Box icon symbolizing packaging or storage",
     },
     {
       icon: "bug.svg",
       description:
         "Losing customers due to slow feature delivery and buggy releases",
+      alt: "Bug icon representing software issues or debugging",
     },
   ],
   list2: [
@@ -257,15 +259,18 @@ export const sixthSectionText = {
       icon: "fire.svg",
       description:
         "Burning out your best engineers on infrastructure instead of innovation",
+      alt: "Fire icon indicating urgency, critical alerts, or hot topics",
     },
     {
       icon: "service.svg",
       description: "Paying escalating per-seat costs as your team grows",
+      alt: "Service icon depicting customer support or technical assistance",
     },
     {
       icon: "stopWatch.svg",
       description:
         "Missing deadlines because your deployment pipeline is unreliable",
+      alt: "Stopwatch icon representing time tracking or speed",
     },
   ],
 };

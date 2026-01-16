@@ -26,7 +26,7 @@ export default function Fifth() {
                     <li key={itemIndex}>
                       <img
                         src={paths.icons.greenTick}
-                        alt="tick"
+                        alt="Green tick icon indicating success, approval, or completion"
                         className="pricingFifthIcon"
                       />
                       <span dangerouslySetInnerHTML={{ __html: item }}></span>

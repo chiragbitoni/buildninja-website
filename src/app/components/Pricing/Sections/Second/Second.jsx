@@ -32,7 +32,7 @@ export default function Second() {
         <div className="pricingMonthlyFreeCardList">
           {secondSectionText.monthCards.soloEditionCard.list1.map((item, index) => (
             <div key={index} className="pricingAnnualFreeCardListItem">
-              <img src={paths.icons.greenTick} alt="tick" />
+              <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
               <li dangerouslySetInnerHTML={{ __html: item }}></li>
             </div>
           ))}
@@ -54,7 +54,7 @@ export default function Second() {
         <div className="pricingMonthlyFreeCardList2">
           {secondSectionText.monthCards.soloEditionCard.list2.map((item, index) => (
             <div key={index} className="pricingAnnualFreeCardListItem">
-              <img src={paths.icons.greenTick} alt="tick" />
+              <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
               <li dangerouslySetInnerHTML={{ __html: item }}></li>
             </div>
           ))}
@@ -92,7 +92,7 @@ export default function Second() {
       <div className="pricingAnnualFreeCardListContainer">
         {secondSectionText.annualCard.list.map((item, index) => (
           <div key={index} className="pricingAnnualFreeCardListItem">
-            <img src={paths.icons.greenTick} alt="tick" />
+            <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
             <li dangerouslySetInnerHTML={{ __html: item }}></li>
           </div>
         ))}
@@ -140,7 +140,7 @@ export default function Second() {
         <div className="pricingAnnualFreeCardListContainer">
           {secondSectionText.annualCard.list.map((item, index) => (
             <div key={index} className="pricingAnnualFreeCardListItem">
-              <img src={paths.icons.greenTick} alt="tick" />
+              <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
               <li dangerouslySetInnerHTML={{ __html: item }}></li>
             </div>
           ))}

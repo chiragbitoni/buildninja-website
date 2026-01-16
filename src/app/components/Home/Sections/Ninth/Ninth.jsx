@@ -24,7 +24,7 @@ export default function Ninth() {
                     <button className="ninthDemoBtn" onClick={() => dispatch(openVideo(process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID))}>{ninthSectionText.secondaryButton}</button>
                 </div>
                 <div className="ninthSecondTitleContainer">
-                    <img src={paths.icons.greenShield} className="ninthSecondTitleIcon"></img>
+                    <img src={paths.icons.greenShield} className="ninthSecondTitleIcon" alt="Green shield icon symbolizing security and protection"></img>
                     <h4 className="ninthSecondTitle">{ninthSectionText.secondTitle}</h4>
                 </div>
                 <div className="ninthListGrid">
@@ -32,7 +32,7 @@ export default function Ninth() {
                         const alignClass = (index + 1) % 2 === 0 ? "rightAlign" : "";
                         return (
                             <div key={index} className={`ninthListContainer ${alignClass}`}>
-                                <img src={paths.icons.greenTick} className="ninthTickIcon"></img>
+                                <img src={paths.icons.greenTick} className="ninthTickIcon" alt="Green tick icon indicating success, approval, or completion"></img>
                                 <li className="ninthList">{item}</li>
                             </div>
                         );

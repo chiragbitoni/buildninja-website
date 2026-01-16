@@ -52,7 +52,7 @@ export default function Eighth() {
 
           return (
             <li key={i} className="pricingEighthFeatureItem">
-              <img src={paths.icons.greenTick} className="pricingEighthFeatureItemTick"/> {updatedFeature}
+              <img src={paths.icons.greenTick} className="pricingEighthFeatureItemTick" alt="Green tick icon indicating success, approval, or completion"/> {updatedFeature}
             </li>
           );
         })}

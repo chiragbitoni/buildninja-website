@@ -81,12 +81,12 @@ export default function Footer() {
                             <h3 className="footerTitle">{footerText.company.name}</h3>
                         </div>
                         <p className="footerDesc">{footerText.company.description}<br/>{footerText.company.description2}</p>
-                        <img src="/resources/GrapecityWhite.png" alt="BuildNinja Logo" className="footerGCLogo" />
+                        <img src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className="footerGCLogo" />
                         <div className="footerGCSocial">
-                            <img src="/resources/Footer/social/linkedin.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></img>
-                            <img src="/resources/Footer/social/instagram.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></img>
-                            <img src="/resources/Footer/social/facebook.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></img>
-                            <img src="/resources/Footer/social/youtube.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@grapecityindiapvtltd" }}></img>
+                            <img src="/resources/Footer/social/linkedin.png" alt= "LinkedIn logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></img>
+                            <img src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></img>
+                            <img src="/resources/Footer/social/facebook.png" alt="Facebook logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></img>
+                            <img src="/resources/Footer/social/youtube.png" alt="YouTube logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@grapecityindiapvtltd" }}></img>
                         </div>
                         <p className="footerCopy">{footerText.company.copyright}</p>
                     </div>

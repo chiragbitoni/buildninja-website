@@ -13,7 +13,7 @@ export default function Sixth() {
                     <ul className="sixthSimple-list">
                         {sixthSectionText.list1.map((item, index) => (
                             <li key={index} className="sixth-simple-box-text">
-                                <img src={`${paths.root}${item.icon}`} alt="" />
+                                <img src={`${paths.root}${item.icon}`} alt={item.alt} />
                                 {item.description}
                             </li>
                         ))}
@@ -23,7 +23,7 @@ export default function Sixth() {
                             <li key={index} className="sixth-simple-box-text">
                                 <Image
                                     src={`${paths.root}${item.icon}`}
-                                    alt=""
+                                    alt={item.alt}
                                     width={26}
                                     height={26}
                                     sizes="(max-width: 640px) 20px, 24px"
