@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 const GRAPEHUB_URL = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "";
 const today = new Date();
-console.log(today.getFullYear());
 const footerText = {
     company: {
         name: "BuildNinja",
