@@ -21,13 +21,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "BuildNinja | Stop Fighting Your CI/CD Tool",
-  description: "Build Ninja - The Ultimate Build System for Developers",
+  title: "BuildNinja – Self hosted CI/CD platform",
+  description:
+    "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
+
+  alternates: {
+    canonical: "https://buildninja.grapehub.io/",
+  },
+
   icons: {
     icon: paths.icons.favicon,
   },
-  alternates: {
-    canonical: "https://buildninja.grapehub.io",
+
+  openGraph: {
+    title: "BuildNinja – Self hosted CI/CD platform",
+    description:
+      "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
+    url: "https://buildninja.grapehub.io/",
+    siteName: "BuildNinja",
+    type: "website",
+    images: [
+      {
+        url: "https://buildninja.grapehub.io/resources/GrapecityWhite.png",
+        width: 1200,
+        height: 630,
+        alt: "BuildNinja CI/CD platform",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "BuildNinja – Self hosted CI/CD platform",
+    description:
+      "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
+    images: ["https://buildninja.grapehub.io/resources/GrapecityWhite.png"],
   },
 };
 
