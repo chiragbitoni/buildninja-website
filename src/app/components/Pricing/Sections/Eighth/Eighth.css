@@ -128,3 +128,8 @@
         justify-content: center;
     }
 }
+
+.pricingEighthFeatureItemTick, .pricingEighthFeatureNavigationIcon{
+    width: auto;
+    height: auto;
+}

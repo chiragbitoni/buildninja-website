@@ -1,4 +1,5 @@
 // app/components/pricing/Third.js
+import Image from "next/image";
 import { paths } from "../../../../../../public/static/paths";
 import "./Third.css";
 
@@ -9,7 +10,7 @@ export default function Third() {
 
             <div className="pricingThirdCardsContainer">
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.infinite} alt="Grapecity Pink Infinity Icon"></img>
+                    <Image width={0} height={0} className="pricingThirdIcon" src={paths.icons.infinite} alt="Grapecity Pink Infinity Icon"></Image>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Unlimited Build Agents</h3>
                         <p className="pricingThirdCardDesc">
@@ -19,7 +20,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.restricted} alt="Grapecity Pink Restricted Icon"></img>
+                    <Image width={0} height={0} className="pricingThirdIcon" src={paths.icons.restricted} alt="Grapecity Pink Restricted Icon"></Image>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">No Per-Seat Costs</h3>
                         <p className="pricingThirdCardDesc">
@@ -29,7 +30,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.shieldPink} alt="Grapecity Pink Shield Icon"></img>
+                    <Image width={0} height={0} className="pricingThirdIcon" src={paths.icons.shieldPink} alt="Grapecity Pink Shield Icon"></Image>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Self-Hosted Control</h3>
                         <p className="pricingThirdCardDesc">
@@ -39,7 +40,7 @@ export default function Third() {
                 </div>
 
                 <div className="pricingThirdCard">
-                    <img className="pricingThirdIcon" src={paths.icons.clockPink} alt="Grapecity Pink Clock Icon"></img>
+                    <Image width={0} height={0} className="pricingThirdIcon" src={paths.icons.clockPink} alt="Grapecity Pink Clock Icon"></Image>
                     <div className="pricingThirdText">
                         <h3 className="pricingThirdCardTitle">Start with Trial License</h3>
                         <p className="pricingThirdCardDesc">

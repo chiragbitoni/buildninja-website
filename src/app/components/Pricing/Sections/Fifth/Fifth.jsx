@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import "./Fifth.css";
 import { pricingFifthText } from "../../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../../public/static/paths";
+import Image from "next/image";
 
 export default function Fifth() {
   const text = pricingFifthText;
@@ -24,7 +25,8 @@ export default function Fifth() {
                 <ul className="pricingFifthFeatureList">
                   {section.list.map((item, itemIndex) => (
                     <li key={itemIndex}>
-                      <img
+                      <Image
+                        width={0} height={0}
                         src={paths.icons.greenTick}
                         alt="Green tick icon indicating success, approval, or completion"
                         className="pricingFifthIcon"

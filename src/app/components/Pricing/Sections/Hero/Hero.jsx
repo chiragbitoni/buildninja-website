@@ -7,6 +7,7 @@ import { secondSectionTextIndia, secondSectionTextGlobal, secondSectionEnterpris
 import { paths } from "../../../../../../public/static/paths";
 import { useEffect, useState } from "react";
 import { fetchPlansFromAPI } from "@/services/plans/plans";
+import Image from "next/image";
 export default function PricingHero() {
     const dispatch = useDispatch();
     const { region, billing, multiYear } = useSelector((state) => state.pricing);
@@ -159,7 +160,7 @@ export default function PricingHero() {
                 <div className="pricingMonthlyFreeCardList">
                     {secondSectionText.monthCards.soloEditionCard.list1.map((item, index) => (
                         <div key={index} className="pricingAnnualFreeCardListItem">
-                            <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+                            <Image width={0} height={0} src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
                             <li dangerouslySetInnerHTML={{ __html: item }}></li>
                         </div>
                     ))}
@@ -172,7 +173,7 @@ export default function PricingHero() {
                 <div className="pricingMonthlyFreeCardList2">
                     {secondSectionText.monthCards.soloEditionCard.list2.map((item, index) => (
                         <div key={index} className="pricingAnnualFreeCardListItem">
-                            <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+                            <Image width={0} height={0} src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
                             <li dangerouslySetInnerHTML={{ __html: item }}></li>
                         </div>
                     ))}
@@ -188,13 +189,13 @@ export default function PricingHero() {
                     ) : (
                         <>
                             {secondSectionText.monthCards.soloEditionCard.buttonText}
-                            <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
+                            <Image width={0} height={0} className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
                         </>
                     )}
                 </button>
                 <button className="pricingMonthlyFreeCardButton" onClick={() => { handleButtonClick("/install") }}>
                     {secondSectionText.monthCards.soloEditionCard.buttonText2}
-                    <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
+                    <Image width={0} height={0} className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
                 </button>
                 {secondSectionText.monthCards.soloEditionCard.ctaText && (
                     <strong>
@@ -221,7 +222,7 @@ export default function PricingHero() {
             <div className="pricingAnnualFreeCardListContainer">
                 {secondSectionText.annualCard.list.map((item, index) => (
                     <div key={index} className="pricingAnnualFreeCardListItem">
-                        <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+                        <Image width={0} height={0} src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
                         <li dangerouslySetInnerHTML={{ __html: item }}></li>
                     </div>
                 ))}
@@ -236,13 +237,13 @@ export default function PricingHero() {
                     ) : (
                         <>
                             Buy Now
-                            <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
+                            <Image width={0} height={0} className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
                         </>
                     )}
                 </button>
                 <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                     {secondSectionText.monthCards.shogunEditionCard.buttonText}
-                    <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
+                    <Image width={0} height={0} className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
                 </button>
                 <strong>
                     <p className="pricingMonthlyShogunCardCtaText">
@@ -282,7 +283,7 @@ export default function PricingHero() {
                 <div className="pricingAnnualFreeCardListContainer">
                     {secondSectionText.annualCard.list.map((item, index) => (
                         <div key={index} className="pricingAnnualFreeCardListItem">
-                            <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+                            <Image width={0} height={0} src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
                             <li dangerouslySetInnerHTML={{ __html: item }}></li>
                         </div>
                     ))}
@@ -299,13 +300,13 @@ export default function PricingHero() {
                         ) : (
                             <>
                                 Buy Now
-                                <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
+                                <Image width={0} height={0} className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="icon" />
                             </>
                         )}
                     </button>
                     <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
                         {plan.buttonText}
-                        <img
+                        <Image width={0} height={0}
                             className="pricingMonthlyFreeIcon"
                             src={paths.icons.navigation}
                             alt="Trial Icon"

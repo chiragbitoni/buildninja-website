@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { paths } from "../../../../../../public/static/paths";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Second() {
   const { region, billing, multiYear } = useSelector((state) => state.pricing);
@@ -32,7 +33,7 @@ export default function Second() {
         <div className="pricingMonthlyFreeCardList">
           {secondSectionText.monthCards.soloEditionCard.list1.map((item, index) => (
             <div key={index} className="pricingAnnualFreeCardListItem">
-              <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+              <Image width={0} height={0} src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
               <li dangerouslySetInnerHTML={{ __html: item }}></li>
             </div>
           ))}
@@ -54,7 +55,7 @@ export default function Second() {
         <div className="pricingMonthlyFreeCardList2">
           {secondSectionText.monthCards.soloEditionCard.list2.map((item, index) => (
             <div key={index} className="pricingAnnualFreeCardListItem">
-              <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+              <Image src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
               <li dangerouslySetInnerHTML={{ __html: item }}></li>
             </div>
           ))}
@@ -63,9 +64,9 @@ export default function Second() {
 
       {/* Footer */}
       <div className="pricingMonthlyFreeCardFooter">
-        <button className="pricingMonthlyFreeCardButton" onClick={()=>{handleButtonClick("/install")}}>
+        <button className="pricingMonthlyFreeCardButton" onClick={() => { handleButtonClick("/install") }}>
           {secondSectionText.monthCards.soloEditionCard.buttonText}
-          <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
+          <Image className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Download Icon" />
         </button>
         {secondSectionText.monthCards.soloEditionCard.ctaText && (
           <strong>
@@ -92,15 +93,15 @@ export default function Second() {
       <div className="pricingAnnualFreeCardListContainer">
         {secondSectionText.annualCard.list.map((item, index) => (
           <div key={index} className="pricingAnnualFreeCardListItem">
-            <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+            <Image src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
             <li dangerouslySetInnerHTML={{ __html: item }}></li>
           </div>
         ))}
       </div>
       <div className="pricingMonthlyFreeCardFooter">
-        <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/install")}}>
+        <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
           {secondSectionText.monthCards.shogunEditionCard.buttonText}
-          <img className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
+          <Image className="pricingMonthlyFreeIcon" src={paths.icons.navigation} alt="Trial Icon" />
         </button>
         <strong>
           <p className="pricingMonthlyShogunCardCtaText">
@@ -140,16 +141,17 @@ export default function Second() {
         <div className="pricingAnnualFreeCardListContainer">
           {secondSectionText.annualCard.list.map((item, index) => (
             <div key={index} className="pricingAnnualFreeCardListItem">
-              <img src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
+              <Image width={0} height={0} src={paths.icons.greenTick} alt="Green tick icon indicating success, approval, or completion" />
               <li dangerouslySetInnerHTML={{ __html: item }}></li>
             </div>
           ))}
         </div>
 
         <div className="pricingMonthlyFreeCardFooter">
-          <button className="pricingMonthlyShogunCardButton" onClick={()=>{handleButtonClick("/install")}}>
+          <button className="pricingMonthlyShogunCardButton" onClick={() => { handleButtonClick("/install") }}>
             {plan.buttonText}
-            <img
+            <Image
+              width={0} height={0}
               className="pricingMonthlyFreeIcon"
               src={paths.icons.navigation}
               alt="Trial Icon"
@@ -172,7 +174,7 @@ export default function Second() {
         <h4 className="pricingSecondAnnualEnterpriseCardTitle">{secondSectionEnterpriseCardText.title}</h4>
         <p className="pricingSecondAnnualEnterpriseCardDescription">{secondSectionEnterpriseCardText.description}</p>
         <div className="pricingSecondAnnualEnterpriseCardButtonsContainer">
-          <button className="pricingSecondAnnualEnterpriseCardButton" onClick={()=>{handleButtonClick("/support")}}>{secondSectionEnterpriseCardText.buttonText}</button>
+          <button className="pricingSecondAnnualEnterpriseCardButton" onClick={() => { handleButtonClick("/support") }}>{secondSectionEnterpriseCardText.buttonText}</button>
           <p className="pricingSecondAnnualEnterpriseCardResponseTimeText">{secondSectionEnterpriseCardText.responseTimeText}</p>
         </div>
       </div>
