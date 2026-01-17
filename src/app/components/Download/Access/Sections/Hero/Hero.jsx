@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { downloadAccessHeroText as staticText } from "../../../../../../../public/static/downloadAccessPageText";
 import { fetchInstallers, downloadInstaller } from "@/services/auth/installers";
-
+import Image from "next/image";
 export default function Hero() {
     const router = useRouter();
 
@@ -55,7 +55,7 @@ export default function Hero() {
             <div className="downloadAccessHeroContent">
                 {/* Heading */}
                 <div className="downloadAccessHeroHeader">
-                    <img className="downloadAccessHeroTick" src={paths.icons.greenCircleTickOverLapWithBG} />
+                    <Image width={0} height={0} className="downloadAccessHeroTick" src={paths.icons.greenCircleTickOverLapWithBG} alt="Grapecity Green Tick With Background"/>
                     <h1 className="downloadAccessHeroTitle">{text.heading}</h1>
                     <p className="downloadAccessHeroSubtitle">{text.subHeading}</p>
                 </div>
@@ -70,7 +70,7 @@ export default function Hero() {
                     {/* SERVER */}
                     <div className="downloadAccessHeroFileRow">
                         <div className="downloadAccessHeroFileRowFlex">
-                            <img src={paths.icons.downloadWhite} />
+                            <Image width={0} height={0} src={paths.icons.downloadWhite} alt="Grapecity White Download Icon"/>
                             <div>
                                 <p className="downloadAccessHeroFileName">{text.windows.serverName}</p>
                                 <p className="downloadAccessHeroFileVersion">{text.windows.serverVersion}</p>
@@ -89,7 +89,7 @@ export default function Hero() {
                     {/* AGENT */}
                     <div className="downloadAccessHeroFileRow">
                         <div className="downloadAccessHeroFileRowFlex">
-                            <img src={paths.icons.downloadWhite} />
+                            <Image width={0} height={0} src={paths.icons.downloadWhite} alt="Grapecity White Download Icon"/>
                             <div>
                                 <p className="downloadAccessHeroFileName">{text.windows.agentName}</p>
                                 <p className="downloadAccessHeroFileVersion">{text.windows.agentVersion}</p>
@@ -119,7 +119,7 @@ export default function Hero() {
                                 className="downloadAccessHeroCopyBtn"
                                 onClick={() => copyToClipboard(text.docker.serverCmd)}
                             >
-                                <img src={paths.icons.copy} />
+                                <Image width={0} height={0} src={paths.icons.copy} alt="Grapecity Copy Icon"/>
                             </button>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ export default function Hero() {
                                 className="downloadAccessHeroCopyBtn"
                                 onClick={() => copyToClipboard(text.docker.agentCmd)}
                             >
-                                <img src={paths.icons.copy} />
+                                <Image width={0} height={0} src={paths.icons.copy} alt="Grapecity Copy Icon"/>
                             </button>
                         </div>
                     </div>
@@ -171,7 +171,7 @@ export default function Hero() {
                 {/* Bottom Links (static) */}
                 <div className="downloadAccessHeroBottom">
                     <div className="downloadAccessHeroBottomItem">
-                        <img src={paths.icons.codeFile} />
+                        <Image width={0} height={0} src={paths.icons.codeFile} alt="Grapecity Code File Icon"/>
                         <h3>{text.bottomLinks.guide}</h3>
                         <p>{text.bottomLinks.guideDesc}</p>
                         <button onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/category/quick-setup-guide`}>
@@ -180,7 +180,7 @@ export default function Hero() {
                     </div>
 
                     <div className="downloadAccessHeroBottomItem">
-                        <img src={paths.icons.book} />
+                        <Image width={0} height={0} src={paths.icons.book} alt="Grapecity Code File Icon"/>
                         <h3>{text.bottomLinks.docs}</h3>
                         <p>{text.bottomLinks.docsDesc}</p>
                         <button onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`}>
@@ -189,7 +189,7 @@ export default function Hero() {
                     </div>
 
                     <div className="downloadAccessHeroBottomItem">
-                        <img src={paths.icons.database} />
+                        <Image width={0} height={0} src={paths.icons.database} alt="Grapecity Database Icon"/>
                         <h3>{text.bottomLinks.support}</h3>
                         <p>{text.bottomLinks.supportDesc}</p>
                         <button onClick={() => router.push("/support")}>

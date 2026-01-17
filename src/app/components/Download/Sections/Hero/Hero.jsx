@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { emailSignup } from "@/services/auth/emailSignup";
 import { checkAuth } from '@/services/auth/check';
 import posthog from "posthog-js";
+import Image from 'next/image';
 
 export default function Hero() {
     const router = useRouter();
@@ -116,7 +117,7 @@ export default function Hero() {
                     <div className="downloadHeroEmailIconTextContainer">
                         {heroSectionText.downloadCContainerText.iconText.map((text, index) => (
                             <div className="downloadHeroEmailIconContainer" key={index}>
-                                <img className="downloadHeroEmailIcon"
+                                <Image width={0} height={0} className="downloadHeroEmailIcon"
                                     src={heroSectionText.downloadCContainerText.iconPath} />
                                 <div className="downloadHeroEmailIconTextItem">{text}</div>
                             </div>

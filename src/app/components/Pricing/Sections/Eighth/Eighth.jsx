@@ -4,6 +4,7 @@ import { pricingEighthText } from "../../../../../../public/static/pricingPageTe
 import { paths } from "../../../../../../public/static/paths";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
 export default function Eighth() {
   const text = pricingEighthText;
@@ -25,7 +26,7 @@ export default function Eighth() {
           <h3 className="pricingEighthCardTitle">{text.shogun.title}</h3>
           <p className="pricingEighthCardDesc">{text.shogun.description}</p>
           <button className="pricingEighthButton pricingEighthButtonPink" onClick={() => handleButtonClick("/install")}>
-            {text.shogun.buttonText}<img src={paths.icons.navigation}></img>
+            {text.shogun.buttonText}<Image width={0} height={0} className="pricingEighthFeatureNavigationIcon" src={paths.icons.navigation} alt="Grapecity Navigation Icon"></Image>
           </button>
         </div>
 
@@ -34,7 +35,7 @@ export default function Eighth() {
           <h3 className="pricingEighthCardTitle">{text.solo.title}</h3>
           <p className="pricingEighthCardDesc">{text.solo.description}</p>
           <button className="pricingEighthButton pricingEighthButtonGray" onClick={() => handleButtonClick("/install")}>
-            {text.solo.buttonText}<img src={paths.icons.navigation}></img>
+            {text.solo.buttonText}<Image width={0} height={0} src={paths.icons.navigation} className="pricingEighthFeatureNavigationIcon" alt="Grapecity Navigation Icon"></Image>
           </button>
         </div>
       </div>
@@ -52,7 +53,7 @@ export default function Eighth() {
 
           return (
             <li key={i} className="pricingEighthFeatureItem">
-              <img src={paths.icons.greenTick} className="pricingEighthFeatureItemTick"/> {updatedFeature}
+              <Image width={0} height={0} src={paths.icons.greenTick} className="pricingEighthFeatureItemTick" alt="Green tick icon indicating success, approval, or completion"/> {updatedFeature}
             </li>
           );
         })}

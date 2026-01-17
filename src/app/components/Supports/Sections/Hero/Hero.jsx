@@ -4,6 +4,7 @@ import "./Hero.css";
 import { supportHeroText } from "../../../../../../public/static/supportPageText";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendSupportEmail } from "@/services/email/sendEmail";
+import Image from "next/image";
 export default function SupportHero() {
     const t = supportHeroText;
 
@@ -64,7 +65,7 @@ export default function SupportHero() {
                     <div className="supportHeroOptions">
                         {t.options.map((opt, index) => (
                             <div key={index} className="supportHeroOption">
-                                <img className="supportHeroIcon" src={opt.icon} />
+                                <Image width={0} height={0} className="supportHeroIcon" src={opt.icon} alt={opt.alt}/>
                                 <div>
                                     <h4>{opt.title}</h4>
                                     <p>{opt.desc || null}</p>

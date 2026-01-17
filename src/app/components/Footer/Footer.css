@@ -66,6 +66,13 @@
 
 .footerSocialIcons {
   cursor: pointer;
+  width: auto;
+  height: auto;
+}
+
+.footerBuildNinjaLogo {
+  width: auto;
+  height: auto;
 }
 
 /* Name + desc in one block for small screens */

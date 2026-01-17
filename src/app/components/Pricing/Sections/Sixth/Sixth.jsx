@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { pricingSixthText} from "../../../../../../public/static/pricingPageText";
 import "./Sixth.css";
 import { paths } from "../../../../../../public/static/paths";
+import Image from "next/image";
 
 function Sixth() {
     return (
@@ -15,7 +16,7 @@ function Sixth() {
             <div className="pricingSixthCards">
                 {pricingSixthText.features.map((feature, index) => (
                     <div className="pricingSixthCard" key={index}>
-                        <img src={paths.icons.greenTickWithBG} alt="tick" className="pricingSixthTick" />
+                        <Image width={0} height={0} src={paths.icons.greenTickWithBG} alt="Green tick icon indicating success, approval, or completion" className="pricingSixthTick" />
                         <p>{feature.title}</p>
                     </div>
                 ))}

@@ -5,6 +5,8 @@ import Hero from "../components/Faq/Sections/Hero/Hero";
 import Second from "../components/Faq/Sections/Second/Second";
 import Third from "../components/Faq/Sections/Third/page";
 
+
+
 export default function Faq() {
     return (
         <div>

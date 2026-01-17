@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { paths } from "../../../../../../../public/static/paths";
 import { fetchInstallers, downloadInstaller } from "@/services/auth/installers";
 import posthog from "posthog-js";
+import Image from "next/image";
 
 export default function Hero() {
   const router = useRouter();
@@ -120,7 +121,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestWindows?.serverName}
             </button>
 
@@ -134,7 +135,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestWindows?.agentName}
             </button>
           </div>
@@ -169,7 +170,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestLinux?.serverName}
             </button>
 
@@ -183,7 +184,7 @@ export default function Hero() {
                 })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestLinux?.agentName}
             </button>
           </div>
@@ -202,7 +203,7 @@ export default function Hero() {
                     copyToClipboard(staticData.docker.serverCmd, "server")
                   }
                 >
-                  <img src={paths.icons.copy} />
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.copy} alt="Grapecity Copy Icon" />
                 </button>
               </div>
             </div>
@@ -217,7 +218,7 @@ export default function Hero() {
                     copyToClipboard(staticData.docker.agentCmd, "agent")
                   }
                 >
-                  <img src={paths.icons.copy} />
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.copy} alt="Grapecity Copy Icon" />
                 </button>
               </div>
             </div>
@@ -274,7 +275,7 @@ export default function Hero() {
                       Agent
                     </button>
 
-                    <img className="versionOpen" src={paths.icons.navigation} />
+                    <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.navigation} alt="Grapecity Navigation Icon" />
                   </div>
                 </div>
               ))}
@@ -346,7 +347,7 @@ export default function Hero() {
                       : (window.location.href = card.link);
                   }}
                 >
-                  <img src={paths.icons.navigation} />
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.navigation} alt="Grapecity Navigation Icon" />
                   {card.btn}
                 </button>
               ) : (
@@ -361,7 +362,7 @@ export default function Hero() {
                     window.location.href = card.link;
                   }}
                 >
-                  <img src={paths.icons.navigation} />
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.navigation} alt="Grapecity Navigation Icon" />
                   {card.btn}
                 </button>
               )}

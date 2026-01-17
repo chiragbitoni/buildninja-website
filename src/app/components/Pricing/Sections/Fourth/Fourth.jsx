@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import "./Fourth.css";
 import { pricingFourthText } from "../../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../../public/static/paths";
+import Image from "next/image";
 
 export default function Fourth() {
   const { region } = useSelector((state) => state.pricing);
@@ -31,7 +32,7 @@ export default function Fourth() {
         {text.cards.map((card, index) => (
           <div className="pricingFourthCard" key={index}>
             <div className="cardHeader">
-              <img className="cardIcon" src={card.icon}></img>
+              <Image width={0} height={0} className="cardIcon" src={card.icon} alt={card.alt}></Image>
               <div className="cardTitleRow">
                 <h3>{card.title}</h3>
                 {card.tag && <span className="cardTag">{card.tag}</span>}
@@ -46,7 +47,7 @@ export default function Fourth() {
                 {card.badges.map((b, i) => (
                   <div key={i}>
                     <span key={i} className="badge">
-                      <img className="pricingFourthCardShield" src={paths.icons.cardPricingShield}></img><p>
+                      <Image width={0} height={0} className="pricingFourthCardShield" src={paths.icons.cardPricingShield} alt="Grapecity white shield icon"></Image><p>
                         {b}
                       </p>
                     </span>
