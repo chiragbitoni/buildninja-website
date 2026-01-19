@@ -1,0 +1,51 @@
+# llms.txt — BuildNinja
+
+site: https://buildninja.grapehub.io
+name: BuildNinja
+type: Software Product
+category: Self-Hosted CI/CD Platform
+
+description:
+BuildNinja is a self-hosted CI/CD platform designed for growing engineering teams.
+It focuses on simplicity, fast setup, and predictable pricing without per-seat costs.
+Teams can deploy BuildNinja in minutes using Docker and manage builds, agents,
+triggers, notifications, and artifacts from a single interface.
+
+key_features:
+- Self-hosted CI/CD with full infrastructure control
+- Unlimited users and agents for a flat monthly price
+- Real-time build logs and duration analytics
+- Agent monitoring and management
+- Build triggers and scheduling (custom, daily, weekly)
+- Email notifications for build events
+- Simple configuration without plugin dependency chaos
+
+pricing:
+- Free up to 3 agents
+- $199 per month for unlimited agents and users
+
+setup:
+- Docker-based installation
+- Typical setup time: under 5 minutes
+- Requires MongoDB
+
+audience:
+- Software development teams
+- Engineering teams seeking predictable CI/CD costs
+- Teams migrating from complex CI/CD tools like Jenkins
+
+publisher:
+- GrapeCity India
+- 25+ years experience building developer tools
+
+official_links:
+homepage: https://buildninja.grapehub.io
+features: https://buildninja.grapehub.io/features
+pricing: https://buildninja.grapehub.io/pricing
+installation: https://buildninja.grapehub.io/install
+support: https://buildninja.grapehub.io/support
+faq: https://buildninja.grapehub.io/faq
+terms: https://buildninja.grapehub.io/eula
+
+contact:
+support_url: https://buildninja.grapehub.io/support
