@@ -2,13 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./Table.css";
 import { paths } from "../../../../../../public/static/paths";
+import Image from "next/image";
 
 export default function Table() {
   const { region } = useSelector((state) => state.pricing);
 
   const TickText = ({ children }) => (
     <span className="pricingTableTickText">
-      <img
+      <Image
+        width={0} height={0}
         src={paths.icons.greenTickWithBG}
         alt="tick"
         className="pricingTableTick"
@@ -128,7 +130,7 @@ export default function Table() {
         { feature: "Grace Period", solo: "7 days", shogun: "7 days" },
       ],
     },
-    global:{
+    global: {
       title: "Everything You Need, Choose Your Scale",
       subtitle:
         "Select your region to see pricing in your currency. Currently showing India (₹ INR) pricing",
@@ -150,7 +152,7 @@ export default function Table() {
           solo: "FREE",
           shogun: (
             <>
-               $2,499/year
+              $2,499/year
               <small>($104/month)</small>
               <span className="pricingTableGreenText">Save 48%</span>
             </>
@@ -161,7 +163,7 @@ export default function Table() {
           solo: "FREE",
           shogun: (
             <>
-             $3,199/year
+              $3,199/year
               <small>($89/month)</small>
               <span className="pricingTableGreenText">Save 55%</span>
             </>
@@ -236,9 +238,9 @@ export default function Table() {
 
 
   const table =
-  region === "india"
-    ? pricingData.india
-    : pricingData.global;
+    region === "india"
+      ? pricingData.india
+      : pricingData.global;
 
   return (
     <section className="pricingTableSection">

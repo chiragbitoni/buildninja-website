@@ -2,6 +2,7 @@
 import "./Fourth.css";
 import { fourthSectionText } from "../../../../../../public/static/faqPageText";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Fourth() {
   const router = useRouter();
@@ -13,7 +14,9 @@ export default function Fourth() {
         <div className="faqFourthGrid">
           {fourthSectionText.cards.map((card, index) => (
             <div key={index} className="faqFourthBox">
-              <img
+              <Image
+                width={0}
+                height={0}
                 src={card.icon}
                 alt={card.title}
                 className="faqFourthIcon"

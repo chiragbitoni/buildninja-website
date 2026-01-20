@@ -4,6 +4,8 @@ import { downloadDashboardData as staticData } from "../../../../../../../public
 import { useRouter } from "next/navigation";
 import { paths } from "../../../../../../../public/static/paths";
 import { fetchInstallers, downloadInstaller } from "@/services/auth/installers";
+import posthog from "posthog-js";
+import Image from "next/image";
 
 export default function Hero() {
   const router = useRouter();
@@ -12,28 +14,68 @@ export default function Hero() {
   const [loading, setLoading] = useState(true);
   const [hasHistory, setHasHistory] = useState(false);
 
-  const copyToClipboard = (t) => navigator.clipboard.writeText(t);
+  const copyToClipboard = (text, type) => {
+    navigator.clipboard.writeText(text);
+    posthog.capture("docker_command_copied", {
+      type,
+    });
+  };
+  useEffect(() => {
+    const stored = localStorage.getItem("bNEmail");
+
+    if (stored) {
+      try {
+        const { userId, email } = JSON.parse(stored);
+
+        if (userId) {
+          posthog.identify(userId, { email });
+        }
+      } catch { }
+    }
+  }, []);
+
+  useEffect(() => {
+    posthog.capture("dashboard_viewed", {
+      page: "download_dashboard",
+    });
+  }, []);
 
   useEffect(() => {
     async function load() {
       try {
         const api = await fetchInstallers();
-        setData(api);               // Replace with API
+
+        posthog.capture("installer_list_loaded", {
+          has_history: Boolean(api.history?.length),
+        });
+
+        setData(api);
         setHasHistory(api.history && api.history.length > 0);
       } catch (err) {
+        posthog.capture("installer_list_failed", {
+          error: err?.message,
+        });
+
         console.error("Installer fetch failed, using fallback", err);
         setHasHistory(false);
       } finally {
         setLoading(false);
       }
     }
+
     load();
   }, []);
 
   const latestWindows = data.latest?.windows;
   const latestLinux = data.latest?.linux;
+  const handleDownload = (url, meta) => {
+    posthog.capture("installer_download_clicked", {
+      ...meta,
+      source_page: "download_dashboard",
+    });
 
-
+    downloadInstaller(url.split("/").pop());
+  };
   return (
     <section className="downloadDashboardHeroSection">
       <div className="downloadDashboardHeroContent">
@@ -72,26 +114,34 @@ export default function Hero() {
             <button
               className="downloadDashboardPinkBtn"
               onClick={() =>
-                downloadInstaller(latestWindows.serverDownloadUrl.split("/").pop())
+                handleDownload(latestWindows.serverDownloadUrl, {
+                  os: "windows",
+                  type: "server",
+                  version: latestWindows?.serverVersion,
+                })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestWindows?.serverName}
             </button>
 
             <button
               className="downloadDashboardPinkBtn"
               onClick={() =>
-                downloadInstaller(latestWindows.agentDownloadUrl.split("/").pop())
+                handleDownload(latestWindows.agentDownloadUrl, {
+                  os: "windows",
+                  type: "agent",
+                  version: latestWindows?.agentVersion,
+                })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestWindows?.agentName}
             </button>
           </div>
 
           <p className="downloadDashboardHeroButtonTitle">{latestLinux?.title}</p>
-           <div className="downloadDashboardHeroVersions">
+          <div className="downloadDashboardHeroVersions">
             <div>
               <p>Server Version</p>
               <h3>{latestLinux?.serverVersion || "—"}</h3>
@@ -105,7 +155,7 @@ export default function Hero() {
               <h3>{latestLinux?.releasedOn ? new Date(latestLinux.releasedOn).toDateString() : "—"}</h3>
             </div>
           </div>
-          
+
 
           {/* Linux Buttons */}
 
@@ -113,20 +163,28 @@ export default function Hero() {
             <button
               className="downloadDashboardPinkBtn"
               onClick={() =>
-                downloadInstaller(latestLinux.serverDownloadUrl.split("/").pop())
+                handleDownload(latestLinux.serverDownloadUrl, {
+                  os: "linux",
+                  type: "server",
+                  version: latestLinux?.serverVersion,
+                })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestLinux?.serverName}
             </button>
 
             <button
               className="downloadDashboardPinkBtn"
               onClick={() =>
-                downloadInstaller(latestLinux.agentDownloadUrl.split("/").pop())
+                handleDownload(latestLinux.agentDownloadUrl, {
+                  os: "linux",
+                  type: "agent",
+                  version: latestLinux?.agentVersion,
+                })
               }
             >
-              <img src={paths.icons.downloadWhite} />
+              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestLinux?.agentName}
             </button>
           </div>
@@ -141,9 +199,11 @@ export default function Hero() {
                 <p>{staticData.docker.serverCmd}</p>
                 <button
                   className="copyBtn"
-                  onClick={() => copyToClipboard(staticData.docker.serverCmd)}
+                  onClick={() =>
+                    copyToClipboard(staticData.docker.serverCmd, "server")
+                  }
                 >
-                  <img src={paths.icons.copy} />
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.copy} alt="Grapecity Copy Icon" />
                 </button>
               </div>
             </div>
@@ -154,9 +214,11 @@ export default function Hero() {
                 <p>{staticData.docker.agentCmd}</p>
                 <button
                   className="copyBtn"
-                  onClick={() => copyToClipboard(staticData.docker.agentCmd)}
+                  onClick={() =>
+                    copyToClipboard(staticData.docker.agentCmd, "agent")
+                  }
                 >
-                  <img src={paths.icons.copy} />
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.copy} alt="Grapecity Copy Icon" />
                 </button>
               </div>
             </div>
@@ -189,7 +251,12 @@ export default function Hero() {
                   <div className="versionBtns">
                     <button
                       onClick={() =>
-                        downloadInstaller(v.serverDownloadUrl.split("/").pop())
+                        handleDownload(v.serverDownloadUrl, {
+                          os: "unknown",
+                          type: "server",
+                          version: v.serverVersion,
+                          source: "previous_versions",
+                        })
                       }
                     >
                       Server
@@ -197,13 +264,18 @@ export default function Hero() {
 
                     <button
                       onClick={() =>
-                        downloadInstaller(v.agentDownloadUrl.split("/").pop())
+                        handleDownload(v.agentDownloadUrl, {
+                          os: "unknown",
+                          type: "agent",
+                          version: v.agentVersion,
+                          source: "previous_versions",
+                        })
                       }
                     >
                       Agent
                     </button>
 
-                    <img className="versionOpen" src={paths.icons.navigation} />
+                    <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.navigation} alt="Grapecity Navigation Icon" />
                   </div>
                 </div>
               ))}
@@ -217,7 +289,18 @@ export default function Hero() {
 
           <div className="mongoBox">
             <h3>{staticData.systemRequirements.mongoRequired}</h3>
-            <a href="https://www.mongodb.com/">
+            <a
+              href="https://www.mongodb.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                posthog.capture("external_dependency_clicked", {
+                  name: "mongodb",
+                  location: "system_requirements",
+                })
+              }
+            >
+
               {staticData.systemRequirements.mongoDownload}
             </a>
           </div>
@@ -251,13 +334,35 @@ export default function Hero() {
               <p>{card.desc}</p>
 
               {card.router ? (
-                <button onClick={() => router.push(card.router)}>
-                  <img src={paths.icons.navigation} />
+                <button
+                  onClick={() => {
+                    posthog.capture("support_cta_clicked", {
+                      title: card.title,
+                      destination: card.router || card.link,
+                      type: card.router ? "internal" : "external",
+                    });
+
+                    card.router
+                      ? router.push(card.router)
+                      : (window.location.href = card.link);
+                  }}
+                >
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.navigation} alt="Grapecity Navigation Icon" />
                   {card.btn}
                 </button>
               ) : (
-                <button onClick={() => (window.location.href = card.link)}>
-                  <img src={paths.icons.navigation} />
+                <button
+                  onClick={() => {
+                    posthog.capture("support_cta_clicked", {
+                      title: card.title,
+                      destination: card.link,
+                      type: "external",
+                    });
+
+                    window.location.href = card.link;
+                  }}
+                >
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.navigation} alt="Grapecity Navigation Icon" />
                   {card.btn}
                 </button>
               )}

@@ -1,15 +1,17 @@
 "use client";
+import Image from "next/image";
 import "./Footer.css";
 import { useRouter } from "next/navigation";
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 const GRAPEHUB_URL = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "";
+const today = new Date();
 const footerText = {
     company: {
         name: "BuildNinja",
         description:
             "CI/CD that just works.",
         description2: " Deploy with confidence, scale with ease.",
-        copyright: "© 2025 GrapeCity India Pvt Ltd. All Rights Reserved.",
+        copyright: "© " + today.getFullYear().toString() + " GrapeCity India Pvt Ltd. All Rights Reserved.",
     },
     sections: [
         {
@@ -36,7 +38,7 @@ const footerText = {
             title: "Company",
             links: [
                 { label: "About Us", link: `${GRAPEHUB_URL}/about` },
-                { label: "Blog", link: `${GRAPEHUB_URL}/blog` },
+                { label: "Blog", link: `${GRAPEHUB_URL}/blog/categories/buildninja` },
                 { label: "Contact", link: `${GRAPEHUB_URL}/contact` },
                 { label: "Support", link: `/support` },
             ],
@@ -75,17 +77,17 @@ export default function Footer() {
                     <div className="footerBrand">
                         <div className="footerLogoContainer">
                             <div className="footerLogo">
-                                <img src="/resources/Favicon/faviconWhite.png" alt="BuildNinja Logo" />
+                                <Image width={0} height={0} src="/resources/Favicon/faviconWhite.png" alt="BuildNinja Logo" className="footerBuildNinjaLogo" />
                             </div>
                             <h3 className="footerTitle">{footerText.company.name}</h3>
                         </div>
-                        <p className="footerDesc">{footerText.company.description}<br/>{footerText.company.description2}</p>
-                        <img src="/resources/GrapecityWhite.png" alt="BuildNinja Logo" className="footerGCLogo" />
+                        <p className="footerDesc">{footerText.company.description}<br />{footerText.company.description2}</p>
+                        <Image width={0} height={0} src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className="footerGCLogo" />
                         <div className="footerGCSocial">
-                            <img src="/resources/Footer/social/linkedin.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></img>
-                            <img src="/resources/Footer/social/instagram.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></img>
-                            <img src="/resources/Footer/social/facebook.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></img>
-                            <img src="/resources/Footer/social/youtube.png" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@grapecityindiapvtltd" }}></img>
+                            <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@grapecityindiapvtltd" }}></Image>
                         </div>
                         <p className="footerCopy">{footerText.company.copyright}</p>
                     </div>
@@ -97,7 +99,19 @@ export default function Footer() {
                                 <ul className="footerList">
                                     {section.links.map((item, i) => (
                                         <li key={i} className="footerListItem">
-                                            <button onClick={() => handleClick(item.link)} className="footerLink btnLink"> {item.label}</button>
+                                            <a
+                                                href={item.link}
+                                                onClick={(e) => {
+                                                    if (!item.link.startsWith("http")) {
+                                                        e.preventDefault();
+                                                        router.push(item.link);
+                                                    }
+                                                }}
+                                                className="footerLink"
+                                            >
+                                                {item.label}
+                                            </a>
+
                                         </li>
                                     ))}
                                 </ul>

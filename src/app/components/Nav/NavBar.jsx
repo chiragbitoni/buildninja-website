@@ -7,8 +7,8 @@ import AvatarMenu from "./AvatarMenu";
 import { fetchPlansFromAPI } from "../../../services/plans/plans";
 import Banner from "./Banner/Banner";
 export default function Navbar() {
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [show, setShow] = useState(true);
+  // const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHover, setHover] = useState(false);
   const router = useRouter();
@@ -28,25 +28,26 @@ export default function Navbar() {
     init();
   }, []);
 
+  // uncomment this for sticky navbar
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > lastScrollY && window.scrollY > 50) {
+  //       setShow(false);
+  //     } else {
+  //       setShow(true);
+  //     }
+  //     setLastScrollY(window.scrollY);
+  //   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        setShow(false);
-      } else {
-        setShow(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [lastScrollY]);
 
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
-    { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+    // { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+    { name: "Docs", path: "/docs" },
     { name: "Pricing", path: "/pricing" },
     { name: "Install", path: "/install" },
     { name: "Support", path: "/support" },
@@ -59,7 +60,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${show ? "navbar-show" : "navbar-hide"}`}>
+    //For Non-sticky
+    // <nav className={`navbar ${show ? "navbar-show" : "navbar-hide"}`}> 
+    //For Sticky
+    <nav className={"navbar"}>
       <div className="navbar-container">
         {/* Logo */}
         <div className="navbar-logo" onClick={() => handleNavigation("/")}>
@@ -94,18 +98,19 @@ export default function Navbar() {
                     ? "active-link"
                     : ""
                   }`}
-                onClick={() => {
-                  if (item.path) {
-                    // Internal route = same tab
-                    handleNavigation(item.path);
-                  } else if (item.link) {
-                    // External URL = new tab
-                    window.open(item.link, "_blank", "noopener,noreferrer");
-                  }
-                }}
               >
-                {item.name}
+                <a
+                  href={item.path}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                  }}
+                  className="navbar-anchor"
+                >
+                  {item.name}
+                </a>
               </li>
+
             ))}
           <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
         </ul>
