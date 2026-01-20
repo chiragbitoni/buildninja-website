@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 .featuresHeroSection {
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-family: "ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji;
     /* font-family: "Inter";; */
     display: flex;
     align-items: center;
@@ -16,13 +16,14 @@
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-     position: relative;
-  z-index: 1; /* LOWER */
-  overflow: visible; 
+    position: relative;
+    z-index: 1;
+    /* LOWER */
+    overflow: visible;
     background-color: #000000;
     background:
-        linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #202020 100%),
-        #0d0d0d url('/resources/GenericHeroBG.png') center center / cover no-repeat;
+        linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #000000 100%),
+        #000000 url('/resources/GenericHeroBG.png') center center / cover no-repeat;
 
 }
 
@@ -47,20 +48,23 @@ TITLE & SUBTITLE
 ================================== */
 .featuresHeroTitle {
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 60px;
+    font-weight: 700;
     margin: 0 0 1vw 0;
-    line-height: 1.1;
+    line-height: 60px;
     color: #FFFFFF;
+    width: 800px;
+    justify-self: center;
 }
 
 .featuresHeroSubtitle {
+    width: 800px;
     font-size: 20px;
-    padding: 0 15vw;
+    padding: 0 0;
     margin: 0 0 2vw 0;
     color: #FFFFFFB2;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 32.5px;
 }
 
 /* ===============================
@@ -293,6 +297,7 @@ TITLE & SUBTITLE
 .featuresHeroSection::before {
     z-index: 0;
 }
+
 .featuresHeroContent {
     z-index: 2;
 }

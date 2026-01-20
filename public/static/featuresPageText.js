@@ -11,71 +11,83 @@ export const secondSectionText = {
   cards: [
     {
       icon: paths.icons.thunder,
+      iconHover: paths.icons.thunderPink,
       title: "Automated Builds",
       description:
         "Automatically triggers builds based on scheduled time and date.",
     },
     {
       icon: paths.icons.versioningWhite,
+      iconHover: paths.icons.versioningPink,
       title: "Version Control Integration",
       description:
         "Integrates with Git, GitHub, GitLab, Bitbucket, and others to automate build, test, and deployment workflows.",
     },
     {
       icon: paths.icons.artifactBoxWhite,
+      iconHover: paths.icons.artifactBoxPink,
       title: "Artifact Management",
       description:
         "Stores build outputs for future deployment or distribution.",
     },
     {
       icon: paths.icons.cdsWhite,
+      iconHover: paths.icons.cdsPink,
       title: "Containerized Deployment Support",
       description:
         "Deploy and configure servers and agents on Kubernetes for scalable operations, or use Docker for local setups. Flexible infrastructure management.",
     },
     {
       icon: paths.icons.globeWhite,
+      iconHover: paths.icons.globePink,
       title: "Multi-Environment Support",
       description:
         "Manage deployments across dev, staging, and production with environment-specific logic, secrets, and conditions.",
     },
     {
       icon: paths.icons.crossPlatformWhite,
+      iconHover: paths.icons.crossPlatformPink,
       title: "Cross-Platform Configuration",
       description: "Seamless setup across Windows, Linux, and .",
     },
     {
       icon: paths.icons.usersWhite,
+      iconHover: paths.icons.usersPink2,
       title: "Agent Management",
       description:
         "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
     },
     {
       icon: paths.icons.gearWhite,
+      iconHover: paths.icons.gearPink,
       title: "Agent Requirements Configuration",
       description:
         "Specify agent capabilities to ensure builds run on appropriate agents.",
     },
     {
       icon: paths.icons.chartWhite,
+      iconHover: paths.icons.chartPink,
       title: "Interactive Dashboard",
       description:
         "View and filter build metrics with customizable time ranges and auto-refresh.",
     },
     {
       icon: paths.icons.clock,
+      iconHover: paths.icons.clockPink2,
       title: "Real-Time Logs & Reports",
       description:
         "Live logs and dashboards for monitoring builds and deployments.",
     },
     {
       icon: paths.icons.emailWhite,
+      iconHover: paths.icons.emailPink,
       title: "Email Notification System",
       description:
         "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
     },
     {
       icon: paths.icons.shield,
+      iconHover: paths.icons.shieldPink2,
       title: "Single Sign-On (SSO) Support",
       description:
         "Supports multiple SSO providers for streamlined authentication.",

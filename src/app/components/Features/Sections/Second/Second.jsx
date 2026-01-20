@@ -7,7 +7,8 @@ export default function Second() {
             <div className="secondFeaturesCardsContainer">
                 {secondSectionText.cards.map((card, idx) => (
                     <div key={idx} className="secondFeaturesCard">
-                        <Image width={0} height={0} src={card.icon} alt={card.icon} className="secondFeaturesCardIcon" />
+                        <Image width={0} height={0} src={card.icon} alt={card.title} className="secondFeaturesCardIcon defaultIcon" />
+                        <Image width={0} height={0} src={card.iconHover} alt={card.title} className="secondFeaturesCardIcon hoverIcon" />
                         <h3 className="secondFeaturesCardTitle">{card.title}</h3>
                         <p className="secondFeaturesCardDescription">{card.description}</p>
                     </div>
