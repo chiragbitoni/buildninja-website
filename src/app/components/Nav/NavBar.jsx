@@ -28,7 +28,7 @@ export default function Navbar() {
     init();
   }, []);
 
-// uncomment this for sticky navbar
+  // uncomment this for sticky navbar
   // useEffect(() => {
   //   const handleScroll = () => {
   //     if (window.scrollY > lastScrollY && window.scrollY > 50) {
@@ -47,7 +47,7 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
     // { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
-    { name: "Docs", path:"/docs" },
+    { name: "Docs", path: "/docs" },
     { name: "Pricing", path: "/pricing" },
     { name: "Install", path: "/install" },
     { name: "Support", path: "/support" },
@@ -55,7 +55,7 @@ export default function Navbar() {
   ];
 
   const handleNavigation = (path) => {
-    router.push(path);
+    router.push(path);s
     setMenuOpen(false);
   };
 
@@ -98,18 +98,19 @@ export default function Navbar() {
                     ? "active-link"
                     : ""
                   }`}
-                onClick={() => {
-                  if (item.path) {
-                    // Internal route = same tab
-                    handleNavigation(item.path);
-                  } else if (item.link) {
-                    // External URL = new tab
-                    window.open(item.link, "_blank", "noopener,noreferrer");
-                  }
-                }}
               >
-                {item.name}
+                <a
+                  href={item.path}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                  }}
+                  className="navbar-anchor"
+                >
+                  {item.name}
+                </a>
               </li>
+
             ))}
           <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
         </ul>
