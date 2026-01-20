@@ -81,10 +81,10 @@ export default function Footer() {
                             </div>
                             <h3 className="footerTitle">{footerText.company.name}</h3>
                         </div>
-                        <p className="footerDesc">{footerText.company.description}<br/>{footerText.company.description2}</p>
+                        <p className="footerDesc">{footerText.company.description}<br />{footerText.company.description2}</p>
                         <Image width={0} height={0} src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className="footerGCLogo" />
                         <div className="footerGCSocial">
-                            <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt= "LinkedIn logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/company/grapecityindiapvtltd" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@grapecityindiapvtltd" }}></Image>
@@ -99,7 +99,19 @@ export default function Footer() {
                                 <ul className="footerList">
                                     {section.links.map((item, i) => (
                                         <li key={i} className="footerListItem">
-                                            <button onClick={() => handleClick(item.link)} className="footerLink btnLink"> {item.label}</button>
+                                            <a
+                                                href={item.link}
+                                                onClick={(e) => {
+                                                    if (!item.link.startsWith("http")) {
+                                                        e.preventDefault();
+                                                        router.push(item.link);
+                                                    }
+                                                }}
+                                                className="footerLink"
+                                            >
+                                                {item.label}
+                                            </a>
+
                                         </li>
                                     ))}
                                 </ul>
