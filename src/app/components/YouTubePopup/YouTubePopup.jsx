@@ -11,29 +11,41 @@ export default function YouTubePopup() {
 
   return (
     <div className="popup-overlay" onClick={() => dispatch(closeVideo())}>
+      <div className="popup-card" onClick={(e) => e.stopPropagation()}>
 
-      {/* Close button - now positioned on top-left of screen */}
-      <button
-        className="close-btn-global"
-        onClick={(e) => {
-          e.stopPropagation();
-          dispatch(closeVideo());
-        }}
-      >
-        ×
-      </button>
+        {/* Header */}
+        <div className="popup-header">
+          <h2>Version Control Integration</h2>
+          <p>See how Version Control Integration works in action</p>
+        </div>
 
-      <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
-          className="youtube-frame"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+        {/* Video */}
+        <div className="popup-video">
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
+            className="youtube-frame"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+
+        {/* Footer */}
+        <div className="popup-footer">
+          <button className="btn-primary">
+            Start Using Version Control Integration
+          </button>
+          <button
+            className="btn-secondary"
+            onClick={() => dispatch(closeVideo())}
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );
 }
+
