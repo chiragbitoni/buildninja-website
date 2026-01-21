@@ -1,303 +1,219 @@
 /* ===============================
-   FEATURES HERO SECTION - BASE
-================================== */
+   FEATURES HERO — MOBILE FIRST
+================================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 .featuresHeroSection {
-    font-family: "ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji;
-    /* font-family: "Inter";; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 600px;
-    padding: 50px 80px 250px 80px;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    /* LOWER */
-    overflow: visible;
-    background-color: #000000;
-    background:
-        linear-gradient(180deg, rgba(32, 32, 32, 0) 54.81%, #000000 100%),
-        #000000 url('/resources/GenericHeroBG.png') center center / cover no-repeat;
+  font-family: ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-}
+  width: 100%;
+  background-color: #000;
+  background:
+    linear-gradient(180deg, rgba(32, 32, 32, 0) 55%, #000 100%),
+    #000 url('/resources/GenericHeroBG.png') center / cover no-repeat;
 
-.featuresHeroSection::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* background: url('/resources/featuresHeroBG.png') center center / cover no-repeat; */
-    z-index: 0;
-    opacity: 1;
-    pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 64px 16px 96px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
 }
 
 .featuresHeroContent {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
 }
 
 /* ===============================
-TITLE & SUBTITLE
-================================== */
+   TITLE & SUBTITLE (Mobile)
+================================= */
 .featuresHeroTitle {
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-size: 60px;
-    font-weight: 700;
-    margin: 0 0 1vw 0;
-    line-height: 60px;
-    color: #FFFFFF;
-    width: 800px;
-    justify-self: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
 }
 
 .featuresHeroSubtitle {
-    width: 800px;
-    font-size: 20px;
-    padding: 0 0;
-    margin: 0 0 2vw 0;
-    color: #FFFFFFB2;
-    font-weight: 400;
-    line-height: 32.5px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ffffffb2;
+  margin-bottom: 32px;
 }
 
 /* ===============================
-   TOGGLE SWITCH CONTAINER
-================================== */
+   TOGGLE CONTAINER (Mobile)
+================================= */
 .featuresPlanToggleSwitchContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #262626;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 3.5vw;
-    width: 32vw;
-    border: 3px solid #333;
-    border-radius: 999vw;
-    margin: 2vw auto 0 auto;
-    gap: 1vw;
-}
+  width: 100%;
+  max-width: 360px;
+  background-color: #262626;
+  border: 2px solid #333;
+  border-radius: 20px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 
-.toggleSwitchOption1,
-.toggleSwitchOption2 {
-    font-size: 1vw;
-    font-weight: 500;
-    margin: 0;
-    padding: 0.5vw 1vw;
-    color: #ffffff;
-}
-
-.toggleSwitchOption2 {
-    background-color: #FF4172;
-    padding: 0.4vw 1.2vw;
-    border-radius: 999px;
-}
-
-.toggleSwitchSavings {
-    color: #169000;
-    background-color: #DBFCE7;
-    font-size: 0.8vw;
-    font-weight: 500;
-    padding: 0.4vw 1.2vw;
-    border-radius: 999px;
+  padding: 16px;
+  margin: 0 auto;
 }
 
 .toggleSwitchRow1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1vw;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.toggleSwitchOption1,
+.toggleSwitchOption2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  padding: 8px 14px;
+}
+
+.toggleSwitchOption2 {
+  background-color: #ff4172;
+  border-radius: 999px;
+}
+
+.toggleSwitchSavings {
+  font-size: 12px;
+  font-weight: 500;
+  color: #169000;
+  background-color: #dbfce7;
+  padding: 6px 12px;
+  border-radius: 999px;
 }
 
 /* ===============================
-   SWITCH STYLES
-================================== */
+   SWITCH (Mobile)
+================================= */
 .switch {
-    font-size: 1vw;
-    position: relative;
-    display: inline-block;
-    width: 3.5vw;
-    height: 2vw;
+  position: relative;
+  width: 48px;
+  height: 28px;
 }
 
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    inset: 0;
-    /* background: #F9F9F9; */
-    border: 1px solid #e2e8f0;
-    border-radius: 999px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  transition: all 0.3s ease;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 1.4em;
-    width: 1.4em;
-    left: 0.3em;
-    bottom: 0.3em;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.4);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
-.switch input:checked+.slider {
-    background: #FF4172;
+.switch input:checked + .slider {
+  background-color: #ff4172;
 }
 
-.switch input:checked+.slider:before {
-    transform: translateX(1.6em);
-    width: 2em;
-    height: 2em;
-    bottom: 0;
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
 }
 
 /* ===============================
-   TABLET VIEW (768px – 1023px)
-================================== */
-@media (max-width: 1023px) {
-    .featuresHeroSection {
-        padding: 10vw 6vw;
-        height: auto;
-    }
+   TABLET (≥768px)
+================================= */
+@media (min-width: 768px) {
+  .featuresHeroSection {
+    padding: 96px 48px 160px;
+  }
 
-    .featuresHeroTitle {
-        font-size: 5vw;
-        margin-bottom: 2vw;
-    }
+  .featuresHeroTitle {
+    font-size: 48px;
+  }
 
-    .featuresHeroSubtitle {
-        font-size: 2.3vw;
-        padding: 0 6vw;
-        margin-bottom: 4vw;
-        line-height: 1.6;
-    }
+  .featuresHeroSubtitle {
+    font-size: 18px;
+    max-width: 640px;
+    margin-inline: auto;
+  }
 
-    .featuresPlanToggleSwitchContainer {
-        flex-direction: row;
-        height: 7vw;
-        width: 70%;
-        border-radius: 999vw;
-        gap: 2vw;
-    }
+  .featuresPlanToggleSwitchContainer {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 520px;
+    gap: 20px;
+    padding: 20px;
+  }
 
-    .toggleSwitchOption1,
-    .toggleSwitchOption2 {
-        font-size: 2vw;
-        padding: 1vw 2vw;
-    }
+  .toggleSwitchOption1,
+  .toggleSwitchOption2 {
+    font-size: 16px;
+  }
 
-    .toggleSwitchSavings {
-        font-size: 1.5vw;
-        padding: 0.7vw 2vw;
-    }
+  .toggleSwitchSavings {
+    font-size: 14px;
+  }
 
-    .switch {
-        width: 6vw;
-        height: 3.5vw;
-        align-items: center;
-        justify-content: center;
-    }
+  .switch {
+    width: 56px;
+    height: 32px;
+  }
 
-    .slider:before {
-        height: 2.2vw;
-        width: 2.2vw;
-        left: 0.5vw;
-        bottom: 0.5vw;
-    }
+  .slider::before {
+    height: 24px;
+    width: 24px;
+  }
 
-    .switch input:checked+.slider:before {
-        transform: translateX(1.8vw);
-        width: 3.7vw;
-        height: 3.7vw;
-        bottom: 0;
-    }
+  .switch input:checked + .slider::before {
+    transform: translateX(24px);
+  }
 }
 
 /* ===============================
-   MOBILE VIEW (≤767px)
-================================== */
-@media (max-width: 767px) {
-    .featuresHeroSection {
-        padding: 14vw 4vw;
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        gap: 6vw;
-    }
+   DESKTOP (≥1024px)
+================================= */
+@media (min-width: 1024px) {
+  .featuresHeroSection {
+    height: 650px;
+    padding: 80px 80px 240px;
+  }
 
-    .featuresHeroTitle {
-        font-size: 7vw;
-        line-height: 1.2;
-        margin-bottom: 4vw;
-    }
+  .featuresHeroTitle {
+    font-size: 60px;
+    line-height: 1;
+    max-width: 800px;
+    margin-inline: auto;
+  }
 
-    .featuresHeroSubtitle {
-        font-size: 4vw;
-        padding: 0;
-        margin-bottom: 6vw;
-        line-height: 1.7;
-    }
+  .featuresHeroSubtitle {
+    font-size: 20px;
+    max-width: 800px;
+  }
 
-    .featuresPlanToggleSwitchContainer {
-        flex-direction: column;
-        width: 90%;
-        height: auto;
-        gap: 3vw;
-        padding: 4vw 0;
-        border-radius: 8vw;
-    }
-
-    .toggleSwitchOption1,
-    .toggleSwitchOption2 {
-        font-size: 4vw;
-        padding: 2vw 5vw;
-    }
-
-    .toggleSwitchSavings {
-        font-size: 3.5vw;
-        padding: 2vw 5vw;
-    }
-
-    .switch {
-        width: 14vw;
-        height: 8vw;
-    }
-
-    .slider:before {
-        height: 6vw;
-        width: 6vw;
-        left: 0.8vw;
-        bottom: 0.8vw;
-    }
-
-    .switch input:checked+.slider:before {
-        transform: translateX(5vw);
-        height: 8vw;
-        width: 8vw;
-    }
-}
-
-
-.featuresHeroSection::before {
-    z-index: 0;
-}
-
-.featuresHeroContent {
-    z-index: 2;
+  .featuresPlanToggleSwitchContainer {
+    max-width: 600px;
+  }
 }

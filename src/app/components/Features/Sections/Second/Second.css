@@ -97,6 +97,8 @@
   display: block;
 }
 
+/* @media (min-width: 768px) { */
+
 /* ===========================
 2️⃣ Tablet ≥ 768px
 =========================== */
@@ -108,6 +110,7 @@
   .secondFeaturesCardsContainer {
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(24px, 4vw, 40px);
+    margin: -200px auto 0;
   }
 
   .secondFeaturesCard {
@@ -122,9 +125,12 @@
   .secondFeaturesSection {
     padding: 4vw 2vw;
   }
+
   .secondFeaturesCardsContainer {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
+    margin: -300px auto 0;
+
   }
 
   .secondFeaturesCard {
@@ -152,12 +158,11 @@
   .secondFeaturesCardsContainer {
     grid-template-columns: repeat(4, 1fr);
     max-width: 1536px;
-    margin-top: -350px;
+    /* margin: -150px auto 0; */
   }
 }
 
-.secondFeaturesCard:hover .secondFeaturesCardIcon{
- background-color: #3f1624;;
+.secondFeaturesCard:hover .secondFeaturesCardIcon {
+  background-color: #3f1624;
+  ;
 }
-
-
