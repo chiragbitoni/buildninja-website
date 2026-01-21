@@ -2,11 +2,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
 import "./YouTubePopup.css";
+import { useRouter } from "next/navigation";
 
 export default function YouTubePopup() {
   const dispatch = useDispatch();
-  const { isOpen, videoId } = useSelector((state) => state.videoPopup);
-
+  const { isOpen, videoId, title, ctaText } = useSelector((state) => state.videoPopup);
+  const router = useRouter();
   if (!isOpen) return null;
 
   return (
@@ -15,8 +16,8 @@ export default function YouTubePopup() {
 
         {/* Header */}
         <div className="popup-header">
-          <h2>Version Control Integration</h2>
-          <p>See how Version Control Integration works in action</p>
+          <h2>{title}</h2>
+          <p>See how {title} works in action.</p>
         </div>
 
         {/* Video */}
@@ -34,15 +35,25 @@ export default function YouTubePopup() {
 
         {/* Footer */}
         <div className="popup-footer">
-          <button className="btn-primary">
-            Start Using Version Control Integration
-          </button>
-          <button
-            className="btn-secondary"
-            onClick={() => dispatch(closeVideo())}
-          >
-            Close
-          </button>
+          {/* CTA Text */}
+          <p className="popup-cta-text">{ctaText}</p>
+
+          {/* Buttons */}
+          <div className="popup-actions">
+            <button className="btn-primary"
+              onClick={() => {
+                dispatch(closeVideo());
+                router.push("/install");
+              }}>
+              Start Using {title}
+            </button>
+            <button
+              className="btn-secondary"
+              onClick={() => dispatch(closeVideo())}
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>

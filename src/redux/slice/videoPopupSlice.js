@@ -5,15 +5,23 @@ const videoPopupSlice = createSlice({
   initialState: {
     isOpen: false,
     videoId: null,
+    title: "",
+    ctaText: "",
   },
   reducers: {
     openVideo(state, action) {
+      const { videoId, title, ctaText } = action.payload;
+
       state.isOpen = true;
-      state.videoId = action.payload; // pass YouTube video ID
+      state.videoId = videoId;
+      state.title = title;
+      state.ctaText = ctaText;
     },
     closeVideo(state) {
       state.isOpen = false;
       state.videoId = null;
+      state.title = "";
+      state.ctaText = "";
     },
   },
 });

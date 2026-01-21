@@ -108,3 +108,33 @@
     width: 100%;
   }
 }
+.popup-footer {
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popup-cta-text {
+  font-size: 14px;
+  color: #b9b9c3;
+  line-height: 1.5;
+}
+
+/* Buttons wrapper */
+.popup-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .popup-actions {
+    flex-direction: column;
+  }
+
+  .popup-actions button {
+    width: 100%;
+  }
+}

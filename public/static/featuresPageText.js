@@ -15,7 +15,7 @@ export const secondSectionText = {
       title: "Automated Builds",
       description:
         "Automatically triggers builds based on scheduled time and date.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.versioningWhite,
@@ -23,7 +23,7 @@ export const secondSectionText = {
       title: "Version Control Integration",
       description:
         "Integrates with Git, GitHub, GitLab, Bitbucket, and others to automate build, test, and deployment workflows.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.artifactBoxWhite,
@@ -31,7 +31,7 @@ export const secondSectionText = {
       title: "Artifact Management",
       description:
         "Stores build outputs for future deployment or distribution.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.cdsWhite,
@@ -39,7 +39,7 @@ export const secondSectionText = {
       title: "Containerized Deployment Support",
       description:
         "Deploy and configure servers and agents on Kubernetes for scalable operations, or use Docker for local setups. Flexible infrastructure management.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.globeWhite,
@@ -47,14 +47,14 @@ export const secondSectionText = {
       title: "Multi-Environment Support",
       description:
         "Manage deployments across dev, staging, and production with environment-specific logic, secrets, and conditions.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.crossPlatformWhite,
       iconHover: paths.icons.crossPlatformPink,
       title: "Cross-Platform Configuration",
       description: "Seamless setup across Windows, Linux, and .",
-      videoId:"YUr0zsonsMQ"
+      videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.usersWhite,
@@ -62,7 +62,7 @@ export const secondSectionText = {
       title: "Agent Management",
       description:
         "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.gearWhite,
@@ -70,7 +70,7 @@ export const secondSectionText = {
       title: "Agent Requirements Configuration",
       description:
         "Specify agent capabilities to ensure builds run on appropriate agents.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.chartWhite,
@@ -78,7 +78,7 @@ export const secondSectionText = {
       title: "Interactive Dashboard",
       description:
         "View and filter build metrics with customizable time ranges and auto-refresh.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.clock,
@@ -86,7 +86,7 @@ export const secondSectionText = {
       title: "Real-Time Logs & Reports",
       description:
         "Live logs and dashboards for monitoring builds and deployments.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.emailWhite,
@@ -94,7 +94,7 @@ export const secondSectionText = {
       title: "Email Notification System",
       description:
         "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
     {
       icon: paths.icons.shield,
@@ -102,7 +102,7 @@ export const secondSectionText = {
       title: "Single Sign-On (SSO) Support",
       description:
         "Supports multiple SSO providers for streamlined authentication.",
-        videoId:"YUr0zsonsMQ"
+        videoId:"XLcMnvfpwBw"
     },
   ],
 };
