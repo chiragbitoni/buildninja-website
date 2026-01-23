@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function YouTubePopup() {
   const dispatch = useDispatch();
-  const { isOpen, videoId, title, ctaText } = useSelector((state) => state.videoPopup);
+  const { isOpen, videoId, title, ctaText, link } = useSelector((state) => state.videoPopup);
   const router = useRouter();
   if (!isOpen) return null;
 
@@ -43,9 +43,9 @@ export default function YouTubePopup() {
             <button className="btn-primary"
               onClick={() => {
                 dispatch(closeVideo());
-                router.push("/install");
+                window.location.href = link;
               }}>
-              Start Using {title}
+              See Documentation For {title}
             </button>
             <button
               className="btn-secondary"

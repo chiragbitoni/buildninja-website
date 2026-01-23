@@ -10,7 +10,7 @@ export default function Second() {
         <section className="secondFeaturesSection">
             <div className="secondFeaturesCardsContainer">
                 {secondSectionText.cards.map((card, idx) => (
-                    <div key={idx} className="secondFeaturesCard" onClick={() => dispatch(openVideo({ videoId: card.videoId, title: card.title, ctaText: card.description }))}>
+                    <div key={idx} className="secondFeaturesCard" onClick={() => dispatch(openVideo({ videoId: card.videoId, title: card.title, ctaText: card.description, link: card.link }))}>
                         <Image width={0} height={0} src={card.icon} alt={card.title} className="secondFeaturesCardIcon defaultIcon" />
                         <Image width={0} height={0} src={card.iconHover} alt={card.title} className="secondFeaturesCardIcon hoverIcon" />
                         <h3 className="secondFeaturesCardTitle">{card.title}</h3>

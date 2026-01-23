@@ -7,21 +7,24 @@ const videoPopupSlice = createSlice({
     videoId: null,
     title: "",
     ctaText: "",
+    link: "",
   },
   reducers: {
     openVideo(state, action) {
-      const { videoId, title, ctaText } = action.payload;
+      const { videoId, title, ctaText, link } = action.payload;
 
       state.isOpen = true;
       state.videoId = videoId;
       state.title = title;
       state.ctaText = ctaText;
+      state.link = link;
     },
     closeVideo(state) {
       state.isOpen = false;
       state.videoId = null;
       state.title = "";
       state.ctaText = "";
+      state.link = ""
     },
   },
 });
