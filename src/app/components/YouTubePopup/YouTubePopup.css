@@ -29,6 +29,14 @@
 /* Header */
 .popup-header {
   padding: 24px 28px;
+  display: flex ;
+  align-items: flex-start;       
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.popup-header-close-icon{
+  cursor: pointer;
 }
 
 .popup-header h2 {

@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
 import "./YouTubePopup.css";
 import { useRouter } from "next/navigation";
+import { paths } from "../../../../public/static/paths";
+import Image from "next/image";
 
 export default function YouTubePopup() {
   const dispatch = useDispatch();
@@ -16,8 +18,13 @@ export default function YouTubePopup() {
 
         {/* Header */}
         <div className="popup-header">
-          <h2>{title}</h2>
-          <p>See how {title} works in action.</p>
+          <div>
+            <h2>{title}</h2>
+            <p>See how {title} works in action.</p>
+          </div>
+          <div className="popup-header-close-icon">
+            <Image src={paths.icons.closeWhite} alt="X" width={48} height={48} onClick={()=>dispatch(closeVideo())}></Image>
+          </div>
         </div>
 
         {/* Video */}
@@ -47,12 +54,12 @@ export default function YouTubePopup() {
               }}>
               See Documentation For {title}
             </button>
-            <button
+            {/* <button
               className="btn-secondary"
               onClick={() => dispatch(closeVideo())}
             >
               Close
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -106,5 +106,6 @@ export const paths = {
     configuration: "/resources/icons/configuration.svg",
     cardPricingShield: "/resources/icons/cardPricingShield.svg",
     license: "/resources/icons/licenses.svg",
+    closeWhite: "/resources/icons/closeWhite.svg",
   },
 };
