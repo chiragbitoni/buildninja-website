@@ -6,6 +6,7 @@ export const paths = {
     nintyNine: "/resources/icons/nintyNine.svg",
     fiveHundredPlus: "/resources/icons/500+.svg",
     arrowRightLong: "/resources/icons/arrowRightLong.svg",
+    arrowRightWhiteLong: "/resources/icons/arrowRightWhiteLong.svg",
     buildHistory: "/resources/icons/BuildHistory.svg",
     bulletcheckpink: "/resources/icons/bulletcheckpink.svg",
     configurationDetails: "/resources/icons/ConfigurationDetails.svg",
@@ -94,5 +95,6 @@ export const paths = {
     configuration: "/resources/icons/configuration.svg",
     cardPricingShield: "/resources/icons/cardPricingShield.svg",
     license: "/resources/icons/licenses.svg",
+    buildninjaStars: "/resources/icons/buildninjaStars.svg"
   },
 };
