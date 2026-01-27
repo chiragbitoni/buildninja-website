@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { paths } from "../../../../out/static/paths";
 import "./Banner.css"
 import { useRouter } from "next/navigation";
+import { paths } from "../../../../public/static/paths";
 export default function Banner() {
     const router = useRouter();
     return (
