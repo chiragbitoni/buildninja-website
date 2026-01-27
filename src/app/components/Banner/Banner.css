@@ -1,0 +1,23 @@
+.bannerContainer {
+    text-align: center;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #ffffff22;
+    padding: 10px 30px;
+    border-radius: 999px;;
+    width: fit-content;
+    justify-self: center;
+    gap: 15px;
+    border: 2px solid #ffffff44 ;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 6px rgba(255, 255, 255, 0.1);
+}
+
+.bannerHighlight {
+    background-color: #18bc7f;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
