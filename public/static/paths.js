@@ -6,6 +6,7 @@ export const paths = {
     nintyNine: "/resources/icons/nintyNine.svg",
     fiveHundredPlus: "/resources/icons/500+.svg",
     arrowRightLong: "/resources/icons/arrowRightLong.svg",
+    arrowRightWhiteLong: "/resources/icons/arrowRightWhiteLong.svg",
     buildHistory: "/resources/icons/BuildHistory.svg",
     bulletcheckpink: "/resources/icons/bulletcheckpink.svg",
     configurationDetails: "/resources/icons/ConfigurationDetails.svg",

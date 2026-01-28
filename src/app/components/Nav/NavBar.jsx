@@ -116,7 +116,7 @@ export default function Navbar() {
         </ul>
         <AvatarMenu />
       </div>
-      <Banner />
+      {/* <Banner /> */}
     </nav>
   );
 }
