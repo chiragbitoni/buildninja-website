@@ -36,7 +36,7 @@ export default function Hero() {
                 </p>
                 <div className="heroButtons">
                     <button className="demoBtn" onClick={() => { router.push("/install") }}>{heroSectionText.primaryButton}</button>
-                    <button className="heroBtn" onClick={() => dispatch(openVideo(process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID))}>{heroSectionText.secondaryButton}</button>
+                    <button className="heroBtn" onClick={() => dispatch(openVideo({videoId:process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works"}))}>{heroSectionText.secondaryButton}</button>
                 </div>
 
                 <div className="heroCarousel">

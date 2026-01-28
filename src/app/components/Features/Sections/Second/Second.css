@@ -1,123 +1,168 @@
 /* ===========================
-1️⃣ Base (Mobile-first)
+1️⃣ Base — Mobile First
 =========================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 .secondFeaturesSection {
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
   width: 100%;
-  background: #202020;
+  background: #000;
   padding: 10vw 4vw;
-  position: relative;
-  overflow: hidden;
   box-sizing: border-box;
   position: relative;
   z-index: 10;
-  /* ABOVE THE HERO */
   overflow: visible;
 }
 
+/* ===== Cards Grid ===== */
 .secondFeaturesCardsContainer {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(16px, 4vw, 32px);
-  justify-content: center;
-  align-items: stretch;
-  margin: 0 auto;
   max-width: 1200px;
-  position: relative;
-  z-index: 10;
-  margin-top: -150px;
+  margin: -150px auto 0;
 }
 
 /* ===== Card ===== */
 .secondFeaturesCard {
-  background: #262626;
-  border-radius: 0.75rem;
-  padding: clamp(16px, 3vw, 24px);
+  position: relative;
+  background: #141414;
+  border-radius: 12px;
+  padding: clamp(16px, 4vw, 24px);
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   border: 1px solid #333;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .secondFeaturesCard:hover {
-  /* transform: translateY(-4px); */
-  background-color: #2E2E2E;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  background-color: #000;
+  box-shadow: 0 0 20px #ff4172;
 }
 
 /* ===== Icon ===== */
 .secondFeaturesCardIcon {
   display: block;
-  margin: clamp(12px, 2vw, 24px) auto clamp(12px, 2vw, 20px);
-  width: clamp(40px, 6vw, 72px);
-  height: clamp(40px, 6vw, 72px);
-  object-fit: contain;
+  margin: 0 auto 20px;
+  width: clamp(40px, 12vw, 64px);
+  height: clamp(40px, 12vw, 64px);
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #202020;
 }
 
 /* ===== Title ===== */
 .secondFeaturesCardTitle {
-  font-size: clamp(18px, 1.6vw, 24px);
+  font-size: clamp(18px, 5vw, 22px);
   font-weight: 600;
-  margin: clamp(8px, 1vw, 12px) 0;
-  color: #ffffff;
+  margin-bottom: 12px;
+  color: #fff;
   line-height: 1.3;
+}
+
+.secondFeaturesCard:hover .secondFeaturesCardTitle {
+  color: #ff4172;
 }
 
 /* ===== Description ===== */
 .secondFeaturesCardDescription {
-  font-size: clamp(14px, 1.2vw, 16px);
+  font-size: clamp(14px, 4vw, 16px);
   color: #e0e0e0;
   line-height: 1.6;
-  margin: 0 auto clamp(16px, 2vw, 20px);
   max-width: 90%;
+  margin: 0 auto;
 }
 
+/* ===== Icon Hover Swap ===== */
+.defaultIcon {
+  display: block;
+}
+
+.hoverIcon {
+  display: none;
+}
+
+.secondFeaturesCard:hover .defaultIcon {
+  display: none;
+}
+
+.secondFeaturesCard:hover .hoverIcon {
+  display: block;
+}
+
+/* @media (min-width: 768px) { */
+
 /* ===========================
-2️⃣ Tablet (≥768px)
+2️⃣ Tablet ≥ 768px
 =========================== */
 @media (min-width: 768px) {
   .secondFeaturesSection {
-    padding: 6vw 6vw;
+    padding: 6vw;
   }
-  
+
   .secondFeaturesCardsContainer {
     grid-template-columns: repeat(2, 1fr);
-    gap: clamp(20px, 3vw, 40px);
+    gap: clamp(24px, 4vw, 40px);
+    margin: -200px auto 0;
   }
-  
+
   .secondFeaturesCard {
-    padding: clamp(20px, 2vw, 28px);
+    padding: 28px;
   }
 }
 
 /* ===========================
-3️⃣ Desktop (≥1024px)
+3️⃣ Desktop ≥ 1024px
 =========================== */
 @media (min-width: 1024px) {
   .secondFeaturesSection {
-    padding: 4vw 12vw;
+    padding: 4vw 2vw;
   }
-  
+
   .secondFeaturesCardsContainer {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin-top: -350px;
+    max-width: 1200px;
+    margin: -300px auto 0;
+
   }
 
   .secondFeaturesCard {
-    padding: 20px;
-    width: 100%;
+    padding: 32px;
+    max-width: 364px;
   }
 
   .secondFeaturesCardTitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .secondFeaturesCardDescription {
     font-size: 14px;
   }
+
+  .secondFeaturesCardIcon {
+    margin-bottom: 24px;
+  }
+}
+
+/* ===========================
+4️⃣ Desktop (WIDE) ≥ 1280px
+=========================== */
+@media (min-width: 1280px) {
+  .secondFeaturesCardsContainer {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1536px;
+    /* margin: -150px auto 0; */
+  }
+}
+
+.secondFeaturesCard:hover .secondFeaturesCardIcon {
+  background-color: #3f1624;
+  ;
 }
