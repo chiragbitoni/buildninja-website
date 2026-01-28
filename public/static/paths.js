@@ -108,5 +108,6 @@ export const paths = {
     cardPricingShield: "/resources/icons/cardPricingShield.svg",
     license: "/resources/icons/licenses.svg",
     closeWhite: "/resources/icons/closeWhite.svg",
+    buildninjaStars: "/resources/icons/buildninjaStars.svg"
   },
 };
