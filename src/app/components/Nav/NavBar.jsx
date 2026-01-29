@@ -86,6 +86,7 @@ export default function Navbar() {
           <span></span>
         </div>
 
+
         {/* Navigation Links */}
         <ul className={`navbar-links ${menuOpen ? "menu-active" : ""}`}>
           {
@@ -112,9 +113,10 @@ export default function Navbar() {
               </li>
 
             ))}
+             <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
           <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
         </ul>
-        <AvatarMenu />
+       <AvatarMenu />
       </div>
       {/* <Banner /> */}
     </nav>
