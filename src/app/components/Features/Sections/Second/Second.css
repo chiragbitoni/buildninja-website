@@ -166,3 +166,27 @@
   background-color: #3f1624;
   ;
 }
+/* ===========================
+ Hover Progress Bar
+=========================== */
+
+.secondFeaturesCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.hoverProgressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4172, #ff7a9a);
+  transition: width 2s linear;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Start filling on hover */
+.secondFeaturesCard:hover .hoverProgressBar {
+  width: 100%;
+}
