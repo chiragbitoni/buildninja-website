@@ -118,7 +118,7 @@ export default function Hero() {
                         {heroSectionText.downloadCContainerText.iconText.map((text, index) => (
                             <div className="downloadHeroEmailIconContainer" key={index}>
                                 <Image width={0} height={0} className="downloadHeroEmailIcon"
-                                    src={heroSectionText.downloadCContainerText.iconPath} />
+                                    src={heroSectionText.downloadCContainerText.iconPath} alt='Grapecity Download Icon' />
                                 <div className="downloadHeroEmailIconTextItem">{text}</div>
                             </div>
                         ))}

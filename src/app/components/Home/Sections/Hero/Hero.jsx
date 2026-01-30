@@ -10,6 +10,7 @@ import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { useDispatch } from "react-redux";
+import Banner from "@/app/components/Banner/Banner";
 
 export default function Hero() {
     const router = useRouter();
@@ -23,6 +24,7 @@ export default function Hero() {
     return (
         <section className="heroSection">
             <div className="heroContent">
+            <Banner/>
                 <h1 className="heroTitle">
                     {heroSectionText.title1} <br />
                     {heroSectionText.title2}
@@ -34,7 +36,7 @@ export default function Hero() {
                 </p>
                 <div className="heroButtons">
                     <button className="demoBtn" onClick={() => { router.push("/install") }}>{heroSectionText.primaryButton}</button>
-                    <button className="heroBtn" onClick={() => dispatch(openVideo(process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID))}>{heroSectionText.secondaryButton}</button>
+                    <button className="heroBtn" onClick={() => dispatch(openVideo({videoId:process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works"}))}>{heroSectionText.secondaryButton}</button>
                 </div>
 
                 <div className="heroCarousel">

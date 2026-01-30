@@ -88,6 +88,7 @@ export default function Footer() {
                             <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@grapecityindiapvtltd" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
                         </div>
                         <p className="footerCopy">{footerText.company.copyright}</p>
                     </div>

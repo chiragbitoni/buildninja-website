@@ -12,6 +12,7 @@
   transition: transform 0.3s ease-in-out;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
+
 /* Uncomment for stiky navbar */
 /* .navbar-show {
   transform: translateY(0);
@@ -136,7 +137,7 @@ ul.navbar-links {
   transform: translateY(-7.5px) rotate(-45deg);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .navbar-links {
     position: absolute;
     top: 60px;
@@ -249,4 +250,11 @@ ul.navbar-links {
 
 .avatar-menu-item.logout {
   color: #ff4d4d;
+}
+
+.navbarGithubIcon {
+  height: 34px;
+  width: 34px;
+  /* padding-left: 20px; */
+  cursor: pointer;
 }
