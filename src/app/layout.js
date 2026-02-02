@@ -93,7 +93,7 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="alternate"
-          hreflang="en"
+          hrefLang="en"
           href="https://buildninja.grapehub.io/"
         />
         <Script
