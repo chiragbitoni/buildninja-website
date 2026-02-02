@@ -1,21 +1,12 @@
-"use client";
+import DownloadPage from "./InstallPage";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Hero from "../components/Download/Sections/Hero/Hero";
-import { checkAuth } from "@/services/auth/check";
-import { useSelector } from "react-redux";
+export const metadata = {
+  title: "Install",
+  alternates: {
+    canonical: "https://buildninja.grapehub.io/install",
+  },
+};
 
 export default function Download() {
-  const router = useRouter();
-      const { isLoggedIn } = useSelector((state) => state.auth);
-  useEffect(() => {
-    async function verify() {
-      const loggedIn = await checkAuth();
-      if (loggedIn || isLoggedIn) router.replace("/install/dashboard");
-    }
-    verify();
-  }, [isLoggedIn]);
-
-  return <Hero />;
+  return <DownloadPage />;
 }

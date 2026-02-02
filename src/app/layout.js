@@ -46,7 +46,10 @@ const schema = {
   ],
 };
 export const metadata = {
-  title: "BuildNinja – Self hosted CI/CD platform",
+  title: {
+    default: "BuildNinja – Self Hosted CI/CD Platform",
+    template: "%s | BuildNinja",
+  },
   description:
     "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
 
