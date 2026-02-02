@@ -91,6 +91,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link
+          rel="alternate"
+          hreflang="en"
+          href="https://buildninja.grapehub.io/"
+        />
         <Script
           id="schema-org"
           type="application/ld+json"
