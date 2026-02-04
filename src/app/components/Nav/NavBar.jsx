@@ -6,6 +6,8 @@ import { useRouter, usePathname } from "next/navigation";
 import AvatarMenu from "./AvatarMenu";
 import { fetchPlansFromAPI } from "../../../services/plans/plans";
 import Banner from "./Banner/Banner";
+import { useDispatch } from "react-redux";
+import { closeVideo } from "@/redux/slice/videoPopupSlice";
 export default function Navbar() {
   // const [show, setShow] = useState(true);
   // const [lastScrollY, setLastScrollY] = useState(0);
@@ -13,6 +15,7 @@ export default function Navbar() {
   const [isHover, setHover] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const storedPlans = localStorage.getItem("plans");
@@ -105,6 +108,7 @@ export default function Navbar() {
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.path);
+                    dispatch(closeVideo());
                   }}
                   className="navbar-anchor"
                 >
@@ -113,10 +117,10 @@ export default function Navbar() {
               </li>
 
             ))}
-             <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
+          <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
           <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
         </ul>
-       <AvatarMenu />
+        <AvatarMenu />
       </div>
       {/* <Banner /> */}
     </nav>

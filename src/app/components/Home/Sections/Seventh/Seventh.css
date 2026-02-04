@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* ========== 1️⃣ MOBILE (Base) ========== */
+/* ==========  MOBILE (Base) ========== */
 .seventhSection {
   width: 100%;
   padding: 10vw 6vw;
@@ -127,7 +127,7 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* ========== 2️⃣ SMALL TABLET ≥560px ========== */
+/* ========== SMALL TABLET ≥560px ========== */
 @media (min-width: 560px) {
   .seventhCards {
     grid-template-columns: repeat(2, 1fr);
@@ -140,7 +140,7 @@
   }
 }
 
-/* ========== 3️⃣ TABLET ≥768px ========== */
+/* ==========TABLET ≥768px ========== */
 @media (min-width: 768px) {
   .seventhTitle {
     font-size: 32px;
@@ -176,7 +176,7 @@
   }
 }
 
-/* ========== 4️⃣ DESKTOP ≥1024px ========== */
+/* ========== DESKTOP ≥1024px ========== */
 @media (min-width: 1024px) {
   .seventhSection {
     padding: 5vw 3vw;

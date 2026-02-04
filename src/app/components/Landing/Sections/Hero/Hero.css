@@ -1,0 +1,345 @@
+/* =========================
+   BASE – MOBILE FIRST
+========================= */
+
+.landingPageHeroSection {
+    width: 100%;
+    padding: 24px 16px;
+    background: radial-gradient(circle at top right, #1f1f1f, #0c0c0c);
+    color: #ffffff;
+    background:
+        linear-gradient(180deg, rgba(32, 32, 32, 0) 0%, #2F2F2F 100%), #2F2F2F url('/resources/LandingHeroBG.png') center / cover no-repeat;
+}
+
+.landingPageHeroContainer {
+    display: flex;
+    flex-direction: column;
+    /* background: #1a1a1a; */
+    /* border-radius: 14px; */
+    /* border: 1px solid #2a2a2a; */
+    overflow: hidden;
+}
+
+/* LEFT */
+.landingPageHeroLeft {
+    padding: 28px 22px;
+}
+
+.landingPageHeroBadge {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #2a1b22;
+    color: #FF4172;
+    font-size: 11px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.landingPageHeroTitle {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 14px;
+}
+
+.landingPageHeroTitle span {
+    color: #FF4172;
+}
+
+.landingPageHeroSubtitle {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+    font-weight: 400;
+}
+
+/* Stats stack on mobile */
+.landingPageHeroStats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.landingPageHeroStatCard {
+    background: #3B3B3B;
+    padding: 10px 16px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.landingPageHeroStatCard strong {
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.landingPageHeroStatCard span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #aaa;
+}
+
+/* RIGHT – FORM */
+.landingPageHeroRight {
+    border-radius: 20px;
+    background: #3B3B3B;
+
+    padding: 28px 22px;
+}
+
+.landingPageHeroFormTitle {
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.landingPageHeroFormSubtitle {
+    font-size: 16px;
+
+    margin-bottom: 22px;
+}
+
+.landingPageHeroForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Inputs stack on mobile */
+.landingPageHeroFormRow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.landingPageHeroForm input,
+.landingPageHeroSelect {
+    width: 100%;
+    background: #2B2B2B;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.landingPageHeroForm label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.landingPageHeroForm input::placeholder {
+    color: #777;
+}
+
+.landingPageHeroSubmit {
+    margin-top: 8px;
+    padding: 14px;
+    background: #FF4172;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.landingPageHeroFormCaptcha {
+    justify-items: center;
+}
+
+/* =========================
+TABLET (≥ 640px)
+========================= */
+@media (min-width: 640px) {
+    .landingPageHeroStats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .landingPageHeroStatCard {
+        min-width: 160px;
+    }
+
+    .landingPageHeroFormRow {
+        flex-direction: row;
+    }
+}
+
+/* =========================
+DESKTOP (≥ 1024px)
+========================= */
+@media (min-width: 1024px) {
+    .landingPageHeroSection {
+        padding: 100px 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .landingPageHeroContainer {
+        max-width: 1600px;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .landingPageHeroBadge {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .landingPageHeroLeft {
+        padding: 60px;
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .landingPageHeroRight {
+        padding: 50px;
+        flex: 1;
+    }
+
+    .landingPageHeroTitle {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    .landingPageHeroTitle span {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .landingPageHeroSubtitle {
+        font-size: 20px;
+        max-width: 800px;
+    }
+
+    .landingPageHeroStats {
+        /* flex-wrap: nowrap; */
+    }
+}
+
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landingPageHeroLeft>* {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.landingPageHeroLeft>*:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.landingPageHeroLeft>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.landingPageHeroLeft>*:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.landingPageHeroLeft>*:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.landingPageHeroRight {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.landingPageHeroSubmit {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.landingPageHeroSubmit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(255, 65, 114, 0.35);
+}
+
+.landingPageHeroSubmit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+
+.landingPageHeroForm input:focus,
+.landingPageHeroSelect:focus {
+    border-color: #FF4172;
+    box-shadow: 0 0 0 3px rgba(255, 65, 114, 0.15);
+}
+
+.landingPageHeroForm label {
+    transition: transform 0.2s ease;
+}
+
+.landingPageHeroForm input:focus+label {
+    transform: translateY(-2px);
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.landingPageHeroStatCard:hover {
+    animation: pulse 0.6s ease;
+}
+
+
+
+.landingPageHeroRight {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cursor glow layer */
+.landingPageHeroRight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(300px circle at var(--x, 50%) var(--y, 50%),
+            rgba(255, 65, 114, 0.18),
+            transparent 60%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.landingPageHeroRight:hover::after {
+    opacity: 1;
+}
+
+.landingPageHeroRight>* {
+    position: relative;
+    z-index: 1;
+}

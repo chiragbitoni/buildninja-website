@@ -83,3 +83,64 @@ export async function sendSupportEmail({ name, email, subject, message }) {
     return { success: false, message: err.message };
   }
 }
+
+export async function sendLeadEmail({
+  name,
+  phone,
+  email,
+  company,
+  teamSize,
+  utmSource,
+  utmMedium,
+  utmCampaign,
+}) {
+  const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
+
+  const htmlContent = `
+    <div style="font-family: Arial; padding: 20px;">
+      <h2>New Demo / Lead Request</h2>
+
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Company:</strong> ${company}</p>
+      <p><strong>Team Size:</strong> ${teamSize}</p>
+
+      <hr />
+
+      <h3>Lead Source</h3>
+      <p><strong>Source:</strong> ${utmSource || "unknown"}</p>
+      <p><strong>Medium:</strong> ${utmMedium || "unknown"}</p>
+      <p><strong>Campaign:</strong> ${utmCampaign || "unknown"}</p>
+    </div>
+  `;
+
+  const payload = {
+    toEmails: [process.env.NEXT_PUBLIC_SALES_EMAIL_ID],
+    toCCs: [process.env.NEXT_PUBLIC_SALES_CC_EMAIL_ID],
+    subject: "New Lead from Landing Page",
+    htmlContent,
+  };
+
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      credentials: "include", // send HttpOnly cookie
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_EMAIL_API_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      return { success: false, message: text };
+    }
+
+    return { success: true };
+  } catch (err) {
+    return { success: false, message: err.message };
+  }
+}

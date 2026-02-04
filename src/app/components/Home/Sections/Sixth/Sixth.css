@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-/* ========== 1️⃣ MOBILE: Base (default) ========== */
+/* ========== 1️MOBILE: Base (default) ========== */
 .sixthSection {
   display: block;
   width: 100%;
@@ -88,7 +88,7 @@
 }
 
 
-/* ========== 2️⃣ TABLET: ≥768px ========== */
+/* ========== 2️TABLET: ≥768px ========== */
 @media (min-width: 768px) {
   .sixthSection {
     padding: 6vw 5vw;
@@ -130,7 +130,7 @@
 
 
 
-/* ========== 3️⃣ DESKTOP: ≥1280px ========== */
+/* ========== 3️DESKTOP: ≥1280px ========== */
 @media (min-width: 1024px) {
   .sixthSection {
     padding: 4vw 6vw;
