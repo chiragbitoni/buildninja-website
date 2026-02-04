@@ -99,7 +99,7 @@
 
   e
 
-  /* ✅ Ensure even rows — no full-width expansion */
+  /* Ensure even rows — no full-width expansion */
   .pricingSeventhViewCard {
     grid-column: auto;
   }

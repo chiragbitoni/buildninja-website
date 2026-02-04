@@ -126,7 +126,7 @@ export const secondSectionEnterpriseCardText = {
   responseTimeText: "Response within 24 hours",
 };
 // ===========================
-// 🌍 WORLDWIDE PRICING STRUCTURE
+//  WORLDWIDE PRICING STRUCTURE
 // ===========================
 export const secondSectionTextGlobal = {
   monthCards: {
