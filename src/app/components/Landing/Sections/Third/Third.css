@@ -6,6 +6,7 @@
 }
 
 .landingThirdContainer {
+
     background: #3B3B3B;
     padding: 24px;
     display: flex;
@@ -20,7 +21,12 @@
     padding: 121px 74px;
     border-radius: 30px;
     justify-content: center;
+    background-image: url("/resources/icons/landingPageAssets/track.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top right;
 }
+
 
 /* LEFT */
 .landingThirdBadge {
