@@ -3,24 +3,11 @@ import "./Hero.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendLeadEmail } from "@/services/email/sendEmail";
 import { useEffect, useRef } from "react";
+import posthog from "posthog-js";
 
 export default function Hero() {
-    useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
 
-        const utm_source = params.get("utm_source");
-        if (!utm_source) return;
-
-        const utmData = {
-            utm_source,
-            utm_medium: params.get("utm_medium") || "",
-            utm_campaign: params.get("utm_campaign") || "",
-            utm_content: params.get("utm_content") || "",
-        };
-
-        localStorage.setItem("utm_data", JSON.stringify(utmData));
-    }, []);
-
+    const hasStartedRef = useRef(false);
 
     const [form, setForm] = useState({
         name: "",
@@ -30,22 +17,52 @@ export default function Hero() {
         teamSize: "",
     });
     const formRef = useRef(null);
-
     const [loading, setLoading] = useState(false);
-    const [captchaToken, setCaptchaToken] = useState(true);
+    const [captchaToken, setCaptchaToken] = useState(null);
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
 
+        const utmData = {
+            utm_source: params.get("utm_source") || "",
+            utm_medium: params.get("utm_medium") || "",
+            utm_campaign: params.get("utm_campaign") || "",
+            utm_content: params.get("utm_content") || "",
+        };
+
+        if (utmData.utm_source) {
+            localStorage.setItem("utm_data", JSON.stringify(utmData));
+        }
+
+        posthog.capture("marketing_landing_viewed", {
+            page: "landing-page",
+            ...utmData,
+        });
+    }, []);
     const handleChange = (e) => {
+        if (!hasStartedRef.current) {
+            hasStartedRef.current = true;
+            posthog.capture("marketing_form_started", {
+                page: "landing-page",
+            });
+        }
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
 
+        e.preventDefault();
+        const submitStart = Date.now();
         if (!captchaToken) {
+            posthog.capture("marketing_form_blocked_no_captcha", {
+                page: "landing-page",
+            });
             alert("Please verify you are not a robot");
             return;
         }
-
+        posthog.capture("marketing_form_submitted", {
+            page: "landing-page",
+            team_size: form.teamSize,
+        });
         const utmData = JSON.parse(localStorage.getItem("utm_data") || "{}");
 
         setLoading(true);
@@ -68,7 +85,19 @@ export default function Hero() {
                 company: "",
                 teamSize: "",
             });
+            posthog.capture("marketing_lead_success", {
+                page: "landing-page",
+                team_size: form.teamSize,
+                latency_ms: Date.now() - submitStart,
+
+            });
+
         } else {
+            posthog.capture("marketing_lead_failed", {
+                page: "landing-page",
+                reason: message || "unknown",
+            });
+
             alert(message || "Something went wrong");
         }
     };
@@ -85,6 +114,7 @@ export default function Hero() {
             );
         }
     }, []);
+
 
 
     useEffect(() => {
@@ -205,8 +235,15 @@ export default function Hero() {
                         <ReCAPTCHA
                             className="landingPageHeroFormCaptcha"
                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                            onChange={setCaptchaToken}
+                            onChange={(token) => {
+                                setCaptchaToken(token);
+
+                                posthog.capture("marketing_captcha_verified", {
+                                    page: "landing-page",
+                                });
+                            }}
                         />
+
                         <button
                             type="submit"
                             className="landingPageHeroSubmit"
