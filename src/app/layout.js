@@ -29,9 +29,10 @@ const schema = {
       url: "https://buildninja.grapehub.io",
       logo: "https://buildninja.grapehub.io/resources/BuildNinja.png",
       sameAs: [
-        "https://www.linkedin.com/company/grapecityindiapvtltd/",
+        "https://www.linkedin.com/showcase/build-ninja/",
         "https://www.instagram.com/grapecityindia/",
         "https://www.facebook.com/GrapeCityIndiaPvtLtd",
+        "https://www.youtube.com/@BuildNinja_CICD"
       ],
     },
     {
