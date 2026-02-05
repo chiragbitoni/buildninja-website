@@ -18,6 +18,7 @@
 
 /* ===== Cards Grid ===== */
 .landingSecondCardsContainer {
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: clamp(16px, 4vw, 30px);
