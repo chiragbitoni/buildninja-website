@@ -21,7 +21,7 @@
 
   box-shadow: 0 6px 4px rgba(255, 255, 255, 0.08);
   text-align: center;
-
+  justify-self: center;
   /* Allow wrapping on small screens */
   flex-wrap: wrap;
 }
