@@ -235,6 +235,7 @@ export default function Hero() {
                         <ReCAPTCHA
                             className="landingPageHeroFormCaptcha"
                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                            theme="dark"
                             onChange={(token) => {
                                 setCaptchaToken(token);
 
