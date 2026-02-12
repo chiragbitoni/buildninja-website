@@ -4,6 +4,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { sendLeadEmail } from "@/services/email/sendEmail";
 import { useEffect, useRef } from "react";
 import posthog from "posthog-js";
+import 'react-international-phone/style.css'
+import { PhoneInput } from 'react-international-phone'
 
 export default function Hero() {
 
@@ -15,6 +17,8 @@ export default function Hero() {
         email: "",
         company: "",
         teamSize: "",
+        location: "",
+        countryCode: "+1",
     });
     const formRef = useRef(null);
     const [loading, setLoading] = useState(false);
@@ -64,11 +68,10 @@ export default function Hero() {
             team_size: form.teamSize,
         });
         const utmData = JSON.parse(localStorage.getItem("utm_data") || "{}");
-
         setLoading(true);
-
         const { success, message } = await sendLeadEmail({
             ...form,
+            fullPhone: `${form.countryCode} ${form.phone}`, // cleaner
             utmSource: utmData.utm_source,
             utmMedium: utmData.utm_medium,
             utmCampaign: utmData.utm_campaign,
@@ -180,16 +183,17 @@ export default function Hero() {
                             <label>First Name
                                 <input type="text" placeholder="Name" required value={form.name} onChange={handleChange} name="name" />
                             </label>
-                            <label>Phone Number
-                                <input
-                                    type="tel"
-                                    placeholder="+1-(555) 234 567"
-                                    name="phone"
+                            <label>
+                                Phone Number
+                                <PhoneInput
+                                    defaultCountry="us"
                                     value={form.phone}
-                                    onChange={handleChange}
-                                    required
+                                    onChange={(phone) => setForm({ ...form, phone })}
+                                    className="react-international-phone-input-container"
                                 />
+
                             </label>
+
                         </div>
 
                         <div className="landingPageHeroFormRow">
@@ -216,24 +220,47 @@ export default function Hero() {
                                 />
                             </label>
                         </div>
-                        <label>
-                            Team Size
-                            <select className="landingPageHeroSelect"
-                                name="teamSize"
-                                value={form.teamSize}
-                                onChange={handleChange}
-                                required>
-                                <option value="">Select Team Size</option>
-                                <option>1–50</option>
-                                <option>51-100</option>
-                                <option>101-200</option>
-                                <option>201-500</option>
-                                <option>501-1000</option>
-                                <option>1000+</option>
-                            </select>
-                        </label>
+                        <div className="landingPageHeroFormRow">
+                            <label>
+                                Team Size
+                                <select className="landingPageHeroSelect"
+                                    name="teamSize"
+                                    value={form.teamSize}
+                                    onChange={handleChange}
+                                    required>
+                                    <option value="">Select Team Size</option>
+                                    <option>1–50</option>
+                                    <option>51-100</option>
+                                    <option>101-200</option>
+                                    <option>201-500</option>
+                                    <option>501-1000</option>
+                                    <option>1000+</option>
+                                </select>
+                            </label>
+                            <label>
+                                Location
+                                <select
+                                    className="landingPageHeroSelect"
+                                    name="location"
+                                    value={form.location}
+                                    onChange={handleChange}
+                                    required
+                                >
+                                    <option value="">Select Location</option>
+                                    <option value="India">India</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </label>
+
+                        </div>
                         <ReCAPTCHA
                             className="landingPageHeroFormCaptcha"
+                            theme="dark"
                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                             theme="dark"
                             onChange={(token) => {

@@ -44,7 +44,7 @@ export default function Second() {
                         <Image width={0} height={0} src={card.icon} alt={card.title} className="landingSecondCardIcon defaultIcon" />
                         <Image width={0} height={0} src={card.iconHover} alt={card.title} className="landingSecondCardIcon hoverIcon" />
                         <h3 className="landingSecondCardTitle">{card.title}</h3>
-                        <p className="landingSecondCardDescription">{card.description}</p>
+                        {/* <p className="landingSecondCardDescription">{card.description}</p> */}
                         {card.videoId && <div className="hoverProgressBar" />}
                     </div>
                 ))}

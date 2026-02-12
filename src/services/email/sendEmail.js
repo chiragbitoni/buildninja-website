@@ -1,3 +1,14 @@
+const escapeHtml = (val) =>
+  String(val || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+const cleanArray = (arr = []) =>
+  arr.filter((v) => v && typeof v === "string" && v.trim() !== "");
+
 export async function sendSupportEmail({ name, email, subject, message }) {
   const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
 
@@ -90,42 +101,88 @@ export async function sendLeadEmail({
   email,
   company,
   teamSize,
+  location,
   utmSource,
   utmMedium,
   utmCampaign,
 }) {
-  const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
-
-  const htmlContent = `
-    <div style="font-family: Arial; padding: 20px;">
-      <h2>New Demo / Lead Request</h2>
-
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Company:</strong> ${company}</p>
-      <p><strong>Team Size:</strong> ${teamSize}</p>
-
-      <hr />
-
-      <h3>Lead Source</h3>
-      <p><strong>Source:</strong> ${utmSource || "unknown"}</p>
-      <p><strong>Medium:</strong> ${utmMedium || "unknown"}</p>
-      <p><strong>Campaign:</strong> ${utmCampaign || "unknown"}</p>
-    </div>
-  `;
-
-  const payload = {
-    toEmails: [process.env.NEXT_PUBLIC_SALES_EMAIL_ID],
-    toCCs: [process.env.NEXT_PUBLIC_SALES_CC_EMAIL_ID],
-    subject: "New Lead from Landing Page",
-    htmlContent,
-  };
-
   try {
+    const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
+
+    const safeName = escapeHtml(name);
+    const safePhone = escapeHtml(phone);
+    const safeEmail = escapeHtml(email);
+    const safeCompany = escapeHtml(company);
+    const safeTeamSize = escapeHtml(teamSize);
+    const safeLocation = escapeHtml(location);
+    const safeUtmSource = escapeHtml(utmSource || "unknown");
+    const safeUtmMedium = escapeHtml(utmMedium || "unknown");
+    const safeUtmCampaign = escapeHtml(utmCampaign || "unknown");
+
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; background:#f4f6f8; padding:20px;">
+        <table width="100%" cellpadding="0" cellspacing="0"
+          style="max-width:600px; margin:auto; background:#ffffff;
+          border-radius:8px; border:1px solid #e5e7eb;">
+
+          <tr>
+            <td style="background:#111827; color:#ffffff;
+              padding:16px 20px; font-size:18px; font-weight:bold;">
+              New Demo / Lead Request
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px;">
+              <table width="100%" cellpadding="8" cellspacing="0"
+                style="border-collapse:collapse; font-size:14px;">
+
+                ${row("Name", safeName)}
+                ${row("Email", safeEmail)}
+                ${row("Phone", safePhone)}
+                ${row("Company", safeCompany)}
+                ${row("Team Size", safeTeamSize)}
+                ${row("Location", safeLocation)}
+
+              </table>
+
+              <div style="margin:24px 0; border-top:1px solid #e5e7eb;"></div>
+
+              <table width="100%" cellpadding="8" cellspacing="0"
+                style="border-collapse:collapse; font-size:14px;">
+
+                <tr>
+                  <td colspan="2"
+                    style="font-weight:bold; padding-bottom:8px;">
+                    Lead Source
+                  </td>
+                </tr>
+
+                ${row("Source", safeUtmSource)}
+                ${row("Medium", safeUtmMedium)}
+                ${row("Campaign", safeUtmCampaign)}
+
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    `;
+
+    const toEmails = cleanArray([process.env.NEXT_PUBLIC_SALES_EMAIL_ID]);
+
+    const toCCs = cleanArray([process.env.NEXT_PUBLIC_SALES_CC_EMAIL_ID]);
+
+    const payload = {
+      toEmails,
+      toCCs,
+      subject: `New Lead: ${safeName} (${safeCompany})`,
+      htmlContent,
+    };
+
     const res = await fetch(API_URL, {
       method: "POST",
-      credentials: "include", // send HttpOnly cookie
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -134,13 +191,39 @@ export async function sendLeadEmail({
       body: JSON.stringify(payload),
     });
 
+    const text = await res.text();
+    const data = text ? JSON.parse(text) : null;
+
     if (!res.ok) {
-      const text = await res.text();
-      return { success: false, message: text };
+      return {
+        success: false,
+        message: data?.message || "Failed to send lead email",
+      };
     }
 
-    return { success: true };
+    return { success: true, data };
   } catch (err) {
     return { success: false, message: err.message };
   }
+}
+
+/* =====================================================
+   TABLE ROW HELPER
+===================================================== */
+
+function row(label, value) {
+  return `
+    <tr>
+      <td style="
+        background:#f9fafb;
+        font-weight:bold;
+        width:40%;
+        border:1px solid #e5e7eb;">
+        ${label}
+      </td>
+      <td style="border:1px solid #e5e7eb;">
+        ${value}
+      </td>
+    </tr>
+  `;
 }

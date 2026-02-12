@@ -344,3 +344,78 @@ DESKTOP (≥ 1024px)
     position: relative;
     z-index: 1;
 }
+
+/* =========================
+   REACT INTERNATIONAL PHONE (FIXED HEIGHT)
+========================= */
+
+/* Outer wrapper */
+.react-international-phone-input-container {
+    width: 100%;
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+/* Entire control wrapper */
+.react-international-phone-input-container .react-international-phone-input-wrapper {
+    width: 100%;
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+/* Country selector (flag area) */
+.react-international-phone-input-container 
+.react-international-phone-country-selector-button {
+    background: #2B2B2B !important;
+    border: 1px solid #333 !important;
+    border-right: none !important;
+    border-radius: 8px 0 0 8px !important;
+    padding: 0 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 44px !important;
+}
+
+/* Phone input */
+.react-international-phone-input-container 
+.react-international-phone-input {
+    width: 100%;
+    background: #2B2B2B !important;
+    border: 1px solid #333 !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 12px 14px !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Focus styling */
+.react-international-phone-input-container:focus-within 
+.react-international-phone-country-selector-button,
+.react-international-phone-input-container:focus-within 
+.react-international-phone-input {
+    border-color: #FF4172 !important;
+}
+
+.react-international-phone-input-container:focus-within {
+    box-shadow: 0 0 0 3px rgba(255, 65, 114, 0.15) !important;
+    border-radius: 8px !important;
+}
+
+/* Dropdown */
+.react-international-phone-country-selector-dropdown {
+    background: #2B2B2B !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+}
+
+.react-international-phone-country-selector-dropdown li:hover {
+    background: #3B3B3B !important;
+}
+
+.react-international-phone-country-selector-dropdown li[aria-selected="true"] {
+    background: rgba(255, 65, 114, 0.15) !important;
+}
