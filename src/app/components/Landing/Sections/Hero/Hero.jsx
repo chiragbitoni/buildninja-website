@@ -237,26 +237,6 @@ export default function Hero() {
                                     <option>1000+</option>
                                 </select>
                             </label>
-                            <label>
-                                Location
-                                <select
-                                    className="landingPageHeroSelect"
-                                    name="location"
-                                    value={form.location}
-                                    onChange={handleChange}
-                                    required
-                                >
-                                    <option value="">Select Location</option>
-                                    <option value="India">India</option>
-                                    <option value="US">United States</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="Germany">Germany</option>
-                                    <option value="Canada">Canada</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </label>
-
                         </div>
                         <ReCAPTCHA
                             className="landingPageHeroFormCaptcha"
