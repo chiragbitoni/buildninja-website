@@ -17,7 +17,6 @@ export default function Hero() {
         email: "",
         company: "",
         teamSize: "",
-        location: "",
         countryCode: "+1",
     });
     const formRef = useRef(null);
@@ -242,7 +241,6 @@ export default function Hero() {
                             className="landingPageHeroFormCaptcha"
                             theme="dark"
                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                            theme="dark"
                             onChange={(token) => {
                                 setCaptchaToken(token);
 

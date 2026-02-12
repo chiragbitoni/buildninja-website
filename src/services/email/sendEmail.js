@@ -101,7 +101,6 @@ export async function sendLeadEmail({
   email,
   company,
   teamSize,
-  location,
   utmSource,
   utmMedium,
   utmCampaign,
@@ -114,7 +113,6 @@ export async function sendLeadEmail({
     const safeEmail = escapeHtml(email);
     const safeCompany = escapeHtml(company);
     const safeTeamSize = escapeHtml(teamSize);
-    const safeLocation = escapeHtml(location);
     const safeUtmSource = escapeHtml(utmSource || "unknown");
     const safeUtmMedium = escapeHtml(utmMedium || "unknown");
     const safeUtmCampaign = escapeHtml(utmCampaign || "unknown");
@@ -142,7 +140,6 @@ export async function sendLeadEmail({
                 ${row("Phone", safePhone)}
                 ${row("Company", safeCompany)}
                 ${row("Team Size", safeTeamSize)}
-                ${row("Location", safeLocation)}
 
               </table>
 
