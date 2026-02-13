@@ -22,5 +22,6 @@ module.exports = {
     '/components/**',
     '/_next/**',
     '/api/**',
+    '/landing-page'
   ],
 };
