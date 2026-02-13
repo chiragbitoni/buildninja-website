@@ -1,0 +1,186 @@
+/* =========================
+   BASE – MOBILE FIRST
+========================= */
+
+.partnerThirdSection {
+    width: 100%;
+    padding: 60px 20px;
+    background: radial-gradient(circle at top right, #1f1f1f, #0c0c0c);
+    color: #ffffff;
+    background: #373737;
+}
+
+.partnerThirdBanner {
+    display: flex;
+    gap: 10px;
+    color: #FF4172;
+    background: #FF487733;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: fit-content;
+    margin: 0 auto 20px;
+}
+
+.partnerThirdContainer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.partnerThirdLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 2px solid #343434;
+    box-shadow: 0px 15px 35px 0px #00000026;
+    background: #3B3B3B;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.partnerThirdCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    gap: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.partnerThirdCard img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.partnerThirdCard:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.partnerThirdActive {
+    background: #2F2F2F;
+    border: 2px solid #FF4172
+}
+
+.partnerThirdCardTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.partnerThirdCardDesc {
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.partnerThirdRight {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.partnerThirdRightTitle {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.partnerThirdRightDesc {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.partnerThirdPoints {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.partnerThirdPoints li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+    padding-left: 22px;
+}
+
+.partnerThirdPoints li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #32d583;
+    font-weight: bold;
+}
+
+.partnerThirdSupport {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.partnerThirdSupport h5 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.partnerThirdSupport p {
+    font-size: 13px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) {
+
+    .partnerThirdLeft {
+        width: 100%;
+    }
+
+    .partnerThirdRight {
+        width: 100%;
+    }
+}
+
+/* =========================
+DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+    .partnerThirdContainer {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .partnerThirdSection {
+        padding: 100px 20px;
+    }
+
+    .partnerThirdRightTitle {
+        font-size: 26px;
+    }
+
+    .partnerThirdCardTitle {
+        font-size: 18px;
+    }
+}
