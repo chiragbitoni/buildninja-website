@@ -63,7 +63,7 @@ export async function sendSupportEmail({ name, email, subject, message }) {
   try {
     const res = await fetch(API_URL, {
       method: "POST",
-      credentials: "include", // send HttpOnly cookie
+      // credentials: "include", // send HttpOnly cookie
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -168,7 +168,8 @@ export async function sendLeadEmail({
 
     const toEmails = cleanArray([process.env.NEXT_PUBLIC_SALES_EMAIL_ID]);
 
-    const toCCs = cleanArray([process.env.NEXT_PUBLIC_SALES_CC_EMAIL_ID]);
+    const rawCCs = [process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID, email];
+    const toCCs = rawCCs.filter((cc) => cc && cc.trim() !== "");
 
     const payload = {
       toEmails,
@@ -179,7 +180,7 @@ export async function sendLeadEmail({
 
     const res = await fetch(API_URL, {
       method: "POST",
-      credentials: "include",
+      // credentials: "include",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
