@@ -45,6 +45,60 @@ export const secondSectionText = {
       link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-with-docker-&-kubernetes/configure-and-deploy-with-docker",
     },
     {
+      icon: paths.icons.usersWhite,
+      iconHover: paths.icons.usersPink2,
+      title: "Agent Management",
+      description:
+      "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
+      videoId: "MnvaPLguA6c",
+      link: "https://buildninja.grapehub.io/docs/manage-agents/",
+    },
+    {
+      icon: paths.icons.gearWhite,
+      iconHover: paths.icons.gearPink,
+      title: "Agent Requirements Configuration",
+      description:
+      "Specify agent capabilities to ensure builds run on appropriate agents.",
+      videoId: "2uUohHVRuWQ",
+      link: "https://buildninja.grapehub.io/docs/manage-agents/",
+    },
+    {
+      icon: paths.icons.chartWhite,
+      iconHover: paths.icons.chartPink,
+      title: "Interactive Dashboard",
+      description:
+      "View and filter build metrics with customizable time ranges and auto-refresh.",
+      videoId: "Pjl3muKtmhE",
+      link: "https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view",
+    },
+    {
+      icon: paths.icons.clock,
+      iconHover: paths.icons.clockPink2,
+      title: "Real-Time Logs & Reports",
+      description:
+      "Live logs and dashboards for monitoring builds and deployments.",
+      videoId: "DRmi3UzhsO0",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/view-build-results",
+    },
+    {
+      icon: paths.icons.emailWhite,
+      iconHover: paths.icons.emailPink,
+      title: "Email Notification System",
+      description:
+      "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
+      videoId: "2OuADSNMEoc",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
+    },
+    {
+      icon: paths.icons.shield,
+      iconHover: paths.icons.shieldPink2,
+      title: "Single Sign-On (SSO) Support",
+      description:
+      "Supports multiple SSO providers for streamlined authentication.",
+      videoId: "O5-JHWbqzyQ",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
+    },
+    {
       icon: paths.icons.globeWhite,
       iconHover: paths.icons.globePink,
       title: "Multi-Environment Support",
@@ -60,60 +114,6 @@ export const secondSectionText = {
       description: "Seamless setup across Windows, and Linux.",
       // videoId: "XLcMnvfpwBw",
       link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
-    },
-    {
-      icon: paths.icons.usersWhite,
-      iconHover: paths.icons.usersPink2,
-      title: "Agent Management",
-      description:
-        "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
-      videoId: "MnvaPLguA6c",
-      link: "https://buildninja.grapehub.io/docs/manage-agents/",
-    },
-    {
-      icon: paths.icons.gearWhite,
-      iconHover: paths.icons.gearPink,
-      title: "Agent Requirements Configuration",
-      description:
-        "Specify agent capabilities to ensure builds run on appropriate agents.",
-      videoId: "2uUohHVRuWQ",
-      link: "https://buildninja.grapehub.io/docs/manage-agents/",
-    },
-    {
-      icon: paths.icons.chartWhite,
-      iconHover: paths.icons.chartPink,
-      title: "Interactive Dashboard",
-      description:
-        "View and filter build metrics with customizable time ranges and auto-refresh.",
-      videoId: "Pjl3muKtmhE",
-      link: "https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view",
-    },
-    {
-      icon: paths.icons.clock,
-      iconHover: paths.icons.clockPink2,
-      title: "Real-Time Logs & Reports",
-      description:
-        "Live logs and dashboards for monitoring builds and deployments.",
-      videoId: "DRmi3UzhsO0",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/view-build-results",
-    },
-    {
-      icon: paths.icons.emailWhite,
-      iconHover: paths.icons.emailPink,
-      title: "Email Notification System",
-      description:
-        "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
-      videoId: "2OuADSNMEoc",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
-    },
-    {
-      icon: paths.icons.shield,
-      iconHover: paths.icons.shieldPink2,
-      title: "Single Sign-On (SSO) Support",
-      description:
-        "Supports multiple SSO providers for streamlined authentication.",
-      videoId: "O5-JHWbqzyQ",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },
   ],
 };

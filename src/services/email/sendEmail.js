@@ -1,3 +1,14 @@
+const escapeHtml = (val) =>
+  String(val || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+const cleanArray = (arr = []) =>
+  arr.filter((v) => v && typeof v === "string" && v.trim() !== "");
+
 export async function sendSupportEmail({ name, email, subject, message }) {
   const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
 
@@ -82,4 +93,134 @@ export async function sendSupportEmail({ name, email, subject, message }) {
   } catch (err) {
     return { success: false, message: err.message };
   }
+}
+
+export async function sendLeadEmail({
+  name,
+  phone,
+  email,
+  company,
+  teamSize,
+  utmSource,
+  utmMedium,
+  utmCampaign,
+}) {
+  try {
+    const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
+
+    const safeName = escapeHtml(name);
+    const safePhone = escapeHtml(phone);
+    const safeEmail = escapeHtml(email);
+    const safeCompany = escapeHtml(company);
+    const safeTeamSize = escapeHtml(teamSize);
+    const safeUtmSource = escapeHtml(utmSource || "unknown");
+    const safeUtmMedium = escapeHtml(utmMedium || "unknown");
+    const safeUtmCampaign = escapeHtml(utmCampaign || "unknown");
+
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; background:#f4f6f8; padding:20px;">
+        <table width="100%" cellpadding="0" cellspacing="0"
+          style="max-width:600px; margin:auto; background:#ffffff;
+          border-radius:8px; border:1px solid #e5e7eb;">
+
+          <tr>
+            <td style="background:#111827; color:#ffffff;
+              padding:16px 20px; font-size:18px; font-weight:bold;">
+              New Demo / Lead Request
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px;">
+              <table width="100%" cellpadding="8" cellspacing="0"
+                style="border-collapse:collapse; font-size:14px;">
+
+                ${row("Name", safeName)}
+                ${row("Email", safeEmail)}
+                ${row("Phone", safePhone)}
+                ${row("Company", safeCompany)}
+                ${row("Team Size", safeTeamSize)}
+
+              </table>
+
+              <div style="margin:24px 0; border-top:1px solid #e5e7eb;"></div>
+
+              <table width="100%" cellpadding="8" cellspacing="0"
+                style="border-collapse:collapse; font-size:14px;">
+
+                <tr>
+                  <td colspan="2"
+                    style="font-weight:bold; padding-bottom:8px;">
+                    Lead Source
+                  </td>
+                </tr>
+
+                ${row("Source", safeUtmSource)}
+                ${row("Medium", safeUtmMedium)}
+                ${row("Campaign", safeUtmCampaign)}
+
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    `;
+
+    const toEmails = cleanArray([process.env.NEXT_PUBLIC_SALES_EMAIL_ID]);
+
+    const toCCs = cleanArray([process.env.NEXT_PUBLIC_SALES_CC_EMAIL_ID]);
+
+    const payload = {
+      toEmails,
+      toCCs,
+      subject: `New Lead: ${safeName} (${safeCompany})`,
+      htmlContent,
+    };
+
+    const res = await fetch(API_URL, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_EMAIL_API_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const text = await res.text();
+    const data = text ? JSON.parse(text) : null;
+
+    if (!res.ok) {
+      return {
+        success: false,
+        message: data?.message || "Failed to send lead email",
+      };
+    }
+
+    return { success: true, data };
+  } catch (err) {
+    return { success: false, message: err.message };
+  }
+}
+
+/* =====================================================
+   TABLE ROW HELPER
+===================================================== */
+
+function row(label, value) {
+  return `
+    <tr>
+      <td style="
+        background:#f9fafb;
+        font-weight:bold;
+        width:40%;
+        border:1px solid #e5e7eb;">
+        ${label}
+      </td>
+      <td style="border:1px solid #e5e7eb;">
+        ${value}
+      </td>
+    </tr>
+  `;
 }

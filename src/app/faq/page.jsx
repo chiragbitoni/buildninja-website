@@ -1,20 +1,14 @@
-"use client"
-import Fifth from "../components/Faq/Sections/Fifth/Fifth";
-import Fourth from "../components/Faq/Sections/Fourth/Fourth";
-import Hero from "../components/Faq/Sections/Hero/Hero";
-import Second from "../components/Faq/Sections/Second/Second";
-import Third from "../components/Faq/Sections/Third/page";
+import FaqPage from "./FAQPage";
 
-
+export const metadata = {
+    title: "FAQ",
+    alternates: {
+        canonical: "https://buildninja.grapehub.io/faq",
+    },
+};
 
 export default function Faq() {
     return (
-        <div>
-            <Hero />
-            <Second />
-            <Third />
-            <Fourth />
-            <Fifth />
-        </div>
+   <FaqPage/>
     )
 }

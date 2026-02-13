@@ -72,7 +72,7 @@
   margin-top: 0.3rem;
 }
 
-/* ✅ Alignment */
+/* Alignment */
 .alignLeft {
   text-align: left;
 }
@@ -81,7 +81,7 @@
   text-align: center;
 }
 
-/* ✅ Tick + Text Horizontal Flex */
+/* Tick + Text Horizontal Flex */
 .pricingTableTickText {
   display: inline-flex;
   align-items: center;

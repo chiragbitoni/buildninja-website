@@ -3,7 +3,7 @@
 =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* 1️⃣ Base (Mobile-first) */
+/* Base (Mobile-first) */
 .supportHero {
   background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
   background-image: url("/resources/GenericHeroBG.png");
@@ -198,7 +198,7 @@
 }
 
 /* ===========================
-   2️⃣ Tablets (≥768px)
+    Tablets (≥768px)
 =========================== */
 @media (min-width: 768px) {
   .supportHero {
@@ -264,7 +264,7 @@
 }
 
 /* ===========================
-   3️⃣ Desktop (≥1024px)
+    Desktop (≥1024px)
 =========================== */
 @media (min-width: 1024px) {
   .supportHero {

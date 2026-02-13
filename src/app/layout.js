@@ -29,9 +29,10 @@ const schema = {
       url: "https://buildninja.grapehub.io",
       logo: "https://buildninja.grapehub.io/resources/BuildNinja.png",
       sameAs: [
-        "https://www.linkedin.com/company/grapecityindiapvtltd/",
+        "https://www.linkedin.com/showcase/build-ninja/",
         "https://www.instagram.com/grapecityindia/",
         "https://www.facebook.com/GrapeCityIndiaPvtLtd",
+        "https://www.youtube.com/@BuildNinja_CICD"
       ],
     },
     {
@@ -46,7 +47,10 @@ const schema = {
   ],
 };
 export const metadata = {
-  title: "BuildNinja – Self hosted CI/CD platform",
+  title: {
+    default: "BuildNinja – Self Hosted CI/CD Platform",
+    template: "%s | BuildNinja",
+  },
   description:
     "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
 
@@ -88,6 +92,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://buildninja.grapehub.io/"
+        />
         <Script
           id="schema-org"
           type="application/ld+json"
