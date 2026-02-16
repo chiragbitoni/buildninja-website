@@ -22,7 +22,13 @@ export async function sendSupportEmail({ name, email, subject, message }) {
     message: escapeHtml(message),
   });
 
-  const toCCs = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID);
+  const supportCCs = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID);
+
+  const toCCs = [
+    ...supportCCs,
+    ...(email ? [email.trim()] : []), // add user email to CC
+  ];
+
   const toEmails = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_EMAIL_ID);
   const payload = {
     toEmails,
@@ -77,7 +83,7 @@ export async function sendLeadEmail({
   utmCampaign,
 }) {
   try {
-    const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
+    const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email`;
 
     const safeName = escapeHtml(name);
     const safePhone = escapeHtml(phone);

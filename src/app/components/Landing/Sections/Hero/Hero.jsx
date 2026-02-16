@@ -179,11 +179,16 @@ export default function Hero() {
 
                     <form className="landingPageHeroForm" onSubmit={handleSubmit}>
                         <div className="landingPageHeroFormRow">
-                            <label>First Name
+                            <label>
+                                <div>
+                                    First Name<span className="landingPageHeroRequired">*</span>
+                                </div>
                                 <input type="text" placeholder="Name" required value={form.name} onChange={handleChange} name="name" />
                             </label>
                             <label>
-                                Phone Number
+                                <div>
+                                    Phone Number<span className="landingPageHeroRequired">*</span>
+                                </div>
                                 <PhoneInput
                                     defaultCountry="us"
                                     value={form.phone}
@@ -197,7 +202,9 @@ export default function Hero() {
 
                         <div className="landingPageHeroFormRow">
                             <label>
-                                Company Email
+                                <div>
+                                    Company Email<span className="landingPageHeroRequired">*</span>
+                                </div>
                                 <input
                                     type="email"
                                     placeholder="info@company.com"
@@ -207,8 +214,10 @@ export default function Hero() {
                                     required
                                 />
                             </label>
-                            <label>
-                                Company Name
+                            <label><div>
+
+                                Company Name<span className="landingPageHeroRequired">*</span>
+                            </div>
                                 <input
                                     type="text"
                                     placeholder="Enter Company Name"
@@ -221,7 +230,9 @@ export default function Hero() {
                         </div>
                         <div className="landingPageHeroFormRow">
                             <label>
-                                Team Size
+                                <div>
+                                    Team Size<span className="landingPageHeroRequired">*</span>
+                                </div>
                                 <select className="landingPageHeroSelect"
                                     name="teamSize"
                                     value={form.teamSize}
