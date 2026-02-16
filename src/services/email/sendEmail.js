@@ -1,6 +1,12 @@
 import { supportConfirmationTemplate } from "@/templates/email/supportTemplate";
 import { leadTemplate } from "@/templates/email/leadTemplate";
 
+const parseEmailList = (value) =>
+  String(value || "")
+    .split(",")
+    .map((email) => email.trim())
+    .filter((email) => email.length > 0);
+
 const escapeHtml = (val) =>
   String(val || "")
     .replace(/&/g, "&amp;")
@@ -9,9 +15,6 @@ const escapeHtml = (val) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 
-const cleanArray = (arr = []) =>
-  arr.filter((v) => v && typeof v === "string" && v.trim() !== "");
-
 export async function sendSupportEmail({ name, email, subject, message }) {
   const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
   const htmlContent = supportConfirmationTemplate({
@@ -19,13 +22,10 @@ export async function sendSupportEmail({ name, email, subject, message }) {
     message: escapeHtml(message),
   });
 
-  const rawCCs = [process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID, email];
-
-  // Filter out null, undefined, empty strings, and whitespace-only strings
-  const toCCs = rawCCs.filter((cc) => cc && cc.trim() !== "");
-
+  const toCCs = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID);
+  const toEmails = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_EMAIL_ID);
   const payload = {
-    toEmails: [process.env.NEXT_PUBLIC_SUPPORT_EMAIL_ID],
+    toEmails,
     toCCs,
     subject,
     htmlContent,
@@ -99,10 +99,9 @@ export async function sendLeadEmail({
       utmCampaign: safeUtmCampaign,
     });
 
-    const toEmails = cleanArray([process.env.NEXT_PUBLIC_SALES_EMAIL_ID]);
+    const toEmails = parseEmailList(process.env.NEXT_PUBLIC_SALES_EMAIL_ID);
 
-    const rawCCs = [process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID];
-    const toCCs = rawCCs.filter((cc) => cc && cc.trim() !== "");
+    const toCCs = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID);
 
     const payload = {
       toEmails,
@@ -136,25 +135,4 @@ export async function sendLeadEmail({
   } catch (err) {
     return { success: false, message: err.message };
   }
-}
-
-/* =====================================================
-   TABLE ROW HELPER
-===================================================== */
-
-function row(label, value) {
-  return `
-    <tr>
-      <td style="
-        background:#f9fafb;
-        font-weight:bold;
-        width:40%;
-        border:1px solid #e5e7eb;">
-        ${label}
-      </td>
-      <td style="border:1px solid #e5e7eb;">
-        ${value}
-      </td>
-    </tr>
-  `;
 }
