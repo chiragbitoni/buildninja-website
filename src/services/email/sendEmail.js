@@ -168,7 +168,7 @@ export async function sendLeadEmail({
 
     const toEmails = cleanArray([process.env.NEXT_PUBLIC_SALES_EMAIL_ID]);
 
-    const rawCCs = [process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID, email];
+    const rawCCs = [process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID];
     const toCCs = rawCCs.filter((cc) => cc && cc.trim() !== "");
 
     const payload = {
