@@ -19,7 +19,21 @@
     padding: 10px 20px;
     font-size: 14px;
     width: fit-content;
-    margin: 0 auto 20px;
+    margin: 0 auto;
+}
+
+.partnerThirdTitle {
+    font-weight: 600;
+    font-size: 48px;
+    text-align: center;
+    margin: 0 auto 0px;
+}
+
+.partnerThirdSubtitle {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto 50px;
 }
 
 .partnerThirdContainer {
@@ -37,7 +51,7 @@
 .partnerThirdLeft {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     border: 2px solid #343434;
     box-shadow: 0px 15px 35px 0px #00000026;
     background: #3B3B3B;
@@ -52,15 +66,23 @@
     cursor: pointer;
     transition: all 0.25s ease;
     display: flex;
-    gap: 14px;
+    gap: 30px;
     border: 2px solid rgba(255, 255, 255, 0.08);
 }
 
-.partnerThirdCard img {
-    width: 40px;
-    height: 40px;
+.partnerThirdCard img:first-child {
+    width: 35px;
+    height: 35px;
     object-fit: contain;
     margin-top: 10px;
+}
+
+.partnerThirdCard .pricingLeftArrowIcon {
+    margin-top: 12px;
+    align-self: top;
+    width: 20px !important;
+    height: 20px !important;
+
 }
 
 .partnerThirdCard:hover {
@@ -90,61 +112,140 @@
 
 .partnerThirdRight {
     background: rgba(255, 255, 255, 0.05);
-    padding: 24px;
+    padding: 40px 40px 20px 40px;
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
 }
 
+.partnerThirdRightHeading {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 .partnerThirdRightTitle {
     font-size: 22px;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .partnerThirdRightDesc {
-    font-size: 14px;
     opacity: 0.8;
     margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
 }
+
+.partnerPageThirdRightHeaderImageWrapper {
+    background: #FF487733;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.partnerPageThirdRightHeaderImageWrapper img {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+}
+
+.partherThirdRightContainer {
+    display: flex;
+}
+
 
 .partnerThirdPoints {
     list-style: none;
     padding: 0;
-    margin: 0 0 24px 0;
+    margin: 0 0 40px 0;
 }
 
 .partnerThirdPoints li {
     margin-bottom: 10px;
-    font-size: 14px;
-    position: relative;
-    padding-left: 22px;
+    display: flex;
+    gap: 12px;
+    font-weight: 400;
+    font-size: 16px;
 }
 
-.partnerThirdPoints li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #32d583;
-    font-weight: bold;
+.partnerThirdRight hr {
+    border: 1px solid #545353;
+    margin: 20px 0 40px 0;
 }
 
 .partnerThirdSupport {
-    background: rgba(255, 255, 255, 0.06);
+    /* background: rgba(255, 255, 255, 0.06); */
     padding: 16px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid #545353;
+    display: flex;
+    align-content: top;
+    gap: 16px;
+    align-items: flex-start;
 }
 
 .partnerThirdSupport h5 {
-    font-size: 14px;
     margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 .partnerThirdSupport p {
     font-size: 13px;
-    opacity: 0.8;
-    line-height: 1.5;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.partnerThirdSupport img {
+    margin-top: 12px;
+}
+
+.partnerThirdTitle {
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.partnerThirdSubtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.partnerThirdSubtitle br {
+    display: none;
+    /* remove forced line break on mobile */
+}
+
+.partnerThirdLeft {
+    padding: 20px;
+}
+
+.partnerThirdCard {
+    flex-direction: row;
+    gap: 15px;
+    padding: 14px;
+}
+
+.partnerThirdCardTitle {
+    font-size: 15px;
+}
+
+.partnerThirdCardDesc {
+    font-size: 13px;
+}
+
+.partnerThirdRight {
+    padding: 25px;
+}
+
+.partnerThirdSupport {
+    flex-direction: column;
 }
 
 /* =========================
@@ -160,6 +261,34 @@
     .partnerThirdRight {
         width: 100%;
     }
+
+    .partnerThirdContainer {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .partnerThirdLeft {
+        width: 45%;
+        padding: 25px;
+    }
+
+    .partnerThirdRight {
+        width: 55%;
+        padding: 30px;
+    }
+
+    .partnerThirdTitle {
+        font-size: 38px;
+    }
+
+    .partnerThirdSubtitle {
+        font-size: 18px;
+    }
+
+    .partnerThirdCard {
+        gap: 20px;
+    }
+
 }
 
 /* =========================
@@ -182,5 +311,10 @@ DESKTOP
 
     .partnerThirdCardTitle {
         font-size: 18px;
+    }
+
+    .partnerThirdSupport {
+        display: flex;
+        flex-direction: row;
     }
 }

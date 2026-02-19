@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Third.css";
 import Image from "next/image";
+import { paths } from "../../../../../../public/static/paths";
 
 const partnerData = [
   {
@@ -20,50 +21,75 @@ const partnerData = [
   },
   {
     id: 2,
-    image: "/resources/icons/partnerPageAssets/cloudConsulting.svg",
+    image: "/resources/icons/partnerPageAssets/products.svg",
     title: "Software / Product Companies",
     description:
-      "Bundle enterprise-grade self-hosted CI/CD into your platform offering.",
+      "Bundle enterprise-grade self-hosted CI/CD into your platform offering, or ship integrations that unlock adoption.",
     points: [
-      "White-label CI/CD integration",
-      "Secure multi-tenant architecture",
-      "API-first extensibility",
+      "Integration plugins",
+      "OEM/embedded deployments",
+      "Platform engineering bundles",
     ],
     support:
-      "Technical onboarding, integration documentation, and direct solution engineering support.",
+      "You’ll get onboarding support, a clear delivery playbook, and a path to co-marketing once we’re aligned on customer outcomes.",
   },
   {
     id: 3,
-    image: "/resources/icons/partnerPageAssets/cloudConsulting.svg",
+    image: "/resources/icons/partnerPageAssets/flowerTick.svg",
     title: "System Integrators",
     description:
-      "Provide end-to-end DevOps solutions with secure CI/CD layer.",
+      "Provide end-to-end dev platform solutions with a secure, compliant CI/CD layer.",
     points: [
-      "Enterprise DevOps transformation",
-      "Secure deployment workflows",
-      "Compliance-ready pipelines",
+      "Enterprise rollouts",
+      "Policy + compliance tooling",
+      "Migration factories",
     ],
     support:
-      "Architecture assistance, customer demos, and joint implementation strategy.",
+      "You’ll get onboarding support, a clear delivery playbook, and a path to co-marketing once we’re aligned on customer outcomes.",
   },
   {
     id: 4,
-    image: "/resources/icons/partnerPageAssets/products.svg",
+    image: "/resources/icons/partnerPageAssets/connector.svg",
     title: "Managed Service Providers",
     description:
-      "Offer BuildNinja as part of managed DevOps and delivery pipelines.",
+      "Offer BuildNiNja as part of managed DevOps, infrastructure, or delivery pipelines.",
     points: [
-      "Managed CI/CD infrastructure",
-      "Monitoring + support",
-      "Recurring revenue opportunities",
+      "Managed CI runners",
+      "SRE-aligned support",
+      "Cost-optimized delivery",
     ],
     support:
-      "Go-to-market toolkit, training sessions, and dedicated partner manager.",
+      "You’ll get onboarding support, a clear delivery playbook, and a path to co-marketing once we’re aligned on customer outcomes.",
   },
 ];
 
 export default function PartnerThirdSection() {
-  const [active, setActive] = useState(partnerData[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
+
+  const active = partnerData[activeIndex];
+
+  // 🔁 Auto rotate
+  useEffect(() => {
+    if (isPaused) return;
+
+    intervalRef.current = setInterval(() => {
+      setActiveIndex((prev) =>
+        prev === partnerData.length - 1 ? 0 : prev + 1
+      );
+    }, 3000); // change every 3 seconds
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isPaused]);
+
+  // 👆 Manual click
+  const handleClick = (index) => {
+    setActiveIndex(index);
+    setIsPaused(true); // stop auto switching
+  };
 
   return (
     <section className="partnerThirdSection">
@@ -71,39 +97,58 @@ export default function PartnerThirdSection() {
         <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
         <p>Why partner</p>
       </div>
+      <h4 className="partnerThirdTitle">Teams we love working with</h4>
+      <p className="partnerThirdSubtitle">DevOps-forward organizations who care about security, reliability, and a great<br /> developer experience.</p>
       <div className="partnerThirdContainer">
         {/* LEFT SIDE */}
         <div className="partnerThirdLeft">
-          {partnerData.map((item) => (
+          {partnerData.map((item, index) => (
             <div
               key={item.id}
-              className={`partnerThirdCard ${active.id === item.id ? "partnerThirdActive" : ""
+              className={`partnerThirdCard ${activeIndex === index ? "partnerThirdActive" : ""
                 }`}
-              onClick={() => setActive(item)}
+
+              onClick={() => handleClick(index)}
+
             >
-              <Image src={item.image} width={40} height={40} alt="Image"></Image>
+              <Image src={item.image} width={40} height={40} alt={`Grapecity ${item.title} Icon`}></Image>
               <div>
                 <h4 className="partnerThirdCardTitle">{item.title}</h4>
                 <p className="partnerThirdCardDesc">{item.description}</p>
               </div>
+              <Image src="/resources/icons/partnerPageAssets/rightArrow.svg" width={10} height={10} alt={`Grapecity Arrow Icon`} className="pricingLeftArrowIcon"></Image>
             </div>
           ))}
         </div>
 
         {/* RIGHT SIDE */}
         <div className="partnerThirdRight">
-          <h3 className="partnerThirdRightTitle">{active.title}</h3>
-          <p className="partnerThirdRightDesc">{active.description}</p>
-
+          <div className="partherThirdRightContainer">
+            <div>
+              <p className="partnerThirdRightHeading">Good fit for</p>
+              <h3 className="partnerThirdRightTitle">{active.title}</h3>
+              <p className="partnerThirdRightDesc">{active.description}</p>
+            </div>
+            <div className="partnerPageThirdRightHeaderImageWrapper">
+              <Image src="/resources/icons/partnerPageAssets/products.svg" height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
+            </div>
+          </div>
+          <hr />
           <ul className="partnerThirdPoints">
             {active.points.map((point, index) => (
-              <li key={index}>{point}</li>
+              <li key={index}>
+                <span className="partherThirdCheck"><Image className="partherThirdCheckImage" src={paths.icons.landingPageAssets.tickWithGreenBG} width={25} height={25} alt="Grapcity White Tick Icon"></Image></span>
+                {point}
+              </li>
             ))}
           </ul>
 
           <div className="partnerThirdSupport">
-            <h5>How we’ll support you</h5>
-            <p>{active.support}</p>
+            <Image src="/resources/icons/partnerPageAssets/products.svg" height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
+            <div>
+              <h5>How we’ll support you</h5>
+              <p>{active.support}</p>
+            </div>
           </div>
         </div>
 
