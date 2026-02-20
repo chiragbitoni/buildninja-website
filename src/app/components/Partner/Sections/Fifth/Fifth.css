@@ -1,0 +1,273 @@
+/* =========================
+SECTION BASE
+========================= */
+
+.partnerPageFifthSection {
+    width: 100%;
+    padding: 80px 20px;
+    background: radial-gradient(circle at 80% 20%, #2a2a2a, #1a1a1a 60%, #111111);
+    color: #fff;
+}
+
+.partnerPageFifthContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+}
+
+.partnerFifthBanner {
+    display: flex;
+    gap: 10px;
+    color: #FF4172;
+    background: #FF487733;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: fit-content;
+    margin: 0 auto 20px;
+}
+
+/* =========================
+CARDS
+========================= */
+
+.partnerPageFifthLeftCard,
+.partnerPageFifthRightCard {
+    background: #3b3b3b;
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid #ffffff22;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.partnerPageFifthRightCard2 {
+    background-color: #E9E9E9;
+    color: #000000CC;
+}
+
+
+.partnerFifthHeader {
+    justify-items: center;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+.partnerFifthHeaderTitle {
+    font-size: 48px;
+    font-weight: 600;
+    color: white;
+    width: fit-content;
+    flex: 1;
+    margin: 0 auto 0px;
+}
+
+.partnerFifthHeaderSubtitle {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+/* =========================
+LEFT CARD
+========================= */
+
+.partnerPageFifthSmallLabel,
+.partnerPageFifthFormTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.partnerPageFifthCardTitle {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.partnerPageFifthFeatureList {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.partnerPageFifthFeatureItem {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #545353;
+}
+
+.partnerPageFifthFeatureItem h4 {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.partnerPageFifthFeatureItem p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.partnerPageFifthNextStep {
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #545353;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    justify-content: flex-start;
+}
+
+.partnerPageFifthNextStep strong {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.partnerPageFifthNextStep img {
+    margin-top: 12px;
+}
+
+.partnerPageFifthLeftCard hr {
+    border: 1px solid #545353;
+    margin-bottom: 30px;
+}
+
+/* =========================
+RIGHT CARD
+========================= */
+
+.partnerPageFifthRight {
+    display: grid;
+    gap: 20px;
+}
+
+.partnerPageFifthRightHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.partnerPageFifthFormSubtitle {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.partnerPageFifthRightHeaderImageWrapper {
+    background: #FF487733;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.partnerPageFifthRightHeaderImageWrapper img {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+}
+
+.partnerPageFifthRightCard ul {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.partnerPageFifthRightCard li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.partnerFifthSupport {
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #545353;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 30px;
+    flex-direction: row;
+}
+
+.partnerFifthSupport img {
+    margin-top: 12px;
+}
+
+.partnerFifthSupport h5 {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.partnerFifthSupport p {
+    font-size: 16px;
+}
+
+/* =========================
+FORM
+========================= */
+
+.partnerPageFifthForm {
+    display: grid;
+    gap: 14px;
+}
+
+.partnerPageFifthFormRow {
+    display: grid;
+    gap: 12px;
+}
+
+.partnerPageFifthInput {
+    border: 1px solid #CACACA;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.partnerPageFifthInput:focus {
+    border-color: #ff4172;
+    box-shadow: 0 0 0 3px rgba(255, 65, 114, 0.15);
+    outline: none;
+}
+
+.partnerPageFifthPrimaryBtn {
+    background: #ff4172;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.partnerPageFifthPrimaryBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 65, 114, 0.35);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (min-width: 1024px) {
+    .partnerPageFifthContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .partnerPageFifthFormRow {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .partnerFifthSupport {
+        flex-direction: row;
+    }
+}

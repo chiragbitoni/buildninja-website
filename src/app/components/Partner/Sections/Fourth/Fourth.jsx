@@ -13,28 +13,28 @@ export default function Fourth() {
                 iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
                 title: "Integration partnerships",
                 description:
-                "Build connectors and reference architectures that make adoption frictionless.",
+                    "Build connectors and reference architectures that make adoption frictionless.",
             },
             {
                 icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
                 iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
                 title: "Reseller / referral programs",
                 description:
-                "Earn through referrals or resale, aligned to your sales motion and customer base.",
+                    "Earn through referrals or resale, aligned to your sales motion and customer base.",
             },
             {
                 icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
                 iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
                 title: "Co-marketing & launches",
                 description:
-                "Tell a joint story with credible outcomes—case studies, webinars, and announcements.",
+                    "Tell a joint story with credible outcomes—case studies, webinars, and announcements.",
             },
             {
                 icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
                 iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
                 title: "Implementation & training",
                 description:
-                "Deliver onboarding, rollout, and team enablement as a packaged service.",
+                    "Deliver onboarding, rollout, and team enablement as a packaged service.",
             },
             {
                 icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
