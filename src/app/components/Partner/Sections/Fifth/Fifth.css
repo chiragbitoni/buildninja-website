@@ -229,6 +229,7 @@ FORM
     padding: 12px 14px;
     border-radius: 8px;
     font-size: 14px;
+    background-color: #fff;
 }
 
 .partnerPageFifthInput:focus {
@@ -252,6 +253,98 @@ FORM
 .partnerPageFifthPrimaryBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(255, 65, 114, 0.35);
+}
+
+.partnerFifthFormCaptcha {
+    justify-items: center;
+    margin: 0 auto;
+}
+
+/* Label wrapper */
+.partnerPageFifthField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000CC;
+    width: 100%;
+}
+
+/* Required star */
+.partnerPageFifthRequired {
+    color: #FF4172;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+/* =========================
+   PHONE INPUT – LIGHT THEME (FIFTH FORM)
+========================= */
+
+/* Wrapper */
+.partnerPageFifthRightCard2 .react-international-phone-input-container {
+    width: 100%;
+    display: flex !important;
+    align-items: stretch !important;
+    border-radius: 8px !important;
+}
+
+/* Country selector (flag area) */
+.partnerPageFifthRightCard2 .react-international-phone-country-selector-button {
+    background: #ffffff !important;
+    border: 1px solid #CACACA !important;
+    border-right: none !important;
+    border-radius: 8px 0 0 8px !important;
+    padding: 0 12px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Phone input field */
+.partnerPageFifthRightCard2 .react-international-phone-input {
+    width: 100%;
+    background: #ffffff !important;
+    border: 1px solid #CACACA !important;
+    border-left: none !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 12px 14px !important;
+    font-size: 14px !important;
+    color: #000000CC !important;
+    min-height: 44px !important;
+    outline: none !important;
+}
+
+/* Placeholder */
+.partnerPageFifthRightCard2 .react-international-phone-input::placeholder {
+    color: #999 !important;
+}
+
+/* Focus state (match your input focus) */
+.partnerPageFifthRightCard2 .react-international-phone-input-container:focus-within .react-international-phone-country-selector-button,
+.partnerPageFifthRightCard2 .react-international-phone-input-container:focus-within .react-international-phone-input {
+    border-color: #ff4172 !important;
+}
+
+.partnerPageFifthRightCard2 .react-international-phone-input-container:focus-within {
+    box-shadow: 0 0 0 3px rgba(255, 65, 114, 0.15) !important;
+}
+
+/* Dropdown */
+.partnerPageFifthRightCard2 .react-international-phone-country-selector-dropdown {
+    background: #ffffff !important;
+    border: 1px solid #CACACA !important;
+    color: #000 !important;
+    border-radius: 8px !important;
+}
+
+.partnerPageFifthRightCard2 .react-international-phone-country-selector-dropdown li:hover {
+    background: #f5f5f5 !important;
+}
+
+.partnerPageFifthRightCard2 .react-international-phone-country-selector-dropdown li[aria-selected="true"] {
+    background: rgba(255, 65, 114, 0.1) !important;
 }
 
 /* =========================

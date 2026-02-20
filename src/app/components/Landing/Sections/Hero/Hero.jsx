@@ -55,6 +55,10 @@ export default function Hero() {
 
         e.preventDefault();
         const submitStart = Date.now();
+        if (!form.phone || form.phone.trim().length < 6) {
+            alert("Please enter a valid phone number");
+            return;
+        }
         if (!captchaToken) {
             posthog.capture("marketing_form_blocked_no_captcha", {
                 page: "landing-page",

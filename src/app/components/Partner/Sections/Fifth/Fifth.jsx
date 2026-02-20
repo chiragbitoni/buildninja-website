@@ -1,16 +1,132 @@
 import { useState } from "react";
 import "./Fifth.css";
-import { sendLeadEmail } from "@/services/email/sendEmail";
+import { sendPartnershipEmail } from "@/services/email/sendEmail";
 import { useEffect, useRef } from "react";
-import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import Image from "next/image";
 import { paths } from "../../../../../../public/static/paths";
-
+import ReCAPTCHA from "react-google-recaptcha";
+import posthog from "posthog-js";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 export default function Fifth() {
+    const [formData, setFormData] = useState({
+        partnershipType: "",
+        name: "",
+        email: "",
+        phone: "",
+    });
 
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState(null); // success | error
+    const [captchaToken, setCaptchaToken] = useState(null);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!formData.name || !formData.email || !formData.partnershipType || !formData.phone) {
+            setStatus("error");
+            return;
+        }
+
+        if (!captchaToken) {
+            setStatus("error");
+            return;
+        }
+
+        setLoading(true);
+        setStatus(null);
+
+        try {
+            const utmData = JSON.parse(localStorage.getItem("utm_data") || "{}");
+
+            const response = await sendPartnershipEmail({
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                partnershipType: formData.partnershipType,
+                utmSource: utmData.utm_source,
+                utmMedium: utmData.utm_medium,
+                utmCampaign: utmData.utm_campaign,
+                utmContent: utmData.utm_content,
+            });
+
+            if (response.success) {
+                posthog.capture("partner_form_submitted", {
+                    page: "partner-page",
+                    partnership_type: formData.partnershipType,
+                    utm_source: utmData.utm_source || undefined,
+                    utm_medium: utmData.utm_medium || undefined,
+                    utm_campaign: utmData.utm_campaign || undefined,
+                    utm_content: utmData.utm_content || undefined,
+                });
+
+                setStatus("success");
+
+                setFormData({
+                    partnershipType: "",
+                    name: "",
+                    email: "",
+                    phone: "",
+                });
+
+                setCaptchaToken(null);
+            } else {
+                setStatus("error");
+            }
+        } catch (err) {
+            setStatus("error");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    //UTM
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+
+        const utmData = {
+            utm_source: params.get("utm_source") || "",
+            utm_medium: params.get("utm_medium") || "",
+            utm_campaign: params.get("utm_campaign") || "",
+            utm_content: params.get("utm_content") || "",
+        };
+
+        if (utmData.utm_source) {
+            localStorage.setItem("utm_data", JSON.stringify(utmData));
+        }
+
+        posthog.capture("partner_page_viewed", {
+            page: "partner-page",
+            utm_source: utmData.utm_source || undefined,
+            utm_medium: utmData.utm_medium || undefined,
+            utm_campaign: utmData.utm_campaign || undefined,
+            utm_content: utmData.utm_content || undefined,
+        });
+    }, []);
+
+    useEffect(() => {
+        const stored = JSON.parse(localStorage.getItem("utm_data") || "{}");
+
+        if (!stored.utm_source && document.referrer) {
+            localStorage.setItem(
+                "utm_data",
+                JSON.stringify({
+                    utm_source: document.referrer,
+                    utm_medium: "referral",
+                })
+            );
+        }
+    }, []);
     return (
+
         <section className="partnerPageFifthSection">
             <div className="partnerFifthBanner">
                 <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
@@ -116,33 +232,95 @@ export default function Fifth() {
                             What kind of partnership are you looking for?
                         </h4>
 
-                        <form className="partnerPageFifthForm">
-                            <select className="partnerPageFifthInput">
-                                <option>Please select</option>
-                                <option>Technology Partner</option>
-                                <option>Reseller</option>
-                                <option>System Integrator</option>
-                            </select>
+                        <form className="partnerPageFifthForm" onSubmit={handleSubmit}>
 
+                            {/* Partnership Type */}
+                            <label className="partnerPageFifthField">
+                                <span>
+                                    Partnership Type<span className="partnerPageFifthRequired">*</span>
+                                </span>
+                                <select
+                                    name="partnershipType"
+                                    className="partnerPageFifthInput"
+                                    value={formData.partnershipType}
+                                    onChange={handleChange}
+                                    required
+                                >
+                                    <option value="">Please select</option>
+                                    <option>Technology Partner</option>
+                                    <option>Reseller</option>
+                                    <option>System Integrator</option>
+                                </select>
+                            </label>
+
+                            {/* Name + Email Row */}
                             <div className="partnerPageFifthFormRow">
-                                <input
-                                    className="partnerPageFifthInput"
-                                    placeholder="Your Name"
-                                />
-                                <input
-                                    className="partnerPageFifthInput"
-                                    placeholder="Your Company Email"
-                                />
+
+                                <label className="partnerPageFifthField">
+                                    <span>
+                                        Your Name<span className="partnerPageFifthRequired">*</span>
+                                    </span>
+                                    <input
+                                        name="name"
+                                        className="partnerPageFifthInput"
+                                        placeholder="Enter your name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>
+
+                                <label className="partnerPageFifthField">
+                                    <span>
+                                        Company Email<span className="partnerPageFifthRequired">*</span>
+                                    </span>
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        className="partnerPageFifthInput"
+                                        placeholder="info@company.com"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>
+
                             </div>
 
-                            <input
-                                className="partnerPageFifthInput"
-                                placeholder="Your Phone Number"
+                            {/* Phone Field */}
+                            <label className="partnerPageFifthField">
+                                <span>
+                                    Phone Number<span className="partnerPageFifthRequired">*</span>
+                                </span>
+
+                                <PhoneInput
+                                    defaultCountry="us"
+                                    value={formData.phone}
+                                    onChange={(phone) =>
+                                        setFormData((prev) => ({
+                                            ...prev,
+                                            phone,
+                                        }))
+                                    }
+                                    className="react-international-phone-input-container"
+                                />
+                            </label>
+
+                            <ReCAPTCHA
+                                className="partnerFifthFormCaptcha"
+                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                onChange={(token) => setCaptchaToken(token)}
+                                onExpired={() => setCaptchaToken(null)}
                             />
 
-                            <button type="submit" className="partnerPageFifthPrimaryBtn">
-                                Submit
+                            <button
+                                type="submit"
+                                className="partnerPageFifthPrimaryBtn"
+                                disabled={loading || !captchaToken}
+                            >
+                                {loading ? "Submitting..." : "Submit"}
                             </button>
+
                         </form>
                     </div>
                 </div>
