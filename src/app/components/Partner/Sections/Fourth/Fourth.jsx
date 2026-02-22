@@ -52,8 +52,8 @@ export default function Fourth() {
                 <p>How it works</p>
             </div>
             <div className="partnerFourthHeader">
-                <h3 className="partnerFourthHeaderTitle">Benefits built for real delivery</h3>
-                <p className="partnerFourthHeaderSubtitle">A partner program designed to help you win, deliver, and expand—without friction or surprise costs.</p>
+                <h3 className="partnerFourthHeaderTitle">Partnership models</h3>
+                <p className="partnerFourthHeaderSubtitle">Choose a motion that matches your business—then we’ll co-design the rollout and go-to-market plan.</p>
             </div>
             <div className="partnerFourthCardsContainer">
                 {fourthSectionText.cards.map((card, idx) => (
