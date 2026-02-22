@@ -10,7 +10,28 @@ import Image from "next/image";
 import { paths } from "../../../../../../public/static/paths";
 
 export default function Hero() {
+    const scrollToSection = () => {
+        const section = document.getElementById("partnershipModelsSection");
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
 
+    const scrollAndFocus = () => {
+        const section = document.getElementById("partner-form-section");
+        const input = document.getElementById("partner-name-input");
+
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        // Delay focus slightly to allow scroll animation
+        setTimeout(() => {
+            if (input) {
+                input.focus();
+            }
+        }, 600);
+    };
     return (
         <section className="partnerPageHeroSection">
             <div className="partnerPageHeroContainer">
@@ -40,8 +61,8 @@ export default function Hero() {
                         BuildNiNja is a high-performance self-hosted CI/CD platform built for teams that need speed, security, and control—across cloud, on-prem, or air-gapped environments.
                     </p>
                     <div className="partnerPageHeroButtonContainer">
-                        <button className="partnerPageHeroButton">Let's grow together</button>
-                        <button className="partnerPageHeroButton">Explore partnership models</button>
+                        <button className="partnerPageHeroButton" onClick={() => { scrollAndFocus(); }}>Let's grow together</button>
+                        <button className="partnerPageHeroButton" onClick={() => { scrollToSection(); }}>Explore partnership models</button>
                     </div>
                     <div className="partnerPageHeroStats">
                         <div className="partnerPageHeroStatCard">

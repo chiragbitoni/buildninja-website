@@ -46,7 +46,7 @@ export default function Fourth() {
         ],
     };
     return (
-        <section className="partnerFourthSection">
+        <section className="partnerFourthSection" id="partnershipModelsSection">
             <div className="partnerFourthBanner">
                 <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
                 <p>How it works</p>

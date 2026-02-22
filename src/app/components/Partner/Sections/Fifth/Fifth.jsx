@@ -127,7 +127,7 @@ export default function Fifth() {
     }, []);
     return (
 
-        <section className="partnerPageFifthSection">
+        <section className="partnerPageFifthSection" id="partner-form-section">
             <div className="partnerFifthBanner">
                 <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
                 <p>How it works</p>
@@ -265,6 +265,7 @@ export default function Fifth() {
                                     </span>
                                     <input
                                         name="name"
+                                        id="partner-name-input"
                                         className="partnerPageFifthInput"
                                         placeholder="Enter your name"
                                         value={formData.name}
