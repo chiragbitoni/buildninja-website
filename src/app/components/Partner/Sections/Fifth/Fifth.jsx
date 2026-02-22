@@ -175,7 +175,10 @@ export default function Fifth() {
                         </div>
                     </div>
 
-                    <button className="partnerPageFifthPrimaryBtn">
+                    <button className="partnerPageFifthPrimaryBtn" onClick={() => {
+                        window.location.href =
+                            "mailto:marketing.in@grapecity.com?subject=Partnership Inquiry&body=Hi Team,%0D%0A%0D%0AI’d like to explore a partnership opportunity.%0D%0A";
+                    }}>
                         Email partnership
                     </button>
                 </div>
