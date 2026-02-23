@@ -109,12 +109,12 @@ export const secondSectionText = {
     },
 
     {
-      icon: paths.icons.wallet,
-      iconHover: paths.icons.walletPink,
-      title: "Secret Vault",
+      icon: paths.icons.parametersWhite,
+      iconHover: paths.icons.parametersPink,
+      title: "Build Parameters",
       description:
-        "Securely store and manage credentials at project and configuration level.",
-      link: "https://buildninja.grapehub.io/docs/key-features/secret-vault",
+        "Define and manage build variables securely at project and configuration level.",
+      link: "https://buildninja.grapehub.io/docs/key-features/build-parameters",
     },
 
     {
