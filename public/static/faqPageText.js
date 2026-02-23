@@ -124,12 +124,13 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "what-is-included-in-the-installer",
           question: "What is included in the BuildNinja installer?",
-          answer: `<p>The BuildNinja installer is a unified installer that supports installing:</p> 
-            <ul>
-            <li>The Server only </li>
-            <li>The Agent only</li>
-            <li> Both the Server and the Agent on the same system</li>
-            <p> When installing the Server, the installer can automatically install MongoDB locally if it is not already present. If a remote MongoDB URL is provided, MongoDB is not installed by the installer. The installer also allows you to choose a custom installation directory.</p>`,
+          answer: `<p>The BuildNinja installer is a unified installer that supports installing:</p>
+<ul>
+<li>The Server only</li>
+<li>The Agent only</li>
+<li>Both the Server and the Agent on the same system</li>
+</ul>
+<p>When installing the Server, the installer can automatically install MongoDB locally if it is not already present. If a remote MongoDB URL is provided, MongoDB is not installed by the installer. The installer also allows you to choose a custom installation directory.</p>`,
         },
         {
           id: "install-server-and-agent-same-machine",
@@ -343,8 +344,7 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
         {
           id: "reporting-bugs",
           question: "What if I encounter a bug or issue?",
-          answer:
-            "You can report issues by submitting a support ticket through our portal or by emailing hello@grapehub.io. Solo Edition users receive community support, while Shogun Edition users receive priority support during business hours. We actively work on resolving reported issues and provide regular updates and patches.",
+          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Solo Edition users receive community support, while Shogun Edition users receive priority support during business hours. We actively work on resolving reported issues and provide regular updates and patches.`,
         },
         {
           id: "update-frequency",
