@@ -68,6 +68,7 @@ export default function Hero() {
 
   const latestWindows = data.latest?.windows;
   const latestLinux = data.latest?.linux;
+  const latestMac = data.latest?.mac;
   const handleDownload = (url, meta) => {
     posthog.capture("installer_download_clicked", {
       ...meta,
@@ -76,6 +77,8 @@ export default function Hero() {
 
     downloadInstaller(url.split("/").pop());
   };
+
+
   return (
     <section className="downloadDashboardHeroSection">
       <div className="downloadDashboardHeroContent">
@@ -92,51 +95,45 @@ export default function Hero() {
             <span className="downloadDashboardHeroBadge">CURRENT VERSION</span>
           </div>
 
-          <p className="downloadDashboardHeroButtonTitle">{latestWindows?.title}</p>
+          <p className="downloadDashboardHeroButtonTitle">
+            {latestWindows?.title}
+          </p>
+
           <div className="downloadDashboardHeroVersions">
             <div>
-              <p>Server Version</p>
-              <h3>{latestWindows?.serverVersion || "—"}</h3>
+              <p>Version</p>
+              <h3>{latestWindows?.version || "—"}</h3>
             </div>
-            <div>
-              <p>Agent Version</p>
-              <h3>{latestWindows?.agentVersion || "—"}</h3>
-            </div>
+
             <div>
               <p>Release Date</p>
-              <h3>{latestWindows?.releasedOn ? new Date(latestWindows.releasedOn).toDateString() : "—"}</h3>
+              <h3>
+                {latestWindows?.releasedOn
+                  ? new Date(latestWindows.releasedOn).toDateString()
+                  : "—"}
+              </h3>
             </div>
           </div>
-
-          {/* Windows Buttons */}
 
           <div className="downloadDashboardHeroButtons">
             <button
               className="downloadDashboardPinkBtn"
               onClick={() =>
-                handleDownload(latestWindows.serverDownloadUrl, {
+                handleDownload(latestWindows.downloadUrl, {
                   os: "windows",
-                  type: "server",
-                  version: latestWindows?.serverVersion,
+                  type: "installer",
+                  version: latestWindows?.version,
                 })
               }
             >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestWindows?.serverName}
-            </button>
-
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestWindows.agentDownloadUrl, {
-                  os: "windows",
-                  type: "agent",
-                  version: latestWindows?.agentVersion,
-                })
-              }
-            >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestWindows?.agentName}
+              <Image
+                width={0}
+                height={0}
+                className="dashboardHeroDownloadIcon"
+                src={paths.icons.downloadWhite}
+                alt="Download Icon"
+              />
+              {latestWindows?.name || "Download for Windows"}
             </button>
           </div>
 
@@ -186,6 +183,74 @@ export default function Hero() {
             >
               <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
               {latestLinux?.agentName}
+            </button>
+          </div>
+
+          {/* Mac Section */}
+          <p className="downloadDashboardHeroButtonTitle">
+            {latestMac?.title}
+          </p>
+
+          <div className="downloadDashboardHeroVersions">
+            <div>
+              <p>Server Version</p>
+              <h3>{latestMac?.serverVersion || "—"}</h3>
+            </div>
+
+            <div>
+              <p>Agent Version</p>
+              <h3>{latestMac?.agentVersion || "—"}</h3>
+            </div>
+
+            <div>
+              <p>Release Date</p>
+              <h3>
+                {latestMac?.releasedOn
+                  ? new Date(latestMac.releasedOn).toDateString()
+                  : "—"}
+              </h3>
+            </div>
+          </div>
+
+          <div className="downloadDashboardHeroButtons">
+            <button
+              className="downloadDashboardPinkBtn"
+              onClick={() =>
+                handleDownload(latestMac.serverDownloadUrl, {
+                  os: "mac",
+                  type: "server",
+                  version: latestMac?.serverVersion,
+                })
+              }
+            >
+              <Image
+                width={0}
+                height={0}
+                className="dashboardHeroDownloadIcon"
+                src={paths.icons.downloadWhite}
+                alt="Download Icon"
+              />
+              {latestMac?.serverName}
+            </button>
+
+            <button
+              className="downloadDashboardPinkBtn"
+              onClick={() =>
+                handleDownload(latestMac.agentDownloadUrl, {
+                  os: "mac",
+                  type: "agent",
+                  version: latestMac?.agentVersion,
+                })
+              }
+            >
+              <Image
+                width={0}
+                height={0}
+                className="dashboardHeroDownloadIcon"
+                src={paths.icons.downloadWhite}
+                alt="Download Icon"
+              />
+              {latestMac?.agentName}
             </button>
           </div>
 
