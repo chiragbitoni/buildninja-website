@@ -228,3 +228,33 @@
     background-color: #007acc33;
   }
 }
+
+/* ==========================
+   LIST STYLING INSIDE FAQ ANSWERS
+========================== */
+
+.faq-answer ul,
+.faq-answer ol {
+  margin: 0.8rem 0 0.8rem 1.2rem;
+  padding-left: 1.2rem;
+  list-style-position: outside;
+}
+
+.faq-answer ul {
+  list-style-type: disc;
+}
+
+.faq-answer ol {
+  list-style-type: decimal;
+}
+
+.faq-answer li {
+  margin-bottom: 0.4rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.faqThirdPinkText {
+  color: #ff4172;
+}

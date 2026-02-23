@@ -41,6 +41,24 @@ export const thirdSectionText = {
           answer:
             "BuildNinja eliminates the complexity of traditional CI/CD tools. Instead of spending days debugging configurations, you get a pre-configured solution that works out of the box. With built-in agent management, real-time dashboards, and comprehensive email notifications, everything you need is included – no plugins hunting required.",
         },
+        {
+          id: "what-is-native-git-support",
+          question: "What is Native Git support in BuildNinja?",
+          answer:
+            "Native Git support allows BuildNinja to handle Git operations directly on the server instead of relying only on external SSH or HTTPS workflows. This improves reliability, enables caching, and enhances overall Git performance.",
+        },
+        {
+          id: "what-is-secret-vault",
+          question: "What is the Secret Vault in BuildNinja?",
+          answer:
+            "The Secret Vault provides centralized storage for secrets and environment variables that can be securely reused across projects and build configurations.",
+        },
+        {
+          id: "what-roles-are-available-in-rbac",
+          question: "What roles are available in RBAC?",
+          answer:
+            "BuildNinja provides predefined roles such as Viewer, Executor, Editor, and Manager to control user access at the project and build configuration level. These roles define the actions users can perform, including viewing configurations, running builds, modifying settings, and managing members.",
+        },
       ],
     },
 
@@ -73,8 +91,10 @@ See complete system requirements for network, browser compatibility, and additio
           question: "Do I need a license to use BuildNinja?",
           answer: `<p>Your first download includes a trial license (30 days, 10 users, 3 concurrent builds) - no license key needed.</p>
 <p>After the trial, acquire a license through the BuildNinja License Portal:</p>
-<p>- Solo Edition (Free forever): Register and generate your free license key<br/>
-- Shogun Edition ($199/month): Purchase and generate your license key</p>
+<ul>
+<li>Solo Edition (Free forever): Register and generate your free license key</li>
+<li>Shogun Edition ($199/month): Purchase and generate your license key</li>
+</ul>
 <p>Activate your license through Settings > Manage License (online or offline activation available).</p>`,
         },
         {
@@ -88,13 +108,47 @@ See complete system requirements for network, browser compatibility, and additio
           id: "migration-support",
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
           answer:
-            "Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at hello@grapehub.io",
+            `Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>`,
         },
         {
           id: "docker-support",
           question: "Is there Docker support?",
           answer:
             "Yes! BuildNinja offers official Docker images. Deploy via Docker Compose or Kubernetes with environment-based configuration",
+        },
+        {
+          id: "does-buildninja-support-macos",
+          question: "Does BuildNinja support macOS?",
+          answer:
+            "Yes. BuildNinja supports running both Server and Agents on macOS, with full support on Apple Silicon (M-series) systems. Older macOS versions may work on Apple Silicon, but Intel-based Macs are not fully supported.",
+        },
+        {
+          id: "what-is-included-in-the-installer",
+          question: "What is included in the BuildNinja installer?",
+          answer: `<p>The BuildNinja installer is a unified installer that supports installing:</p> 
+            <ul>
+            <li>The Server only </li>
+            <li>The Agent only</li>
+            <li> Both the Server and the Agent on the same system</li>
+            <p> When installing the Server, the installer can automatically install MongoDB locally if it is not already present. If a remote MongoDB URL is provided, MongoDB is not installed by the installer. The installer also allows you to choose a custom installation directory.</p>`,
+        },
+        {
+          id: "install-server-and-agent-same-machine",
+          question: "Can I install both Server and Agent on the same machine?",
+          answer:
+            "Yes. The unified installer supports installing and running both the Server and the Agent on the same machine. This setup is commonly used for evaluation, development, or small-scale deployments.",
+        },
+        {
+          id: "need-to-install-mongodb-separately",
+          question: "Do I need to install MongoDB separately?",
+          answer:
+            "Not always. When installing the Server using the unified installer, MongoDB is installed automatically if a local MongoDB instance is not detected. If you choose to connect to a remote MongoDB instance, you must ensure that MongoDB is already installed and accessible at the provided URL.",
+        },
+        {
+          id: "use-binary-files-instead-of-installer",
+          question: "Can I still use binary files instead of the installer?",
+          answer:
+            "Yes. BuildNinja provides standalone binary files for both the Server and the Agent on Windows. This method requires manual configuration using environment variables and is recommended for advanced, customized, or automated deployments.",
         },
       ],
     },
@@ -196,6 +250,36 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
 <p>Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, and an Artifacts tab for generated files.</p>
 <p>Note: Logs are limited to 16 MiB per build.</p>`,
         },
+        {
+          id: "does-native-git-support-caching",
+          question: "Does Native Git support caching?",
+          answer:
+            "Yes. Native Git support includes server-side caching, which improves clone performance and reduces redundant network operations.",
+        },
+        {
+          id: "which-shells-does-script-runner-support",
+          question: "Which shells does Script Runner support?",
+          answer:
+            "Script Runner supports multiple script types, including Bash, Shell (sh), Zsh, Command Prompt, PowerShell, and PowerShell 7.",
+        },
+        {
+          id: "can-i-use-ssh-runner-for-deployments",
+          question: "Can I use SSH Runner for deployments?",
+          answer:
+            "Yes. SSH Runner can be used for secure remote command execution, including deployment-related tasks, provided required keys and permissions are configured.",
+        },
+        {
+          id: "how-does-secret-vault-work-in-build-steps",
+          question: "How does Secret Vault work in build steps?",
+          answer:
+            "Secrets stored in the Secret Vault can be injected into build steps as environment variables or parameters without exposing sensitive values in logs or configuration files.",
+        },
+        {
+          id: "how-does-rbac-affect-build-configurations",
+          question: "How does RBAC affect build configurations?",
+          answer:
+            "RBAC controls who can view, edit, manage members, or execute build configurations by assigning roles through the Members tab at the project or configuration level.",
+        },
       ],
     },
 
@@ -216,23 +300,28 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
 <p>Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.</p>`,
         },
         {
-          id: "secrets-management",
-          question: "How are secrets and credentials managed?",
-          answer:
-            "A dedicated secrets management feature is currently in development and will be available in an upcoming release. In the meantime, please contact our team to discuss your specific security and credential management requirements.",
-        },
-        {
-          id: "user-permissions",
-          question: "Can I control user permissions and access?",
-          answer: `<p>Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance.</p>
-<p>Solo Edition supports up to 10 users, while Shogun Edition supports unlimited users.</p>
-<p>Note: Role-based access control (RBAC) is planned for a future release.</p>`,
-        },
-        {
           id: "industry-compliance",
           question: "Is BuildNinja compliant with industry standards?",
           answer:
             "BuildNinja is a self-hosted platform deployed entirely on your infrastructure, giving you complete control over data sovereignty and compliance requirements. Since it runs in your environment, compliance with standards like SOC 2, ISO 27001, or GDPR depends on your deployment infrastructure and organizational policies. BuildNinja provides SSO integration and user management controls to support your security framework.",
+        },
+        {
+          id: "how-are-secrets-and-credentials-managed",
+          question: "How are secrets and credentials managed?",
+          answer:
+            "Secrets are stored securely and are masked in logs. Access to secrets is controlled using RBAC and scoped permissions at the project or configuration level.",
+        },
+        {
+          id: "can-i-control-user-permissions-and-access",
+          question: "Can I control user permissions and access?",
+          answer:
+            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. Solo Edition supports up to 10 users, while Shogun Edition supports unlimited users. In addition, BuildNinja now supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
+        },
+        {
+          id: "can-permission-changes-affect-running-builds",
+          question: "Can permission changes affect running builds?",
+          answer:
+            "Permission changes take effect immediately for user actions in the UI, but they do not interrupt builds that are already running.",
         },
       ],
     },

@@ -21,7 +21,7 @@ export default function ThirdContent() {
           faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
-    .filter(category => category.faqs.length > 0); 
+    .filter(category => category.faqs.length > 0);
 
   // Toggle FAQ expand/collapse
   const toggleFAQ = (categoryIndex, faqIndex) => {
@@ -118,7 +118,7 @@ export default function ThirdContent() {
                     </button>
                     <div className="faq-answer">
                       {/* <p>{highlightText(faq.answer, searchTerm)}</p> */}
-                      <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, "<br>").replaceAll("**", "<strong>").replaceAll("/strong", "</strong>") }} />
+                      <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     </div>
                   </div>
                 ))}
