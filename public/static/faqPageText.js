@@ -64,7 +64,7 @@ export const thirdSectionText = {
 Build Agents:
 - Minimum: 2-core CPU, 2GB RAM, 10GB storage
 - Recommended: 4+ cores, 4-8GB RAM, 50GB+ storage
-- Supports Windows 10/11, and Linux
+- Supports Windows 10/11, Linux, & MacOS
 
 See complete system requirements for network, browser compatibility, and additional tools.`,
         },
@@ -168,7 +168,7 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
           id: "agent-management",
           question: "How does agent management work?",
           answer: `<p>BuildNinja provides a centralized management interface for all your build agents. When a new agent registers with the server, it appears in an unauthorized state - you must explicitly authorize it before it can execute builds.</p>
-<p>Once authorized, you can enable/disable agents, refresh configurations, reset status, delete agents, and filter by operating system or status. Agents support Windows and Linux, giving you flexibility to match build requirements with the right platform.</p>`,
+<p>Once authorized, you can enable/disable agents, refresh configurations, reset status, delete agents, and filter by operating system or status. Agents support Windows, Linux, & MacOS, giving you flexibility to match build requirements with the right platform.</p>`,
         },
         {
           id: "kubernetes-support",

@@ -158,7 +158,6 @@ export const secondSectionTextGlobal = {
         "Up to 100 configurations",
         "Standard Email support",
         "Any 1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
-      
       ],
       buttonText: "Get Your Free Key",
       buttonText2: "Start with Trial License",
@@ -247,7 +246,7 @@ export const pricingFourthText = {
   cards: [
     {
       icon: paths.icons.usersPink,
-      alt:"Grapecity Pink Users Icon",
+      alt: "Grapecity Pink Users Icon",
       title: "No Per-Seat Taxation",
       tag: "Scale Freely",
       desc: "Pay for your infrastructure scale, not your team size. Add 10 developers or 100, your BuildNinja cost stays the same.",
@@ -256,7 +255,7 @@ export const pricingFourthText = {
     },
     {
       icon: paths.icons.serverPink,
-      alt:"Grapecity Pink Server Icon",
+      alt: "Grapecity Pink Server Icon",
       title: "Self-Hosted Freedom",
       tag: "Full Control",
       desc: "Run on your infrastructure with complete control. No vendor lock-in, no data sovereignty concerns, no surprise cloud bills.",
@@ -265,26 +264,26 @@ export const pricingFourthText = {
     },
     {
       icon: paths.icons.calculatorPink,
-      alt:"Grapecity Pink Calculator Icon",
+      alt: "Grapecity Pink Calculator Icon",
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
       desc: "Free up to 3 concurrent builds. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations.",
       link: "Learn more →",
-      id: "what-is-concurrent-agent"
+      id: "what-is-concurrent-agent",
     },
     {
       icon: paths.icons.headphonesPink,
-      alt:"Grapecity Pink Headphone Icon",
+      alt: "Grapecity Pink Headphone Icon",
       title: "Professional Support Included",
       tag: "Partnership",
       desc: "Annual, 2-year, and 3-year plans include free migration assistance for 3 projects,4 hours of professional services, not upsells, but true partnership.",
       link: "Learn more →",
-      id: "professional-services"
+      id: "professional-services",
     },
     {
       icon: paths.icons.syncPink,
-      alt:"Grapecity Pink Sync Icon",
+      alt: "Grapecity Pink Sync Icon",
       title: "Risk-Free Switching",
       tag: "30-Day Demo",
       desc: "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and a 30-day demo to validate everything works. We remove barriers that keep teams stuck on expensive tools.",
@@ -309,6 +308,8 @@ export const pricingFifthText = {
             "Run on your infrastructure",
             "Complete data sovereignty",
             "No cloud vendor lock-in",
+            "Build Parameters for secure credential storage",
+            "Project & configuration-level secrets",
           ],
         },
         {
@@ -316,12 +317,15 @@ export const pricingFifthText = {
           list: [
             "Deploy in minutes with docker pull",
             "Self-contained deployment",
-            "Multi-platform agents (Windows, Linux)",
+            "Multi-platform agents (Windows, Linux, & MacOS)",
+            "Execute commands on remote servers via SSH Runner",
           ],
         },
         {
           heading: "Version Control Integration",
           list: [
+            "Native Git support (no plugins required)",
+            "Intelligent repository caching for faster builds",
             "GitHub, GitLab, Bitbucket support",
             "No vendor lock-in",
             "Works with your existing workflow",
@@ -336,8 +340,13 @@ export const pricingFifthText = {
           ],
         },
         {
-          heading: "Smart Notifications",
-          list: ["Email", "Customizable triggers", "Multi-recipient support"],
+          heading: "Smart Notifications & Email Templates",
+          list: [
+            "Customizable email templates",
+            "Brand your build notifications",
+            "Customizable triggers",
+            "Multi-recipient support",
+          ],
         },
       ],
     },
@@ -350,6 +359,8 @@ export const pricingFifthText = {
             "Approve or reject user registration requests",
             "Block/unblock users and reset passwords",
             "Export logs for compliance and monitoring",
+            "Role-Based Access Control (RBAC)",
+            "Granular project & system-level permissions",
           ],
         },
         {
