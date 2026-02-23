@@ -121,8 +121,8 @@ export const paths = {
     gitPink: "/resources/icons/git1Pink.svg",
     mail: "/resources/icons/mail.svg",
     mailPink: "/resources/icons/mailPink.svg",
-    exe: "/resources/icons/exe2.svg",
-    exePink: "/resources/icons/exe2Pink.svg",
+    exe: "/resources/icons/exe.svg",
+    exePink: "/resources/icons/exePink.svg",
     buildninjaStars: "/resources/icons/buildninjaStars.svg",
     landingPageAssets: {
       automated_builds:
