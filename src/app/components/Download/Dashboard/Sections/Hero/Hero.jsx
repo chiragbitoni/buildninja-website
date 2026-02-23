@@ -367,20 +367,26 @@ export default function Hero() {
 
           <div className="mongoBox">
             <h3>{staticData.systemRequirements.mongoRequired}</h3>
-            <a
-              href="https://www.mongodb.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() =>
-                posthog.capture("external_dependency_clicked", {
-                  name: "mongodb",
-                  location: "system_requirements",
-                })
-              }
-            >
 
-              {staticData.systemRequirements.mongoDownload}
-            </a>
+            <p className="mongoNote">
+              {staticData.systemRequirements.mongoNote}
+            </p>
+
+            {latestLinux || latestMac ? (
+              <a
+                href="https://www.mongodb.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  posthog.capture("external_dependency_clicked", {
+                    name: "mongodb",
+                    location: "system_requirements",
+                  })
+                }
+              >
+                Download MongoDB
+              </a>
+            ) : null}
           </div>
 
           <table className="systemTable">

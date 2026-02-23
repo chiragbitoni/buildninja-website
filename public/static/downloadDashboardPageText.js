@@ -10,7 +10,7 @@ export const downloadDashboardData = {
       name: "BuildNinja_Installer_2026.1.1.7.exe",
       version: "2026.1.1.7",
       downloadUrl: "/api/installers/download/BuildNinja_2026.1.1.7.exe",
-      releasedOn: "2026-02-21T17:20:25Z"
+      releasedOn: "2026-02-21T17:20:25Z",
     },
 
     linux: {
@@ -21,7 +21,7 @@ export const downloadDashboardData = {
       agentName: "BuildNinja_agent_linux_1.1.0-rc",
       agentVersion: "1.1.0-rc",
       agentDownloadUrl: "/api/installers/download/bn_agent_linux_1.1.0-rc",
-      releasedOn: "2026-02-21T17:38:58Z"
+      releasedOn: "2026-02-21T17:38:58Z",
     },
 
     mac: {
@@ -32,8 +32,8 @@ export const downloadDashboardData = {
       agentName: "BuildNinja_agent_mac_1.1.0-rc",
       agentVersion: "1.1.0-rc",
       agentDownloadUrl: "/api/installers/download/bn_agent_mac_1.1.0-rc",
-      releasedOn: "2026-02-21T17:39:07Z"
-    }
+      releasedOn: "2026-02-21T17:39:07Z",
+    },
   },
 
   history: [],
@@ -43,21 +43,23 @@ export const downloadDashboardData = {
     serverLabel: "Server Image",
     serverCmd: "docker pull grapehub/buildninja-server:latest",
     agentLabel: "Agent Image",
-    agentCmd: "docker pull grapehub/buildninja-agent:latest"
+    agentCmd: "docker pull grapehub/buildninja-agent:latest",
   },
 
   systemRequirements: {
     title: "System Requirements",
-    mongoRequired: "MongoDB 4.4+ required",
-    mongoDownload: "Download MongoDB",
+    mongoRequired: "MongoDB",
+    mongoDownload: "",
+    mongoNote:
+      "Included in Windows installer. Required separately for Linux and Mac.",
     rows: [
       { comp: "Server CPU", spec: "2+ cores" },
       { comp: "Server RAM", spec: "4GB" },
       { comp: "Server Storage", spec: "10GB" },
       { comp: "Agent CPU", spec: "2+ cores" },
       { comp: "Agent RAM", spec: "2GB" },
-      { comp: "Agent Storage", spec: "5GB" }
-    ]
+      { comp: "Agent Storage", spec: "5GB" },
+    ],
   },
 
   support: {
@@ -67,14 +69,14 @@ export const downloadDashboardData = {
         title: "Installation Documentation",
         desc: "Comprehensive guides for all installation methods",
         btn: "View Documentation",
-        link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`
+        link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`,
       },
       {
         title: "Contact Support",
         desc: "Direct assistance from our support team",
         btn: "Get Support",
-        router: "/support"
-      }
-    ]
-  }
+        router: "/support",
+      },
+    ],
+  },
 };
