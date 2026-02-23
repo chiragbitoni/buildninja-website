@@ -93,7 +93,8 @@ export const paths = {
     shieldPink2: "/resources/icons/shieldPink2.svg",
     clockPink: "/resources/icons/clockPink.svg",
     clockPink2: "/resources/icons/clockPink2.svg",
-    greenCircleTickOverLapWithBG: "/resources/icons/greenCircleTickOverLapWithBG.svg",
+    greenCircleTickOverLapWithBG:
+      "/resources/icons/greenCircleTickOverLapWithBG.svg",
     downloadWhite: "/resources/icons/downloadWhite.svg",
     book: "/resources/icons/book.svg",
     codeFile: "/resources/icons/codeFile.svg",
@@ -108,26 +109,52 @@ export const paths = {
     cardPricingShield: "/resources/icons/cardPricingShield.svg",
     license: "/resources/icons/licenses.svg",
     closeWhite: "/resources/icons/closeWhite.svg",
+    wallet: "/resources/icons/wallet.svg",
+    walletPink: "/resources/icons/walletPink.svg",
+    squareTerminal: "/resources/icons/square-terminal.svg",
+    squareTerminalPink: "/resources/icons/square-terminalPink.svg",
+    scriptRunner: "/resources/icons/scriptRunner.svg",
+    scriptRunnerPink: "/resources/icons/scriptRunnerPink.svg",
+    userKey: "/resources/icons/userKey.svg",
+    userKeyPink: "/resources/icons/userKeyPink.svg",
+    git: "/resources/icons/git1.svg",
+    gitPink: "/resources/icons/git1Pink.svg",
+    mail: "/resources/icons/mail.svg",
+    mailPink: "/resources/icons/mailPink.svg",
+    exe: "/resources/icons/exe2.svg",
+    exePink: "/resources/icons/exe2Pink.svg",
     buildninjaStars: "/resources/icons/buildninjaStars.svg",
     landingPageAssets: {
-      automated_builds: "/resources/icons/landingPageAssets/automated_builds.svg",
-      automated_builds_pink: "/resources/icons/landingPageAssets/automated_builds_pink.svg",
+      automated_builds:
+        "/resources/icons/landingPageAssets/automated_builds.svg",
+      automated_builds_pink:
+        "/resources/icons/landingPageAssets/automated_builds_pink.svg",
       version_control: "/resources/icons/landingPageAssets/VersionControl.svg",
       artifact: "/resources/icons/landingPageAssets/Artifact.svg",
       artifact_pink: "/resources/icons/landingPageAssets/Artifact_pink.svg",
-      container: "/resources/icons/landingPageAssets/containerized_deployment.svg",
-      containerPink: "/resources/icons/landingPageAssets/containerized_deployment_pink.svg",
+      container:
+        "/resources/icons/landingPageAssets/containerized_deployment.svg",
+      containerPink:
+        "/resources/icons/landingPageAssets/containerized_deployment_pink.svg",
       configuration: "/resources/icons/landingPageAssets/configuration.svg",
-      configuration_pink: "/resources/icons/landingPageAssets/configuration_pink.svg",
-      configuration_pink: "/resources/icons/landingPageAssets/configuration_pink.svg",
-      cross_platform_config_pink: "/resources/icons/landingPageAssets/cross_platform_config_pink.svg",
-      cross_platform_config: "/resources/icons/landingPageAssets/cross_platform_config.svg",
+      configuration_pink:
+        "/resources/icons/landingPageAssets/configuration_pink.svg",
+      configuration_pink:
+        "/resources/icons/landingPageAssets/configuration_pink.svg",
+      cross_platform_config_pink:
+        "/resources/icons/landingPageAssets/cross_platform_config_pink.svg",
+      cross_platform_config:
+        "/resources/icons/landingPageAssets/cross_platform_config.svg",
       shield: "/resources/icons/landingPageAssets/shield.svg",
       shield_pink: "/resources/icons/landingPageAssets/shield_pink.svg",
-      agent_requirements: "/resources/icons/landingPageAssets/agent_requirements.svg",
-      agent_requirements_pink: "/resources/icons/landingPageAssets/agent_requirements_pink.svg",
-      interactive_dashboard: "/resources/icons/landingPageAssets/interactive_dashboard.svg",
-      interactive_dashboard_pink: "/resources/icons/landingPageAssets/interactive_dashboard_pink.svg",
+      agent_requirements:
+        "/resources/icons/landingPageAssets/agent_requirements.svg",
+      agent_requirements_pink:
+        "/resources/icons/landingPageAssets/agent_requirements_pink.svg",
+      interactive_dashboard:
+        "/resources/icons/landingPageAssets/interactive_dashboard.svg",
+      interactive_dashboard_pink:
+        "/resources/icons/landingPageAssets/interactive_dashboard_pink.svg",
       trigger: "/resources/icons/landingPageAssets/trigger.svg",
       trigger_pink: "/resources/icons/landingPageAssets/trigger_pink.svg",
       email: "/resources/icons/landingPageAssets/email.svg",
@@ -137,8 +164,9 @@ export const paths = {
       tickWithGreenBG: "/resources/icons/landingPageAssets/tickWithGreenBG.svg",
       golbe: "/resources/icons/landingPageAssets/Globe.svg",
       trophy: "/resources/icons/landingPageAssets/trophy.svg",
-      agent_management: "/resources/icons/landingPageAssets/agent-management.svg",
+      agent_management:
+        "/resources/icons/landingPageAssets/agent-management.svg",
       secure_check: "/resources/icons/landingPageAssets/secure_check.svg",
-    }
+    },
   },
 };
