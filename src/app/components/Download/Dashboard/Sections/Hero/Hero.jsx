@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Hero() {
   const router = useRouter();
 
-  const [data, setData] = useState(staticData);
+  const [data, setData] = useState({ latest: {}, history: [] });
   const [loading, setLoading] = useState(true);
   const [hasHistory, setHasHistory] = useState(false);
 
@@ -70,6 +70,8 @@ export default function Hero() {
   const latestLinux = data.latest?.linux;
   const latestMac = data.latest?.mac;
   const handleDownload = (url, meta) => {
+    if (!url) return;
+
     posthog.capture("installer_download_clicked", {
       ...meta,
       source_page: "download_dashboard",
@@ -77,7 +79,6 @@ export default function Hero() {
 
     downloadInstaller(url.split("/").pop());
   };
-
 
   return (
     <section className="downloadDashboardHeroSection">
@@ -94,166 +95,178 @@ export default function Hero() {
             <h4 className="downloadDashboardHeroCardTitle">Current Release</h4>
             <span className="downloadDashboardHeroBadge">CURRENT VERSION</span>
           </div>
-
-          <p className="downloadDashboardHeroButtonTitle">
-            {latestWindows?.title}
-          </p>
-
-          <div className="downloadDashboardHeroVersions">
+          {latestWindows && (
             <div>
-              <p>Version</p>
-              <h3>{latestWindows?.version || "—"}</h3>
-            </div>
+              <p className="downloadDashboardHeroButtonTitle">
+                {latestWindows?.title}
+              </p>
 
+              <div className="downloadDashboardHeroVersions">
+                <div>
+                  <p>Version</p>
+                  <h3>{latestWindows?.version || "—"}</h3>
+                </div>
+
+                <div>
+                  <p>Release Date</p>
+                  <h3>
+                    {latestWindows?.releasedOn
+                      ? new Date(latestWindows.releasedOn).toDateString()
+                      : "—"}
+                  </h3>
+                </div>
+              </div>
+
+              <div className="downloadDashboardHeroButtons">
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestWindows.downloadUrl, {
+                      os: "windows",
+                      type: "installer",
+                      version: latestWindows?.version,
+                    })
+                  }
+                >
+                  <Image
+                    width={0}
+                    height={0}
+                    className="dashboardHeroDownloadIcon"
+                    src={paths.icons.downloadWhite}
+                    alt="Download Icon"
+                  />
+                  {latestWindows?.name || "Download for Windows"}
+                </button>
+              </div>
+            </div>
+          )}
+          {latestLinux && (
             <div>
-              <p>Release Date</p>
-              <h3>
-                {latestWindows?.releasedOn
-                  ? new Date(latestWindows.releasedOn).toDateString()
-                  : "—"}
-              </h3>
+
+              <p className="downloadDashboardHeroButtonTitle">{latestLinux?.title}</p>
+              <div className="downloadDashboardHeroVersions">
+                <div>
+                  <p>Server Version</p>
+                  <h3>{latestLinux?.serverVersion || "—"}</h3>
+                </div>
+                <div>
+                  <p>Agent Version</p>
+                  <h3>{latestLinux?.agentVersion || "—"}</h3>
+                </div>
+                <div>
+                  <p>Release Date</p>
+                  <h3>{latestLinux?.releasedOn ? new Date(latestLinux.releasedOn).toDateString() : "—"}</h3>
+                </div>
+              </div>
+
+
+              {/* Linux Buttons */}
+
+              <div className="downloadDashboardHeroButtons">
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestLinux.serverDownloadUrl, {
+                      os: "linux",
+                      type: "server",
+                      version: latestLinux?.serverVersion,
+                    })
+                  }
+                >
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
+                  {latestLinux?.serverName}
+                </button>
+
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestLinux.agentDownloadUrl, {
+                      os: "linux",
+                      type: "agent",
+                      version: latestLinux?.agentVersion,
+                    })
+                  }
+                >
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
+                  {latestLinux?.agentName}
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div className="downloadDashboardHeroButtons">
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestWindows.downloadUrl, {
-                  os: "windows",
-                  type: "installer",
-                  version: latestWindows?.version,
-                })
-              }
-            >
-              <Image
-                width={0}
-                height={0}
-                className="dashboardHeroDownloadIcon"
-                src={paths.icons.downloadWhite}
-                alt="Download Icon"
-              />
-              {latestWindows?.name || "Download for Windows"}
-            </button>
-          </div>
-
-          <p className="downloadDashboardHeroButtonTitle">{latestLinux?.title}</p>
-          <div className="downloadDashboardHeroVersions">
-            <div>
-              <p>Server Version</p>
-              <h3>{latestLinux?.serverVersion || "—"}</h3>
-            </div>
-            <div>
-              <p>Agent Version</p>
-              <h3>{latestLinux?.agentVersion || "—"}</h3>
-            </div>
-            <div>
-              <p>Release Date</p>
-              <h3>{latestLinux?.releasedOn ? new Date(latestLinux.releasedOn).toDateString() : "—"}</h3>
-            </div>
-          </div>
-
-
-          {/* Linux Buttons */}
-
-          <div className="downloadDashboardHeroButtons">
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestLinux.serverDownloadUrl, {
-                  os: "linux",
-                  type: "server",
-                  version: latestLinux?.serverVersion,
-                })
-              }
-            >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestLinux?.serverName}
-            </button>
-
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestLinux.agentDownloadUrl, {
-                  os: "linux",
-                  type: "agent",
-                  version: latestLinux?.agentVersion,
-                })
-              }
-            >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestLinux?.agentName}
-            </button>
-          </div>
+          )}
 
           {/* Mac Section */}
-          <p className="downloadDashboardHeroButtonTitle">
-            {latestMac?.title}
-          </p>
-
-          <div className="downloadDashboardHeroVersions">
+          {latestMac && (
             <div>
-              <p>Server Version</p>
-              <h3>{latestMac?.serverVersion || "—"}</h3>
+
+              <p className="downloadDashboardHeroButtonTitle">
+                {latestMac?.title}
+              </p>
+
+              <div className="downloadDashboardHeroVersions">
+                <div>
+                  <p>Server Version</p>
+                  <h3>{latestMac?.serverVersion || "—"}</h3>
+                </div>
+
+                <div>
+                  <p>Agent Version</p>
+                  <h3>{latestMac?.agentVersion || "—"}</h3>
+                </div>
+
+                <div>
+                  <p>Release Date</p>
+                  <h3>
+                    {latestMac?.releasedOn
+                      ? new Date(latestMac.releasedOn).toDateString()
+                      : "—"}
+                  </h3>
+                </div>
+              </div>
+
+              <div className="downloadDashboardHeroButtons">
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestMac.serverDownloadUrl, {
+                      os: "mac",
+                      type: "server",
+                      version: latestMac?.serverVersion,
+                    })
+                  }
+                >
+                  <Image
+                    width={0}
+                    height={0}
+                    className="dashboardHeroDownloadIcon"
+                    src={paths.icons.downloadWhite}
+                    alt="Download Icon"
+                  />
+                  {latestMac?.serverName}
+                </button>
+
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestMac.agentDownloadUrl, {
+                      os: "mac",
+                      type: "agent",
+                      version: latestMac?.agentVersion,
+                    })
+                  }
+                >
+                  <Image
+                    width={0}
+                    height={0}
+                    className="dashboardHeroDownloadIcon"
+                    src={paths.icons.downloadWhite}
+                    alt="Download Icon"
+                  />
+                  {latestMac?.agentName}
+                </button>
+              </div>
+
             </div>
-
-            <div>
-              <p>Agent Version</p>
-              <h3>{latestMac?.agentVersion || "—"}</h3>
-            </div>
-
-            <div>
-              <p>Release Date</p>
-              <h3>
-                {latestMac?.releasedOn
-                  ? new Date(latestMac.releasedOn).toDateString()
-                  : "—"}
-              </h3>
-            </div>
-          </div>
-
-          <div className="downloadDashboardHeroButtons">
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestMac.serverDownloadUrl, {
-                  os: "mac",
-                  type: "server",
-                  version: latestMac?.serverVersion,
-                })
-              }
-            >
-              <Image
-                width={0}
-                height={0}
-                className="dashboardHeroDownloadIcon"
-                src={paths.icons.downloadWhite}
-                alt="Download Icon"
-              />
-              {latestMac?.serverName}
-            </button>
-
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestMac.agentDownloadUrl, {
-                  os: "mac",
-                  type: "agent",
-                  version: latestMac?.agentVersion,
-                })
-              }
-            >
-              <Image
-                width={0}
-                height={0}
-                className="dashboardHeroDownloadIcon"
-                src={paths.icons.downloadWhite}
-                alt="Download Icon"
-              />
-              {latestMac?.agentName}
-            </button>
-          </div>
-
+          )}
           {/* Docker */}
           <h4 className="downloadDashboardHeroDockerTitle">Docker Commands</h4>
 

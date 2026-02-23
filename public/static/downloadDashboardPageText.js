@@ -4,21 +4,39 @@ export const downloadDashboardData = {
   breadcrumb: "Documentation / Installers",
   title: "Download Installers",
 
-  // Mirrors API shape
   latest: {
     windows: {
-      title: "Windows Installers",
-      serverName: "BuildNinjaServer.exe",
-      serverVersion: "Version 2025.2.0.15",
-      agentName: "BuildNinjaAgent.exe",
-      agentVersion: "Version 2025.2.0.10",
-      serverDownloadUrl: "/api/installers/download/BuildNinjaServer_2025.2.0.15.exe",
-      agentDownloadUrl: "/api/installers/download/BuildNinjaAgent_2025.2.0.10.exe",
-      releasedOn: "2025-11-25T10:20:50Z"
+      title: "Window Installer",
+      name: "BuildNinja_Installer_2026.1.1.7.exe",
+      version: "2026.1.1.7",
+      downloadUrl: "/api/installers/download/BuildNinja_2026.1.1.7.exe",
+      releasedOn: "2026-02-21T17:20:25Z"
+    },
+
+    linux: {
+      title: "Linux Distributables",
+      serverName: "BuildNinja_server_linux_1.1.0-rc",
+      serverVersion: "1.1.0-rc",
+      serverDownloadUrl: "/api/installers/download/bn_server_linux_1.1.0-rc",
+      agentName: "BuildNinja_agent_linux_1.1.0-rc",
+      agentVersion: "1.1.0-rc",
+      agentDownloadUrl: "/api/installers/download/bn_agent_linux_1.1.0-rc",
+      releasedOn: "2026-02-21T17:38:58Z"
+    },
+
+    mac: {
+      title: "Mac Distributables",
+      serverName: "BuildNinja_server_mac_1.1.0-rc",
+      serverVersion: "1.1.0-rc",
+      serverDownloadUrl: "/api/installers/download/bn_server_mac_1.1.0-rc",
+      agentName: "BuildNinja_agent_mac_1.1.0-rc",
+      agentVersion: "1.1.0-rc",
+      agentDownloadUrl: "/api/installers/download/bn_agent_mac_1.1.0-rc",
+      releasedOn: "2026-02-21T17:39:07Z"
     }
   },
 
-  history: [  ],
+  history: [],
 
   docker: {
     title: "Docker Commands",
