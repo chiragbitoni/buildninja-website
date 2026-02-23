@@ -48,10 +48,10 @@ export const thirdSectionText = {
             "Native Git support allows BuildNinja to handle Git operations directly on the server instead of relying only on external SSH or HTTPS workflows. This improves reliability, enables caching, and enhances overall Git performance.",
         },
         {
-          id: "what-is-secret-vault",
-          question: "What is the Secret Vault in BuildNinja?",
+          id: "what-are-build-parameters",
+          question: "What are Build Parameters in BuildNinja?",
           answer:
-            "The Secret Vault provides centralized storage for secrets and environment variables that can be securely reused across projects and build configurations.",
+            "Build Parameters are reusable variables that control how a build executes. They eliminate hardcoded values, improve security, and allow flexible configuration across projects and build configurations with support for inheritance and runtime input.",
         },
         {
           id: "what-roles-are-available-in-rbac",
@@ -107,8 +107,7 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "migration-support",
           question: "Can I migrate from another CI/CD tool to BuildNinja?",
-          answer:
-            `Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>`,
+          answer: `Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>`,
         },
         {
           id: "docker-support",
@@ -269,10 +268,10 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
             "Yes. SSH Runner can be used for secure remote command execution, including deployment-related tasks, provided required keys and permissions are configured.",
         },
         {
-          id: "how-does-secret-vault-work-in-build-steps",
-          question: "How does Secret Vault work in build steps?",
+          id: "how-do-build-parameters-work-in-build-steps",
+          question: "How do Build Parameters work in build steps?",
           answer:
-            "Secrets stored in the Secret Vault can be injected into build steps as environment variables or parameters without exposing sensitive values in logs or configuration files.",
+            "Build Parameters can be referenced inside build steps using placeholders or exposed as standard environment variables. This allows dynamic configuration of scripts and commands without hardcoding values, while keeping sensitive data protected when marked as secure.",
         },
         {
           id: "how-does-rbac-affect-build-configurations",

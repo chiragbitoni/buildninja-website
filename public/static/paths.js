@@ -111,6 +111,8 @@ export const paths = {
     closeWhite: "/resources/icons/closeWhite.svg",
     wallet: "/resources/icons/wallet.svg",
     walletPink: "/resources/icons/walletPink.svg",
+    variable: "/resources/icons/variable.svg",
+    variablePink: "/resources/icons/variablePink.svg",
     squareTerminal: "/resources/icons/square-terminal.svg",
     squareTerminalPink: "/resources/icons/square-terminalPink.svg",
     scriptRunner: "/resources/icons/scriptRunner.svg",

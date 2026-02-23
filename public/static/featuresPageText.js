@@ -109,8 +109,8 @@ export const secondSectionText = {
     },
 
     {
-      icon: paths.icons.parametersWhite,
-      iconHover: paths.icons.parametersPink,
+      icon: paths.icons.variable,
+      iconHover: paths.icons.variablePink,
       title: "Build Parameters",
       description:
         "Define and manage build variables securely at project and configuration level.",
