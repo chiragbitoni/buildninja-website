@@ -107,7 +107,7 @@ export const secondSectionText = {
       icon: paths.icons.landingPageAssets.cross_platform_config,
       iconHover: paths.icons.landingPageAssets.cross_platform_config_pink,
       title: "Cross-Platform Configuration",
-      description: "Seamless setup across Windows, and Linux.",
+      description: "Seamless setup across Windows, Linux, & MacOS.",
       // videoId: "XLcMnvfpwBw",
       link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
     },

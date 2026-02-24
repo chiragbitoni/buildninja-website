@@ -140,7 +140,7 @@ ul.navbar-links {
 @media (max-width: 1000px) {
   .navbar-links {
     position: absolute;
-    top: 60px;
+    top: 88px;
     left: 0;
     width: 100%;
     background-color: #222222;

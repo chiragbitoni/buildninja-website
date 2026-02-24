@@ -15,13 +15,15 @@ export default function ThirdContent() {
   const filteredFaqs = thirdSectionText.faqs
     .map(category => ({
       ...category,
-      faqs: category.faqs.filter(
-        faq =>
+      faqs: category.faqs.filter(faq => {
+        const cleanAnswer = faq.answer.replace(/<[^>]*>/g, "");
+        return (
           faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-      ),
+          cleanAnswer.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }),
     }))
-    .filter(category => category.faqs.length > 0); 
+    .filter(category => category.faqs.length > 0);
 
   // Toggle FAQ expand/collapse
   const toggleFAQ = (categoryIndex, faqIndex) => {
@@ -35,8 +37,11 @@ export default function ThirdContent() {
   // Highlight search term inside text
   const highlightText = (text, query) => {
     if (!query) return text;
-    const parts = text.split(new RegExp(`(${query})`, "gi"));
-    return parts.map((part, i) =>
+
+    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`(${escapedQuery})`, "gi");
+
+    return text.split(regex).map((part, i) =>
       part.toLowerCase() === query.toLowerCase() ? (
         <mark key={i} className="faq-highlight">
           {part}
@@ -44,6 +49,17 @@ export default function ThirdContent() {
       ) : (
         part
       )
+    );
+  };
+  const highlightHTML = (html, query) => {
+    if (!query) return html;
+
+    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`(${escapedQuery})(?![^<]*>)`, "gi");
+
+    return html.replace(
+      regex,
+      `<mark class="faq-highlight">$1</mark>`
     );
   };
   useEffect(() => {
@@ -118,7 +134,12 @@ export default function ThirdContent() {
                     </button>
                     <div className="faq-answer">
                       {/* <p>{highlightText(faq.answer, searchTerm)}</p> */}
-                      <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, "<br>").replaceAll("**", "<strong>").replaceAll("/strong", "</strong>") }} />
+                      {/* <div dangerouslySetInnerHTML={{ __html: faq.answer }} /> */}
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: highlightHTML(faq.answer, searchTerm),
+                        }}
+                      />
                     </div>
                   </div>
                 ))}

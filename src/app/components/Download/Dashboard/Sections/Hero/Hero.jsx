@@ -6,13 +6,15 @@ import { paths } from "../../../../../../../public/static/paths";
 import { fetchInstallers, downloadInstaller } from "@/services/auth/installers";
 import posthog from "posthog-js";
 import Image from "next/image";
-
+import { useDispatch } from "react-redux";
+import { openVideo } from "@/redux/slice/videoPopupSlice";
 export default function Hero() {
   const router = useRouter();
-
-  const [data, setData] = useState(staticData);
+  const dispatch = useDispatch();
+  const [data, setData] = useState({ latest: {}, history: [] });
   const [loading, setLoading] = useState(true);
   const [hasHistory, setHasHistory] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
@@ -68,7 +70,10 @@ export default function Hero() {
 
   const latestWindows = data.latest?.windows;
   const latestLinux = data.latest?.linux;
+  const latestMac = data.latest?.mac;
   const handleDownload = (url, meta) => {
+    if (!url) return;
+
     posthog.capture("installer_download_clicked", {
       ...meta,
       source_page: "download_dashboard",
@@ -76,6 +81,10 @@ export default function Hero() {
 
     downloadInstaller(url.split("/").pop());
   };
+  const releaseDate =
+    latestWindows?.releasedOn ||
+    latestLinux?.releasedOn ||
+    latestMac?.releasedOn;
   return (
     <section className="downloadDashboardHeroSection">
       <div className="downloadDashboardHeroContent">
@@ -87,108 +96,211 @@ export default function Hero() {
 
         {/* VERSION CARD */}
         <div className="downloadDashboardHeroCard">
-          <div className="downloadDashboardHeroCardTitleContainer">
-            <h4 className="downloadDashboardHeroCardTitle">Current Release</h4>
-            <span className="downloadDashboardHeroBadge">CURRENT VERSION</span>
+          <div className="releaseTopRow">
+            <div className="releaseLeft">
+              <h4 className="downloadDashboardHeroCardTitle">Release</h4>
+              <span className="releaseDate">
+                Date:{" "}
+                {releaseDate
+                  ? new Date(releaseDate).toLocaleDateString("en-GB")
+                  : "—"}
+              </span>
+            </div>
+
+            <span className="downloadDashboardHeroBadge">
+              CURRENT VERSION
+            </span>
           </div>
-
-          <p className="downloadDashboardHeroButtonTitle">{latestWindows?.title}</p>
-          <div className="downloadDashboardHeroVersions">
+          {latestWindows && (
             <div>
-              <p>Server Version</p>
-              <h3>{latestWindows?.serverVersion || "—"}</h3>
+              <p className="downloadDashboardHeroButtonTitle">
+                {latestWindows?.title}
+              </p>
+
+              <div className="osVersionRow windows">
+                <div className="inlineVersion">
+                  <span className="versionLabel">Version:</span>
+                  <span className="versionValue">
+                    {latestWindows?.version || "—"}
+                  </span>
+                </div>
+
+                <div
+                  className="dashboardHeroVideoButtonContainr"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <Image
+                    src={isHovered ? paths.icons.youtubeRed : paths.icons.youtube}
+                    width={24}
+                    height={24}
+                    alt="Play"
+                  />
+
+                  <button
+                    className="releaseVideoBtn"
+                    onClick={() => {
+                      dispatch(
+                        openVideo({
+                          videoId: "YOUR_VIDEO_ID",
+                          title: "Windows Installation Tutorial",
+                          ctaText:
+                            "Follow the complete installation tutorial step-by-step.",
+                          link: "/docs/windows-installation",
+                        })
+                      );
+                    }}
+                  >
+                    Installation Guide
+                  </button>
+                </div>
+              </div>
+
+              <div className="downloadDashboardHeroButtons">
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestWindows.downloadUrl, {
+                      os: "windows",
+                      type: "installer",
+                      version: latestWindows?.version,
+                    })
+                  }
+                >
+                  <Image
+                    width={0}
+                    height={0}
+                    src={paths.icons.downloadWhite}
+                    alt="Download"
+                    className="dashboardHeroDownloadIcon"
+                  />
+                  {latestWindows?.name}
+                </button>
+              </div>
             </div>
+          )}
+          {latestLinux && (
             <div>
-              <p>Agent Version</p>
-              <h3>{latestWindows?.agentVersion || "—"}</h3>
+
+              <p className="downloadDashboardHeroButtonTitle">{latestLinux?.title}</p>
+              <div className="osVersionRow dual">
+                <div className="inlineVersion">
+                  <span className="versionLabel">Server Version:</span>
+                  <span className="versionValue">
+                    {latestLinux?.serverVersion || "—"}
+                  </span>
+                </div>
+
+                <div className="inlineVersion">
+                  <span className="versionLabel">Agent Version:</span>
+                  <span className="versionValue">
+                    {latestLinux?.agentVersion || "—"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Linux Buttons */}
+
+              <div className="downloadDashboardHeroButtons">
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestLinux.serverDownloadUrl, {
+                      os: "linux",
+                      type: "server",
+                      version: latestLinux?.serverVersion,
+                    })
+                  }
+                >
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
+                  {latestLinux?.serverName}
+                </button>
+
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestLinux.agentDownloadUrl, {
+                      os: "linux",
+                      type: "agent",
+                      version: latestLinux?.agentVersion,
+                    })
+                  }
+                >
+                  <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
+                  {latestLinux?.agentName}
+                </button>
+              </div>
             </div>
+          )}
+
+          {/* Mac Section */}
+          {latestMac && (
             <div>
-              <p>Release Date</p>
-              <h3>{latestWindows?.releasedOn ? new Date(latestWindows.releasedOn).toDateString() : "—"}</h3>
+
+              <p className="downloadDashboardHeroButtonTitle">
+                {latestMac?.title}
+              </p>
+
+              <div className="osVersionRow dual">
+                <div className="inlineVersion">
+                  <span className="versionLabel">Server Version:</span>
+                  <span className="versionValue">
+                    {latestMac?.serverVersion || "—"}
+                  </span>
+                </div>
+
+                <div className="inlineVersion">
+                  <span className="versionLabel">Agent Version:</span>
+                  <span className="versionValue">
+                    {latestMac?.agentVersion || "—"}
+                  </span>
+                </div>
+              </div>
+
+              <div className="downloadDashboardHeroButtons">
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestMac.serverDownloadUrl, {
+                      os: "mac",
+                      type: "server",
+                      version: latestMac?.serverVersion,
+                    })
+                  }
+                >
+                  <Image
+                    width={0}
+                    height={0}
+                    className="dashboardHeroDownloadIcon"
+                    src={paths.icons.downloadWhite}
+                    alt="Download Icon"
+                  />
+                  {latestMac?.serverName}
+                </button>
+
+                <button
+                  className="downloadDashboardPinkBtn"
+                  onClick={() =>
+                    handleDownload(latestMac.agentDownloadUrl, {
+                      os: "mac",
+                      type: "agent",
+                      version: latestMac?.agentVersion,
+                    })
+                  }
+                >
+                  <Image
+                    width={0}
+                    height={0}
+                    className="dashboardHeroDownloadIcon"
+                    src={paths.icons.downloadWhite}
+                    alt="Download Icon"
+                  />
+                  {latestMac?.agentName}
+                </button>
+              </div>
+
             </div>
-          </div>
-
-          {/* Windows Buttons */}
-
-          <div className="downloadDashboardHeroButtons">
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestWindows.serverDownloadUrl, {
-                  os: "windows",
-                  type: "server",
-                  version: latestWindows?.serverVersion,
-                })
-              }
-            >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestWindows?.serverName}
-            </button>
-
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestWindows.agentDownloadUrl, {
-                  os: "windows",
-                  type: "agent",
-                  version: latestWindows?.agentVersion,
-                })
-              }
-            >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestWindows?.agentName}
-            </button>
-          </div>
-
-          <p className="downloadDashboardHeroButtonTitle">{latestLinux?.title}</p>
-          <div className="downloadDashboardHeroVersions">
-            <div>
-              <p>Server Version</p>
-              <h3>{latestLinux?.serverVersion || "—"}</h3>
-            </div>
-            <div>
-              <p>Agent Version</p>
-              <h3>{latestLinux?.agentVersion || "—"}</h3>
-            </div>
-            <div>
-              <p>Release Date</p>
-              <h3>{latestLinux?.releasedOn ? new Date(latestLinux.releasedOn).toDateString() : "—"}</h3>
-            </div>
-          </div>
-
-
-          {/* Linux Buttons */}
-
-          <div className="downloadDashboardHeroButtons">
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestLinux.serverDownloadUrl, {
-                  os: "linux",
-                  type: "server",
-                  version: latestLinux?.serverVersion,
-                })
-              }
-            >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestLinux?.serverName}
-            </button>
-
-            <button
-              className="downloadDashboardPinkBtn"
-              onClick={() =>
-                handleDownload(latestLinux.agentDownloadUrl, {
-                  os: "linux",
-                  type: "agent",
-                  version: latestLinux?.agentVersion,
-                })
-              }
-            >
-              <Image width={0} height={0} className="dashboardHeroDownloadIcon" src={paths.icons.downloadWhite} alt="Grapecity White Download Icon" />
-              {latestLinux?.agentName}
-            </button>
-          </div>
-
+          )}
           {/* Docker */}
           <h4 className="downloadDashboardHeroDockerTitle">Docker Commands</h4>
 
@@ -289,20 +401,26 @@ export default function Hero() {
 
           <div className="mongoBox">
             <h3>{staticData.systemRequirements.mongoRequired}</h3>
-            <a
-              href="https://www.mongodb.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() =>
-                posthog.capture("external_dependency_clicked", {
-                  name: "mongodb",
-                  location: "system_requirements",
-                })
-              }
-            >
 
-              {staticData.systemRequirements.mongoDownload}
-            </a>
+            <p className="mongoNote">
+              {staticData.systemRequirements.mongoNote}
+            </p>
+
+            {latestLinux || latestMac ? (
+              <a
+                href="https://www.mongodb.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  posthog.capture("external_dependency_clicked", {
+                    name: "mongodb",
+                    location: "system_requirements",
+                  })
+                }
+              >
+                Download MongoDB
+              </a>
+            ) : null}
           </div>
 
           <table className="systemTable">

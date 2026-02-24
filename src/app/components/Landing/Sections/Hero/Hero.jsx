@@ -143,7 +143,7 @@ export default function Hero() {
                 {/* LEFT CONTENT */}
                 <div className="landingPageHeroLeft">
                     <span className="landingPageHeroBadge">
-                        BUILDNINJA 1.0.0 NOW AVAILABLE
+                        BUILDNINJA 1.1.0 NOW AVAILABLE
                     </span>
 
                     <h2 className="landingPageHeroTitle">

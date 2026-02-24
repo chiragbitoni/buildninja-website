@@ -49,7 +49,7 @@ export const secondSectionText = {
       iconHover: paths.icons.usersPink2,
       title: "Agent Management",
       description:
-      "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
+        "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
       videoId: "MnvaPLguA6c",
       link: "https://buildninja.grapehub.io/docs/manage-agents/",
     },
@@ -58,7 +58,7 @@ export const secondSectionText = {
       iconHover: paths.icons.gearPink,
       title: "Agent Requirements Configuration",
       description:
-      "Specify agent capabilities to ensure builds run on appropriate agents.",
+        "Specify agent capabilities to ensure builds run on appropriate agents.",
       videoId: "2uUohHVRuWQ",
       link: "https://buildninja.grapehub.io/docs/manage-agents/",
     },
@@ -67,7 +67,7 @@ export const secondSectionText = {
       iconHover: paths.icons.chartPink,
       title: "Interactive Dashboard",
       description:
-      "View and filter build metrics with customizable time ranges and auto-refresh.",
+        "View and filter build metrics with customizable time ranges and auto-refresh.",
       videoId: "Pjl3muKtmhE",
       link: "https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view",
     },
@@ -76,7 +76,7 @@ export const secondSectionText = {
       iconHover: paths.icons.clockPink2,
       title: "Real-Time Logs & Reports",
       description:
-      "Live logs and dashboards for monitoring builds and deployments.",
+        "Live logs and dashboards for monitoring builds and deployments.",
       videoId: "DRmi3UzhsO0",
       link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/view-build-results",
     },
@@ -85,7 +85,7 @@ export const secondSectionText = {
       iconHover: paths.icons.emailPink,
       title: "Email Notification System",
       description:
-      "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
+        "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
       videoId: "2OuADSNMEoc",
       link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },
@@ -94,9 +94,61 @@ export const secondSectionText = {
       iconHover: paths.icons.shieldPink2,
       title: "Single Sign-On (SSO) Support",
       description:
-      "Supports multiple SSO providers for streamlined authentication.",
+        "Supports multiple SSO providers for streamlined authentication.",
       videoId: "O5-JHWbqzyQ",
       link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
+    },
+
+    {
+      icon: paths.icons.squareTerminal,
+      iconHover: paths.icons.squareTerminalPink,
+      title: "SSH Runner",
+      description:
+        "Execute commands on remote servers directly from your BuildNinja pipelines.",
+      link: "https://buildninja.grapehub.io/docs/key-features/ssh-runner",
+    },
+
+    {
+      icon: paths.icons.variable,
+      iconHover: paths.icons.variablePink,
+      title: "Build Parameters",
+      description:
+        "Define and manage build variables securely at project and configuration level.",
+      link: "https://buildninja.grapehub.io/docs/key-features/build-parameters",
+    },
+
+    {
+      icon: paths.icons.scriptRunner,
+      iconHover: paths.icons.scriptRunnerPink,
+      title: "Script Runner",
+      description: "Configure and run scripts in any shell environment.",
+      link: "https://buildninja.grapehub.io/docs/key-features/script-runner",
+    },
+
+    {
+      icon: paths.icons.userKey,
+      iconHover: paths.icons.userKeyPink,
+      title: "Role-Based Access Control (RBAC)",
+      description:
+        "Create roles, assign permissions, and manage team access at project and system level.",
+      link: "https://buildninja.grapehub.io/docs/key-features/rbac",
+    },
+
+    {
+      icon: paths.icons.mail,
+      iconHover: paths.icons.mailPink,
+      title: "Email Templates",
+      description:
+        "Customize build alerts, user notifications, and system emails.",
+      link: "https://buildninja.grapehub.io/docs/key-features/email-templates",
+    },
+
+    {
+      icon: paths.icons.exe,
+      iconHover: paths.icons.exePink,
+      title: "Unified Installer",
+      description: "Installs Server, Agent, and MongoDB in minutes.",
+      link: "https://buildninja.grapehub.io/docs/getting-started/unified-installer",
     },
     {
       icon: paths.icons.globeWhite,
@@ -111,9 +163,17 @@ export const secondSectionText = {
       icon: paths.icons.crossPlatformWhite,
       iconHover: paths.icons.crossPlatformPink,
       title: "Cross-Platform Configuration",
-      description: "Seamless setup across Windows, and Linux.",
+      description: "Seamless setup across Windows, Linux, & MacOS.",
       // videoId: "XLcMnvfpwBw",
       link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
+    },
+    {
+      icon: paths.icons.git,
+      iconHover: paths.icons.gitPink,
+      title: "Native Git Support",
+      description:
+        "Includes built-in Git support with intelligent caching for faster builds.",
+      link: "https://buildninja.grapehub.io/docs/key-features/native-git-support",
     },
   ],
 };
