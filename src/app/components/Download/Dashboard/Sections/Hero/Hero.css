@@ -608,7 +608,7 @@ h2.systemTitle {
 ========================== */
 
 .osVersionRow {
-    margin-top: 16px;
+    /* margin-top: 16px; */
     display: grid;
     gap: 20px;
 }
