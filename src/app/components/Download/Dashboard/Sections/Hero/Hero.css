@@ -406,6 +406,37 @@ h2.systemTitle {
     text-decoration: underline;
 }
 
+/* ======================
+   BUTTONS (MOBILE FIX)
+====================== */
+
+.downloadDashboardHeroButtons {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* tighter spacing */
+}
+
+.downloadDashboardPinkBtn {
+    width: 100%;
+    background: #FF4172;
+    border: none;
+    padding: 12px 16px;
+    /* reduced vertical padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    font-size: 15px;
+    /* slightly smaller */
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
 /* ======================================================================================
    TABLET — Medium Screens (640px – 1023px)
 ====================================================================================== */
