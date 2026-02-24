@@ -251,7 +251,7 @@ export default function Fifth() {
                                 >
                                     <option value="">Please select</option>
                                     <option>Technology Partner</option>
-                                    <option>Reseller</option>
+                                    <option>Reseller / Channel Partner</option>
                                     <option>System Integrator</option>
                                 </select>
                             </label>
