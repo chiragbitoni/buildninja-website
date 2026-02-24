@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Nav/NavBar";
+import Navbar from "../components/Nav/NavBar";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import Footer from "../components/Footer/Footer";

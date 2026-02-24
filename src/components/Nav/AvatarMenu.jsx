@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { logoutUserAPI } from "@/services/auth/logout";
 import { usePathname } from "next/navigation";
 import { User, CreditCard, Package, LucideLogOut } from 'lucide-react';
-import { paths } from "../../../../public/static/paths";
+import { paths } from "../../../public/static/paths";
 
 export default function AvatarMenu() {
   const dispatch = useDispatch();

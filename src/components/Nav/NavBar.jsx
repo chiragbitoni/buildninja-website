@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import AvatarMenu from "./AvatarMenu";
-import { fetchPlansFromAPI } from "../../../services/plans/plans";
+import { fetchPlansFromAPI } from "../../services/plans/plans";
 import Banner from "./Banner/Banner";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
