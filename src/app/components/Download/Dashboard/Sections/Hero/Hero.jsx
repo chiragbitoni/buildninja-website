@@ -81,7 +81,10 @@ export default function Hero() {
 
     downloadInstaller(url.split("/").pop());
   };
-
+  const releaseDate =
+    latestWindows?.releasedOn ||
+    latestLinux?.releasedOn ||
+    latestMac?.releasedOn;
   return (
     <section className="downloadDashboardHeroSection">
       <div className="downloadDashboardHeroContent">
@@ -93,9 +96,20 @@ export default function Hero() {
 
         {/* VERSION CARD */}
         <div className="downloadDashboardHeroCard">
-          <div className="downloadDashboardHeroCardTitleContainer">
-            <h4 className="downloadDashboardHeroCardTitle">Current Release</h4>
-            <span className="downloadDashboardHeroBadge">CURRENT VERSION</span>
+          <div className="releaseTopRow">
+            <div className="releaseLeft">
+              <h4 className="downloadDashboardHeroCardTitle">Release</h4>
+              <span className="releaseDate">
+                Date:{" "}
+                {releaseDate
+                  ? new Date(releaseDate).toLocaleDateString("en-GB")
+                  : "—"}
+              </span>
+            </div>
+
+            <span className="downloadDashboardHeroBadge">
+              CURRENT VERSION
+            </span>
           </div>
           {latestWindows && (
             <div>
@@ -103,22 +117,14 @@ export default function Hero() {
                 {latestWindows?.title}
               </p>
 
-              <div className="downloadDashboardHeroVersions">
-                <div>
-                  <p>Version</p>
-                  <h3>{latestWindows?.version || "—"}</h3>
+              <div className="osVersionRow windows">
+                <div className="inlineVersion">
+                  <span className="versionLabel">Version:</span>
+                  <span className="versionValue">
+                    {latestWindows?.version || "—"}
+                  </span>
                 </div>
 
-                <div className="releaseDateWithVideo">
-                  <div>
-                    <p>Release Date</p>
-                    <h3>
-                      {latestWindows?.releasedOn
-                        ? new Date(latestWindows.releasedOn).toDateString()
-                        : "—"}
-                    </h3>
-                  </div>
-                </div>
                 <div
                   className="dashboardHeroVideoButtonContainr"
                   onMouseEnter={() => setIsHovered(true)}
@@ -126,19 +132,14 @@ export default function Hero() {
                 >
                   <Image
                     src={isHovered ? paths.icons.youtubeRed : paths.icons.youtube}
-                    width={30}
-                    height={30}
+                    width={24}
+                    height={24}
                     alt="Play"
                   />
 
                   <button
                     className="releaseVideoBtn"
                     onClick={() => {
-                      posthog.capture("windows_installer_tutorial_clicked", {
-                        page: "download_dashboard",
-                        version: latestWindows?.version,
-                      });
-
                       dispatch(
                         openVideo({
                           videoId: "YOUR_VIDEO_ID",
@@ -150,7 +151,7 @@ export default function Hero() {
                       );
                     }}
                   >
-                    Windows Installation Tutorial
+                    Installation Guide
                   </button>
                 </div>
               </div>
@@ -167,13 +168,12 @@ export default function Hero() {
                   }
                 >
                   <Image
-                    width={0}
-                    height={0}
-                    className="dashboardHeroDownloadIcon"
+                    width={18}
+                    height={18}
                     src={paths.icons.downloadWhite}
-                    alt="Download Icon"
+                    alt="Download"
                   />
-                  {latestWindows?.name || "Download for Windows"}
+                  {latestWindows?.name}
                 </button>
               </div>
             </div>
@@ -182,21 +182,21 @@ export default function Hero() {
             <div>
 
               <p className="downloadDashboardHeroButtonTitle">{latestLinux?.title}</p>
-              <div className="downloadDashboardHeroVersions">
-                <div>
-                  <p>Server Version</p>
-                  <h3>{latestLinux?.serverVersion || "—"}</h3>
+              <div className="osVersionRow dual">
+                <div className="inlineVersion">
+                  <span className="versionLabel">Server Version:</span>
+                  <span className="versionValue">
+                    {latestLinux?.serverVersion || "—"}
+                  </span>
                 </div>
-                <div>
-                  <p>Agent Version</p>
-                  <h3>{latestLinux?.agentVersion || "—"}</h3>
-                </div>
-                <div>
-                  <p>Release Date</p>
-                  <h3>{latestLinux?.releasedOn ? new Date(latestLinux.releasedOn).toDateString() : "—"}</h3>
+
+                <div className="inlineVersion">
+                  <span className="versionLabel">Agent Version:</span>
+                  <span className="versionValue">
+                    {latestLinux?.agentVersion || "—"}
+                  </span>
                 </div>
               </div>
-
 
               {/* Linux Buttons */}
 
@@ -240,24 +240,19 @@ export default function Hero() {
                 {latestMac?.title}
               </p>
 
-              <div className="downloadDashboardHeroVersions">
-                <div>
-                  <p>Server Version</p>
-                  <h3>{latestMac?.serverVersion || "—"}</h3>
+              <div className="osVersionRow dual">
+                <div className="inlineVersion">
+                  <span className="versionLabel">Server Version:</span>
+                  <span className="versionValue">
+                    {latestMac?.serverVersion || "—"}
+                  </span>
                 </div>
 
-                <div>
-                  <p>Agent Version</p>
-                  <h3>{latestMac?.agentVersion || "—"}</h3>
-                </div>
-
-                <div>
-                  <p>Release Date</p>
-                  <h3>
-                    {latestMac?.releasedOn
-                      ? new Date(latestMac.releasedOn).toDateString()
-                      : "—"}
-                  </h3>
+                <div className="inlineVersion">
+                  <span className="versionLabel">Agent Version:</span>
+                  <span className="versionValue">
+                    {latestMac?.agentVersion || "—"}
+                  </span>
                 </div>
               </div>
 
