@@ -9,3 +9,52 @@ body {
 button {
     cursor: pointer;
 }
+
+
+/* Not Found Page */
+.notFoundWrapper {
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    height: 600px;
+}
+
+.notFoundContent h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.notFoundContent h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.notFoundContent p {
+    color: #ffffffee;
+    margin-bottom: 30px;
+}
+
+.notFoundActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.notFoundActions a {
+    padding: 10px 40px;
+    border-radius: 999px;
+    background: #ff4172;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.notFoundActions a:hover {
+    opacity: 0.85;
+}
