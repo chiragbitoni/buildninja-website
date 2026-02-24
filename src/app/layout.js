@@ -6,7 +6,7 @@ import { paths } from "../../public/static/paths";
 import Footer from "../components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
 import GoogleAnalytics from "../components/Analytics/GA";
-import YouTubePopup from "./components/YouTubePopup/YouTubePopup";
+import YouTubePopup from "../components/YouTubePopup/YouTubePopup";
 import PHProviderWrapper from "../components/Analytics/Providers";
 import PosthogWrapper from "../components/Analytics/PostHogWrapper";
 import Script from "next/script";
