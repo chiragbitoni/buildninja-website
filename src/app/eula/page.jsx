@@ -1,4 +1,4 @@
-import Hero from "../components/EULA/Sections/Hero/Hero";
+import Hero from "../../components/EULA/Sections/Hero/Hero/Hero";
 
 export const metadata = {
     title: "EULA",

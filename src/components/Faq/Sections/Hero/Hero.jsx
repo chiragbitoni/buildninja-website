@@ -1,6 +1,6 @@
 "use client"
 import './Hero.css';
-import { heroSectionText } from "../../../../../../public/static/faqPageText";
+import { heroSectionText } from "../../../../../public/static/faqPageText";
 export default function Hero() {
     return (
         <section className="faqHeroSection">

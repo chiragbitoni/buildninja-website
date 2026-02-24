@@ -1,6 +1,6 @@
 "use client"
 import './Second.css';
-import { secondSectionText } from '../../../../../../public/static/faqPageText';
+import { secondSectionText } from '../../../../../public/static/faqPageText';
 export default function Second() {
     return (
         <section className="faqSecondSection">

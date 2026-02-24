@@ -1,5 +1,5 @@
 import "./Fifth.css";
-import { fifthSectionText } from "../../../../../../public/static/faqPageText";
+import { fifthSectionText } from "../../../../../public/static/faqPageText";
 import { useRouter } from "next/navigation";
 
 export default function Fifth(){

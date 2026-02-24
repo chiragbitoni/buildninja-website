@@ -1,6 +1,6 @@
 "use client";
 import "./Fourth.css";
-import { fourthSectionText } from "../../../../../../public/static/faqPageText";
+import { fourthSectionText } from "../../../../../public/static/faqPageText";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { thirdSectionText } from "../../../../../../public/static/faqPageText";
+import { thirdSectionText } from "../../../../../public/static/faqPageText";
 import "./Third.css";
 import { useSearchParams } from "next/navigation";
 
