@@ -1,5 +1,5 @@
 import "./Second.css";
-import { secondSectionText } from "../../../../../../public/static/landingPageText";
+import { secondSectionText } from "../../../../../public/static/landingPageText";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";

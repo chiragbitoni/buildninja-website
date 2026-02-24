@@ -1,6 +1,6 @@
 import Image from "next/image";
 import "./Third.css";
-import { paths } from "../../../../../../public/static/paths";
+import { paths } from "../../../../../public/static/paths";
 
 export default function Third() {
     return (
