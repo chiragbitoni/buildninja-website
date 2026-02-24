@@ -150,7 +150,7 @@ export default function Hero() {
                       );
                     }}
                   >
-                    Installation Tutorial
+                    Windows Installation Tutorial
                   </button>
                 </div>
               </div>
