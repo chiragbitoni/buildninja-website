@@ -6,13 +6,15 @@ import { paths } from "../../../../../../../public/static/paths";
 import { fetchInstallers, downloadInstaller } from "@/services/auth/installers";
 import posthog from "posthog-js";
 import Image from "next/image";
-
+import { useDispatch } from "react-redux";
+import { openVideo } from "@/redux/slice/videoPopupSlice";
 export default function Hero() {
   const router = useRouter();
-
+  const dispatch = useDispatch();
   const [data, setData] = useState({ latest: {}, history: [] });
   const [loading, setLoading] = useState(true);
   const [hasHistory, setHasHistory] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
@@ -107,13 +109,49 @@ export default function Hero() {
                   <h3>{latestWindows?.version || "—"}</h3>
                 </div>
 
-                <div>
-                  <p>Release Date</p>
-                  <h3>
-                    {latestWindows?.releasedOn
-                      ? new Date(latestWindows.releasedOn).toDateString()
-                      : "—"}
-                  </h3>
+                <div className="releaseDateWithVideo">
+                  <div>
+                    <p>Release Date</p>
+                    <h3>
+                      {latestWindows?.releasedOn
+                        ? new Date(latestWindows.releasedOn).toDateString()
+                        : "—"}
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  className="dashboardHeroVideoButtonContainr"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <Image
+                    src={isHovered ? paths.icons.youtubeRed : paths.icons.youtube}
+                    width={30}
+                    height={30}
+                    alt="Play"
+                  />
+
+                  <button
+                    className="releaseVideoBtn"
+                    onClick={() => {
+                      posthog.capture("windows_installer_tutorial_clicked", {
+                        page: "download_dashboard",
+                        version: latestWindows?.version,
+                      });
+
+                      dispatch(
+                        openVideo({
+                          videoId: "YOUR_VIDEO_ID",
+                          title: "Windows Installation Tutorial",
+                          ctaText:
+                            "Follow the complete installation tutorial step-by-step.",
+                          link: "/docs/windows-installation",
+                        })
+                      );
+                    }}
+                  >
+                    Installation Tutorial
+                  </button>
                 </div>
               </div>
 
