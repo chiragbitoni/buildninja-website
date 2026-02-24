@@ -53,6 +53,7 @@ export default function Navbar() {
     { name: "Docs", path: "/docs" },
     { name: "Pricing", path: "/pricing" },
     { name: "Install", path: "/install" },
+    { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
     // { name: "FAQ", path: "/faq" },
   ];
