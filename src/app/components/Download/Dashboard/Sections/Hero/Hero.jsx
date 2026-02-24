@@ -168,10 +168,11 @@ export default function Hero() {
                   }
                 >
                   <Image
-                    width={18}
-                    height={18}
+                    width={0}
+                    height={0}
                     src={paths.icons.downloadWhite}
                     alt="Download"
+                    className="dashboardHeroDownloadIcon"
                   />
                   {latestWindows?.name}
                 </button>
