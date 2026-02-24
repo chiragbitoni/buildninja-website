@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Hero from "../../components/Download/Access/Sections/Hero/Hero";
+import Hero from "../../../components/Download/Access/Sections/Hero/Hero/Hero";
 import { checkAuth } from "@/services/auth/check";
 
 export default function Access() {
