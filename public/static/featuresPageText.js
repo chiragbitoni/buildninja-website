@@ -105,7 +105,8 @@ export const secondSectionText = {
       title: "SSH Runner",
       description:
         "Execute commands on remote servers directly from your BuildNinja pipelines.",
-      link: "https://buildninja.grapehub.io/docs/key-features/ssh-runner",
+      videoId: "IOd9CmP6G4c",
+      link: "https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners",
     },
 
     {
@@ -114,7 +115,8 @@ export const secondSectionText = {
       title: "Build Parameters",
       description:
         "Define and manage build variables securely at project and configuration level.",
-      link: "https://buildninja.grapehub.io/docs/key-features/build-parameters",
+      videoId: "0FsMkbjgdVk",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-parameters",
     },
 
     {
@@ -122,7 +124,8 @@ export const secondSectionText = {
       iconHover: paths.icons.scriptRunnerPink,
       title: "Script Runner",
       description: "Configure and run scripts in any shell environment.",
-      link: "https://buildninja.grapehub.io/docs/key-features/script-runner",
+      videoId: "8TmkgKDmuoE",
+      link: "https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners",
     },
 
     {
@@ -131,7 +134,8 @@ export const secondSectionText = {
       title: "Role-Based Access Control (RBAC)",
       description:
         "Create roles, assign permissions, and manage team access at project and system level.",
-      link: "https://buildninja.grapehub.io/docs/key-features/rbac",
+      videoId: "C-Ln6bbGo2E",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access",
     },
 
     {
@@ -140,7 +144,8 @@ export const secondSectionText = {
       title: "Email Templates",
       description:
         "Customize build alerts, user notifications, and system emails.",
-      link: "https://buildninja.grapehub.io/docs/key-features/email-templates",
+      videoId: "6-H-ZIqk8yE",
+      link: "https://buildninja.grapehub.io/docs/administrator-guide/configure-mail-templates/configure-mail-templates",
     },
 
     {
@@ -148,7 +153,8 @@ export const secondSectionText = {
       iconHover: paths.icons.exePink,
       title: "Unified Installer",
       description: "Installs Server, Agent, and MongoDB in minutes.",
-      link: "https://buildninja.grapehub.io/docs/getting-started/unified-installer",
+      videoId: "zOW9BCYQkxk",
+      link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows",
     },
     {
       icon: paths.icons.globeWhite,
@@ -157,7 +163,7 @@ export const secondSectionText = {
       description:
         "Manage deployments across dev, staging, and production with environment-specific logic, secrets, and conditions.",
       // videoId: "XLcMnvfpwBw",
-      link: "https://buildninja.grapehub.io/docs/key-features/",
+      // link: "https://buildninja.grapehub.io/docs/key-features/",
     },
     {
       icon: paths.icons.crossPlatformWhite,
@@ -165,7 +171,7 @@ export const secondSectionText = {
       title: "Cross-Platform Configuration",
       description: "Seamless setup across Windows, Linux, & MacOS.",
       // videoId: "XLcMnvfpwBw",
-      link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
+      // link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
     },
     {
       icon: paths.icons.git,
@@ -173,7 +179,7 @@ export const secondSectionText = {
       title: "Native Git Support",
       description:
         "Includes built-in Git support with intelligent caching for faster builds.",
-      link: "https://buildninja.grapehub.io/docs/key-features/native-git-support",
+      // link: "https://buildninja.grapehub.io/docs/key-features/native-git-support",
     },
   ],
 };

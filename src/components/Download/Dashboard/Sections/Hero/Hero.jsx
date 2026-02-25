@@ -142,7 +142,7 @@ export default function Hero() {
                     onClick={() => {
                       dispatch(
                         openVideo({
-                          videoId: "YOUR_VIDEO_ID",
+                          videoId: "zOW9BCYQkxk",
                           title: "Windows Installation Tutorial",
                           ctaText:
                             "Follow the complete installation tutorial step-by-step.",
