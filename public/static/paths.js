@@ -132,11 +132,19 @@ export const paths = {
     landingPageAssets: {
       automated_builds:
         "/resources/icons/landingPageAssets/automated_builds.svg",
+        
       automated_builds_pink:
         "/resources/icons/landingPageAssets/automated_builds_pink.svg",
       version_control: "/resources/icons/landingPageAssets/VersionControl.svg",
       artifact: "/resources/icons/landingPageAssets/Artifact.svg",
       artifact_pink: "/resources/icons/landingPageAssets/Artifact_pink.svg",
+      exe: "/resources/icons/landingPageAssets/exe.svg",
+      git1: "/resources/icons/landingPageAssets/git1.svg",
+      mail: "/resources/icons/landingPageAssets/mail.svg",
+      scriptRunner: "/resources/icons/landingPageAssets/scriptRunner.svg",
+      squareTerminal: "/resources/icons/landingPageAssets/square-terminal.svg",
+      userKey: "/resources/icons/landingPageAssets/userKey.svg",
+      variable: "/resources/icons/landingPageAssets/variable.svg",
       container:
         "/resources/icons/landingPageAssets/containerized_deployment.svg",
       containerPink:

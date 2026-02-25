@@ -94,6 +94,64 @@ export const secondSectionText = {
       videoId: "O5-JHWbqzyQ",
       link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },
+
+    {
+      icon: paths.icons.landingPageAssets.squareTerminal,
+      iconHover: paths.icons.squareTerminalPink,
+      title: "SSH Runner",
+      description:
+        "Execute commands on remote servers directly from your BuildNinja pipelines.",
+      videoId: "IOd9CmP6G4c",
+      link: "https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners",
+    },
+
+    {
+      icon: paths.icons.landingPageAssets.variable,
+      iconHover: paths.icons.variablePink,
+      title: "Build Parameters",
+      description:
+        "Define and manage build variables securely at project and configuration level.",
+      videoId: "0FsMkbjgdVk",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-parameters",
+    },
+
+    {
+      icon: paths.icons.landingPageAssets.scriptRunner,
+      iconHover: paths.icons.scriptRunnerPink,
+      title: "Script Runner",
+      description: "Configure and run scripts in any shell environment.",
+      videoId: "8TmkgKDmuoE",
+      link: "https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners",
+    },
+
+    {
+      icon: paths.icons.landingPageAssets.userKey,
+      iconHover: paths.icons.userKeyPink,
+      title: "Role-Based Access Control (RBAC)",
+      description:
+        "Create roles, assign permissions, and manage team access at project and system level.",
+      videoId: "C-Ln6bbGo2E",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access",
+    },
+
+    {
+      icon: paths.icons.landingPageAssets.mail,
+      iconHover: paths.icons.mailPink,
+      title: "Email Templates",
+      description:
+        "Customize build alerts, user notifications, and system emails.",
+      videoId: "6-H-ZIqk8yE",
+      link: "https://buildninja.grapehub.io/docs/administrator-guide/configure-mail-templates/configure-mail-templates",
+    },
+
+    {
+      icon: paths.icons.landingPageAssets.exe,
+      iconHover: paths.icons.exePink,
+      title: "Unified Installer",
+      description: "Installs Server, Agent, and MongoDB in minutes.",
+      videoId: "zOW9BCYQkxk",
+      link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows",
+    },
     {
       icon: paths.icons.landingPageAssets.configuration,
       iconHover: paths.icons.landingPageAssets.configuration_pink,
@@ -110,6 +168,14 @@ export const secondSectionText = {
       description: "Seamless setup across Windows, Linux, & MacOS.",
       // videoId: "XLcMnvfpwBw",
       link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
+    },
+    {
+      icon: paths.icons.landingPageAssets.git1,
+      iconHover: paths.icons.gitPink,
+      title: "Native Git Support",
+      description:
+        "Includes built-in Git support with intelligent caching for faster builds.",
+      // link: "https://buildninja.grapehub.io/docs/key-features/native-git-support",
     },
   ],
 };
