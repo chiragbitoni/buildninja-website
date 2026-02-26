@@ -182,15 +182,15 @@ export const paths = {
       secure_check: "/resources/icons/landingPageAssets/secure_check.svg",
     },
     partnerPageAssets: {
-      buildninjaStars: "/resources/icons/partnerPageAssets/buildNinjaStars.svg",
+      buildninjaStars: "/resources/icons/partnerPageAssets/buildninjaStars.svg",
       cloudConsulting: "/resources/icons/partnerPageAssets/cloudConsulting.svg",
       products: "/resources/icons/partnerPageAssets/products.svg",
       flowerTick: "/resources/icons/partnerPageAssets/flowerTick.svg",
       connector: "/resources/icons/partnerPageAssets/connector.svg",
       rightArrow: "/resources/icons/partnerPageAssets/rightArrow.svg",
-      handshakepurple: "/resources/icons/partnerPageAssets/handshakepurple.svg",
-      buildninjaStarsPink:
-        "/resources/icons/partnerPageAssets/buildNinjaStarsPink.svg",
+      handshakepurple: "/resources/icons/partnerPageAssets/handshakePurple.svg",
+        buildninjaStarsPink:
+  "/resources/icons/partnerPageAssets/buildninjaStarsPink.svg",
       tickGolden: "/resources/icons/partnerPageAssets/tickGolden.svg",
       tickPink: "/resources/icons/partnerPageAssets/tickPink.svg",
       lockGreen: "/resources/icons/partnerPageAssets/lockGreen.svg",
