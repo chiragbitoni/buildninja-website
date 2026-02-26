@@ -32,7 +32,7 @@ export default function Fourth() {
         {text.cards.map((card, index) => (
           <div className="pricingFourthCard" key={index}>
             <div className="cardHeader">
-              <Image width={0} height={0} className="cardIcon" src={card.icon} alt={card.alt}></Image>
+              <Image width={0} height={0} className="pricingFourthCardIcon" src={card.icon} alt={card.alt}></Image>
               <div className="cardTitleRow">
                 <h3>{card.title}</h3>
                 {card.tag && <span className="cardTag">{card.tag}</span>}

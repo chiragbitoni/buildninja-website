@@ -88,8 +88,10 @@
   white-space: nowrap;
 }
 
-.cardIcon {
+.pricingFourthCardIcon {
   font-size: 1.8rem;
+  width:56px;
+  height:56px;
 }
 
 .cardTitleRow {
