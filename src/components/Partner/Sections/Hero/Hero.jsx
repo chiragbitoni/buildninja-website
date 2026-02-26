@@ -93,26 +93,26 @@ export default function Hero() {
                                     </p>
                                 </div>
                                 <div className="partnerPageHeroRightHeaderImageWrapper">
-                                    <Image src="/resources/icons/partnerPageAssets/handshake.svg" height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
+                                    <Image src={paths.icons.partnerPageAssets.handshake} height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
                                 </div>
                             </div>
                             <div className="partnerPageHeroRightFeaturesContainer">
                                 <div className="partnerPageHeroRightFeature">
-                                    <Image src="/resources/icons/partnerPageAssets/lock.svg" height={32} width={32} alt="Grapecity Lock Icon"></Image>
+                                    <Image src={paths.icons.partnerPageAssets.lock} height={32} width={32} alt="Grapecity Lock Icon"></Image>
                                     <div className="partnerPageHeroRightFeatureText">
                                         <h5>Keep everything in your environment</h5>
                                         <p>Source code, secrets, artifacts, and logs stay inside your customer’s infrastructure.</p>
                                     </div>
                                 </div>
                                 <div className="partnerPageHeroRightFeature">
-                                    <Image src="/resources/icons/partnerPageAssets/clock.svg" height={32} width={32} alt="Grapecity Clock Icon"></Image>
+                                    <Image src={paths.icons.partnerPageAssets.clock} height={32} width={32} alt="Grapecity Clock Icon"></Image>
                                     <div className="partnerPageHeroRightFeatureText">
                                         <h5>Parallel pipelines at scale</h5>
                                         <p>High-throughput execution engine for modern teams.</p>
                                     </div>
                                 </div>
                                 <div className="partnerPageHeroRightFeature">
-                                    <Image src="/resources/icons/partnerPageAssets/location.svg" height={32} width={32} alt="Grapecity Lock Icon"></Image>
+                                    <Image src={paths.icons.partnerPageAssets.location} height={32} width={32} alt="Grapecity Lock Icon"></Image>
                                     <div className="partnerPageHeroRightFeatureText">
                                         <h5>Deploy anywhere</h5>
                                         <p>Kubernetes, VMs, private cloud, or air-gapped.</p>
@@ -131,7 +131,7 @@ export default function Hero() {
                                     </p>
                                 </div>
                                 <div className="partnerPageHeroRightHeaderImageWrapper">
-                                    <Image src="/resources/icons/partnerPageAssets/products.svg" height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
+                                    <Image src={paths.icons.partnerPageAssets.products} height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
                                 </div>
                             </div>
                             <div>
