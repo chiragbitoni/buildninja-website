@@ -5,20 +5,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   background-color: #ffffff22;
   border: 1.5px solid #ffffff44;
   border-radius: 999px;
-  padding: 8px 14px;
-  width: 100%;
-  max-width: 100%;
+  padding: 10px 16px;
+  width: fit-content;
+  max-width: 95%;
   margin: 0 auto 16px auto;
   cursor: pointer;
   box-shadow: 0 6px 4px rgba(255, 255, 255, 0.08);
   text-align: center;
-  justify-self: center;
   flex-wrap: wrap;
 }
+
+.bannerText {
+  font-size: 13px;
+  margin: 0;
+}
+
+.bannerBold {
+  font-weight: 600;
+  display: block;
+}
+
+.bannerContainer img {
+  flex-shrink: 0;
+}
+
+.bannerContainer {
+  white-space: normal;
+}
+
 
 .bannerContainer p {
   font-size: 13px;
