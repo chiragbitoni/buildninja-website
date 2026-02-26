@@ -38,7 +38,7 @@ export default function Second() {
             },
             {
                 icon: paths.icons.partnerPageAssets.clockBrown,
-                iconHover: paths.icons.partnerPageAssets.clockBrown,
+                iconHover: paths.icons.partnerPageAssets.clockPink,
                 title: "Fast parallel execution",
                 description:
                     "High-throughput pipelines designed for speed and scale, without build-minute billing surprises.",
