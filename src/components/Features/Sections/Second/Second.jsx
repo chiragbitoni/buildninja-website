@@ -7,19 +7,26 @@ import { useRef } from "react";
 export default function Second() {
     const dispatch = useDispatch();
     const hoverTimeoutRef = useRef(null);
+
+    const openVideoPopup = (card) => {
+        if (!card.videoId) return;
+
+        dispatch(
+            openVideo({
+                videoId: card.videoId,
+                title: card.title,
+                ctaText: card.description,
+                link: card.link,
+            })
+        );
+    };
+
     const handleMouseEnter = (card) => {
         if (!card.videoId) return;
 
         hoverTimeoutRef.current = setTimeout(() => {
-            dispatch(
-                openVideo({
-                    videoId: card.videoId,
-                    title: card.title,
-                    ctaText: card.description,
-                    link: card.link,
-                })
-            );
-        }, 2000); // ⏱ 2 seconds
+            openVideoPopup(card);
+        }, 2000); // 2 seconds hover
     };
 
     const handleMouseLeave = () => {
@@ -28,12 +35,17 @@ export default function Second() {
             hoverTimeoutRef.current = null;
         }
     };
+
+    const handleClick = (card) => {
+        handleMouseLeave();
+        openVideoPopup(card);
+    };
     return (
         <section className="secondFeaturesSection">
             <div className="secondFeaturesCardsContainer">
                 {secondSectionText.cards.map((card, idx) => (
                     <div key={idx} className="secondFeaturesCard"
-                        // onClick={() => {if(card.videoId )dispatch(openVideo({ videoId: card.videoId, title: card.title, ctaText: card.description, link: card.link }))}}
+                        onClick={() => handleClick(card)}
                         onMouseEnter={() => handleMouseEnter(card)}
                         onMouseLeave={handleMouseLeave}
                     >

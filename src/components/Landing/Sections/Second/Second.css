@@ -210,3 +210,8 @@
 .landingSecondCard:hover .hoverProgressBar {
     width: 100%;
 }
+
+
+.landingSecondCard:hover{
+    cursor: pointer;
+}
