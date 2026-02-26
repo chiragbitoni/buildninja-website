@@ -5,20 +5,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   background-color: #ffffff22;
   border: 1.5px solid #ffffff44;
   border-radius: 999px;
-  padding: 8px 14px;
-  width: 100%;
-  max-width: 100%;
+  padding: 10px 16px;
+  width: fit-content;
+  max-width: 95%;
   margin: 0 auto 16px auto;
   cursor: pointer;
   box-shadow: 0 6px 4px rgba(255, 255, 255, 0.08);
   text-align: center;
-  justify-self: center;
   flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
+
+.bannerText {
+  font-size: 13px;
+  margin: 0;
+}
+
+.bannerBold {
+  font-weight: 600;
+  display: block;
+}
+
+.bannerContainer img {
+  flex-shrink: 0;
+}
+
+.bannerContainer {
+  white-space: normal;
+}
+
 
 .bannerContainer p {
   font-size: 13px;
@@ -30,15 +50,17 @@
   background-color: #18bc7f;
   padding: 2px 8px;
   border-radius: 4px;
+  height: 24px;
   font-size: 11px;
   font-weight: 600;
   white-space: nowrap;
+  align-content: center;
 }
 
 /* Hide icons slightly on very small screens if needed */
 .bannerContainer img {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 /* TABLET (≥ 640px) */
@@ -59,8 +81,8 @@
   }
 
   .bannerContainer img {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -83,7 +105,7 @@
   }
 
   .bannerContainer img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
   }
 }
