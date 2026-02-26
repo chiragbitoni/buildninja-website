@@ -17,6 +17,8 @@
   box-shadow: 0 6px 4px rgba(255, 255, 255, 0.08);
   text-align: center;
   flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .bannerText {
@@ -48,15 +50,17 @@
   background-color: #18bc7f;
   padding: 2px 8px;
   border-radius: 4px;
+  height: 24px;
   font-size: 11px;
   font-weight: 600;
   white-space: nowrap;
+  align-content: center;
 }
 
 /* Hide icons slightly on very small screens if needed */
 .bannerContainer img {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 /* TABLET (≥ 640px) */
@@ -77,8 +81,8 @@
   }
 
   .bannerContainer img {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -101,7 +105,7 @@
   }
 
   .bannerContainer img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
   }
 }
