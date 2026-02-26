@@ -44,8 +44,6 @@ export default function Second() {
                     "High-throughput pipelines designed for speed and scale, without build-minute billing surprises.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/locationBlue.svg",
-                iconHover: "/resources/icons/partnerPageAssets/locationPink.svg",
                 icon: paths.icons.partnerPageAssets.locationBlue,
                 iconHover: paths.icons.partnerPageAssets.locationPink,
                 title: "Flexible deployment",

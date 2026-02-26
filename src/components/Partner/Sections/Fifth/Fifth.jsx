@@ -168,7 +168,7 @@ export default function Fifth() {
                     </div>
                     <hr />
                     <div className="partnerPageFifthNextStep">
-                        <Image src="/resources/icons/partnerPageAssets/handshake.svg" height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
+                        <Image src={paths.icons.partnerPageAssets.handshake} height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
                         <div>
                             <strong>Next step</strong>
                             <p>We’ll align on a partner motion and map a pilot to a clear outcome.</p>
@@ -194,7 +194,7 @@ export default function Fifth() {
                                     </p>
                                 </div>
                                 <div className="partnerPageFifthRightHeaderImageWrapper">
-                                    <Image src="/resources/icons/partnerPageAssets/flowerTick.svg" height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
+                                    <Image src={paths.icons.partnerPageAssets.flowerTick} height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
                                 </div>
                             </div>
                             <div>
@@ -222,7 +222,7 @@ export default function Fifth() {
                                 </ul>
                             </div>
                             <div className="partnerFifthSupport">
-                                <Image src="/resources/icons/partnerPageAssets/clockBrown.svg" height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
+                                <Image src={paths.icons.partnerPageAssets.clockBrown} height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
                                 <div>
                                     <h5>Simple enablement path</h5>
                                     <p>Start with a short discovery call, align on the engagement model, then run a co-planned pilot.</p>
