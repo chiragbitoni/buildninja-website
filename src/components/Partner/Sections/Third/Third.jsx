@@ -7,7 +7,7 @@ import { paths } from "../../../../../public/static/paths";
 const partnerData = [
   {
     id: 1,
-    image: "/resources/icons/partnerPageAssets/cloudConsulting.svg",
+    image: paths.icons.partnerPageAssets.cloudConsulting,
     title: "DevOps & Cloud Consulting",
     description:
       "Deliver BuildNinja as part of modernization, platform engineering, or transformation programs.",
@@ -21,7 +21,7 @@ const partnerData = [
   },
   {
     id: 2,
-    image: "/resources/icons/partnerPageAssets/products.svg",
+    image: paths.icons.partnerPageAssets.products,
     title: "Software / Product Companies",
     description:
       "Bundle enterprise-grade self-hosted CI/CD into your platform offering, or ship integrations that unlock adoption.",
@@ -35,7 +35,7 @@ const partnerData = [
   },
   {
     id: 3,
-    image: "/resources/icons/partnerPageAssets/flowerTick.svg",
+    image: paths.icons.partnerPageAssets.flowerTick,
     title: "System Integrators",
     description:
       "Provide end-to-end dev platform solutions with a secure, compliant CI/CD layer.",
@@ -49,7 +49,7 @@ const partnerData = [
   },
   {
     id: 4,
-    image: "/resources/icons/partnerPageAssets/connector.svg",
+    image: paths.icons.partnerPageAssets.connector,
     title: "Managed Service Providers",
     description:
       "Offer BuildNiNja as part of managed DevOps, infrastructure, or delivery pipelines.",
@@ -70,7 +70,6 @@ export default function PartnerThirdSection() {
 
   const active = partnerData[activeIndex];
 
-  // 🔁 Auto rotate
   useEffect(() => {
     if (isPaused) return;
 
@@ -94,7 +93,7 @@ export default function PartnerThirdSection() {
   return (
     <section className="partnerThirdSection">
       <div className="partnerThirdBanner">
-        <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
+        <Image src={paths.icons.partnerPageAssets.buildninjaStars} width={20} height={20} alt="Grapecity Stars Icon"></Image>
         <p>Why partner</p>
       </div>
       <h4 className="partnerThirdTitle">Teams we love working with</h4>
@@ -116,7 +115,7 @@ export default function PartnerThirdSection() {
                 <h4 className="partnerThirdCardTitle">{item.title}</h4>
                 <p className="partnerThirdCardDesc">{item.description}</p>
               </div>
-              <Image src="/resources/icons/partnerPageAssets/rightArrow.svg" width={10} height={10} alt={`Grapecity Arrow Icon`} className="pricingLeftArrowIcon"></Image>
+              <Image src={paths.icons.partnerPageAssets.rightArrow} width={10} height={10} alt={`Grapecity Arrow Icon`} className="pricingLeftArrowIcon"></Image>
             </div>
           ))}
         </div>
@@ -130,7 +129,7 @@ export default function PartnerThirdSection() {
               <p className="partnerThirdRightDesc">{active.description}</p>
             </div>
             <div className="partnerPageThirdRightHeaderImageWrapper">
-              <Image src="/resources/icons/partnerPageAssets/products.svg" height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
+              <Image src={paths.icons.partnerPageAssets.products} height={48} width={48} alt="Grapecity Hand Shake Icon"></Image>
             </div>
           </div>
           <hr />
@@ -144,7 +143,7 @@ export default function PartnerThirdSection() {
           </ul>
 
           <div className="partnerThirdSupport">
-            <Image src="/resources/icons/partnerPageAssets/products.svg" height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
+            <Image src={paths.icons.partnerPageAssets.products} height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
             <div>
               <h5>How we’ll support you</h5>
               <p>{active.support}</p>

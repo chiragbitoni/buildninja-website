@@ -114,7 +114,7 @@ export const paths = {
     wallet: "/resources/icons/wallet.svg",
     walletPink: "/resources/icons/walletPink.svg",
     variable: "/resources/icons/variable.svg",
-    play:"/resources/icons/play.svg",
+    play: "/resources/icons/play.svg",
     variablePink: "/resources/icons/variablePink.svg",
     squareTerminal: "/resources/icons/square-terminal.svg",
     squareTerminalPink: "/resources/icons/square-terminalPink.svg",
@@ -132,7 +132,7 @@ export const paths = {
     landingPageAssets: {
       automated_builds:
         "/resources/icons/landingPageAssets/automated_builds.svg",
-        
+
       automated_builds_pink:
         "/resources/icons/landingPageAssets/automated_builds_pink.svg",
       version_control: "/resources/icons/landingPageAssets/VersionControl.svg",
@@ -180,6 +180,27 @@ export const paths = {
       agent_management:
         "/resources/icons/landingPageAssets/agent-management.svg",
       secure_check: "/resources/icons/landingPageAssets/secure_check.svg",
+    },
+    partnerPageAssets: {
+      buildninjaStars: "/resources/icons/partnerPageAssets/buildNinjaStars.svg",
+      cloudConsulting: "/resources/icons/partnerPageAssets/cloudConsulting.svg",
+      products: "/resources/icons/partnerPageAssets/products.svg",
+      flowerTick: "/resources/icons/partnerPageAssets/flowerTick.svg",
+      connector: "/resources/icons/partnerPageAssets/connector.svg",
+      rightArrow: "/resources/icons/partnerPageAssets/rightArrow.svg",
+      handshakepurple: "/resources/icons/partnerPageAssets/handshakepurple.svg",
+      buildninjaStarsPink:
+        "/resources/icons/partnerPageAssets/buildNinjaStarsPink.svg",
+      tickGolden: "/resources/icons/partnerPageAssets/tickGolden.svg",
+      tickPink: "/resources/icons/partnerPageAssets/tickPink.svg",
+      handshake: "/resources/icons/partnerPageAssets/handshake.svg",
+      lockGreen: "/resources/icons/partnerPageAssets/lockGreen.svg",
+      lockPink: "/resources/icons/partnerPageAssets/lockPink.svg",
+      clockBrown: "/resources/icons/partnerPageAssets/clockBrown.svg",
+      clockPink: "/resources/icons/partnerPageAssets/clockPink.svg",
+      locationBlue: "/resources/icons/partnerPageAssets/locationBlue.svg",
+      locationPink: "/resources/icons/partnerPageAssets/locationPink.svg",
+      handshakeWhite: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
     },
   },
 };

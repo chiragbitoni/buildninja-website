@@ -129,7 +129,7 @@ export default function Fifth() {
 
         <section className="partnerPageFifthSection" id="partner-form-section">
             <div className="partnerFifthBanner">
-                <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
+                <Image src={paths.icons.partnerPageAssets.buildninjaStars} width={20} height={20} alt="Grapecity Stars Icon"></Image>
                 <p>How it works</p>
             </div>
             <div className="partnerFifthHeader">

@@ -9,36 +9,36 @@ export default function Second() {
             "From automated builds to enterprise-grade security, everythng you need to build, test, and deploy with confidence.",
         cards: [
             {
-                icon: "/resources/icons/partnerPageAssets/handshakepurple.svg",
-                iconHover: "/resources/icons/partnerPageAssets/handshake.svg",
+                icon: paths.icons.partnerPageAssets.handshakepurple,
+                iconHover: paths.icons.partnerPageAssets.handshake,
                 title: "New revenue opportunities",
                 description:
                     "Add implementation, managed services, training, or resale—with clear partner pricing and scalable models.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/buildNinjaStarsPink.svg",
-                iconHover: "/resources/icons/partnerPageAssets/buildNinjaStars.svg",
+                icon: paths.icons.partnerPageAssets.buildninjaStarsPink,
+                iconHover: paths.icons.partnerPageAssets.buildninjaStars,
                 title: "Joint GTM & co-marketing",
                 description:
                     "Webinars, case studies, partner spotlights, integration launches, and co-branded campaigns.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/tickGolden.svg",
-                iconHover: "/resources/icons/partnerPageAssets/tickPink.svg",
+                icon: paths.icons.partnerPageAssets.tickGolden,
+                iconHover: paths.icons.partnerPageAssets.tickPink,
                 title: "Technical enablement",
                 description:
                     "Priority onboarding, architecture guidance, and direct engineering support to accelerate delivery.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/lockGreen.svg",
-                iconHover: "/resources/icons/partnerPageAssets/lockPink.svg",
+                icon: paths.icons.partnerPageAssets.lockGreen,
+                iconHover: paths.icons.partnerPageAssets.lockPink,
                 title: "Self-hosted security posture",
                 description:
                     "Source code, secrets, logs, and artifacts stay inside your customer’s environment—ideal for compliance.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/clockBrown.svg",
-                iconHover: "/resources/icons/partnerPageAssets/clockPink.svg",
+                icon: paths.icons.partnerPageAssets.clockBrown,
+                iconHover: paths.icons.partnerPageAssets.clockBrown,
                 title: "Fast parallel execution",
                 description:
                     "High-throughput pipelines designed for speed and scale, without build-minute billing surprises.",
@@ -46,6 +46,8 @@ export default function Second() {
             {
                 icon: "/resources/icons/partnerPageAssets/locationBlue.svg",
                 iconHover: "/resources/icons/partnerPageAssets/locationPink.svg",
+                icon: paths.icons.partnerPageAssets.locationBlue,
+                iconHover: paths.icons.partnerPageAssets.locationPink,
                 title: "Flexible deployment",
                 description:
                     "Run on Kubernetes, VMs, private cloud, or fully air-gapped infrastructure.",
@@ -55,7 +57,7 @@ export default function Second() {
     return (
         <section className="partnerSecondSection">
             <div className="partnerSecondBanner">
-                <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
+                <Image src={paths.icons.partnerPageAssets.buildninjaStars} width={20} height={20} alt="Grapecity Stars Icon"></Image>
                 <p>Why partner</p>
             </div>
             <div className="partnerSecondHeader">

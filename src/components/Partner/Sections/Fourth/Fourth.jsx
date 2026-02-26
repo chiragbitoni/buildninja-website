@@ -9,36 +9,36 @@ export default function Fourth() {
             "Choose a motion that matches your business—then we’ll co-design the rollout and go-to-market plan.",
         cards: [
             {
-                icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
-                iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
+                icon: paths.icons.partnerPageAssets.handshakeWhite,
+                iconHover: paths.icons.partnerPageAssets.handshakepurple,
                 title: "Integration partnerships",
                 description:
-                    "Build connectors and reference architectures that make adoption frictionless.",
+                "Build connectors and reference architectures that make adoption frictionless.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
-                iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
+                icon: paths.icons.partnerPageAssets.handshakeWhite,
+                iconHover: paths.icons.partnerPageAssets.handshakepurple,
                 title: "Reseller / referral programs",
                 description:
-                    "Earn through referrals or resale, aligned to your sales motion and customer base.",
+                "Earn through referrals or resale, aligned to your sales motion and customer base.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
-                iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
+                icon: paths.icons.partnerPageAssets.handshakeWhite,
+                iconHover: paths.icons.partnerPageAssets.handshakepurple,
                 title: "Co-marketing & launches",
                 description:
-                    "Tell a joint story with credible outcomes—case studies, webinars, and announcements.",
+                "Tell a joint story with credible outcomes—case studies, webinars, and announcements.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
-                iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
+                icon: paths.icons.partnerPageAssets.handshakeWhite,
+                iconHover: paths.icons.partnerPageAssets.handshakepurple,
                 title: "Implementation & training",
                 description:
-                    "Deliver onboarding, rollout, and team enablement as a packaged service.",
+                "Deliver onboarding, rollout, and team enablement as a packaged service.",
             },
             {
-                icon: "/resources/icons/partnerPageAssets/handshakeWhite.svg",
-                iconHover: "/resources/icons/partnerPageAssets/handshakePurple.svg",
+                icon: paths.icons.partnerPageAssets.handshakeWhite,
+                iconHover: paths.icons.partnerPageAssets.handshakepurple,
                 title: "Technology alliances",
                 description:
                     "Co-develop solutions inside the CI/CD ecosystem and share distribution.",
@@ -48,7 +48,7 @@ export default function Fourth() {
     return (
         <section className="partnerFourthSection" id="partnershipModelsSection">
             <div className="partnerFourthBanner">
-                <Image src="/resources/icons/partnerPageAssets/buildNinjaStars.svg" width={20} height={20} alt="Grapecity Stars Icon"></Image>
+                <Image src={paths.icons.partnerPageAssets.buildninjaStars} width={20} height={20} alt="Grapecity Stars Icon"></Image>
                 <p>How it works</p>
             </div>
             <div className="partnerFourthHeader">
