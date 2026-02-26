@@ -90,8 +90,9 @@
 
 .pricingFourthCardIcon {
   font-size: 1.8rem;
-  width:56px;
-  height:56px;
+  width: 56px;
+  height: 56px;
+  padding: 6px;
 }
 
 .cardTitleRow {
