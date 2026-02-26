@@ -1,0 +1,330 @@
+/* =========================
+   BASE – MOBILE FIRST
+========================= */
+
+.partnerThirdSection {
+    width: 100%;
+    padding: 60px 20px;
+    background: radial-gradient(circle at top right, #1f1f1f, #0c0c0c);
+    color: #ffffff;
+    background: #373737;
+}
+
+.partnerThirdBanner {
+    display: flex;
+    gap: 10px;
+    color: #FF4172;
+    background: #FF487733;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: fit-content;
+    margin: 0 auto 20px;
+}
+
+.partnerThirdTitle {
+    font-weight: 600;
+    font-size: 48px;
+    text-align: center;
+    margin: 0 auto 0px;
+}
+
+.partnerThirdSubtitle {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto 50px;
+
+}
+
+.partnerThirdContainer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.partnerThirdLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid #343434;
+    box-shadow: 0px 15px 35px 0px #00000026;
+    background: #3B3B3B;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.partnerThirdCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    gap: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.partnerThirdCard img:first-child {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.partnerThirdCard .pricingLeftArrowIcon {
+    margin-top: 12px;
+    align-self: top;
+    width: 20px !important;
+    height: 20px !important;
+
+}
+
+.partnerThirdCard:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.partnerThirdActive {
+    background: #2F2F2F;
+    border: 2px solid #FF4172
+}
+
+.partnerThirdCardTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.partnerThirdCardDesc {
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.partnerThirdRight {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 40px 20px 40px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.partnerThirdRightHeading {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.partnerThirdRightTitle {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.partnerThirdRightDesc {
+    opacity: 0.8;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.partnerPageThirdRightHeaderImageWrapper {
+    background: #FF487733;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.partnerPageThirdRightHeaderImageWrapper img {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+}
+
+.partherThirdRightContainer {
+    display: flex;
+}
+
+
+.partnerThirdPoints {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.partnerThirdPoints li {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.partnerThirdRight hr {
+    border: 1px solid #545353;
+    margin: 20px 0 40px 0;
+}
+
+.partnerThirdSupport {
+    /* background: rgba(255, 255, 255, 0.06); */
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #545353;
+    display: flex;
+    align-content: top;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.partnerThirdSupport h5 {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.partnerThirdSupport p {
+    font-size: 13px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.partnerThirdSupport img {
+    margin-top: 12px;
+}
+
+.partnerThirdTitle {
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.partnerThirdSubtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.partnerThirdSubtitle br {
+    display: none;
+    /* remove forced line break on mobile */
+}
+
+.partnerThirdLeft {
+    padding: 20px;
+}
+
+.partnerThirdCard {
+    flex-direction: row;
+    gap: 15px;
+    padding: 14px;
+}
+
+.partnerThirdCardTitle {
+    font-size: 15px;
+}
+
+.partnerThirdCardDesc {
+    font-size: 13px;
+}
+
+.partnerThirdRight {
+    padding: 25px;
+}
+
+.partnerThirdSupport {
+    flex-direction: column;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) {
+
+    .partnerThirdLeft {
+        width: 100%;
+    }
+
+    .partnerThirdRight {
+        width: 100%;
+    }
+
+    .partnerThirdContainer {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .partnerThirdLeft {
+        width: 45%;
+        padding: 25px;
+    }
+
+    .partnerThirdRight {
+        width: 55%;
+        padding: 30px;
+    }
+
+    .partnerThirdTitle {
+        font-size: 38px;
+    }
+
+    .partnerThirdSubtitle {
+        font-size: 18px;
+    }
+
+    .partnerThirdCard {
+        gap: 20px;
+    }
+
+}
+
+/* =========================
+DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+    .partnerThirdContainer {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .partnerThirdSection {
+        padding: 100px 20px;
+    }
+
+    .partnerThirdTitle{
+        font-size: 48px;
+    }
+
+    .partnerThirdRightTitle {
+        font-size: 26px;
+    }
+
+    .partnerThirdCardTitle {
+        font-size: 18px;
+    }
+
+    .partnerThirdSubtitle{
+        font-size: 20px;
+        max-width: 750px;
+    }
+
+    .partnerThirdSupport {
+        display: flex;
+        flex-direction: row;
+    }
+}

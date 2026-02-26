@@ -1,0 +1,508 @@
+/* =========================
+   BASE – MOBILE FIRST
+========================= */
+.partnerPageHeroSection {
+    width: 100%;
+    padding: 24px 16px;
+    background: radial-gradient(circle at top right, #1f1f1f, #0c0c0c);
+    color: #ffffff;
+    background:
+        linear-gradient(180deg, rgba(32, 32, 32, 0) 00%, #2F2F2F 100%), #2F2F2F url('/resources/LandingHeroBG.png') center / cover no-repeat;
+}
+
+.partnerSecondSection {
+    margin-top: -1px;
+}
+
+.partnerPageHeroContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* LEFT */
+.partnerPageHeroLeft {
+    padding: 28px 22px;
+    align-content: center;
+}
+
+.partnerPageHeroBageContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.partnerPageHeroBadge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #2a1b22;
+    color: #FF4172;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.partnerPageHeroTitle {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.partnerPageHeroTitle span {
+    color: #FF4172;
+}
+
+.partnerPageHeroSubtitle {
+    color: #C2C2C2;
+    font-size: 26px;
+    line-height: 1.4;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.partnerPageHeroDescription {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.partnerPageHeroButtonContainer {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-direction: column;
+
+}
+
+.partnerPageHeroButton {
+    background-color: #FF4172;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.partnerPageHeroStats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.partnerPageHeroRight {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.partnerPageHeroSection {
+    background-position: center;
+}
+
+
+@media (min-width: 640px) {
+    .partnerPageHeroStats {
+        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        justify-content: left;
+    }
+
+    .partnerPageHeroContainer {
+        gap: 30px;
+    }
+
+    .partnerPageHeroLeft {
+        padding: 40px 30px;
+    }
+
+    .partnerPageHeroRightCard {
+        padding: 30px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .partnerPageHeroStats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.partnerPageHeroStatCard {
+    background: #3B3B3B;
+    padding: 6px 10px 14px 16px;
+    border-radius: 10px;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.partnerPageHeroStatCard strong {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.partnerPageHeroStatCard span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #aaa;
+}
+
+/* RIGHT – FORM */
+.partnerPageHeroRightCard {
+    border-radius: 20px;
+    background: #3B3B3B;
+    padding: 28px 22px;
+}
+
+.partnerPageHeroRightHeader {
+
+    display: flex;
+    align-items: flex-start;
+    /* Changed from 'top' to 'flex-start' */
+    justify-content: space-between;
+}
+
+.partnerPageHeroRightHeaderImageWrapper {
+    background: #FF487733;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.partnerPageHeroRightHeader img {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+}
+
+.partnerPageHeroRightCard ul {
+    display: grid;
+    gap: 10px;
+}
+
+.partnerPageHeroRightCard li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.partnerPageHeroFormTitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.partnerPageHeroFormSubtitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.partnerPageHeroRightFeaturesContainer {
+    display: grid;
+    gap: 20px;
+}
+
+.partnerPageHeroRightFeature {
+    background: #2B2B2B;
+    padding: 10px 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    justify-self: top;
+    /* margin-bottom: 10px; */
+    /* align-items: top; */
+}
+
+.partnerPageHeroRightFeature img {
+    height: 40px;
+    width: 40px;
+}
+
+.partnerPageHeroRightFeatureText {
+    gap: 8px;
+}
+
+.partnerPageHeroRightFeatureText h5 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+.partnerPageHeroForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Inputs stack on mobile */
+.partnerPageHeroFormRow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.partnerPageHeroForm input,
+.partnerPageHeroSelect {
+    width: 100%;
+    background: #2B2B2B;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.partnerPageHeroForm label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.partnerPageHeroForm input::placeholder {
+    color: #777;
+}
+
+.partnerPageHeroSubmit {
+    margin-top: 8px;
+    padding: 14px;
+    background: #FF4172;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.partnerPageHeroFormCaptcha {
+    justify-items: center;
+    margin: 0 auto;
+}
+
+
+
+/* =========================
+TABLET (≥ 640px)
+========================= */
+@media (min-width: 640px) {
+    .partnerPageHeroStats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .partnerPageHeroStatCard {
+        min-width: 160px;
+    }
+
+    .partnerPageHeroFormRow {
+        flex-direction: row;
+    }
+
+    .partnerPageHeroButtonContainer {
+        flex-direction: row;
+        margin-bottom: 16px;
+    }
+
+    .partnerPageHeroButton {
+        width: auto;
+    }
+
+    .partnerPageHeroBageContainer {
+        display: flex;
+    }
+
+    .partnerPageHeroBadge {
+        font-size: 14px;
+    }
+
+    .partnerPageHeroTitle {
+        font-size: 50px;
+    }
+
+    .partnerPageHeroSubtitle {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .partnerPageHeroDescription {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+/* =========================
+DESKTOP (≥ 1024px)
+========================= */
+@media (min-width: 1150px) {
+    .partnerPageHeroSection {
+        padding: 100px 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .partnerPageHeroContainer {
+        max-width: 1500px;
+        flex-direction: row;
+        gap: 80px;
+    }
+
+    .partnerPageHeroBageContainer {
+        display: flex;
+    }
+
+    .partnerPageHeroBadge {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .partnerPageHeroLeft {
+        padding: 60px;
+        flex: 1.2;
+        min-width: 300px;
+    }
+
+    .partnerPageHeroRight {
+        display: grid;
+        gap: 20px;
+        flex: 1.2;
+    }
+
+    .partnerPageHeroRightCard {
+        padding: 40px;
+        height: fit-content;
+    }
+
+    .partnerPageHeroTitle {
+        /* font-size: 32px; */
+        font-weight: 600;
+    }
+
+    .partnerPageHeroTitle span {
+        font-size: 64px;
+        font-weight: 700;
+    }
+
+    .partnerPageHeroTitle span {
+        font-size: clamp(32px, 5vw, 64px);
+    }
+
+    .partnerPageHeroSubtitle {
+        font-size: 36px;
+        max-width: 800px;
+        font-weight: 700;
+    }
+
+    .partnerPageHeroStats {
+        /* flex-wrap: nowrap; */
+    }
+}
+
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.partnerPageHeroLeft>* {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.partnerPageHeroLeft>*:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.partnerPageHeroLeft>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.partnerPageHeroLeft>*:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.partnerPageHeroLeft>*:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.partnerPageHeroRightCard {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.partnerPageHeroSubmit {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.partnerPageHeroSubmit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(255, 65, 114, 0.35);
+}
+
+.partnerPageHeroSubmit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+.partnerPageHeroForm input:focus,
+.partnerPageHeroSelect:focus {
+    border-color: #FF4172;
+    box-shadow: 0 0 0 3px rgba(255, 65, 114, 0.15);
+}
+
+.partnerPageHeroForm label {
+    transition: transform 0.2s ease;
+}
+
+.partnerPageHeroForm input:focus+label {
+    transform: translateY(-2px);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.partnerPageHeroStatCard:hover {
+    animation: pulse 0.6s ease;
+}
+
+.partnerPageHeroRightCard {
+    position: relative;
+    overflow: hidden;
+}

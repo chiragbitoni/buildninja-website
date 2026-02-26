@@ -1,14 +1,14 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Nav/NavBar";
+import Navbar from "../components/Nav/NavBar";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
-import Footer from "./components/Footer/Footer";
+import Footer from "../components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
-import GoogleAnalytics from "./components/Analytics/GA";
-import YouTubePopup from "./components/YouTubePopup/YouTubePopup";
-import PHProviderWrapper from "./components/Analytics/Providers";
-import PosthogWrapper from "./components/Analytics/PostHogWrapper";
+import GoogleAnalytics from "../components/Analytics/GA";
+import YouTubePopup from "../components/YouTubePopup/YouTubePopup";
+import PHProviderWrapper from "../components/Analytics/Providers";
+import PosthogWrapper from "../components/Analytics/PostHogWrapper";
 import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,11 +48,11 @@ const schema = {
 };
 export const metadata = {
   title: {
-    default: "BuildNinja – Self Hosted CI/CD Platform",
+    default: "Build Ninja Self-Hosted CI/CD DevOps Made Simple |Grapecity India",
     template: "%s | BuildNinja",
   },
   description:
-    "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
+    "Optimize your DevOps workflow with Build Ninja integrates with GitHub,GitLab & Bitbucket. Deploy in minutes without complexity.Jenkins Alternative Try free today",
 
   alternates: {
     canonical: "https://buildninja.grapehub.io/",

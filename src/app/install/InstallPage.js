@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Hero from "../components/Download/Sections/Hero/Hero";
+import Hero from "../../components/Download/Sections/Hero/Hero/Hero";
 import { checkAuth } from "@/services/auth/check";
 import { useSelector } from "react-redux";
 

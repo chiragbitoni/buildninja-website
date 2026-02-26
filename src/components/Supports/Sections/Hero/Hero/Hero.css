@@ -1,0 +1,315 @@
+/* ===========================
+   SUPPORT HERO SECTION
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base (Mobile-first) */
+.supportHero {
+  background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+  background-image: url("/resources/GenericHeroBG.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 12vw 6vw;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.supportHeroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADINGS */
+.supportHeroHeading {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.supportHeroSubheading {
+  text-align: center;
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 4vw;
+  padding: 0 2vw;
+}
+
+/* LEFT SIDE */
+.supportHeroLeft {
+  text-align: center;
+}
+
+.supportHeroHelp {
+  margin-top: 2rem;
+}
+
+.supportHeroHelp h3 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.supportHeroHelp p {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  color: #eee;
+}
+
+/* OPTIONS */
+.supportHeroOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.supportHeroOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.supportHeroIcon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.supportHeroOption h4 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.supportHeroOption p {
+  margin: 0.3rem 0;
+  color: #ccc;
+  font-size: 16px;
+}
+
+.supportHeroOption a {
+  color: #ff4172;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.supportHeroOption a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT SIDE (Form) */
+.supportHeroRight {
+  background: #1a1a1a;
+  border: 2px solid #ff4172;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.supportHeroRight h3 {
+  font-size: 20px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.supportHeroForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.supportHeroForm label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.supportHeroForm input,
+.supportHeroForm textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #000;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border 0.3s ease, outline 0.3s ease;
+}
+
+.supportHeroForm input:focus,
+.supportHeroForm textarea:focus {
+  outline: 2px solid #ff4172;
+}
+
+.supportHeroForm textarea {
+  resize: vertical;
+  min-height: 160px;
+  max-height: 280px;
+  line-height: 1.5;
+}
+
+/* Side-by-side Name & Email (Desktop) */
+.supportHeroRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Checkbox + Button */
+.supportHeroCheckbox {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 0.6rem;
+  color: #ffffff;
+}
+
+.supportHeroForm button {
+  background: #ff4172;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.supportHeroForm button:hover {
+  background: #ff3f6a;
+}
+
+.supportHeroFormCaptcha {
+  align-self: center;
+}
+
+/* ===========================
+    Tablets (≥768px)
+=========================== */
+@media (min-width: 768px) {
+  .supportHero {
+    padding: 10vw 6vw;
+    text-align: left;
+  }
+
+  .supportHeroHeading {
+    font-size: 32px;
+  }
+
+  .supportHeroSubheading {
+    font-size: 18px;
+    padding: 0 6vw;
+  }
+
+  .supportHeroHelp h3 {
+    text-align: left;
+    font-size: 24px;
+  }
+
+  .supportHeroHelp p {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  /* Keep stacked layout on tablets */
+  .supportHeroContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .supportHeroLeft,
+  .supportHeroRight {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .supportHeroOptions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .supportHeroOption {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  /* Two-column row for name/email */
+  .supportHeroRow {
+    flex-direction: row;
+  }
+
+  .supportHeroRow label {
+    flex: 1;
+  }
+
+  .supportHeroForm textarea {
+    min-height: 180px;
+  }
+}
+
+/* ===========================
+    Desktop (≥1024px)
+=========================== */
+@media (min-width: 1024px) {
+  .supportHero {
+    padding: 6vw 8vw;
+  }
+
+
+  .supportHeroContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .supportHeroLeft {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .supportHeroRight {
+    flex: 1;
+  }
+
+  .supportHeroHeading {
+    font-size: 40px;
+  }
+
+  .supportHeroSubheading {
+    font-size: 24px;
+    padding: 0 16vw;
+  }
+
+  .supportHeroOptions {
+    flex-direction: column;
+  }
+
+  .supportHeroOptions h4 {
+    font-size: 18px;
+  }
+
+  .supportHeroOptions p {
+    font-size: 16px;
+  }
+
+  .supportHeroForm textarea {
+    min-height: 200px;
+  }
+}

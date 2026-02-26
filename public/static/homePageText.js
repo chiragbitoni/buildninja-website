@@ -188,6 +188,54 @@ export const fourthSectionText = {
       ],
       image: "/resources/Home/FeatureImages/image5.png",
     },
+    {
+      title: "Enterprise-Ready Security & Access Control",
+      description:
+        "Control builds and environments with RBAC and powerful Build Parameters. Secure, flexible, and built for real-world teams.",
+      list: [
+        {
+          title: "Role-based permissions",
+          desc: "Project and system-level access control.",
+        },
+        {
+          title: "Secure build variables",
+          desc: "Manage sensitive values safely within builds.",
+        },
+        {
+          title: "Granular team management",
+          desc: "Assign roles with precision.",
+        },
+        {
+          title: "Environment-aware builds",
+          desc: "Dynamic parameters for different deployment stages.",
+        },
+      ],
+      image: "/resources/Home/FeatureImages/image6.png",
+    },
+    {
+      title: "Deploy Anywhere with Native Git & SSH",
+      description:
+        "Clone, build, and deploy without external plugins. Native Git with smart caching and SSH Runner for remote server execution.",
+      list: [
+        {
+          title: "Built-in Git integration",
+          desc: "No external plugins required.",
+        },
+        {
+          title: "Intelligent caching",
+          desc: "Faster builds automatically.",
+        },
+        {
+          title: "Remote server execution",
+          desc: "Run commands directly via SSH.",
+        },
+        {
+          title: "Full deployment control",
+          desc: "From pipeline to production.",
+        },
+      ],
+      image: "/resources/Home/FeatureImages/image7.png",
+    },
   ],
 };
 export const fifthSectionText = {

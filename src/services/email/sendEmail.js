@@ -1,6 +1,6 @@
 import { supportConfirmationTemplate } from "@/templates/email/supportTemplate";
 import { leadTemplate } from "@/templates/email/leadTemplate";
-
+import { partnershipTemplate } from "@/templates/email/partnershipTemplate";
 const parseEmailList = (value) =>
   String(value || "")
     .split(",")
@@ -22,7 +22,9 @@ export async function sendSupportEmail({ name, email, subject, message }) {
     message: escapeHtml(message),
   });
 
-  const supportCCs = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID);
+  const supportCCs = parseEmailList(
+    process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID,
+  );
 
   const toCCs = [
     ...supportCCs,
@@ -134,6 +136,75 @@ export async function sendLeadEmail({
       return {
         success: false,
         message: data?.message || "Failed to send lead email",
+      };
+    }
+
+    return { success: true, data };
+  } catch (err) {
+    return { success: false, message: err.message };
+  }
+}
+
+export async function sendPartnershipEmail({
+  name,
+  email,
+  phone,
+  partnershipType,
+  utmSource,
+  utmMedium,
+  utmCampaign,
+  utmContent,
+}) {
+  try {
+    const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email`;
+
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safePhone = escapeHtml(phone);
+    const safePartnershipType = escapeHtml(partnershipType);
+    const safeUtmSource = escapeHtml(utmSource || "unknown");
+    const safeUtmMedium = escapeHtml(utmMedium || "unknown");
+    const safeUtmCampaign = escapeHtml(utmCampaign || "unknown");
+    const safeUtmContent = escapeHtml(utmContent || "unknown");
+    
+    const htmlContent = partnershipTemplate({
+      name: safeName,
+      email: safeEmail,
+      phone: safePhone,
+      partnershipType: safePartnershipType,
+      utmSource: safeUtmSource,
+      utmMedium: safeUtmMedium,
+      utmCampaign: safeUtmCampaign,
+      utmContent: safeUtmContent,
+    });
+
+    const toEmails = parseEmailList(
+      process.env.NEXT_PUBLIC_PARTNERSHIP_EMAIL_ID,
+    );
+
+    const payload = {
+      toEmails,
+      subject: `New Partnership Inquiry – ${safePartnershipType}`,
+      htmlContent,
+    };
+
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_EMAIL_API_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const text = await res.text();
+    const data = text ? JSON.parse(text) : null;
+
+    if (!res.ok) {
+      return {
+        success: false,
+        message: data?.message || "Failed to send partnership email",
       };
     }
 

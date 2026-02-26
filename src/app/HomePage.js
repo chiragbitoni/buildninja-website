@@ -1,14 +1,14 @@
 "use client";
 
-import Hero from "./components/Home/Sections/Hero/Hero";
-import Second from "./components/Home/Sections/Second/Second";
-import Third from "./components/Home/Sections/Third/Third";
-import Fourth from "./components/Home/Sections/Fourth/Fourth";
-import Fifth from "./components/Home/Sections/Fifth/Fifth";
-import Sixth from "./components/Home/Sections/Sixth/Sixth";
-import Seventh from "./components/Home/Sections/Seventh/Seventh";
-import Eighth from "./components/Home/Sections/Eighth/Eighth";
-import Ninth from "./components/Home/Sections/Ninth/Ninth";
+import Hero from "../components/Home/Hero/Hero";
+import Second from "../components/Home/Second/Second";
+import Third from "../components/Home/Third/Third";
+import Fourth from "../components/Home/Fourth/Fourth";
+import Fifth from "../components/Home/Fifth/Fifth";
+import Sixth from "../components/Home/Sixth/Sixth";
+import Seventh from "../components/Home/Seventh/Seventh";
+import Eighth from "../components/Home/Eighth/Eighth";
+import Ninth from "../components/Home/Ninth/Ninth";
 
 export default function HomePage() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Hero from "@/app/components/Download/Dashboard/Sections/Hero/Hero";
+import Hero from "@/components/Download/Dashboard/Sections/Hero/Hero";
 import { checkAuth } from "@/services/auth/check";
 import { useSelector } from "react-redux";
 
