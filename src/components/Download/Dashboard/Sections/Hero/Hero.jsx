@@ -146,7 +146,7 @@ export default function Hero() {
                           title: "Windows Installation Tutorial",
                           ctaText:
                             "Follow the complete installation tutorial step-by-step.",
-                          link: "/docs/windows-installation",
+                          link: "/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows",
                         })
                       );
                     }}
