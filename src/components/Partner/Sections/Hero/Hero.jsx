@@ -58,7 +58,7 @@ export default function Hero() {
                         Ship secure CI/CD inside your customer’s infrastructure.
                     </p>
                     <p className="partnerPageHeroDescription">
-                        BuildNiNja is a high-performance self-hosted CI/CD platform built for teams that need speed, security, and control—across cloud, on-prem, or air-gapped environments.
+                        BuildNiNja is a high-performance self-hosted CI/CD platform built for teams that need speed, security, and control-across cloud, on-prem, or air-gapped environments.
                     </p>
                     <div className="partnerPageHeroButtonContainer">
                         <button className="partnerPageHeroButton" onClick={() => { scrollAndFocus(); }}>Let's grow together</button>

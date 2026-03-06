@@ -13,7 +13,7 @@ export default function Second() {
                 iconHover: paths.icons.partnerPageAssets.handshake,
                 title: "New revenue opportunities",
                 description:
-                    "Add implementation, managed services, training, or resale—with clear partner pricing and scalable models.",
+                    "Add implementation, managed services, training, or resale with clear partner pricing and scalable models.",
             },
             {
                 icon: paths.icons.partnerPageAssets.buildninjaStarsPink,
@@ -34,7 +34,7 @@ export default function Second() {
                 iconHover: paths.icons.partnerPageAssets.lockPink,
                 title: "Self-hosted security posture",
                 description:
-                    "Source code, secrets, logs, and artifacts stay inside your customer’s environment—ideal for compliance.",
+                    "Source code, secrets, logs, and artifacts stay inside your customer’s environment ideal for compliance.",
             },
             {
                 icon: paths.icons.partnerPageAssets.clockBrown,
@@ -60,7 +60,7 @@ export default function Second() {
             </div>
             <div className="partnerSecondHeader">
                 <h3 className="partnerSecondHeaderTitle">Benefits built for real delivery</h3>
-                <p className="partnerSecondHeaderSubtitle">A partner program designed to help you win, deliver, and expand—without friction or surprise costs.</p>
+                <p className="partnerSecondHeaderSubtitle">A partner program designed to help you win, deliver, and expand without friction or surprise costs.</p>
             </div>
             <div className="partnerSecondCardsContainer">
                 {secondSectionText.cards.map((card, idx) => (

@@ -27,7 +27,7 @@ export default function Fourth() {
                 iconHover: paths.icons.partnerPageAssets.handshakepurple,
                 title: "Co-marketing & launches",
                 description:
-                "Tell a joint story with credible outcomes—case studies, webinars, and announcements.",
+                "Tell a joint story with credible outcomes case studies, webinars, and announcements.",
             },
             {
                 icon: paths.icons.partnerPageAssets.handshakeWhite,
