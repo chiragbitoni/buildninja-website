@@ -23,7 +23,7 @@
 /* LEFT */
 .partnerPageHeroLeft {
     padding: 28px 22px;
-    align-content: center;
+    align-content: top;
 }
 
 .partnerPageHeroBageContainer {
@@ -373,7 +373,7 @@ DESKTOP (≥ 1024px)
     }
 
     .partnerPageHeroLeft {
-        padding: 60px;
+        padding: 10px 40px;
         flex: 1.2;
         min-width: 300px;
     }
@@ -505,4 +505,19 @@ DESKTOP (≥ 1024px)
 .partnerPageHeroRightCard {
     position: relative;
     overflow: hidden;
+}
+
+.partnerPaheHeroTitleShimmer {
+    background: linear-gradient(90deg, #FF4172, #ff8fb1, #FF4172);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+    z-index: 100;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
 }

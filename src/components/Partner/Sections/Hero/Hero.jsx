@@ -51,7 +51,7 @@ export default function Hero() {
                     </div>
 
                     <h2 className="partnerPageHeroTitle">
-                        <span>Partner <br />with BuildNinja.</span>
+                        <span>Partner with<br /><div className="partnerPaheHeroTitleShimmer">BuildNinja.</div></span>
                     </h2>
 
                     <p className="partnerPageHeroSubtitle">
