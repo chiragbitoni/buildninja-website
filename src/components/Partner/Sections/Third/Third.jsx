@@ -84,10 +84,14 @@ export default function PartnerThirdSection() {
     };
   }, [isPaused]);
 
-  // 👆 Manual click
-  const handleClick = (index) => {
+
+  const handleMouseEnter = (index) => {
     setActiveIndex(index);
     setIsPaused(true); // stop auto switching
+  };
+  const handleMouseLeave = (index) => {
+    setActiveIndex(index);
+    setIsPaused(false); // continue auto switching
   };
 
   return (
@@ -107,7 +111,8 @@ export default function PartnerThirdSection() {
               className={`partnerThirdCard ${activeIndex === index ? "partnerThirdActive" : ""
                 }`}
 
-              onClick={() => handleClick(index)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => { handleMouseLeave(index) }}
 
             >
               <Image src={item.image} width={40} height={40} alt={`Grapecity ${item.title} Icon`}></Image>
