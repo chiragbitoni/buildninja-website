@@ -163,7 +163,7 @@ export default function Fifth() {
 
                         <div className="partnerPageFifthFeatureItem">
                             <h4>Predictable pricing</h4>
-                            <p>No build-minute billing—transparent and consistent.</p>
+                            <p>No build-minute billing, transparent and consistent.</p>
                         </div>
                     </div>
                     {/* <hr /> */}
