@@ -166,21 +166,24 @@ export default function Fifth() {
                             <p>No build-minute billing—transparent and consistent.</p>
                         </div>
                     </div>
-                    <hr />
-                    <div className="partnerPageFifthNextStep">
-                        <Image src={paths.icons.partnerPageAssets.handshake} height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
-                        <div>
-                            <strong>Next step</strong>
-                            <p>We’ll align on a partner motion and map a pilot to a clear outcome.</p>
-                        </div>
-                    </div>
+                    {/* <hr /> */}
+                    <div className="partnerPageFifthLeftBottom">
 
-                    <button className="partnerPageFifthPrimaryBtn" onClick={() => {
-                        window.location.href =
-                            "mailto:marketing.in@grapecity.com?subject=Partnership Inquiry&body=Hi Team,%0D%0A%0D%0AI’d like to explore a partnership opportunity.%0D%0A";
-                    }}>
-                        Email partnership
-                    </button>
+                        <div className="partnerPageFifthNextStep">
+                            <Image src={paths.icons.partnerPageAssets.handshake} height={32} width={32} alt="Grapecity Hand Shake Icon"></Image>
+                            <div>
+                                <strong>Next step</strong>
+                                <p>We’ll align on a partner motion and map a pilot to a clear outcome.</p>
+                            </div>
+                        </div>
+
+                        <button className="partnerPageFifthPrimaryBtn" onClick={() => {
+                            window.location.href =
+                                "mailto:marketing.in@grapecity.com?subject=Partnership Inquiry&body=Hi Team,%0D%0A%0D%0AI’d like to explore a partnership opportunity.%0D%0A";
+                        }}>
+                            Email partnership
+                        </button>
+                    </div>
                 </div>
                 {/* RIGHT */}
                 <div className="partnerPageFifthRight">
