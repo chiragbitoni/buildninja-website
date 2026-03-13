@@ -9,6 +9,7 @@
 
 .footerContainer {
   background-color: #1f1f1f;
+  background: rgba(8,8,16,0.8);
   color: #cfcfcf;
   padding: 6vw 4vw;
   /* tighter mobile padding */

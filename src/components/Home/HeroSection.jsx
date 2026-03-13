@@ -1,0 +1,123 @@
+"use client";
+import { useEffect, useRef } from "react";
+import BuildNinjaDemo from "./BuildNinjaDemo";
+import OrbitAnimation from "./OrbitAnimation";
+import styles from "./HeroSection.module.css";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { openVideo } from "@/redux/slice/videoPopupSlice";
+
+
+export default function HeroSection() {
+  const orb1 = useRef(null);
+  const orb2 = useRef(null);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    let t = 0;
+    const tick = () => {
+      t += 0.006;
+      if (orb1.current) orb1.current.style.transform = `translate(${Math.sin(t) * 16}px, ${Math.cos(t * 0.7) * 20}px)`;
+      if (orb2.current) orb2.current.style.transform = `translate(${Math.cos(t * 0.8) * 18}px, ${Math.sin(t * 1.1) * 16}px)`;
+      requestAnimationFrame(tick);
+    };
+    const id = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  return (
+    <section className={styles.hero}>
+      <OrbitAnimation />
+
+      {/* Gradient orbs */}
+      <div ref={orb1} className={styles.orb1} />
+      <div ref={orb2} className={styles.orb2} />
+
+      {/* Grid overlay */}
+      <div className={styles.grid} />
+
+      {/* Bottom fade */}
+      <div className={styles.bottomFade} />
+
+      {/* Hero copy — each child has its own animation class */}
+      <div className={styles.copy}>
+
+        <div className={styles.heroBadge} onClick={() => { router.push("/install"); }}>
+          <span className={styles.badgeDot} />
+          AI Build Intelligence — now in v1.2
+        </div>
+
+        <h1 className={styles.heading}>
+          Self-Hosted CI/CD That
+          <span className={styles.headingGradient}> Thinks </span>
+          before it builds
+        </h1>
+
+        <p className={styles.subtext}>
+          Self-hosted. No per-seat tax. AI-powered build optimization, predictive test selection, and conversational pipeline setup — all in one platform.
+          {/* Self-hosted CI/CD built for teams who are done wrestling with Jenkins plugins, cryptic failures, and 3am debugging sessions.<br /> */}
+          {/* Start free up to 3 agents · $199/month unlimited · Deploy in minutes. */}
+        </p>
+
+        <div className={styles.ctas}>
+          <a className={styles.ctaPrimary} onClick={() => { router.push("/install") }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Install BuildNinja Free
+          </a>
+          <a className={styles.ctaSecondary} onClick={() => { dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works", link: "https://buildninja.grapehub.io/docs/category/getting-started" })) }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            See 3-Minute Demo
+          </a>
+        </div>
+      </div>
+
+      {/* Dashboard with border-draw reveal */}
+      <div className={styles.dashWrap}>
+        <div className={styles.dashBorderBox}>
+          {/* SVG border that draws itself */}
+          <svg className={styles.borderSvg} viewBox="0 0 1160 600" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="borderGradH" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgba(255,255,255,0.55)" />
+                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+              </linearGradient>
+              <linearGradient id="borderGradV" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="rgba(255,255,255,0.55)" />
+                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+              </linearGradient>
+            </defs>
+
+            {/* Top edge — draws rightward from top-left, fades to transparent halfway */}
+            <line
+              className={styles.borderTop}
+              x1="1" y1="1"
+              x2="580" y2="1"
+            />
+
+            {/* Left edge — draws downward from top-left, fades to transparent halfway */}
+            <line
+              className={styles.borderLeft}
+              x1="1" y1="1"
+              x2="1" y2="300"
+            />
+          </svg>
+
+
+          {/* Glow behind border */}
+          <div className={styles.dashGlow} />
+
+          {/* Actual dashboard */}
+          <div className={styles.dashInner}>
+            <BuildNinjaDemo />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
