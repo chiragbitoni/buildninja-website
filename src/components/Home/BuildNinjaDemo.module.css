@@ -1629,3 +1629,137 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
+
+
+/* ══════════════════════════════════════════
+   FEATURE STRIP — append to BuildNinjaDemo.module.css
+   ══════════════════════════════════════════ */
+
+.featureStrip {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.featureBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 160px;
+  position: relative;
+  text-align: left;
+}
+
+.featureBtn:hover {
+  border-color: rgba(216, 48, 91, 0.3);
+  background: rgba(216, 48, 91, 0.06);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.featureBtnActive {
+  border-color: #d8305b !important;
+  background: rgba(216, 48, 91, 0.12) !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 1px rgba(216, 48, 91, 0.2);
+}
+
+.featureBtnIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.featureBtnActive .featureBtnIcon {
+  background: rgba(216, 48, 91, 0.2);
+  color: #d8305b;
+}
+
+.featureBtnText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.featureBtnLabel {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.featureBtnDesc {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.featureBtnActive .featureBtnDesc {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.featureBtnDot {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #d8305b;
+  animation: featDotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes featDotPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.6);
+  }
+}
+
+/* progress bar under active tab */
+.featureBtnActive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #d8305b, rgba(216, 48, 91, 0.3));
+  border-radius: 0 0 10px 10px;
+  animation: featProgress 6s linear;
+}
+
+@keyframes featProgress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}

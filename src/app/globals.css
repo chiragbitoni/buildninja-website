@@ -87,6 +87,7 @@ GLOBAL RESETS & BASE
   body {
     background-color: var(--color-bg);
     font-family: var(--font-display);
+    cursor: none;
   }
 
   button {

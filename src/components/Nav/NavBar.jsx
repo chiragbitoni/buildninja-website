@@ -26,13 +26,13 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Home",     path: "/" },
+    { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
-    { name: "Docs",     path: "/docs" },
-    { name: "Pricing",  path: "/pricing" },
-    { name: "Install",  path: "/install" },
+    { name: "Docs", path: "/docs" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Install", path: "/install" },
     { name: "Partners", path: "/partners" },
-    { name: "Support",  path: "/support" },
+    { name: "Support", path: "/support" },
   ];
 
   const handleNavigation = (path) => {

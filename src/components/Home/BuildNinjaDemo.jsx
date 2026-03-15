@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import s from './BuildNinjaDemo.module.css';
 import {
   BUILDS, SUCCESS_CONFIGS, TOP5_CONFIGS, AGENT_TREEMAP,
@@ -60,6 +60,254 @@ const NAV = [
   { id: 'users', Icon: Ic.Users, badge: 2 },
   { id: 'settings', Icon: Ic.Cog },
 ];
+
+/* ══ FEATURE DEFINITIONS ══ */
+const FEATURES = [
+  {
+    id: 'dashboard',
+    label: 'Live Dashboard',
+    description: 'Real-time build metrics with auto-refresh',
+    Icon: Ic.Dash,
+    targetPage: 'dashboard',
+  },
+  {
+    id: 'triggers',
+    label: 'Automated Builds',
+    description: 'Schedule triggers by time, date, or commit',
+    Icon: Ic.Trig,
+    targetPage: 'triggers',
+  },
+  {
+    id: 'agents',
+    label: 'Agent Management',
+    description: 'Monitor and control build agents by OS or status',
+    Icon: Ic.Agent,
+    targetPage: 'agents',
+  },
+  {
+    id: 'users',
+    label: 'RBAC & Users',
+    description: 'Role-based access with approval workflows',
+    Icon: Ic.Users,
+    targetPage: 'users',
+  },
+  {
+    id: 'settings',
+    label: 'SSO & Settings',
+    description: 'Single sign-on providers and system config',
+    Icon: Ic.Cog,
+    targetPage: 'settings',
+  },
+];
+
+/* ══ CURSOR HOOK ══ */
+function useCursorSequence(shellRef, activeFeat, page) {
+  const rafRef = useRef(null);   // rAF id for movement
+  const seqRef = useRef(null);   // setTimeout id for sequencing
+  const cursorRef = useRef(null);
+
+  // Cancel any in-flight animation + sequence
+  const cancel = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    if (seqRef.current) clearTimeout(seqRef.current);
+  }, []);
+
+  // Get element center in shell-local coords, accounting for CSS scale transform
+  const rel = useCallback((el) => {
+    const shell = shellRef.current;
+    if (!el || !shell) return null;
+    const scale = parseFloat(shell.style.getPropertyValue('--shell-scale')) || 1;
+    const sr = shell.getBoundingClientRect();
+    const er = el.getBoundingClientRect();
+    return {
+      x: (er.left - sr.left) / scale + er.width / scale / 2,
+      y: (er.top  - sr.top)  / scale + er.height / scale / 2,
+    };
+  }, [shellRef]);
+
+  // Animate cursor from current pos → target, then call cb
+  const moveTo = useCallback((targetX, targetY, duration, cb) => {
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+    const fromX = parseFloat(cursor.style.left) || targetX;
+    const fromY = parseFloat(cursor.style.top)  || targetY;
+    let start = null;
+
+    function frame(ts) {
+      if (!start) start = ts;
+      const t = Math.min((ts - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - t, 3); // cubic ease-out
+      cursor.style.left = (fromX + (targetX - fromX) * ease) + 'px';
+      cursor.style.top  = (fromY + (targetY - fromY) * ease) + 'px';
+      if (t < 1) {
+        rafRef.current = requestAnimationFrame(frame);
+      } else {
+        cursor.style.left = targetX + 'px';
+        cursor.style.top  = targetY + 'px';
+        if (cb) cb();
+      }
+    }
+    rafRef.current = requestAnimationFrame(frame);
+  }, []);
+
+  // Run a sequence: [{el, pause, duration, click, action}]
+  // el: DOM element to target  |  pause: wait after arriving  |  click: fire .click()
+  const runSequence = useCallback((steps, loop = false) => {
+    const cursor = cursorRef.current;
+    if (!cursor || !steps.length) return;
+    cursor.style.opacity = '1';
+    let idx = 0;
+
+    function next() {
+      if (idx >= steps.length) {
+        if (loop) { idx = 0; next(); }
+        return;
+      }
+      const step = steps[idx++];
+      const pos = step.pos || rel(step.el);
+      if (!pos) { next(); return; }
+
+      moveTo(pos.x, pos.y, step.duration ?? 600, () => {
+        // Flash the cursor to indicate a click
+        if (step.click && step.el) {
+          cursor.style.transform = 'scale(0.7)';
+          setTimeout(() => { cursor.style.transform = ''; }, 100);
+          setTimeout(() => step.el.click(), 80);
+        }
+        if (step.action) step.action();
+        seqRef.current = setTimeout(next, step.pause ?? 500);
+      });
+    }
+    next();
+  }, [rel, moveTo]);
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    const shell  = shellRef.current;
+    if (!cursor || !shell) return;
+
+    cancel();
+    cursor.style.opacity = '0';
+
+    // Wait two frames for the new page to fully render, then build steps from real DOM
+    const t = setTimeout(() => {
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+
+        switch (activeFeat) {
+
+          /* ── 0: Dashboard — cycle through filter buttons on the 3 panels ── */
+          case 0: {
+            const filterBtns = [...shell.querySelectorAll(`.${s.iconBtn}`)].slice(0, 4);
+            const syncBtn    = shell.querySelector(`.${s.iconBtn}`);
+            const firstRow   = shell.querySelector(`.${s.gridRow}`);
+            const steps = [];
+            filterBtns.forEach(btn => {
+              steps.push({ el: btn, pause: 600, duration: 500, click: true });
+            });
+            if (firstRow) steps.push({ el: firstRow, pause: 700, duration: 500 });
+            runSequence(steps, true);
+            break;
+          }
+
+          /* ── 1: Triggers — click Add Trigger, then click dots menus on each row ── */
+          case 1: {
+            const addBtn  = shell.querySelector(`.${s.btnPrimary}`);
+            const dotBtns = [...shell.querySelectorAll(`.${s.trigTRow} .${s.iconBtn}`)];
+            const steps   = [];
+            if (addBtn)  steps.push({ el: addBtn,  pause: 800, duration: 550, click: true });
+            dotBtns.forEach(btn => {
+              steps.push({ el: btn, pause: 600, duration: 500, click: true });
+            });
+            if (steps.length) runSequence(steps, true);
+            break;
+          }
+
+          /* ── 2: Agents — click each agent item in sequence, updating detail pane ── */
+          case 2: {
+            const agentItems = [...shell.querySelectorAll(`.${s.agentItem}`)];
+            const osBtns     = [...shell.querySelectorAll(`.${s.osBtn}`)];
+            const steps      = [];
+            // cycle OS filter buttons first
+            osBtns.forEach(btn => {
+              steps.push({ el: btn, pause: 500, duration: 450, click: true });
+            });
+            // then click each agent
+            agentItems.forEach(item => {
+              steps.push({ el: item, pause: 700, duration: 500, click: true });
+            });
+            if (steps.length) runSequence(steps, true);
+            break;
+          }
+
+          /* ── 3: Users — click checkboxes, then Approve / Reject buttons ── */
+          case 3: {
+            const checkboxes  = [...shell.querySelectorAll(`.${s.checkbox}`)];
+            const approveBtns = [...shell.querySelectorAll(`.${s.btnApprove}`)];
+            const rejectBtns  = [...shell.querySelectorAll(`.${s.btnReject}`)];
+            const tabBtns     = [...shell.querySelectorAll(`.${s.usersTab}`)];
+            const steps = [];
+            tabBtns.forEach(btn  => steps.push({ el: btn,  pause: 600, duration: 480, click: true }));
+            checkboxes.forEach(cb => steps.push({ el: cb,  pause: 350, duration: 420, click: true }));
+            approveBtns.slice(0, 2).forEach(btn => steps.push({ el: btn, pause: 500, duration: 450, click: true }));
+            rejectBtns.slice(0, 1).forEach(btn  => steps.push({ el: btn, pause: 500, duration: 450, click: true }));
+            if (steps.length) runSequence(steps, true);
+            break;
+          }
+
+          /* ── 4: Settings — click SSO nav, then Edit/Delete buttons on cards ── */
+          case 4: {
+            const navBtns  = [...shell.querySelectorAll(`.${s.settingsNavBtn}`)];
+            const ssoCards = [...shell.querySelectorAll(`.${s.ssoCard}`)];
+            const editBtns = [...shell.querySelectorAll(`.${s.ssoCard} .${s.btnOutline}`)];
+            const delBtns  = [...shell.querySelectorAll(`.${s.ssoCard} .${s.btnDanger}`)];
+            const toggles  = [...shell.querySelectorAll(`.${s.toggle}`)];
+            const steps = [];
+            // click nav items
+            navBtns.forEach(btn => steps.push({ el: btn, pause: 700, duration: 500, click: true }));
+            // come back to SSO Settings (first nav)
+            if (navBtns[0]) steps.push({ el: navBtns[0], pause: 500, duration: 400, click: true });
+            // click edit on first SSO card
+            if (editBtns[0]) steps.push({ el: editBtns[0], pause: 600, duration: 480, click: true });
+            // click toggle on second card
+            if (toggles[1]) steps.push({ el: toggles[1], pause: 600, duration: 500, click: true });
+            // hover delete on third card
+            if (delBtns[0]) steps.push({ el: delBtns[0], pause: 600, duration: 500 });
+            if (steps.length) runSequence(steps, true);
+            break;
+          }
+        }
+      }));
+    }, 350);
+
+    return () => { clearTimeout(t); cancel(); cursor.style.opacity = '0'; };
+  }, [activeFeat, page, cancel, runSequence, shellRef]);
+
+  return cursorRef;
+}
+
+/* ══ FEATURE STRIP ══ */
+function FeatureStrip({ activeFeat, onSelect }) {
+  return (
+    <div className={s.featureStrip}>
+      {FEATURES.map((feat, i) => (
+        <button
+          key={feat.id}
+          className={`${s.featureBtn} ${activeFeat === i ? s.featureBtnActive : ''}`}
+          onClick={() => onSelect(i)}
+        >
+          <span className={s.featureBtnIcon}>
+            <feat.Icon />
+          </span>
+          <span className={s.featureBtnText}>
+            <span className={s.featureBtnLabel}>{feat.label}</span>
+            <span className={s.featureBtnDesc}>{feat.description}</span>
+          </span>
+          {activeFeat === i && <span className={s.featureBtnDot} />}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 /* ══ PROJECT SIDEBAR TREE ══ */
 function ProjectTree({ activePage }) {
@@ -126,17 +374,12 @@ function Dashboard() {
 
   return (
     <div className={s.page}>
-      {/* toolbar */}
       <div className={s.dashToolbar}>
         <div className={s.selectMock} style={{ gap: 5 }}><svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 12, height: 12, opacity: .5 }}><path d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380z" /></svg>Last 3 years <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 9, height: 9, opacity: .4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg></div>
         <button className={s.iconBtn}><Ic.Sync /></button>
         <div className={s.selectMock}>Every 10s <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 9, height: 9, opacity: .4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg></div>
       </div>
-
-      {/* 3-panel row */}
       <div className={s.dashPanels}>
-
-        {/* CONFIG SUCCESS RATE */}
         <div className={s.dashPanel}>
           <div className={s.dashPanelHead}>CONFIGURATION SUCCESS RATE <button className={s.iconBtn}><Ic.Filter /></button></div>
           <div className={s.dashPanelBody}>
@@ -160,8 +403,6 @@ function Dashboard() {
             </div>
           </div>
         </div>
-
-        {/* TOP 5 BUILD HISTORY */}
         <div className={s.dashPanel}>
           <div className={s.dashPanelHead}>TOP 5 BUILD HISTORY <button className={s.iconBtn}><Ic.Filter /></button></div>
           <div className={s.dashPanelBody}>
@@ -169,13 +410,10 @@ function Dashboard() {
             <div className={s.lineChartWrap}>
               <div className={s.lineYLabel}>Runtime</div>
               <svg className={s.lineSvg} viewBox="0 0 300 110" preserveAspectRatio="none">
-                {/* Config-A: steep rise, stays high */}
                 <path d="M0 108 L50 105 L100 100 L150 80 L200 30 L250 25 L300 22" fill="none" stroke="#d8305b" strokeWidth="2" />
-                {/* Config-B: flat low */}
                 <path d="M0 108 L60 107 L120 107 L180 107 L240 107 L300 107" fill="none" stroke="#40a9ff" strokeWidth="1.5" opacity=".7" />
                 <path d="M0 108 L60 107 L120 107 L180 107 L240 107 L300 107" fill="none" stroke="#00c951" strokeWidth="1.5" opacity=".5" />
                 <path d="M0 108 L50 108 L100 108 L150 108 L200 107 L250 106 L300 105" fill="none" stroke="#faad14" strokeWidth="1.5" opacity=".5" />
-                {/* dots on line 1 */}
                 {[0, 60, 120, 180, 240, 300].map((x, i) => {
                   const ys = [108, 105, 100, 80, 30, 22];
                   return <circle key={i} cx={x} cy={ys[i]} r="3.5" fill="#40a9ff" />;
@@ -192,8 +430,6 @@ function Dashboard() {
             </div>
           </div>
         </div>
-
-        {/* AGENT UTILIZATION */}
         <div className={s.dashPanel}>
           <div className={s.dashPanelHead}>AGENT UTILIZATION <button className={s.iconBtn}><Ic.Filter /></button></div>
           <div className={s.dashPanelBody}>
@@ -214,8 +450,6 @@ function Dashboard() {
           </div>
         </div>
       </div>
-
-      {/* RECENT BUILDS */}
       <div className={s.recentBuilds}>
         <div className={s.rbHead}>
           <span className={s.rbTitle}>RECENT BUILDS</span>
@@ -251,7 +485,6 @@ function Projects() {
   const [tab, setTab] = useState('Projects');
   return (
     <div className={s.page}>
-      {/* breadcrumb + title */}
       <div className={s.projTopRow}>
         <div className={s.projActive}>
           <div className={s.projActiveDot} />
@@ -261,8 +494,6 @@ function Projects() {
         </div>
         <button className={s.btnPrimary}><Ic.Plus /> New Build Configuration</button>
       </div>
-
-      {/* vertical nav */}
       <div className={s.projNavRow}>
         {[
           { id: 'Projects', sub: 'Manage sub-projects', Icon: Ic.Proj },
@@ -279,14 +510,12 @@ function Projects() {
           </button>
         ))}
       </div>
-
       {tab === 'Projects' && (
         <div className={s.projContent}>
           <div className={s.projContentHead}>
             <span className={s.projContentTitle}>Projects</span>
             <span className={s.muted}>Manage sub-projects</span>
           </div>
-          {/* dev group row */}
           <div className={s.configRow} style={{ background: '#2e2e2e', borderRadius: 8 }}>
             <div className={s.configRowIcon} style={{ color: 'rgba(255,255,255,.3)' }}><Ic.Folder /></div>
             <div>
@@ -294,7 +523,6 @@ function Projects() {
               <div className={s.muted} style={{ fontSize: 11 }}>Project Group</div>
             </div>
           </div>
-          {/* config rows */}
           {PROJECT.configs.map(c => (
             <div key={c.name} className={s.configRow}>
               <div className={s.configRowIcon} style={{ background: 'rgba(216,48,91,.15)', color: '#d8305b', borderRadius: 6, padding: 5 }}>
@@ -326,7 +554,6 @@ function Agents() {
   const filtered = os === 'All' ? AGENTS : AGENTS.filter(a => a.os === os);
   return (
     <div className={s.agentsShell}>
-      {/* left */}
       <div className={s.agentLeft}>
         <div className={s.filterGroup}>
           <div className={s.filterLabel}>Filter by OS</div>
@@ -356,7 +583,6 @@ function Agents() {
           ))}
         </div>
       </div>
-      {/* right */}
       {agent && (
         <div className={s.agentRight}>
           <div className={s.agentRightHead}>
@@ -410,7 +636,6 @@ function Queue() {
         <h1 className={s.pageH1}>Builds Queue</h1>
         <p className={s.pageSub}>Monitor and manage all currently queued builds across configuration. Drag rows to reorder the queue.</p>
       </div>
-      {/* filters */}
       <div className={s.queueFilters} style={{ flexWrap: 'wrap' }}>
         <div className={s.searchBox}><Ic.Search /><span style={{ color: 'rgba(255,255,255,.22)', fontSize: 11 }}>Search Build Configurations</span></div>
         <div className={s.selectMock}>All Status <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 9, height: 9, opacity: .35, marginLeft: 4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg></div>
@@ -420,7 +645,6 @@ function Queue() {
           <span className={s.muted} style={{ fontSize: 11 }}>Enable Reordering</span>
         </div>
       </div>
-      {/* stat cards */}
       <div className={s.queueCards}>
         <div className={s.queueCard}>
           <div className={s.qcIcon} style={{ color: '#40a9ff' }}><Ic.Info /></div>
@@ -440,7 +664,6 @@ function Queue() {
           <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Total Queue</div></div>
         </div>
       </div>
-      {/* table */}
       <div className={s.queueTable}>
         <div className={s.queueTHead}>
           <span style={{ width: 24 }}>#</span>
@@ -547,7 +770,6 @@ function Users() {
           </div>
         </div>
       </div>
-      {/* tab bar */}
       <div className={s.usersTabBar}>
         {['Pending Approvals', 'Users'].map(t => (
           <button key={t} onClick={() => setTab(t)}
@@ -560,7 +782,6 @@ function Users() {
             <div className={s.bold}>Pending Approval</div>
             <div className={s.muted} style={{ fontSize: 11 }}>Review and approve user registration requests.</div>
           </div>
-          {/* filters row */}
           <div className={s.usersFilters}>
             <div className={s.searchBox}><Ic.Search /><span className={s.muted} style={{ fontSize: 11 }}>Search requests…</span></div>
             <div className={s.selectMock} style={{ minWidth: 100 }}>Start date</div>
@@ -601,7 +822,6 @@ function Settings() {
   const [activeTab, setActiveTab] = useState('SSO Settings');
   return (
     <div className={s.settingsShell}>
-      {/* left sidebar */}
       <div className={s.settingsLeft}>
         <div className={s.settingsTitle}>Settings</div>
         <div className={s.settingsSub}>Manage your application configuration and preferences</div>
@@ -618,7 +838,6 @@ function Settings() {
           </button>
         ))}
       </div>
-      {/* right content */}
       <div className={s.settingsRight}>
         {activeTab === 'SSO Settings' && (
           <div className={s.page}>
@@ -686,63 +905,114 @@ const PAGES = { dashboard: Dashboard, projects: Projects, agents: Agents, queue:
 export default function BuildNinjaDemo() {
   const [page, setPage] = useState('dashboard');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [activeFeat, setActiveFeat] = useState(0);
+  const shellRef = useRef(null);
+  const wrapperRef = useRef(null);
+
   const Page = PAGES[page];
   const showTree = ['projects'].includes(page) && !sidebarCollapsed;
-  const wrapperRef = useRef(null);
+
+  // Cursor hook
+  const cursorRef = useCursorSequence(shellRef, activeFeat, page);
+
+  // When a feature button is clicked, navigate to the right page
+  const handleFeatSelect = useCallback((idx) => {
+    setActiveFeat(idx);
+    setPage(FEATURES[idx].targetPage);
+  }, []);
+
+  // Auto-cycle features every 6s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeat(prev => {
+        const next = (prev + 1) % FEATURES.length;
+        setPage(FEATURES[next].targetPage);
+        return next;
+      });
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
-
     const update = () => {
       const scale = wrapper.offsetWidth / 1100;
       wrapper.style.setProperty('--shell-scale', scale);
-      // Also keep wrapper height in sync (avoids 0-height flash)
       wrapper.style.paddingBottom = `${(580 / 1100) * 100}%`;
     };
-
-    update(); // run once on mount
+    update();
     const ro = new ResizeObserver(update);
     ro.observe(wrapper);
     return () => ro.disconnect();
   }, []);
+
   return (
-    <div className={s.scaleWrapper} ref={wrapperRef}>
-      <div className={s.shell}>
-        {/* ── Icon rail ── */}
-        <div className={s.rail}>
-          <div className={s.railLogo}><BnLogo /></div>
-          {NAV.map(({ id, Icon, badge }) => (
-            <button key={id} onClick={() => setPage(id)}
-              className={`${s.railBtn} ${page === id ? s.railBtnActive : ''}`}
-              title={id}>
-              <Icon />
-              {badge && <span className={s.railBadge}>{badge}</span>}
+    <div>
+      {/* ── Feature Strip ── */}
+      <FeatureStrip activeFeat={activeFeat} onSelect={handleFeatSelect} />
+
+      {/* ── Dashboard Shell ── */}
+      <div className={s.scaleWrapper} ref={wrapperRef}>
+        <div className={s.shell} ref={shellRef} style={{ position: 'relative' }}>
+
+          {/* ── Cursor overlay ── */}
+          <div
+            ref={cursorRef}
+            style={{
+              position: 'absolute',
+              width: 20,
+              height: 24,
+              pointerEvents: 'none',
+              zIndex: 9999,
+              opacity: 0,
+              transition: 'opacity 0.3s, transform 0.08s ease',
+              transformOrigin: '4px 2px',
+              left: 100,
+              top: 100,
+            }}
+          >
+            <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.7))' }}>
+              <path d="M4 2L17 12L10.5 13.5L8 22L4 2Z" fill="white" stroke="#111" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* ── Icon rail ── */}
+          <div className={s.rail}>
+            <div className={s.railLogo}><BnLogo /></div>
+            {NAV.map(({ id, Icon, badge }) => (
+              <button key={id} onClick={() => { setPage(id); setSidebarCollapsed(false); }}
+                className={`${s.railBtn} ${page === id ? s.railBtnActive : ''}`}
+                title={id}>
+                <Icon />
+                {badge && <span className={s.railBadge}>{badge}</span>}
+              </button>
+            ))}
+            <div style={{ flex: 1 }} />
+            <button className={s.railBtn} onClick={() => setSidebarCollapsed(c => !c)}>
+              {sidebarCollapsed ? <Ic.ChevR /> : <Ic.ChevL />}
             </button>
-          ))}
-          <div style={{ flex: 1 }} />
-          <button className={s.railBtn} onClick={() => setSidebarCollapsed(c => !c)}>
-            {sidebarCollapsed ? <Ic.ChevR /> : <Ic.ChevL />}
-          </button>
-        </div>
+          </div>
 
-        {/* ── Project tree (context-dependent 2nd panel) ── */}
-        {showTree && <ProjectTree activePage={page} />}
+          {/* ── Project tree ── */}
+          {showTree && <ProjectTree activePage={page} />}
 
-        {/* ── Main ── */}
-        <div className={s.main}>
-          <header className={s.topbar}>
-            <nav className={s.breadcrumb} style={{ overflow: 'hidden', minWidth: 0 }}>
-              <Ic.Home />
-              <span className={s.breadSep}>/</span>
-              <span style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
-            </nav>
-            <div className={s.topRight}>
-              <button className={s.iconBtn}><svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 16, height: 16, opacity: .5 }}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" /><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.9 8.1-39.9 22.3-53.3 40.9-13.1 18.3-20 39.5-20 61.3V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-17.7c0-32.2 18.6-61.3 49.2-74.7 39.3-17.1 67.2-55.2 67.2-99.3.1-57.1-44.5-105.4-100.8-110.6z" /><circle cx="512" cy="728" r="32" /></svg></button>
-              <div className={s.avatar}><Image src="/resources/Navbar/ninjaAvatar.png" width={22} height={22} alt="Ninja Logo"></Image></div>
-            </div>
-          </header>
-          <div className={s.content}><Page /></div>
+          {/* ── Main ── */}
+          <div className={s.main}>
+            <header className={s.topbar}>
+              <nav className={s.breadcrumb} style={{ overflow: 'hidden', minWidth: 0 }}>
+                <Ic.Home />
+                <span className={s.breadSep}>/</span>
+                <span style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
+              </nav>
+              <div className={s.topRight}>
+                <button className={s.iconBtn}><svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 16, height: 16, opacity: .5 }}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" /><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.9 8.1-39.9 22.3-53.3 40.9-13.1 18.3-20 39.5-20 61.3V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-17.7c0-32.2 18.6-61.3 49.2-74.7 39.3-17.1 67.2-55.2 67.2-99.3.1-57.1-44.5-105.4-100.8-110.6z" /><circle cx="512" cy="728" r="32" /></svg></button>
+                <div className={s.avatar}><Image src="/resources/Navbar/ninjaAvatar.png" width={22} height={22} alt="Ninja Logo" /></div>
+              </div>
+            </header>
+            <div className={s.content}><Page /></div>
+          </div>
         </div>
       </div>
     </div>

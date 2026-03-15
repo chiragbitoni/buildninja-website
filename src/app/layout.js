@@ -11,6 +11,7 @@ import PosthogWrapper from "../components/Analytics/PostHogWrapper";
 import Script from "next/script";
 import "./globals.css";
 import "./animations.css";
+import Cursor from "@/components/ui/Cursor";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,7 +34,7 @@ const schema = {
         "https://www.linkedin.com/showcase/build-ninja/",
         "https://www.instagram.com/grapecityindia/",
         "https://www.facebook.com/GrapeCityIndiaPvtLtd",
-        "https://www.youtube.com/@BuildNinja_CICD"
+        "https://www.youtube.com/@BuildNinja_CICD",
       ],
     },
     {
@@ -49,7 +50,8 @@ const schema = {
 };
 export const metadata = {
   title: {
-    default: "Build Ninja Self-Hosted CI/CD DevOps Made Simple |Grapecity India",
+    default:
+      "Build Ninja Self-Hosted CI/CD DevOps Made Simple |Grapecity India",
     template: "%s | BuildNinja",
   },
   description:
@@ -108,6 +110,7 @@ export default function RootLayout({ children }) {
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
+        <Cursor />
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>
