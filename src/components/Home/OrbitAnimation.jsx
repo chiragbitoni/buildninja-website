@@ -17,7 +17,7 @@ export default function OrbitAnimation() {
       <div style={{
         position: "absolute", top: "50%", left: "50%",
         width: 600, height: 600, borderRadius: "50%",
-        border: "1px solid rgba(255,255,255,0.04)",
+        border: "1px solid var(--color-border-subtle)",
         transform: "translate(-50%, -50%)",
         animation: "orbitSpin 20s linear infinite",
       }}>
@@ -34,7 +34,7 @@ export default function OrbitAnimation() {
       <div style={{
         position: "absolute", top: "50%", left: "50%",
         width: 900, height: 900, borderRadius: "50%",
-        border: "1px solid rgba(255,255,255,0.04)",
+        border: "1px solid var(--color-border-subtle)",
         transform: "translate(-50%, -50%)",
         animation: "orbitSpin 30s linear infinite reverse",
       }}>
@@ -51,7 +51,7 @@ export default function OrbitAnimation() {
       <div style={{
         position: "absolute", top: "50%", left: "50%",
         width: 1200, height: 1200, borderRadius: "50%",
-        border: "1px solid rgba(255,255,255,0.04)",
+        border: "1px solid var(--color-border-subtle)",
         transform: "translate(-50%, -50%)",
         animation: "orbitSpin 80s linear infinite",
       }}>

@@ -4,11 +4,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(8, 8, 11, 0.75);
+  background: rgba(var(--bg-rgb), 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: 0 1px 0 var(--color-border-subtle);
   z-index: 50;
   transition: transform 0.3s ease-in-out;
   font-family: var(--font-display);
@@ -72,7 +72,7 @@
 }
 
 .navbarLink:hover {
-  color: #fff;
+  color: var(--color-text);
 }
 
 .activeLink {
@@ -131,6 +131,7 @@
   opacity: 0.9;
   transition: opacity 0.2s;
   flex-shrink: 0;
+  filter: var(--icon-filter, none);
 }
 
 .navbarGithubIcon:hover {
@@ -177,7 +178,7 @@
     top: 77px;
     left: 0;
     width: 100%;
-    background: rgba(8, 8, 11, 0.97);
+    background: rgba(var(--bg-rgb), 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -186,7 +187,7 @@
     padding: 16px 0 20px;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-shell);
     display: none;
   }
 

@@ -3,7 +3,9 @@ import styles from "./NavBar.module.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import AvatarMenu from "./AvatarMenu";
+import ThemeToggle from "./ThemeToggle";
 import { fetchPlansFromAPI } from "../../services/plans/plans";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
@@ -15,16 +17,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const storedPlans = localStorage.getItem("plans");
-    if (storedPlans) return;
-    async function init() {
-      const plans = await fetchPlansFromAPI();
-      if (plans) localStorage.setItem("plans", JSON.stringify(plans));
-    }
-    init();
-  }, []);
-
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
@@ -34,6 +26,28 @@ export default function Navbar() {
     { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
   ];
+
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const storedPlans = localStorage.getItem("plans");
+    if (storedPlans) return;
+    async function init() {
+      const plans = await fetchPlansFromAPI();
+      if (plans) localStorage.setItem("plans", JSON.stringify(plans));
+    }
+    init();
+  }, []);
+
+  const getLogoSrc = () => {
+    if (!mounted) return "/resources/BuildNinjaDark.png";
+    if (isHover) return "/resources/BuildNinjaPink.png";
+    return resolvedTheme === "dark" 
+      ? "/resources/BuildNinjaDark.png" 
+      : "/resources/BuildNinja.png";
+  };
 
   const handleNavigation = (path) => {
     router.push(path);
@@ -50,7 +64,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className={styles.navbarLogo} onClick={() => handleNavigation("/")}>
           <Image
-            src={isHover ? "/resources/BuildNinjaPink.png" : "/resources/BuildNinjaDark.png"}
+            src={getLogoSrc()}
             alt="BuildNinja Logo"
             width={178}
             height={48.5}
@@ -99,6 +113,8 @@ export default function Navbar() {
             className={styles.navbarGithubIcon}
             onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
           />
+
+          <ThemeToggle />
 
           <button
             className={styles.navbarStartTrialButton}

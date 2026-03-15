@@ -12,6 +12,9 @@ import Script from "next/script";
 import "./globals.css";
 import "./animations.css";
 import Cursor from "@/components/ui/Cursor";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import DynamicFavicon from "@/components/DynamicFavicon";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -93,7 +96,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link
           rel="alternate"
@@ -114,14 +117,17 @@ export default function RootLayout({ children }) {
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>
-            <ClientAuthProvider>
-              <Navbar />
-              <main className="pt-16">
-                <YouTubePopup />
-                {children}
-              </main>
-              <Footer />
-            </ClientAuthProvider>
+            <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+              <DynamicFavicon />
+              <ClientAuthProvider>
+                <Navbar />
+                <main className="pt-16">
+                  <YouTubePopup />
+                  {children}
+                </main>
+                <Footer />
+              </ClientAuthProvider>
+            </ThemeProvider>
           </ReduxProvider>
         </PHProviderWrapper>
       </body>
