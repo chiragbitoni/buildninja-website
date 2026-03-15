@@ -14,6 +14,7 @@ DESIGN TOKENS
 
   /* Backgrounds */
   --color-bg: #08080b;
+  --bg-rgb: 8, 8, 11;
   --color-bg-shell: #2c2c2c;
   --color-bg-panel: #313131;
   --color-bg-surface: #3c3b3b;
@@ -25,6 +26,7 @@ DESIGN TOKENS
   --color-text-muted: rgba(255, 255, 255, 0.32);
   --color-text-faint: rgba(255, 255, 255, 0.22);
   --color-text-disabled: rgba(238, 238, 245, 0.25);
+  --text-rgb: 255, 255, 255;
 
   /* Borders */
   --color-border: rgba(255, 255, 255, 0.08);
@@ -71,6 +73,56 @@ DESIGN TOKENS
   --shell-width: 1100px;
   --shell-height: 580px;
   --shell-aspect: calc(580 / 1100 * 100%);
+  
+  /* Utilities */
+  --icon-filter: none;
+}
+
+[data-theme='light'] {
+  /* Backgrounds */
+  --color-bg: #f8fafc;
+  --bg-rgb: 248, 250, 252;
+  --color-bg-shell: #ffffff;
+  --color-bg-panel: #f1f5f9;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f1f5f9;
+
+  /* Text */
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-faint: #94a3b8;
+  --color-text-disabled: #cbd5e1;
+  --text-rgb: 15, 23, 42;
+
+  /* Borders */
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.16);
+  --color-border-subtle: rgba(15, 23, 42, 0.04);
+  --color-border-medium: rgba(15, 23, 42, 0.1);
+  --color-border-accent: rgba(59, 130, 246, 0.05);
+
+  /* Shadows */
+  --shadow-shell: 0 32px 80px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  /* Adjust glow/accent variables for light bg if necessary */
+  --color-primary-subtle: rgba(255, 65, 114, 0.05);
+  --color-primary-border: rgba(255, 65, 114, 0.15);
+  
+  /* Semantic */
+  --color-success: #16a34a;
+  --color-success-bg: rgba(22, 163, 74, 0.1);
+  --color-success-border: rgba(22, 163, 74, 0.2);
+  --color-error: #dc2626;
+  --color-error-bg: rgba(220, 38, 38, 0.08);
+  --color-error-border: rgba(220, 38, 38, 0.18);
+  --color-info: #2563eb;
+  --color-info-bg: rgba(37, 99, 235, 0.1);
+  --color-warning: #d97706;
+  --color-warning-bg: rgba(217, 119, 6, 0.1);
+
+  /* Utilities */
+  --icon-filter: invert(1);
 }
 
 /* ═══════════════════════════════════════════

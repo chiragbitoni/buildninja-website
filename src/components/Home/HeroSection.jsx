@@ -84,12 +84,12 @@ export default function HeroSection() {
           <svg className={styles.borderSvg} viewBox="0 0 1160 600" preserveAspectRatio="none">
             <defs>
               <linearGradient id="borderGradH" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgba(255,255,255,0.55)" />
-                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                <stop offset="0%" stopColor="var(--color-text)" stopOpacity="0.55" />
+                <stop offset="100%" stopColor="var(--color-text)" stopOpacity="0" />
               </linearGradient>
               <linearGradient id="borderGradV" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="rgba(255,255,255,0.55)" />
-                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                <stop offset="0%" stopColor="var(--color-text)" stopOpacity="0.55" />
+                <stop offset="100%" stopColor="var(--color-text)" stopOpacity="0" />
               </linearGradient>
             </defs>
 
