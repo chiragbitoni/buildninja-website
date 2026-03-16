@@ -1,0 +1,306 @@
+/* ═══════════════════════════════════════════
+   SocialProof.module.css — Modern, Organized & Theme-aware
+   ═══════════════════════════════════════════ */
+
+.section {
+  padding: 120px 24px;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Section Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.problemBadge {
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  color: var(--color-error);
+}
+
+.trustBadge {
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  font-family: var(--font-display);
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Problem Grid ── */
+.problemGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 120px;
+}
+
+.problemItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.problemItem:hover {
+  border-color: var(--color-error-border);
+  background: var(--color-bg-surface-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.problemIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-error);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problemText {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: var(--font-ui);
+}
+
+/* ── Story Section ── */
+.storySection {
+  margin-bottom: 60px;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.whyCard {
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.whyCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-primary-border);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  background: var(--color-bg-surface-hover);
+}
+
+/* Card Glow Effect */
+.cardGlow {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, var(--glow-color, var(--color-primary-glow)) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.whyCard:hover .cardGlow {
+  opacity: 0.3;
+}
+
+.whyIcon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  border-radius: 12px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, color 0.3s ease;
+}
+
+.whyCard:hover .whyIcon {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.whyLabel {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+}
+
+.whyDesc {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  font-family: var(--font-ui);
+}
+
+/* ── Stats Strip ── */
+.statsStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-shell);
+  position: relative;
+}
+
+.statItem {
+  padding: 48px 30px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.statItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 30%;
+  height: 40%;
+  width: 1px;
+  background: var(--color-border-medium);
+}
+
+.statItem:hover {
+  background: var(--color-bg-surface-hover);
+}
+
+.statValue {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+}
+
+.statLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* ── Background Decoration ── */
+.bgGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .problemGrid, .whyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .statsStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .statItem:nth-child(2)::after {
+    display: none;
+  }
+  
+  .statItem {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 80px 20px;
+  }
+  
+  .problemGrid, .whyGrid, .statsStrip {
+    grid-template-columns: 1fr;
+  }
+  
+  .statItem::after {
+    display: none;
+  }
+  
+  .header {
+    text-align: left;
+    margin-bottom: 48px;
+  }
+  
+  .problemGrid {
+    margin-bottom: 80px;
+  }
+}

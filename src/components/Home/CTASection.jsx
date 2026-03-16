@@ -2,112 +2,147 @@
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import styles from "./CTASection.module.css";
 
 export default function CTASection() {
   const dispatch = useDispatch();
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const orbY1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const orbY2 = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+
   return (
-    <section style={{
-      background: "#08080b",
-      padding: "80px 24px 100px",
-      fontFamily: "'DM Sans', sans-serif",
-    }}>
-      <div style={{ maxWidth: 820, margin: "0 auto" }}>
-        <div style={{
-          background: "linear-gradient(135deg, rgba(255,65,114,0.10) 0%, rgba(255,97,53,0.06) 100%)",
-          border: "1px solid rgba(255,65,114,0.2)",
-          borderRadius: 20,
-          padding: "60px 48px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}>
-          {/* Background glow */}
-          <div style={{
-            position: "absolute", top: -60, left: "50%", transform: "translateX(-50%)",
-            width: 400, height: 200,
-            background: "radial-gradient(ellipse, rgba(255,65,114,0.18) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }} />
+    <section className={styles.section} ref={containerRef}>
+      {/* Decorative background grid and orbs */}
+      <div className={styles.grid} aria-hidden="true" />
+      <motion.div className={`${styles.orb} ${styles.orb1}`} style={{ y: orbY1 }} aria-hidden="true" />
+      <motion.div className={`${styles.orb} ${styles.orb2}`} style={{ y: orbY2 }} aria-hidden="true" />
 
-          <h2 style={{
-            fontSize: "clamp(28px, 4.5vw, 50px)",
-            fontWeight: 800, color: "#fff",
-            letterSpacing: -2, margin: "0 0 16px", lineHeight: 1.05,
-            position: "relative",
-          }}>
-            Stop Fighting Your CI/CD.<br />
-            <span style={{
-              background: "linear-gradient(135deg, #ff4172, #ff8c5a)",
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-            }}>Start Shipping Code.</span>
-          </h2>
-          <p style={{
-            fontSize: 16, color: "rgba(200,200,215,0.65)",
-            maxWidth: 520, margin: "0 auto 36px",
-            lineHeight: 1.65,
-          }}>
-            Get your CI/CD build process running in under 5 minutes. Free for 3 agents, $199/month unlimited as you scale.
-          </p>
+      <div className={styles.container}>
+        <motion.div 
+          className={styles.contentBox}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+        >
+          {/* Shimmer overlay */}
+          <div className={styles.shimmer} />
 
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 36 }}>
-            <Link href="/install" style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "14px 28px", borderRadius: 10,
-              background: "linear-gradient(135deg, #ff4172, #ff6135)",
-              color: "#fff", fontSize: 15, fontWeight: 700,
-              textDecoration: "none",
-              boxShadow: "0 4px 28px rgba(255,65,114,0.45)",
-              transition: "all 0.18s",
-            }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 36px rgba(255,65,114,0.6)"; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 28px rgba(255,65,114,0.45)"; }}
-            >
+          {/* SVG Animated Border */}
+          <svg className={styles.borderSvg} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <motion.rect
+              x="0.5" y="0.5" width="99" height="99" rx="2.8"
+              className={styles.borderPath}
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 0.3 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+            />
+          </svg>
+
+          <motion.h2 
+            className={styles.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            Stop Fighting Your CI/CD.
+            <span className={styles.titleGradient}>Automate Your Intelligence.</span>
+          </motion.h2>
+          
+          <motion.p 
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Deploy elite build pipelines that think, optimize, and scale. Join the high-velocity teams moving to BuildNinja.
+          </motion.p>
+
+          <motion.div 
+            className={styles.actions}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            <Link href="/install" className={styles.btnPrimary}>
               Try BuildNinja Free
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
-            <Link href="#demo" style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "14px 24px", borderRadius: 10,
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.14)",
-              color: "rgba(220,220,230,0.85)", fontSize: 15, fontWeight: 600,
-              textDecoration: "none",
-              transition: "all 0.18s",
-            }}
-              onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.13)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
-              onClick={() => { dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works" })) }}
+            <button 
+              className={styles.btnSecondary}
+              onClick={() => {
+                dispatch(openVideo({ 
+                  videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, 
+                  title: "BuildNinja", 
+                  ctaText: "Self Hosted CI/CD That Just Works",
+                  link: "/docs"
+                }));
+              }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="5 3 19 12 5 21 5 3" /></svg>
-              See the 3-Minute Demo
-            </Link>
-          </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Watch 3-Minute Demo
+            </button>
+          </motion.div>
 
-          {/* Guarantee */}
-          <div style={{
-            display: "inline-flex", flexDirection: "column", gap: 8,
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 12, padding: "18px 24px",
-            textAlign: "left",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-              <span style={{ fontSize: 16 }}>🛡️</span>
-              <span style={{ fontSize: 13, fontWeight: 700, color: "rgba(220,220,230,0.8)" }}>Risk-Free Guarantee</span>
+          {/* Guarantee Grid */}
+          <motion.div 
+            className={styles.guarantee}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <div className={styles.guaranteeHeader}>
+              <span>🛡️</span>
+              <span>Enterprise Grade Guarantee</span>
             </div>
-            {[
-              "30-day free trial license, no credit card required",
-              "Cancel anytime, keep full control of your setup",
-              "Deploy in minutes with Docker on your own infrastructure",
-              "Direct support from our engineering team",
-            ].map((item) => (
-              <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
-                <span style={{ fontSize: 13, color: "rgba(180,180,195,0.6)" }}>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+            
+            <div className={styles.guaranteeItem}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>30-day full trial license, no credit card required</span>
+            </div>
+            
+            <div className={styles.guaranteeItem}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Cancel anytime, keep control of your self-hosted setup</span>
+            </div>
+
+            <div className={styles.guaranteeItem}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Deploy in minutes via Docker or bare-metal CLI</span>
+            </div>
+
+            <div className={styles.guaranteeItem}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Direct engineer-to-engineer technical support</span>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section >
+    </section>
   );
 }
