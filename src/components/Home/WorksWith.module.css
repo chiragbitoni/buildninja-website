@@ -1,96 +1,115 @@
-.WorksWithSection {
-  padding: 60px 0;
+.section {
+  padding: 80px 0;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  background: var(--color-bg);
-  overflow: hidden;
-  /* border-top: 1px solid var(--color-border-subtle); */
-  /* border-bottom: 1px solid var(--color-border-subtle); */
 }
 
 .label {
-  font-size: 13px;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
-  margin-bottom: 30px;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+  font-family: var(--font-display);
 }
 
-.mask {
-  display: flex;
-  position: relative;
+.carouselMask {
   width: 100%;
-  max-width: 1400px;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  position: relative;
   overflow: hidden;
+  display: flex;
+  /* Soft masking on edges */
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 15%,
+    #000 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 15%,
+    #000 85%,
+    transparent
+  );
 }
 
 .scroller {
   display: flex;
-  gap: 16px;
-  padding: 10px 0;
-  /* Double the elements allows it to seamlessly slide 50% */
+  gap: 20px;
+  padding: 20px 0;
   width: max-content;
-  animation: scrollLeft 35s linear infinite;
   will-change: transform;
-}
-
-.scroller:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scrollLeft {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(calc(-50% - 8px));
-  }
 }
 
 .logoChip {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
+  gap: 14px;
+  padding: 14px 28px;
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
-  border-radius: 50px;
+  border-radius: var(--radius-pill);
   color: var(--color-text-secondary);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-.logoChip:hover {
-  background: var(--color-bg-surface-hover);
-  border-color: var(--color-border-strong);
-  color: var(--color-text);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+.logoChip span {
+  font-family: var(--font-ui);
 }
 
 .logoIcon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
   color: var(--color-text-secondary);
-  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logoChip:hover {
+  color: var(--color-text);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 15px var(--color-primary-subtle);
 }
 
 .logoChip:hover .logoIcon {
-  transform: scale(1.15);
-  opacity: 1;
-  color: var(--color-demo-accent);
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* Pause scroll on hover */
+.carouselMask:hover .scroller {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  .label {
+    margin-bottom: 30px;
+  }
+  .logoChip {
+    padding: 10px 20px;
+    font-size: 14px;
+    gap: 10px;
+  }
 }

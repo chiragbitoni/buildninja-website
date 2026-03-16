@@ -14,8 +14,8 @@ export default function HomePage() {
       <WorksWith />
       <FeaturesGrid />
       <HowItWorks />
-      {/* <SocialProof /> */}
-      {/* <CTASection /> */}
+      <SocialProof />
+      <CTASection />
     </>
   );
 }

@@ -1,171 +1,207 @@
 "use client";
+import { motion } from "framer-motion";
+import styles from "./SocialProof.module.css";
 
 const pillars = [
   {
-    icon: "🚫",
-    bad: "Spending weeks configuring Jenkins or complex CI/CD tools",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+      </svg>
+    ),
+    bad: "Spending weeks configuring Jenkins or legacy CI/CD plugins.",
   },
   {
-    icon: "🚫",
-    bad: "Dealing with deployment failures during critical business moments",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    ),
+    bad: "Dealing with opaque deployment failures during business peaks.",
   },
   {
-    icon: "🚫",
-    bad: "Burning out engineers on infrastructure instead of innovation",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
+    bad: "Burning out engineers on infrastructure instead of product innovation.",
   },
   {
-    icon: "🚫",
-    bad: "Paying escalating per-seat costs as your team grows",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+      </svg>
+    ),
+    bad: "Escalating per-seat SaaS costs that punish your team's growth.",
   },
   {
-    icon: "🚫",
-    bad: "Losing customers due to slow feature delivery and buggy releases",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    ),
+    bad: "Buggy releases caused by inconsistent and unreliable pipelines.",
   },
   {
-    icon: "🚫",
-    bad: "Missing deadlines because your deployment pipeline is unreliable",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+    ),
+    bad: "Missing critical deadlines due to 'maintenance-heavy' DevOps workflows.",
   },
 ];
 
 const whys = [
   {
-    label: "The Friction",
-    icon: "⚡",
-    color: "#f97316",
-    desc: "CI/CD tools that promise simplicity but deliver complexity. Deployments that feel like gambling. Your team deserves better.",
+    label: "Eliminate Friction",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+    ),
+    color: "var(--color-primary)",
+    glow: "rgba(255, 65, 114, 0.4)",
+    desc: "CI/CD tools often promise simplicity but deliver hidden complexity. BuildNinja removes the abstraction layers, giving you raw speed without the YAML headaches.",
   },
   {
-    label: "The Flow",
-    icon: "🎯",
-    color: "#ff4172",
-    desc: "Our rule: if a new engineer can't understand it in 5 minutes, it's too complex. We use BuildNinja to deploy BuildNinja itself.",
+    label: "Optimized Flow",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+      </svg>
+    ),
+    color: "#40a9ff",
+    glow: "rgba(64, 169, 255, 0.4)",
+    desc: "Our philosophy: if a new engineer can't understand the pipeline in 5 minutes, it's failed. Built by the team at GrapeCity with 25+ years of software delivery expertise.",
   },
   {
-    label: "The Velocity",
-    icon: "🚀",
-    color: "#22c55e",
-    desc: "Ship features confidently, multiple times daily. No YAML headaches. No DevOps PhD required. Just reliable deployments.",
+    label: "Scale Confidently",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.71-2.12.71-2.12s-1.12-1-2.29-1c-1.17 0-1.42.12-1.42.12z"/><path d="M22 2s-5.74 3.74-7.25 5.25c-1.51 1.51-1.51 3.5 0 5s3.49 1.51 5 0C21.26 10.74 25 5 25 5s-1-1.12-3-3z"/><path d="M13 13L9 17"/><path d="M11 11l-4 4"/></svg>
+    ),
+    color: "#62de56",
+    glow: "rgba(98, 222, 86, 0.4)",
+    desc: "Ship features multiple times daily on your own hardware. No DevOps PhD required. Just reliable builds and deployments that work every single time.",
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] }
+  },
+};
+
 export default function SocialProof() {
   return (
-    <section style={{
-      background: "#08080b",
-      padding: "100px 24px",
-      fontFamily: "'DM Sans', sans-serif",
-    }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        {/* Pain points */}
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 6,
-            background: "rgba(249,115,22,0.08)",
-            border: "1px solid rgba(249,115,22,0.2)",
-            borderRadius: 100, padding: "4px 14px",
-            fontSize: 12, fontWeight: 600, color: "#f97316",
-            letterSpacing: "0.06em", textTransform: "uppercase",
-            marginBottom: 20,
-          }}>The Problem</div>
-          <h2 style={{
-            fontSize: "clamp(26px, 4vw, 42px)",
-            fontWeight: 800, color: "#f0f0f2",
-            letterSpacing: -1.5, margin: "0 0 14px", lineHeight: 1.1,
-          }}>
-            Don't Let Your CI/CD Tool Become<br />
-            <span style={{ color: "#f97316" }}>Your Biggest Bottleneck</span>
+    <section className={styles.section}>
+      <div className={styles.bgGlow} aria-hidden="true" />
+      
+      <div className={styles.container}>
+        {/* ── Problem Section ── */}
+        <motion.div 
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className={`${styles.badge} ${styles.problemBadge}`}>DevOps Bottlenecks</div>
+          <h2 className={styles.title}>
+            Stop Fighting Your <span>CI/CD Tools</span>
           </h2>
-        </div>
-
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 12, marginBottom: 80,
-        }}>
-          {pillars.map((p, i) => (
-            <div key={i} style={{
-              display: "flex", alignItems: "flex-start", gap: 12,
-              background: "rgba(249,115,22,0.04)",
-              border: "1px solid rgba(249,115,22,0.09)",
-              borderRadius: 10, padding: "14px 16px",
-            }}>
-              <span style={{ fontSize: 15, marginTop: 1, flexShrink: 0 }}>⚠️</span>
-              <span style={{ fontSize: 13.5, color: "rgba(200,200,215,0.65)", lineHeight: 1.55 }}>{p.bad}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Story section */}
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 style={{
-            fontSize: "clamp(26px, 4vw, 42px)",
-            fontWeight: 800, color: "#f0f0f2",
-            letterSpacing: -1.5, margin: "0 0 14px", lineHeight: 1.1,
-          }}>Built by Engineers Who Use Their Own Tools</h2>
-          <p style={{ fontSize: 15, color: "rgba(180,180,195,0.55)", maxWidth: 500, margin: "0 auto" }}>
-            Built by the GrapeCity India team with 25+ years of enterprise deployment experience.
+          <p className={styles.subtitle}>
+            Modern software teams lose thousands of hours to brittle pipelines and complex infrastructure management.
           </p>
-        </div>
+        </motion.div>
 
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 18, marginBottom: 80,
-        }}>
-          {whys.map((w) => (
-            <div key={w.label} style={{
-              background: "rgba(255,255,255,0.025)",
-              border: "1px solid rgba(255,255,255,0.07)",
-              borderRadius: 14,
-              padding: "28px 24px",
-              transition: "all 0.2s",
-            }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = `${w.color}44`;
-                e.currentTarget.style.background = `${w.color}08`;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
-                e.currentTarget.style.background = "rgba(255,255,255,0.025)";
-              }}
-            >
-              <div style={{ fontSize: 26, marginBottom: 14 }}>{w.icon}</div>
-              <h3 style={{ fontSize: 16, fontWeight: 700, color: w.color, margin: "0 0 10px" }}>{w.label}</h3>
-              <p style={{ fontSize: 14, color: "rgba(180,180,195,0.58)", lineHeight: 1.65, margin: 0 }}>{w.desc}</p>
-            </div>
+        <motion.div 
+          className={styles.problemGrid}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {pillars.map((p, i) => (
+            <motion.div key={i} className={styles.problemItem} variants={itemVariants}>
+              <div className={styles.problemIcon}>{p.icon}</div>
+              <div className={styles.problemText}>{p.bad}</div>
+            </motion.div>
           ))}
+        </motion.div>
+
+        {/* ── Solution Section ── */}
+        <div className={styles.storySection}>
+          <motion.div 
+            className={styles.header}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className={`${styles.badge} ${styles.trustBadge}`}>Why BuildNinja</div>
+            <h2 className={styles.title}>Built for High-Velocity Teams</h2>
+            <p className={styles.subtitle}>
+              Infrastructure that thinks like an engineer, so you can focus on building what matters.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className={styles.whyGrid}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {whys.map((w, i) => (
+              <motion.div 
+                key={w.label} 
+                className={styles.whyCard} 
+                variants={itemVariants}
+                style={{ "--glow-color": w.glow }}
+              >
+                <div className={styles.cardGlow} />
+                <div className={styles.whyIcon}>{w.icon}</div>
+                <h3 className={styles.whyLabel} style={{ color: w.color }}>{w.label}</h3>
+                <p className={styles.whyDesc}>{w.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
 
-        {/* Trust stats */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 2,
-          background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(255,255,255,0.06)",
-          borderRadius: 14,
-          overflow: "hidden",
-        }}>
+        {/* ── Stats Strip ── */}
+        <motion.div 
+          className={styles.statsStrip}
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           {[
-            { value: "Free", label: "Up to 3 Agents", icon: "🆓" },
-            { value: "5 min", label: "Setup Time", icon: "⚡" },
-            { value: "$199/mo", label: "Unlimited Scale", icon: "💸" },
-            { value: "Self-Hosted", label: "Your Control", icon: "🔒" },
+            { value: "Free", label: "Up to 3 Agents" },
+            { value: "< 5m", label: "Setup Time" },
+            { value: "$199/mo", label: "Unlimited Scale" },
+            { value: "Self-Hosted", label: "Full Control" },
           ].map((stat, i) => (
-            <div key={i} style={{
-              padding: "28px 20px", textAlign: "center",
-              borderRight: i < 3 ? "1px solid rgba(255,255,255,0.05)" : "none",
-            }}>
-              <div style={{ fontSize: 22, marginBottom: 8 }}>{stat.icon}</div>
-              <div style={{
-                fontSize: "clamp(20px, 2.5vw, 28px)", fontWeight: 800,
-                color: "#fff", letterSpacing: -1, marginBottom: 6,
-                fontFamily: "'DM Sans', sans-serif",
-              }}>{stat.value}</div>
-              <div style={{ fontSize: 12.5, color: "rgba(180,180,195,0.5)" }}>{stat.label}</div>
+            <div key={i} className={styles.statItem}>
+              <div className={styles.statValue}>{stat.value}</div>
+              <div className={styles.statLabel}>{stat.label}</div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -68,6 +68,7 @@ DESIGN TOKENS
   /* Shadows */
   --shadow-shell: 0 32px 80px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-cta: 0 4px 24px var(--color-primary-glow);
+  --shadow-xl: 0 40px 100px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
 
   /* Demo shell dimensions */
   --shell-width: 1100px;
@@ -104,6 +105,7 @@ DESIGN TOKENS
 
   /* Shadows */
   --shadow-shell: 0 32px 80px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.08), 0 10px 24px rgba(0, 0, 0, 0.04);
 
   /* Adjust glow/accent variables for light bg if necessary */
   --color-primary-subtle: rgba(255, 65, 114, 0.05);

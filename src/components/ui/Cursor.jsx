@@ -11,8 +11,27 @@ export default function Cursor() {
   const rafRef = useRef(null);
 
   useEffect(() => {
+    const grow = () => {
+      if (ringRef.current) {
+        ringRef.current.style.transform = 'translate(-50%, -50%) scale(1.7)';
+        ringRef.current.style.background = 'var(--color-primary-subtle)';
+      }
+    };
+
+    const shrink = () => {
+      if (ringRef.current) {
+        ringRef.current.style.transform = 'translate(-50%, -50%) scale(1)';
+        ringRef.current.style.background = 'transparent';
+      }
+    };
+
     const onMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY };
+      
+      const target = e.target;
+      const isHoverable = target.closest('a, button, [data-cursor-grow]');
+      if (isHoverable) grow();
+      else shrink();
     };
 
     window.addEventListener('mousemove', onMove);
@@ -35,30 +54,6 @@ export default function Cursor() {
     };
 
     rafRef.current = requestAnimationFrame(animate);
-
-    const grow = () => {
-      if (ringRef.current) {
-        ringRef.current.style.transform =
-          'translate(-50%, -50%) scale(1.7)';
-        ringRef.current.style.background =
-          'var(--color-primary-subtle)';
-      }
-    };
-
-    const shrink = () => {
-      if (ringRef.current) {
-        ringRef.current.style.transform =
-          'translate(-50%, -50%) scale(1)';
-        ringRef.current.style.background = 'transparent';
-      }
-    };
-
-    document
-      .querySelectorAll('a, button, [data-cursor-grow]')
-      .forEach((el) => {
-        el.addEventListener('mouseenter', grow);
-        el.addEventListener('mouseleave', shrink);
-      });
 
     return () => {
       window.removeEventListener('mousemove', onMove);

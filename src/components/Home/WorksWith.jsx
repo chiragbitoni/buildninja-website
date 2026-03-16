@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import styles from "./WorksWith.module.css";
 
 const Icons = {
@@ -87,28 +89,62 @@ const tools = [
   "VSTest"
 ];
 
-// Combine two copies array for infinite scrolling effect
+// Combine copies for infinite scrolling effect
 const scrollItems = [...tools, ...tools, ...tools];
 
 export default function WorksWith() {
   return (
-    <div className={styles.WorksWithSection}>
-      <p className={styles.label}>Works seamlessly with your stack</p>
-      <div className={styles.mask}>
-        <div className={styles.scroller}>
-          {scrollItems.map((tool, i) => {
-            const IconComponent = Icons[tool];
-            return (
-              <div key={`${tool}-${i}`} className={styles.logoChip}>
-                {IconComponent && (
-                  <div className={styles.logoIcon}>
-                    <IconComponent />
-                  </div>
-                )}
-                {tool}
-              </div>
-            );
-          })}
+    <div className={styles.section}>
+      <div className={styles.container}>
+        <motion.p 
+          className={styles.label}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Integrates With Your Tech Stack
+        </motion.p>
+        
+        <div className={styles.carouselMask}>
+          <motion.div 
+            className={styles.scroller}
+            animate={{
+              x: [0, "-50%"],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 25,
+                ease: "linear",
+              },
+            }}
+          >
+            {scrollItems.map((tool, i) => {
+              const IconComponent = Icons[tool];
+              return (
+                <motion.div 
+                  key={`${tool}-${i}`} 
+                  className={styles.logoChip}
+                  whileHover={{ 
+                    y: -5, 
+                    scale: 1.02,
+                    borderColor: "var(--color-primary-border)",
+                    backgroundColor: "var(--color-bg-surface-hover)" 
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  {IconComponent && (
+                    <div className={styles.logoIcon}>
+                      <IconComponent />
+                    </div>
+                  )}
+                  <span>{tool}</span>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </div>
     </div>

@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════
+   HowItWorks.module.css — Modern & Theme-aware
+   Uses CSS variables for seamless theme switching
+   ═══════════════════════════════════════════ */
+
+.section {
+  padding: 120px 24px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+/* Decorative background elements */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--color-primary-border));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInDown 0.6s ease-out both;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  font-family: var(--font-display);
+  animation: fadeInUp 0.7s ease-out 0.1s both;
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 450;
+  animation: fadeInUp 0.7s ease-out 0.2s both;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.stepWrapper {
+  position: relative;
+  height: 100%;
+}
+
+/* Glassmorphic Step Card */
+.stepCard {
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stepCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary-border);
+  background: var(--color-bg-surface-hover);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px var(--color-primary-subtle);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary-subtle);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.stepCard:hover .iconWrapper {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.stepLabel {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-text-faint);
+  letter-spacing: 0.15em;
+  font-family: var(--font-mono);
+}
+
+.stepTitle {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+}
+
+.codeBlock {
+  background: #000;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-success);
+  letter-spacing: 0.05em;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.codeBlock::before {
+  content: '$';
+  color: var(--color-text-muted);
+  font-weight: bold;
+}
+
+.desc {
+  font-size: 14.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Glow Effect ─────────────────────────── */
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--color-primary-glow);
+  filter: blur(120px);
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Step connectors (hidden on mobile) */
+.grid::after {
+  content: '';
+  position: absolute;
+  top: 56px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, 
+    transparent, 
+    var(--color-border-strong) 20%, 
+    var(--color-border-strong) 80%, 
+    transparent
+  );
+  z-index: 1;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 80px 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    margin-bottom: 48px;
+    text-align: left;
+  }
+  .subtitle {
+    margin: 0;
+  }
+}
