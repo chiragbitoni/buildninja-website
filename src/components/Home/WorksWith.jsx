@@ -103,7 +103,7 @@ export default function WorksWith() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Integrates With Your Tech Stack
+          Integrates With Your Tech Stack Seamlessly
         </motion.p>
         
         <div className={styles.carouselMask}>
@@ -116,7 +116,7 @@ export default function WorksWith() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 25,
+                duration: 40,
                 ease: "linear",
               },
             }}
