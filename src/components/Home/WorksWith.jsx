@@ -130,8 +130,6 @@ export default function WorksWith() {
                   whileHover={{
                     y: -5,
                     scale: 1.02,
-                    borderColor: "var(--color-primary-border)",
-                    backgroundColor: "var(--color-bg-surface-hover)"
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
