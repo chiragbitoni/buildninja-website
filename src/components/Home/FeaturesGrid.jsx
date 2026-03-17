@@ -118,8 +118,6 @@ export default function FeaturesGrid() {
               variants={cardVariants}
               whileHover={{ 
                 y: -10, 
-                backgroundColor: "var(--color-bg-surface-hover)",
-                borderColor: "var(--color-primary-border)"
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
