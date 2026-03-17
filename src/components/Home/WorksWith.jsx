@@ -96,7 +96,7 @@ export default function WorksWith() {
   return (
     <div className={styles.section}>
       <div className={styles.container}>
-        <motion.p 
+        <motion.p
           className={styles.label}
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,9 +105,9 @@ export default function WorksWith() {
         >
           Integrates With Your Tech Stack Seamlessly
         </motion.p>
-        
+
         <div className={styles.carouselMask}>
-          <motion.div 
+          <motion.div
             className={styles.scroller}
             animate={{
               x: [0, "-50%"],
@@ -124,14 +124,14 @@ export default function WorksWith() {
             {scrollItems.map((tool, i) => {
               const IconComponent = Icons[tool];
               return (
-                <motion.div 
-                  key={`${tool}-${i}`} 
+                <motion.div
+                  key={`${tool}-${i}`}
                   className={styles.logoChip}
-                  whileHover={{ 
-                    y: -5, 
+                  whileHover={{
+                    y: -5,
                     scale: 1.02,
                     borderColor: "var(--color-primary-border)",
-                    backgroundColor: "var(--color-bg-surface-hover)" 
+                    backgroundColor: "var(--color-bg-surface-hover)"
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
