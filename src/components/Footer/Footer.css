@@ -8,9 +8,9 @@
 }
 
 .footerContainer {
-  background-color: #1f1f1f;
-  background: rgba(8,8,16,0.8);
-  color: #cfcfcf;
+  background-color: var(--color-bg);
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
   padding: 6vw 4vw;
   /* tighter mobile padding */
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -55,7 +55,8 @@
 
 .footerGCLogo {
   margin-top: 10px;
-  width: 60%
+  width: 60%;
+  filter: var(--icon-filter);
 }
 
 .footerGCSocial {
@@ -69,23 +70,25 @@
   cursor: pointer;
   width: auto;
   height: auto;
+  filter: var(--icon-filter);
 }
 
 .footerBuildNinjaLogo {
   width: auto;
   height: auto;
+  filter: var(--icon-filter);
 }
 
 /* Name + desc in one block for small screens */
 .footerTitle {
-  color: #ffffff;
+  color: var(--color-text);
   font-size: 18px;
   font-weight: 600;
   margin: 0;
 }
 
 .footerDesc {
-  color: #bdbdbd;
+  color: var(--color-text-secondary);
   font-size: 13px;
   margin: 0.2rem 0 0;
   max-width: 100%;
@@ -96,7 +99,7 @@
 /* copyright smaller and muted */
 .footerCopy {
   margin-top: 0.8rem;
-  color: #8e8e8e;
+  color: var(--color-text-muted);
   font-size: 12px;
 }
 
@@ -118,7 +121,7 @@
 
 .footerHeading {
   font-size: 15px;
-  color: #ffffff;
+  color: var(--color-text);
   font-weight: 600;
   margin: 0 0 0.3rem 0;
 }
@@ -134,7 +137,7 @@
 }
 
 .footerLink {
-  color: #cfcfcf;
+  color: var(--color-text-secondary);
   text-decoration: none;
   font-size: 14px;
   display: inline-block;
@@ -145,7 +148,7 @@
 /* subtle hover focus styles */
 .footerLink:hover,
 .footerLink:focus {
-  color: #ffffff;
+  color: var(--color-primary);
   transform: translateX(2px);
   outline: none;
 }

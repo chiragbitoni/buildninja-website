@@ -46,7 +46,7 @@ export default function Navbar() {
     if (isHover) return "/resources/BuildNinjaPink.png";
     return resolvedTheme === "dark" 
       ? "/resources/BuildNinjaDark.png" 
-      : "/resources/BuildNinja.png";
+      : "/resources/BuildNinjaLight.png";
   };
 
   const handleNavigation = (path) => {

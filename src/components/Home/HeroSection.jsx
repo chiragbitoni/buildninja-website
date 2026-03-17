@@ -48,15 +48,12 @@ export default function HeroSection() {
         </div>
 
         <h1 className={styles.heading}>
-          Self-Hosted CI/CD That
-          <span className={styles.headingGradient}> Thinks </span>
-          before it builds
+          Stop Fighting Your
+          <span className={styles.headingGradient}> CI/CD Tool. </span>
         </h1>
 
         <p className={styles.subtext}>
-          Self-hosted. No per-seat tax. AI-powered build optimization, predictive test selection, and conversational pipeline setup — all in one platform.
-          {/* Self-hosted CI/CD built for teams who are done wrestling with Jenkins plugins, cryptic failures, and 3am debugging sessions.<br /> */}
-          {/* Start free up to 3 agents · $199/month unlimited · Deploy in minutes. */}
+          Self-hosted CI/CD that just works — out of the box. Deploy in minutes. Ship features, not infrastructure. AI-powered build optimization, predictive test selection, and conversational pipeline setup — all in one platform. No per-seat tax.
         </p>
 
         <div className={styles.ctas}>
