@@ -33,8 +33,8 @@ const Ic = {
   Folder: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 12, height: 12 }}><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" /></svg>,
   File: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 10, height: 10 }}><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm0 2l4 4h-4V4z" /></svg>,
   Star: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>,
-  Warn: () => <svg fill="#faad14" viewBox="0 0 24 24" style={{ width: 16, height: 16 }}><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" /></svg>,
-  Info: () => <svg fill="#40a9ff" viewBox="0 0 24 24" style={{ width: 16, height: 16 }}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>,
+  Warn: () => <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M13.129851,1.593104H2.870149c-1.031222,0-1.870149.843806-1.870149,1.880768v6.46602c0,1.036676.838927,1.880481,1.870149,1.880481h4.541914v1.410935h-1.976916c-.324607,0-.587794.2629-.587794.587794s.263187.587794.587794.587794h5.129994c.324894,0,.587794-.2629.587794-.587794s-.2629-.587794-.587794-.587794h-1.97749v-1.410935h4.542201c1.030935,0,1.870149-.843806,1.870149-1.880481V3.473872c0-1.036963-.839214-1.880768-1.870149-1.880768ZM13.824412,9.939892c0,.38861-.311692.704893-.694561.704893H2.870149c-.38287,0-.694561-.316284-.694561-.704893V3.473872c0-.388897.311692-.705181.694561-.705181h10.259702c.38287,0,.694561.316284.694561.705181v6.46602Z"></path></svg>,
+  Info: () => <svg viewBox="64 64 896 896" focusable="false" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path></svg>,
   Sync: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" /></svg>,
 };
 
@@ -49,12 +49,12 @@ const BnLogo = () => {
 
   return (
     <div style={{ padding: 2 }}>
-      <Image 
-        src={src} 
-        width={24} 
-        height={24} 
-        alt="BuildNinja Logo" 
-        style={{ objectFit: 'contain' }} 
+      <Image
+        src={src}
+        width={24}
+        height={24}
+        alt="BuildNinja Logo"
+        style={{ objectFit: 'contain' }}
       />
     </div>
   );
@@ -413,20 +413,20 @@ function Queue() {
       </div>
       <div className={s.queueCards}>
         <div className={s.queueCard}>
-          <div className={s.qcIcon} style={{ color: '#40a9ff' }}><Ic.Info /></div>
+          <div className={s.qcIcon} style={{ background: 'var(--color-info-bg)', color: 'var(--color-info)' }}><Ic.Info /></div>
           <div><div className={s.qcNum}>0</div><div className={s.qcLabel}>Ready To Run</div></div>
         </div>
         <div className={s.queueCard}>
-          <div className={s.qcIcon} style={{ color: '#faad14' }}><Ic.Warn /></div>
+          <div className={s.qcIcon} style={{ background: 'var(--color-warning-bg)', color: 'var(--color-warning)' }}><Ic.Warn /></div>
           <div><div className={s.qcNum}>0</div><div className={s.qcLabel}>Waiting for Agents</div>
             <span className={s.qcBadge}>0</span></div>
         </div>
         <div className={s.queueCard}>
-          <div className={s.qcIcon} style={{ color: '#ff7276' }}><Ic.Warn /></div>
+          <div className={s.qcIcon} style={{ background: 'var(--color-error-bg)', color: 'var(--color-error)' }}><Ic.Warn /></div>
           <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Agent Issues</div></div>
         </div>
         <div className={s.queueCard}>
-          <div className={s.qcIcon} style={{ color: '#40a9ff' }}><Ic.Info /></div>
+          <div className={s.qcIcon} style={{ background: 'var(--color-info-bg)', color: 'var(--color-info)' }}><Ic.Info /></div>
           <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Total Queue</div></div>
         </div>
       </div>

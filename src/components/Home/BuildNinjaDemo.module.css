@@ -1210,6 +1210,8 @@
 
 .qcIcon {
   flex-shrink: 0;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .qcNum {
