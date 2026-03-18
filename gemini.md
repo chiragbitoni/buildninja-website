@@ -1,5 +1,10 @@
 # Progress Report: Home Page Revamp (Halfway)
 
+## Agent Instructions (Auto-Update Protocol)
+1. **Continuous Documentation**: If a coding decision is made that contradicts previous logic or establishes a new "Best Practice," update the **Learned Rules** section immediately.
+2. **Progress Tracking**: After completing a task or "Next Step," move it from the **Next Steps** list to the **Evolution Log** with a status of ✅.
+3. **Consistency Check**: Before suggesting new code, cross-reference the **Learned Rules** to ensure the suggestion uses CSS Modules, Semantic Colors, and Inline SVGs.
+
 ## Overview
 The Home page has been significantly modernized with a premium, dark-themed aesthetic and interactive animations, distinguishing it from the legacy structure of the other pages (Pricing, FAQ, Support, etc.).
 
