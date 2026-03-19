@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "@/redux/slice/authSlice";
 import { fetchUser } from "@/services/auth/me";
+import { getAuthCookie, setAuthCookie } from "@/lib/cookieAuth";
 
 export default function ClientAuthProvider({ children }) {
     const dispatch = useDispatch();
@@ -15,16 +16,13 @@ export default function ClientAuthProvider({ children }) {
 
                 // check correct backend response shape
                 if (data?.userId) {
-                    const existingUser = localStorage.getItem("bNEmail");
+                    const existingUser = getAuthCookie();
 
                     if (!existingUser && data?.userId && data?.email) {
-                        localStorage.setItem(
-                            "bNEmail",
-                            JSON.stringify({
-                                userId: data.userId,
-                                email: data.email,
-                            })
-                        );
+                        setAuthCookie({
+                            userId: data.userId,
+                            email: data.email,
+                        });
                     }
                     dispatch(
                         loginSuccess({
