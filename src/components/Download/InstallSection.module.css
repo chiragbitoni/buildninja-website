@@ -1,0 +1,253 @@
+.installHero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg);
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50%       { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-primary-border);
+  background: var(--color-primary-subtle);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+.emailCard {
+  background: rgba(var(--bg-rgb), 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-strong);
+  padding: 50px 60px; /* Increased padding */
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 750px; /* Increased from 600px */
+  box-shadow: var(--shadow-xl);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+}
+
+.emailCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-color: var(--color-primary-border);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 18px;
+}
+
+.input {
+  width: 100%;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 18px 18px 52px;
+  color: var(--color-text);
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: var(--color-bg-surface);
+  box-shadow: 0 0 0 3px var(--color-primary-subtle);
+}
+
+.captchaWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  overflow: hidden;
+  height: 80px; /* Default height for normal ReCAPTCHA */
+}
+
+.captchaScale {
+  transform-origin: top center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(var(--bg-rgb), 0.6);
+  clip-path: inset(1px); /* Cuts off the stubborn 1px white border from ReCAPTCHA */
+}
+
+@media (max-width: 420px) {
+  .captchaScale {
+    transform: scale(0.85);
+  }
+  .captchaWrapper {
+    height: 68px;
+  }
+}
+
+@media (max-width: 360px) {
+  .captchaScale {
+    transform: scale(0.75);
+  }
+  .captchaWrapper {
+    height: 60px;
+  }
+}
+
+@media (max-width: 320px) {
+  .captchaScale {
+    transform: scale(0.68);
+  }
+  .captchaWrapper {
+    height: 55px;
+  }
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 18px 32px;
+  font-size: 18px; /* Increased from 16px */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-cta);
+  width: 100%;
+}
+
+.submitBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px var(--color-primary-glow);
+  filter: brightness(1.1);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.benefits {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text-secondary);
+  font-size: 18px; /* Increased for better legibility */
+}
+
+.benefitIcon {
+  color: var(--color-success);
+  font-size: 18px; /* Matching text size */
+}
+
+@media (max-width: 768px) {
+  .installHero {
+    padding: 80px 20px;
+  }
+  .benefits {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .emailCard {
+    padding: 30px 20px;
+  }
+}
