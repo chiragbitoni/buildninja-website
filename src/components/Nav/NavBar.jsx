@@ -51,6 +51,7 @@ export default function Navbar() {
     { name: "Features", path: "/features" },
     // { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
     { name: "Docs", path: "/docs" },
+    { name: "Dojo", path: "/dojo" },
     { name: "Pricing", path: "/pricing" },
     { name: "Install", path: "/install" },
     { name: "Partners", path: "/partners" },
@@ -119,12 +120,7 @@ export default function Navbar() {
 
             ))}
           <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
-          <button 
-            className="navbarStartTrialButton" 
-            onClick={() => window.open("https://gh-userservice-stage.grapehub.io/api/oauth/authorize?client_id=localhost.grapehub18032026103311.io&response_type=code&redirect_uri=https://buildninjadojo.grapehub.io/authredirect&scope=openid%20profile%20email&state=eyJfcmV0dXJuVXJsIjoiLyIsInJlZGlyZWN0UGF0aCI6Imh0dHBzOi8vYnVpbGRuaW5qYWRvam8uZ3JhcGVodWIuaW8vYXV0aHJlZGlyZWN0IiwiY2xpZW50SWQiOiJsb2NhbGhvc3QuZ3JhcGVodWIxODAzMjAyNjEwMzMxMS5pbyJ9", "_blank")}
-          >
-            Try BuildNinja Sandbox
-          </button>
+          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
         </ul>
         <AvatarMenu />
       </div>
