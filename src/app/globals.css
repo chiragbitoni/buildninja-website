@@ -53,9 +53,9 @@ DESIGN TOKENS
   --color-demo-accent-border: rgba(216, 48, 91, 0.35);
 
   /* Typography */
-  --font-display: 'Syne', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-ui: 'DM Sans', system-ui, sans-serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
 
   /* Spacing & Shape */
   --radius-sm: 6px;
@@ -74,7 +74,7 @@ DESIGN TOKENS
   --shell-width: 1100px;
   --shell-height: 580px;
   --shell-aspect: calc(580 / 1100 * 100%);
-  
+
   /* Utilities */
   --icon-filter: none;
 }
@@ -110,7 +110,7 @@ DESIGN TOKENS
   /* Adjust glow/accent variables for light bg if necessary */
   --color-primary-subtle: rgba(255, 65, 114, 0.05);
   --color-primary-border: rgba(255, 65, 114, 0.15);
-  
+
   /* Semantic */
   --color-success: #16a34a;
   --color-success-bg: rgba(22, 163, 74, 0.1);
