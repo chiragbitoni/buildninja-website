@@ -8,7 +8,7 @@
 
 /* ── Login Button ── */
 .amLoginBtn {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: #fff;
   border: 1px solid transparent;
   padding: 7px 20px;
@@ -83,6 +83,7 @@
     opacity: 0;
     transform: translateY(-6px) scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);

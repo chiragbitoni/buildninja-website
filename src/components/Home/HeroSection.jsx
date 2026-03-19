@@ -53,7 +53,7 @@ export default function HeroSection() {
         </h1>
 
         <p className={styles.subtext}>
-          Self-hosted CI/CD that just works — out of the box. Deploy in minutes. Ship features, not infrastructure. AI-powered build optimization, predictive test selection, and conversational pipeline setup — all in one platform. No per-seat tax.
+          Self-hosted CI/CD that just works out of the box. Deploy in minutes. Ship features, not infrastructure. <br />AI-powered build optimization, predictive test selection, and conversational pipeline setup, all in one platform. No per-seat tax.
         </p>
 
         <div className={styles.ctas}>
