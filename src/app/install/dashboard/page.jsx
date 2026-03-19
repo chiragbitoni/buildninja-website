@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Hero from "@/components/Download/Dashboard/Sections/Hero/Hero";
+import InstallDashboard from "@/components/Download/Dashboard/InstallDashboard";
 import { checkAuth } from "@/services/auth/check";
 import { useSelector } from "react-redux";
 
@@ -17,5 +17,5 @@ export default function Dashboard() {
     verify();
   }, []);
 
-  return <Hero />;
+  return <InstallDashboard />;
 }

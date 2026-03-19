@@ -28,6 +28,10 @@ The Home page has been significantly modernized with a premium, dark-themed aest
 | **Interactivity** | Interactive dashboard/demo | Static text and standard buttons |
 | **Code Structure** | Flat, functional component structure | Nested section-based structure |
 
+## Evolution Log
+- ✅ **Install Page Overhaul**: Redesigned with premium glassmorphism, Font Awesome icons, and Framer Motion reveal animations. Migrated from global CSS to CSS Modules and semantic design tokens.
+- ✅ **Cookie-based Auth Migration**: Migrated authentication storage from `localStorage` to structured cookies with 30-day expiry for better cross-session persistence and SSR compatibility.
+
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables.
 2. **Pricing Page Overhaul**: Apply the modular CSS pattern and dark-themed cards to match the Home page's premium feel.
@@ -37,6 +41,7 @@ The Home page has been significantly modernized with a premium, dark-themed aest
 ## Learned Rules 
 1. **Semantic Coloring**: Never use hardcoded colors (like `#303030` or `#fff`) in components. Always use centralized CSS variables (`var(--color-bg-panel)`, `var(--color-text)`, etc.) defined in the `:root` of `globals.css` to ensure a seamless Light and Dark mode experience.
 2. **Component Isolation**: Strictly use CSS Modules (`ModuleName.module.css`) for styling instead of global `.css` files. Avoid using inline CSS unless absolutely necessary for dynamic layout calculations to maintain code cleanliness and prevent style contamination.
-3. **SVG over Imagery**: Use inline SVG components with `currentColor` for scalable, theme-adaptable icons that don't require external network requests.
+3. **SVG over Imagery**: Use Font Awesome (`FontAwesomeIcon`) or inline SVG components with `currentColor` for scalable, theme-adaptable icons that don't require external network requests.
 4. **Premium Micro-interactions**: Utilize smooth transitions, glassmorphism (`rgba` backgrounds with blur), and subtle `box-shadow` properties to elevate standard UI components into premium features.
 5. **Clean Presentation**: Avoid auto-running loops or complex simulated behaviors (e.g. simulated cursors) inside demonstration mockups unless absolutely necessary to reduce visual clutter and improve user focus.
+6. **Centralized Auth Persistence**: Use centralized cookie utilities (`lib/cookieAuth.js`) instead of direct `localStorage` calls to ensure session expiry control and consistent auth state across SSR and client-side transitions.
