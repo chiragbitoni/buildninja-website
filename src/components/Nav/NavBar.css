@@ -106,6 +106,24 @@ ul.navbar-links {
   color: black;
 }
 
+.navbarSandboxButton {
+  border-radius: 999px;
+  color: #FF4172;
+  border: 1px solid #FF4172;
+  background-color: transparent;
+  width: fit-content;
+  padding: 5px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.navbarSandboxButton:hover {
+  background-color: #FF4172;
+  color: #ffffff;
+}
+
 /* ==== Hamburger (hidden on desktop) ==== */
 .hamburger {
   display: none;
