@@ -85,7 +85,7 @@
 .highlightCard {
   background: linear-gradient(135deg, var(--color-bg-surface-hover) 0%, var(--color-bg-panel) 100%);
   border-color: var(--color-primary-border);
-  box-shadow: 0 10px 40px rgba(0,0,0, 0.2), inset 0 0 0 1px var(--color-primary-glow);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--color-primary-glow);
   transform: scale(1.02);
 }
 
@@ -161,7 +161,8 @@
   gap: 12px;
 }
 
-.primaryBtn, .secondaryBtn {
+.primaryBtn,
+.secondaryBtn {
   display: block;
   width: 100%;
   padding: 16px;
@@ -173,9 +174,9 @@
 }
 
 .primaryBtn {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: white;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow-cta);
 }
 
