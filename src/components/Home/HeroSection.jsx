@@ -6,7 +6,7 @@ import styles from "./HeroSection.module.css";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
-
+import { siteConfig } from "@/config/site";
 
 export default function HeroSection() {
   const orb1 = useRef(null);
@@ -44,7 +44,7 @@ export default function HeroSection() {
 
         <div className={styles.heroBadge} onClick={() => { router.push("/install"); }}>
           <span className={styles.badgeDot} />
-          AI Build Intelligence — now in v1.2
+          AI Build Intelligence — now in {siteConfig.version}
         </div>
 
         <h1 className={styles.heading}>

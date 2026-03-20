@@ -141,10 +141,16 @@ GLOBAL RESETS & BASE
   body {
     background-color: var(--color-bg);
     font-family: var(--font-display);
-    cursor: none;
   }
 
   button {
     cursor: pointer;
+  }
+}
+
+/* Hide native cursor ONLY on devices with a mouse/precise pointer */
+@media (pointer: fine) {
+  body {
+    cursor: none;
   }
 }
