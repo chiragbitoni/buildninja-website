@@ -50,10 +50,10 @@
 }
 
 .title {
-  font-size: clamp(32px, 5vw, 52px);
+  font-size: clamp(32px, 5vw, 56px);
   font-weight: 800;
   color: var(--color-text);
-  letter-spacing: -0.03em;
+  letter-spacing: -1.5px;
   margin: 0 0 16px;
   line-height: 1.1;
   font-family: var(--font-display);
@@ -106,7 +106,7 @@
   transform: translateY(-8px);
   border-color: var(--color-primary-border);
   background: var(--color-bg-surface-hover);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px var(--color-primary-subtle);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px var(--color-primary-subtle);
 }
 
 .stepHeader {

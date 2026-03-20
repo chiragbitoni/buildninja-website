@@ -6,8 +6,14 @@ import { useEffect, useRef } from "react";
 import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
+import { HiArrowSmRight } from "react-icons/hi";
+import Image from "next/image";
+import Link from "next/link";
+import { siteConfig } from "@/config/site";
+import { useRouter } from "next/router";
 
 export default function Hero() {
+    const router = useRouter();
 
     const hasStartedRef = useRef(false);
 
@@ -142,9 +148,13 @@ export default function Hero() {
 
                 {/* LEFT CONTENT */}
                 <div className="landingPageHeroLeft">
-                    <span className="landingPageHeroBadge">
-                        BUILDNINJA 1.1.0 NOW AVAILABLE
-                    </span>
+                    <div className="w-[100%] absolute top-[-90px] xl:top-[-110px]">
+                        <div className="inline-block p-1 bg-[#1a1a2e] text-[#d6b4fc] text-xs font-semibold rounded-full border border-[rgba(255,255,255,0.05)] shadow-[0_0_15px_rgba(255,100,50,0.4)] mb-2 mt-4 transition-transform duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(255,100,50,0.6)] animate-fade-in-up hover:cursor-pointer mx-auto text-center"
+                            onClick={() => { router.push("/install"); }}
+                        >
+                            BUILDNINJA {siteConfig.version.toUpperCase()} NOW AVAILABLE
+                        </div>
+                    </div>
 
                     <h2 className="landingPageHeroTitle">
                         Stop Fighting <br />
