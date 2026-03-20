@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { emailSignup } from "@/services/auth/emailSignup";
 import { checkAuth } from '@/services/auth/check';
+import { setAuthCookie } from '@/lib/cookieAuth';
 import posthog from "posthog-js";
 import Image from 'next/image';
 
@@ -55,10 +56,7 @@ export default function Hero() {
                     location: "download_hero",
                 });
 
-                localStorage.setItem(
-                    "bNEmail",
-                    JSON.stringify({ userId, email: userEmail })
-                );
+                setAuthCookie({ userId, email: userEmail });
 
                 router.push("/install/dashboard");
             } else {
