@@ -115,6 +115,29 @@
     background: #ea367d;
 }
 
+.sandboxBtn {
+    padding: 16px 40px;
+    border-radius: 2.2vw;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 2px solid #FF4172;
+    cursor: pointer;
+}
+
+.sandboxBtn:hover {
+    background: #FF4172;
+    color: #FFFFFF;
+}
+
 /* ===============================
    CAROUSEL (Swiper)
 ================================== */

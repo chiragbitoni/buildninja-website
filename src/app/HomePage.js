@@ -8,7 +8,6 @@ import Fifth from "../components/Home/Fifth/Fifth";
 import Sixth from "../components/Home/Sixth/Sixth";
 import Seventh from "../components/Home/Seventh/Seventh";
 import Eighth from "../components/Home/Eighth/Eighth";
-import SandboxCTA from "../components/Home/SandboxCTA/SandboxCTA";
 import Ninth from "../components/Home/Ninth/Ninth";
 
 export default function HomePage() {
@@ -22,7 +21,6 @@ export default function HomePage() {
       <Sixth />
       <Seventh />
       <Eighth />
-      <SandboxCTA />
       <Ninth />
     </div>
   );
