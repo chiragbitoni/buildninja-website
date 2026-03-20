@@ -43,7 +43,7 @@ export default function DojoPage() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
                         className="dojoEnterBtn" 
-                        onClick={() => window.open(sandboxUrl, "_blank")}
+                        onClick={() => window.open(sandboxUrl, "_self")}
                     >
                         Enter BuildNinja Sandbox
                     </motion.button>
@@ -150,7 +150,7 @@ export default function DojoPage() {
                     <motion.button 
                         whileHover={{ scale: 1.1, boxShadow: "0 0 30px #FF4172" }}
                         className="dojoEnterBtn large" 
-                        onClick={() => window.open(sandboxUrl, "_blank")}
+                        onClick={() => window.open(sandboxUrl, "_self")}
                     >
                         Launch Dojo Now
                     </motion.button>
