@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './Cursor.module.css';
 
 export default function Cursor() {
@@ -9,8 +9,15 @@ export default function Cursor() {
   const mouse = useRef({ x: 0, y: 0 });
   const ring = useRef({ x: 0, y: 0 });
   const rafRef = useRef(null);
+  const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
+    // Disable completely on touch devices
+    if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) {
+      setIsTouch(true);
+      return;
+    }
+
     const grow = () => {
       if (ringRef.current) {
         ringRef.current.style.transform = 'translate(-50%, -50%) scale(1.7)';
@@ -60,6 +67,8 @@ export default function Cursor() {
       cancelAnimationFrame(rafRef.current);
     };
   }, []);
+
+  if (isTouch) return null;
 
   return (
     <div className={styles.cursor}>
