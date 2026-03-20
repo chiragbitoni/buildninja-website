@@ -142,7 +142,7 @@ export default function FeatureHighlights() {
           </svg>
         </div>
 
-        <div className={styles.twoColWide} style={{ gridTemplateColumns: '1.6fr 1fr' }}>
+        <div className={styles.twoColReverse}>
           <div className={styles.screenshotWrap}>
             <Image
               src="/resources/build-logs-dark.png"

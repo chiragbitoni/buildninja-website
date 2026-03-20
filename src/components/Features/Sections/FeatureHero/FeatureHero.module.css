@@ -103,6 +103,7 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   display: inline-block;
+  padding-right: 0.1em;
 }
 
 .subtitle {

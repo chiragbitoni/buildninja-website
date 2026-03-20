@@ -192,7 +192,13 @@ export default function FeatureGrid() {
         viewport={{ once: true, amount: 0.05 }}
       >
         {features.map((feature, idx) => (
-          <motion.div key={idx} variants={cardVariants} className={styles.card}>
+          <motion.div 
+            key={idx} 
+            variants={cardVariants} 
+            className={styles.card}
+            whileHover={{ y: -10 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
             <div className={styles.iconBox}>{feature.icon}</div>
             <div>
               <h3 className={styles.cardTitle}>{feature.title}</h3>
