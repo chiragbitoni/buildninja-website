@@ -25,15 +25,6 @@ export default function InstallSection() {
 
     const currentTheme = theme === "system" ? resolvedTheme : theme;
 
-    // If already logged in → redirect to dashboard
-    useEffect(() => {
-        async function verify() {
-            const loggedIn = await checkAuth();
-            if (loggedIn) router.replace("/install/dashboard");
-        }
-        verify();
-    }, [router]);
-
     async function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
