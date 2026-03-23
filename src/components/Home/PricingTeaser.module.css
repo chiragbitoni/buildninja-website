@@ -204,3 +204,49 @@
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
+
+.fullPricingLink {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.compareBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-strong);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.compareBtn:hover {
+  background: var(--color-bg-surface-hover);
+  border-color: var(--color-text-secondary);
+  color: var(--color-text);
+  transform: translateX(5px);
+}
+
+.compareBtn svg {
+  transition: transform 0.3s ease;
+}
+
+.compareBtn:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+  .fullPricingLink {
+    margin-top: 30px;
+  }
+  .compareBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

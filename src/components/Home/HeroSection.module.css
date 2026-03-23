@@ -11,6 +11,15 @@
   padding-bottom: 60px;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    justify-content: flex-start;
+    min-height: auto;
+  }
+}
+
 .orb1 {
   position: absolute;
   top: 8%;
@@ -68,6 +77,12 @@
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .copy {
+    margin-bottom: 32px;
+  }
+}
+
 .heroBadge {
   display: inline-flex;
   align-items: center;
@@ -112,6 +127,14 @@
   animation: var(--anim-fadeSlideDown, fadeSlideDown) 0.65s 0.28s ease forwards;
 }
 
+@media (max-width: 768px) {
+  .heading {
+    width: 100%;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+}
+
 .headingGradient {
   background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt));
   -webkit-background-clip: text;
@@ -136,6 +159,21 @@
   flex-wrap: wrap;
   opacity: 0;
   animation: var(--anim-fadeSlideDown, fadeSlideDown) 0.65s 0.58s ease forwards;
+}
+
+@media (max-width: 480px) {
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 12px;
+  }
+  
+  .ctaPrimary, .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
 }
 
 .ctaPrimary {
@@ -186,6 +224,12 @@
   padding: 0 20px;
   opacity: 0;
   animation: var(--anim-fadeIn, fadeIn) 0.01s 0.6s linear forwards;
+}
+
+@media (max-width: 768px) {
+  .dashWrap {
+    padding: 0 16px;
+  }
 }
 
 .dashBorderBox {
