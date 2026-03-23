@@ -7,7 +7,7 @@ import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
 import { siteConfig } from "@/config/site";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
     const router = useRouter();
