@@ -1,4 +1,4 @@
-# Progress Report: Home Page Revamp (Halfway)
+# Progress Report: Website Revamp (Ongoing)
 
 ## Agent Instructions (Auto-Update Protocol)
 1. **Continuous Documentation**: If a coding decision is made that contradicts previous logic or establishes a new "Best Practice," update the **Learned Rules** section immediately.
@@ -6,37 +6,49 @@
 3. **Consistency Check**: Before suggesting new code, cross-reference the **Learned Rules** to ensure the suggestion uses CSS Modules, Semantic Colors, and Inline SVGs.
 
 ## Overview
-The Home page has been significantly modernized with a premium, dark-themed aesthetic and interactive animations, distinguishing it from the legacy structure of the other pages (Pricing, FAQ, Support, etc.).
+The Home and Feature pages have been significantly modernized with a premium, dark-themed aesthetic and interactive animations, distinguishing them from the legacy structure of the remaining pages (Pricing, FAQ, Support, etc.).
 
 ## Key Changes to Home Page
-- **Modern UI Architecture**: Switched to a component-driven approach using **CSS Modules** (e.g., `HeroSection.module.css`) for localized, maintainable styling, unlike the global CSS files used in legacy pages.
-- **Dynamic Visuals**: 
-    - Introduced `OrbitAnimation` with rotating planetary nodes and radial glows.
-    - Added physics-based motion to decorative orbs using `requestAnimationFrame`.
-    - Implemented an SVG-drawn border effect for the dashboard container.
-- **Interactive Demo Cleanup**: Integrated `BuildNinjaDemo`, visualizing CI/CD pipeline. Removed automated cursor/button cycling to serve as a clean, interactive mock-up rather than a self-running demo.
-- **Theme Switching & Polish**: Implemented global toggle (`next-themes`). Updated dashboard elements (table headers, stats, build pills) with semantic CSS variables so it looks native and premium in both Light and Dark modes.
-- **Integration Strip Redesign**: Redesigned the "WorksWith" component into a sleek, continuously scrolling marquee featuring custom stroke SVGs, glassmorphic hover effects, and full dual-theme support.
-- **Messaging Shift**: Updated the hero copy to emphasize **AI Build Intelligence** and "thinking before building," moving towards a more solution-oriented narrative.
+- **Modern UI Architecture**: Switched to a component-driven approach using **CSS Modules** (e.g., `HeroSection.module.css`) for localized, maintainable styling.
+- **Dynamic Visuals**: Introduced `OrbitAnimation` data streams, physics-based motion, and an SVG-drawn border effect.
+- **Interactive Demo Cleanup**: Integrated `BuildNinjaDemo`, visualizing CI/CD pipeline. Removed automated cursor/button cycling.
+- **Theme Switching & Polish**: Implemented global toggle (`next-themes`). Updated dashboard elements with semantic CSS variables for dark/light modes.
+- **Integration Strip Redesign**: Redesigned the "WorksWith" component into a sleek scrolling marquee.
+- **Messaging Shift**: Updated hero copy to emphasize **AI Build Intelligence**.
+
+## Key Changes to Feature Page
+- **Stitch-Inspired Architecture**: Implemented a bold hero with pink italic accents and dynamic version badges (`siteConfig`).
+- **Bento Grid Consolidation**: Grouped 19 disparate features into 9 logical blocks for better scannability, retaining classic floating pop-hover physics.
+- **Visual Evidence**: Integrated real screenshots of the BuildNinja dashboard, log views, and agent management.
+- **Monospace Micro-copy**: Used monospace fonts for technical tags and terminal snippets.
+
 ## Comparison with Other Pages
-| Feature | Home Page (New) | Other Pages (Legacy) |
+| Feature | Modernized (Home/Features) | Legacy Pages |
 | :--- | :--- | :--- |
 | **Styling** | CSS Modules (Localized) | Global/External CSS (`Hero.css`) |
 | **Animations** | High-fidelity JS & CSS animations | Minimal or static transitions |
 | **Theme** | Fully dynamic (Dark/Light) | Primarily Dark-coded |
 | **Layout** | Custom Grid & Flex transitions | Standard block-based layouts |
-| **Interactivity** | Interactive dashboard/demo | Static text and standard buttons |
+| **Interactivity** | Interactive dashboards & video modals | Static text and standard buttons |
 | **Code Structure** | Flat, functional component structure | Nested section-based structure |
+
+## Evolution Log
+- ✅ **Home Page Modernization**: Switched to CSS Modules, added Orbit animations, and interactive CI/CD demo.
+- ✅ **Feature Page Full Redesign**: Rebuilt with bento grid logic, real product screenshots, and consolidated 9-group feature architecture.
+- ✅ **Install Page Overhaul**: Redesigned with premium glassmorphism, Font Awesome icons, and Framer Motion reveal animations.
+- ✅ **Cookie-based Auth Migration**: Migrated authentication storage from `localStorage` to structured cookies with 30-day expiry.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables.
-2. **Pricing Page Overhaul**: Apply the modular CSS pattern and dark-themed cards to match the Home page's premium feel.
+2. **Pricing Page Overhaul**: Apply the modular CSS pattern and dark-themed cards to match the new direction.
 3. **Animated Transitions**: Implement similar "reveal" animations across Support and Partners pages.
-4. **Mobile Optimization**: Ensure the new complex Home page animations are performant and responsive across all devices.
+4. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
 
 ## Learned Rules 
-1. **Semantic Coloring**: Never use hardcoded colors (like `#303030` or `#fff`) in components. Always use centralized CSS variables (`var(--color-bg-panel)`, `var(--color-text)`, etc.) defined in the `:root` of `globals.css` to ensure a seamless Light and Dark mode experience.
-2. **Component Isolation**: Strictly use CSS Modules (`ModuleName.module.css`) for styling instead of global `.css` files. Avoid using inline CSS unless absolutely necessary for dynamic layout calculations to maintain code cleanliness and prevent style contamination.
-3. **SVG over Imagery**: Use inline SVG components with `currentColor` for scalable, theme-adaptable icons that don't require external network requests.
+1. **Semantic Coloring**: Never use hardcoded colors (like `#303030` or `#fff`) in components. Always use centralized CSS variables (`var(--color-bg-panel)`, `var(--color-text)`, etc.) defined in the `:root` of `globals.css`.
+2. **Component Isolation**: Strictly use CSS Modules (`ModuleName.module.css`) for styling instead of global `.css` files. Avoid using inline CSS unless necessary.
+3. **SVG over Imagery**: Use Font Awesome (`FontAwesomeIcon`) or inline SVG components with `currentColor` for scalable icons.
 4. **Premium Micro-interactions**: Utilize smooth transitions, glassmorphism (`rgba` backgrounds with blur), and subtle `box-shadow` properties to elevate standard UI components into premium features.
-5. **Clean Presentation**: Avoid auto-running loops or complex simulated behaviors (e.g. simulated cursors) inside demonstration mockups unless absolutely necessary to reduce visual clutter and improve user focus.
+5. **Clean Presentation**: Avoid auto-running loops or complex simulated behaviors inside demonstration mockups.
+6. **Centralized Auth Persistence**: Use centralized cookie utilities (`lib/cookieAuth.js`) instead of direct `localStorage` calls.
+7. **Bento Logic**: For feature-heavy pages, group related data into cards with varying sizes and hover physics to create visual hierarchy.
