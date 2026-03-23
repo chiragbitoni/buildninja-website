@@ -15,26 +15,29 @@
 }
 
 .badge {
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
-  background: var(--color-primary-subtle);
-  color: var(--color-primary);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-demo-accent-bg);
+  border: 1px solid var(--color-demo-accent-border);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 12px;
   font-weight: 600;
+  color: var(--color-demo-accent);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: 1px solid var(--color-primary-border);
   margin-bottom: 20px;
 }
 
 .title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: var(--font-display), 'Inter', system-ui, sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
   color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+  margin: 0 0 16px;
+  line-height: 1.1;
 }
 
 .gradient {
@@ -68,7 +71,7 @@
 .card {
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -78,7 +81,7 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 15px var(--color-primary-subtle);
   border-color: var(--color-border-strong);
 }
 
@@ -92,6 +95,7 @@
 .highlightCard:hover {
   border-color: var(--color-primary);
   transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), inset 0 0 0 1px var(--color-primary), 0 0 24px var(--color-primary-subtle);
 }
 
 .cardHeader {

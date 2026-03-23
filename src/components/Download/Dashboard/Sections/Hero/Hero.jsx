@@ -8,6 +8,7 @@ import posthog from "posthog-js";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
+import { getAuthCookie } from "@/lib/cookieAuth";
 export default function Hero() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -23,16 +24,9 @@ export default function Hero() {
     });
   };
   useEffect(() => {
-    const stored = localStorage.getItem("bNEmail");
-
-    if (stored) {
-      try {
-        const { userId, email } = JSON.parse(stored);
-
-        if (userId) {
-          posthog.identify(userId, { email });
-        }
-      } catch { }
+    const user = getAuthCookie();
+    if (user?.userId) {
+      posthog.identify(user.userId, { email: user.email });
     }
   }, []);
 

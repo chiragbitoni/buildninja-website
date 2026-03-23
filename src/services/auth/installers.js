@@ -1,3 +1,5 @@
+import { getAuthCookie } from "@/lib/cookieAuth";
+
 export async function fetchInstallers() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/list`, {
     method: "GET",
@@ -13,11 +15,9 @@ export async function fetchInstallers() {
 // Download file endpoint
 export async function downloadInstaller(fileName) {
   try {
-    // Read user data from localStorage
-    const saved = localStorage.getItem("bNEmail");
-    if (!saved) throw new Error("User not found in localStorage");
-
-    const user = JSON.parse(saved); // { userId, email }
+    // Read user data from cookie
+    const user = getAuthCookie();
+    if (!user) throw new Error("User not found in cookie");
 
     // Build full URL using env variable
     const url = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/download/${fileName}`;
