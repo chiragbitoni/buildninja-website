@@ -94,6 +94,22 @@ export default function PricingTeaser() {
             </motion.div>
           ))}
         </div>
+        
+        <motion.div 
+          className={styles.fullPricingLink}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          <Link href="/pricing" className={styles.compareBtn}>
+            Compare All Plans & Features
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

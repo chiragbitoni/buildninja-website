@@ -213,13 +213,19 @@
     transparent
   );
   z-index: 1;
-  display: block;
+}
+
+@media (max-width: 1024px) {
+  .grid::after {
+    display: none;
+  }
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
   }
   .grid::after {
     display: none;
@@ -232,6 +238,7 @@
   }
   .grid {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
   .header {
     margin-bottom: 48px;
@@ -239,5 +246,6 @@
   }
   .subtitle {
     margin: 0;
+    max-width: 100%;
   }
 }
