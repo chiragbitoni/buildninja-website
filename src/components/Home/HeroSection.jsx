@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import BuildNinjaDemo from "./BuildNinjaDemo";
-import OrbitAnimation from "./OrbitAnimation";
+import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./HeroSection.module.css";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
@@ -27,7 +27,7 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero}>
-      <OrbitAnimation />
+      <NetworkBackground />
 
       {/* Gradient orbs */}
       <div ref={orb1} className={styles.orb1} />

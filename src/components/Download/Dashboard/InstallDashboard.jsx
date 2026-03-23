@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { getAuthCookie } from "@/lib/cookieAuth";
 import { motion } from "framer-motion";
-import OrbitAnimation from "@/components/Home/OrbitAnimation";
+import NetworkBackground from "@/components/ui/NetworkBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faWindows, 
@@ -113,7 +113,7 @@ export default function InstallDashboard() {
   return (
     <section className={styles.dashboard}>
       <div className={styles.grid} />
-      <OrbitAnimation />
+      <NetworkBackground />
       
       <motion.div 
         className={styles.container}
