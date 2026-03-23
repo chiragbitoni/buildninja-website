@@ -6,9 +6,6 @@ import { useEffect, useRef } from "react";
 import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
-import { HiArrowSmRight } from "react-icons/hi";
-import Image from "next/image";
-import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { useRouter } from "next/router";
 
