@@ -54,48 +54,71 @@
 }
 
 .card {
-  background: rgba(var(--bg-rgb), 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-border-medium);
   border-radius: var(--radius-xl);
-  padding: 32px;
+  padding: 40px 28px;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .card:hover {
   border-color: var(--color-primary-border);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px -20px rgba(0,0,0,0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .iconWrap {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   flex-shrink: 0;
-  border-radius: var(--radius-lg);
-  background: var(--color-primary-subtle);
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--color-primary-subtle), rgba(var(--bg-rgb), 0.6));
   border: 1px solid var(--color-primary-border);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 8px 24px -10px rgba(0,0,0,0.5);
 }
 
 .icon {
   width: 28px;
   height: 28px;
+  filter: drop-shadow(0 0 8px var(--color-primary-glow));
 }
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--color-text);
-  margin: 0 0 6px;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .cardDesc {

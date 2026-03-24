@@ -11,41 +11,42 @@
   font-family: var(--font-display);
 }
 
-/* Ambient glow layers */
-.section::before {
-  content: '';
+.orb1 {
   position: absolute;
-  top: -160px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(ellipse at center, rgba(255, 65, 114, 0.14) 0%, transparent 70%);
+  top: 8%;
+  left: 12%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 65, 114, 0.15) 0%, transparent 70%);
+  filter: blur(50px);
   pointer-events: none;
   z-index: 0;
 }
 
-.section::after {
-  content: '';
+.orb2 {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-primary-border), transparent);
+  bottom: 8%;
+  right: 10%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 97, 53, 0.12) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Grid noise overlay */
-.gridNoise {
+.grid {
   position: absolute;
   inset: 0;
   background-image:
     linear-gradient(var(--color-border-subtle) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 52px 52px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .inner {
