@@ -1,26 +1,24 @@
 "use client";
-import Hero from "../../components/Pricing/Sections/Hero/Hero";
-// import Second from "../components/Pricing/Sections/Second/Second";
-import Third from "../../components/Pricing/Sections/Third/Third";
-import Table from "../../components/Pricing/Sections/Table/Table";
-import Fourth from "../../components/Pricing/Sections/Fourth/Fourth";
-import Fifth from "../../components/Pricing/Sections/Fifth/Fifth";
-import Sixth from "../../components/Pricing/Sections/Sixth/Sixth";
-import Seventh from "../../components/Pricing/Sections/Seventh/Seventh";
-import Eighth from "../../components/Pricing/Sections/Eighth/Eighth";
+import PricingHero from "../../components/Pricing/Sections/PricingHero/PricingHero";
+import PricingPhilosophy from "../../components/Pricing/Sections/PricingPhilosophy/PricingPhilosophy";
+import PricingTable from "../../components/Pricing/Sections/PricingTable/PricingTable";
+import PricingValueProp from "../../components/Pricing/Sections/PricingValueProp/PricingValueProp";
+import PricingCoreFeatures from "../../components/Pricing/Sections/PricingCoreFeatures/PricingCoreFeatures";
+import PricingDetailedSpecs from "../../components/Pricing/Sections/PricingDetailedSpecs/PricingDetailedSpecs";
+import PricingFaq from "../../components/Pricing/Sections/PricingFaq/PricingFaq";
+import PricingCta from "../../components/Pricing/Sections/PricingCta/PricingCta";
 
 export default function PricingPage() {
   return (
     <div>
-      <Hero />
-      {/* <Second /> */}
-      <Third />
-      <Table />
-      <Fourth />
-      <Fifth />
-      <Sixth />
-      <Seventh />
-      <Eighth />
+      <PricingHero />
+      <PricingPhilosophy />
+      <PricingTable />
+      <PricingValueProp />
+      <PricingCoreFeatures />
+      <PricingDetailedSpecs />
+      <PricingFaq />
+      <PricingCta />
     </div>
   );
 }

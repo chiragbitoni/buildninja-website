@@ -1,0 +1,162 @@
+.section {
+  background: var(--color-bg);
+  padding: 80px 24px;
+  font-family: var(--font-display);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  font-family: var(--font-accent);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.35);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  font-size: 0.9rem;
+  background: var(--color-bg-panel);
+}
+
+/* Header row */
+.table thead tr {
+  background: var(--color-bg-surface);
+}
+
+.table th {
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-accent);
+}
+
+/* Shogun header gets accent highlight */
+.thShogun {
+  color: var(--color-primary) !important;
+  background: var(--color-primary-subtle);
+}
+
+.table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+/* Feature column (first col) */
+.table td:first-child {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* Shogun column */
+.table td:nth-child(2) {
+  background: rgba(255, 65, 114, 0.02);
+}
+
+.table tr:hover td {
+  background: var(--color-bg-surface-hover);
+}
+
+.table tr:hover td:nth-child(2) {
+  background: rgba(255, 65, 114, 0.04);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table td small {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 3px;
+}
+
+.greenText {
+  color: var(--color-success);
+  font-weight: 600;
+  font-size: 0.82rem;
+  background: var(--color-success-bg);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  margin-left: 4px;
+}
+
+.tickText {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.tick {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 100px 40px;
+  }
+  .table td,
+  .table th {
+    padding: 16px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 16px;
+  }
+}

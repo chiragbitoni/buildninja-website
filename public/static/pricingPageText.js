@@ -34,7 +34,7 @@ export const secondSectionTextIndia = {
           { price: "₹2,199/month" },
           { price: "₹16,999/year ", saving: "(SAVE 36%)" },
           { price: "₹25,999/2-year ", saving: "(SAVE 51%)" },
-          { price: "$34,999/3-year ", saving: "(SAVE 56%)" },
+          { price: "₹34,999/3-year ", saving: "(SAVE 56%)" },
         ],
       },
       list2: [
