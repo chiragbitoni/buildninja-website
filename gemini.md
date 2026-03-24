@@ -38,10 +38,11 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Support Page Overhaul**: Redesigned with a bento grid layout, premium glassmorphism, grid background, and Framer Motion reveal animations. Switched to CSS Modules and Font Awesome icons.
 - ✅ **Cookie-based Auth Migration**: Migrated authentication storage from `localStorage` to structured cookies with 30-day expiry.
 - ✅ **Network Background Global Refactor**: Renamed OrbitAnimation to NetworkBackground and moved it to a shared `src/components/ui/` directory. Added ultra-mobile support for all landing pages.
+- ✅ **Pricing Page Overhaul**: Rebuilt all 8 sections using CSS Modules and semantic CSS variables. New sections: PricingHero (glassmorphism cards + premium toggles), PricingPhilosophy (4-card bento), PricingTable (styled comparison table with Shogun column highlight), PricingValueProp (bento grid with problem block), PricingCoreFeatures (two-column feature list), PricingDetailedSpecs (pill grid with limited-time badge), PricingFaq (click-to-expand cards), PricingCta (dual CTA cards with feature pills). All hardcoded colors replaced with `var(--color-*)` tokens.
 
 ## Next Steps for Website-wide Revamp
-1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables.
-2. **Pricing Page Overhaul**: Apply the modular CSS pattern and dark-themed cards to match the new direction.
+1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
+2. ~~**Pricing Page Overhaul**~~: ✅ Complete — see Evolution Log.
 3. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
 
 ## Learned Rules 
