@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import s from "./FaqQuestions.module.css";
 import { thirdSectionText } from "../../../../../public/static/faqPageText";
-import "./Third.css";
 import { useSearchParams } from "next/navigation";
 
-export default function ThirdContent() {
+export default function FaqQuestions() {
   const [activeIndex, setActiveIndex] = useState({ category: null, index: null });
   const [searchTerm, setSearchTerm] = useState("");
   const faqRefs = useRef({});
@@ -37,23 +37,20 @@ export default function ThirdContent() {
   // Highlight search term inside text
   const highlightText = (text, query) => {
     if (!query) return text;
-
     const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const regex = new RegExp(`(${escapedQuery})`, "gi");
 
     return text.split(regex).map((part, i) =>
       part.toLowerCase() === query.toLowerCase() ? (
-        <mark key={i} className="faq-highlight">
-          {part}
-        </mark>
+        <span key={i} className="faq-highlight">{part}</span>
       ) : (
         part
       )
     );
   };
+
   const highlightHTML = (html, query) => {
     if (!query) return html;
-
     const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const regex = new RegExp(`(${escapedQuery})(?![^<]*>)`, "gi");
 
@@ -62,10 +59,11 @@ export default function ThirdContent() {
       `<mark class="faq-highlight">$1</mark>`
     );
   };
-  useEffect(() => {
-    if (hasAutoScrolled) return; // ⛔ stop re-scroll
 
-    const openId = searchParams.get("open");
+  useEffect(() => {
+    if (hasAutoScrolled) return;
+
+    const openId = searchParams?.get("open");
     if (!openId) return;
 
     filteredFaqs.forEach((cat, catIndex) => {
@@ -78,71 +76,69 @@ export default function ThirdContent() {
               behavior: "smooth",
               block: "center",
             });
-          }, 200);
+          }, 300);
 
           setHasAutoScrolled(true);
         }
       });
     });
-  }, [filteredFaqs, hasAutoScrolled]);
+  }, [filteredFaqs, hasAutoScrolled, searchParams]);
 
   return (
-    <section className="faqThirdSection">
-      <div className="faqThirdContent">
+    <section className={s.section}>
+      <div className={s.inner}>
         {/* 🔍 Search Input */}
-        <div className="faq-search-container">
+        <div className={s.searchContainer}>
+          <svg className={s.searchIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
           <input
             type="text"
             placeholder="Search for a question..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="faq-search-input"
+            className={s.searchInput}
           />
         </div>
 
         {/* 🧭 Categories */}
         {filteredFaqs.length === 0 ? (
-          <p className="faq-no-results">No FAQs found.</p>
+          <p className={s.noResults}>No FAQs found for "{searchTerm}".</p>
         ) : (
           filteredFaqs.map((category, catIdx) => (
-            <div key={catIdx} className="faq-category">
-              {category.catrgory && (
-                <h2 className="faq-category-title">{category.catrgory}</h2>
+            <div key={catIdx} className={s.categoryGroup}>
+              {(category.category || category.catrgory) && (
+                <h2 className={s.categoryTitle}>{category.category || category.catrgory}</h2>
               )}
-              <div className="faq-category-list">
-                {category.faqs.map((faq, faqIdx) => (
-                  <div
-                    key={faqIdx}
-                    ref={(el) => {
-                      faqRefs.current[faq.id] = el;
-                    }}
-                    className={`faq-item ${activeIndex.category === catIdx && activeIndex.index === faqIdx
-                      ? "active"
-                      : ""
-                      }`}
-                  >
-                    <button
-                      className="faq-question"
+              <div className={s.faqList}>
+                {category.faqs.map((faq, faqIdx) => {
+                  const isOpen = activeIndex.category === catIdx && activeIndex.index === faqIdx;
+                  return (
+                    <div
+                      key={faqIdx}
+                      ref={(el) => { faqRefs.current[faq.id] = el; }}
+                      className={`${s.faqCard} ${isOpen ? s.faqCardOpen : ""}`}
                       onClick={() => toggleFAQ(catIdx, faqIdx)}
                     >
-                      <span>{highlightText(faq.question, searchTerm)}</span>
-                      <span className="faq-icon">
-                        {activeIndex.category === catIdx && activeIndex.index === faqIdx
-                          ? "▾"
-                          : "▸"}
-                      </span>
-                    </button>
-                    <div className="faq-answer">
-                      {/* <p>{highlightText(faq.answer, searchTerm)}</p> */}
-                      {/* <div dangerouslySetInnerHTML={{ __html: faq.answer }} /> */}
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: highlightHTML(faq.answer, searchTerm),
-                        }}
-                      />
+                      <h3 className={s.faqQuestion}>
+                        <span>{highlightText(faq.question, searchTerm)}</span>
+                        <span className={`${s.faqChevron} ${isOpen ? s.faqChevronOpen : ""}`}>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        </span>
+                      </h3>
+                      {isOpen && (
+                        <div
+                          className={s.faqAnswer}
+                          onClick={(e) => e.stopPropagation()}
+                          dangerouslySetInnerHTML={{ __html: highlightHTML(faq.answer, searchTerm) }}
+                        />
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))
