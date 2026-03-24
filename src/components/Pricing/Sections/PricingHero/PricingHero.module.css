@@ -93,7 +93,7 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.6rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.2;
   letter-spacing: -0.04em;
   color: var(--color-text);
   margin-bottom: 20px;
@@ -107,6 +107,8 @@
   font-style: italic;
   display: inline-block;
   padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
 }
 
 .description {
@@ -135,8 +137,10 @@
 
 .toggleGroup {
   display: flex;
-  background: var(--color-bg-panel);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-medium);
   border-radius: var(--radius-pill);
   overflow: hidden;
   padding: 4px;
@@ -161,9 +165,9 @@
 }
 
 .toggleBtnActive {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: #fff;
-  box-shadow: 0 4px 16px -4px var(--color-primary-glow);
+  box-shadow: 0 4px 14px -4px var(--color-primary-glow);
 }
 
 /* Multi-year selector */
@@ -181,10 +185,12 @@
 }
 
 .yearBtn {
-  background: var(--color-bg-panel);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border-medium);
   color: var(--color-text-secondary);
-  padding: 12px 24px;
+  padding: 16px 24px;
   border-radius: var(--radius-lg);
   cursor: pointer;
   transition: all 0.25s ease;
@@ -198,15 +204,17 @@
 }
 
 .yearBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
   border-color: var(--color-border-strong);
   color: var(--color-text);
+  transform: translateY(-2px);
 }
 
 .yearBtnActive {
   border-color: var(--color-primary);
   background: var(--color-primary-subtle);
   color: var(--color-text);
-  box-shadow: 0 0 0 1px var(--color-primary-border);
+  box-shadow: 0 8px 20px -8px var(--color-primary-glow), inset 0 0 0 1px var(--color-primary-border);
 }
 
 .savingsPill {
@@ -308,15 +316,18 @@
 }
 
 .cardHighlightDefault {
-  background: var(--color-bg-surface);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border-medium);
 }
 
 .cardHighlightFeatured {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: #fff;
-  box-shadow: 0 4px 14px -4px var(--color-primary-glow);
+  box-shadow: 0 4px 12px -4px var(--color-primary-glow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cardEdition {
