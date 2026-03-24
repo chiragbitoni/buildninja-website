@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ['buildninja.localtest.me'],
   output: 'export',
   images: {
     unoptimized: true, // required when using export and Next Image
