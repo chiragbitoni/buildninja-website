@@ -6,6 +6,21 @@ import { pricingFourthText } from "../../../../../public/static/pricingPageText"
 import { paths } from "../../../../../public/static/paths";
 import Image from "next/image";
 
+// Inline SVG — uses currentColor so it's fully theme-aware
+const ShieldIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    style={{ flexShrink: 0 }}
+  >
+    <path d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5l-9-4z" />
+  </svg>
+);
+
 export default function PricingValueProp() {
   const { region } = useSelector((state) => state.pricing);
   const text = JSON.parse(JSON.stringify(pricingFourthText));
@@ -68,13 +83,7 @@ export default function PricingValueProp() {
                 <div className={s.badgesWrap}>
                   {card.badges.map((b, i) => (
                     <span key={i} className={s.badge}>
-                      <Image
-                        width={18}
-                        height={18}
-                        className={s.cardShieldIcon}
-                        src={paths.icons.cardPricingShield}
-                        alt="shield icon"
-                      />
+                      <ShieldIcon />
                       {b}
                     </span>
                   ))}
