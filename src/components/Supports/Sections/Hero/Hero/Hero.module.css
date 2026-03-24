@@ -1,6 +1,6 @@
 .supportSection {
   min-height: 100vh;
-  padding: 160px 24px 100px;
+  padding: 120px 24px 100px;
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
@@ -12,7 +12,7 @@
 
 .supportHeader {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
   position: relative;
   z-index: 2;
   max-width: 900px;
@@ -32,7 +32,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .badgeDot {
@@ -50,8 +50,8 @@
 }
 
 .heading {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(3.2rem, 9vw, 6rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.05em;
@@ -109,7 +109,7 @@
 }
 
 .formTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 48px;
@@ -335,7 +335,7 @@
 }
 
 .successTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 12px;

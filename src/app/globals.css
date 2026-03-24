@@ -54,6 +54,8 @@ DESIGN TOKENS
 
   /* Typography */
   --font-display: 'Inter', sans-serif;
+  --font-accent: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-ui: 'Inter', system-ui, sans-serif;
 
@@ -140,7 +142,7 @@ GLOBAL RESETS & BASE
 @layer base {
   body {
     background-color: var(--color-bg);
-    font-family: var(--font-display);
+    font-family: var(--font-body);
   }
 
   button {
