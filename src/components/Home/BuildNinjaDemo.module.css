@@ -19,8 +19,9 @@
   /* 1100px token */
   height: var(--shell-height);
   /* 580px token */
-  transform-origin: top left;
-  transform: scale(var(--shell-scale, 1));
+  transform-origin: top center;
+  left: 50%;
+  transform: translateX(-50%) scale(var(--shell-scale, 1));
   /* set via JS */
   display: flex;
   background: var(--color-bg-shell);
