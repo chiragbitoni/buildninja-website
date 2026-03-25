@@ -681,9 +681,9 @@ export default function BuildNinjaDemo() {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
     const update = () => {
-      const scale = wrapper.offsetWidth / 1100;
+      const scale = wrapper.offsetWidth / 1200;
       wrapper.style.setProperty('--shell-scale', scale);
-      wrapper.style.paddingBottom = `${(580 / 1100) * 100}%`;
+      wrapper.style.paddingBottom = `${(640 / 1200) * 100}%`;
     };
     update();
     const ro = new ResizeObserver(update);

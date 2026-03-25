@@ -37,6 +37,10 @@
 .heroContent {
     position: relative;
     z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Title & Subtitle */
@@ -151,12 +155,14 @@
 ================================== */
 .heroCarousel {
     margin-top: 1.5vw;
-    width: 80%;
-    max-width: 1200px;
+    margin-bottom: 50px;
+    width: 88%;
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     z-index: 2;
+    padding: 0 10px;
 }
 
 .carouselImage {
@@ -331,7 +337,8 @@
 
     .heroCarousel {
         margin-top: 3vw;
-        width: 100%;
+        margin-bottom: 40px;
+        width: 85%;
         max-width: 1200px;
     }
 
@@ -391,7 +398,8 @@
 
     .heroCarousel {
         margin-top: 5vw;
-        width: 100%;
+        margin-bottom: 30px;
+        width: 85%;
         max-width: 1200px;
     }
 }
