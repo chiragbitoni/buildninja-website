@@ -146,7 +146,7 @@ export default function DojoPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2>Ready to practice?</h2>
+                    <h2>The Dojo Awaits, Ninja</h2>
                     <p className="ctaSubtitle">Step into the sandbox, experiment with build pipelines, and master the core features of BuildNinja in minutes.</p>
                     <motion.button 
                         whileHover={{ scale: 1.1, boxShadow: "0 0 30px #FF4172" }}
