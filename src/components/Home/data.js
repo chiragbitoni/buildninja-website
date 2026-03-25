@@ -1,0 +1,111 @@
+// Generic data — no real usernames or project names
+
+export const BUILDS = [
+  { id:'#3800', config:'Frontend CI',     status:'Completed', trigger:'15 min Ago', completed:'15 min Ago', duration:'<1 second' },
+  { id:'#3799', config:'Frontend CI',     status:'Completed', trigger:'1 hr Ago',   completed:'1 hr Ago',   duration:'<1 second' },
+  { id:'#3798', config:'Frontend CI',     status:'Completed', trigger:'2 hrs Ago',  completed:'2 hrs Ago',  duration:'<1 second' },
+  { id:'#3797', config:'Frontend CI',     status:'Completed', trigger:'3 hrs Ago',  completed:'3 hrs Ago',  duration:'<1 second' },
+  { id:'#3796', config:'E2E Test Suite',  status:'Failed',    trigger:'4 hrs Ago',  completed:'4 hrs Ago',  duration:'1m 22s'    },
+  { id:'#3795', config:'Backend Build',   status:'Running',   trigger:'5 hrs Ago',  completed:'—',          duration:'2m 10s…'   },
+  { id:'#3794', config:'Docs Build',      status:'Failed',    trigger:'6 hrs Ago',  completed:'6 hrs Ago',  duration:'0m 08s'    },
+  { id:'#3793', config:'Backend Build',   status:'Completed', trigger:'8 hrs Ago',  completed:'8 hrs Ago',  duration:'4m 31s'    },
+];
+
+export const SUCCESS_CONFIGS = [
+  { name:'Alpha', pct:98 }, { name:'Beta', pct:75 }, { name:'Gamma', pct:33 },
+  { name:'Delta', pct:100 }, { name:'Epsilon', pct:96 }, { name:'Zeta', pct:100 },
+  { name:'Eta', pct:100 }, { name:'Theta', pct:0 }, { name:'Iota', pct:100 },
+  { name:'Kappa', pct:100 }, { name:'Lambda', pct:100 }, { name:'Mu', pct:100 },
+  { name:'Nu', pct:100 }, { name:'Xi', pct:100 }, { name:'Omicron', pct:1 },
+  { name:'Pi', pct:0 }, { name:'Rho', pct:32 }, { name:'Sigma', pct:0 },
+  { name:'Tau', pct:0 }, { name:'Upsilon', pct:50 },
+];
+
+export const TOP5_CONFIGS = [
+  { name:'Config-A', color:'#d8305b' },
+  { name:'Config-B', color:'#40a9ff' },
+  { name:'Config-C', color:'#00c951' },
+  { name:'Config-D', color:'#faad14' },
+  { name:'Config-E', color:'#fa54aa' },
+];
+
+export const AGENT_TREEMAP = [
+  { name:'agent-7dd6d', pct:5.4, builds:'20157 builds', runtime:'58d 4h/36M', color:'#2a6e2a' },
+  { name:'agent-c06f2', pct:2.5, builds:'543 builds',   runtime:'26d 21h/36M',color:'#1a5c3a' },
+  { name:'agent-1104',  pct:0.4, builds:'12 builds',    runtime:'1d 3h/36M',  color:'#1a4a2a' },
+  { name:'agent-16ca',  pct:0.3, builds:'8 builds',     runtime:'12h/36M',    color:'#16401f' },
+  { name:'agent-ba1b',  pct:4.4, builds:'2 builds',     runtime:'20d 23h/36M',color:'#245e34' },
+  { name:'agent-bc23',  pct:4.4, builds:'43 builds',    runtime:'47d 11h/36M',color:'#1e5a30' },
+  { name:'agent-e638',  pct:1.6, builds:'17 builds',    runtime:'17d 7h/36M', color:'#185028' },
+];
+
+export const AGENTS = [
+  { id:'89ce0960-bf76-445c-8448-57beb0d51ee6', name:'linux-ninja-1', os:'Linux', osVer:'linux - 20.04.6 LTS (Focal Fossa)', status:'Idle', authorized:true, lastActive:'12/03/2026, 10:20:46', apiUrl:'http://10.64.1.190:8800', runningBuild:null, version:'0.1.0_nightly_20260303101310', dataDir:'/app/data' },
+  { id:'b2fa1100-cc43-4a1b-9f01-aade2c8fbb12', name:'linux-ninja-2', os:'Linux', osVer:'linux - 20.04.6 LTS (Focal Fossa)', status:'Idle', authorized:true, lastActive:'12/03/2026, 10:20:50', apiUrl:'http://10.64.1.190:8801', runningBuild:null, version:'0.1.0_nightly_20260303101310', dataDir:'/app/data' },
+];
+
+// Generic project tree
+export const SIDEBAR_TREE = {
+  pinned: ['Core-Services','QA-Suite','DevOps','Platform'],
+  projects: [
+    { id:'alpha', name:'Alpha',  configs:['Frontend CI','Docs Build','E2E Test Suite'], type:'project' },
+    { id:'beta',  name:'Beta',   configs:['Backend Build','API Tests'],                type:'project', children:[
+      { id:'beta-dev', name:'Beta Dev', type:'subproject', configs:['Dev Build','Unit Tests'] },
+    ]},
+    { id:'qa',    name:'QA-Suite', configs:['Smoke Tests','Regression'],              type:'project' },
+    { id:'devops',name:'DevOps',   configs:['Deploy Staging','Deploy Prod'],          type:'project' },
+  ],
+};
+
+export const PROJECT = {
+  name: 'Alpha',
+  subProjects: ['dev'],
+  configs: [
+    { name:'Docs Build',      lastBuild:'#46',   status:'Failed',    date:'2025-09-18 14:58' },
+    { name:'Backend Build',   lastBuild:'#6',    status:'Completed', date:'2025-11-08 16:50' },
+    { name:'E2E Test Suite',  lastBuild:'#1292', status:'Completed', date:'2025-10-16 22:49' },
+  ],
+};
+
+export const QUEUE_STATS = { readyToRun:0, waitingForAgents:0, agentIssues:1, total:1 };
+export const QUEUE_ITEMS = [
+  { position:1, config:'DevOps / .NET Build & Test', build:'#1', queuedAgo:'2 days, 15 hours ago', queuedAt:'09 Mar 2026 18:42', status:'No Compatible Agent Available' },
+];
+
+export const TRIGGERS = [
+  { name:'nightly-trigger',  config:'Alpha / dev / Frontend CI',       schedule:'Custom', detail:'At 2 minutes past the hour',                   tz:'Africa/Addis_Ababa', nextRun:'in 8 minutes',  enabled:true  },
+  { name:'weekly',           config:'QA-Suite / onlyvcs',              schedule:'Custom', detail:'At 04:50 PM, only on Wednesday and Thursday',  tz:'Asia/Calcutta',      nextRun:'in 6 hours',    enabled:true  },
+  { name:'nightly-trigger',  config:'Alpha / dev / Frontend CI',       schedule:'Daily',  detail:'At 01:01 AM',                                  tz:'Asia/Calcutta',      nextRun:'in 15 hours',   enabled:true  },
+  { name:'test34',           config:'Documentation / Configured Build',schedule:'Daily',  detail:'At 01:01 AM',                                  tz:'Asia/Calcutta',      nextRun:'in 15 hours',   enabled:true  },
+  { name:'lastdat',          config:'QA-Suite / onlyvcs',              schedule:'Custom', detail:'At 05:06 PM, on day 30 and 31 of the month',   tz:'Asia/Calcutta',      nextRun:'in 18 days',    enabled:true  },
+  { name:'month',            config:'QA-Suite / onlyvcs',              schedule:'Custom', detail:'At 15 minutes past the hour, only in July',    tz:'Asia/Calcutta',      nextRun:'in 4 months',   enabled:true  },
+  { name:'test',             config:'Alpha / E2E Test Suite',          schedule:'Custom', detail:'Every minute',                                 tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
+  { name:'daily',            config:'QA-Suite / onlyvcs',              schedule:'Daily',  detail:'At 03:32 PM',                                  tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
+  { name:'4hours',           config:'QA-Suite / onlyvcs',              schedule:'Custom', detail:'At 0 minutes past the hour, every 4 hours',    tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
+  { name:'every other day',  config:'QA-Suite / onlyvcs',              schedule:'Custom', detail:'At 25 minutes past the hour, every 2 hours, every 2 days', tz:'Asia/Calcutta', nextRun:'—', enabled:false },
+  { name:'2minute',          config:'QA-Suite / myvcs',                schedule:'Custom', detail:'Every 4 minutes',                              tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
+];
+
+export const USERS_STATS = { pending:2, total:27 };
+export const USERS_PENDING = [
+  { name:'alex.morgan', email:'alex.morgan@company.io', date:'27/01/2026, 10:00:10', method:'Non-SSO' },
+  { name:'jordan.lee',  email:'jordan.lee@company.io',  date:'22/01/2026, 17:23:08', method:'Non-SSO' },
+];
+export const USERS_ALL = [
+  { name:'admin', email:'admin@company.io', role:'Admin', lastLogin:'Today' },
+  { name:'dev1',  email:'dev1@company.io',  role:'Developer', lastLogin:'Yesterday' },
+  { name:'dev2',  email:'dev2@company.io',  role:'Developer', lastLogin:'2 days ago' },
+];
+
+export const SSO_PROVIDERS = [
+  { abbr:'MS', icon:'🪟', name:'MS',        label:'Microsoft', enabled:true,  clientId:'ee79f37a-d0b8-4f13-a3d8-f66cefb1870a', authUrl:'https://login.microsoftonline.com/7f25deda-221b-44f6-89eb-8551818911f0/oauth2/v2.0/authorize' },
+  { abbr:'GH', icon:'⚫', name:'github',    label:'github',    enabled:false, clientId:'Ov23liNoreHl26Dse9CH',                  authUrl:'https://github.com/login/oauth/authorize'                          },
+  { abbr:'GL', icon:'🦊', name:'Gitlab',    label:'Gitlab',    enabled:false, clientId:'205fb822759b97d3f0df9ca3b42c9ecda909b5091e4a1fdd...', authUrl:'https://gitlab.com/oauth/authorize'  },
+  { abbr:'BB', icon:'🪣', name:'Bitbucket', label:'Bitbucket', enabled:true,  clientId:'nzMR7u2cX9aGxUd4rM',                   authUrl:'https://bitbucket.org/site/oauth2/authorize'                       },
+  { abbr:'GH', icon:'⚫', name:'Github',    label:'Github',    enabled:false, clientId:'gitID',                                 authUrl:'www.google.com'                                                    },
+  { abbr:'GL', icon:'🦊', name:'gitlab',    label:'gitlab',    enabled:false, clientId:'1353d06288d6daff01fc47d533bb6c8e9affc363a3f7efbab...', authUrl:'https://git.developertools.net.in/oauth/authorize' },
+  { abbr:'MS', icon:'🪟', name:'Microsoft', label:'Microsoft', enabled:true,  clientId:'ee79f37a-d0b8-4f13-a3d8-f66cefb1870a', authUrl:'https://login.microsoftonline.com/7f25deda-221b-44f6.../'           },
+];
+
+export const LICENSE = { status:'Active', plan:'shogun', validUntil:'30/12/2026', remaining:'9 months remaining' };
+export const SETTINGS_TABS = ['SSO Settings','Notifier Settings','Mail Templates','Manage License'];
