@@ -7,8 +7,8 @@ export const heroSectionText = {
     "Growing teams waste time on complex CI/CD tools and per-seat pricing",
   subtitle2: "Start free up to 3 agents • $199/month unlimited as you scale",
   subtitle3: "Deploy in minutes. Ship features, not infrastructure.",
-  primaryButton: "Install Free",
-  secondaryButton: "See 3-Minute Demo",
+  primaryButton: "Get started",
+  secondaryButton: "Watch 3-min demo",
 };
 
 export const secondSectionText = {
