@@ -42,9 +42,9 @@ export default function Hero() {
                     <div className="heroButtonsRow">
                         <button
                             className="sandboxBtn"
-                            onClick={() => window.open(process.env.NEXT_PUBLIC_DOJO_URL, "_self")}
+                            onClick={() => window.open("https://buildninja-stage.grapehub.io/dojo", "_self")}
                         >
-                            Try The Sandbox
+                            Try the Dojo
                         </button>
                     </div>
                 </div>
