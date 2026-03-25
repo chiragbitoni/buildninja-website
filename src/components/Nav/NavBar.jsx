@@ -50,9 +50,9 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
     // { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
-    { name: "Docs", path: "/docs" },
-    { name: "Dojo", path: "/dojo" },
     { name: "Pricing", path: "/pricing" },
+    { name: "Dojo", path: "/dojo", isNew: true },
+    { name: "Docs", path: "/docs" },
     { name: "Install", path: "/install" },
     { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
@@ -115,12 +115,13 @@ export default function Navbar() {
                   className="navbar-anchor"
                 >
                   {item.name}
+                  {item.isNew && <span className="glowing-dot"></span>}
                 </a>
               </li>
 
             ))}
           <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
-          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
+          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try Free</button>
         </ul>
         <AvatarMenu />
       </div>

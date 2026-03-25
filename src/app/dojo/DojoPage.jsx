@@ -18,7 +18,7 @@ const itemVariants = {
 };
 
 export default function DojoPage() {
-    const sandboxUrl = "https://gh-userservice-stage.grapehub.io/api/oauth/authorize?client_id=localhost.grapehub18032026103311.io&response_type=code&redirect_uri=https://buildninjadojo.grapehub.io/authredirect&scope=openid%20profile%20email&state=eyJfcmV0dXJuVXJsIjoiLyIsInJlZGlyZWN0UGF0aCI6Imh0dHBzOi8vYnVpbGRuaW5qYWRvam8uZ3JhcGVodWIuaW8vYXV0aHJlZGlyZWN0IiwiY2xpZW50SWQiOiJsb2NhbGhvc3QuZ3JhcGVodWIxODAzMjAyNjEwMzMxMS5pbyJ9";
+    const sandboxUrl = process.env.NEXT_PUBLIC_DOJO_URL;
 
     return (
         <div className="dojoPageMain">
@@ -45,7 +45,7 @@ export default function DojoPage() {
                         className="dojoEnterBtn" 
                         onClick={() => window.open(sandboxUrl, "_self")}
                     >
-                        Enter BuildNinja Sandbox
+                        Enter Dojo
                     </motion.button>
                     <motion.p variants={itemVariants} className="dojoSmallInfo">No installation required • Resets every 6 hours</motion.p>
                 </div>
@@ -71,7 +71,7 @@ export default function DojoPage() {
                         whileHover={{ y: -8, borderColor: "#FF4172", boxShadow: "0 20px 40px rgba(0,0,0,0.5)" }}
                         viewport={{ once: true }}
                     >
-                        <h3>Sandbox Limitations</h3>
+                        <h3>Dojo Limitations</h3>
                         <ul>
                             <li>The sandbox resets automatically every 6 hours</li>
                             <li>All user-created projects and history are removed during reset</li>
@@ -147,6 +147,7 @@ export default function DojoPage() {
                     viewport={{ once: true }}
                 >
                     <h2>Ready to practice?</h2>
+                    <p className="ctaSubtitle">Step into the sandbox, experiment with build pipelines, and master the core features of BuildNinja in minutes.</p>
                     <motion.button 
                         whileHover={{ scale: 1.1, boxShadow: "0 0 30px #FF4172" }}
                         className="dojoEnterBtn large" 

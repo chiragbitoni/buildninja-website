@@ -276,3 +276,41 @@ ul.navbar-links {
   /* padding-left: 20px; */
   cursor: pointer;
 }
+
+/* ==== Glowing Dot ==== */
+.glowing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #FF4172;
+  border-radius: 50%;
+  margin-left: 5px;
+  position: relative;
+  top: -8px;
+  box-shadow: 0 0 10px rgba(255, 65, 114, 0.7);
+  animation: dot-pulse 1.8s infinite ease-in-out;
+  pointer-events: none;
+  display: inline-block;
+}
+
+@keyframes dot-pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 4px rgba(255, 65, 114, 0.6);
+  }
+  50% {
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(255, 65, 114, 0.9);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 4px rgba(255, 65, 114, 0.6);
+  }
+}
+
+.navbar-anchor {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}

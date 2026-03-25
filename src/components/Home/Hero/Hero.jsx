@@ -34,15 +34,19 @@ export default function Hero() {
                     {heroSectionText.subtitle2}<br />
                     {heroSectionText.subtitle3}
                 </p>
-                <div className="heroButtons">
-                    <button className="demoBtn" onClick={() => { router.push("/install") }}>{heroSectionText.primaryButton}</button>
-                    <button 
-                        className="sandboxBtn" 
-                        onClick={() => window.open("https://gh-userservice-stage.grapehub.io/api/oauth/authorize?client_id=localhost.grapehub18032026103311.io&response_type=code&redirect_uri=https://buildninjadojo.grapehub.io/authredirect&scope=openid%20profile%20email&state=eyJfcmV0dXJuVXJsIjoiLyIsInJlZGlyZWN0UGF0aCI6Imh0dHBzOi8vYnVpbGRuaW5qYWRvam8uZ3JhcGVodWIuaW8vYXV0aHJlZGlyZWN0IiwiY2xpZW50SWQiOiJsb2NhbGhvc3QuZ3JhcGVodWIxODAzMjAyNjEwMzMxMS5pbyJ9", "_self")}
-                    >
-                        Try BuildNinja Sandbox
-                    </button>
-                    <button className="heroBtn" onClick={() => dispatch(openVideo({videoId:process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works"}))}>{heroSectionText.secondaryButton}</button>
+                <div className="heroButtonsContainer">
+                    <div className="heroButtonsRow">
+                        <button className="demoBtn" onClick={() => { router.push("/install") }}>{heroSectionText.primaryButton}</button>
+                        <button className="heroBtn" onClick={() => dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works" }))}>{heroSectionText.secondaryButton}</button>
+                    </div>
+                    <div className="heroButtonsRow">
+                        <button
+                            className="sandboxBtn"
+                            onClick={() => window.open(process.env.NEXT_PUBLIC_DOJO_URL, "_self")}
+                        >
+                            Try The Sandbox
+                        </button>
+                    </div>
                 </div>
 
                 <div className="heroCarousel">

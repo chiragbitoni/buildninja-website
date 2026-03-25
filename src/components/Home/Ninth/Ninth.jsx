@@ -22,11 +22,17 @@ export default function Ninth() {
                 <div className="ninth-inner-grid">
                     <button 
                         className="ninthPrimaryBtn" 
-                        onClick={() => window.open("https://gh-userservice-stage.grapehub.io/api/oauth/authorize?client_id=localhost.grapehub18032026103311.io&response_type=code&redirect_uri=https://buildninjadojo.grapehub.io/authredirect&scope=openid%20profile%20email&state=eyJfcmV0dXJuVXJsIjoiLyIsInJlZGlyZWN0UGF0aCI6Imh0dHBzOi8vYnVpbGRuaW5qYWRvam8uZ3JhcGVodWIuaW8vYXV0aHJlZGlyZWN0IiwiY2xpZW50SWQiOiJsb2NhbGhvc3QuZ3JhcGVodWIxODAzMjAyNjEwMzMxMS5pbyJ9", "_blank")}
+                        onClick={() => router.push("/install")}
                     >
                         {ninthSectionText.primaryButton}
                     </button>
                     <button className="ninthDemoBtn" onClick={() => dispatch(openVideo(process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID))}>{ninthSectionText.secondaryButton}</button>
+                    <button 
+                        className="ninthSandboxBtn" 
+                        onClick={() => window.open(process.env.NEXT_PUBLIC_DOJO_URL, "_self")}
+                    >
+                        Try The Dojo
+                    </button>
                 </div>
                 <div className="ninthSecondTitleContainer">
                     <Image width={0} height={0} src={paths.icons.greenShield} className="ninthSecondTitleIcon" alt="Green shield icon symbolizing security and protection"></Image>

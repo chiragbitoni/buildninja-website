@@ -64,6 +64,7 @@
     line-height: 1.4;
     background: linear-gradient(to bottom, #fff, #888);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -114,7 +115,7 @@
 }
 
 .dojoSection {
-    margin-bottom: 120px;
+    margin-bottom: 80px;
 }
 
 .dojoSection h2 {
@@ -197,13 +198,22 @@
 
 .finalCTA {
     text-align: center;
-    padding: 120px 0;
+    padding: 60px 0 100px;
     background: radial-gradient(circle at center, rgba(255, 65, 114, 0.1) 0%, transparent 70%);
 }
 
 .finalCTA h2 {
     font-size: 48px;
-    margin-bottom: 48px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.ctaSubtitle {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
 }
 
 .dojoEnterBtn.large {
