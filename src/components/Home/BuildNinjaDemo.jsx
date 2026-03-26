@@ -1471,63 +1471,167 @@ function TriggersDash() {
 /* ══ USERS ══ */
 function Users() {
   const [tab, setTab] = useState('Pending Approvals');
+  
+  const pendingUsers = [
+    { name: 'Developer External', email: 'dev.ext@partner.com', date: '1/27/2026, 10:00:10 AM', method: 'Non-SSO' },
+    { name: 'QA Consultant', email: 'qa@external-agency.com', date: '1/22/2026, 5:23:08 PM', method: 'Non-SSO' }
+  ];
+
+  const activeUsers = [
+    { name: 'System Admin', email: 'admin@company.com', date: '1/27/2026, 10:18:48 AM', method: 'SSO' },
+    { name: 'Lead Developer', email: 'lead.dev@company.com', date: '12/3/2025, 12:34:14 PM', method: 'SSO' },
+    { name: 'CI/CD Bot', email: 'bot.ci@company.com', date: '10/7/2025, 4:13:07 PM', method: 'SSO' },
+    { name: 'Junior Dev', email: 'junior.tester@company.com', date: '10/6/2025, 12:12:09 PM', method: 'Non-SSO' },
+  ];
+
   return (
     <div className={s.page}>
-      <div className={s.usersHead}>
+      <div className={s.usersHead} style={{ marginBottom: '16px' }}>
         <h1 className={s.pageH1}>User Management</h1>
         <div className={s.usersBadges}>
-          <div className={s.usersBadge} style={{ background: 'rgba(216,48,91,.12)', border: '1px solid rgba(216,48,91,.25)', color: '#d8305b' }}>
-            <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
-            <span>{USERS_STATS.pending} Pending</span>
+          <div className={s.usersBadge} style={{ background: 'var(--color-warning-bg)', border: '1px solid rgba(250, 173, 20, 0.25)', color: 'var(--color-warning)' }}>
+            <Ic.Info />
+            <span>{pendingUsers.length} Pending</span>
           </div>
           <div className={s.usersBadge} style={{ background: 'rgba(216,48,91,.10)', border: '1px solid rgba(216,48,91,.2)', color: '#d8305b' }}>
-            <Ic.Users /><span>{USERS_STATS.total} Users</span>
+            <Ic.Users /><span>27 Users</span>
           </div>
         </div>
       </div>
-      <div className={s.usersTabBar}>
+      
+      <div className={s.usersTabBar} style={{ alignSelf: 'flex-start', marginBottom: '16px', maxWidth: '380px', whiteSpace: 'nowrap' }}>
         {['Pending Approvals', 'Users'].map(t => (
           <button key={t} onClick={() => setTab(t)}
             className={`${s.usersTab} ${tab === t ? s.usersTabActive : ''}`}>{t}</button>
         ))}
       </div>
+
       {tab === 'Pending Approvals' && (
         <div>
-          <div style={{ marginBottom: 10 }}>
-            <div className={s.bold}>Pending Approval</div>
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: '13.5px', fontWeight: 700, color: 'rgba(var(--text-rgb),0.85)', marginBottom: 2 }}>Pending Approval</div>
             <div className={s.muted} style={{ fontSize: 11 }}>Review and approve user registration requests.</div>
           </div>
-          <div className={s.usersFilters}>
-            <div className={s.searchBox}><Ic.Search /><span className={s.muted} style={{ fontSize: 11 }}>Search requests…</span></div>
-            <div className={s.selectMock} style={{ minWidth: 100 }}>Start date</div>
-            <div className={s.selectMock} style={{ minWidth: 100 }}>End date</div>
-            <div className={s.selectMock} style={{ minWidth: 90 }}>Method</div>
+          <div className={s.usersFilters} style={{ padding: '10px 14px', border: '1px solid var(--color-border-subtle)', borderRadius: '6px 6px 0 0', margin: 0, gap: '10px', background: 'var(--color-bg-surface)' }}>
+            <div className={s.searchBox} style={{ width: '200px' }}><Ic.Search /><span className={s.muted} style={{ fontSize: 11 }}>Search requests...</span></div>
+            <div className={s.selectMock} style={{ minWidth: 160, display: 'flex', justifyContent: 'space-between', color: 'rgba(var(--text-rgb), 0.45)' }}>
+              <span>Start date <span style={{ opacity: 0.5 }}>→</span> End date</span>
+              <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 12, height: 12, opacity: 0.5 }}><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+            </div>
+            <div className={s.selectMock} style={{ minWidth: '130px', display: 'flex', justifyContent: 'space-between' }}>
+              Method <span style={{ opacity: 0.5 }}>v</span>
+            </div>
             <div style={{ flex: 1 }} />
-            <button className={s.btnApprove}><Ic.Ok /> Approve</button>
-            <button className={s.btnReject}><Ic.X /> Reject</button>
-            <button className={s.btnOutline}>↑ Export</button>
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}><span style={{ color: 'var(--color-success)', marginRight: 2 }}>✓</span> Approve</button>
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}><span style={{ color: 'var(--color-error)', marginRight: 2 }}>✕</span> Reject</button>
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}>Export</button>
           </div>
-          <div className={s.grid} style={{ '--cols': '20px 1fr 150px 120px 200px' }}>
-            <div className={s.gridHead}><span /><span>User</span><span>Registration Date</span><span>Registration Method</span><span>Actions</span></div>
-            {USERS_PENDING.map(u => (
-              <div key={u.email} className={s.gridRow}>
-                <div className={s.checkbox} />
-                <div>
-                  <div className={s.bold}>{u.name}</div>
-                  <div className={s.link} style={{ fontSize: 11 }}>{u.email}</div>
+          
+          <div className={s.trigTable} style={{ borderRadius: '0 0 6px 6px', borderTop: 'none', border: '1px solid var(--color-border-subtle)' }}>
+            <div className={s.trigTHead} style={{ padding: '10px 14px' }}>
+              <span style={{ width: '4%', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ width: 12, height: 12, border: '1px solid rgba(var(--text-rgb),0.3)', borderRadius: 2 }}></div>
+              </span>
+              <span style={{ width: '31%', paddingLeft: '8px' }}>User</span>
+              <span style={{ width: '30%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg></span>
+              <span style={{ width: '20%' }}>Registration Method</span>
+              <span style={{ width: '15%' }}>Actions</span>
+            </div>
+            {pendingUsers.map((u, i) => (
+              <div key={i} className={s.trigTRow} style={{ padding: '12px 14px', alignItems: 'center' }}>
+                <span style={{ width: '4%', display: 'flex', justifyContent: 'center' }}>
+                  <div style={{ width: 12, height: 12, border: '1px solid rgba(var(--text-rgb),0.3)', borderRadius: 2 }}></div>
+                </span>
+                <div style={{ width: '31%', paddingLeft: '8px' }}>
+                  <div style={{ fontSize: '11.5px', fontWeight: 600, color: 'rgba(var(--text-rgb),0.85)' }}>{u.name}</div>
+                  <div className={s.muted} style={{ fontSize: '10.5px', marginTop: '2px' }}>{u.email}</div>
                 </div>
-                <span className={s.muted}>{u.date}</span>
-                <span>{u.method}</span>
-                <div style={{ display: 'flex', gap: 6 }}>
-                  <button className={s.btnApprove}><Ic.Ok /> Approve</button>
-                  <button className={s.btnReject}><Ic.X /> Reject</button>
+                <div style={{ width: '30%', fontSize: '11px', color: 'rgba(var(--text-rgb),0.85)' }}>{u.date}</div>
+                <div style={{ width: '20%' }}>
+                  <span style={{ display: 'inline-flex', background: 'rgba(var(--text-rgb), 0.08)', padding: '2px 8px', borderRadius: '4px', fontSize: '10.5px' }}>{u.method}</span>
+                </div>
+                <div style={{ width: '15%', display: 'flex', gap: '8px' }}>
+                  <button className={s.btnOutline} style={{ borderColor: 'rgba(0,201,81,0.3)', color: '#00c951', padding: '4px 10px', fontSize: '11px' }}>
+                    <span style={{ marginRight: 4 }}>✓</span> Approve
+                  </button>
+                  <button className={s.btnOutline} style={{ borderColor: 'rgba(255,77,79,0.3)', color: '#ff4d4f', padding: '4px 10px', fontSize: '11px' }}>
+                    <span style={{ marginRight: 4 }}>✕</span> Reject
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       )}
-      {tab === 'Users' && <div className={s.emptyState}><span className={s.muted}>User list</span></div>}
+
+      {tab === 'Users' && (
+        <div>
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: '13.5px', fontWeight: 700, color: 'rgba(var(--text-rgb),0.85)', marginBottom: 2 }}>Users</div>
+            <div className={s.muted} style={{ fontSize: 11 }}>Manage user accounts and permissions.</div>
+          </div>
+          <div className={s.usersFilters} style={{ padding: '10px 14px', border: '1px solid var(--color-border-subtle)', borderRadius: '6px 6px 0 0', margin: 0, gap: '10px', background: 'var(--color-bg-surface)' }}>
+            <div className={s.searchBox} style={{ width: '260px' }}><Ic.Search /><span className={s.muted} style={{ fontSize: 11 }}>Search users...</span></div>
+            <div style={{ flex: 1 }} />
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}>Export</button>
+          </div>
+          
+          <div className={s.trigTable} style={{ borderRadius: '0 0 6px 6px', borderTop: 'none', border: '1px solid var(--color-border-subtle)' }}>
+            <div className={s.trigTHead} style={{ padding: '10px 14px' }}>
+              <span style={{ width: '31%', paddingLeft: '6px' }}>User</span>
+              <span style={{ width: '23%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg></span>
+              <span style={{ width: '21%' }}>Registration Method</span>
+              <span style={{ width: '13%' }}>Status</span>
+              <span style={{ width: '12%', textAlign: 'center' }}>Actions</span>
+            </div>
+            {activeUsers.map((u, i) => (
+              <div key={i} className={s.trigTRow} style={{ padding: '12px 14px', alignItems: 'center' }}>
+                <div style={{ width: '31%', paddingLeft: '6px' }}>
+                  <div style={{ fontSize: '11.5px', fontWeight: 600, color: 'rgba(var(--text-rgb),0.85)' }}>{u.name}</div>
+                  <div className={s.muted} style={{ fontSize: '10.5px', marginTop: '2px' }}>{u.email}</div>
+                </div>
+                <div style={{ width: '23%', fontSize: '11px', color: 'rgba(var(--text-rgb),0.85)' }}>{u.date}</div>
+                <div style={{ width: '21%' }}>
+                  <span style={{ 
+                    display: 'inline-flex', 
+                    padding: '2px 8px', 
+                    borderRadius: '4px', 
+                    fontSize: '10.5px',
+                    fontWeight: 600,
+                    background: u.method === 'SSO' ? 'var(--color-demo-accent)' : 'rgba(var(--text-rgb), 0.08)',
+                    color: u.method === 'SSO' ? '#fff' : 'inherit'
+                  }}>{u.method}</span>
+                </div>
+                <div style={{ width: '13%' }}>
+                  <span style={{ 
+                    display: 'inline-flex', 
+                    padding: '2px 8px', 
+                    borderRadius: '4px', 
+                    fontSize: '10.5px', 
+                    background: 'rgba(0, 168, 67, 0.1)', 
+                    color: '#00a843', 
+                    border: '1px solid rgba(0, 168, 67, 0.2)', 
+                    fontWeight: 600 
+                  }}>Active</span>
+                </div>
+                <div style={{ width: '12%', display: 'flex', justifyContent: 'center' }}>
+                  <button className={s.iconBtn} style={{ border: '1px solid rgba(var(--text-rgb),0.2)', borderRadius: '4px', width: '26px', height: '26px' }}><Ic.Dots /></button>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className={s.pagination} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12, gap: 4 }}>
+            <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&lt;</button>
+            {[1, 2, 3, 4, 5, 6, 7].map(n => 
+              <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`} style={n === 1 ? { background: '#d6336c', border: 'none', borderRadius: 4, color: '#fff', width: 24, height: 24, padding: 0 } : { background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.8)', width: 24, height: 24, padding: 0, cursor: 'pointer' }}>
+                {n}
+              </button>
+            )}
+            <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&gt;</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
