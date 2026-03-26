@@ -880,7 +880,7 @@
   border-radius: 4px;
   color: rgba(var(--text-rgb), 0.38);
   font-size: 11px;
-  cursor: pointer;
+  cursor: default;
   display: flex;
   align-items: center;
   justify-content: center;
