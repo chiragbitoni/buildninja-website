@@ -13,12 +13,7 @@ export const BUILDS = [
 
 export const SUCCESS_CONFIGS = [
   { name:'Alpha', pct:98 }, { name:'Beta', pct:75 }, { name:'Gamma', pct:33 },
-  { name:'Delta', pct:100 }, { name:'Epsilon', pct:96 }, { name:'Zeta', pct:100 },
-  { name:'Eta', pct:100 }, { name:'Theta', pct:0 }, { name:'Iota', pct:100 },
-  { name:'Kappa', pct:100 }, { name:'Lambda', pct:100 }, { name:'Mu', pct:100 },
-  { name:'Nu', pct:100 }, { name:'Xi', pct:100 }, { name:'Omicron', pct:1 },
-  { name:'Pi', pct:0 }, { name:'Rho', pct:32 }, { name:'Sigma', pct:0 },
-  { name:'Tau', pct:0 }, { name:'Upsilon', pct:50 },
+  { name:'Delta', pct:100 }, { name:'Epsilon', pct:96 }, { name:'Zeta', pct:100 }
 ];
 
 export const TOP5_CONFIGS = [
@@ -30,13 +25,9 @@ export const TOP5_CONFIGS = [
 ];
 
 export const AGENT_TREEMAP = [
-  { name:'agent-7dd6d', pct:5.4, builds:'20157 builds', runtime:'58d 4h/36M', color:'#2a6e2a' },
-  { name:'agent-c06f2', pct:2.5, builds:'543 builds',   runtime:'26d 21h/36M',color:'#1a5c3a' },
+  { name:'agent-7dd6d', pct:5.4, builds:'157 builds', runtime:'58d 4h/36M', color:'#2a6e2a' },
+  { name:'agent-c06f2', pct:2.5, builds:'43 builds',   runtime:'26d 21h/36M',color:'#1a5c3a' },
   { name:'agent-1104',  pct:0.4, builds:'12 builds',    runtime:'1d 3h/36M',  color:'#1a4a2a' },
-  { name:'agent-16ca',  pct:0.3, builds:'8 builds',     runtime:'12h/36M',    color:'#16401f' },
-  { name:'agent-ba1b',  pct:4.4, builds:'2 builds',     runtime:'20d 23h/36M',color:'#245e34' },
-  { name:'agent-bc23',  pct:4.4, builds:'43 builds',    runtime:'47d 11h/36M',color:'#1e5a30' },
-  { name:'agent-e638',  pct:1.6, builds:'17 builds',    runtime:'17d 7h/36M', color:'#185028' },
 ];
 
 export const AGENTS = [
