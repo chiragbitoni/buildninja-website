@@ -249,18 +249,18 @@ function Dashboard() {
               <div className={s.lineYLabel}>Runtime</div>
               <svg className={s.lineSvg} viewBox="0 0 300 110" preserveAspectRatio="none">
                 {/* Config A */}
-                <path d="M0 108 L50 105 L100 95 L150 70 L200 40 L250 30 L300 25" fill="none" stroke="#d8305b" strokeWidth="2" />
+                <path d="M0 108 L60 105 L120 95 L180 70 L240 40 L300 25" fill="none" stroke="#d8305b" strokeWidth="2" />
                 {/* Config B */}
-                <path d="M0 100 L50 90 L100 85 L150 75 L200 65 L250 55 L300 50" fill="none" stroke="#40a9ff" strokeWidth="1.5" opacity=".7" />
+                <path d="M0 100 L60 90 L120 85 L180 75 L240 65 L300 50" fill="none" stroke="#40a9ff" strokeWidth="1.5" opacity=".7" />
                 {/* Config C */}
-                <path d="M0 90 L50 85 L100 75 L150 60 L200 50 L250 45 L300 40" fill="none" stroke="#00c951" strokeWidth="1.5" opacity=".6" />
+                <path d="M0 90 L60 85 L120 75 L180 60 L240 50 L300 40" fill="none" stroke="#00c951" strokeWidth="1.5" opacity=".6" />
                 {/* Config D */}
-                <path d="M0 80 L50 70 L100 65 L150 55 L200 45 L250 35 L300 30" fill="none" stroke="#faad14" strokeWidth="1.5" opacity=".5" />
+                <path d="M0 80 L60 70 L120 65 L180 55 L240 45 L300 30" fill="none" stroke="#faad14" strokeWidth="1.5" opacity=".5" />
                 {/* Config E */}
-                <path d="M0 70 L50 65 L100 60 L150 50 L200 40 L250 30 L300 25" fill="none" stroke="#fa54aa" strokeWidth="1.5" opacity=".5" />
+                <path d="M0 70 L60 65 L120 60 L180 50 L240 40 L300 25" fill="none" stroke="#fa54aa" strokeWidth="1.5" opacity=".5" />
                 
                 {[0, 60, 120, 180, 240, 300].map((x, i) => {
-                  const ys = [108, 105, 100, 80, 30, 22];
+                  const ys = [108, 105, 95, 70, 40, 25];
                   return <circle key={i} cx={x} cy={ys[i]} r="3" fill="#d8305b" />;
                 })}
               </svg>

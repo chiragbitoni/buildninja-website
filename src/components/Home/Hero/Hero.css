@@ -77,77 +77,95 @@
 /* ===============================
    BUTTONS
 ================================== */
-.heroButtonsContainer {
+.heroActions {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5vw;
-    width: 100%;
-}
-
-.heroButtonsRow {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5vw;
-    width: 100%;
+    align-items: center;
+    gap: 16px;
+    margin-top: 1.2rem;
+    margin-bottom: 1.5rem;
+    z-index: 10;
+    position: relative;
 }
 
-.heroBtn,
-.demoBtn {
-    padding: 16px 40px;
-    border-radius: 2.2vw;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.primaryAction,
+.secondaryAction,
+.dojoAction {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 32px;
+    border-radius: 999px;
+    font-size: 16px;
     font-weight: 600;
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
-}
-
-.heroBtn {
-    background: #000000;
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-}
-
-.heroBtn:hover {
-    background: #2C2C2C;
-}
-
-.demoBtn {
-    background: #FF4172;
-    color: #FFFFFF;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-}
-
-.demoBtn:hover {
-    background: #ea367d;
-}
-
-.sandboxBtn {
-    padding: 10px 24px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-weight: 600;
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    border: 2px solid #FF4172;
+    font-family: var(--font-display), sans-serif;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    white-space: nowrap;
+    border: 1px solid transparent;
 }
 
-.sandboxBtn:hover {
-    background: #FF4172;
-    color: #FFFFFF;
+/* Primary: Glowing Gradient */
+.primaryAction {
+    background: linear-gradient(135deg, #ff4172 0%, #d8305b 100%);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 65, 114, 0.35), 0 0 0 0 rgba(255, 65, 114, 0.2);
+}
+
+.primaryAction:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 65, 114, 0.5), 0 0 0 4px rgba(255, 65, 114, 0.15);
+}
+
+/* Secondary: Glassmorphism */
+.secondaryAction {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.secondaryAction:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Dojo: Terminal Style */
+.dojoAction {
+    background: rgba(0, 0, 0, 0.4);
+    color: #ff4172;
+    border: 1px solid rgba(255, 65, 114, 0.3);
+    font-family: var(--font-mono), monospace;
+    font-size: 14px;
+    padding: 12px 24px;
+}
+
+.dojoAction:hover {
+    background: rgba(255, 65, 114, 0.1);
+    border-color: #ff4172;
+    color: #ff4172;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 65, 114, 0.2);
+}
+
+@media (max-width: 768px) {
+    .heroActions {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .primaryAction,
+    .secondaryAction,
+    .dojoAction {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 /* ===============================
