@@ -1,6 +1,14 @@
 /* â•â•â• BuildNinja Demo â€” dark theme â•â•â• */
 
 /* â”€â”€ Scale Wrapper â”€â”€ */
+.demoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
 .scaleWrapper {
   width: 100%;
   position: relative;
