@@ -1188,27 +1188,131 @@ function Agents() {
                 className={`${s.agentTab} ${agentTab === t ? s.agentTabActive : ''}`}>{t}</button>
             ))}
           </div>
-          {agentTab === 'Information' && (
-            <div className={s.agentInfoSection}>
-              <div className={s.agentSectionTitle}>Agent Information</div>
-              {[
-                ['Name', agent.name],
-                ['Last Active', agent.lastActive],
-                ['Authorized', agent.authorized ? <Tag label="Yes" /> : null],
-                ['API URL', agent.apiUrl],
-                ['Running Build', <em className={s.muted}>No running build</em>],
-                ['Agent Version', agent.version],
-                ['OS Name & Version', agent.osVer],
-                ['Data Directory', agent.dataDir],
-              ].map(([k, v]) => (
-                <div key={k} className={s.agentInfoRow}>
-                  <span className={s.agentInfoKey}>{k}</span>
-                  <span className={s.agentInfoVal}>{v}</span>
+          <div className={s.agentTabContent}>
+            {agentTab === 'Information' && (
+              <div className={s.agentInfoSection}>
+                <div className={s.agentSectionTitle}>Agent Information</div>
+                {[
+                  ['Name', agent.name],
+                  ['Last Active', agent.lastActive],
+                  ['Authorized', agent.authorized ? <Tag label="Yes" /> : null],
+                  ['API URL', agent.apiUrl],
+                  ['Running Build', <em className={s.muted}>No running build</em>],
+                  ['Agent Version', agent.version],
+                  ['OS Name & Version', agent.osVer],
+                  ['Data Directory', agent.dataDir],
+                ].map(([k, v]) => (
+                  <div key={k} className={s.agentInfoRow}>
+                    <span className={s.agentInfoKey}>{k}</span>
+                    <span className={s.agentInfoVal}>{v}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {agentTab === 'Parameters' && (
+              <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                {/* Search Bar */}
+                <div style={{ padding: '10px 14px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div className={s.searchBox}>
+                    <Ic.Search />
+                    <input className={s.searchInput} placeholder="Search parameters..." />
+                  </div>
                 </div>
-              ))}
-            </div>
-          )}
-          {agentTab !== 'Information' && <div className={s.emptyState}><span className={s.muted}>No data</span></div>}
+                {/* Group: Agent */}
+                <div style={{ padding: '10px 14px 0' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(9,88,217,0.15)', color: '#1677ff', padding: '3px 10px', borderRadius: 4, fontSize: 11, fontWeight: 600, marginBottom: 8 }}>
+                    Agent <span style={{ color: 'rgba(var(--text-rgb),0.45)', fontWeight: 400 }}>(10)</span>
+                  </div>
+                  <div style={{ border: '1px solid var(--color-border)', borderRadius: 6, overflow: 'hidden' }}>
+                    {[
+                      ['agent.os', agent.os?.toLowerCase() ?? 'linux'],
+                      ['agent.os.build', agent.os === 'Windows' ? '10.0.19045' : agent.os === 'macOS' ? '23.4.0' : '6.17.0-14-generic'],
+                      ['agent.os.hostname', agent.id?.slice(0, 12) ?? '419a56b8e2bb'],
+                      ['agent.os.prettyname', agent.os === 'Windows' ? 'Windows 10 Pro' : agent.os === 'macOS' ? 'macOS 14.4 Sonoma' : 'Ubuntu 20.04.6 LTS'],
+                      ['agent.os.version', agent.os === 'Windows' ? '10.0.19045' : agent.os === 'macOS' ? '14.4.0' : '20.04.6 LTS (Focal Fossa)'],
+                      ['agent.runner.cmd', '1.0.0'],
+                      ['agent.runner.configfile', '1.0.0'],
+                      ['agent.runner.script', '1.0.0'],
+                      ['agent.runner.ssh', '1.0.0'],
+                      ['agent.version', agent.version ?? '0.1.0_nightly_20260303101310'],
+                    ].map(([k, v], i, arr) => (
+                      <div key={k} style={{ display: 'flex', alignItems: 'center', padding: '7px 12px', borderBottom: i < arr.length - 1 ? '1px solid var(--color-border-subtle)' : 'none', gap: 12 }}>
+                        <span style={{ flex: '0 0 200px', fontSize: 11.5, color: 'rgba(var(--text-rgb),0.8)', fontWeight: 500 }}>{k}</span>
+                        <span style={{ flex: 1, fontSize: 11.5, color: k === 'agent.version' ? 'var(--color-warning)' : 'rgba(var(--text-rgb),0.65)' }}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Group: env */}
+                <div style={{ padding: '12px 14px 10px' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(9,88,217,0.15)', color: '#1677ff', padding: '3px 10px', borderRadius: 4, fontSize: 11, fontWeight: 600, marginBottom: 8 }}>
+                    env <span style={{ color: 'rgba(var(--text-rgb),0.45)', fontWeight: 400 }}>(2)</span>
+                  </div>
+                  <div style={{ border: '1px solid var(--color-border)', borderRadius: 6, overflow: 'hidden' }}>
+                    {[
+                      ['env.workdir', agent.dataDir ?? '/data/work'],
+                      ['env.tempdir', agent.os === 'Windows' ? 'C:\\Windows\\Temp' : '/tmp'],
+                    ].map(([k, v], i, arr) => (
+                      <div key={k} style={{ display: 'flex', alignItems: 'center', padding: '7px 12px', borderBottom: i < arr.length - 1 ? '1px solid var(--color-border-subtle)' : 'none', gap: 12 }}>
+                        <span style={{ flex: '0 0 200px', fontSize: 11.5, color: 'rgba(var(--text-rgb),0.8)', fontWeight: 500 }}>{k}</span>
+                        <span style={{ flex: 1, fontSize: 11.5, color: 'rgba(var(--text-rgb),0.65)' }}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {agentTab === 'Actions' && (
+              <div style={{ padding: '6px 0' }}>
+                {/* Authorize */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Authorize Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Grant the agent permission to connect.</div>
+                  </div>
+                  <button style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 14px', borderRadius: 'var(--radius-sm)', fontSize: 11.5, fontWeight: 600, cursor: 'pointer', background: 'var(--color-success)', border: '1px solid var(--color-success)', color: '#fff', whiteSpace: 'nowrap' }}>
+                    <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Authorized
+                  </button>
+                </div>
+                {/* Disable */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Disable Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Disable this agent to prevent it from running builds.</div>
+                  </div>
+                  <button className={s.btnOutline} style={{ whiteSpace: 'nowrap' }}>
+                    <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path strokeLinecap="round" strokeLinejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 12.728M5.636 5.636A9 9 0 0 1 18.364 18.364M5.636 5.636 18.364 18.364" /></svg>
+                    Disable
+                  </button>
+                </div>
+                {/* Reset */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Reset Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Reset the agent to its initial state.</div>
+                  </div>
+                  <button className={s.btnOutline} style={{ whiteSpace: 'nowrap' }}>
+                    <Ic.Sync />
+                    Reset
+                  </button>
+                </div>
+                {/* Delete */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Delete Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Permanently remove the agent.</div>
+                  </div>
+                  <button style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 14px', borderRadius: 'var(--radius-sm)', fontSize: 11.5, fontWeight: 600, cursor: 'pointer', background: 'var(--color-error)', border: '1px solid var(--color-error)', color: '#fff', whiteSpace: 'nowrap' }}>
+                    <Ic.Trash />
+                    Delete
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
@@ -1287,54 +1391,78 @@ function TriggersDash() {
     <div className={s.page}>
       <div className={s.trigHead}>
         <h1 className={s.pageH1}>Triggers Dashboard</h1>
-        <button className={s.btnPrimary}><Ic.Plus /> Add Trigger</button>
+        <button className={s.btnPrimary} style={{ padding: '6px 14px', borderRadius: '4px', background: 'var(--color-demo-accent)', color: '#fff', fontSize: '12px', fontWeight: 600 }}>
+          <Ic.Plus /> Add Trigger
+        </button>
       </div>
-      <div className={s.trigFilters}>
-        <div className={s.searchBox} style={{ minWidth: 220 }}>
+      <div className={s.trigFilters} style={{ margin: '8px 0 16px', display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div className={s.searchBox} style={{ flex: 1, padding: '8px 12px' }}>
           <Ic.Search />
-          <input className={s.searchInput} placeholder="Search by trigger name…"
+          <input className={s.searchInput} placeholder="Search by trigger name..."
             value={search} onChange={e => setSearch(e.target.value)} />
         </div>
-        <div className={s.selectMock} style={{ minWidth: 120 }}>All Statuses <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 9, height: 9, opacity: .35, marginLeft: 4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg></div>
-        <div className={s.selectMock} style={{ minWidth: 120 }}>All Schedules <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 9, height: 9, opacity: .35, marginLeft: 4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg></div>
+        <div className={s.selectMock} style={{ width: '160px', padding: '8px 12px', display: 'flex', justifyContent: 'space-between' }}>
+          All Statuses <ChevDownIcon />
+        </div>
+        <div className={s.selectMock} style={{ width: '160px', padding: '8px 12px', display: 'flex', justifyContent: 'space-between' }}>
+          All Schedules <ChevDownIcon />
+        </div>
       </div>
-      <div className={s.trigTable}>
+      <div className={s.trigTable} style={{ background: 'transparent', border: '1px solid var(--color-border-subtle)' }}>
         <div className={s.trigTHead}>
-          <span style={{ flex: '0 0 130px' }}>Name</span>
-          <span style={{ flex: '0 0 180px' }}>Build Configuration</span>
-          <span style={{ flex: 1 }}>Schedule</span>
-          <span style={{ flex: '0 0 110px' }}>Next Run ↑</span>
-          <span style={{ flex: '0 0 80px' }}>Status</span>
-          <span style={{ flex: '0 0 60px' }}>Actions</span>
+          <span style={{ width: '22%' }}>Name</span>
+          <span style={{ width: '24%' }}>Build Configuration</span>
+          <span style={{ width: '30%' }}>Schedule</span>
+          <span style={{ width: '12%', color: 'rgba(var(--text-rgb),0.8)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
+            Next Run <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg>
+          </span>
+          <span style={{ width: '8%' }}>Status</span>
+          <span style={{ width: '4%' }}>Actions</span>
         </div>
         {shown.map((t, i) => (
-          <div key={i} className={s.trigTRow}>
-            <span style={{ flex: '0 0 130px' }} className={s.bold}>{t.name}</span>
-            <div style={{ flex: '0 0 180px' }}>
+          <div key={i} className={s.trigTRow} style={{ padding: '12px 14px' }}>
+            <span style={{ width: '22%', fontSize: '11.5px', fontWeight: 500, color: 'rgba(var(--text-rgb),0.8)' }}>{t.name}</span>
+            <div style={{ width: '24%', fontSize: '11.5px' }}>
               {t.config.split('/').map((seg, si, arr) => (
                 <span key={si}>{si > 0 && <span className={s.muted}> / </span>}<span className={s.link}>{seg.trim()}</span></span>
               ))}
             </div>
-            <div style={{ flex: 1 }}>
-              <span className={`${s.schedTag} ${t.schedule === 'Daily' ? s.schedDaily : s.schedCustom}`}>{t.schedule}</span>
-              <div className={s.muted} style={{ fontSize: 10, marginTop: 2 }}>{t.detail} {t.tz}</div>
+            <div style={{ width: '30%' }}>
+              <span style={{ 
+                display: 'inline-flex', 
+                padding: '2px 8px', 
+                borderRadius: '4px', 
+                fontSize: '10.5px', 
+                fontWeight: 600,
+                background: t.schedule === 'Daily' ? 'rgba(9, 88, 217, 0.15)' : 'rgba(214, 126, 61, 0.15)',
+                color: t.schedule === 'Daily' ? '#1677ff' : '#eb9554'
+              }}>
+                {t.schedule}
+              </span>
+              <div className={s.muted} style={{ fontSize: '10px', marginTop: '4px' }}>{t.detail} {t.tz}</div>
             </div>
-            <span style={{ flex: '0 0 110px' }} className={t.enabled ? s.bold : s.muted}>{t.nextRun}</span>
-            <span style={{ flex: '0 0 80px' }}>
-              {t.enabled
-                ? <span className={s.enabledPill}>Enabled</span>
-                : <span className={s.muted}>Disabled</span>}
+            <span style={{ width: '12%', fontSize: '11.5px', color: t.enabled ? 'rgba(var(--text-rgb),0.8)' : 'rgba(var(--text-rgb),0.4)' }}>
+              {t.enabled ? t.nextRun : <span>Enable to see<br/>next run time</span>}
             </span>
-            <div style={{ flex: '0 0 60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <button className={s.iconBtn}><Ic.Dots /></button>
+            <div style={{ width: '8%', display: 'flex' }}>
+              {t.enabled
+                ? <span style={{ padding: '2px 6px', borderRadius: '4px', fontSize: '10.5px', background: 'rgba(0, 168, 67, 0.1)', color: '#00c951', border: '1px solid rgba(0, 168, 67, 0.2)', fontWeight: 600 }}>Enabled</span>
+                : <span className={s.muted} style={{ fontSize: '11.5px' }}>Disabled</span>}
+            </div>
+            <div style={{ width: '4%', display: 'flex', justifyContent: 'center' }}>
+              <button className={s.iconBtn} style={{ border: '1px solid rgba(var(--text-rgb),0.2)', borderRadius: '4px', width: '28px', height: '28px' }}><Ic.Dots /></button>
             </div>
           </div>
         ))}
       </div>
-      <div className={s.pagination}>
-        <button className={s.pgBtn}>&lt;</button>
-        {[1, 2, 3].map(n => <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`}>{n}</button>)}
-        <button className={s.pgBtn}>&gt;</button>
+      <div className={s.pagination} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12, gap: 4 }}>
+        <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&lt;</button>
+        {[1, 2, 3, 4].map(n => 
+          <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`} style={n === 1 ? { background: '#d6336c', border: 'none', borderRadius: 4, color: '#fff', width: 24, height: 24, padding: 0 } : { background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.8)', width: 24, height: 24, padding: 0, cursor: 'pointer' }}>
+            {n}
+          </button>
+        )}
+        <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&gt;</button>
       </div>
     </div>
   );
@@ -1565,7 +1693,7 @@ export default function BuildNinjaDemo() {
               {page === 'projects' && <Projects selectedProj={selectedProj} onSelect={setSelectedProj} />}
               {page === 'agents' && <Agents />}
               {page === 'queue' && <Queue />}
-              {page === 'triggers' && <Triggers />}
+              {page === 'triggers' && <TriggersDash />}
               {page === 'users' && <Users />}
               {page === 'settings' && <Settings />}
             </div>
