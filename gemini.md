@@ -43,6 +43,9 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Install Page Overhaul**: Resolved blank rendering issues on the `/install` page, stabilized authentication redirection flows, updated typography to the new two-tier font system (Inter + Syne), and refactored `InstallSection` styles to utilize CSS modules.
 - ✅ **Install Dashboard Redesign**: Refactored the `/install/dashboard` (`InstallDashboard` component) into a premium interface utilizing CSS modules, structural grids, dynamic hover states, and semantic variables.
 - ✅ **Partner Page Redesign**: completely rebuilt `/partners` (5 legacy sections → 5 modern components: `PartnerHero`, `PartnerBenefits`, `PartnerDemographics`, `PartnerModels`, `PartnerForm`). Transitioned strict hardcoded assets to pure inline SVGs, implemented a multi-column Bento grid for "Models" and "Benefits", added a dual-pane vertical tab structure for "Demographics", and modernized the HubSpot/ReCAPTCHA form.
+- ✅ **BuildNinjaDemo Projects Selection Flow**: Implemented a two-stage project navigation. Clicking "Projects" opens a top-level list of project rows. Clicking a project (e.g., "Alpha") opens a modernized two-pane layout with dedicated sub-tabs (Projects, Members, Settings).
+- ✅ **BuildNinjaDemo Config Detail Flow**: Implemented a multi-tiered drill-down feature reproducing the raw production environment. Clicking a build configuration inside a project opens a tailored `ConfigDetail` view with an authentic History timeline, accurate action button styling (split buttons), and specifically mapped SVGs. Cleaned out all non-generic mock data artifacts.
+- ✅ **Agent Pool Expansion**: Added generic agents for Windows, Linux, and macOS in `data.js` to represent a diverse, real-world build environment. Integrated these into the `Agents` view with OS-specific metadata.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
@@ -57,3 +60,4 @@ The Home and Feature pages have been significantly modernized with a premium, da
 5. **Clean Presentation**: Avoid auto-running loops or complex simulated behaviors inside demonstration mockups.
 6. **Centralized Auth Persistence**: Use centralized cookie utilities (`lib/cookieAuth.js`) instead of direct `localStorage` calls.
 7. **Bento Logic**: For feature-heavy pages, group related data into cards with varying sizes and hover physics to create visual hierarchy.
+8. **Generic Data Names**: Never use original project or user names (e.g., "Asher", "onlyvcs") found in reference links or internal systems. Always replace them with generic alternatives (e.g., "Alpha", "Project Alpha", "Main Build") in demonstration components and mocks.

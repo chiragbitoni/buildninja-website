@@ -12,6 +12,13 @@ import Image from 'next/image';
 
 /* ─── Icons ─── */
 const Ic = {
+  History: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-600-80h56c4.4 0 8-3.6 8-8V560c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V384c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v320c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V462c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v242c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V304c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v400c0 4.4 3.6 8 8 8z" /></svg>,
+  Monitor: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M300 328a60 60 0 10120 0 60 60 0 10-120 0zM852 64H172c-17.7 0-32 14.3-32 32v660c0 17.7 14.3 32 32 32h680c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-32 660H204V128h616v596zM604 328a60 60 0 10120 0 60 60 0 10-120 0zm250.2 556H169.8c-16.5 0-29.8 14.3-29.8 32v36c0 4.4 3.3 8 7.4 8h729.1c4.1 0 7.4-3.6 7.4-8v-36c.1-17.7-13.2-32-29.7-32zM664 508H360c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" /></svg>,
+  Thunder: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z" /></svg>,
+  Tree: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M832 192H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32v-64h192v64c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM352 352H224V256h128v96zm480 0H704V256h128v96zM192 576h640c17.7 0 32-14.3 32-32V352c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32zm32-192h128v96H224v-96zm480 0h128v96H704v-96zM832 736H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V768c0-17.7-14.3-32-32-32zm-32 192H224V800h576v128z" /></svg>,
+  Users2: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M824.2 699.9a301.55 301.55 0 00-86.4-60.4C783.1 602.8 812 546.8 812 484c0-110.8-92.4-201.7-203.2-200-109.1 1.7-197 90.6-197 200 0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 00-86.4 60.4C345 754.6 314 826.8 312 903.8a8 8 0 008 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5A226.62 226.62 0 01612 684c60.9 0 118.2 23.7 161.3 66.8C814.5 792 838 846.3 840 904.3c.1 4.3 3.7 7.7 8 7.7h56a8 8 0 008-8.2c-2-77-33-149.2-87.8-203.9zM612 612c-34.2 0-66.4-13.3-90.5-37.5a126.86 126.86 0 01-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4 0 34.2-13.3 66.3-37.5 90.5A127.3 127.3 0 01612 612z" /></svg>,
+  Mail: () => <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>,
+  Sliders: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}><path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/></svg>,
   Dash: () => <svg fill="currentColor" viewBox="0 0 16 16" w="16" h="16" style={{ width: 20, height: 20 }}><path d="M12.229 1.5c.305 0 .595.063.871.189.275.12.515.285.718.493.208.203.372.443.493.718.126.276.189.566.189.871v8.459c0 .305-.063.595-.189.871-.12.276-.285.517-.493.725-.203.203-.443.368-.718.493-.276.121-.566.181-.871.181H3.771c-.305 0-.595-.06-.871-.181-.276-.126-.517-.29-.725-.493-.203-.208-.368-.45-.493-.725-.121-.276-.181-.566-.181-.871V3.771c0-.305.06-.595.181-.871.126-.276.29-.515.493-.718.208-.208.45-.372.725-.493.276-.126.566-.189.871-.189h8.458ZM3.821 2.429c-.189 0-.368.036-.537.109-.169.072-.319.174-.45.305-.126.126-.225.273-.297.443-.073.169-.109.348-.109.537v6.036h6.5V2.429H3.821ZM13.571 3.821c0-.189-.036-.368-.109-.537-.073-.169-.174-.317-.305-.443-.126-.13-.273-.232-.443-.305-.169-.073-.348-.109-.537-.109h-2.32v2.786h3.714V3.821ZM13.571 6.143h-3.714v3.714h3.714V6.143ZM2.429 12.179c0 .188.036.368.109.537.072.169.171.319.297.45.13.126.281.225.45.297.169.073.348.109.537.109h2.32v-2.786H2.429v1.393ZM12.179 13.571c.188 0 .368-.036.537-.109.169-.073.317-.171.442-.297.131-.13.232-.281.305-.45.073-.169.109-.348.109-.537v-1.393h-6.5v2.786h5.107Z" /></svg>,
   Proj: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 20, height: 20 }}><path d="M13.333 8H9.334c-.367 0-.667.3-.667.667v4.666c0 .367.3.667.667.667h4c.366 0 .666-.3.666-.667V8.667C14 8.3 13.7 8 13.333 8zm-.256 5.077H9.59V9.23h3.487v3.847zM6.667 2H2.667C2.3 2 2 2.3 2 2.667v5.333c0 .366.3.666.667.666h4c.366 0 .666-.3.666-.666V2.667C7.333 2.3 7.033 2 6.667 2zm-.257 5.744H3.18V2.923h3.23v4.82zM6.667 10H2.667C2.3 10 2 10.3 2 10.667v2.666c0 .367.3.667.667.667h4c.366 0 .666-.3.666-.667V10.667C7.333 10.3 7.033 10 6.667 10zm-.257 3.077H3.18v-2.154h3.23v2.154zM13.333 2H9.334C8.967 2 8.667 2.3 8.667 2.667v3.333c0 .367.3.667.666.667h4c.366 0 .666-.3.666-.667V2.667C14 2.3 13.7 2 13.333 2zm-.256 3.744H9.59V2.923h3.487v2.82z" /></svg>,
   Agent: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 20, height: 20 }}><path d="M13.13 1.593H2.87C1.84 1.593 1 2.437 1 3.474v6.466c0 1.037.84 1.88 1.87 1.88h4.542v1.411H5.435c-.325 0-.588.263-.588.588s.263.588.588.588h5.13c.325 0 .588-.263.588-.588s-.263-.588-.588-.588H8.588v-1.411h4.542c1.031 0 1.87-.843 1.87-1.88V3.474c0-1.037-.839-1.881-1.87-1.881zm.694 8.347c0 .389-.312.705-.694.705H2.87c-.383 0-.695-.316-.695-.705V3.474c0-.389.312-.705.695-.705h10.26c.382 0 .694.316.694.705v6.466z" /></svg>,
@@ -76,9 +83,10 @@ const NAV = [
   { id: 'settings', Icon: Ic.Cog },
 ];
 
-function ProjectTree({ activePage }) {
-  const [expanded, setExpanded] = useState({ 'alpha': true, 'beta': true });
+function ProjectTree({ activePage, selectedProj, onSelect }) {
+  const [expanded, setExpanded] = useState({ 'alpha': true, 'alpha-dev': true });
   const toggle = id => setExpanded(e => ({ ...e, [id]: !e[id] }));
+  
   return (
     <div className={s.treePanel}>
       <div className={s.treeSearch}>
@@ -95,9 +103,9 @@ function ProjectTree({ activePage }) {
       <div className={s.treeSection}>PROJECTS</div>
       {SIDEBAR_TREE.projects.map(proj => (
         <div key={proj.id}>
-          <div className={`${s.treeRow} ${activePage === 'projects' && proj.id === 'alpha' ? s.treeRowActive : ''}`}
-            onClick={() => toggle(proj.id)} style={{ paddingLeft: 6 }}>
-            <span className={s.treeArrow}>{expanded[proj.id] ? '▾' : '▸'}</span>
+          <div className={`${s.treeRow} ${selectedProj?.id === proj.id ? s.treeRowActive : ''}`}
+            onClick={(e) => { e.stopPropagation(); onSelect(proj); }} style={{ paddingLeft: 6 }}>
+            <span className={s.treeArrow} onClick={(e) => { e.stopPropagation(); toggle(proj.id); }}>{expanded[proj.id] ? '▾' : '▸'}</span>
             <Ic.Folder />
             <span className={s.treeLabel}>{proj.name}</span>
           </div>
@@ -105,13 +113,15 @@ function ProjectTree({ activePage }) {
             <div>
               {proj.children?.map(sub => (
                 <div key={sub.id}>
-                  <div className={s.treeRow} style={{ paddingLeft: 20 }} onClick={() => toggle(sub.id)}>
+                  <div className={`${s.treeRow} ${selectedProj?.id === sub.id ? s.treeRowActive : ''}`} 
+                    style={{ paddingLeft: 20 }} 
+                    onClick={() => { onSelect(sub); toggle(sub.id); }}>
                     <span className={s.treeArrow}>{expanded[sub.id] ? '▾' : '▸'}</span>
                     <Ic.Folder />
                     <span className={s.treeLabel}>{sub.name}</span>
                   </div>
                   {expanded[sub.id] && sub.configs?.map(c => (
-                    <div key={c} className={s.treeRow} style={{ paddingLeft: 32 }}>
+                    <div key={c} className={s.treeRow} style={{ paddingLeft: 32 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
                       <span className={s.treeDash}>■</span>
                       <span className={s.treeLabel} style={{ fontSize: 11 }}>{c}</span>
                     </div>
@@ -119,7 +129,7 @@ function ProjectTree({ activePage }) {
                 </div>
               ))}
               {proj.configs?.map(c => (
-                <div key={c} className={s.treeRow} style={{ paddingLeft: 20 }}>
+                <div key={c} className={s.treeRow} style={{ paddingLeft: 20 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
                   <span className={s.treeDash}>■</span>
                   <span className={s.treeLabel} style={{ fontSize: 11 }}>{c}</span>
                 </div>
@@ -247,68 +257,879 @@ function Dashboard() {
 }
 
 /* ══ PROJECTS ══ */
-function Projects() {
+
+// Icon for the pin/star in the project header
+const PinIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 12, height: 12 }}>
+    <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/>
+  </svg>
+);
+
+// Folder icon matching the outlined folder in the real app
+const FolderOutlineIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 16, height: 16 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+  </svg>
+);
+
+// Root-level "Projects" page — matches original: same two-pane layout, right pane = flat row list
+function ProjectList({ onSelect }) {
   const [tab, setTab] = useState('Projects');
+  const project = { name: 'Projects', id: 'root' };
+
   return (
-    <div className={s.page}>
-      <div className={s.projTopRow}>
-        <div className={s.projActive}>
+    <div className={s.projShell}>
+      {/* Left sidebar — identical to ProjectDetail */}
+      <div className={s.projSidebar}>
+        <div className={s.projSidebarHead}>
           <div className={s.projActiveDot} />
-          <span className={s.projName}>{PROJECT.name}</span>
-          <button className={s.iconBtn}><Ic.Edit /></button>
-          <button className={s.iconBtn}><Ic.Star /></button>
+          <span className={s.projName}>Projects</span>
+          <button className={s.iconBtn}><PinIcon /></button>
         </div>
-        <button className={s.btnPrimary}><Ic.Plus /> New Build Configuration</button>
-      </div>
-      <div className={s.projNavRow}>
-        {[
-          { id: 'Projects', sub: 'Manage sub-projects', Icon: Ic.Proj },
-          { id: 'Members', sub: 'Manage project members', Icon: Ic.Users },
-          { id: 'Settings', sub: 'View project settings', Icon: Ic.Cog },
-        ].map(t => (
-          <button key={t.id} onClick={() => setTab(t.id)}
-            className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
-            <span className={s.projNavIcon}><t.Icon /></span>
-            <div className={s.projNavText}>
-              <span className={s.projNavLabel}>{t.id}</span>
-              <span className={s.projNavSub}>{t.sub}</span>
-            </div>
+        <div style={{ padding: '8px 10px 6px' }}>
+          <button className={s.btnPrimary} style={{ width: '100%', justifyContent: 'center', fontSize: 11.5 }}>
+            <Ic.Plus /> New Build Configuration
           </button>
-        ))}
-      </div>
-      {tab === 'Projects' && (
-        <div className={s.projContent}>
-          <div className={s.projContentHead}>
-            <span className={s.projContentTitle}>Projects</span>
-            <span className={s.muted}>Manage sub-projects</span>
+        </div>
+        <div style={{ padding: '4px 10px 6px' }}>
+          <div className={s.editProjBtn}>
+            <GearIcon />
+            <span style={{ flex: 1, textAlign: 'left' }}>Edit Project</span>
+            <div className={s.editProjBtnDivider} />
+            <ChevDownIcon />
           </div>
-          <div className={s.configRow} style={{ background: 'var(--color-bg-panel)', borderRadius: 8 }}>
-            <div className={s.configRowIcon} style={{ color: 'rgba(var(--text-rgb),.3)' }}><Ic.Folder /></div>
+        </div>
+        <div className={s.projNavRow}>
+          {[
+            { id: 'Projects', sub: 'Manage sub-projects', Icon: Ic.Proj },
+            { id: 'Members', sub: 'Manage project members', Icon: Ic.Users },
+            { id: 'Settings', sub: 'View project settings', Icon: Ic.Cog },
+          ].map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
+              <span className={s.projNavIcon}><t.Icon /></span>
+              <div className={s.projNavText}>
+                <span className={s.projNavLabel}>{t.id}</span>
+                <span className={s.projNavSub}>{t.sub}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Right pane content based on tab switcher */}
+      {tab === 'Projects' && (
+        <div className={s.projRightPane}>
+          <div className={s.projRightHead}>
             <div>
-              <div className={s.configName} style={{ fontSize: 13 }}>dev</div>
-              <div className={s.muted} style={{ fontSize: 11 }}>Project Group</div>
+              <div className={s.projRightTitle}>Projects</div>
+              <div className={s.muted} style={{ fontSize: 11 }}>Manage sub-projects</div>
             </div>
           </div>
-          {PROJECT.configs.map(c => (
-            <div key={c.name} className={s.configRow}>
-              <div className={s.configRowIcon} style={{ background: 'rgba(216,48,91,.15)', color: '#d8305b', borderRadius: 6, padding: 5 }}>
-                <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}><path d="M5.481 11.479c-.13 0-.255-.027-.373-.08a.97.97 0 0 1-.313-.215.97.97 0 0 1-.214-.313.97.97 0 0 1-.08-.372V5.46c0-.13.027-.255.08-.373a.97.97 0 0 1 .527-.527.97.97 0 0 1 .373-.08h5.04c.13 0 .255.027.373.08a.97.97 0 0 1 .527.527c.053.118.08.243.08.373v5.039c0 .13-.027.255-.08.373a.97.97 0 0 1-.527.527.97.97 0 0 1-.373.08H5.48z" /></svg>
+          <div className={s.projListRows}>
+            {SIDEBAR_TREE.projects.map(p => (
+              <div key={p.id} className={s.projListRow} onClick={() => onSelect(p)}>
+                <div className={s.projListRowIcon}>
+                  {p.configs
+                    ? <div style={{ width: 10, height: 10, background: 'var(--color-demo-accent)', borderRadius: 2 }} />
+                    : <FolderOutlineIcon />}
+                </div>
+                <div className={s.projListRowBody}>
+                  <div className={s.projListRowName}>{p.name}</div>
+                  <div className={s.muted} style={{ fontSize: 10.5 }}>
+                    {p.children ? 'Project Group' : (p.configs ? 'No builds yet' : 'Project Group')}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      {tab === 'Members' && <ProjectsMembersTab />}
+      {tab === 'Settings' && <ProjectsSettingsTab />}
+    </div>
+  );
+}
+
+
+// Gear icon used in Settings items
+const GearIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}>
+    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.474l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+  </svg>
+);
+
+// Slider/Parameters icon used in Settings items
+const SlidersIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}>
+    <path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+  </svg>
+);
+
+// Edit icon for the settings card action button
+const SmEditIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
+  </svg>
+);
+
+// Chevron icon for the settings card collapse button
+const ChevDownIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+);
+
+// Person icon for member avatar
+const PersonIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+  </svg>
+);
+
+// Plus icon for Add Member button
+const PlusMemberIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}>
+    <path d="M15 12c2.7 0 4.8-2.1 4.8-4.8S17.7 2.4 15 2.4s-4.8 2.1-4.8 4.8S12.3 12 15 12zm-9 2.4V16h-2v2h2v2h2v-2h2v-2H8v-1.6c1.6.8 3.2 1.2 4.8 1.6H12.5C10.7 14.8 9.3 14.4 6 14.4zM15 14.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+  </svg>
+);
+
+function ProjectsSubTab({ project, onSelect }) {
+  // Use specific configs if available, otherwise fallback to PROJECT.configs mock for demo
+  const configs = (project.configs && Array.isArray(project.configs) && typeof project.configs[0] === 'object') 
+    ? project.configs 
+    : PROJECT.configs;
+  const children = project.children || [];
+
+  return (
+    <div className={s.projRightPane}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Projects</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Manage sub-projects</div>
+        </div>
+      </div>
+      <div className={s.membersFilters}>
+        <div className={s.searchBox} style={{ flex: 1 }}>
+          <Ic.Search />
+          <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search...</span>
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        {children.map(c => (
+          <div key={c.id} className={s.projContent} onClick={() => onSelect(c)}>
+            <div className={s.configRow}>
+              <div className={s.configRowIcon} style={{ color: 'var(--color-demo-accent)' }}><FolderOutlineIcon /></div>
+              <div className={s.configRowBody}>
+                <div className={s.configName}>{c.name}</div>
+                <div className={s.muted} style={{ fontSize: 10.5 }}>Project Group</div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {configs.map((c, i) => (
+          <div key={i} className={s.projContent} onClick={() => onSelect({ ...c, type: 'config' })} style={{ cursor: 'pointer' }}>
+            <div className={s.configRow}>
+              <div className={s.configRowIcon} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: 10, height: 10, background: c.status === 'Failed' ? '#ff4d4f' : '#00c951', borderRadius: 2 }} />
               </div>
               <div className={s.configRowBody}>
                 <div className={s.configName}>{c.name}</div>
                 <div className={s.configMeta}>
-                  <span className={s.link}>{c.lastBuild}</span>
+                  <span className={s.muted} style={{ fontSize: 11 }}>{c.lastBuild}</span>
+                  <span className={s.muted} style={{ fontSize: 11 }}>|</span>
                   <Tag label={c.status} />
-                  <span className={s.muted}>{c.date}</span>
+                  <span className={s.muted} style={{ fontSize: 11 }}>|</span>
+                  <span className={s.muted} style={{ fontSize: 11 }}>{c.date}</span>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      )}
-      {tab !== 'Projects' && <div className={s.emptyState}><span className={s.muted}>No content to display</span></div>}
+          </div>
+        ))}
+      </div>
     </div>
   );
+}
+
+function ProjectsMembersTab() {
+  return (
+    <div className={s.projRightPane}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Members</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Manage members for this project.</div>
+        </div>
+        <button className={s.btnPrimary} style={{ fontSize: 11, padding: '5px 10px' }}>
+          <PlusMemberIcon /> Add Member
+        </button>
+      </div>
+      <div className={s.membersFilters}>
+        <div className={s.searchBox} style={{ flex: 1 }}>
+          <Ic.Search />
+          <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search...</span>
+        </div>
+        <div className={s.selectMock} style={{ minWidth: 120 }}>
+          All Access Levels
+          <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 9, height: 9, opacity: .35, marginLeft: 4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg>
+        </div>
+      </div>
+      <div className={s.membersTable}>
+        <div className={s.membersTHead}>
+          <span style={{ flex: 2 }}>Members</span>
+          <span style={{ flex: 1.5 }}>Inherited From</span>
+          <span style={{ flex: 1.5 }}>Access Level</span>
+          <span style={{ flex: '0 0 60px' }}>Actions</span>
+        </div>
+        {PROJECT.members.map((m, idx) => (
+          <div key={idx} className={s.membersTRow}>
+            <div style={{ flex: 2, display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div className={s.memberAvatar}><PersonIcon /></div>
+              <span style={{ fontSize: 11.5, color: 'rgba(var(--text-rgb),.85)', fontWeight: 500 }}>{m.name}</span>
+            </div>
+            <div style={{ flex: 1.5 }}>
+              <span className={s.link} style={{ fontSize: 11.5 }}>{m.inherited}</span>
+            </div>
+            <div style={{ flex: 1.5 }}>
+              <div className={s.selectMock} style={{ width: 'fit-content', fontSize: 11, padding: '3px 8px' }}>
+                {m.role}
+                <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 8, height: 8, opacity: .35, marginLeft: 4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg>
+              </div>
+            </div>
+            <div style={{ flex: '0 0 60px' }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ConfigExecutionStepsTab() {
+  return (
+    <div className={s.sectionDataGrid}>
+      <div className={s.gridHead} style={{ '--cols': '1fr 2fr' }}>
+        <span>Execution Step Names</span>
+        <span>Parameters</span>
+      </div>
+      <div className={s.emptyGridBody}>
+        <div className={s.emptyIllustration} />
+        <span className={s.muted}>No data available</span>
+      </div>
+    </div>
+  );
+}
+
+function ConfigArtifactSettingsTab() {
+  return (
+    <div className={s.sectionDataGrid}>
+      <div className={s.gridHead} style={{ '--cols': '1fr 1fr 1.5fr' }}>
+        <span>Name</span>
+        <span>Condition</span>
+        <span>Paths</span>
+      </div>
+      <div className={s.emptyGridBody}>
+        <div className={s.emptyIllustration} />
+        <span className={s.muted}>No data available</span>
+      </div>
+    </div>
+  );
+}
+
+function ConfigParametersTab() {
+  return (
+    <div className={s.sectionDataGrid}>
+      <div className={s.gridHead} style={{ '--cols': '1.2fr 1fr 1fr 1fr' }}>
+        <span>Name</span>
+        <span>Value</span>
+        <span>Prompt on Run</span>
+        <span>Expose on Env</span>
+      </div>
+      <div className={s.emptyGridBody}>
+        <div className={s.emptyIllustration} />
+        <span className={s.muted}>No data available</span>
+      </div>
+    </div>
+  );
+}
+
+function ConfigSection({ id, title, sub, Icon, children, isOpen, onToggle, isLast }) {
+  return (
+    <div className={s.settingsTimelineItem}>
+      <div className={s.settingsTimelineLeft}>
+        <div className={s.settingsTimelineIcon}><Icon /></div>
+        {!isLast && <div className={s.settingsTimelineLine} />}
+      </div>
+      <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', marginBottom: 12 }}>
+        <div 
+          className={s.settingsTimelineCard} 
+          onClick={() => onToggle(id)} 
+          style={{ 
+            marginBottom: 0, 
+            borderBottomLeftRadius: isOpen ? 0 : 'var(--radius-card)', 
+            borderBottomRightRadius: isOpen ? 0 : 'var(--radius-card)', 
+            borderBottom: isOpen ? 'none' : undefined, 
+            background: isOpen ? 'var(--color-bg-base)' : 'var(--color-bg-surface)' 
+          }}
+        >
+          <div className={s.settingsTimelineCardContent}>
+            <div className={s.settingsCardTitle}>{title}</div>
+            <div className={s.muted} style={{ fontSize: 11 }}>{sub}</div>
+          </div>
+          <div className={s.settingsCardActions}>
+            <button className={s.iconBtn} onClick={e => { e.stopPropagation(); }} style={{ marginRight: 6 }}><SmEditIcon /></button>
+            <div className={`${s.sectionChev} ${isOpen ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: isOpen ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
+              <ChevDownIcon />
+            </div>
+          </div>
+        </div>
+        {isOpen && (
+          <div 
+            className={s.sectionContent} 
+            style={{ 
+              border: '1px solid var(--color-border)', 
+              borderTop: '1px solid rgba(var(--text-rgb), 0.08)', 
+              borderRadius: '0 0 var(--radius-card) var(--radius-card)', 
+              background: 'var(--color-bg-shell)' 
+            }}
+          >
+            {children}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ConfigDetailsTab({ config }) {
+  const [openSections, setOpenSections] = useState({ general: false, vcs: false, steps: false, artifacts: false, criteria: false, params: false });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.configDetailsHeader}>
+        <h2 className={s.paneTitle}>Build Configurations</h2>
+        <div className={s.muted} style={{ fontSize: 11.5 }}>Expand sections to view and manage configuration details</div>
+        <button className={s.exportBtn}><svg viewBox="64 64 896 896" width="13" height="13" fill="currentColor"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-56 640l-56-56 128-128-128-128 56-56 184 184-184 184z"/></svg> Export</button>
+      </div>
+
+      <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
+        <ConfigSection id="general" title="General Settings" sub="Basic configuration settings" Icon={Ic.Cog} isOpen={openSections.general} onToggle={toggle}>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Name:</span> <span className={s.infoVal}>{config.name}</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Description:</span> <span className={s.infoVal}>N/A</span></div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="vcs" title="Version Control Settings" sub="Version control settings" Icon={Ic.Tree} isOpen={openSections.vcs} onToggle={toggle}>
+          <div className={s.sectionDataGrid}>
+            <div className={s.gridHead} style={{ '--cols': '1.2fr 1fr 1.5fr' }}>
+              <span>VCS Type</span>
+              <span>Name</span>
+              <span>Parameters</span>
+            </div>
+            <div className={s.emptyGridBody}>
+               <div className={s.emptyIllustration} />
+               <span className={s.muted}>No data available</span>
+            </div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="steps" title="Execution Steps" sub="Build execution steps" Icon={Ic.Dash} isOpen={openSections.steps} onToggle={toggle}>
+          <ConfigExecutionStepsTab />
+        </ConfigSection>
+
+        <ConfigSection id="artifacts" title="Artifact Settings" sub="Build output artifacts" Icon={Ic.File} isOpen={openSections.artifacts} onToggle={toggle}>
+          <ConfigArtifactSettingsTab />
+        </ConfigSection>
+
+        <ConfigSection id="criteria" title="Agent Criteria" sub="Agent selection criteria" Icon={Ic.Monitor} isOpen={openSections.criteria} onToggle={toggle}>
+          <div className={s.sectionDataGrid}>
+            <div className={s.gridHead} style={{ '--cols': '1.5fr 1fr 1.5fr' }}>
+              <span>Parameter Name</span>
+              <span>Operator</span>
+              <span>Value</span>
+            </div>
+            <div className={s.emptyGridBody}>
+               <div className={s.emptyIllustration} />
+               <span className={s.muted}>No data available</span>
+            </div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="params" title="Parameters" sub="Parameters for the build" Icon={Ic.Sliders} isOpen={openSections.params} onToggle={toggle} isLast>
+          <ConfigParametersTab />
+        </ConfigSection>
+      </div>
+    </div>
+  );
+}
+
+/* ── Config Detail Layout ── */
+
+const HistoryIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-600-80h56c4.4 0 8-3.6 8-8V560c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V384c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v320c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V462c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v242c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V304c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v400c0 4.4 3.6 8 8 8z" />
+  </svg>
+);
+
+const MonitorIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M300 328a60 60 0 10120 0 60 60 0 10-120 0zM852 64H172c-17.7 0-32 14.3-32 32v660c0 17.7 14.3 32 32 32h680c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-32 660H204V128h616v596zM604 328a60 60 0 10120 0 60 60 0 10-120 0zm250.2 556H169.8c-16.5 0-29.8 14.3-29.8 32v36c0 4.4 3.3 8 7.4 8h729.1c4.1 0 7.4-3.6 7.4-8v-36c.1-17.7-13.2-32-29.7-32zM664 508H360c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
+  </svg>
+);
+
+const LightningIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z" />
+  </svg>
+);
+
+const TeamTabsIcon = () => (
+   <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+     <path d="M824.2 699.9a301.55 301.55 0 00-86.4-60.4C783.1 602.8 812 546.8 812 484c0-110.8-92.4-201.7-203.2-200-109.1 1.7-197 90.6-197 200 0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 00-86.4 60.4C345 754.6 314 826.8 312 903.8a8 8 0 008 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5A226.62 226.62 0 01612 684c60.9 0 118.2 23.7 161.3 66.8C814.5 792 838 846.3 840 904.3c.1 4.3 3.7 7.7 8 7.7h56a8 8 0 008-8.2c-2-77-33-149.2-87.8-203.9zM612 612c-34.2 0-66.4-13.3-90.5-37.5a126.86 126.86 0 01-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4 0 34.2-13.3 66.3-37.5 90.5A127.3 127.3 0 01612 612zM361.5 510.4c-.9-8.7-1.4-17.5-1.4-26.4 0-15.9 1.5-31.4 4.3-46.5.7-3.6-1.2-7.3-4.5-8.8-13.6-6.1-26.1-14.5-36.9-25.1a127.54 127.54 0 01-38.7-95.4c.9-32.1 13.8-62.6 36.3-85.6 24.7-25.3 57.9-39.1 93.2-38.7 31.9.3 62.7 12.6 86 34.4 7.9 7.4 14.7 15.6 20.4 24.4 2 3.1 5.9 4.4 9.3 3.2 17.6-6.1 36.2-10.4 55.3-12.4 5.6-.6 8.8-6.6 6.3-11.6-32.5-64.3-98.9-108.7-175.7-109.9-110.9-1.7-203.3 89.2-203.3 199.9 0 62.8 28.9 118.8 74.2 155.5-31.8 14.7-61.1 35-86.5 60.4-54.8 54.7-85.8 126.9-87.8 204a8 8 0 008 8.2h56.1c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5 29.4-29.4 65.4-49.8 104.7-59.7 3.9-1 6.5-4.7 6-8.7z" />
+   </svg>
+);
+
+const MailIcon = () => (
+  <svg viewBox="0 0 64 64" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M59.630859,14.341003c-.487305-1.090332-1.147461-2.056152-1.962891-2.871094s-1.78125-1.475586-2.871094-1.963379c-1.098633-.492188-2.272461-.741699-3.487305-.741699H12.405273c-1.215332,0-2.38916.249512-3.487305.741699-1.091309.488281-2.057617,1.148438-2.871582,1.963379-.814941.814941-1.475586,1.780762-1.963379,2.871094-.491699,1.099609-.741211,2.272949-.741211,3.487305v28.398438c0,1.214844.249512,2.387695.741211,3.487305.487305,1.09082,1.147949,2.056641,1.963379,2.87207.8125.8125,1.77832,1.473633,2.871582,1.962891,1.099121.492188,2.272461.741211,3.487305.741211h38.904297c1.213867,0,2.387695-.249023,3.487305-.741211,1.091797-.489258,2.057617-1.149414,2.871094-1.962891.81543-.81543,1.475586-1.78125,1.962891-2.87207.492188-1.101562.742188-2.274414.742188-3.487305v-28.398438c0-1.212891-.25-2.38623-.742188-3.487305ZM55.871094,23.745789v22.289551c0,.638672-.125,1.253906-.371094,1.827148-.24707.577148-.592773,1.09082-1.02832,1.526367-.436523.435547-.949219.782227-1.526367,1.029297-.572266.246094-1.1875.370117-1.827148.370117H12.59668c-.640137,0-1.254883-.124023-1.827637-.370117-.57666-.246094-1.089844-.592773-1.526367-1.029297-.435059-.43457-.78125-.948242-1.029297-1.526367-.245117-.572266-.369629-1.186523-.369629-1.827148v-22.289551l22.853516,13.717285c.701172.421875,1.616699.422852,2.320312,0l22.853516-13.717285ZM55.871094,18.019714v.483398l-24.013672,14.391602L7.84375,18.503113v-.483398c0-.639648.124512-1.254395.369629-1.827148.247559-.577148.59375-1.090332,1.029785-1.526367.43457-.435059.948242-.78125,1.525879-1.029785.572754-.245117,1.1875-.369629,1.827637-.369629h38.521484c.639648,0,1.254883.124512,1.827148.369629.578125.248535,1.091797.595215,1.526367,1.029297.436523.4375.782227.951172,1.02832,1.526367.246094.574707.371094,1.189453.371094,1.827637Z" />
+  </svg>
+);
+
+const GearTabsIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.7s-1.6-38.8-4.7-57.7l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z" />
+  </svg>
+);
+
+const ClockIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 12, height: 12 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+  </svg>
+);
+
+const CheckCircleIcon = () => (
+   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+   </svg>
+);
+
+const XCircleIcon = () => (
+   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
+   </svg>
+);
+
+const DownloadIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+  </svg>
+);
+
+
+
+function ConfigAgentsTab() {
+  return (
+    <div className={s.projRightPane} style={{ background: 'var(--color-bg-base)' }}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Agents Criteria</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Available agents for this configuration</div>
+        </div>
+      </div>
+      <div style={{ padding: '0 18px 18px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+           <div className={s.pickerSwitch}>
+             <button className={`${s.pickerOpt} ${s.pickerOptActive}`}>Matched</button>
+             <button className={s.pickerOpt}>Remaining</button>
+           </div>
+           <div className={s.searchBox} style={{ width: 220 }}>
+             <Ic.Search />
+             <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search agents...</span>
+           </div>
+        </div>
+
+        <div className={s.agentsListContainer}>
+           <div className={s.agentRow}>
+              <ChevDownIcon style={{ opacity: 0.5 }} />
+              <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
+              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-1</div>
+              <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
+                 <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
+                 <span style={{ fontSize: 11.5 }}>Linux</span>
+              </div>
+              <div style={{ flex: 1 }}>
+                 <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                 <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
+                 <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>24 seconds ago</div>
+              </div>
+           </div>
+           <div className={s.agentRow}>
+              <ChevDownIcon style={{ opacity: 0.5 }} />
+              <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
+              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-2</div>
+              <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
+                 <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
+                 <span style={{ fontSize: 11.5 }}>Linux</span>
+              </div>
+              <div style={{ flex: 1 }}>
+                 <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                 <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
+                 <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>34 seconds ago</div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ConfigTriggersTab() {
+  const [openSections, setOpenSections] = useState({ trigger1: true });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.configDetailsHeader}>
+        <h2 className={s.paneTitle}>Configuration Triggers</h2>
+        <div className={s.muted} style={{ fontSize: 11.5 }}>Configure automated build triggers and schedules</div>
+        <button className={s.exportBtn} style={{ background: 'var(--color-demo-accent)', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 4, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, position: 'absolute', top: 14, right: 0 }}>
+          <Ic.Plus /> Add Trigger
+        </button>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '16px 0', gap: 12 }}>
+         <div className={s.searchBox} style={{ flex: 1 }}>
+           <Ic.Search />
+           <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search by trigger name...</span>
+         </div>
+         <div style={{ display: 'flex', gap: 12 }}>
+            <div className={s.selectMock} style={{ width: 140 }}>All Statuses <ChevDownIcon /></div>
+            <div className={s.selectMock} style={{ width: 140 }}>All Schedules <ChevDownIcon /></div>
+         </div>
+      </div>
+
+      <div className={s.settingsTimeline}>
+        <div className={s.settingsTimelineItem}>
+          <div className={s.settingsTimelineLeft}>
+            <div className={s.settingsTimelineIcon} style={{ borderColor: '#0958d9', color: '#0958d9' }}><Ic.Thunder /></div>
+          </div>
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', marginBottom: 12 }}>
+            <div className={s.settingsTimelineCard} onClick={() => toggle('trigger1')} style={{ background: openSections.trigger1 ? 'var(--color-bg-base)' : 'var(--color-bg-surface)' }}>
+              <div className={s.settingsTimelineCardContent}>
+                <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                  <Tag label="Daily" style={{ background: '#0958d9', color: '#fff', border: 'none', borderRadius: 4, height: 18, fontSize: 10 }} />
+                  <div className={s.settingsCardTitle}>Daily Automation Trigger</div>
+                </div>
+                <div className={s.muted} style={{ fontSize: 11 }}>Trigger schedule: At 04:02 AM</div>
+              </div>
+              <div className={s.settingsCardActions}>
+                <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginRight: 16 }}>
+                   <span style={{ fontSize: 11.5, color: 'rgba(var(--text-rgb), 0.6)' }}>Disabled</span>
+                   <div className={s.toggleOn} style={{ background: 'rgba(var(--text-rgb), 0.15)', justifyContent: 'flex-start', width: 28, height: 14, borderRadius: 10, padding: 2 }}>
+                      <div className={s.toggleBall} style={{ background: 'rgba(var(--text-rgb), 0.3)', width: 10, height: 10 }} />
+                   </div>
+                </div>
+                <button className={s.iconBtn} onClick={e => e.stopPropagation()} style={{ marginRight: 6 }}><SmEditIcon /></button>
+                <div className={`${s.sectionChev} ${openSections.trigger1 ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: openSections.trigger1 ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
+                  <ChevDownIcon />
+                </div>
+              </div>
+            </div>
+            {openSections.trigger1 && (
+              <div className={s.sectionContent} style={{ border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 var(--radius-card) var(--radius-card)', background: 'var(--color-bg-shell)', padding: 16 }}>
+                <div className={s.triggerCardBody} style={{ background: 'transparent', padding: 0 }}>
+                   <div className={s.triggerCardRow}>
+                      <div style={{ opacity: 0.5, display: 'flex' }}><svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
+                      <span>Cron Pattern:</span>
+                      <span style={{ fontFamily: 'monospace', background: 'rgba(var(--text-rgb), 0.08)', padding: '2px 6px', borderRadius: 4, color: 'rgba(var(--text-rgb), 0.8)' }}>2 4 * * *</span>
+                   </div>
+                   <div className={s.triggerCardRow}>
+                      <div style={{ opacity: 0.5, display: 'flex' }}><Ic.Info /></div>
+                      <span>Next Run: Enable to see next run time</span>
+                   </div>
+                   <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Trigger</button>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
+                   </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ConfigNotificationsTab() {
+  const [openSections, setOpenSections] = useState({ notif1: true });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.configDetailsHeader}>
+        <h2 className={s.paneTitle}>Notification Settings</h2>
+        <div className={s.muted} style={{ fontSize: 11.5 }}>Build notifications settings</div>
+        <button className={s.exportBtn} style={{ background: 'var(--color-demo-accent)', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 4, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, position: 'absolute', top: 14, right: 0 }}>
+          <Ic.Plus /> Add Notification
+        </button>
+      </div>
+
+      <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
+        <div className={s.settingsTimelineItem}>
+          <div className={s.settingsTimelineLeft}>
+            <div className={s.settingsTimelineIcon} style={{ borderColor: '#52c41a', color: '#52c41a' }}><Ic.Mail /></div>
+          </div>
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', marginBottom: 12 }}>
+            <div className={s.settingsTimelineCard} onClick={() => toggle('notif1')} style={{ background: openSections.notif1 ? 'var(--color-bg-base)' : 'var(--color-bg-surface)' }}>
+              <div className={s.settingsTimelineCardContent}>
+                <div className={s.settingsCardTitle}>Email Notification</div>
+                <div className={s.muted} style={{ fontSize: 11 }}>admin@example.com</div>
+              </div>
+              <div className={s.settingsCardActions}>
+                <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginRight: 16 }}>
+                   <span style={{ fontSize: 11.5, color: '#52c41a', fontWeight: 600 }}>Enabled</span>
+                   <div className={s.toggleOn} style={{ background: '#52c41a', width: 28, height: 14, borderRadius: 10, padding: 2, display: 'flex', justifyContent: 'flex-end' }}>
+                      <div className={s.toggleBall} style={{ background: '#fff', width: 10, height: 10 }} />
+                   </div>
+                </div>
+                <button className={s.iconBtn} onClick={e => e.stopPropagation()} style={{ marginRight: 6 }}><SmEditIcon /></button>
+                <div className={`${s.sectionChev} ${openSections.notif1 ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: openSections.notif1 ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
+                  <ChevDownIcon />
+                </div>
+              </div>
+            </div>
+            {openSections.notif1 && (
+              <div className={s.sectionContent} style={{ border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 var(--radius-card) var(--radius-card)', background: 'var(--color-bg-shell)', padding: 16 }}>
+                <div className={s.triggerCardBody} style={{ background: 'transparent', padding: 0 }}>
+                   <div className={s.triggerCardRow}>
+                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>To:</span>
+                      <span style={{ background: 'var(--color-error)', color: '#fff', padding: '2px 8px', borderRadius: 20, fontSize: 11 }}>admin@example.com</span>
+                   </div>
+                   <div className={s.triggerCardRow}>
+                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Subject:</span>
+                      <span>CI/CD Build &#123;&#123;.buildStatusName&#125;&#125; &ndash; &#123;&#123;.configName&#125;&#125;</span>
+                   </div>
+                   <div className={s.triggerCardRow}>
+                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Condition:</span>
+                      <Tag label="Success" style={{ border: '1px solid #52c41a', color: '#52c41a', borderRadius: 4, height: 18, fontSize: 10 }} />
+                   </div>
+                   <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Notification</button>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
+                   </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ConfigDetail({ config }) {
+  const [tab, setTab] = useState('History');
+  
+  const historyRuns = [
+    { id: 4149, status: 'Completed', time: '26 minutes ago', dur: '<1s', user: 'System Trigger' },
+    { id: 4148, status: 'Completed', time: '1 hour ago', dur: '<1s', user: 'System Trigger' },
+    { id: 4147, status: 'Completed', time: '2 hours ago', dur: '<1s', user: 'System Trigger' },
+    { id: 4146, status: 'Completed', time: '3 hours ago', dur: '<1s', user: 'System Trigger' }
+  ];
+
+  return (
+    <div className={s.projShell}>
+      {/* Left sidebar — Config Layout */}
+      <div className={s.projSidebar}>
+        <div className={s.projSidebarHead}>
+          <div className={s.projActiveDot} style={{ background: config.status === 'Failed' ? '#ff4d4f' : '#00c951' }} />
+          <span className={s.projName}>{config.name}</span>
+          <button className={s.iconBtn}><SmEditIcon /></button>
+          <button className={s.iconBtn}><PinIcon /></button>
+        </div>
+        <div style={{ padding: '8px 10px 4px', display: 'flex' }}>
+          <div className={s.splitBtnPrimary}>
+            <div className={s.splitBtnMain}>
+              <span style={{ fontSize: 9 }}>▶</span> Run Build
+            </div>
+            <div className={s.splitBtnDivider} />
+            <div className={s.splitBtnIcon}>...</div>
+          </div>
+        </div>
+        <div style={{ padding: '4px 10px 6px' }}>
+          <div className={s.editProjBtn}>
+            <GearIcon />
+            <span style={{ flex: 1, textAlign: 'left' }}>Edit Configuration</span>
+            <div className={s.editProjBtnDivider} />
+            <ChevDownIcon />
+          </div>
+        </div>
+        
+        <div className={s.projNavRow}>
+          {[
+            { id: 'History', sub: 'Build runs and history', Icon: Ic.History },
+            { id: 'Agents', sub: 'Agents Criteria', Icon: Ic.Monitor },
+            { id: 'Triggers', sub: 'Build triggers and schedules', Icon: Ic.Thunder },
+            { id: 'Members', sub: 'Manage access for this configuration', Icon: Ic.Users2 },
+            { id: 'Notifications', sub: 'Build notification settings', Icon: Ic.Mail },
+            { id: 'Configuration Details', sub: 'Configuration and preferences', Icon: Ic.Cog },
+          ].map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
+              <span className={s.projNavIcon}><t.Icon /></span>
+              <div className={s.projNavText}>
+                <span className={s.projNavLabel}>{t.id}</span>
+                <span className={s.projNavSub}>{t.sub}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Right pane — Dynamic Content */}
+      {tab === 'History' && (
+        <div className={s.projRightPane} style={{ background: 'var(--color-bg-base)' }}>
+          <div className={s.projRightHead} style={{ borderBottom: 'none', paddingBottom: 0 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
+            <div>
+              <div className={s.projRightTitle}>Build History</div>
+              <div className={s.muted} style={{ fontSize: 11 }}>Recent build runs and execution history</div>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div className={s.muted} style={{ fontSize: 10, display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'flex-end' }}>
+                <ClockIcon /> Avg Exec. Time
+              </div>
+              <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(var(--text-rgb),.9)', marginTop: 2 }}>&lt;1 second</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style={{ padding: '0 18px 18px' }}>
+          <div className={s.historyFilters}>
+            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+               <div className={s.filterBtn}>
+                 <Ic.Filter />
+                 <span>Status</span>
+               </div>
+               <div className={s.filterBtn}>
+                 <Ic.Filter />
+                 <span>Branches</span>
+               </div>
+               <div className={s.filterBtn}>
+                 <Ic.Filter />
+                 <span>Tag</span>
+               </div>
+            </div>
+            <div className={s.searchBox} style={{ width: 180 }}>
+              <Ic.Search />
+              <input type="text" className={s.searchInput} placeholder="Search by build number..." />
+            </div>
+          </div>
+
+          <div className={s.historyTimeline}>
+            {historyRuns.map((run, i) => (
+              <div key={run.id} className={s.historyItem}>
+                <div className={s.historyLeft}>
+                  <div className={s.historyIcon} style={{ color: '#00c951' }}><CheckCircleIcon /></div>
+                  {i < historyRuns.length - 1 && <div className={s.historyLine} />}
+                </div>
+                <div className={s.historyCard}>
+                  <div className={s.historyCardTop}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span className={s.historyCardNum}>#{run.id}</span>
+                      <Tag label={run.status} />
+                    </div>
+                    <div style={{ display: 'flex', gap: 10 }}>
+                      <button className={s.iconBtn}><DownloadIcon /></button>
+                      <button className={s.iconBtn}><Ic.Dots /></button>
+                    </div>
+                  </div>
+                  <div className={s.historyCardBottom}>
+                    <div style={{ display: 'flex', gap: 16 }}>
+                      <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
+                        <PersonIcon /> {run.user}
+                      </div>
+                      <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
+                        <ClockIcon /> {run.dur}
+                      </div>
+                    </div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>{run.time}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      )}
+
+      {tab === 'Members' && <ProjectsMembersTab />}
+      
+      {tab === 'Configuration Details' && <ConfigDetailsTab config={config} />}
+      {tab === 'Agents' && <ConfigAgentsTab />}
+      {tab === 'Triggers' && <ConfigTriggersTab />}
+      {tab === 'Notifications' && <ConfigNotificationsTab />}
+    </div>
+  );
+}
+
+function ProjectDetail({ project, onSelect }) {
+  const [tab, setTab] = useState('Projects');
+  return (
+    <div className={s.projShell}>
+      <div className={s.projSidebar}>
+        <div className={s.projSidebarHead}>
+          <div className={s.projActiveDot} />
+          <span className={s.projName}>{project.name}</span>
+          <button className={s.iconBtn}><Ic.Edit /></button>
+          <button className={s.iconBtn}><PinIcon /></button>
+        </div>
+        <div style={{ padding: '8px 10px 6px' }}>
+          <button className={s.btnPrimary} style={{ width: '100%', justifyContent: 'center', fontSize: 11.5 }}>
+            <Ic.Plus /> New Build Configuration
+          </button>
+        </div>
+        <div style={{ padding: '4px 10px 6px' }}>
+          <div className={s.editProjBtn}>
+            <GearIcon />
+            <span style={{ flex: 1, textAlign: 'left' }}>Edit Project</span>
+            <div className={s.editProjBtnDivider} />
+            <ChevDownIcon />
+          </div>
+        </div>
+        <div className={s.projNavRow}>
+          {[
+            { id: 'Projects', sub: 'Manage sub-projects', Icon: Ic.Proj },
+            { id: 'Members', sub: 'Manage project members', Icon: Ic.Users },
+            { id: 'Settings', sub: 'View project settings', Icon: Ic.Cog },
+          ].map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
+              <span className={s.projNavIcon}><t.Icon /></span>
+              <div className={s.projNavText}>
+                <span className={s.projNavLabel}>{t.id}</span>
+                <span className={s.projNavSub}>{t.sub}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+      {tab === 'Projects' && <ProjectsSubTab project={project} onSelect={onSelect} />}
+      {tab === 'Members' && <ProjectsMembersTab />}
+      {tab === 'Settings' && <ProjectsSettingsTab />}
+    </div>
+  );
+}
+
+function Projects({ selectedProj, onSelect }) {
+  if (!selectedProj) return <ProjectList onSelect={onSelect} />;
+  // Distinguish Build Configs from Project Groups by checking if it has a 'lastBuild' or 'status' attribute
+  // (In data.js, configs have 'status' and 'lastBuild', while projects have 'children' or 'configs' arrays)
+  if (selectedProj.status) return <ConfigDetail config={selectedProj} />;
+  return <ProjectDetail project={selectedProj} onSelect={onSelect} />;
 }
 
 /* ══ AGENTS ══ */
@@ -670,6 +1491,7 @@ const PAGES = { dashboard: Dashboard, projects: Projects, agents: Agents, queue:
 
 export default function BuildNinjaDemo() {
   const [page, setPage] = useState('dashboard');
+  const [selectedProj, setSelectedProj] = useState(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const shellRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -701,7 +1523,7 @@ export default function BuildNinjaDemo() {
           <div className={s.rail}>
             <div className={s.railLogo}><BnLogo /></div>
             {NAV.map(({ id, Icon, badge }) => (
-              <button key={id} onClick={() => { setPage(id); setSidebarCollapsed(false); }}
+              <button key={id} onClick={() => { setPage(id); setSelectedProj(null); setSidebarCollapsed(false); }}
                 className={`${s.railBtn} ${page === id ? s.railBtnActive : ''}`}
                 title={id}>
                 <Icon />
@@ -715,22 +1537,38 @@ export default function BuildNinjaDemo() {
           </div>
 
           {/* ── Project tree ── */}
-          {showTree && <ProjectTree activePage={page} />}
+          {showTree && <ProjectTree activePage={page} selectedProj={selectedProj} onSelect={setSelectedProj} />}
 
           {/* ── Main ── */}
           <div className={s.main}>
             <header className={s.topbar}>
               <nav className={s.breadcrumb} style={{ overflow: 'hidden', minWidth: 0 }}>
-                <Ic.Home />
+                <div className={s.breadItem} onClick={() => { setPage('dashboard'); setSelectedProj(null); }}><Ic.Home /></div>
                 <span className={s.breadSep}>/</span>
-                <span style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
+                <span className={`${s.breadItem} ${!selectedProj ? s.breadActive : ''}`}
+                  onClick={() => { setPage(page); setSelectedProj(null); }}
+                  style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
+                {selectedProj && (
+                  <>
+                    <span className={s.breadSep}>/</span>
+                    <span className={s.breadActive} style={{ fontWeight: 600 }}>{selectedProj.name}</span>
+                  </>
+                )}
               </nav>
               <div className={s.topRight}>
                 <button className={s.iconBtn}><svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 16, height: 16, opacity: .5 }}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" /><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.9 8.1-39.9 22.3-53.3 40.9-13.1 18.3-20 39.5-20 61.3V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-17.7c0-32.2 18.6-61.3 49.2-74.7 39.3-17.1 67.2-55.2 67.2-99.3.1-57.1-44.5-105.4-100.8-110.6z" /><circle cx="512" cy="728" r="32" /></svg></button>
                 <div className={s.avatar}><Image src="/resources/Navbar/ninjaAvatar.png" width={22} height={22} alt="Ninja Logo" /></div>
               </div>
             </header>
-            <div className={s.content}><Page /></div>
+            <div className={s.content}>
+              {page === 'dashboard' && <Dashboard />}
+              {page === 'projects' && <Projects selectedProj={selectedProj} onSelect={setSelectedProj} />}
+              {page === 'agents' && <Agents />}
+              {page === 'queue' && <Queue />}
+              {page === 'triggers' && <Triggers />}
+              {page === 'users' && <Users />}
+              {page === 'settings' && <Settings />}
+            </div>
           </div>
         </div>
       </div>
