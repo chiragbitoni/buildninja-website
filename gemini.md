@@ -46,6 +46,9 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **BuildNinjaDemo Projects Selection Flow**: Implemented a two-stage project navigation. Clicking "Projects" opens a top-level list of project rows. Clicking a project (e.g., "Alpha") opens a modernized two-pane layout with dedicated sub-tabs (Projects, Members, Settings).
 - ✅ **BuildNinjaDemo Config Detail Flow**: Implemented a multi-tiered drill-down feature reproducing the raw production environment. Clicking a build configuration inside a project opens a tailored `ConfigDetail` view with an authentic History timeline, accurate action button styling (split buttons), and specifically mapped SVGs. Cleaned out all non-generic mock data artifacts.
 - ✅ **Agent Pool Expansion**: Added generic agents for Windows, Linux, and macOS in `data.js` to represent a diverse, real-world build environment. Integrated these into the `Agents` view with OS-specific metadata.
+- ✅ **BuildNinjaDemo Parity (Triggers & Notifications)**: Fully modernized the Triggers and Notifications tabs to match the production "Timeline" architecture. Standardized all icons (Mail, Thunder, Cog) and implemented theme-aware interactive cards.
+- ✅ **Configuration Details Optimization**: Refactored the Config Detail tab with a hybrid timeline-accordion structure, ensuring all sections are collapsed by default and expand seamlessly into shell grids.
+- ✅ **Agents Tab Layout Restoration**: Resolved grid distortion issues in the Agents view by restoring the `.agentRow` CSS structure and ensuring consistent use of semantic variables.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
@@ -61,3 +64,4 @@ The Home and Feature pages have been significantly modernized with a premium, da
 6. **Centralized Auth Persistence**: Use centralized cookie utilities (`lib/cookieAuth.js`) instead of direct `localStorage` calls.
 7. **Bento Logic**: For feature-heavy pages, group related data into cards with varying sizes and hover physics to create visual hierarchy.
 8. **Generic Data Names**: Never use original project or user names (e.g., "Asher", "onlyvcs") found in reference links or internal systems. Always replace them with generic alternatives (e.g., "Alpha", "Project Alpha", "Main Build") in demonstration components and mocks.
+9. **Production UI Parity**: When updating demonstration components (like BuildNinjaDemo), always cross-reference against verified production screenshots or site logs to ensure functional and visual parity (e.g., timeline paths, specific SVG paths, and status toggle behaviors).
