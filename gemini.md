@@ -42,6 +42,7 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **FAQ Page Overhaul**: Removed legacy sections and rebuilt into 4 modern components (`FaqHero`, `FaqQuestions`, `FaqHelp`, `FaqCta`) utilizing CSS modules, premium bento glassmorphism grids, inline SVGs (with full theme-awareness), and interactive accordions with search filtering. Modified `FaqHero` to use an ambient orb/grid background.
 - ✅ **Install Page Overhaul**: Resolved blank rendering issues on the `/install` page, stabilized authentication redirection flows, updated typography to the new two-tier font system (Inter + Syne), and refactored `InstallSection` styles to utilize CSS modules.
 - ✅ **Install Dashboard Redesign**: Refactored the `/install/dashboard` (`InstallDashboard` component) into a premium interface utilizing CSS modules, structural grids, dynamic hover states, and semantic variables.
+- ✅ **Partner Page Redesign**: completely rebuilt `/partners` (5 legacy sections → 5 modern components: `PartnerHero`, `PartnerBenefits`, `PartnerDemographics`, `PartnerModels`, `PartnerForm`). Transitioned strict hardcoded assets to pure inline SVGs, implemented a multi-column Bento grid for "Models" and "Benefits", added a dual-pane vertical tab structure for "Demographics", and modernized the HubSpot/ReCAPTCHA form.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
