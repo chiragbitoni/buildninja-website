@@ -43,6 +43,44 @@ const Ic = {
   Warn: () => <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M13.129851,1.593104H2.870149c-1.031222,0-1.870149.843806-1.870149,1.880768v6.46602c0,1.036676.838927,1.880481,1.870149,1.880481h4.541914v1.410935h-1.976916c-.324607,0-.587794.2629-.587794.587794s.263187.587794.587794.587794h5.129994c.324894,0,.587794-.2629.587794-.587794s-.2629-.587794-.587794-.587794h-1.97749v-1.410935h4.542201c1.030935,0,1.870149-.843806,1.870149-1.880481V3.473872c0-1.036963-.839214-1.880768-1.870149-1.880768ZM13.824412,9.939892c0,.38861-.311692.704893-.694561.704893H2.870149c-.38287,0-.694561-.316284-.694561-.704893V3.473872c0-.388897.311692-.705181.694561-.705181h10.259702c.38287,0,.694561.316284.694561.705181v6.46602Z"></path></svg>,
   Info: () => <svg viewBox="64 64 896 896" focusable="false" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path></svg>,
   Sync: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" /></svg>,
+  AlertWarn: () => <svg viewBox="64 64 896 896" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M464 720a48 48 0 1096 0 48 48 0 10-96 0zm16-304v184c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V416c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8zm475.7 440l-416-720c-6.2-10.7-16.9-16-27.7-16s-21.6 5.3-27.7 16l-416 720C56 877.4 71.4 904 96 904h832c24.6 0 40-26.6 27.7-48zm-783.5-27.9L512 239.9l339.8 588.2H172.2z"></path></svg>,
+  ListBullets: () => <svg viewBox="64 64 896 896" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path></svg>,
+  Microsoft: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} aria-hidden="true" focusable="false">
+      <path fill="#6abe60" d="M12.624971,11.373393h9.375029V2.599782c0-.346182-.279963-.626899-.625055-.626899h-8.749973s0,9.400511,0,9.40051Z" />
+      <path fill="#ee483a" d="M11.375113,11.373393V1.972882H2.625139c-.345176,0-.625139.280717-.625139.626899v8.773612h9.375113Z" />
+      <path fill="#4b91cd" d="M11.375113,12.626689H2v8.773698c0,.345804.279963.626732.625139.626732h8.749974s0-9.400428,0-9.40043Z" />
+      <path fill="#fabf17" d="M12.624971,12.626689v9.400426h8.749973c.345093,0,.625055-.280928.625055-.626732v-8.773695s-9.375029,0-9.375029,0Z" />
+    </svg>
+  ),
+  Github: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} fill="currentColor" aria-hidden="true" focusable="false">
+      <path fillRule="evenodd" d="M12,2.000528C6.477679,2.000528,2,6.589814,2,12.254993c0,4.53125,2.866071,8.370536,6.839286,9.727678.5.09375.683036-.223214.683036-.495536,0-.245536-.008928-.888393-.013393-1.745536-2.78125.620535-3.370536-1.374999-3.370536-1.374999-.455357-1.183036-1.111607-1.5-1.111607-1.5-.90625-.638392.066964-.625.066964-.625,1.004464.071429,1.53125,1.058036,1.53125,1.058036.892857,1.566965,2.339286,1.116071,2.910714.852679.089286-.660714.348214-1.116071.633928-1.370536-2.21875-.258928-4.553571-1.138393-4.553571-5.066964,0-1.120536.388393-2.035715,1.026786-2.75-.102679-.258929-.446429-1.303571.098214-2.714286,0,0,.839286-.276786,2.75,1.049107.799107-.227679,1.651786-.339286,2.504465-.34375.848214.004465,1.705358.116072,2.504465.34375,1.910714-1.325893,2.745536-1.049107,2.745536-1.049107.544643,1.410715.200893,2.455357.098215,2.714286.638392.71875,1.026786,1.633929,1.026786,2.75,0,3.937499-2.339285,4.803572-4.566964,5.058037.357143.316965.678572.941965.678572,1.897321,0,1.370536-.013392,2.477679-.013392,2.8125,0,.272322.178571.593749.6875.491071,3.982141-1.352679,6.843748-5.191965,6.843748-9.718751,0-5.665179-4.477678-10.254465-10-10.254465Z" />
+    </svg>
+  ),
+  Gitlab: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} aria-hidden="true" focusable="false">
+      <path fill="#f9a226" d="M3.163048,9.804361l8.833997,11.481415L2.314344,14.099184c-.265655-.199567-.379134-.546961-.277394-.859617l1.124793-3.43699.001305.001783Z" />
+      <polygon fill="#f26e2b" points="8.317446 9.802621 12.000524 21.28447 11.997046 21.285775 3.163048 9.804361 3.165657 9.802621 8.317446 9.802621" />
+      <polygon fill="#e14429" points="15.683994 9.802621 12.000916 21.285775 12.000524 21.28447 8.317446 9.802621 8.321359 9.802621 15.680125 9.802621 15.683994 9.802621" />
+      <polygon fill="#f26e2b" points="20.83887 9.804361 12.000916 21.285775 15.683994 9.802621 20.836217 9.802621 20.83887 9.804361" />
+      <path fill="#f9a226" d="M21.964925,13.23961c.097392.312612-.011739.66005-.281307.859617l-9.682702,7.18659,8.837954-11.481415.001261-.001739,1.124794,3.436947Z" />
+      <path fill="#e14429" d="M18.629283,2.97473l2.206978,6.827891h-5.156136l2.210891-6.827891c.12474-.347395.616963-.347395.738267,0Z" />
+      <path fill="#e14429" d="M8.321359,9.802621H3.165657l2.206978-6.827891c.124784-.347395.616963-.347395.738268,0,0,0,2.206543,6.827891,2.210456,6.827891Z" />
+    </svg>
+  ),
+  Bitbucket: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="bitbucket-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0.18" stopColor="#0052cc" />
+          <stop offset="1" stopColor="#2684ff" />
+        </linearGradient>
+      </defs>
+      <path fill="#2684ff" d="M2.649069,2.714279c-.1893-.002521-.37.081528-.493614.2296-.123614.148079-.177493.345021-.147186.538l2.720207,17.052629c.069964.430786.429329.747499.852272.751072h13.049965c.317428.004214.589999-.232214.640785-.555857l2.720214-17.244537c.030357-.192979-.023571-.389922-.147142-.538-.123643-.148071-.304357-.232121-.493644-.2296l-18.701857-.003307ZM14.103426,15.038936h-4.165214l-1.127785-6.084572h6.302285l-1.009286,6.084572Z" />
+      <path fill="url(#bitbucket-grad)" fillRule="evenodd" d="M21.126998,8.954436h-6.014l-1.009215,6.084571h-4.165214l-4.9182,6.028358c.155879.139142.354629.216571.5607.218356h13.053144c.3175.004215.590071-.232214.640857-.555856l1.851928-11.775429Z" />
+    </svg>
+  ),
 };
 
 const BnLogo = () => {
@@ -1342,16 +1380,16 @@ function Queue() {
           <div><div className={s.qcNum}>0</div><div className={s.qcLabel}>Ready To Run</div></div>
         </div>
         <div className={s.queueCard}>
-          <div className={s.qcIcon} style={{ background: 'var(--color-warning-bg)', color: 'var(--color-warning)' }}><Ic.Warn /></div>
+          <div className={s.qcIcon} style={{ background: 'rgba(250, 173, 20, 0.15)', color: '#faad14' }}><Ic.Warn /></div>
           <div><div className={s.qcNum}>0</div><div className={s.qcLabel}>Waiting for Agents</div>
             <span className={s.qcBadge}>0</span></div>
         </div>
         <div className={s.queueCard}>
-          <div className={s.qcIcon} style={{ background: 'var(--color-error-bg)', color: 'var(--color-error)' }}><Ic.Warn /></div>
+          <div className={s.qcIcon} style={{ background: 'var(--color-error-bg)', color: 'var(--color-error)' }}><Ic.AlertWarn /></div>
           <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Agent Issues</div></div>
         </div>
         <div className={s.queueCard}>
-          <div className={s.qcIcon} style={{ background: 'var(--color-info-bg)', color: 'var(--color-info)' }}><Ic.Info /></div>
+          <div className={s.qcIcon} style={{ background: 'var(--color-info-bg)', color: 'var(--color-info)' }}><Ic.ListBullets /></div>
           <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Total Queue</div></div>
         </div>
       </div>
@@ -1672,7 +1710,12 @@ function Settings() {
                 <div key={i} className={s.ssoCard}>
                   <div className={s.ssoCardTop}>
                     <div className={s.ssoCardLeft}>
-                      <span className={s.ssoIcon}>{p.icon}</span>
+                      <span className={s.ssoIcon} style={{ display: 'flex' }}>
+                        {p.abbr === 'MS' && <Ic.Microsoft />}
+                        {p.abbr === 'GH' && <Ic.Github />}
+                        {p.abbr === 'GL' && <Ic.Gitlab />}
+                        {p.abbr === 'BB' && <Ic.Bitbucket />}
+                      </span>
                       <span className={s.ssoName}>{p.name}</span>
                     </div>
                     <div className={s.ssoToggleRow}>
@@ -1691,27 +1734,134 @@ function Settings() {
             </div>
           </div>
         )}
-        {activeTab === 'Manage License' && (
+        {activeTab === 'Notifier Settings' && (
           <div className={s.page}>
-            <h2 className={s.pageH1}>Manage License</h2>
-            <div className={s.licCard}>
-              <div className={s.licCardHead}><span className={s.sectionTitle}>Activate License</span></div>
-              <div className={s.muted} style={{ padding: '8px 14px', fontSize: 12 }}>Register your license to unlock features</div>
-              <div className={s.licInfo}>
-                <div className={s.licInfoHead}><span className={s.sectionTitle}>License Information</span><Tag label="Active" /></div>
-                {[['Current Plan', LICENSE.plan], ['Valid Until', `${LICENSE.validUntil} (${LICENSE.remaining})`]].map(([k, v]) => (
-                  <div key={k} className={s.agentInfoRow}><span className={s.agentInfoKey}>{k}</span><span className={s.agentInfoVal}>{v}</span></div>
-                ))}
+            <div style={{ marginBottom: 16 }}>
+              <h2 className={s.pageH1}>Notifier Settings</h2>
+              <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Configure notification preferences and delivery methods.</div>
+            </div>
+            
+            <div className={s.ssoCard} style={{ background: 'var(--color-bg-surface)', border: '1px solid var(--color-border-subtle)', borderRadius: 8, maxWidth: 640 }}>
+              <div className={s.ssoCardTop} style={{ padding: '12px 16px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                <div className={s.ssoCardLeft}>
+                  <Ic.Mail />
+                  <span style={{ fontSize: 13, fontWeight: 600 }}>Email Notifier</span>
+                </div>
+                <div className={s.ssoToggleRow}>
+                  <span style={{ fontSize: 11, color: '#00c951', fontWeight: 500 }}>Enabled</span>
+                  <div className={`${s.toggle} ${s.toggleOn}`}><div className={s.toggleBall} /></div>
+                </div>
               </div>
-              <div style={{ padding: '10px 14px 14px', display: 'flex', gap: 8 }}>
-                <button className={s.btnPrimary}>Activate Online</button>
-                <button className={s.btnOutline}>Activate Offline</button>
+              <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>SMTP Host : </span><b>smtp.sendgrid.net</b></div>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>SMTP Port : </span><b>465</b></div>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>SMTP Username : </span><b>apikey</b></div>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>Email From : </span><b>notifications@mycompany.com</b></div>
+                </div>
+                <button className={s.btnOutline} style={{ width: '100%', marginTop: 8 }}><Ic.Edit /> Edit</button>
               </div>
             </div>
           </div>
         )}
-        {(activeTab === 'Notifier Settings' || activeTab === 'Mail Templates') && (
-          <div className={s.page}><div className={s.emptyState}><Ic.Cog /><span className={s.muted}>Configure {activeTab}</span></div></div>
+        
+        {activeTab === 'Mail Templates' && (
+          <div className={s.page}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
+              <div>
+                <h2 className={s.pageH1}>Template Settings</h2>
+                <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Create or modify email templates</div>
+              </div>
+              <button className={s.btnPrimary} style={{ background: '#d8305b', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600 }}>+ Add New Template</button>
+            </div>
+            
+            <div style={{ border: '1px solid var(--color-border-subtle)', borderRadius: 8, background: 'var(--color-bg-surface)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 16px', fontWeight: 600, fontSize: 13, borderBottom: '1px solid var(--color-border-subtle)' }}>
+                Build Templates (3)
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width={14} height={14} style={{ opacity: 0.5, strokeWidth: 2 }}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, padding: '16px' }}>
+                {[{t:'Build Completed'}, {t:'Build Failure'}, {t:'Build Success'}].map((m,i)=> (
+                  <div key={i} style={{ border: '1px solid var(--color-border-subtle)', borderRadius: 6, padding: '16px', background: 'var(--color-bg-panel)', display: 'flex', flexDirection: 'column' }}>
+                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                          <span style={{ fontSize: 13, fontWeight: 600 }}>{m.t}</span>
+                          <span style={{ fontSize: 10, color: 'rgba(var(--text-rgb), 0.5)' }}>Default</span>
+                        </div>
+                        <Ic.Dots />
+                     </div>
+                     <div style={{ fontSize: 11.5, fontWeight: 600, marginBottom: 16, color: 'rgba(var(--text-rgb), 0.9)' }}>
+                        Subject: CI/CD Build <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.buildStatusName}}`}</span> – <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.configName}}`}</span>
+                     </div>
+                     <div style={{ fontSize: 10,  color: 'rgba(var(--text-rgb), 0.7)', lineHeight: 1.6 }}>
+                       Hi Team,<br/><br/>
+                       The build for configuration <span style={{ color: '#d8305b' }}>{`{{.configName}}`}</span> has {m.t === 'Build Failure' ? 'failed' : 'completed successfully'}.<br/>
+                       - Build Number: <span style={{ color: '#d8305b' }}>{`{{.counter}}`}</span><br/>
+                       - Timestamp: <span style={{ color: '#d8305b' }}>{`{{.buildCompletionTime}}`}</span><br/>
+                       - Completed In: <span style={{ color: '#d8305b' }}>{`{{.buildDuration}}`}</span> seconds<br/><br/>
+                       {m.t === 'Build Failure' ? 'Please review the error logs: ' : 'You can view build logs here: '} 
+                       <span style={{ color: '#d8305b', textDecoration: 'underline' }}>{`{{.buildHomeUrl}}?tab=buildlogs`}</span><br/><br/>
+                       Regards,<br/>
+                       BuildNinja Team
+                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'Manage License' && (
+          <div className={s.page}>
+            <div style={{ marginBottom: 24 }}>
+              <h2 className={s.pageH1}>Activate License</h2>
+              <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Register your license to unlock features</div>
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {/* Top Card: License Information */}
+              <div style={{ border: '1px solid var(--color-border-subtle)', background: 'rgba(255,255,255,0.02)', padding: '16px 20px', borderRadius: 8 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <svg fill="currentColor" viewBox="0 0 24 24" width={14} height={14} style={{ color: '#d8305b' }}><path d="M12.65 10A5.99 5.99 0 007 6c-3.31 0-6 2.69-6 6s2.69 6 6 6a5.99 5.99 0 005.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)' }}>License Information</span>
+                  </div>
+                  <span style={{ border: '1px solid rgba(46, 204, 113, 0.4)', color: '#2ecc71', padding: '2px 10px', borderRadius: 14, fontSize: 11, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#2ecc71' }}></div>
+                    Active
+                  </span>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+                  <div>
+                    <div className={s.muted} style={{ fontSize: 10, fontWeight: 600, marginBottom: 8 }}>CURRENT PLAN</div>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)' }}>{LICENSE.plan}</div>
+                  </div>
+                  <div>
+                    <div className={s.muted} style={{ fontSize: 10, fontWeight: 600, marginBottom: 8 }}>VALID UNTIL</div>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)' }}>{LICENSE.validUntil} <span style={{ opacity: 0.7, fontWeight: 400 }}>({LICENSE.remaining})</span></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Card: License Activation */}
+              <div style={{ border: '1px solid var(--color-border-subtle)', background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: 8, display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div>
+                  <div style={{ marginBottom: 6, fontSize: 11, color: 'rgba(var(--text-rgb), 0.85)' }}><span style={{ color: '#d8305b' }}>*</span> License Key</div>
+                  <input className={s.searchInput} placeholder="Enter your license key here..." style={{ width: '100%', padding: '8px 12px', background: 'transparent', border: '1px solid rgba(var(--text-rgb), 0.15)', borderRadius: 4, color: 'var(--color-text)', fontSize: 12 }} />
+                </div>
+                
+                <div style={{ background: 'rgba(24, 144, 255, 0.1)', border: '1px solid rgba(24, 144, 255, 0.2)', padding: '10px 12px', borderRadius: 4, color: '#1890ff', fontSize: 11, display: 'flex', gap: 10, alignItems: 'center' }}>
+                  <svg fill="currentColor" viewBox="64 64 896 896" width={14} height={14}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"/><path d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"/></svg>
+                  Ensure you are connected to the internet for activation.
+                </div>
+                
+                <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+                  <button className={s.btnPrimary} style={{ background: '#d8305b', color: '#fff', border: 'none', padding: '6px 16px', borderRadius: 4, fontSize: 11.5, fontWeight: 600 }}>Activate Online</button>
+                  <span className={s.link} style={{ fontSize: 11.5, color: '#d8305b', textDecoration: 'underline', cursor: 'pointer', fontWeight: 500 }}>Need to activate offline?</span>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
