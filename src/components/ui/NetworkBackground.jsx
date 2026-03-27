@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-export default function OrbitAnimation() {
+export default function NetworkBackground() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 

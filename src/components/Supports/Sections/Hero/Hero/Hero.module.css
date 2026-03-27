@@ -1,0 +1,436 @@
+.supportSection {
+  min-height: 100vh;
+  padding: 160px 24px 100px;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-display);
+}
+
+.supportHeader {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+/* Badge with pulsing dot */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 24px;
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 32px;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-primary);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3.2rem, 9vw, 6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.accent {
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  display: inline-block;
+  padding-right: 0.1em;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Main Content Wrapper */
+.mainContent {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  width: 100%;
+  max-width: 1300px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glass Card */
+.glassCard {
+  background: rgba(var(--bg-rgb), 0.6);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-xl);
+  padding: 60px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.glassCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 60px; right: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary-border), transparent);
+}
+
+.formTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 48px;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.fullWidth {
+  grid-column: span 2;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Input Styles */
+.captchaWrapper {
+  margin-top: 48px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 20px;
+  color: var(--color-text-faint);
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.field input, .field textarea {
+  width: 100%;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px 18px 54px;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.field textarea {
+  padding-left: 20px;
+  min-height: 180px;
+  resize: none;
+}
+
+.field input:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: var(--color-bg-surface);
+  box-shadow: 0 0 0 4px var(--color-primary-subtle), 
+              0 10px 30px -10px rgba(0,0,0,0.5);
+  transform: translateY(-2px);
+}
+
+.field input:focus + .inputIcon {
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 5px var(--color-primary-glow));
+}
+
+.submitBtn {
+  margin: 32px auto 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 18px 48px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 10px 40px -10px var(--color-primary-glow);
+  width: fit-content;
+  min-width: 280px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 50px -10px var(--color-primary-glow);
+  filter: brightness(1.1);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  filter: grayscale(0.5);
+}
+
+/* Sidebar Styling */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+}
+
+.infoCard {
+  background: rgba(var(--bg-rgb), 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.infoCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, var(--color-primary-subtle) 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.infoCard:hover {
+  border-color: var(--color-border-strong);
+  transform: translateX(10px);
+}
+
+.infoCard:hover::after {
+  opacity: 1;
+}
+
+.iconBox {
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 28px;
+}
+
+.cardLabel {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.cardValue {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+}
+
+.cardAction {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: gap 0.2s;
+}
+
+.cardAction:hover {
+  gap: 18px;
+}
+
+/* Success State Overlay */
+.successOverlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  border-radius: var(--radius-xl);
+}
+
+.successIcon {
+  font-size: 5rem;
+  color: var(--color-success);
+  margin-bottom: 24px;
+}
+
+.successTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1100px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .supportSection {
+    padding: 100px 16px 60px;
+  }
+  .heading {
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+  }
+  .subheading {
+    font-size: 0.95rem;
+  }
+  .glassCard {
+    padding: 24px 16px;
+  }
+  .formTitle {
+    font-size: 1.65rem;
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .fullWidth {
+    grid-column: span 1;
+  }
+  .field {
+    gap: 8px;
+  }
+  .field input, .field textarea {
+    padding: 16px 15px 16px 48px;
+  }
+  .field textarea {
+    padding-left: 15px;
+  }
+  .inputIcon {
+    left: 15px;
+  }
+  .sidebar {
+    gap: 20px;
+  }
+  .infoCard {
+    padding: 20px;
+  }
+  .cardValue {
+    font-size: 1.25rem;
+  }
+  .submitBtn {
+    width: 100%;
+    min-width: unset;
+    margin-top: 24px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .heading {
+    font-size: 2.1rem;
+  }
+  .formTitle {
+    font-size: 1.4rem;
+  }
+  .inputIcon {
+    display: none;
+  }
+  .field input {
+    padding-left: 15px;
+  }
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 340px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+  .supportSection {
+    padding-top: 80px;
+  }
+  .glassCard {
+    padding: 16px 12px;
+  }
+}
