@@ -572,6 +572,46 @@ function ProjectsMembersTab() {
   );
 }
 
+function ProjectsSettingsTab() {
+  const [openSections, setOpenSections] = useState({ general: true, vcs: false, limits: false });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Project Settings</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Manage general settings and policies for this project.</div>
+        </div>
+      </div>
+
+      <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
+        <ConfigSection id="general" title="General" sub="Basic project information" Icon={Ic.Cog} isOpen={openSections.general} onToggle={toggle}>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Project ID:</span> <span className={s.infoVal}>alpha-main</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Name:</span> <span className={s.infoVal}>Alpha</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Description:</span> <span className={s.infoVal}>Core platform development project</span></div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="vcs" title="Version Control" sub="Default VCS settings" Icon={Ic.Tree} isOpen={openSections.vcs} onToggle={toggle}>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Default Branch:</span> <span className={s.infoVal}>main</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Auto-link issues:</span> <span className={s.infoVal}>Enabled</span></div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="limits" title="Limits & Quotas" sub="Resource usage policies" Icon={Ic.Dash} isOpen={openSections.limits} onToggle={toggle} isLast>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Max Concurrent Builds:</span> <span className={s.infoVal}>10</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Build Timeout:</span> <span className={s.infoVal}>60 minutes</span></div>
+          </div>
+        </ConfigSection>
+      </div>
+    </div>
+  );
+}
+
 function ConfigExecutionStepsTab() {
   return (
     <div className={s.sectionDataGrid}>
