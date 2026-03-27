@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import { openVideo } from '@/redux/slice/videoPopupSlice';
 import { siteConfig } from '@/config/site';
-import OrbitAnimation from '@/components/Home/OrbitAnimation';
+import NetworkBackground from '@/components/ui/NetworkBackground';
 import styles from './FeatureHero.module.css';
 
 // Framer motion variants
@@ -27,7 +27,7 @@ export default function FeatureHero() {
   return (
     <>
       <section className={styles.hero}>
-        <OrbitAnimation />
+        <NetworkBackground />
         <motion.div 
           className={styles.inner}
           variants={containerVariants}

@@ -10,7 +10,7 @@ The Home and Feature pages have been significantly modernized with a premium, da
 
 ## Key Changes to Home Page
 - **Modern UI Architecture**: Switched to a component-driven approach using **CSS Modules** (e.g., `HeroSection.module.css`) for localized, maintainable styling.
-- **Dynamic Visuals**: Introduced `OrbitAnimation` data streams, physics-based motion, and an SVG-drawn border effect.
+- **Dynamic Visuals**: Introduced `NetworkBackground` data streams, physics-based motion, and an SVG-drawn border effect.
 - **Interactive Demo Cleanup**: Integrated `BuildNinjaDemo`, visualizing CI/CD pipeline. Removed automated cursor/button cycling.
 - **Theme Switching & Polish**: Implemented global toggle (`next-themes`). Updated dashboard elements with semantic CSS variables for dark/light modes.
 - **Integration Strip Redesign**: Redesigned the "WorksWith" component into a sleek scrolling marquee.
@@ -33,16 +33,16 @@ The Home and Feature pages have been significantly modernized with a premium, da
 | **Code Structure** | Flat, functional component structure | Nested section-based structure |
 
 ## Evolution Log
-- ✅ **Home Page Modernization**: Switched to CSS Modules, added Orbit animations, and interactive CI/CD demo.
+- ✅ **Home Page Modernization**: Switched to CSS Modules, added NetworkBackground, and interactive CI/CD demo.
 - ✅ **Feature Page Full Redesign**: Rebuilt with bento grid logic, real product screenshots, and consolidated 9-group feature architecture.
-- ✅ **Install Page Overhaul**: Redesigned with premium glassmorphism, Font Awesome icons, and Framer Motion reveal animations.
+- ✅ **Support Page Overhaul**: Redesigned with a bento grid layout, premium glassmorphism, grid background, and Framer Motion reveal animations. Switched to CSS Modules and Font Awesome icons.
 - ✅ **Cookie-based Auth Migration**: Migrated authentication storage from `localStorage` to structured cookies with 30-day expiry.
+- ✅ **Network Background Global Refactor**: Renamed OrbitAnimation to NetworkBackground and moved it to a shared `src/components/ui/` directory. Added ultra-mobile support for all landing pages.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables.
 2. **Pricing Page Overhaul**: Apply the modular CSS pattern and dark-themed cards to match the new direction.
-3. **Animated Transitions**: Implement similar "reveal" animations across Support and Partners pages.
-4. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
+3. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
 
 ## Learned Rules 
 1. **Semantic Coloring**: Never use hardcoded colors (like `#303030` or `#fff`) in components. Always use centralized CSS variables (`var(--color-bg-panel)`, `var(--color-text)`, etc.) defined in the `:root` of `globals.css`.
