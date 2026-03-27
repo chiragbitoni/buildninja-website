@@ -12,6 +12,16 @@ import Image from 'next/image';
 
 /* ─── Icons ─── */
 const Ic = {
+<<<<<<< HEAD
+=======
+  History: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-600-80h56c4.4 0 8-3.6 8-8V560c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V384c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v320c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V462c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v242c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V304c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v400c0 4.4 3.6 8 8 8z" /></svg>,
+  Monitor: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M300 328a60 60 0 10120 0 60 60 0 10-120 0zM852 64H172c-17.7 0-32 14.3-32 32v660c0 17.7 14.3 32 32 32h680c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-32 660H204V128h616v596zM604 328a60 60 0 10120 0 60 60 0 10-120 0zm250.2 556H169.8c-16.5 0-29.8 14.3-29.8 32v36c0 4.4 3.3 8 7.4 8h729.1c4.1 0 7.4-3.6 7.4-8v-36c.1-17.7-13.2-32-29.7-32zM664 508H360c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" /></svg>,
+  Thunder: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z" /></svg>,
+  Tree: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M832 192H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32v-64h192v64c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM352 352H224V256h128v96zm480 0H704V256h128v96zM192 576h640c17.7 0 32-14.3 32-32V352c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32zm32-192h128v96H224v-96zm480 0h128v96H704v-96zM832 736H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V768c0-17.7-14.3-32-32-32zm-32 192H224V800h576v128z" /></svg>,
+  Users2: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M824.2 699.9a301.55 301.55 0 00-86.4-60.4C783.1 602.8 812 546.8 812 484c0-110.8-92.4-201.7-203.2-200-109.1 1.7-197 90.6-197 200 0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 00-86.4 60.4C345 754.6 314 826.8 312 903.8a8 8 0 008 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5A226.62 226.62 0 01612 684c60.9 0 118.2 23.7 161.3 66.8C814.5 792 838 846.3 840 904.3c.1 4.3 3.7 7.7 8 7.7h56a8 8 0 008-8.2c-2-77-33-149.2-87.8-203.9zM612 612c-34.2 0-66.4-13.3-90.5-37.5a126.86 126.86 0 01-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4 0 34.2-13.3 66.3-37.5 90.5A127.3 127.3 0 01612 612z" /></svg>,
+  Mail: () => <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>,
+  Sliders: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}><path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/></svg>,
+>>>>>>> dev
   Dash: () => <svg fill="currentColor" viewBox="0 0 16 16" w="16" h="16" style={{ width: 20, height: 20 }}><path d="M12.229 1.5c.305 0 .595.063.871.189.275.12.515.285.718.493.208.203.372.443.493.718.126.276.189.566.189.871v8.459c0 .305-.063.595-.189.871-.12.276-.285.517-.493.725-.203.203-.443.368-.718.493-.276.121-.566.181-.871.181H3.771c-.305 0-.595-.06-.871-.181-.276-.126-.517-.29-.725-.493-.203-.208-.368-.45-.493-.725-.121-.276-.181-.566-.181-.871V3.771c0-.305.06-.595.181-.871.126-.276.29-.515.493-.718.208-.208.45-.372.725-.493.276-.126.566-.189.871-.189h8.458ZM3.821 2.429c-.189 0-.368.036-.537.109-.169.072-.319.174-.45.305-.126.126-.225.273-.297.443-.073.169-.109.348-.109.537v6.036h6.5V2.429H3.821ZM13.571 3.821c0-.189-.036-.368-.109-.537-.073-.169-.174-.317-.305-.443-.126-.13-.273-.232-.443-.305-.169-.073-.348-.109-.537-.109h-2.32v2.786h3.714V3.821ZM13.571 6.143h-3.714v3.714h3.714V6.143ZM2.429 12.179c0 .188.036.368.109.537.072.169.171.319.297.45.13.126.281.225.45.297.169.073.348.109.537.109h2.32v-2.786H2.429v1.393ZM12.179 13.571c.188 0 .368-.036.537-.109.169-.073.317-.171.442-.297.131-.13.232-.281.305-.45.073-.169.109-.348.109-.537v-1.393h-6.5v2.786h5.107Z" /></svg>,
   Proj: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 20, height: 20 }}><path d="M13.333 8H9.334c-.367 0-.667.3-.667.667v4.666c0 .367.3.667.667.667h4c.366 0 .666-.3.666-.667V8.667C14 8.3 13.7 8 13.333 8zm-.256 5.077H9.59V9.23h3.487v3.847zM6.667 2H2.667C2.3 2 2 2.3 2 2.667v5.333c0 .366.3.666.667.666h4c.366 0 .666-.3.666-.666V2.667C7.333 2.3 7.033 2 6.667 2zm-.257 5.744H3.18V2.923h3.23v4.82zM6.667 10H2.667C2.3 10 2 10.3 2 10.667v2.666c0 .367.3.667.667.667h4c.366 0 .666-.3.666-.667V10.667C7.333 10.3 7.033 10 6.667 10zm-.257 3.077H3.18v-2.154h3.23v2.154zM13.333 2H9.334C8.967 2 8.667 2.3 8.667 2.667v3.333c0 .367.3.667.666.667h4c.366 0 .666-.3.666-.667V2.667C14 2.3 13.7 2 13.333 2zm-.256 3.744H9.59V2.923h3.487v2.82z" /></svg>,
   Agent: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 20, height: 20 }}><path d="M13.13 1.593H2.87C1.84 1.593 1 2.437 1 3.474v6.466c0 1.037.84 1.88 1.87 1.88h4.542v1.411H5.435c-.325 0-.588.263-.588.588s.263.588.588.588h5.13c.325 0 .588-.263.588-.588s-.263-.588-.588-.588H8.588v-1.411h4.542c1.031 0 1.87-.843 1.87-1.88V3.474c0-1.037-.839-1.881-1.87-1.881zm.694 8.347c0 .389-.312.705-.694.705H2.87c-.383 0-.695-.316-.695-.705V3.474c0-.389.312-.705.695-.705h10.26c.382 0 .694.316.694.705v6.466z" /></svg>,
@@ -33,9 +43,77 @@ const Ic = {
   Folder: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 12, height: 12 }}><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" /></svg>,
   File: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 10, height: 10 }}><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm0 2l4 4h-4V4z" /></svg>,
   Star: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>,
+<<<<<<< HEAD
   Warn: () => <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M13.129851,1.593104H2.870149c-1.031222,0-1.870149.843806-1.870149,1.880768v6.46602c0,1.036676.838927,1.880481,1.870149,1.880481h4.541914v1.410935h-1.976916c-.324607,0-.587794.2629-.587794.587794s.263187.587794.587794.587794h5.129994c.324894,0,.587794-.2629.587794-.587794s-.2629-.587794-.587794-.587794h-1.97749v-1.410935h4.542201c1.030935,0,1.870149-.843806,1.870149-1.880481V3.473872c0-1.036963-.839214-1.880768-1.870149-1.880768ZM13.824412,9.939892c0,.38861-.311692.704893-.694561.704893H2.870149c-.38287,0-.694561-.316284-.694561-.704893V3.473872c0-.388897.311692-.705181.694561-.705181h10.259702c.38287,0,.694561.316284.694561.705181v6.46602Z"></path></svg>,
   Info: () => <svg viewBox="64 64 896 896" focusable="false" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path></svg>,
   Sync: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" /></svg>,
+=======
+  Warn: () => <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.129851,1.593104H2.870149c-1.031222,0-1.870149.843806-1.870149,1.880768v6.46602c0,1.036676.838927,1.880481,1.870149,1.880481h4.541914v1.410935h-1.976916c-.324607,0-.587794.2629-.587794.587794s.263187.587794.587794.587794h5.129994c.324894,0,.587794-.2629.587794-.587794s-.2629-.587794-.587794-.587794h-1.97749v-1.410935h4.542201c1.030935,0,1.870149-.843806,1.870149-1.880481V3.473872c0-1.036963-.839214-1.880768-1.870149-1.880768ZM13.824412,9.939892c0,.38861-.311692.704893-.694561.704893H2.870149c-.38287,0-.694561-.316284-.694561-.704893V3.473872c0-.388897.311692-.705181.694561-.705181h10.259702c.38287,0,.694561.316284.694561.705181v6.46602Z"></path></svg>,
+  Info: () => <svg viewBox="64 64 896 896" focusable="false" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path></svg>,
+  Sync: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" /></svg>,
+  AlertWarn: () => <svg viewBox="64 64 896 896" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M464 720a48 48 0 1096 0 48 48 0 10-96 0zm16-304v184c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V416c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8zm475.7 440l-416-720c-6.2-10.7-16.9-16-27.7-16s-21.6 5.3-27.7 16l-416 720C56 877.4 71.4 904 96 904h832c24.6 0 40-26.6 27.7-48zm-783.5-27.9L512 239.9l339.8 588.2H172.2z"></path></svg>,
+  ListBullets: () => <svg viewBox="64 64 896 896" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path></svg>,
+  SsoSettings: () => (
+    <svg viewBox="0 0 64 64" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M43.050049,42.848511c-.188293-.128662-1.460876-.805847-1.549438-.805847h-15.284851v-4.184143c0-.078125.519043-1.261108.62561-1.447693,1.703979-2.983154,6.11554-2.682739,7.760315.353271.615784,1.136719.81012,3.376892,3.053589,2.58551,2.800049-.987732.377625-4.989807-.966248-6.35614-4.633911-4.71106-12.799866-2.264221-14.297913,3.759277-.436157,1.753845-.226929,3.504333-.265991,5.291077-2.188049-.289612-4.691284,1.186523-5.041565,3.292114-.249329,1.498657-.263611,9.386963.039673,10.791321.307678,1.424927,1.822998,2.633301,3.249512,3.053284l20.652344.05658c1.831848-.210266,3.457336-1.84845,3.703735-3.53125.273804-1.870178.306091-8.769714.005798-10.595337-.137085-.833801-.979736-1.780579-1.68457-2.262024ZM40.658142,55.386719c-.236328-.073425-.522156.226135-.601746.226135h-18.534424c-.025574,0-.361084-.315247-.361084-.339233v-9.386047h19.497253v9.499146ZM62.238281,35.926941c-.373047,4.124023-2.499023,7.886719-5.985352,10.59375-.037109.029297-3.475586,2.607422-5.84668,2.607422-.220703,0-.431641-.022461-.630859-.071289-.572266-.140625-1.001953-.493164-1.243164-1.020508-.266602-.584961-.302734-1.130859-.106445-1.623047.401367-1.007812,1.649414-1.511719,2.855469-1.999023.55957-.226562,1.088867-.44043,1.477539-.682617,3.932617-2.456055,5.775391-6.978516,4.695312-11.520508-.870117-3.653809-3.847656-7.744629-9.598633-8.269043-.53125-.04834-1.28125-.004395-2.074219.041504-1.657227.098145-3.370117.197754-4.251953-.428711-.589844-.418945-1.001953-1.478516-1.401367-2.50293-.167969-.431152-.327148-.837891-.466797-1.101562-3.455078-6.541504-10.883789-10.229004-18.487793-9.169434-6.620605.920898-11.863281,5.012207-14.024414,10.944824-2.015625,5.533203-.797852,11.520996,3.257812,16.017578.226074.250977.540039.518555.872559.802734,1.049316.896484,2.355957,2.012695,1.787598,3.489258-.375977.975586-.99707,1.267578-1.45166,1.341797-1.833984.288086-4.287109-2.438477-5.264648-3.626953C1.395508,33.729675.32666,25.953796,3.491699,18.950867c3.391602-7.50293,10.856934-12.341797,19.481445-12.62793,9.327637-.307129,17.89209,4.991699,21.431152,13.224121,4.197266-.100098,9.952148.79541,14.082031,5.409668,2.77832,3.106934,4.111328,7.00293,3.751953,10.970215Z" />
+    </svg>
+  ),
+  MailTemplates: () => (
+    <svg viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M4.012897,2.008167l5.102258-.007057c.135298-.0128.232932.087639.327069.166628.11887.099742.255815.234252.373176.342818,1.051913.973082,2.028583,2.029545,3.071429,3.01245.11738.173471.070351.450596.079723.652367.103924,2.237225-.074598,4.505684.001739,6.751012-.046244.577901-.480666,1.024921-1.073419,1.073614l-7.821239-.000073c-.627008-.04815-1.055483-.559574-1.073632-1.161945l.00118-9.695768c.022555-.568914.424705-1.05985,1.011717-1.134047ZM4.074439,2.754624c-.173556.057214-.300984.202138-.305876.386598.017557,3.282379-.031348,6.571014.024591,9.84959.060448.140227.184727.254147.348165.25664,2.598767-.01599,5.204431.027617,7.798974-.021955.100226-.004649.258795-.195809.258795-.277767v-6.795405c0-.002348-.031503-.033202-.0339-.033202h-2.440785c-.371579,0-.960494-.556754-.960494-.918597v-2.412701c0-.002348-.031503-.033202-.0339-.033202h-4.655571ZM11.634091,5.366539l-2.124387-2.058543v1.715452c0,.097127.184861.34309.282498.34309h1.841888Z" />
+      <g>
+        <path d="M5.232457,8.758488l5.463809-.005382c.487328.061489.463388.699067-.0226.752721h-5.378905c-.456052-.062549-.50808-.621491-.062305-.747339Z" />
+        <path d="M5.324142,10.619075c1.332918.062902,2.786849-.106754,4.106196-.006311.170763.013.35238.05091.429849.220918.130394.286153-.084707.54381-.384763.553166-1.332679-.078648-2.794825.106486-4.112454.000043-.583231-.047116-.586135-.7073-.038827-.767816Z" />
+      </g>
+    </svg>
+  ),
+  NotifierSettings: () => (
+    <svg viewBox="0 0 64 64" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M59.630859,14.341003c-.487305-1.090332-1.147461-2.056152-1.962891-2.871094s-1.78125-1.475586-2.871094-1.963379c-1.098633-.492188-2.272461-.741699-3.487305-.741699H12.405273c-1.215332,0-2.38916.249512-3.487305.741699-1.091309.488281-2.057617,1.148438-2.871582,1.963379-.814941.814941-1.475586,1.780762-1.963379,2.871094-.491699,1.099609-.741211,2.272949-.741211,3.487305v28.398438c0,1.214844.249512,2.387695.741211,3.487305.487305,1.09082,1.147949,2.056641,1.963379,2.87207.8125.8125,1.77832,1.473633,2.871582,1.962891,1.099121.492188,2.272461.741211,3.487305.741211h38.904297c1.213867,0,2.387695-.249023,3.487305-.741211,1.091797-.489258,2.057617-1.149414,2.871094-1.962891.81543-.81543,1.475586-1.78125,1.962891-2.87207.492188-1.101562.742188-2.274414.742188-3.487305v-28.398438c0-1.212891-.25-2.38623-.742188-3.487305ZM55.871094,23.745789v22.289551c0,.638672-.125,1.253906-.371094,1.827148-.24707.577148-.592773,1.09082-1.02832,1.526367-.436523.435547-.949219.782227-1.526367,1.029297-.572266.246094-1.1875.370117-1.827148.370117H12.59668c-.640137,0-1.254883-.124023-1.827637-.370117-.57666-.246094-1.089844-.592773-1.526367-1.029297-.435059-.43457-.78125-.948242-1.029297-1.526367-.245117-.572266-.369629-1.186523-.369629-1.827148v-22.289551l22.853516,13.717285c.701172.421875,1.616699.422852,2.320312,0l22.853516-13.717285ZM55.871094,18.019714v.483398l-24.013672,14.391602L7.84375,18.503113v-.483398c0-.639648.124512-1.254395.369629-1.827148.247559-.577148.59375-1.090332,1.029785-1.526367.43457-.435059.948242-.78125,1.525879-1.029785.572754-.245117,1.1875-.369629,1.827637-.369629h38.521484c.639648,0,1.254883.124512,1.827148.369629.578125.248535,1.091797.595215,1.526367,1.029297.436523.4375.782227.951172,1.02832,1.526367.246094.574707.371094,1.189453.371094,1.827637Z" />
+    </svg>
+  ),
+  ManageLicense: () => (
+    <svg viewBox="64 64 896 896" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M608 112c-167.9 0-304 136.1-304 304 0 70.3 23.9 135 63.9 186.5l-41.1 41.1-62.3-62.3a8.15 8.15 0 00-11.4 0l-39.8 39.8a8.15 8.15 0 000 11.4l62.3 62.3-44.9 44.9-62.3-62.3a8.15 8.15 0 00-11.4 0l-39.8 39.8a8.15 8.15 0 000 11.4l62.3 62.3-65.3 65.3a8.03 8.03 0 000 11.3l42.3 42.3c3.1 3.1 8.2 3.1 11.3 0l253.6-253.6A304.06 304.06 0 00608 720c167.9 0 304-136.1 304-304S775.9 112 608 112zm161.2 465.2C726.2 620.3 668.9 644 608 644c-60.9 0-118.2-23.7-161.2-66.8-43.1-43-66.8-100.3-66.8-161.2 0-60.9 23.7-118.2 66.8-161.2 43-43.1 100.3-66.8 161.2-66.8 60.9 0 118.2 23.7 161.2 66.8 43.1 43 66.8 100.3 66.8 161.2 0 60.9-23.7 118.2-66.8 161.2z"></path>
+    </svg>
+  ),
+  Microsoft: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} aria-hidden="true" focusable="false">
+      <path fill="#6abe60" d="M12.624971,11.373393h9.375029V2.599782c0-.346182-.279963-.626899-.625055-.626899h-8.749973s0,9.400511,0,9.40051Z" />
+      <path fill="#ee483a" d="M11.375113,11.373393V1.972882H2.625139c-.345176,0-.625139.280717-.625139.626899v8.773612h9.375113Z" />
+      <path fill="#4b91cd" d="M11.375113,12.626689H2v8.773698c0,.345804.279963.626732.625139.626732h8.749974s0-9.400428,0-9.40043Z" />
+      <path fill="#fabf17" d="M12.624971,12.626689v9.400426h8.749973c.345093,0,.625055-.280928.625055-.626732v-8.773695s-9.375029,0-9.375029,0Z" />
+    </svg>
+  ),
+  Github: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} fill="currentColor" aria-hidden="true" focusable="false">
+      <path fillRule="evenodd" d="M12,2.000528C6.477679,2.000528,2,6.589814,2,12.254993c0,4.53125,2.866071,8.370536,6.839286,9.727678.5.09375.683036-.223214.683036-.495536,0-.245536-.008928-.888393-.013393-1.745536-2.78125.620535-3.370536-1.374999-3.370536-1.374999-.455357-1.183036-1.111607-1.5-1.111607-1.5-.90625-.638392.066964-.625.066964-.625,1.004464.071429,1.53125,1.058036,1.53125,1.058036.892857,1.566965,2.339286,1.116071,2.910714.852679.089286-.660714.348214-1.116071.633928-1.370536-2.21875-.258928-4.553571-1.138393-4.553571-5.066964,0-1.120536.388393-2.035715,1.026786-2.75-.102679-.258929-.446429-1.303571.098214-2.714286,0,0,.839286-.276786,2.75,1.049107.799107-.227679,1.651786-.339286,2.504465-.34375.848214.004465,1.705358.116072,2.504465.34375,1.910714-1.325893,2.745536-1.049107,2.745536-1.049107.544643,1.410715.200893,2.455357.098215,2.714286.638392.71875,1.026786,1.633929,1.026786,2.75,0,3.937499-2.339285,4.803572-4.566964,5.058037.357143.316965.678572.941965.678572,1.897321,0,1.370536-.013392,2.477679-.013392,2.8125,0,.272322.178571.593749.6875.491071,3.982141-1.352679,6.843748-5.191965,6.843748-9.718751,0-5.665179-4.477678-10.254465-10-10.254465Z" />
+    </svg>
+  ),
+  Gitlab: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} aria-hidden="true" focusable="false">
+      <path fill="#f9a226" d="M3.163048,9.804361l8.833997,11.481415L2.314344,14.099184c-.265655-.199567-.379134-.546961-.277394-.859617l1.124793-3.43699.001305.001783Z" />
+      <polygon fill="#f26e2b" points="8.317446 9.802621 12.000524 21.28447 11.997046 21.285775 3.163048 9.804361 3.165657 9.802621 8.317446 9.802621" />
+      <polygon fill="#e14429" points="15.683994 9.802621 12.000916 21.285775 12.000524 21.28447 8.317446 9.802621 8.321359 9.802621 15.680125 9.802621 15.683994 9.802621" />
+      <polygon fill="#f26e2b" points="20.83887 9.804361 12.000916 21.285775 15.683994 9.802621 20.836217 9.802621 20.83887 9.804361" />
+      <path fill="#f9a226" d="M21.964925,13.23961c.097392.312612-.011739.66005-.281307.859617l-9.682702,7.18659,8.837954-11.481415.001261-.001739,1.124794,3.436947Z" />
+      <path fill="#e14429" d="M18.629283,2.97473l2.206978,6.827891h-5.156136l2.210891-6.827891c.12474-.347395.616963-.347395.738267,0Z" />
+      <path fill="#e14429" d="M8.321359,9.802621H3.165657l2.206978-6.827891c.124784-.347395.616963-.347395.738268,0,0,0,2.206543,6.827891,2.210456,6.827891Z" />
+    </svg>
+  ),
+  Bitbucket: () => (
+    <svg viewBox="0 0 24 24" style={{ width: 22, height: 22 }} aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="bitbucket-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0.18" stopColor="#0052cc" />
+          <stop offset="1" stopColor="#2684ff" />
+        </linearGradient>
+      </defs>
+      <path fill="#2684ff" d="M2.649069,2.714279c-.1893-.002521-.37.081528-.493614.2296-.123614.148079-.177493.345021-.147186.538l2.720207,17.052629c.069964.430786.429329.747499.852272.751072h13.049965c.317428.004214.589999-.232214.640785-.555857l2.720214-17.244537c.030357-.192979-.023571-.389922-.147142-.538-.123643-.148071-.304357-.232121-.493644-.2296l-18.701857-.003307ZM14.103426,15.038936h-4.165214l-1.127785-6.084572h6.302285l-1.009286,6.084572Z" />
+      <path fill="url(#bitbucket-grad)" fillRule="evenodd" d="M21.126998,8.954436h-6.014l-1.009215,6.084571h-4.165214l-4.9182,6.028358c.155879.139142.354629.216571.5607.218356h13.053144c.3175.004215.590071-.232214.640857-.555856l1.851928-11.775429Z" />
+    </svg>
+  ),
+>>>>>>> dev
 };
 
 const BnLogo = () => {
@@ -76,9 +154,16 @@ const NAV = [
   { id: 'settings', Icon: Ic.Cog },
 ];
 
+<<<<<<< HEAD
 function ProjectTree({ activePage }) {
   const [expanded, setExpanded] = useState({ 'alpha': true, 'beta': true });
   const toggle = id => setExpanded(e => ({ ...e, [id]: !e[id] }));
+=======
+function ProjectTree({ activePage, selectedProj, onSelect }) {
+  const [expanded, setExpanded] = useState({ 'alpha': true, 'alpha-dev': true });
+  const toggle = id => setExpanded(e => ({ ...e, [id]: !e[id] }));
+  
+>>>>>>> dev
   return (
     <div className={s.treePanel}>
       <div className={s.treeSearch}>
@@ -95,9 +180,15 @@ function ProjectTree({ activePage }) {
       <div className={s.treeSection}>PROJECTS</div>
       {SIDEBAR_TREE.projects.map(proj => (
         <div key={proj.id}>
+<<<<<<< HEAD
           <div className={`${s.treeRow} ${activePage === 'projects' && proj.id === 'alpha' ? s.treeRowActive : ''}`}
             onClick={() => toggle(proj.id)} style={{ paddingLeft: 6 }}>
             <span className={s.treeArrow}>{expanded[proj.id] ? '▾' : '▸'}</span>
+=======
+          <div className={`${s.treeRow} ${selectedProj?.id === proj.id ? s.treeRowActive : ''}`}
+            onClick={(e) => { e.stopPropagation(); onSelect(proj); }} style={{ paddingLeft: 6 }}>
+            <span className={s.treeArrow} onClick={(e) => { e.stopPropagation(); toggle(proj.id); }}>{expanded[proj.id] ? '▾' : '▸'}</span>
+>>>>>>> dev
             <Ic.Folder />
             <span className={s.treeLabel}>{proj.name}</span>
           </div>
@@ -105,13 +196,23 @@ function ProjectTree({ activePage }) {
             <div>
               {proj.children?.map(sub => (
                 <div key={sub.id}>
+<<<<<<< HEAD
                   <div className={s.treeRow} style={{ paddingLeft: 20 }} onClick={() => toggle(sub.id)}>
+=======
+                  <div className={`${s.treeRow} ${selectedProj?.id === sub.id ? s.treeRowActive : ''}`} 
+                    style={{ paddingLeft: 20 }} 
+                    onClick={() => { onSelect(sub); toggle(sub.id); }}>
+>>>>>>> dev
                     <span className={s.treeArrow}>{expanded[sub.id] ? '▾' : '▸'}</span>
                     <Ic.Folder />
                     <span className={s.treeLabel}>{sub.name}</span>
                   </div>
                   {expanded[sub.id] && sub.configs?.map(c => (
+<<<<<<< HEAD
                     <div key={c} className={s.treeRow} style={{ paddingLeft: 32 }}>
+=======
+                    <div key={c} className={s.treeRow} style={{ paddingLeft: 32 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
+>>>>>>> dev
                       <span className={s.treeDash}>■</span>
                       <span className={s.treeLabel} style={{ fontSize: 11 }}>{c}</span>
                     </div>
@@ -119,7 +220,11 @@ function ProjectTree({ activePage }) {
                 </div>
               ))}
               {proj.configs?.map(c => (
+<<<<<<< HEAD
                 <div key={c} className={s.treeRow} style={{ paddingLeft: 20 }}>
+=======
+                <div key={c} className={s.treeRow} style={{ paddingLeft: 20 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
+>>>>>>> dev
                   <span className={s.treeDash}>■</span>
                   <span className={s.treeLabel} style={{ fontSize: 11 }}>{c}</span>
                 </div>
@@ -152,7 +257,11 @@ function Dashboard() {
             <div className={s.statRow}>
               <span className={s.bigPct} style={{ color: '#d8305b' }}>49%</span>
               <span className={s.statLabel}>Overall Success Rate</span>
+<<<<<<< HEAD
               <span className={s.statRight}>All data • 49 processes</span>
+=======
+              <span className={s.statRight}>All data • 6 configurations</span>
+>>>>>>> dev
             </div>
             <div className={s.barChart}>
               {SUCCESS_CONFIGS.map((c, i) => {
@@ -176,6 +285,7 @@ function Dashboard() {
             <div className={s.lineChartWrap}>
               <div className={s.lineYLabel}>Runtime</div>
               <svg className={s.lineSvg} viewBox="0 0 300 110" preserveAspectRatio="none">
+<<<<<<< HEAD
                 <path d="M0 108 L50 105 L100 100 L150 80 L200 30 L250 25 L300 22" fill="none" stroke="#d8305b" strokeWidth="2" />
                 <path d="M0 108 L60 107 L120 107 L180 107 L240 107 L300 107" fill="none" stroke="#40a9ff" strokeWidth="1.5" opacity=".7" />
                 <path d="M0 108 L60 107 L120 107 L180 107 L240 107 L300 107" fill="none" stroke="#00c951" strokeWidth="1.5" opacity=".5" />
@@ -183,6 +293,22 @@ function Dashboard() {
                 {[0, 60, 120, 180, 240, 300].map((x, i) => {
                   const ys = [108, 105, 100, 80, 30, 22];
                   return <circle key={i} cx={x} cy={ys[i]} r="3.5" fill="#40a9ff" />;
+=======
+                {/* Config A */}
+                <path d="M0 108 L60 105 L120 95 L180 70 L240 40 L300 25" fill="none" stroke="#d8305b" strokeWidth="2" />
+                {/* Config B */}
+                <path d="M0 100 L60 90 L120 85 L180 75 L240 65 L300 50" fill="none" stroke="#40a9ff" strokeWidth="1.5" opacity=".7" />
+                {/* Config C */}
+                <path d="M0 90 L60 85 L120 75 L180 60 L240 50 L300 40" fill="none" stroke="#00c951" strokeWidth="1.5" opacity=".6" />
+                {/* Config D */}
+                <path d="M0 80 L60 70 L120 65 L180 55 L240 45 L300 30" fill="none" stroke="#faad14" strokeWidth="1.5" opacity=".5" />
+                {/* Config E */}
+                <path d="M0 70 L60 65 L120 60 L180 50 L240 40 L300 25" fill="none" stroke="#fa54aa" strokeWidth="1.5" opacity=".5" />
+                
+                {[0, 60, 120, 180, 240, 300].map((x, i) => {
+                  const ys = [108, 105, 95, 70, 40, 25];
+                  return <circle key={i} cx={x} cy={ys[i]} r="3" fill="#d8305b" />;
+>>>>>>> dev
                 })}
               </svg>
             </div>
@@ -202,7 +328,11 @@ function Dashboard() {
             <div className={s.statRow}>
               <span className={s.bigPct}>&lt;1%</span>
               <span className={s.statLabel}>Overall Agent Utilization</span>
+<<<<<<< HEAD
               <span className={s.statRight}>All data • 44666 builds</span>
+=======
+              <span className={s.statRight}>All data • 215 builds</span>
+>>>>>>> dev
             </div>
             <div className={s.treemap}>
               {AGENT_TREEMAP.map((a, i) => (
@@ -247,6 +377,7 @@ function Dashboard() {
 }
 
 /* ══ PROJECTS ══ */
+<<<<<<< HEAD
 function Projects() {
   const [tab, setTab] = useState('Projects');
   return (
@@ -293,10 +424,188 @@ function Projects() {
             <div key={c.name} className={s.configRow}>
               <div className={s.configRowIcon} style={{ background: 'rgba(216,48,91,.15)', color: '#d8305b', borderRadius: 6, padding: 5 }}>
                 <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}><path d="M5.481 11.479c-.13 0-.255-.027-.373-.08a.97.97 0 0 1-.313-.215.97.97 0 0 1-.214-.313.97.97 0 0 1-.08-.372V5.46c0-.13.027-.255.08-.373a.97.97 0 0 1 .527-.527.97.97 0 0 1 .373-.08h5.04c.13 0 .255.027.373.08a.97.97 0 0 1 .527.527c.053.118.08.243.08.373v5.039c0 .13-.027.255-.08.373a.97.97 0 0 1-.527.527.97.97 0 0 1-.373.08H5.48z" /></svg>
+=======
+
+// Icon for the pin/star in the project header
+const PinIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 12, height: 12 }}>
+    <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/>
+  </svg>
+);
+
+// Folder icon matching the outlined folder in the real app
+const FolderOutlineIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 16, height: 16 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+  </svg>
+);
+
+// Root-level "Projects" page — matches original: same two-pane layout, right pane = flat row list
+function ProjectList({ onSelect }) {
+  const [tab, setTab] = useState('Projects');
+  const project = { name: 'Projects', id: 'root' };
+
+  return (
+    <div className={s.projShell}>
+      {/* Left sidebar — identical to ProjectDetail */}
+      <div className={s.projSidebar}>
+        <div className={s.projSidebarHead}>
+          <div className={s.projActiveDot} />
+          <span className={s.projName}>Projects</span>
+          <button className={s.iconBtn}><PinIcon /></button>
+        </div>
+        <div style={{ padding: '8px 10px 6px' }}>
+          <button className={s.btnPrimary} style={{ width: '100%', justifyContent: 'center', fontSize: 11.5 }}>
+            <Ic.Plus /> New Build Configuration
+          </button>
+        </div>
+        <div style={{ padding: '4px 10px 6px' }}>
+          <div className={s.editProjBtn}>
+            <GearIcon />
+            <span style={{ flex: 1, textAlign: 'left' }}>Edit Project</span>
+            <div className={s.editProjBtnDivider} />
+            <ChevDownIcon />
+          </div>
+        </div>
+        <div className={s.projNavRow}>
+          {[
+            { id: 'Projects', sub: 'Manage sub-projects', Icon: Ic.Proj },
+            { id: 'Members', sub: 'Manage project members', Icon: Ic.Users },
+            { id: 'Settings', sub: 'View project settings', Icon: Ic.Cog },
+          ].map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
+              <span className={s.projNavIcon}><t.Icon /></span>
+              <div className={s.projNavText}>
+                <span className={s.projNavLabel}>{t.id}</span>
+                <span className={s.projNavSub}>{t.sub}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Right pane content based on tab switcher */}
+      {tab === 'Projects' && (
+        <div className={s.projRightPane}>
+          <div className={s.projRightHead}>
+            <div>
+              <div className={s.projRightTitle}>Projects</div>
+              <div className={s.muted} style={{ fontSize: 11 }}>Manage sub-projects</div>
+            </div>
+          </div>
+          <div className={s.projListRows}>
+            {SIDEBAR_TREE.projects.map(p => (
+              <div key={p.id} className={s.projListRow} onClick={() => onSelect(p)}>
+                <div className={s.projListRowIcon}>
+                  {p.configs
+                    ? <div style={{ width: 10, height: 10, background: 'var(--color-demo-accent)', borderRadius: 2 }} />
+                    : <FolderOutlineIcon />}
+                </div>
+                <div className={s.projListRowBody}>
+                  <div className={s.projListRowName}>{p.name}</div>
+                  <div className={s.muted} style={{ fontSize: 10.5 }}>
+                    {p.children ? 'Project Group' : (p.configs ? 'No builds yet' : 'Project Group')}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      {tab === 'Members' && <ProjectsMembersTab />}
+      {tab === 'Settings' && <ProjectsSettingsTab />}
+    </div>
+  );
+}
+
+
+// Gear icon used in Settings items
+const GearIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}>
+    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.474l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+  </svg>
+);
+
+// Slider/Parameters icon used in Settings items
+const SlidersIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}>
+    <path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+  </svg>
+);
+
+// Edit icon for the settings card action button
+const SmEditIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
+  </svg>
+);
+
+// Chevron icon for the settings card collapse button
+const ChevDownIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+);
+
+// Person icon for member avatar
+const PersonIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+  </svg>
+);
+
+// Plus icon for Add Member button
+const PlusMemberIcon = () => (
+  <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}>
+    <path d="M15 12c2.7 0 4.8-2.1 4.8-4.8S17.7 2.4 15 2.4s-4.8 2.1-4.8 4.8S12.3 12 15 12zm-9 2.4V16h-2v2h2v2h2v-2h2v-2H8v-1.6c1.6.8 3.2 1.2 4.8 1.6H12.5C10.7 14.8 9.3 14.4 6 14.4zM15 14.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+  </svg>
+);
+
+function ProjectsSubTab({ project, onSelect }) {
+  // Use specific configs if available, otherwise fallback to PROJECT.configs mock for demo
+  const configs = (project.configs && Array.isArray(project.configs) && typeof project.configs[0] === 'object') 
+    ? project.configs 
+    : PROJECT.configs;
+  const children = project.children || [];
+
+  return (
+    <div className={s.projRightPane}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Projects</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Manage sub-projects</div>
+        </div>
+      </div>
+      <div className={s.membersFilters}>
+        <div className={s.searchBox} style={{ flex: 1 }}>
+          <Ic.Search />
+          <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search...</span>
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        {children.map(c => (
+          <div key={c.id} className={s.projContent} onClick={() => onSelect(c)}>
+            <div className={s.configRow}>
+              <div className={s.configRowIcon} style={{ color: 'var(--color-demo-accent)' }}><FolderOutlineIcon /></div>
+              <div className={s.configRowBody}>
+                <div className={s.configName}>{c.name}</div>
+                <div className={s.muted} style={{ fontSize: 10.5 }}>Project Group</div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {configs.map((c, i) => (
+          <div key={i} className={s.projContent} onClick={() => onSelect({ ...c, type: 'config' })} style={{ cursor: 'pointer' }}>
+            <div className={s.configRow}>
+              <div className={s.configRowIcon} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: 10, height: 10, background: c.status === 'Failed' ? '#ff4d4f' : '#00c951', borderRadius: 2 }} />
+>>>>>>> dev
               </div>
               <div className={s.configRowBody}>
                 <div className={s.configName}>{c.name}</div>
                 <div className={s.configMeta}>
+<<<<<<< HEAD
                   <span className={s.link}>{c.lastBuild}</span>
                   <Tag label={c.status} />
                   <span className={s.muted}>{c.date}</span>
@@ -307,10 +616,747 @@ function Projects() {
         </div>
       )}
       {tab !== 'Projects' && <div className={s.emptyState}><span className={s.muted}>No content to display</span></div>}
+=======
+                  <span className={s.muted} style={{ fontSize: 11 }}>{c.lastBuild}</span>
+                  <span className={s.muted} style={{ fontSize: 11 }}>|</span>
+                  <Tag label={c.status} />
+                  <span className={s.muted} style={{ fontSize: 11 }}>|</span>
+                  <span className={s.muted} style={{ fontSize: 11 }}>{c.date}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+>>>>>>> dev
     </div>
   );
 }
 
+<<<<<<< HEAD
+=======
+function ProjectsMembersTab() {
+  return (
+    <div className={s.projRightPane}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Members</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Manage members for this project.</div>
+        </div>
+        <button className={s.btnPrimary} style={{ fontSize: 11, padding: '5px 10px' }}>
+          <PlusMemberIcon /> Add Member
+        </button>
+      </div>
+      <div className={s.membersFilters}>
+        <div className={s.searchBox} style={{ flex: 1 }}>
+          <Ic.Search />
+          <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search...</span>
+        </div>
+        <div className={s.selectMock} style={{ minWidth: 120 }}>
+          All Access Levels
+          <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 9, height: 9, opacity: .35, marginLeft: 4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg>
+        </div>
+      </div>
+      <div className={s.membersTable}>
+        <div className={s.membersTHead}>
+          <span style={{ flex: 2 }}>Members</span>
+          <span style={{ flex: 1.5 }}>Inherited From</span>
+          <span style={{ flex: 1.5 }}>Access Level</span>
+          <span style={{ flex: '0 0 60px' }}>Actions</span>
+        </div>
+        {PROJECT.members.map((m, idx) => (
+          <div key={idx} className={s.membersTRow}>
+            <div style={{ flex: 2, display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div className={s.memberAvatar}><PersonIcon /></div>
+              <span style={{ fontSize: 11.5, color: 'rgba(var(--text-rgb),.85)', fontWeight: 500 }}>{m.name}</span>
+            </div>
+            <div style={{ flex: 1.5 }}>
+              <span className={s.link} style={{ fontSize: 11.5 }}>{m.inherited}</span>
+            </div>
+            <div style={{ flex: 1.5 }}>
+              <div className={s.selectMock} style={{ width: 'fit-content', fontSize: 11, padding: '3px 8px' }}>
+                {m.role}
+                <svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 8, height: 8, opacity: .35, marginLeft: 4 }}><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" /></svg>
+              </div>
+            </div>
+            <div style={{ flex: '0 0 60px' }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ProjectsSettingsTab() {
+  const [openSections, setOpenSections] = useState({ general: true, vcs: false, limits: false });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Project Settings</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Manage general settings and policies for this project.</div>
+        </div>
+      </div>
+
+      <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
+        <ConfigSection id="general" title="General" sub="Basic project information" Icon={Ic.Cog} isOpen={openSections.general} onToggle={toggle}>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Project ID:</span> <span className={s.infoVal}>alpha-main</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Name:</span> <span className={s.infoVal}>Alpha</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Description:</span> <span className={s.infoVal}>Core platform development project</span></div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="vcs" title="Version Control" sub="Default VCS settings" Icon={Ic.Tree} isOpen={openSections.vcs} onToggle={toggle}>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Default Branch:</span> <span className={s.infoVal}>main</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Auto-link issues:</span> <span className={s.infoVal}>Enabled</span></div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="limits" title="Limits & Quotas" sub="Resource usage policies" Icon={Ic.Dash} isOpen={openSections.limits} onToggle={toggle} isLast>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Max Concurrent Builds:</span> <span className={s.infoVal}>10</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Build Timeout:</span> <span className={s.infoVal}>60 minutes</span></div>
+          </div>
+        </ConfigSection>
+      </div>
+    </div>
+  );
+}
+
+function ConfigExecutionStepsTab() {
+  return (
+    <div className={s.sectionDataGrid}>
+      <div className={s.gridHead} style={{ '--cols': '1fr 2fr' }}>
+        <span>Execution Step Names</span>
+        <span>Parameters</span>
+      </div>
+      <div className={s.emptyGridBody}>
+        <div className={s.emptyIllustration} />
+        <span className={s.muted}>No data available</span>
+      </div>
+    </div>
+  );
+}
+
+function ConfigArtifactSettingsTab() {
+  return (
+    <div className={s.sectionDataGrid}>
+      <div className={s.gridHead} style={{ '--cols': '1fr 1fr 1.5fr' }}>
+        <span>Name</span>
+        <span>Condition</span>
+        <span>Paths</span>
+      </div>
+      <div className={s.emptyGridBody}>
+        <div className={s.emptyIllustration} />
+        <span className={s.muted}>No data available</span>
+      </div>
+    </div>
+  );
+}
+
+function ConfigParametersTab() {
+  return (
+    <div className={s.sectionDataGrid}>
+      <div className={s.gridHead} style={{ '--cols': '1.2fr 1fr 1fr 1fr' }}>
+        <span>Name</span>
+        <span>Value</span>
+        <span>Prompt on Run</span>
+        <span>Expose on Env</span>
+      </div>
+      <div className={s.emptyGridBody}>
+        <div className={s.emptyIllustration} />
+        <span className={s.muted}>No data available</span>
+      </div>
+    </div>
+  );
+}
+
+function ConfigSection({ id, title, sub, Icon, children, isOpen, onToggle, isLast }) {
+  return (
+    <div className={s.settingsTimelineItem}>
+      <div className={s.settingsTimelineLeft}>
+        <div className={s.settingsTimelineIcon}><Icon /></div>
+        {!isLast && <div className={s.settingsTimelineLine} />}
+      </div>
+      <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', marginBottom: 12 }}>
+        <div 
+          className={s.settingsTimelineCard} 
+          onClick={() => onToggle(id)} 
+          style={{ 
+            marginBottom: 0, 
+            borderBottomLeftRadius: isOpen ? 0 : 'var(--radius-card)', 
+            borderBottomRightRadius: isOpen ? 0 : 'var(--radius-card)', 
+            borderBottom: isOpen ? 'none' : undefined, 
+            background: isOpen ? 'var(--color-bg-base)' : 'var(--color-bg-surface)' 
+          }}
+        >
+          <div className={s.settingsTimelineCardContent}>
+            <div className={s.settingsCardTitle}>{title}</div>
+            <div className={s.muted} style={{ fontSize: 11 }}>{sub}</div>
+          </div>
+          <div className={s.settingsCardActions}>
+            <button className={s.iconBtn} onClick={e => { e.stopPropagation(); }} style={{ marginRight: 6 }}><SmEditIcon /></button>
+            <div className={`${s.sectionChev} ${isOpen ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: isOpen ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
+              <ChevDownIcon />
+            </div>
+          </div>
+        </div>
+        {isOpen && (
+          <div 
+            className={s.sectionContent} 
+            style={{ 
+              border: '1px solid var(--color-border)', 
+              borderTop: '1px solid rgba(var(--text-rgb), 0.08)', 
+              borderRadius: '0 0 var(--radius-card) var(--radius-card)', 
+              background: 'var(--color-bg-shell)' 
+            }}
+          >
+            {children}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ConfigDetailsTab({ config }) {
+  const [openSections, setOpenSections] = useState({ general: false, vcs: false, steps: false, artifacts: false, criteria: false, params: false });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.configDetailsHeader}>
+        <h2 className={s.paneTitle}>Build Configurations</h2>
+        <div className={s.muted} style={{ fontSize: 11.5 }}>Expand sections to view and manage configuration details</div>
+        <button className={s.exportBtn}><svg viewBox="64 64 896 896" width="13" height="13" fill="currentColor"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-56 640l-56-56 128-128-128-128 56-56 184 184-184 184z"/></svg> Export</button>
+      </div>
+
+      <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
+        <ConfigSection id="general" title="General Settings" sub="Basic configuration settings" Icon={Ic.Cog} isOpen={openSections.general} onToggle={toggle}>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Name:</span> <span className={s.infoVal}>{config.name}</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Description:</span> <span className={s.infoVal}>N/A</span></div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="vcs" title="Version Control Settings" sub="Version control settings" Icon={Ic.Tree} isOpen={openSections.vcs} onToggle={toggle}>
+          <div className={s.sectionDataGrid}>
+            <div className={s.gridHead} style={{ '--cols': '1.2fr 1fr 1.5fr' }}>
+              <span>VCS Type</span>
+              <span>Name</span>
+              <span>Parameters</span>
+            </div>
+            <div className={s.emptyGridBody}>
+               <div className={s.emptyIllustration} />
+               <span className={s.muted}>No data available</span>
+            </div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="steps" title="Execution Steps" sub="Build execution steps" Icon={Ic.Dash} isOpen={openSections.steps} onToggle={toggle}>
+          <ConfigExecutionStepsTab />
+        </ConfigSection>
+
+        <ConfigSection id="artifacts" title="Artifact Settings" sub="Build output artifacts" Icon={Ic.File} isOpen={openSections.artifacts} onToggle={toggle}>
+          <ConfigArtifactSettingsTab />
+        </ConfigSection>
+
+        <ConfigSection id="criteria" title="Agent Criteria" sub="Agent selection criteria" Icon={Ic.Monitor} isOpen={openSections.criteria} onToggle={toggle}>
+          <div className={s.sectionDataGrid}>
+            <div className={s.gridHead} style={{ '--cols': '1.5fr 1fr 1.5fr' }}>
+              <span>Parameter Name</span>
+              <span>Operator</span>
+              <span>Value</span>
+            </div>
+            <div className={s.emptyGridBody}>
+               <div className={s.emptyIllustration} />
+               <span className={s.muted}>No data available</span>
+            </div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="params" title="Parameters" sub="Parameters for the build" Icon={Ic.Sliders} isOpen={openSections.params} onToggle={toggle} isLast>
+          <ConfigParametersTab />
+        </ConfigSection>
+      </div>
+    </div>
+  );
+}
+
+/* ── Config Detail Layout ── */
+
+const HistoryIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-600-80h56c4.4 0 8-3.6 8-8V560c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V384c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v320c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V462c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v242c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V304c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v400c0 4.4 3.6 8 8 8z" />
+  </svg>
+);
+
+const MonitorIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M300 328a60 60 0 10120 0 60 60 0 10-120 0zM852 64H172c-17.7 0-32 14.3-32 32v660c0 17.7 14.3 32 32 32h680c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-32 660H204V128h616v596zM604 328a60 60 0 10120 0 60 60 0 10-120 0zm250.2 556H169.8c-16.5 0-29.8 14.3-29.8 32v36c0 4.4 3.3 8 7.4 8h729.1c4.1 0 7.4-3.6 7.4-8v-36c.1-17.7-13.2-32-29.7-32zM664 508H360c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
+  </svg>
+);
+
+const LightningIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z" />
+  </svg>
+);
+
+const TeamTabsIcon = () => (
+   <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+     <path d="M824.2 699.9a301.55 301.55 0 00-86.4-60.4C783.1 602.8 812 546.8 812 484c0-110.8-92.4-201.7-203.2-200-109.1 1.7-197 90.6-197 200 0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 00-86.4 60.4C345 754.6 314 826.8 312 903.8a8 8 0 008 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5A226.62 226.62 0 01612 684c60.9 0 118.2 23.7 161.3 66.8C814.5 792 838 846.3 840 904.3c.1 4.3 3.7 7.7 8 7.7h56a8 8 0 008-8.2c-2-77-33-149.2-87.8-203.9zM612 612c-34.2 0-66.4-13.3-90.5-37.5a126.86 126.86 0 01-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4 0 34.2-13.3 66.3-37.5 90.5A127.3 127.3 0 01612 612zM361.5 510.4c-.9-8.7-1.4-17.5-1.4-26.4 0-15.9 1.5-31.4 4.3-46.5.7-3.6-1.2-7.3-4.5-8.8-13.6-6.1-26.1-14.5-36.9-25.1a127.54 127.54 0 01-38.7-95.4c.9-32.1 13.8-62.6 36.3-85.6 24.7-25.3 57.9-39.1 93.2-38.7 31.9.3 62.7 12.6 86 34.4 7.9 7.4 14.7 15.6 20.4 24.4 2 3.1 5.9 4.4 9.3 3.2 17.6-6.1 36.2-10.4 55.3-12.4 5.6-.6 8.8-6.6 6.3-11.6-32.5-64.3-98.9-108.7-175.7-109.9-110.9-1.7-203.3 89.2-203.3 199.9 0 62.8 28.9 118.8 74.2 155.5-31.8 14.7-61.1 35-86.5 60.4-54.8 54.7-85.8 126.9-87.8 204a8 8 0 008 8.2h56.1c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5 29.4-29.4 65.4-49.8 104.7-59.7 3.9-1 6.5-4.7 6-8.7z" />
+   </svg>
+);
+
+const MailIcon = () => (
+  <svg viewBox="0 0 64 64" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M59.630859,14.341003c-.487305-1.090332-1.147461-2.056152-1.962891-2.871094s-1.78125-1.475586-2.871094-1.963379c-1.098633-.492188-2.272461-.741699-3.487305-.741699H12.405273c-1.215332,0-2.38916.249512-3.487305.741699-1.091309.488281-2.057617,1.148438-2.871582,1.963379-.814941.814941-1.475586,1.780762-1.963379,2.871094-.491699,1.099609-.741211,2.272949-.741211,3.487305v28.398438c0,1.214844.249512,2.387695.741211,3.487305.487305,1.09082,1.147949,2.056641,1.963379,2.87207.8125.8125,1.77832,1.473633,2.871582,1.962891,1.099121.492188,2.272461.741211,3.487305.741211h38.904297c1.213867,0,2.387695-.249023,3.487305-.741211,1.091797-.489258,2.057617-1.149414,2.871094-1.962891.81543-.81543,1.475586-1.78125,1.962891-2.87207.492188-1.101562.742188-2.274414.742188-3.487305v-28.398438c0-1.212891-.25-2.38623-.742188-3.487305ZM55.871094,23.745789v22.289551c0,.638672-.125,1.253906-.371094,1.827148-.24707.577148-.592773,1.09082-1.02832,1.526367-.436523.435547-.949219.782227-1.526367,1.029297-.572266.246094-1.1875.370117-1.827148.370117H12.59668c-.640137,0-1.254883-.124023-1.827637-.370117-.57666-.246094-1.089844-.592773-1.526367-1.029297-.435059-.43457-.78125-.948242-1.029297-1.526367-.245117-.572266-.369629-1.186523-.369629-1.827148v-22.289551l22.853516,13.717285c.701172.421875,1.616699.422852,2.320312,0l22.853516-13.717285ZM55.871094,18.019714v.483398l-24.013672,14.391602L7.84375,18.503113v-.483398c0-.639648.124512-1.254395.369629-1.827148.247559-.577148.59375-1.090332,1.029785-1.526367.43457-.435059.948242-.78125,1.525879-1.029785.572754-.245117,1.1875-.369629,1.827637-.369629h38.521484c.639648,0,1.254883.124512,1.827148.369629.578125.248535,1.091797.595215,1.526367,1.029297.436523.4375.782227.951172,1.02832,1.526367.246094.574707.371094,1.189453.371094,1.827637Z" />
+  </svg>
+);
+
+const GearTabsIcon = () => (
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.7s-1.6-38.8-4.7-57.7l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z" />
+  </svg>
+);
+
+const ClockIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 12, height: 12 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+  </svg>
+);
+
+const CheckCircleIcon = () => (
+   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+   </svg>
+);
+
+const XCircleIcon = () => (
+   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
+   </svg>
+);
+
+const DownloadIcon = () => (
+  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+  </svg>
+);
+
+
+
+function ConfigAgentsTab() {
+  return (
+    <div className={s.projRightPane} style={{ background: 'var(--color-bg-base)' }}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Agents Criteria</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>Available agents for this configuration</div>
+        </div>
+      </div>
+      <div style={{ padding: '0 18px 18px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+           <div className={s.pickerSwitch}>
+             <button className={`${s.pickerOpt} ${s.pickerOptActive}`}>Matched</button>
+             <button className={s.pickerOpt}>Remaining</button>
+           </div>
+           <div className={s.searchBox} style={{ width: 220 }}>
+             <Ic.Search />
+             <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search agents...</span>
+           </div>
+        </div>
+
+        <div className={s.agentsListContainer}>
+           <div className={s.agentRow}>
+              <ChevDownIcon style={{ opacity: 0.5 }} />
+              <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
+              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-1</div>
+              <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
+                 <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
+                 <span style={{ fontSize: 11.5 }}>Linux</span>
+              </div>
+              <div style={{ flex: 1 }}>
+                 <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                 <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
+                 <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>24 seconds ago</div>
+              </div>
+           </div>
+           <div className={s.agentRow}>
+              <ChevDownIcon style={{ opacity: 0.5 }} />
+              <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
+              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-2</div>
+              <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
+                 <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
+                 <span style={{ fontSize: 11.5 }}>Linux</span>
+              </div>
+              <div style={{ flex: 1 }}>
+                 <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                 <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
+                 <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>34 seconds ago</div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ConfigTriggersTab() {
+  const [openSections, setOpenSections] = useState({ trigger1: true });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.configDetailsHeader}>
+        <h2 className={s.paneTitle}>Configuration Triggers</h2>
+        <div className={s.muted} style={{ fontSize: 11.5 }}>Configure automated build triggers and schedules</div>
+        <button className={s.exportBtn} style={{ background: 'var(--color-demo-accent)', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 4, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, position: 'absolute', top: 14, right: 0 }}>
+          <Ic.Plus /> Add Trigger
+        </button>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '16px 0', gap: 12 }}>
+         <div className={s.searchBox} style={{ flex: 1 }}>
+           <Ic.Search />
+           <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search by trigger name...</span>
+         </div>
+         <div style={{ display: 'flex', gap: 12 }}>
+            <div className={s.selectMock} style={{ width: 140 }}>All Statuses <ChevDownIcon /></div>
+            <div className={s.selectMock} style={{ width: 140 }}>All Schedules <ChevDownIcon /></div>
+         </div>
+      </div>
+
+      <div className={s.settingsTimeline}>
+        <div className={s.settingsTimelineItem}>
+          <div className={s.settingsTimelineLeft}>
+            <div className={s.settingsTimelineIcon} style={{ borderColor: '#0958d9', color: '#0958d9' }}><Ic.Thunder /></div>
+          </div>
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', marginBottom: 12 }}>
+            <div className={s.settingsTimelineCard} onClick={() => toggle('trigger1')} style={{ background: openSections.trigger1 ? 'var(--color-bg-base)' : 'var(--color-bg-surface)' }}>
+              <div className={s.settingsTimelineCardContent}>
+                <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                  <Tag label="Daily" style={{ background: '#0958d9', color: '#fff', border: 'none', borderRadius: 4, height: 18, fontSize: 10 }} />
+                  <div className={s.settingsCardTitle}>Daily Automation Trigger</div>
+                </div>
+                <div className={s.muted} style={{ fontSize: 11 }}>Trigger schedule: At 04:02 AM</div>
+              </div>
+              <div className={s.settingsCardActions}>
+                <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginRight: 16 }}>
+                   <span style={{ fontSize: 11.5, color: 'rgba(var(--text-rgb), 0.6)' }}>Disabled</span>
+                   <div className={s.toggleOn} style={{ background: 'rgba(var(--text-rgb), 0.15)', justifyContent: 'flex-start', width: 28, height: 14, borderRadius: 10, padding: 2 }}>
+                      <div className={s.toggleBall} style={{ background: 'rgba(var(--text-rgb), 0.3)', width: 10, height: 10 }} />
+                   </div>
+                </div>
+                <button className={s.iconBtn} onClick={e => e.stopPropagation()} style={{ marginRight: 6 }}><SmEditIcon /></button>
+                <div className={`${s.sectionChev} ${openSections.trigger1 ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: openSections.trigger1 ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
+                  <ChevDownIcon />
+                </div>
+              </div>
+            </div>
+            {openSections.trigger1 && (
+              <div className={s.sectionContent} style={{ border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 var(--radius-card) var(--radius-card)', background: 'var(--color-bg-shell)', padding: 16 }}>
+                <div className={s.triggerCardBody} style={{ background: 'transparent', padding: 0 }}>
+                   <div className={s.triggerCardRow}>
+                      <div style={{ opacity: 0.5, display: 'flex' }}><svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
+                      <span>Cron Pattern:</span>
+                      <span style={{ fontFamily: 'monospace', background: 'rgba(var(--text-rgb), 0.08)', padding: '2px 6px', borderRadius: 4, color: 'rgba(var(--text-rgb), 0.8)' }}>2 4 * * *</span>
+                   </div>
+                   <div className={s.triggerCardRow}>
+                      <div style={{ opacity: 0.5, display: 'flex' }}><Ic.Info /></div>
+                      <span>Next Run: Enable to see next run time</span>
+                   </div>
+                   <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Trigger</button>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
+                   </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ConfigNotificationsTab() {
+  const [openSections, setOpenSections] = useState({ notif1: true });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.configDetailsHeader}>
+        <h2 className={s.paneTitle}>Notification Settings</h2>
+        <div className={s.muted} style={{ fontSize: 11.5 }}>Build notifications settings</div>
+        <button className={s.exportBtn} style={{ background: 'var(--color-demo-accent)', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 4, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, position: 'absolute', top: 14, right: 0 }}>
+          <Ic.Plus /> Add Notification
+        </button>
+      </div>
+
+      <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
+        <div className={s.settingsTimelineItem}>
+          <div className={s.settingsTimelineLeft}>
+            <div className={s.settingsTimelineIcon} style={{ borderColor: '#52c41a', color: '#52c41a' }}><Ic.Mail /></div>
+          </div>
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', marginBottom: 12 }}>
+            <div className={s.settingsTimelineCard} onClick={() => toggle('notif1')} style={{ background: openSections.notif1 ? 'var(--color-bg-base)' : 'var(--color-bg-surface)' }}>
+              <div className={s.settingsTimelineCardContent}>
+                <div className={s.settingsCardTitle}>Email Notification</div>
+                <div className={s.muted} style={{ fontSize: 11 }}>admin@example.com</div>
+              </div>
+              <div className={s.settingsCardActions}>
+                <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginRight: 16 }}>
+                   <span style={{ fontSize: 11.5, color: '#52c41a', fontWeight: 600 }}>Enabled</span>
+                   <div className={s.toggleOn} style={{ background: '#52c41a', width: 28, height: 14, borderRadius: 10, padding: 2, display: 'flex', justifyContent: 'flex-end' }}>
+                      <div className={s.toggleBall} style={{ background: '#fff', width: 10, height: 10 }} />
+                   </div>
+                </div>
+                <button className={s.iconBtn} onClick={e => e.stopPropagation()} style={{ marginRight: 6 }}><SmEditIcon /></button>
+                <div className={`${s.sectionChev} ${openSections.notif1 ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: openSections.notif1 ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
+                  <ChevDownIcon />
+                </div>
+              </div>
+            </div>
+            {openSections.notif1 && (
+              <div className={s.sectionContent} style={{ border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 var(--radius-card) var(--radius-card)', background: 'var(--color-bg-shell)', padding: 16 }}>
+                <div className={s.triggerCardBody} style={{ background: 'transparent', padding: 0 }}>
+                   <div className={s.triggerCardRow}>
+                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>To:</span>
+                      <span style={{ background: 'var(--color-error)', color: '#fff', padding: '2px 8px', borderRadius: 20, fontSize: 11 }}>admin@example.com</span>
+                   </div>
+                   <div className={s.triggerCardRow}>
+                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Subject:</span>
+                      <span>CI/CD Build &#123;&#123;.buildStatusName&#125;&#125; &ndash; &#123;&#123;.configName&#125;&#125;</span>
+                   </div>
+                   <div className={s.triggerCardRow}>
+                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Condition:</span>
+                      <Tag label="Success" style={{ border: '1px solid #52c41a', color: '#52c41a', borderRadius: 4, height: 18, fontSize: 10 }} />
+                   </div>
+                   <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Notification</button>
+                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
+                   </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ConfigDetail({ config }) {
+  const [tab, setTab] = useState('History');
+  
+  const historyRuns = [
+    { id: 4149, status: 'Completed', time: '26 minutes ago', dur: '<1s', user: 'System Trigger' },
+    { id: 4148, status: 'Completed', time: '1 hour ago', dur: '<1s', user: 'System Trigger' },
+    { id: 4147, status: 'Completed', time: '2 hours ago', dur: '<1s', user: 'System Trigger' },
+    { id: 4146, status: 'Completed', time: '3 hours ago', dur: '<1s', user: 'System Trigger' }
+  ];
+
+  return (
+    <div className={s.projShell}>
+      {/* Left sidebar — Config Layout */}
+      <div className={s.projSidebar}>
+        <div className={s.projSidebarHead}>
+          <div className={s.projActiveDot} style={{ background: config.status === 'Failed' ? '#ff4d4f' : '#00c951' }} />
+          <span className={s.projName}>{config.name}</span>
+          <button className={s.iconBtn}><SmEditIcon /></button>
+          <button className={s.iconBtn}><PinIcon /></button>
+        </div>
+        <div style={{ padding: '8px 10px 4px', display: 'flex' }}>
+          <div className={s.splitBtnPrimary}>
+            <div className={s.splitBtnMain}>
+              <span style={{ fontSize: 9 }}>▶</span> Run Build
+            </div>
+            <div className={s.splitBtnDivider} />
+            <div className={s.splitBtnIcon}>...</div>
+          </div>
+        </div>
+        <div style={{ padding: '4px 10px 6px' }}>
+          <div className={s.editProjBtn}>
+            <GearIcon />
+            <span style={{ flex: 1, textAlign: 'left' }}>Edit Configuration</span>
+            <div className={s.editProjBtnDivider} />
+            <ChevDownIcon />
+          </div>
+        </div>
+        
+        <div className={s.projNavRow}>
+          {[
+            { id: 'History', sub: 'Build runs and history', Icon: Ic.History },
+            { id: 'Agents', sub: 'Agents Criteria', Icon: Ic.Monitor },
+            { id: 'Triggers', sub: 'Build triggers and schedules', Icon: Ic.Thunder },
+            { id: 'Members', sub: 'Manage access for this configuration', Icon: Ic.Users2 },
+            { id: 'Notifications', sub: 'Build notification settings', Icon: Ic.Mail },
+            { id: 'Configuration Details', sub: 'Configuration and preferences', Icon: Ic.Cog },
+          ].map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
+              <span className={s.projNavIcon}><t.Icon /></span>
+              <div className={s.projNavText}>
+                <span className={s.projNavLabel}>{t.id}</span>
+                <span className={s.projNavSub}>{t.sub}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Right pane — Dynamic Content */}
+      {tab === 'History' && (
+        <div className={s.projRightPane} style={{ background: 'var(--color-bg-base)' }}>
+          <div className={s.projRightHead} style={{ borderBottom: 'none', paddingBottom: 0 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
+            <div>
+              <div className={s.projRightTitle}>Build History</div>
+              <div className={s.muted} style={{ fontSize: 11 }}>Recent build runs and execution history</div>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div className={s.muted} style={{ fontSize: 10, display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'flex-end' }}>
+                <ClockIcon /> Avg Exec. Time
+              </div>
+              <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(var(--text-rgb),.9)', marginTop: 2 }}>&lt;1 second</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style={{ padding: '0 18px 18px' }}>
+          <div className={s.historyFilters}>
+            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+               <div className={s.filterBtn}>
+                 <Ic.Filter />
+                 <span>Status</span>
+               </div>
+               <div className={s.filterBtn}>
+                 <Ic.Filter />
+                 <span>Branches</span>
+               </div>
+               <div className={s.filterBtn}>
+                 <Ic.Filter />
+                 <span>Tag</span>
+               </div>
+            </div>
+            <div className={s.searchBox} style={{ width: 180 }}>
+              <Ic.Search />
+              <input type="text" className={s.searchInput} placeholder="Search by build number..." />
+            </div>
+          </div>
+
+          <div className={s.historyTimeline}>
+            {historyRuns.map((run, i) => (
+              <div key={run.id} className={s.historyItem}>
+                <div className={s.historyLeft}>
+                  <div className={s.historyIcon} style={{ color: '#00c951' }}><CheckCircleIcon /></div>
+                  {i < historyRuns.length - 1 && <div className={s.historyLine} />}
+                </div>
+                <div className={s.historyCard}>
+                  <div className={s.historyCardTop}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span className={s.historyCardNum}>#{run.id}</span>
+                      <Tag label={run.status} />
+                    </div>
+                    <div style={{ display: 'flex', gap: 10 }}>
+                      <button className={s.iconBtn}><DownloadIcon /></button>
+                      <button className={s.iconBtn}><Ic.Dots /></button>
+                    </div>
+                  </div>
+                  <div className={s.historyCardBottom}>
+                    <div style={{ display: 'flex', gap: 16 }}>
+                      <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
+                        <PersonIcon /> {run.user}
+                      </div>
+                      <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
+                        <ClockIcon /> {run.dur}
+                      </div>
+                    </div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>{run.time}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      )}
+
+      {tab === 'Members' && <ProjectsMembersTab />}
+      
+      {tab === 'Configuration Details' && <ConfigDetailsTab config={config} />}
+      {tab === 'Agents' && <ConfigAgentsTab />}
+      {tab === 'Triggers' && <ConfigTriggersTab />}
+      {tab === 'Notifications' && <ConfigNotificationsTab />}
+    </div>
+  );
+}
+
+function ProjectDetail({ project, onSelect }) {
+  const [tab, setTab] = useState('Projects');
+  return (
+    <div className={s.projShell}>
+      <div className={s.projSidebar}>
+        <div className={s.projSidebarHead}>
+          <div className={s.projActiveDot} />
+          <span className={s.projName}>{project.name}</span>
+          <button className={s.iconBtn}><Ic.Edit /></button>
+          <button className={s.iconBtn}><PinIcon /></button>
+        </div>
+        <div style={{ padding: '8px 10px 6px' }}>
+          <button className={s.btnPrimary} style={{ width: '100%', justifyContent: 'center', fontSize: 11.5 }}>
+            <Ic.Plus /> New Build Configuration
+          </button>
+        </div>
+        <div style={{ padding: '4px 10px 6px' }}>
+          <div className={s.editProjBtn}>
+            <GearIcon />
+            <span style={{ flex: 1, textAlign: 'left' }}>Edit Project</span>
+            <div className={s.editProjBtnDivider} />
+            <ChevDownIcon />
+          </div>
+        </div>
+        <div className={s.projNavRow}>
+          {[
+            { id: 'Projects', sub: 'Manage sub-projects', Icon: Ic.Proj },
+            { id: 'Members', sub: 'Manage project members', Icon: Ic.Users },
+            { id: 'Settings', sub: 'View project settings', Icon: Ic.Cog },
+          ].map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
+              <span className={s.projNavIcon}><t.Icon /></span>
+              <div className={s.projNavText}>
+                <span className={s.projNavLabel}>{t.id}</span>
+                <span className={s.projNavSub}>{t.sub}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+      {tab === 'Projects' && <ProjectsSubTab project={project} onSelect={onSelect} />}
+      {tab === 'Members' && <ProjectsMembersTab />}
+      {tab === 'Settings' && <ProjectsSettingsTab />}
+    </div>
+  );
+}
+
+function Projects({ selectedProj, onSelect }) {
+  if (!selectedProj) return <ProjectList onSelect={onSelect} />;
+  // Distinguish Build Configs from Project Groups by checking if it has a 'lastBuild' or 'status' attribute
+  // (In data.js, configs have 'status' and 'lastBuild', while projects have 'children' or 'configs' arrays)
+  if (selectedProj.status) return <ConfigDetail config={selectedProj} />;
+  return <ProjectDetail project={selectedProj} onSelect={onSelect} />;
+}
+
+>>>>>>> dev
 /* ══ AGENTS ══ */
 function Agents() {
   const [sel, setSel] = useState(AGENTS[0].id);
@@ -367,6 +1413,7 @@ function Agents() {
                 className={`${s.agentTab} ${agentTab === t ? s.agentTabActive : ''}`}>{t}</button>
             ))}
           </div>
+<<<<<<< HEAD
           {agentTab === 'Information' && (
             <div className={s.agentInfoSection}>
               <div className={s.agentSectionTitle}>Agent Information</div>
@@ -388,6 +1435,133 @@ function Agents() {
             </div>
           )}
           {agentTab !== 'Information' && <div className={s.emptyState}><span className={s.muted}>No data</span></div>}
+=======
+          <div className={s.agentTabContent}>
+            {agentTab === 'Information' && (
+              <div className={s.agentInfoSection}>
+                <div className={s.agentSectionTitle}>Agent Information</div>
+                {[
+                  ['Name', agent.name],
+                  ['Last Active', agent.lastActive],
+                  ['Authorized', agent.authorized ? <Tag label="Yes" /> : null],
+                  ['API URL', agent.apiUrl],
+                  ['Running Build', <em className={s.muted}>No running build</em>],
+                  ['Agent Version', agent.version],
+                  ['OS Name & Version', agent.osVer],
+                  ['Data Directory', agent.dataDir],
+                ].map(([k, v]) => (
+                  <div key={k} className={s.agentInfoRow}>
+                    <span className={s.agentInfoKey}>{k}</span>
+                    <span className={s.agentInfoVal}>{v}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {agentTab === 'Parameters' && (
+              <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                {/* Search Bar */}
+                <div style={{ padding: '10px 14px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div className={s.searchBox}>
+                    <Ic.Search />
+                    <input className={s.searchInput} placeholder="Search parameters..." />
+                  </div>
+                </div>
+                {/* Group: Agent */}
+                <div style={{ padding: '10px 14px 0' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(9,88,217,0.15)', color: '#1677ff', padding: '3px 10px', borderRadius: 4, fontSize: 11, fontWeight: 600, marginBottom: 8 }}>
+                    Agent <span style={{ color: 'rgba(var(--text-rgb),0.45)', fontWeight: 400 }}>(10)</span>
+                  </div>
+                  <div style={{ border: '1px solid var(--color-border)', borderRadius: 6, overflow: 'hidden' }}>
+                    {[
+                      ['agent.os', agent.os?.toLowerCase() ?? 'linux'],
+                      ['agent.os.build', agent.os === 'Windows' ? '10.0.19045' : agent.os === 'macOS' ? '23.4.0' : '6.17.0-14-generic'],
+                      ['agent.os.hostname', agent.id?.slice(0, 12) ?? '419a56b8e2bb'],
+                      ['agent.os.prettyname', agent.os === 'Windows' ? 'Windows 10 Pro' : agent.os === 'macOS' ? 'macOS 14.4 Sonoma' : 'Ubuntu 20.04.6 LTS'],
+                      ['agent.os.version', agent.os === 'Windows' ? '10.0.19045' : agent.os === 'macOS' ? '14.4.0' : '20.04.6 LTS (Focal Fossa)'],
+                      ['agent.runner.cmd', '1.0.0'],
+                      ['agent.runner.configfile', '1.0.0'],
+                      ['agent.runner.script', '1.0.0'],
+                      ['agent.runner.ssh', '1.0.0'],
+                      ['agent.version', agent.version ?? '0.1.0_nightly_20260303101310'],
+                    ].map(([k, v], i, arr) => (
+                      <div key={k} style={{ display: 'flex', alignItems: 'center', padding: '7px 12px', borderBottom: i < arr.length - 1 ? '1px solid var(--color-border-subtle)' : 'none', gap: 12 }}>
+                        <span style={{ flex: '0 0 200px', fontSize: 11.5, color: 'rgba(var(--text-rgb),0.8)', fontWeight: 500 }}>{k}</span>
+                        <span style={{ flex: 1, fontSize: 11.5, color: k === 'agent.version' ? 'var(--color-warning)' : 'rgba(var(--text-rgb),0.65)' }}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Group: env */}
+                <div style={{ padding: '12px 14px 10px' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(9,88,217,0.15)', color: '#1677ff', padding: '3px 10px', borderRadius: 4, fontSize: 11, fontWeight: 600, marginBottom: 8 }}>
+                    env <span style={{ color: 'rgba(var(--text-rgb),0.45)', fontWeight: 400 }}>(2)</span>
+                  </div>
+                  <div style={{ border: '1px solid var(--color-border)', borderRadius: 6, overflow: 'hidden' }}>
+                    {[
+                      ['env.workdir', agent.dataDir ?? '/data/work'],
+                      ['env.tempdir', agent.os === 'Windows' ? 'C:\\Windows\\Temp' : '/tmp'],
+                    ].map(([k, v], i, arr) => (
+                      <div key={k} style={{ display: 'flex', alignItems: 'center', padding: '7px 12px', borderBottom: i < arr.length - 1 ? '1px solid var(--color-border-subtle)' : 'none', gap: 12 }}>
+                        <span style={{ flex: '0 0 200px', fontSize: 11.5, color: 'rgba(var(--text-rgb),0.8)', fontWeight: 500 }}>{k}</span>
+                        <span style={{ flex: 1, fontSize: 11.5, color: 'rgba(var(--text-rgb),0.65)' }}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {agentTab === 'Actions' && (
+              <div style={{ padding: '6px 0' }}>
+                {/* Authorize */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Authorize Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Grant the agent permission to connect.</div>
+                  </div>
+                  <button style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 14px', borderRadius: 'var(--radius-sm)', fontSize: 11.5, fontWeight: 600, cursor: 'pointer', background: 'var(--color-success)', border: '1px solid var(--color-success)', color: '#fff', whiteSpace: 'nowrap' }}>
+                    <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Authorized
+                  </button>
+                </div>
+                {/* Disable */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Disable Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Disable this agent to prevent it from running builds.</div>
+                  </div>
+                  <button className={s.btnOutline} style={{ whiteSpace: 'nowrap' }}>
+                    <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path strokeLinecap="round" strokeLinejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 12.728M5.636 5.636A9 9 0 0 1 18.364 18.364M5.636 5.636 18.364 18.364" /></svg>
+                    Disable
+                  </button>
+                </div>
+                {/* Reset */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Reset Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Reset the agent to its initial state.</div>
+                  </div>
+                  <button className={s.btnOutline} style={{ whiteSpace: 'nowrap' }}>
+                    <Ic.Sync />
+                    Reset
+                  </button>
+                </div>
+                {/* Delete */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px' }}>
+                  <div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(var(--text-rgb),0.9)', marginBottom: 3 }}>Delete Agent</div>
+                    <div className={s.muted} style={{ fontSize: 11 }}>Permanently remove the agent.</div>
+                  </div>
+                  <button style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 14px', borderRadius: 'var(--radius-sm)', fontSize: 11.5, fontWeight: 600, cursor: 'pointer', background: 'var(--color-error)', border: '1px solid var(--color-error)', color: '#fff', whiteSpace: 'nowrap' }}>
+                    <Ic.Trash />
+                    Delete
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+>>>>>>> dev
         </div>
       )}
     </div>
@@ -417,16 +1591,28 @@ function Queue() {
           <div><div className={s.qcNum}>0</div><div className={s.qcLabel}>Ready To Run</div></div>
         </div>
         <div className={s.queueCard}>
+<<<<<<< HEAD
           <div className={s.qcIcon} style={{ background: 'var(--color-warning-bg)', color: 'var(--color-warning)' }}><Ic.Warn /></div>
+=======
+          <div className={s.qcIcon} style={{ background: 'rgba(250, 173, 20, 0.15)', color: '#faad14' }}><Ic.Warn /></div>
+>>>>>>> dev
           <div><div className={s.qcNum}>0</div><div className={s.qcLabel}>Waiting for Agents</div>
             <span className={s.qcBadge}>0</span></div>
         </div>
         <div className={s.queueCard}>
+<<<<<<< HEAD
           <div className={s.qcIcon} style={{ background: 'var(--color-error-bg)', color: 'var(--color-error)' }}><Ic.Warn /></div>
           <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Agent Issues</div></div>
         </div>
         <div className={s.queueCard}>
           <div className={s.qcIcon} style={{ background: 'var(--color-info-bg)', color: 'var(--color-info)' }}><Ic.Info /></div>
+=======
+          <div className={s.qcIcon} style={{ background: 'var(--color-error-bg)', color: 'var(--color-error)' }}><Ic.AlertWarn /></div>
+          <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Agent Issues</div></div>
+        </div>
+        <div className={s.queueCard}>
+          <div className={s.qcIcon} style={{ background: 'var(--color-info-bg)', color: 'var(--color-info)' }}><Ic.ListBullets /></div>
+>>>>>>> dev
           <div><div className={s.qcNum}>1</div><div className={s.qcLabel}>Total Queue</div></div>
         </div>
       </div>
@@ -466,6 +1652,7 @@ function TriggersDash() {
     <div className={s.page}>
       <div className={s.trigHead}>
         <h1 className={s.pageH1}>Triggers Dashboard</h1>
+<<<<<<< HEAD
         <button className={s.btnPrimary}><Ic.Plus /> Add Trigger</button>
       </div>
       <div className={s.trigFilters}>
@@ -490,10 +1677,45 @@ function TriggersDash() {
           <div key={i} className={s.trigTRow}>
             <span style={{ flex: '0 0 130px' }} className={s.bold}>{t.name}</span>
             <div style={{ flex: '0 0 180px' }}>
+=======
+        <button className={s.btnPrimary} style={{ padding: '6px 14px', borderRadius: '4px', background: 'var(--color-demo-accent)', color: '#fff', fontSize: '12px', fontWeight: 600 }}>
+          <Ic.Plus /> Add Trigger
+        </button>
+      </div>
+      <div className={s.trigFilters} style={{ margin: '8px 0 16px', display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div className={s.searchBox} style={{ flex: 1, padding: '8px 12px' }}>
+          <Ic.Search />
+          <input className={s.searchInput} placeholder="Search by trigger name..."
+            value={search} onChange={e => setSearch(e.target.value)} />
+        </div>
+        <div className={s.selectMock} style={{ width: '160px', padding: '8px 12px', display: 'flex', justifyContent: 'space-between' }}>
+          All Statuses <ChevDownIcon />
+        </div>
+        <div className={s.selectMock} style={{ width: '160px', padding: '8px 12px', display: 'flex', justifyContent: 'space-between' }}>
+          All Schedules <ChevDownIcon />
+        </div>
+      </div>
+      <div className={s.trigTable} style={{ background: 'transparent', border: '1px solid var(--color-border-subtle)' }}>
+        <div className={s.trigTHead}>
+          <span style={{ width: '22%' }}>Name</span>
+          <span style={{ width: '24%' }}>Build Configuration</span>
+          <span style={{ width: '30%' }}>Schedule</span>
+          <span style={{ width: '12%', color: 'rgba(var(--text-rgb),0.8)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
+            Next Run <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg>
+          </span>
+          <span style={{ width: '8%' }}>Status</span>
+          <span style={{ width: '4%' }}>Actions</span>
+        </div>
+        {shown.map((t, i) => (
+          <div key={i} className={s.trigTRow} style={{ padding: '12px 14px' }}>
+            <span style={{ width: '22%', fontSize: '11.5px', fontWeight: 500, color: 'rgba(var(--text-rgb),0.8)' }}>{t.name}</span>
+            <div style={{ width: '24%', fontSize: '11.5px' }}>
+>>>>>>> dev
               {t.config.split('/').map((seg, si, arr) => (
                 <span key={si}>{si > 0 && <span className={s.muted}> / </span>}<span className={s.link}>{seg.trim()}</span></span>
               ))}
             </div>
+<<<<<<< HEAD
             <div style={{ flex: 1 }}>
               <span className={`${s.schedTag} ${t.schedule === 'Daily' ? s.schedDaily : s.schedCustom}`}>{t.schedule}</span>
               <div className={s.muted} style={{ fontSize: 10, marginTop: 2 }}>{t.detail} {t.tz}</div>
@@ -506,14 +1728,51 @@ function TriggersDash() {
             </span>
             <div style={{ flex: '0 0 60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <button className={s.iconBtn}><Ic.Dots /></button>
+=======
+            <div style={{ width: '30%' }}>
+              <span style={{ 
+                display: 'inline-flex', 
+                padding: '2px 8px', 
+                borderRadius: '4px', 
+                fontSize: '10.5px', 
+                fontWeight: 600,
+                background: t.schedule === 'Daily' ? 'rgba(9, 88, 217, 0.15)' : 'rgba(214, 126, 61, 0.15)',
+                color: t.schedule === 'Daily' ? '#1677ff' : '#eb9554'
+              }}>
+                {t.schedule}
+              </span>
+              <div className={s.muted} style={{ fontSize: '10px', marginTop: '4px' }}>{t.detail} {t.tz}</div>
+            </div>
+            <span style={{ width: '12%', fontSize: '11.5px', color: t.enabled ? 'rgba(var(--text-rgb),0.8)' : 'rgba(var(--text-rgb),0.4)' }}>
+              {t.enabled ? t.nextRun : <span>Enable to see<br/>next run time</span>}
+            </span>
+            <div style={{ width: '8%', display: 'flex' }}>
+              {t.enabled
+                ? <span style={{ padding: '2px 6px', borderRadius: '4px', fontSize: '10.5px', background: 'rgba(0, 168, 67, 0.1)', color: '#00c951', border: '1px solid rgba(0, 168, 67, 0.2)', fontWeight: 600 }}>Enabled</span>
+                : <span className={s.muted} style={{ fontSize: '11.5px' }}>Disabled</span>}
+            </div>
+            <div style={{ width: '4%', display: 'flex', justifyContent: 'center' }}>
+              <button className={s.iconBtn} style={{ border: '1px solid rgba(var(--text-rgb),0.2)', borderRadius: '4px', width: '28px', height: '28px' }}><Ic.Dots /></button>
+>>>>>>> dev
             </div>
           </div>
         ))}
       </div>
+<<<<<<< HEAD
       <div className={s.pagination}>
         <button className={s.pgBtn}>&lt;</button>
         {[1, 2, 3].map(n => <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`}>{n}</button>)}
         <button className={s.pgBtn}>&gt;</button>
+=======
+      <div className={s.pagination} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12, gap: 4 }}>
+        <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&lt;</button>
+        {[1, 2, 3, 4].map(n => 
+          <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`} style={n === 1 ? { background: '#d6336c', border: 'none', borderRadius: 4, color: '#fff', width: 24, height: 24, padding: 0 } : { background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.8)', width: 24, height: 24, padding: 0, cursor: 'pointer' }}>
+            {n}
+          </button>
+        )}
+        <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&gt;</button>
+>>>>>>> dev
       </div>
     </div>
   );
@@ -522,6 +1781,7 @@ function TriggersDash() {
 /* ══ USERS ══ */
 function Users() {
   const [tab, setTab] = useState('Pending Approvals');
+<<<<<<< HEAD
   return (
     <div className={s.page}>
       <div className={s.usersHead}>
@@ -537,11 +1797,43 @@ function Users() {
         </div>
       </div>
       <div className={s.usersTabBar}>
+=======
+  
+  const pendingUsers = [
+    { name: 'Developer External', email: 'dev.ext@partner.com', date: '1/27/2026, 10:00:10 AM', method: 'Non-SSO' },
+    { name: 'QA Consultant', email: 'qa@external-agency.com', date: '1/22/2026, 5:23:08 PM', method: 'Non-SSO' }
+  ];
+
+  const activeUsers = [
+    { name: 'System Admin', email: 'admin@company.com', date: '1/27/2026, 10:18:48 AM', method: 'SSO' },
+    { name: 'Lead Developer', email: 'lead.dev@company.com', date: '12/3/2025, 12:34:14 PM', method: 'SSO' },
+    { name: 'CI/CD Bot', email: 'bot.ci@company.com', date: '10/7/2025, 4:13:07 PM', method: 'SSO' },
+    { name: 'Junior Dev', email: 'junior.tester@company.com', date: '10/6/2025, 12:12:09 PM', method: 'Non-SSO' },
+  ];
+
+  return (
+    <div className={s.page}>
+      <div className={s.usersHead} style={{ marginBottom: '16px' }}>
+        <h1 className={s.pageH1}>User Management</h1>
+        <div className={s.usersBadges}>
+          <div className={s.usersBadge} style={{ background: 'var(--color-warning-bg)', border: '1px solid rgba(250, 173, 20, 0.25)', color: 'var(--color-warning)' }}>
+            <Ic.Info />
+            <span>{pendingUsers.length} Pending</span>
+          </div>
+          <div className={s.usersBadge} style={{ background: 'rgba(216,48,91,.10)', border: '1px solid rgba(216,48,91,.2)', color: '#d8305b' }}>
+            <Ic.Users /><span>27 Users</span>
+          </div>
+        </div>
+      </div>
+      
+      <div className={s.usersTabBar} style={{ alignSelf: 'flex-start', marginBottom: '16px', maxWidth: '380px', whiteSpace: 'nowrap' }}>
+>>>>>>> dev
         {['Pending Approvals', 'Users'].map(t => (
           <button key={t} onClick={() => setTab(t)}
             className={`${s.usersTab} ${tab === t ? s.usersTabActive : ''}`}>{t}</button>
         ))}
       </div>
+<<<<<<< HEAD
       {tab === 'Pending Approvals' && (
         <div>
           <div style={{ marginBottom: 10 }}>
@@ -572,13 +1864,139 @@ function Users() {
                 <div style={{ display: 'flex', gap: 6 }}>
                   <button className={s.btnApprove}><Ic.Ok /> Approve</button>
                   <button className={s.btnReject}><Ic.X /> Reject</button>
+=======
+
+      {tab === 'Pending Approvals' && (
+        <div>
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: '13.5px', fontWeight: 700, color: 'rgba(var(--text-rgb),0.85)', marginBottom: 2 }}>Pending Approval</div>
+            <div className={s.muted} style={{ fontSize: 11 }}>Review and approve user registration requests.</div>
+          </div>
+          <div className={s.usersFilters} style={{ padding: '10px 14px', border: '1px solid var(--color-border-subtle)', borderRadius: '6px 6px 0 0', margin: 0, gap: '10px', background: 'var(--color-bg-surface)' }}>
+            <div className={s.searchBox} style={{ width: '200px' }}><Ic.Search /><span className={s.muted} style={{ fontSize: 11 }}>Search requests...</span></div>
+            <div className={s.selectMock} style={{ minWidth: 160, display: 'flex', justifyContent: 'space-between', color: 'rgba(var(--text-rgb), 0.45)' }}>
+              <span>Start date <span style={{ opacity: 0.5 }}>→</span> End date</span>
+              <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 12, height: 12, opacity: 0.5 }}><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+            </div>
+            <div className={s.selectMock} style={{ minWidth: '130px', display: 'flex', justifyContent: 'space-between' }}>
+              Method <span style={{ opacity: 0.5 }}>v</span>
+            </div>
+            <div style={{ flex: 1 }} />
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}><span style={{ color: 'var(--color-success)', marginRight: 2 }}>✓</span> Approve</button>
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}><span style={{ color: 'var(--color-error)', marginRight: 2 }}>✕</span> Reject</button>
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}>Export</button>
+          </div>
+          
+          <div className={s.trigTable} style={{ borderRadius: '0 0 6px 6px', borderTop: 'none', border: '1px solid var(--color-border-subtle)' }}>
+            <div className={s.trigTHead} style={{ padding: '10px 14px' }}>
+              <span style={{ width: '4%', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ width: 12, height: 12, border: '1px solid rgba(var(--text-rgb),0.3)', borderRadius: 2 }}></div>
+              </span>
+              <span style={{ width: '31%', paddingLeft: '8px' }}>User</span>
+              <span style={{ width: '30%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg></span>
+              <span style={{ width: '20%' }}>Registration Method</span>
+              <span style={{ width: '15%' }}>Actions</span>
+            </div>
+            {pendingUsers.map((u, i) => (
+              <div key={i} className={s.trigTRow} style={{ padding: '12px 14px', alignItems: 'center' }}>
+                <span style={{ width: '4%', display: 'flex', justifyContent: 'center' }}>
+                  <div style={{ width: 12, height: 12, border: '1px solid rgba(var(--text-rgb),0.3)', borderRadius: 2 }}></div>
+                </span>
+                <div style={{ width: '31%', paddingLeft: '8px' }}>
+                  <div style={{ fontSize: '11.5px', fontWeight: 600, color: 'rgba(var(--text-rgb),0.85)' }}>{u.name}</div>
+                  <div className={s.muted} style={{ fontSize: '10.5px', marginTop: '2px' }}>{u.email}</div>
+                </div>
+                <div style={{ width: '30%', fontSize: '11px', color: 'rgba(var(--text-rgb),0.85)' }}>{u.date}</div>
+                <div style={{ width: '20%' }}>
+                  <span style={{ display: 'inline-flex', background: 'rgba(var(--text-rgb), 0.08)', padding: '2px 8px', borderRadius: '4px', fontSize: '10.5px' }}>{u.method}</span>
+                </div>
+                <div style={{ width: '15%', display: 'flex', gap: '8px' }}>
+                  <button className={s.btnOutline} style={{ borderColor: 'rgba(0,201,81,0.3)', color: '#00c951', padding: '4px 10px', fontSize: '11px' }}>
+                    <span style={{ marginRight: 4 }}>✓</span> Approve
+                  </button>
+                  <button className={s.btnOutline} style={{ borderColor: 'rgba(255,77,79,0.3)', color: '#ff4d4f', padding: '4px 10px', fontSize: '11px' }}>
+                    <span style={{ marginRight: 4 }}>✕</span> Reject
+                  </button>
+>>>>>>> dev
                 </div>
               </div>
             ))}
           </div>
         </div>
       )}
+<<<<<<< HEAD
       {tab === 'Users' && <div className={s.emptyState}><span className={s.muted}>User list</span></div>}
+=======
+
+      {tab === 'Users' && (
+        <div>
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: '13.5px', fontWeight: 700, color: 'rgba(var(--text-rgb),0.85)', marginBottom: 2 }}>Users</div>
+            <div className={s.muted} style={{ fontSize: 11 }}>Manage user accounts and permissions.</div>
+          </div>
+          <div className={s.usersFilters} style={{ padding: '10px 14px', border: '1px solid var(--color-border-subtle)', borderRadius: '6px 6px 0 0', margin: 0, gap: '10px', background: 'var(--color-bg-surface)' }}>
+            <div className={s.searchBox} style={{ width: '260px' }}><Ic.Search /><span className={s.muted} style={{ fontSize: 11 }}>Search users...</span></div>
+            <div style={{ flex: 1 }} />
+            <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}>Export</button>
+          </div>
+          
+          <div className={s.trigTable} style={{ borderRadius: '0 0 6px 6px', borderTop: 'none', border: '1px solid var(--color-border-subtle)' }}>
+            <div className={s.trigTHead} style={{ padding: '10px 14px' }}>
+              <span style={{ width: '31%', paddingLeft: '6px' }}>User</span>
+              <span style={{ width: '23%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg></span>
+              <span style={{ width: '21%' }}>Registration Method</span>
+              <span style={{ width: '13%' }}>Status</span>
+              <span style={{ width: '12%', textAlign: 'center' }}>Actions</span>
+            </div>
+            {activeUsers.map((u, i) => (
+              <div key={i} className={s.trigTRow} style={{ padding: '12px 14px', alignItems: 'center' }}>
+                <div style={{ width: '31%', paddingLeft: '6px' }}>
+                  <div style={{ fontSize: '11.5px', fontWeight: 600, color: 'rgba(var(--text-rgb),0.85)' }}>{u.name}</div>
+                  <div className={s.muted} style={{ fontSize: '10.5px', marginTop: '2px' }}>{u.email}</div>
+                </div>
+                <div style={{ width: '23%', fontSize: '11px', color: 'rgba(var(--text-rgb),0.85)' }}>{u.date}</div>
+                <div style={{ width: '21%' }}>
+                  <span style={{ 
+                    display: 'inline-flex', 
+                    padding: '2px 8px', 
+                    borderRadius: '4px', 
+                    fontSize: '10.5px',
+                    fontWeight: 600,
+                    background: u.method === 'SSO' ? 'var(--color-demo-accent)' : 'rgba(var(--text-rgb), 0.08)',
+                    color: u.method === 'SSO' ? '#fff' : 'inherit'
+                  }}>{u.method}</span>
+                </div>
+                <div style={{ width: '13%' }}>
+                  <span style={{ 
+                    display: 'inline-flex', 
+                    padding: '2px 8px', 
+                    borderRadius: '4px', 
+                    fontSize: '10.5px', 
+                    background: 'rgba(0, 168, 67, 0.1)', 
+                    color: '#00a843', 
+                    border: '1px solid rgba(0, 168, 67, 0.2)', 
+                    fontWeight: 600 
+                  }}>Active</span>
+                </div>
+                <div style={{ width: '12%', display: 'flex', justifyContent: 'center' }}>
+                  <button className={s.iconBtn} style={{ border: '1px solid rgba(var(--text-rgb),0.2)', borderRadius: '4px', width: '26px', height: '26px' }}><Ic.Dots /></button>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className={s.pagination} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12, gap: 4 }}>
+            <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&lt;</button>
+            {[1, 2, 3, 4, 5, 6, 7].map(n => 
+              <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`} style={n === 1 ? { background: '#d6336c', border: 'none', borderRadius: 4, color: '#fff', width: 24, height: 24, padding: 0 } : { background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.8)', width: 24, height: 24, padding: 0, cursor: 'pointer' }}>
+                {n}
+              </button>
+            )}
+            <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&gt;</button>
+          </div>
+        </div>
+      )}
+>>>>>>> dev
     </div>
   );
 }
@@ -592,10 +2010,17 @@ function Settings() {
         <div className={s.settingsTitle}>Settings</div>
         <div className={s.settingsSub}>Manage your application configuration and preferences</div>
         {[
+<<<<<<< HEAD
           { id: 'SSO Settings', Icon: Ic.Cog },
           { id: 'Notifier Settings', Icon: Ic.Trig },
           { id: 'Mail Templates', Icon: Ic.File },
           { id: 'Manage License', Icon: Ic.Search },
+=======
+          { id: 'SSO Settings', Icon: Ic.SsoSettings },
+          { id: 'Notifier Settings', Icon: Ic.NotifierSettings },
+          { id: 'Mail Templates', Icon: Ic.MailTemplates },
+          { id: 'Manage License', Icon: Ic.ManageLicense },
+>>>>>>> dev
         ].map(item => (
           <button key={item.id} onClick={() => setActiveTab(item.id)}
             className={`${s.settingsNavBtn} ${activeTab === item.id ? s.settingsNavActive : ''}`}>
@@ -619,7 +2044,16 @@ function Settings() {
                 <div key={i} className={s.ssoCard}>
                   <div className={s.ssoCardTop}>
                     <div className={s.ssoCardLeft}>
+<<<<<<< HEAD
                       <span className={s.ssoIcon}>{p.icon}</span>
+=======
+                      <span className={s.ssoIcon} style={{ display: 'flex' }}>
+                        {p.abbr === 'MS' && <Ic.Microsoft />}
+                        {p.abbr === 'GH' && <Ic.Github />}
+                        {p.abbr === 'GL' && <Ic.Gitlab />}
+                        {p.abbr === 'BB' && <Ic.Bitbucket />}
+                      </span>
+>>>>>>> dev
                       <span className={s.ssoName}>{p.name}</span>
                     </div>
                     <div className={s.ssoToggleRow}>
@@ -638,6 +2072,7 @@ function Settings() {
             </div>
           </div>
         )}
+<<<<<<< HEAD
         {activeTab === 'Manage License' && (
           <div className={s.page}>
             <h2 className={s.pageH1}>Manage License</h2>
@@ -653,12 +2088,141 @@ function Settings() {
               <div style={{ padding: '10px 14px 14px', display: 'flex', gap: 8 }}>
                 <button className={s.btnPrimary}>Activate Online</button>
                 <button className={s.btnOutline}>Activate Offline</button>
+=======
+        {activeTab === 'Notifier Settings' && (
+          <div className={s.page}>
+            <div style={{ marginBottom: 16 }}>
+              <h2 className={s.pageH1}>Notifier Settings</h2>
+              <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Configure notification preferences and delivery methods.</div>
+            </div>
+            
+            <div className={s.ssoCard} style={{ background: 'var(--color-bg-surface)', border: '1px solid var(--color-border-subtle)', borderRadius: 8, maxWidth: 640 }}>
+              <div className={s.ssoCardTop} style={{ padding: '12px 16px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                <div className={s.ssoCardLeft}>
+                  <Ic.NotifierSettings />
+                  <span style={{ fontSize: 13, fontWeight: 600 }}>Email Notifier</span>
+                </div>
+                <div className={s.ssoToggleRow}>
+                  <span style={{ fontSize: 11, color: '#00c951', fontWeight: 500 }}>Enabled</span>
+                  <div className={`${s.toggle} ${s.toggleOn}`}><div className={s.toggleBall} /></div>
+                </div>
+              </div>
+              <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>SMTP Host : </span><b>smtp.sendgrid.net</b></div>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>SMTP Port : </span><b>465</b></div>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>SMTP Username : </span><b>apikey</b></div>
+                  <div style={{ fontSize: 11.5 }}><span className={s.muted}>Email From : </span><b>notifications@mycompany.com</b></div>
+                </div>
+                <button className={s.btnOutline} style={{ width: '100%', marginTop: 8 }}><Ic.Edit /> Edit</button>
+>>>>>>> dev
               </div>
             </div>
           </div>
         )}
+<<<<<<< HEAD
         {(activeTab === 'Notifier Settings' || activeTab === 'Mail Templates') && (
           <div className={s.page}><div className={s.emptyState}><Ic.Cog /><span className={s.muted}>Configure {activeTab}</span></div></div>
+=======
+        
+        {activeTab === 'Mail Templates' && (
+          <div className={s.page}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
+              <div>
+                <h2 className={s.pageH1}>Template Settings</h2>
+                <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Create or modify email templates</div>
+              </div>
+              <button className={s.btnPrimary} style={{ background: '#d8305b', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600 }}>+ Add New Template</button>
+            </div>
+            
+            <div style={{ border: '1px solid var(--color-border-subtle)', borderRadius: 8, background: 'var(--color-bg-surface)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 16px', fontWeight: 600, fontSize: 13, borderBottom: '1px solid var(--color-border-subtle)' }}>
+                Build Templates (3)
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width={14} height={14} style={{ opacity: 0.5, strokeWidth: 2 }}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, padding: '16px' }}>
+                {[{t:'Build Completed'}, {t:'Build Failure'}, {t:'Build Success'}].map((m,i)=> (
+                  <div key={i} style={{ border: '1px solid var(--color-border-subtle)', borderRadius: 6, padding: '16px', background: 'var(--color-bg-panel)', display: 'flex', flexDirection: 'column' }}>
+                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                          <span style={{ fontSize: 13, fontWeight: 600 }}>{m.t}</span>
+                          <span style={{ fontSize: 10, color: 'rgba(var(--text-rgb), 0.5)' }}>Default</span>
+                        </div>
+                        <Ic.Dots />
+                     </div>
+                     <div style={{ fontSize: 11.5, fontWeight: 600, marginBottom: 16, color: 'rgba(var(--text-rgb), 0.9)' }}>
+                        Subject: CI/CD Build <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.buildStatusName}}`}</span> – <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.configName}}`}</span>
+                     </div>
+                     <div style={{ fontSize: 10,  color: 'rgba(var(--text-rgb), 0.7)', lineHeight: 1.6 }}>
+                       Hi Team,<br/><br/>
+                       The build for configuration <span style={{ color: '#d8305b' }}>{`{{.configName}}`}</span> has {m.t === 'Build Failure' ? 'failed' : 'completed successfully'}.<br/>
+                       - Build Number: <span style={{ color: '#d8305b' }}>{`{{.counter}}`}</span><br/>
+                       - Timestamp: <span style={{ color: '#d8305b' }}>{`{{.buildCompletionTime}}`}</span><br/>
+                       - Completed In: <span style={{ color: '#d8305b' }}>{`{{.buildDuration}}`}</span> seconds<br/><br/>
+                       {m.t === 'Build Failure' ? 'Please review the error logs: ' : 'You can view build logs here: '} 
+                       <span style={{ color: '#d8305b', textDecoration: 'underline' }}>{`{{.buildHomeUrl}}?tab=buildlogs`}</span><br/><br/>
+                       Regards,<br/>
+                       BuildNinja Team
+                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'Manage License' && (
+          <div className={s.page}>
+            <div style={{ marginBottom: 24 }}>
+              <h2 className={s.pageH1}>Activate License</h2>
+              <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Register your license to unlock features</div>
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {/* Top Card: License Information */}
+              <div style={{ border: '1px solid var(--color-border-subtle)', background: 'rgba(255,255,255,0.02)', padding: '16px 20px', borderRadius: 8 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <span style={{ color: '#d8305b', display: 'flex' }}><Ic.ManageLicense /></span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)' }}>License Information</span>
+                  </div>
+                  <span style={{ border: '1px solid rgba(46, 204, 113, 0.4)', color: '#2ecc71', padding: '2px 10px', borderRadius: 14, fontSize: 11, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#2ecc71' }}></div>
+                    Active
+                  </span>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+                  <div>
+                    <div className={s.muted} style={{ fontSize: 10, fontWeight: 600, marginBottom: 8 }}>CURRENT PLAN</div>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)' }}>{LICENSE.plan}</div>
+                  </div>
+                  <div>
+                    <div className={s.muted} style={{ fontSize: 10, fontWeight: 600, marginBottom: 8 }}>VALID UNTIL</div>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)' }}>{LICENSE.validUntil} <span style={{ opacity: 0.7, fontWeight: 400 }}>({LICENSE.remaining})</span></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Card: License Activation */}
+              <div style={{ border: '1px solid var(--color-border-subtle)', background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: 8, display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div>
+                  <div style={{ marginBottom: 6, fontSize: 11, color: 'rgba(var(--text-rgb), 0.85)' }}><span style={{ color: '#d8305b' }}>*</span> License Key</div>
+                  <input className={s.searchInput} placeholder="Enter your license key here..." style={{ width: '100%', padding: '8px 12px', background: 'transparent', border: '1px solid rgba(var(--text-rgb), 0.15)', borderRadius: 4, color: 'var(--color-text)', fontSize: 12 }} />
+                </div>
+                
+                <div style={{ background: 'rgba(24, 144, 255, 0.1)', border: '1px solid rgba(24, 144, 255, 0.2)', padding: '10px 12px', borderRadius: 4, color: '#1890ff', fontSize: 11, display: 'flex', gap: 10, alignItems: 'center' }}>
+                  <svg fill="currentColor" viewBox="64 64 896 896" width={14} height={14}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"/><path d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"/></svg>
+                  Ensure you are connected to the internet for activation.
+                </div>
+                
+                <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+                  <button className={s.btnPrimary} style={{ background: '#d8305b', color: '#fff', border: 'none', padding: '6px 16px', borderRadius: 4, fontSize: 11.5, fontWeight: 600 }}>Activate Online</button>
+                  <span className={s.link} style={{ fontSize: 11.5, color: '#d8305b', textDecoration: 'underline', cursor: 'pointer', fontWeight: 500 }}>Need to activate offline?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+>>>>>>> dev
         )}
       </div>
     </div>
@@ -670,6 +2234,10 @@ const PAGES = { dashboard: Dashboard, projects: Projects, agents: Agents, queue:
 
 export default function BuildNinjaDemo() {
   const [page, setPage] = useState('dashboard');
+<<<<<<< HEAD
+=======
+  const [selectedProj, setSelectedProj] = useState(null);
+>>>>>>> dev
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const shellRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -681,9 +2249,15 @@ export default function BuildNinjaDemo() {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
     const update = () => {
+<<<<<<< HEAD
       const scale = wrapper.offsetWidth / 1100;
       wrapper.style.setProperty('--shell-scale', scale);
       wrapper.style.paddingBottom = `${(580 / 1100) * 100}%`;
+=======
+      const scale = wrapper.offsetWidth / 1200;
+      wrapper.style.setProperty('--shell-scale', scale);
+      wrapper.style.paddingBottom = `${(640 / 1200) * 100}%`;
+>>>>>>> dev
     };
     update();
     const ro = new ResizeObserver(update);
@@ -695,13 +2269,21 @@ export default function BuildNinjaDemo() {
     <div className={s.demoContainer}>
       {/* ── Dashboard Shell ── */}
       <div className={s.scaleWrapper} ref={wrapperRef}>
+<<<<<<< HEAD
         <div className={s.shell} ref={shellRef} style={{ position: 'relative' }}>
+=======
+        <div className={s.shell} ref={shellRef}>
+>>>>>>> dev
 
           {/* ── Icon rail ── */}
           <div className={s.rail}>
             <div className={s.railLogo}><BnLogo /></div>
             {NAV.map(({ id, Icon, badge }) => (
+<<<<<<< HEAD
               <button key={id} onClick={() => { setPage(id); setSidebarCollapsed(false); }}
+=======
+              <button key={id} onClick={() => { setPage(id); setSelectedProj(null); setSidebarCollapsed(false); }}
+>>>>>>> dev
                 className={`${s.railBtn} ${page === id ? s.railBtnActive : ''}`}
                 title={id}>
                 <Icon />
@@ -715,22 +2297,52 @@ export default function BuildNinjaDemo() {
           </div>
 
           {/* ── Project tree ── */}
+<<<<<<< HEAD
           {showTree && <ProjectTree activePage={page} />}
+=======
+          {showTree && <ProjectTree activePage={page} selectedProj={selectedProj} onSelect={setSelectedProj} />}
+>>>>>>> dev
 
           {/* ── Main ── */}
           <div className={s.main}>
             <header className={s.topbar}>
               <nav className={s.breadcrumb} style={{ overflow: 'hidden', minWidth: 0 }}>
+<<<<<<< HEAD
                 <Ic.Home />
                 <span className={s.breadSep}>/</span>
                 <span style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
+=======
+                <div className={s.breadItem} onClick={() => { setPage('dashboard'); setSelectedProj(null); }}><Ic.Home /></div>
+                <span className={s.breadSep}>/</span>
+                <span className={`${s.breadItem} ${!selectedProj ? s.breadActive : ''}`}
+                  onClick={() => { setPage(page); setSelectedProj(null); }}
+                  style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
+                {selectedProj && (
+                  <>
+                    <span className={s.breadSep}>/</span>
+                    <span className={s.breadActive} style={{ fontWeight: 600 }}>{selectedProj.name}</span>
+                  </>
+                )}
+>>>>>>> dev
               </nav>
               <div className={s.topRight}>
                 <button className={s.iconBtn}><svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 16, height: 16, opacity: .5 }}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" /><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.9 8.1-39.9 22.3-53.3 40.9-13.1 18.3-20 39.5-20 61.3V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-17.7c0-32.2 18.6-61.3 49.2-74.7 39.3-17.1 67.2-55.2 67.2-99.3.1-57.1-44.5-105.4-100.8-110.6z" /><circle cx="512" cy="728" r="32" /></svg></button>
                 <div className={s.avatar}><Image src="/resources/Navbar/ninjaAvatar.png" width={22} height={22} alt="Ninja Logo" /></div>
               </div>
             </header>
+<<<<<<< HEAD
             <div className={s.content}><Page /></div>
+=======
+            <div className={s.content}>
+              {page === 'dashboard' && <Dashboard />}
+              {page === 'projects' && <Projects selectedProj={selectedProj} onSelect={setSelectedProj} />}
+              {page === 'agents' && <Agents />}
+              {page === 'queue' && <Queue />}
+              {page === 'triggers' && <TriggersDash />}
+              {page === 'users' && <Users />}
+              {page === 'settings' && <Settings />}
+            </div>
+>>>>>>> dev
           </div>
         </div>
       </div>
