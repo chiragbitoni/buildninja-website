@@ -20,8 +20,14 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
+<<<<<<< HEAD
     { name: "Docs", path: "/docs" },
+=======
+    // { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
+>>>>>>> dev
     { name: "Pricing", path: "/pricing" },
+    { name: "Dojo", path: "/dojo", isNew: true },
+    { name: "Docs", path: "/docs" },
     { name: "Install", path: "/install" },
     { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
@@ -100,6 +106,7 @@ export default function Navbar() {
                   dispatch(closeVideo());
                 }}
               >
+<<<<<<< HEAD
                 {item.name}
               </a>
             </li>
@@ -122,6 +129,25 @@ export default function Navbar() {
           >
             Try BuildNinja Free
           </button>
+=======
+                <a
+                  href={item.path}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                    dispatch(closeVideo());
+                  }}
+                  className="navbar-anchor"
+                >
+                  {item.name}
+                  {item.isNew && <span className="glowing-dot"></span>}
+                </a>
+              </li>
+
+            ))}
+          <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
+          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try Free</button>
+>>>>>>> dev
         </ul>
 
         <AvatarMenu />
