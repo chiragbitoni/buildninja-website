@@ -242,7 +242,7 @@ function Dashboard() {
           </div>
         </div>
         <div className={s.dashPanel}>
-          <div className={s.dashPanelHead}>TOP 5 BUILD HISTORY <button className={s.iconBtn}><Ic.Filter /></button></div>
+          <div className={s.dashPanelHead}>TOP 5 RUN HISTORY <button className={s.iconBtn}><Ic.Filter /></button></div>
           <div className={s.dashPanelBody}>
             <div className={s.chartTitle}>Overall Run Time in last 36 months</div>
             <div className={s.lineChartWrap}>
@@ -278,7 +278,7 @@ function Dashboard() {
             <div className={s.statRow}>
               <span className={s.bigPct}>&lt;1%</span>
               <span className={s.statLabel}>Overall Agent Utilization</span>
-              <span className={s.statRight}>All data • 212 builds</span>
+              <span className={s.statRight}>All data • 212 runs</span>
             </div>
             <div className={s.treemap}>
               {AGENT_TREEMAP.map((a, i) => (
@@ -294,7 +294,7 @@ function Dashboard() {
       </div>
       <div className={s.recentBuilds}>
         <div className={s.rbHead}>
-          <span className={s.rbTitle}>RECENT BUILDS</span>
+          <span className={s.rbTitle}>RECENT ACTIVITY</span>
           <button className={s.iconBtn}><Ic.Filter /></button>
         </div>
         <div className={s.grid} style={{ '--cols': '90px 1fr 120px 130px 130px 100px' }}>
@@ -1214,8 +1214,8 @@ function ProjectDetail({ project, onSelect }) {
         </div>
         <div className={s.projNavRow}>
           {[
-            { id: 'Projects', sub: 'Manage sub-projects', Icon: Ic.Proj },
-            { id: 'Members', sub: 'Manage project members', Icon: Ic.Users },
+            { id: 'Projects', sub: 'Administer sub-projects', Icon: Ic.Proj },
+            { id: 'Members', sub: 'Administer project members', Icon: Ic.Users },
             { id: 'Settings', sub: 'View project settings', Icon: Ic.Cog },
           ].map(t => (
             <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
@@ -1970,7 +1970,7 @@ export default function BuildNinjaDemo() {
   }, []);
 
   return (
-    <div className={s.demoContainer}>
+    <div className={s.demoContainer} aria-hidden="true" data-nosnippet>
       {/* ── Dashboard Shell ── */}
       <div className={s.scaleWrapper} ref={wrapperRef}>
         <div className={s.shell} ref={shellRef} style={{ position: 'relative' }}>
