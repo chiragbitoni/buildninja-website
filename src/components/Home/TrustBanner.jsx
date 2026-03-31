@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import styles from "./TrustBanner.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 const trustPoints = [
   "25+ Years of Innovation",
@@ -13,6 +15,7 @@ const trustPoints = [
 export default function TrustBanner() {
   return (
     <section className={styles.section}>
+      <div className={styles.ambientGlow} />
       <div className={styles.container}>
         <motion.div 
           className={styles.content}
@@ -22,7 +25,7 @@ export default function TrustBanner() {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.leftCol}>
-            <div className={styles.badge}>Our Heritage</div>
+            <span className={styles.badge}>Our Heritage</span>
             <h2 className={styles.title}>
               Built by <span className={styles.highlight}>GrapeCity India</span>
             </h2>
@@ -32,21 +35,21 @@ export default function TrustBanner() {
           </div>
 
           <div className={styles.rightCol}>
-            {trustPoints.map((point, i) => (
-              <motion.div 
-                key={i} 
-                className={styles.trustItem}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>{point}</span>
-              </motion.div>
-            ))}
+            <div className={styles.trustGrid}>
+              {trustPoints.map((point, i) => (
+                <motion.div 
+                  key={i} 
+                  className={styles.trustItem}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                >
+                  <FontAwesomeIcon icon={faCheckCircle} className={styles.icon} />
+                  <span>{point}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
