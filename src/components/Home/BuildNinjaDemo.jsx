@@ -40,7 +40,6 @@ const Ic = {
   Folder: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 12, height: 12 }}><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" /></svg>,
   File: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 10, height: 10 }}><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm0 2l4 4h-4V4z" /></svg>,
   Star: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>,
-<<<<<<< HEAD
   Warn: () => <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M13.129851,1.593104H2.870149c-1.031222,0-1.870149.843806-1.870149,1.880768v6.46602c0,1.036676.838927,1.880481,1.870149,1.880481h4.541914v1.410935h-1.976916c-.324607,0-.587794.2629-.587794.587794s.263187.587794.587794.587794h5.129994c.324894,0,.587794-.2629.587794-.587794s-.2629-.587794-.587794-.587794h-1.97749v-1.410935h4.542201c1.030935,0,1.870149-.843806,1.870149-1.880481V3.473872c0-1.036963-.839214-1.880768-1.870149-1.880768ZM13.824412,9.939892c0,.38861-.311692.704893-.694561.704893H2.870149c-.38287,0-.694561-.316284-.694561-.704893V3.473872c0-.388897.311692-.705181.694561-.705181h10.259702c.38287,0,.694561.316284.694561.705181v6.46602Z"></path></svg>,
   Info: () => <svg viewBox="64 64 896 896" focusable="false" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path></svg>,
   Sync: () => <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" /></svg>,
@@ -1960,15 +1959,9 @@ export default function BuildNinjaDemo() {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
     const update = () => {
-<<<<<<< HEAD
       const scale = wrapper.offsetWidth / 1100;
       wrapper.style.setProperty('--shell-scale', scale);
       wrapper.style.paddingBottom = `${(580 / 1100) * 100}%`;
-=======
-      const scale = wrapper.offsetWidth / 1200;
-      wrapper.style.setProperty('--shell-scale', scale);
-      wrapper.style.paddingBottom = `${(640 / 1200) * 100}%`;
->>>>>>> dev
     };
     update();
     const ro = new ResizeObserver(update);
@@ -1980,65 +1973,61 @@ export default function BuildNinjaDemo() {
     <div className={s.demoContainer} aria-hidden="true" data-nosnippet>
       {/* ── Dashboard Shell ── */}
       <div className={s.scaleWrapper} ref={wrapperRef}>
-<<<<<<< HEAD
-  <div className={s.shell} ref={shellRef} style={{ position: 'relative' }}>
-=======
-        <div className={s.shell} ref={shellRef}>
->>>>>>> dev
+        <div className={s.shell} ref={shellRef} style={{ position: 'relative' }}>
 
-      {/* ── Icon rail ── */}
-      <div className={s.rail}>
-        <div className={s.railLogo}><BnLogo /></div>
-        {NAV.map(({ id, Icon, badge }) => (
-          <button key={id} onClick={() => { setPage(id); setSelectedProj(null); setSidebarCollapsed(false); }}
-            className={`${s.railBtn} ${page === id ? s.railBtnActive : ''}`}
-            title={id}>
-            <Icon />
-            {badge && <span className={s.railBadge}>{badge}</span>}
-          </button>
-        ))}
-        <div style={{ flex: 1 }} />
-        <button className={s.railBtn} onClick={() => setSidebarCollapsed(c => !c)}>
-          {sidebarCollapsed ? <Ic.ChevR /> : <Ic.ChevL />}
-        </button>
-      </div>
-
-      {/* ── Project tree ── */}
-      {showTree && <ProjectTree activePage={page} selectedProj={selectedProj} onSelect={setSelectedProj} />}
-
-      {/* ── Main ── */}
-      <div className={s.main}>
-        <header className={s.topbar}>
-          <nav className={s.breadcrumb} style={{ overflow: 'hidden', minWidth: 0 }}>
-            <div className={s.breadItem} onClick={() => { setPage('dashboard'); setSelectedProj(null); }}><Ic.Home /></div>
-            <span className={s.breadSep}>/</span>
-            <span className={`${s.breadItem} ${!selectedProj ? s.breadActive : ''}`}
-              onClick={() => { setPage(page); setSelectedProj(null); }}
-              style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
-            {selectedProj && (
-              <>
-                <span className={s.breadSep}>/</span>
-                <span className={s.breadActive} style={{ fontWeight: 600 }}>{selectedProj.name}</span>
-              </>
-            )}
-          </nav>
-          <div className={s.topRight}>
-            <button className={s.iconBtn}><svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 16, height: 16, opacity: .5 }}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" /><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.9 8.1-39.9 22.3-53.3 40.9-13.1 18.3-20 39.5-20 61.3V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-17.7c0-32.2 18.6-61.3 49.2-74.7 39.3-17.1 67.2-55.2 67.2-99.3.1-57.1-44.5-105.4-100.8-110.6z" /><circle cx="512" cy="728" r="32" /></svg></button>
-            <div className={s.avatar}><Image src="/resources/Navbar/ninjaAvatar.png" width={22} height={22} alt="Ninja Logo" /></div>
+          {/* ── Icon rail ── */}
+          <div className={s.rail}>
+            <div className={s.railLogo}><BnLogo /></div>
+            {NAV.map(({ id, Icon, badge }) => (
+              <button key={id} onClick={() => { setPage(id); setSelectedProj(null); setSidebarCollapsed(false); }}
+                className={`${s.railBtn} ${page === id ? s.railBtnActive : ''}`}
+                title={id}>
+                <Icon />
+                {badge && <span className={s.railBadge}>{badge}</span>}
+              </button>
+            ))}
+            <div style={{ flex: 1 }} />
+            <button className={s.railBtn} onClick={() => setSidebarCollapsed(c => !c)}>
+              {sidebarCollapsed ? <Ic.ChevR /> : <Ic.ChevL />}
+            </button>
           </div>
-        </header>
-        <div className={s.content}>
-          {page === 'dashboard' && <Dashboard />}
-          {page === 'projects' && <Projects selectedProj={selectedProj} onSelect={setSelectedProj} />}
-          {page === 'agents' && <Agents />}
-          {page === 'queue' && <Queue />}
-          {page === 'triggers' && <TriggersDash />}
-          {page === 'users' && <Users />}
-          {page === 'settings' && <Settings />}
+
+          {/* ── Project tree ── */}
+          {showTree && <ProjectTree activePage={page} selectedProj={selectedProj} onSelect={setSelectedProj} />}
+
+          {/* ── Main ── */}
+          <div className={s.main}>
+            <header className={s.topbar}>
+              <nav className={s.breadcrumb} style={{ overflow: 'hidden', minWidth: 0 }}>
+                <div className={s.breadItem} onClick={() => { setPage('dashboard'); setSelectedProj(null); }}><Ic.Home /></div>
+                <span className={s.breadSep}>/</span>
+                <span className={`${s.breadItem} ${!selectedProj ? s.breadActive : ''}`}
+                  onClick={() => { setPage(page); setSelectedProj(null); }}
+                  style={{ textTransform: 'capitalize' }}>{page === 'settings' ? 'Settings' : page}</span>
+                {selectedProj && (
+                  <>
+                    <span className={s.breadSep}>/</span>
+                    <span className={s.breadActive} style={{ fontWeight: 600 }}>{selectedProj.name}</span>
+                  </>
+                )}
+              </nav>
+              <div className={s.topRight}>
+                <button className={s.iconBtn}><svg fill="currentColor" viewBox="64 64 896 896" style={{ width: 16, height: 16, opacity: .5 }}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" /><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.9 8.1-39.9 22.3-53.3 40.9-13.1 18.3-20 39.5-20 61.3V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-17.7c0-32.2 18.6-61.3 49.2-74.7 39.3-17.1 67.2-55.2 67.2-99.3.1-57.1-44.5-105.4-100.8-110.6z" /><circle cx="512" cy="728" r="32" /></svg></button>
+                <div className={s.avatar}><Image src="/resources/Navbar/ninjaAvatar.png" width={22} height={22} alt="Ninja Logo" /></div>
+              </div>
+            </header>
+            <div className={s.content}>
+              {page === 'dashboard' && <Dashboard />}
+              {page === 'projects' && <Projects selectedProj={selectedProj} onSelect={setSelectedProj} />}
+              {page === 'agents' && <Agents />}
+              {page === 'queue' && <Queue />}
+              {page === 'triggers' && <TriggersDash />}
+              {page === 'users' && <Users />}
+              {page === 'settings' && <Settings />}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-    </div >
   );
 }
