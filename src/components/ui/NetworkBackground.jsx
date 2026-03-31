@@ -1,54 +1,79 @@
 "use client";
-import React from 'react';
-import './OrbitAnimation.css';
+import React, { useEffect, useState } from "react";
 
-<<<<<<<< HEAD:src/components/ui/NetworkBackground.jsx
 export default function NetworkBackground() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-========
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCodeBranch, faTerminal, faCog, faCube, faMicrochip, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
->>>>>>>> 6ec276c971e1d033f6400b0149ed686a71dd7b04:src/components/Home/OrbitAnimation.jsx
 
-const OrbitAnimation = () => {
-  const icons = [
-    { icon: faCodeBranch, color: '#FF4172', top: '15%', left: '10%', size: '24px', blur: '2px', duration: '20s' },
-    { icon: faTerminal, color: '#27c93f', top: '65%', left: '15%', size: '32px', blur: '0px', duration: '25s' },
-    { icon: faCog, color: '#40a9ff', top: '25%', right: '20%', size: '40px', blur: '4px', duration: '30s' },
-    { icon: faCube, color: '#FF4172', bottom: '20%', right: '10%', size: '20px', blur: '1px', duration: '18s' },
-    { icon: faMicrochip, color: '#ffffff', top: '45%', left: '80%', size: '28px', blur: '3px', duration: '35s' },
-    { icon: faShieldAlt, color: '#27c93f', bottom: '15%', left: '45%', size: '22px', blur: '0px', duration: '22s' },
-  ];
+  if (!mounted) return null;
+
+  // Generate random beams
+  const generateBeams = (count, isHorizontal) => {
+    return Array.from({ length: count }).map((_, i) => {
+      const size = Math.random() * 200 + 100; // beam length
+      const pos = Math.floor(Math.random() * 20) * 5.2; // snap to grid intervals (~52px)
+      const duration = Math.random() * 4 + 3; // 3s to 7s
+      const delay = Math.random() * 5;
+      const reverse = Math.random() > 0.5;
+
+      return (
+        <div
+          key={i}
+          style={{
+            position: "absolute",
+            [isHorizontal ? "top" : "left"]: `${pos}%`,
+            [isHorizontal ? "left" : "top"]: 0,
+            width: isHorizontal ? `${size}px` : "2px",
+            height: isHorizontal ? "2px" : `${size}px`,
+            background: isHorizontal
+              ? `linear-gradient(90deg, transparent, rgba(255, 65, 114, 0.8), #ff6b93)`
+              : `linear-gradient(180deg, transparent, rgba(255, 65, 114, 0.8), #ff6b93)`,
+            boxShadow: `0 0 10px rgba(255,65,114,0.5)`,
+            opacity: 0,
+            animation: `${isHorizontal ? "beamMoveX" : "beamMoveY"} ${duration}s linear ${delay}s infinite ${reverse ? "reverse" : "normal"}`,
+            zIndex: 1,
+          }}
+        />
+      );
+    });
+  };
 
   return (
-    <div className="orbit-container">
-      {icons.map((item, index) => (
-        <div 
-          key={index} 
-          className="float-wrapper"
-          style={{ 
-            top: item.top, 
-            left: item.left, 
-            right: item.right, 
-            bottom: item.bottom,
-            animationDuration: item.duration,
-            filter: `blur(${item.blur})`
-          }}
-        >
-          <FontAwesomeIcon 
-            icon={item.icon} 
-            style={{ 
-              color: item.color, 
-              fontSize: item.size, 
-              opacity: 0.25 
-            }} 
-          />
-        </div>
-      ))}
-      <div className="grid-overlay"></div>
+    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
+      {/* Central Pulsing Glow Core */}
+      <div style={{
+        position: "absolute",
+        top: "10%", left: "50%", transform: "translateX(-50%)",
+        width: 1000, height: 700,
+        background: "radial-gradient(ellipse at center, rgba(255,65,114,0.15) 0%, rgba(255,65,114,0.05) 30%, transparent 65%)",
+        animation: "heroPulse 6s ease-in-out infinite",
+        zIndex: 0,
+      }} />
+
+      {/* Grid Network Lines/Beams */}
+      <div style={{ position: "absolute", inset: 0, opacity: 0.6 }}>
+        {generateBeams(12, true)}  {/* 12 Horizontal Beams */}
+        {generateBeams(8, false)}  {/* 8 Vertical Beams */}
+      </div>
+
+      <style>{`
+        @keyframes beamMoveX {
+          0% { transform: translateX(-200px); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translateX(120vw); opacity: 0; }
+        }
+        @keyframes beamMoveY {
+          0% { transform: translateY(-200px); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translateY(120vh); opacity: 0; }
+        }
+        @keyframes heroPulse {
+          0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+          50%       { transform: translateX(-50%) scale(1.05); opacity: 0.8; }
+        }
+      `}</style>
     </div>
   );
-};
-
-export default OrbitAnimation;
+}
