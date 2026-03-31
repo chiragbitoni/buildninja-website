@@ -1,0 +1,134 @@
+.sandboxCTA {
+    background-color: #0f0f0f;
+    padding: 80px 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.sandboxInside {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: #161616;
+    padding: 60px;
+    border-radius: 40px;
+    border: 1px solid #222;
+}
+
+.sandboxBadge {
+    display: inline-block;
+    background: rgba(40, 201, 63, 0.1);
+    color: #27c93f;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.sandboxTitle {
+    font-size: 42px;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.sandboxDescription {
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.sandboxFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.sandboxFeature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.sandboxFeature svg {
+    color: #27c93f;
+}
+
+.sandboxMainButton {
+    background-color: #FF4172;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sandboxMainButton:hover {
+    background-color: #ff668f;
+    transform: scale(1.02);
+}
+
+.detailCard {
+    background: #202020;
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid #333;
+}
+
+.detailCard h4 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.exerciseList {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.exerciseItem {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.exerciseItem strong {
+    color: white;
+    font-size: 16px;
+}
+
+.exerciseItem span {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@media (max-width: 960px) {
+    .sandboxInside {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+    
+    .sandboxTitle {
+        font-size: 32px;
+    }
+}

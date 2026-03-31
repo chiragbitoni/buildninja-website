@@ -1,0 +1,252 @@
+.dojoPageMain {
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+    padding: 140px 24px 80px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.dojoPageMain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: 
+        linear-gradient(180deg, rgba(32, 32, 32, 0) 55%, #000 100%),
+        #000 url('/resources/LandingHeroBG.png') center top / cover no-repeat;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dojoHero {
+    max-width: 900px;
+    margin: 0 auto 120px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.dojoBadge {
+    display: inline-block;
+    background: rgba(39, 201, 63, 0.15);
+    color: #27c93f;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid rgba(39, 201, 63, 0.3);
+}
+
+.dojoTitle {
+    font-size: 72px;
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: -3px;
+    line-height: 1.4;
+    background: linear-gradient(to bottom, #fff, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dojoSubtitle {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ccc;
+    margin: 0 auto 60px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    max-width: 800px;
+}
+
+.dojoActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.dojoEnterBtn {
+    background: linear-gradient(90deg, #FF4172 0%, #ea367d 100%);
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(255, 65, 114, 0.3);
+}
+
+.dojoSmallInfo {
+    font-size: 14px;
+    color: #aaa;
+    letter-spacing: 0.5px;
+}
+
+.dojoContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.dojoSection {
+    margin-bottom: 80px;
+}
+
+.dojoSection h2 {
+    font-size: 40px;
+    margin-bottom: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.dojoCard {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 48px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+}
+
+.dojoCard h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #FF4172;
+    font-weight: 700;
+}
+
+.dojoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 120px;
+}
+
+.infoPanel {
+    background: linear-gradient(180deg, rgba(255, 65, 114, 0.05) 0%, transparent 100%);
+    padding: 80px;
+    border-radius: 48px;
+    border: 1px solid rgba(255, 65, 114, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.panelItem h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.exerciseTable {
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(10, 10, 10, 0.4);
+}
+
+.exerciseRow {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    padding: 28px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+}
+
+.exerciseRow.header {
+    background: rgba(255, 255, 255, 0.03);
+    color: #666;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.exName {
+    color: #27c93f;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.finalCTA {
+    text-align: center;
+    padding: 60px 0 100px;
+    background: radial-gradient(circle at center, rgba(255, 65, 114, 0.1) 0%, transparent 70%);
+}
+
+.finalCTA h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.ctaSubtitle {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.dojoEnterBtn.large {
+    padding: 18px 56px;
+    font-size: 22px;
+}
+
+@media (max-width: 960px) {
+    .dojoTitle {
+        font-size: 52px;
+    }
+
+    .dojoGrid,
+    .infoPanel {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .exerciseRow {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 24px;
+    }
+
+    .exerciseRow.header {
+        display: none;
+    }
+
+    .infoPanel {
+        padding: 40px;
+    }
+
+    .dojoHero {
+        margin-bottom: 80px;
+    }
+}
