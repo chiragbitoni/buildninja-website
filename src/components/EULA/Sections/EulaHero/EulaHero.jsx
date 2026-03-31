@@ -28,7 +28,8 @@ export default function EulaHero() {
       <div ref={orb1} className={s.orb1} />
       <div ref={orb2} className={s.orb2} />
       <div className={s.grid} />
-      
+      <div className={s.bottomFade} />
+            
       <div className={s.inner}>
         <motion.span 
           className={s.badge}

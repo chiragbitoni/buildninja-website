@@ -126,6 +126,7 @@ export default function InstallDashboard() {
     <section className={styles.dashboard}>
       <div className={styles.grid} />
       <NetworkBackground />
+      <div className={styles.bottomFade} />
       
       <motion.div 
         className={styles.container}

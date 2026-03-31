@@ -15,6 +15,17 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.bottomFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(transparent, var(--color-bg));
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Base grid pattern for depth */
 .hero::before {
   content: '';

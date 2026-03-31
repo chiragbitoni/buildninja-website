@@ -81,6 +81,7 @@ export default function InstallSection() {
             <div className={styles.grid} />
             <NetworkBackground />
             <div className={styles.orb} />
+            <div className={styles.bottomFade} />
             
             <motion.div 
                 className={styles.content}
