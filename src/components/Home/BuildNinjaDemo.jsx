@@ -17,8 +17,8 @@ const Ic = {
   Thunder: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z" /></svg>,
   Tree: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M832 192H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32v-64h192v64c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM352 352H224V256h128v96zm480 0H704V256h128v96zM192 576h640c17.7 0 32-14.3 32-32V352c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32zm32-192h128v96H224v-96zm480 0h128v96H704v-96zM832 736H192c-17.7 0-32 14.3-32 32v192c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V768c0-17.7-14.3-32-32-32zm-32 192H224V800h576v128z" /></svg>,
   Users2: () => <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M824.2 699.9a301.55 301.55 0 00-86.4-60.4C783.1 602.8 812 546.8 812 484c0-110.8-92.4-201.7-203.2-200-109.1 1.7-197 90.6-197 200 0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 00-86.4 60.4C345 754.6 314 826.8 312 903.8a8 8 0 008 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5A226.62 226.62 0 01612 684c60.9 0 118.2 23.7 161.3 66.8C814.5 792 838 846.3 840 904.3c.1 4.3 3.7 7.7 8 7.7h56a8 8 0 008-8.2c-2-77-33-149.2-87.8-203.9zM612 612c-34.2 0-66.4-13.3-90.5-37.5a126.86 126.86 0 01-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4 0 34.2-13.3 66.3-37.5 90.5A127.3 127.3 0 01612 612z" /></svg>,
-  Mail: () => <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>,
-  Sliders: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}><path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/></svg>,
+  Mail: () => <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 14, height: 14 }}><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>,
+  Sliders: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}><path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" /></svg>,
   Dash: () => <svg fill="currentColor" viewBox="0 0 16 16" w="16" h="16" style={{ width: 20, height: 20 }}><path d="M12.229 1.5c.305 0 .595.063.871.189.275.12.515.285.718.493.208.203.372.443.493.718.126.276.189.566.189.871v8.459c0 .305-.063.595-.189.871-.12.276-.285.517-.493.725-.203.203-.443.368-.718.493-.276.121-.566.181-.871.181H3.771c-.305 0-.595-.06-.871-.181-.276-.126-.517-.29-.725-.493-.203-.208-.368-.45-.493-.725-.121-.276-.181-.566-.181-.871V3.771c0-.305.06-.595.181-.871.126-.276.29-.515.493-.718.208-.208.45-.372.725-.493.276-.126.566-.189.871-.189h8.458ZM3.821 2.429c-.189 0-.368.036-.537.109-.169.072-.319.174-.45.305-.126.126-.225.273-.297.443-.073.169-.109.348-.109.537v6.036h6.5V2.429H3.821ZM13.571 3.821c0-.189-.036-.368-.109-.537-.073-.169-.174-.317-.305-.443-.126-.13-.273-.232-.443-.305-.169-.073-.348-.109-.537-.109h-2.32v2.786h3.714V3.821ZM13.571 6.143h-3.714v3.714h3.714V6.143ZM2.429 12.179c0 .188.036.368.109.537.072.169.171.319.297.45.13.126.281.225.45.297.169.073.348.109.537.109h2.32v-2.786H2.429v1.393ZM12.179 13.571c.188 0 .368-.036.537-.109.169-.073.317-.171.442-.297.131-.13.232-.281.305-.45.073-.169.109-.348.109-.537v-1.393h-6.5v2.786h5.107Z" /></svg>,
   Proj: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 20, height: 20 }}><path d="M13.333 8H9.334c-.367 0-.667.3-.667.667v4.666c0 .367.3.667.667.667h4c.366 0 .666-.3.666-.667V8.667C14 8.3 13.7 8 13.333 8zm-.256 5.077H9.59V9.23h3.487v3.847zM6.667 2H2.667C2.3 2 2 2.3 2 2.667v5.333c0 .366.3.666.667.666h4c.366 0 .666-.3.666-.666V2.667C7.333 2.3 7.033 2 6.667 2zm-.257 5.744H3.18V2.923h3.23v4.82zM6.667 10H2.667C2.3 10 2 10.3 2 10.667v2.666c0 .367.3.667.667.667h4c.366 0 .666-.3.666-.667V10.667C7.333 10.3 7.033 10 6.667 10zm-.257 3.077H3.18v-2.154h3.23v2.154zM13.333 2H9.334C8.967 2 8.667 2.3 8.667 2.667v3.333c0 .367.3.667.666.667h4c.366 0 .666-.3.666-.667V2.667C14 2.3 13.7 2 13.333 2zm-.256 3.744H9.59V2.923h3.487v2.82z" /></svg>,
   Agent: () => <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 20, height: 20 }}><path d="M13.13 1.593H2.87C1.84 1.593 1 2.437 1 3.474v6.466c0 1.037.84 1.88 1.87 1.88h4.542v1.411H5.435c-.325 0-.588.263-.588.588s.263.588.588.588h5.13c.325 0 .588-.263.588-.588s-.263-.588-.588-.588H8.588v-1.411h4.542c1.031 0 1.87-.843 1.87-1.88V3.474c0-1.037-.839-1.881-1.87-1.881zm.694 8.347c0 .389-.312.705-.694.705H2.87c-.383 0-.695-.316-.695-.705V3.474c0-.389.312-.705.695-.705h10.26c.382 0 .694.316.694.705v6.466z" /></svg>,
@@ -148,7 +148,7 @@ const NAV = [
 function ProjectTree({ activePage, selectedProj, onSelect }) {
   const [expanded, setExpanded] = useState({ 'alpha': true, 'alpha-dev': true });
   const toggle = id => setExpanded(e => ({ ...e, [id]: !e[id] }));
-  
+
   return (
     <div className={s.treePanel}>
       <div className={s.treeSearch}>
@@ -165,7 +165,7 @@ function ProjectTree({ activePage, selectedProj, onSelect }) {
       <div className={s.treeSection}>PROJECTS</div>
       {SIDEBAR_TREE.projects.map(proj => (
         <div key={proj.id}>
-          <div className={`${s.treeRow} ${selectedProj?.id === proj.id ? s.treeRowActive : ''}`}
+          <div className={`${s.treeRow} ${s.canClick} ${selectedProj?.id === proj.id ? s.treeRowActive : ''}`}
             onClick={(e) => { e.stopPropagation(); onSelect(proj); }} style={{ paddingLeft: 6 }}>
             <span className={s.treeArrow} onClick={(e) => { e.stopPropagation(); toggle(proj.id); }}>{expanded[proj.id] ? '▾' : '▸'}</span>
             <Ic.Folder />
@@ -175,15 +175,15 @@ function ProjectTree({ activePage, selectedProj, onSelect }) {
             <div>
               {proj.children?.map(sub => (
                 <div key={sub.id}>
-                  <div className={`${s.treeRow} ${selectedProj?.id === sub.id ? s.treeRowActive : ''}`} 
-                    style={{ paddingLeft: 20 }} 
+                  <div className={`${s.treeRow} ${s.canClick} ${selectedProj?.id === sub.id ? s.treeRowActive : ''}`}
+                    style={{ paddingLeft: 20 }}
                     onClick={() => { onSelect(sub); toggle(sub.id); }}>
                     <span className={s.treeArrow}>{expanded[sub.id] ? '▾' : '▸'}</span>
                     <Ic.Folder />
                     <span className={s.treeLabel}>{sub.name}</span>
                   </div>
                   {expanded[sub.id] && sub.configs?.map(c => (
-                    <div key={c} className={s.treeRow} style={{ paddingLeft: 32 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
+                    <div key={c} className={`${s.treeRow} ${s.canClick}`} style={{ paddingLeft: 32 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
                       <span className={s.treeDash}>■</span>
                       <span className={s.treeLabel} style={{ fontSize: 11 }}>{c}</span>
                     </div>
@@ -191,7 +191,7 @@ function ProjectTree({ activePage, selectedProj, onSelect }) {
                 </div>
               ))}
               {proj.configs?.map(c => (
-                <div key={c} className={s.treeRow} style={{ paddingLeft: 20 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
+                <div key={c} className={`${s.treeRow} ${s.canClick}`} style={{ paddingLeft: 20 }} onClick={() => onSelect({ name: c, type: 'config', status: 'Completed' })}>
                   <span className={s.treeDash}>■</span>
                   <span className={s.treeLabel} style={{ fontSize: 11 }}>{c}</span>
                 </div>
@@ -274,7 +274,7 @@ function Dashboard() {
             <div className={s.statRow}>
               <span className={s.bigPct}>&lt;1%</span>
               <span className={s.statLabel}>Overall Agent Utilization</span>
-              <span className={s.statRight}>All data • 44666 builds</span>
+              <span className={s.statRight}>All data • 212 builds</span>
             </div>
             <div className={s.treemap}>
               {AGENT_TREEMAP.map((a, i) => (
@@ -323,7 +323,7 @@ function Dashboard() {
 // Icon for the pin/star in the project header
 const PinIcon = () => (
   <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 12, height: 12 }}>
-    <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/>
+    <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z" />
   </svg>
 );
 
@@ -367,7 +367,7 @@ function ProjectList({ onSelect }) {
             { id: 'Members', sub: 'Manage project members', Icon: Ic.Users },
             { id: 'Settings', sub: 'View project settings', Icon: Ic.Cog },
           ].map(t => (
-            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${tab === t.id ? s.projNavActive : ''}`}>
+            <button key={t.id} onClick={() => setTab(t.id)} className={`${s.projNavBtn} ${s.canClick} ${tab === t.id ? s.projNavActive : ''}`}>
               <span className={s.projNavIcon}><t.Icon /></span>
               <div className={s.projNavText}>
                 <span className={s.projNavLabel}>{t.id}</span>
@@ -389,7 +389,7 @@ function ProjectList({ onSelect }) {
           </div>
           <div className={s.projListRows}>
             {SIDEBAR_TREE.projects.map(p => (
-              <div key={p.id} className={s.projListRow} onClick={() => onSelect(p)}>
+              <div key={p.id} className={`${s.projListRow} ${s.canClick}`} onClick={() => onSelect(p)}>
                 <div className={s.projListRowIcon}>
                   {p.configs
                     ? <div style={{ width: 10, height: 10, background: 'var(--color-demo-accent)', borderRadius: 2 }} />
@@ -407,7 +407,7 @@ function ProjectList({ onSelect }) {
         </div>
       )}
       {tab === 'Members' && <ProjectsMembersTab />}
-      {tab === 'Settings' && <ProjectsSettingsTab />}
+      {tab === 'Settings' && <ProjectsSettingsTab project={project} />}
     </div>
   );
 }
@@ -416,15 +416,15 @@ function ProjectList({ onSelect }) {
 // Gear icon used in Settings items
 const GearIcon = () => (
   <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}>
-    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
-    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.474l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.474l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
   </svg>
 );
 
 // Slider/Parameters icon used in Settings items
 const SlidersIcon = () => (
   <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 14, height: 14 }}>
-    <path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+    <path d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" />
   </svg>
 );
 
@@ -445,21 +445,21 @@ const ChevDownIcon = () => (
 // Person icon for member avatar
 const PersonIcon = () => (
   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
-    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
   </svg>
 );
 
 // Plus icon for Add Member button
 const PlusMemberIcon = () => (
   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 11, height: 11 }}>
-    <path d="M15 12c2.7 0 4.8-2.1 4.8-4.8S17.7 2.4 15 2.4s-4.8 2.1-4.8 4.8S12.3 12 15 12zm-9 2.4V16h-2v2h2v2h2v-2h2v-2H8v-1.6c1.6.8 3.2 1.2 4.8 1.6H12.5C10.7 14.8 9.3 14.4 6 14.4zM15 14.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+    <path d="M15 12c2.7 0 4.8-2.1 4.8-4.8S17.7 2.4 15 2.4s-4.8 2.1-4.8 4.8S12.3 12 15 12zm-9 2.4V16h-2v2h2v2h2v-2h2v-2H8v-1.6c1.6.8 3.2 1.2 4.8 1.6H12.5C10.7 14.8 9.3 14.4 6 14.4zM15 14.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
   </svg>
 );
 
 function ProjectsSubTab({ project, onSelect }) {
   // Use specific configs if available, otherwise fallback to PROJECT.configs mock for demo
-  const configs = (project.configs && Array.isArray(project.configs) && typeof project.configs[0] === 'object') 
-    ? project.configs 
+  const configs = (project.configs && Array.isArray(project.configs) && typeof project.configs[0] === 'object')
+    ? project.configs
     : PROJECT.configs;
   const children = project.children || [];
 
@@ -479,7 +479,7 @@ function ProjectsSubTab({ project, onSelect }) {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         {children.map(c => (
-          <div key={c.id} className={s.projContent} onClick={() => onSelect(c)}>
+          <div key={c.id} className={`${s.projContent} ${s.canClick}`} onClick={() => onSelect(c)}>
             <div className={s.configRow}>
               <div className={s.configRowIcon} style={{ color: 'var(--color-demo-accent)' }}><FolderOutlineIcon /></div>
               <div className={s.configRowBody}>
@@ -490,7 +490,7 @@ function ProjectsSubTab({ project, onSelect }) {
           </div>
         ))}
         {configs.map((c, i) => (
-          <div key={i} className={s.projContent} onClick={() => onSelect({ ...c, type: 'config' })} style={{ cursor: 'pointer' }}>
+          <div key={i} className={`${s.projContent} ${s.canClick}`} onClick={() => onSelect({ ...c, type: 'config' })} style={{ cursor: 'pointer' }}>
             <div className={s.configRow}>
               <div className={s.configRowIcon} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: 10, height: 10, background: c.status === 'Failed' ? '#ff4d4f' : '#00c951', borderRadius: 2 }} />
@@ -621,15 +621,15 @@ function ConfigSection({ id, title, sub, Icon, children, isOpen, onToggle, isLas
         {!isLast && <div className={s.settingsTimelineLine} />}
       </div>
       <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', marginBottom: 12 }}>
-        <div 
-          className={s.settingsTimelineCard} 
-          onClick={() => onToggle(id)} 
-          style={{ 
-            marginBottom: 0, 
-            borderBottomLeftRadius: isOpen ? 0 : 'var(--radius-card)', 
-            borderBottomRightRadius: isOpen ? 0 : 'var(--radius-card)', 
-            borderBottom: isOpen ? 'none' : undefined, 
-            background: isOpen ? 'var(--color-bg-base)' : 'var(--color-bg-surface)' 
+        <div
+          className={s.settingsTimelineCard}
+          onClick={() => onToggle(id)}
+          style={{
+            marginBottom: 0,
+            borderBottomLeftRadius: isOpen ? 0 : 'var(--radius-card)',
+            borderBottomRightRadius: isOpen ? 0 : 'var(--radius-card)',
+            borderBottom: isOpen ? 'none' : undefined,
+            background: isOpen ? 'var(--color-bg-base)' : 'var(--color-bg-surface)'
           }}
         >
           <div className={s.settingsTimelineCardContent}>
@@ -644,13 +644,13 @@ function ConfigSection({ id, title, sub, Icon, children, isOpen, onToggle, isLas
           </div>
         </div>
         {isOpen && (
-          <div 
-            className={s.sectionContent} 
-            style={{ 
-              border: '1px solid var(--color-border)', 
-              borderTop: '1px solid rgba(var(--text-rgb), 0.08)', 
-              borderRadius: '0 0 var(--radius-card) var(--radius-card)', 
-              background: 'var(--color-bg-shell)' 
+          <div
+            className={s.sectionContent}
+            style={{
+              border: '1px solid var(--color-border)',
+              borderTop: '1px solid rgba(var(--text-rgb), 0.08)',
+              borderRadius: '0 0 var(--radius-card) var(--radius-card)',
+              background: 'var(--color-bg-shell)'
             }}
           >
             {children}
@@ -670,7 +670,7 @@ function ConfigDetailsTab({ config }) {
       <div className={s.configDetailsHeader}>
         <h2 className={s.paneTitle}>Build Configurations</h2>
         <div className={s.muted} style={{ fontSize: 11.5 }}>Expand sections to view and manage configuration details</div>
-        <button className={s.exportBtn}><svg viewBox="64 64 896 896" width="13" height="13" fill="currentColor"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-56 640l-56-56 128-128-128-128 56-56 184 184-184 184z"/></svg> Export</button>
+        <button className={s.exportBtn}><svg viewBox="64 64 896 896" width="13" height="13" fill="currentColor"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-56 640l-56-56 128-128-128-128 56-56 184 184-184 184z" /></svg> Export</button>
       </div>
 
       <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
@@ -689,8 +689,8 @@ function ConfigDetailsTab({ config }) {
               <span>Parameters</span>
             </div>
             <div className={s.emptyGridBody}>
-               <div className={s.emptyIllustration} />
-               <span className={s.muted}>No data available</span>
+              <div className={s.emptyIllustration} />
+              <span className={s.muted}>No data available</span>
             </div>
           </div>
         </ConfigSection>
@@ -711,8 +711,8 @@ function ConfigDetailsTab({ config }) {
               <span>Value</span>
             </div>
             <div className={s.emptyGridBody}>
-               <div className={s.emptyIllustration} />
-               <span className={s.muted}>No data available</span>
+              <div className={s.emptyIllustration} />
+              <span className={s.muted}>No data available</span>
             </div>
           </div>
         </ConfigSection>
@@ -746,9 +746,9 @@ const LightningIcon = () => (
 );
 
 const TeamTabsIcon = () => (
-   <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
-     <path d="M824.2 699.9a301.55 301.55 0 00-86.4-60.4C783.1 602.8 812 546.8 812 484c0-110.8-92.4-201.7-203.2-200-109.1 1.7-197 90.6-197 200 0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 00-86.4 60.4C345 754.6 314 826.8 312 903.8a8 8 0 008 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5A226.62 226.62 0 01612 684c60.9 0 118.2 23.7 161.3 66.8C814.5 792 838 846.3 840 904.3c.1 4.3 3.7 7.7 8 7.7h56a8 8 0 008-8.2c-2-77-33-149.2-87.8-203.9zM612 612c-34.2 0-66.4-13.3-90.5-37.5a126.86 126.86 0 01-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4 0 34.2-13.3 66.3-37.5 90.5A127.3 127.3 0 01612 612zM361.5 510.4c-.9-8.7-1.4-17.5-1.4-26.4 0-15.9 1.5-31.4 4.3-46.5.7-3.6-1.2-7.3-4.5-8.8-13.6-6.1-26.1-14.5-36.9-25.1a127.54 127.54 0 01-38.7-95.4c.9-32.1 13.8-62.6 36.3-85.6 24.7-25.3 57.9-39.1 93.2-38.7 31.9.3 62.7 12.6 86 34.4 7.9 7.4 14.7 15.6 20.4 24.4 2 3.1 5.9 4.4 9.3 3.2 17.6-6.1 36.2-10.4 55.3-12.4 5.6-.6 8.8-6.6 6.3-11.6-32.5-64.3-98.9-108.7-175.7-109.9-110.9-1.7-203.3 89.2-203.3 199.9 0 62.8 28.9 118.8 74.2 155.5-31.8 14.7-61.1 35-86.5 60.4-54.8 54.7-85.8 126.9-87.8 204a8 8 0 008 8.2h56.1c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5 29.4-29.4 65.4-49.8 104.7-59.7 3.9-1 6.5-4.7 6-8.7z" />
-   </svg>
+  <svg viewBox="64 64 896 896" fill="currentColor" style={{ width: 14, height: 14 }}>
+    <path d="M824.2 699.9a301.55 301.55 0 00-86.4-60.4C783.1 602.8 812 546.8 812 484c0-110.8-92.4-201.7-203.2-200-109.1 1.7-197 90.6-197 200 0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 00-86.4 60.4C345 754.6 314 826.8 312 903.8a8 8 0 008 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5A226.62 226.62 0 01612 684c60.9 0 118.2 23.7 161.3 66.8C814.5 792 838 846.3 840 904.3c.1 4.3 3.7 7.7 8 7.7h56a8 8 0 008-8.2c-2-77-33-149.2-87.8-203.9zM612 612c-34.2 0-66.4-13.3-90.5-37.5a126.86 126.86 0 01-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4 0 34.2-13.3 66.3-37.5 90.5A127.3 127.3 0 01612 612zM361.5 510.4c-.9-8.7-1.4-17.5-1.4-26.4 0-15.9 1.5-31.4 4.3-46.5.7-3.6-1.2-7.3-4.5-8.8-13.6-6.1-26.1-14.5-36.9-25.1a127.54 127.54 0 01-38.7-95.4c.9-32.1 13.8-62.6 36.3-85.6 24.7-25.3 57.9-39.1 93.2-38.7 31.9.3 62.7 12.6 86 34.4 7.9 7.4 14.7 15.6 20.4 24.4 2 3.1 5.9 4.4 9.3 3.2 17.6-6.1 36.2-10.4 55.3-12.4 5.6-.6 8.8-6.6 6.3-11.6-32.5-64.3-98.9-108.7-175.7-109.9-110.9-1.7-203.3 89.2-203.3 199.9 0 62.8 28.9 118.8 74.2 155.5-31.8 14.7-61.1 35-86.5 60.4-54.8 54.7-85.8 126.9-87.8 204a8 8 0 008 8.2h56.1c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5 29.4-29.4 65.4-49.8 104.7-59.7 3.9-1 6.5-4.7 6-8.7z" />
+  </svg>
 );
 
 const MailIcon = () => (
@@ -770,15 +770,15 @@ const ClockIcon = () => (
 );
 
 const CheckCircleIcon = () => (
-   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
-     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-   </svg>
+  <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+  </svg>
 );
 
 const XCircleIcon = () => (
-   <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
-     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
-   </svg>
+  <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}>
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z" />
+  </svg>
 );
 
 const DownloadIcon = () => (
@@ -800,49 +800,49 @@ function ConfigAgentsTab() {
       </div>
       <div style={{ padding: '0 18px 18px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
-           <div className={s.pickerSwitch}>
-             <button className={`${s.pickerOpt} ${s.pickerOptActive}`}>Matched</button>
-             <button className={s.pickerOpt}>Remaining</button>
-           </div>
-           <div className={s.searchBox} style={{ width: 220 }}>
-             <Ic.Search />
-             <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search agents...</span>
-           </div>
+          <div className={s.pickerSwitch}>
+            <button className={`${s.pickerOpt} ${s.pickerOptActive}`}>Matched</button>
+            <button className={s.pickerOpt}>Remaining</button>
+          </div>
+          <div className={s.searchBox} style={{ width: 220 }}>
+            <Ic.Search />
+            <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search agents...</span>
+          </div>
         </div>
 
         <div className={s.agentsListContainer}>
-           <div className={s.agentRow}>
-              <ChevDownIcon style={{ opacity: 0.5 }} />
-              <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
-              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-1</div>
-              <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
-                 <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
-                 <span style={{ fontSize: 11.5 }}>Linux</span>
-              </div>
-              <div style={{ flex: 1 }}>
-                 <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                 <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
-                 <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>24 seconds ago</div>
-              </div>
-           </div>
-           <div className={s.agentRow}>
-              <ChevDownIcon style={{ opacity: 0.5 }} />
-              <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
-              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-2</div>
-              <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
-                 <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
-                 <span style={{ fontSize: 11.5 }}>Linux</span>
-              </div>
-              <div style={{ flex: 1 }}>
-                 <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                 <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
-                 <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>34 seconds ago</div>
-              </div>
-           </div>
+          <div className={s.agentRow}>
+            <ChevDownIcon style={{ opacity: 0.5 }} />
+            <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
+            <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-1</div>
+            <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
+              <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
+              <span style={{ fontSize: 11.5 }}>Linux</span>
+            </div>
+            <div style={{ flex: 1 }}>
+              <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
+              <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>24 seconds ago</div>
+            </div>
+          </div>
+          <div className={s.agentRow}>
+            <ChevDownIcon style={{ opacity: 0.5 }} />
+            <div style={{ color: 'var(--color-success)', display: 'flex' }}><MonitorIcon /></div>
+            <div style={{ fontSize: 11.5, fontWeight: 600, color: 'rgba(var(--text-rgb), 0.9)', width: 140 }}>linux-ninja-2</div>
+            <div style={{ display: 'flex', gap: 6, alignItems: 'center', width: 100 }}>
+              <div style={{ opacity: 0.5 }}><MonitorIcon /></div>
+              <span style={{ fontSize: 11.5 }}>Linux</span>
+            </div>
+            <div style={{ flex: 1 }}>
+              <Tag label="Idle" style={{ background: 'rgba(0, 201, 81, 0.1)', color: '#00c951', border: '1px solid rgba(0, 201, 81, 0.2)' }} />
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div className={s.muted} style={{ fontSize: 10 }}>Last Communicated</div>
+              <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(var(--text-rgb), 0.8)', marginTop: 2 }}>34 seconds ago</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -864,14 +864,14 @@ function ConfigTriggersTab() {
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '16px 0', gap: 12 }}>
-         <div className={s.searchBox} style={{ flex: 1 }}>
-           <Ic.Search />
-           <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search by trigger name...</span>
-         </div>
-         <div style={{ display: 'flex', gap: 12 }}>
-            <div className={s.selectMock} style={{ width: 140 }}>All Statuses <ChevDownIcon /></div>
-            <div className={s.selectMock} style={{ width: 140 }}>All Schedules <ChevDownIcon /></div>
-         </div>
+        <div className={s.searchBox} style={{ flex: 1 }}>
+          <Ic.Search />
+          <span style={{ color: 'rgba(var(--text-rgb),.22)', fontSize: 11, flex: 1 }}>Search by trigger name...</span>
+        </div>
+        <div style={{ display: 'flex', gap: 12 }}>
+          <div className={s.selectMock} style={{ width: 140 }}>All Statuses <ChevDownIcon /></div>
+          <div className={s.selectMock} style={{ width: 140 }}>All Schedules <ChevDownIcon /></div>
+        </div>
       </div>
 
       <div className={s.settingsTimeline}>
@@ -890,10 +890,10 @@ function ConfigTriggersTab() {
               </div>
               <div className={s.settingsCardActions}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginRight: 16 }}>
-                   <span style={{ fontSize: 11.5, color: 'rgba(var(--text-rgb), 0.6)' }}>Disabled</span>
-                   <div className={s.toggleOn} style={{ background: 'rgba(var(--text-rgb), 0.15)', justifyContent: 'flex-start', width: 28, height: 14, borderRadius: 10, padding: 2 }}>
-                      <div className={s.toggleBall} style={{ background: 'rgba(var(--text-rgb), 0.3)', width: 10, height: 10 }} />
-                   </div>
+                  <span style={{ fontSize: 11.5, color: 'rgba(var(--text-rgb), 0.6)' }}>Disabled</span>
+                  <div className={s.toggleOn} style={{ background: 'rgba(var(--text-rgb), 0.15)', justifyContent: 'flex-start', width: 28, height: 14, borderRadius: 10, padding: 2 }}>
+                    <div className={s.toggleBall} style={{ background: 'rgba(var(--text-rgb), 0.3)', width: 10, height: 10 }} />
+                  </div>
                 </div>
                 <button className={s.iconBtn} onClick={e => e.stopPropagation()} style={{ marginRight: 6 }}><SmEditIcon /></button>
                 <div className={`${s.sectionChev} ${openSections.trigger1 ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: openSections.trigger1 ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
@@ -904,19 +904,19 @@ function ConfigTriggersTab() {
             {openSections.trigger1 && (
               <div className={s.sectionContent} style={{ border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 var(--radius-card) var(--radius-card)', background: 'var(--color-bg-shell)', padding: 16 }}>
                 <div className={s.triggerCardBody} style={{ background: 'transparent', padding: 0 }}>
-                   <div className={s.triggerCardRow}>
-                      <div style={{ opacity: 0.5, display: 'flex' }}><svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
-                      <span>Cron Pattern:</span>
-                      <span style={{ fontFamily: 'monospace', background: 'rgba(var(--text-rgb), 0.08)', padding: '2px 6px', borderRadius: 4, color: 'rgba(var(--text-rgb), 0.8)' }}>2 4 * * *</span>
-                   </div>
-                   <div className={s.triggerCardRow}>
-                      <div style={{ opacity: 0.5, display: 'flex' }}><Ic.Info /></div>
-                      <span>Next Run: Enable to see next run time</span>
-                   </div>
-                   <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
-                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Trigger</button>
-                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
-                   </div>
+                  <div className={s.triggerCardRow}>
+                    <div style={{ opacity: 0.5, display: 'flex' }}><svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 14, height: 14 }}><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" /></svg></div>
+                    <span>Cron Pattern:</span>
+                    <span style={{ fontFamily: 'monospace', background: 'rgba(var(--text-rgb), 0.08)', padding: '2px 6px', borderRadius: 4, color: 'rgba(var(--text-rgb), 0.8)' }}>2 4 * * *</span>
+                  </div>
+                  <div className={s.triggerCardRow}>
+                    <div style={{ opacity: 0.5, display: 'flex' }}><Ic.Info /></div>
+                    <span>Next Run: Enable to see next run time</span>
+                  </div>
+                  <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
+                    <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Trigger</button>
+                    <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
+                  </div>
                 </div>
               </div>
             )}
@@ -954,10 +954,10 @@ function ConfigNotificationsTab() {
               </div>
               <div className={s.settingsCardActions}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginRight: 16 }}>
-                   <span style={{ fontSize: 11.5, color: '#52c41a', fontWeight: 600 }}>Enabled</span>
-                   <div className={s.toggleOn} style={{ background: '#52c41a', width: 28, height: 14, borderRadius: 10, padding: 2, display: 'flex', justifyContent: 'flex-end' }}>
-                      <div className={s.toggleBall} style={{ background: '#fff', width: 10, height: 10 }} />
-                   </div>
+                  <span style={{ fontSize: 11.5, color: '#52c41a', fontWeight: 600 }}>Enabled</span>
+                  <div className={s.toggleOn} style={{ background: '#52c41a', width: 28, height: 14, borderRadius: 10, padding: 2, display: 'flex', justifyContent: 'flex-end' }}>
+                    <div className={s.toggleBall} style={{ background: '#fff', width: 10, height: 10 }} />
+                  </div>
                 </div>
                 <button className={s.iconBtn} onClick={e => e.stopPropagation()} style={{ marginRight: 6 }}><SmEditIcon /></button>
                 <div className={`${s.sectionChev} ${openSections.notif1 ? s.sectionChevOpen : ''}`} style={{ transition: 'transform 0.2s', transform: openSections.notif1 ? 'rotate(180deg)' : 'none', display: 'flex', alignItems: 'center' }}>
@@ -968,22 +968,22 @@ function ConfigNotificationsTab() {
             {openSections.notif1 && (
               <div className={s.sectionContent} style={{ border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 var(--radius-card) var(--radius-card)', background: 'var(--color-bg-shell)', padding: 16 }}>
                 <div className={s.triggerCardBody} style={{ background: 'transparent', padding: 0 }}>
-                   <div className={s.triggerCardRow}>
-                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>To:</span>
-                      <span style={{ background: 'var(--color-error)', color: '#fff', padding: '2px 8px', borderRadius: 20, fontSize: 11 }}>admin@example.com</span>
-                   </div>
-                   <div className={s.triggerCardRow}>
-                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Subject:</span>
-                      <span>CI/CD Build &#123;&#123;.buildStatusName&#125;&#125; &ndash; &#123;&#123;.configName&#125;&#125;</span>
-                   </div>
-                   <div className={s.triggerCardRow}>
-                      <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Condition:</span>
-                      <Tag label="Success" style={{ border: '1px solid #52c41a', color: '#52c41a', borderRadius: 4, height: 18, fontSize: 10 }} />
-                   </div>
-                   <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
-                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Notification</button>
-                      <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
-                   </div>
+                  <div className={s.triggerCardRow}>
+                    <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>To:</span>
+                    <span style={{ background: 'var(--color-error)', color: '#fff', padding: '2px 8px', borderRadius: 20, fontSize: 11 }}>admin@example.com</span>
+                  </div>
+                  <div className={s.triggerCardRow}>
+                    <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Subject:</span>
+                    <span>CI/CD Build &#123;&#123;.buildStatusName&#125;&#125; &ndash; &#123;&#123;.configName&#125;&#125;</span>
+                  </div>
+                  <div className={s.triggerCardRow}>
+                    <span style={{ width: 70, color: 'rgba(var(--text-rgb), 0.5)' }}>Condition:</span>
+                    <Tag label="Success" style={{ border: '1px solid #52c41a', color: '#52c41a', borderRadius: 4, height: 18, fontSize: 10 }} />
+                  </div>
+                  <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
+                    <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11 }}><SmEditIcon /> Edit Notification</button>
+                    <button className={s.btnOutline} style={{ padding: '4px 12px', fontSize: 11, color: 'var(--color-error)' }}><Ic.Trash /> Delete</button>
+                  </div>
                 </div>
               </div>
             )}
@@ -996,7 +996,7 @@ function ConfigNotificationsTab() {
 
 function ConfigDetail({ config }) {
   const [tab, setTab] = useState('History');
-  
+
   const historyRuns = [
     { id: 4149, status: 'Completed', time: '26 minutes ago', dur: '<1s', user: 'System Trigger' },
     { id: 4148, status: 'Completed', time: '1 hour ago', dur: '<1s', user: 'System Trigger' },
@@ -1031,7 +1031,7 @@ function ConfigDetail({ config }) {
             <ChevDownIcon />
           </div>
         </div>
-        
+
         <div className={s.projNavRow}>
           {[
             { id: 'History', sub: 'Build runs and history', Icon: Ic.History },
@@ -1057,84 +1057,129 @@ function ConfigDetail({ config }) {
         <div className={s.projRightPane} style={{ background: 'var(--color-bg-base)' }}>
           <div className={s.projRightHead} style={{ borderBottom: 'none', paddingBottom: 0 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
-            <div>
-              <div className={s.projRightTitle}>Build History</div>
-              <div className={s.muted} style={{ fontSize: 11 }}>Recent build runs and execution history</div>
-            </div>
-            <div style={{ textAlign: 'right' }}>
-              <div className={s.muted} style={{ fontSize: 10, display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'flex-end' }}>
-                <ClockIcon /> Avg Exec. Time
+              <div>
+                <div className={s.projRightTitle}>Build History</div>
+                <div className={s.muted} style={{ fontSize: 11 }}>Recent build runs and execution history</div>
               </div>
-              <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(var(--text-rgb),.9)', marginTop: 2 }}>&lt;1 second</div>
-            </div>
-          </div>
-        </div>
-        
-        <div style={{ padding: '0 18px 18px' }}>
-          <div className={s.historyFilters}>
-            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-               <div className={s.filterBtn}>
-                 <Ic.Filter />
-                 <span>Status</span>
-               </div>
-               <div className={s.filterBtn}>
-                 <Ic.Filter />
-                 <span>Branches</span>
-               </div>
-               <div className={s.filterBtn}>
-                 <Ic.Filter />
-                 <span>Tag</span>
-               </div>
-            </div>
-            <div className={s.searchBox} style={{ width: 180 }}>
-              <Ic.Search />
-              <input type="text" className={s.searchInput} placeholder="Search by build number..." />
+              <div style={{ textAlign: 'right' }}>
+                <div className={s.muted} style={{ fontSize: 10, display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'flex-end' }}>
+                  <ClockIcon /> Avg Exec. Time
+                </div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(var(--text-rgb),.9)', marginTop: 2 }}>&lt;1 second</div>
+              </div>
             </div>
           </div>
 
-          <div className={s.historyTimeline}>
-            {historyRuns.map((run, i) => (
-              <div key={run.id} className={s.historyItem}>
-                <div className={s.historyLeft}>
-                  <div className={s.historyIcon} style={{ color: '#00c951' }}><CheckCircleIcon /></div>
-                  {i < historyRuns.length - 1 && <div className={s.historyLine} />}
+          <div style={{ padding: '0 18px 18px' }}>
+            <div className={s.historyFilters}>
+              <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                <div className={s.filterBtn}>
+                  <Ic.Filter />
+                  <span>Status</span>
                 </div>
-                <div className={s.historyCard}>
-                  <div className={s.historyCardTop}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <span className={s.historyCardNum}>#{run.id}</span>
-                      <Tag label={run.status} />
-                    </div>
-                    <div style={{ display: 'flex', gap: 10 }}>
-                      <button className={s.iconBtn}><DownloadIcon /></button>
-                      <button className={s.iconBtn}><Ic.Dots /></button>
-                    </div>
-                  </div>
-                  <div className={s.historyCardBottom}>
-                    <div style={{ display: 'flex', gap: 16 }}>
-                      <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
-                        <PersonIcon /> {run.user}
-                      </div>
-                      <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
-                        <ClockIcon /> {run.dur}
-                      </div>
-                    </div>
-                    <div className={s.muted} style={{ fontSize: 11 }}>{run.time}</div>
-                  </div>
+                <div className={s.filterBtn}>
+                  <Ic.Filter />
+                  <span>Branches</span>
+                </div>
+                <div className={s.filterBtn}>
+                  <Ic.Filter />
+                  <span>Tag</span>
                 </div>
               </div>
-            ))}
+              <div className={s.searchBox} style={{ width: 180 }}>
+                <Ic.Search />
+                <input type="text" className={s.searchInput} placeholder="Search by build number..." />
+              </div>
+            </div>
+
+            <div className={s.historyTimeline}>
+              {historyRuns.map((run, i) => (
+                <div key={run.id} className={s.historyItem}>
+                  <div className={s.historyLeft}>
+                    <div className={s.historyIcon} style={{ color: '#00c951' }}><CheckCircleIcon /></div>
+                    {i < historyRuns.length - 1 && <div className={s.historyLine} />}
+                  </div>
+                  <div className={s.historyCard}>
+                    <div className={s.historyCardTop}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                        <span className={s.historyCardNum}>#{run.id}</span>
+                        <Tag label={run.status} />
+                      </div>
+                      <div style={{ display: 'flex', gap: 10 }}>
+                        <button className={s.iconBtn}><DownloadIcon /></button>
+                        <button className={s.iconBtn}><Ic.Dots /></button>
+                      </div>
+                    </div>
+                    <div className={s.historyCardBottom}>
+                      <div style={{ display: 'flex', gap: 16 }}>
+                        <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
+                          <PersonIcon /> {run.user}
+                        </div>
+                        <div className={s.muted} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11 }}>
+                          <ClockIcon /> {run.dur}
+                        </div>
+                      </div>
+                      <div className={s.muted} style={{ fontSize: 11 }}>{run.time}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       )}
 
       {tab === 'Members' && <ProjectsMembersTab />}
-      
+
       {tab === 'Configuration Details' && <ConfigDetailsTab config={config} />}
       {tab === 'Agents' && <ConfigAgentsTab />}
       {tab === 'Triggers' && <ConfigTriggersTab />}
       {tab === 'Notifications' && <ConfigNotificationsTab />}
+    </div>
+  );
+}
+
+function ProjectsSettingsTab({ project }) {
+  const [openSections, setOpenSections] = useState({ general: true, params: true });
+  const toggle = id => setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+
+  return (
+    <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
+      <div className={s.projRightHead}>
+        <div>
+          <div className={s.projRightTitle}>Project Settings</div>
+          <div className={s.muted} style={{ fontSize: 11 }}>View project configuration details</div>
+        </div>
+      </div>
+
+      <div className={s.settingsTimeline} style={{ marginTop: 16 }}>
+        <ConfigSection id="general" title="General" sub="Basic project settings" Icon={Ic.Cog} isOpen={openSections.general} onToggle={toggle}>
+          <div className={s.generalGrid}>
+            <div className={s.infoRow}><span className={s.infoKey}>Name:</span> <span className={s.infoVal}>{project?.name || 'Alpha'}</span></div>
+            <div className={s.infoRow}><span className={s.infoKey}>Description:</span> <span className={s.infoVal}>N/A</span></div>
+          </div>
+        </ConfigSection>
+
+        <ConfigSection id="params" title="Parameters" sub="Project variables" Icon={Ic.Sliders} isOpen={openSections.params} onToggle={toggle} isLast>
+          <div className={s.sectionDataGrid}>
+            <div className={s.gridHead} style={{ '--cols': '1fr 1fr 1fr' }}>
+              <span>Name</span>
+              <span>Value</span>
+              <span>Expose on Env</span>
+            </div>
+            <div className={s.emptyGridBody}>
+              <div className={s.emptyIllustration} />
+              <span className={s.muted}>No data available</span>
+            </div>
+          </div>
+          <div className={s.configRow} style={{ borderTop: '1px solid var(--color-border)', cursor: 'default' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '2px 4px' }}>
+              <span style={{ fontSize: 10, color: 'rgba(var(--text-rgb),.4)' }}>▸</span>
+              <span className={s.muted} style={{ fontWeight: 500 }}>Inherited Variables</span>
+            </div>
+          </div>
+        </ConfigSection>
+      </div>
     </div>
   );
 }
@@ -1181,7 +1226,8 @@ function ProjectDetail({ project, onSelect }) {
       </div>
       {tab === 'Projects' && <ProjectsSubTab project={project} onSelect={onSelect} />}
       {tab === 'Members' && <ProjectsMembersTab />}
-      {tab === 'Settings' && <ProjectsSettingsTab />}
+      {tab === 'Settings' && <ProjectsSettingsTab project={project} />}
+
     </div>
   );
 }
@@ -1335,7 +1381,7 @@ function Agents() {
                     <div className={s.muted} style={{ fontSize: 11 }}>Grant the agent permission to connect.</div>
                   </div>
                   <button style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 14px', borderRadius: 'var(--radius-sm)', fontSize: 11.5, fontWeight: 600, cursor: 'pointer', background: 'var(--color-success)', border: '1px solid var(--color-success)', color: '#fff', whiteSpace: 'nowrap' }}>
-                    <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 13, height: 13 }}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
                     Authorized
                   </button>
                 </div>
@@ -1476,7 +1522,7 @@ function TriggersDash() {
           <span style={{ width: '24%' }}>Build Configuration</span>
           <span style={{ width: '30%' }}>Schedule</span>
           <span style={{ width: '12%', color: 'rgba(var(--text-rgb),0.8)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
-            Next Run <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg>
+            Next Run <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z" /></svg>
           </span>
           <span style={{ width: '8%' }}>Status</span>
           <span style={{ width: '4%' }}>Actions</span>
@@ -1490,11 +1536,11 @@ function TriggersDash() {
               ))}
             </div>
             <div style={{ width: '30%' }}>
-              <span style={{ 
-                display: 'inline-flex', 
-                padding: '2px 8px', 
-                borderRadius: '4px', 
-                fontSize: '10.5px', 
+              <span style={{
+                display: 'inline-flex',
+                padding: '2px 8px',
+                borderRadius: '4px',
+                fontSize: '10.5px',
                 fontWeight: 600,
                 background: t.schedule === 'Daily' ? 'rgba(9, 88, 217, 0.15)' : 'rgba(214, 126, 61, 0.15)',
                 color: t.schedule === 'Daily' ? '#1677ff' : '#eb9554'
@@ -1504,7 +1550,7 @@ function TriggersDash() {
               <div className={s.muted} style={{ fontSize: '10px', marginTop: '4px' }}>{t.detail} {t.tz}</div>
             </div>
             <span style={{ width: '12%', fontSize: '11.5px', color: t.enabled ? 'rgba(var(--text-rgb),0.8)' : 'rgba(var(--text-rgb),0.4)' }}>
-              {t.enabled ? t.nextRun : <span>Enable to see<br/>next run time</span>}
+              {t.enabled ? t.nextRun : <span>Enable to see<br />next run time</span>}
             </span>
             <div style={{ width: '8%', display: 'flex' }}>
               {t.enabled
@@ -1519,7 +1565,7 @@ function TriggersDash() {
       </div>
       <div className={s.pagination} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12, gap: 4 }}>
         <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&lt;</button>
-        {[1, 2, 3, 4].map(n => 
+        {[1, 2, 3, 4].map(n =>
           <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`} style={n === 1 ? { background: '#d6336c', border: 'none', borderRadius: 4, color: '#fff', width: 24, height: 24, padding: 0 } : { background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.8)', width: 24, height: 24, padding: 0, cursor: 'pointer' }}>
             {n}
           </button>
@@ -1533,7 +1579,7 @@ function TriggersDash() {
 /* ══ USERS ══ */
 function Users() {
   const [tab, setTab] = useState('Pending Approvals');
-  
+
   const pendingUsers = [
     { name: 'Developer External', email: 'dev.ext@partner.com', date: '1/27/2026, 10:00:10 AM', method: 'Non-SSO' },
     { name: 'QA Consultant', email: 'qa@external-agency.com', date: '1/22/2026, 5:23:08 PM', method: 'Non-SSO' }
@@ -1560,7 +1606,7 @@ function Users() {
           </div>
         </div>
       </div>
-      
+
       <div className={s.usersTabBar} style={{ alignSelf: 'flex-start', marginBottom: '16px', maxWidth: '380px', whiteSpace: 'nowrap' }}>
         {['Pending Approvals', 'Users'].map(t => (
           <button key={t} onClick={() => setTab(t)}
@@ -1578,7 +1624,7 @@ function Users() {
             <div className={s.searchBox} style={{ width: '200px' }}><Ic.Search /><span className={s.muted} style={{ fontSize: 11 }}>Search requests...</span></div>
             <div className={s.selectMock} style={{ minWidth: 160, display: 'flex', justifyContent: 'space-between', color: 'rgba(var(--text-rgb), 0.45)' }}>
               <span>Start date <span style={{ opacity: 0.5 }}>→</span> End date</span>
-              <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 12, height: 12, opacity: 0.5 }}><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+              <svg fill="currentColor" viewBox="0 0 24 24" style={{ width: 12, height: 12, opacity: 0.5 }}><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" /></svg>
             </div>
             <div className={s.selectMock} style={{ minWidth: '130px', display: 'flex', justifyContent: 'space-between' }}>
               Method <span style={{ opacity: 0.5 }}>v</span>
@@ -1588,14 +1634,14 @@ function Users() {
             <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}><span style={{ color: 'var(--color-error)', marginRight: 2 }}>✕</span> Reject</button>
             <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}>Export</button>
           </div>
-          
+
           <div className={s.trigTable} style={{ borderRadius: '0 0 6px 6px', borderTop: 'none', border: '1px solid var(--color-border-subtle)' }}>
             <div className={s.trigTHead} style={{ padding: '10px 14px' }}>
               <span style={{ width: '4%', display: 'flex', justifyContent: 'center' }}>
                 <div style={{ width: 12, height: 12, border: '1px solid rgba(var(--text-rgb),0.3)', borderRadius: 2 }}></div>
               </span>
               <span style={{ width: '31%', paddingLeft: '8px' }}>User</span>
-              <span style={{ width: '30%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg></span>
+              <span style={{ width: '30%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z" /></svg></span>
               <span style={{ width: '20%' }}>Registration Method</span>
               <span style={{ width: '15%' }}>Actions</span>
             </div>
@@ -1637,11 +1683,11 @@ function Users() {
             <div style={{ flex: 1 }} />
             <button className={s.btnOutline} style={{ borderColor: 'rgba(var(--text-rgb),0.2)' }}>Export</button>
           </div>
-          
+
           <div className={s.trigTable} style={{ borderRadius: '0 0 6px 6px', borderTop: 'none', border: '1px solid var(--color-border-subtle)' }}>
             <div className={s.trigTHead} style={{ padding: '10px 14px' }}>
               <span style={{ width: '31%', paddingLeft: '6px' }}>User</span>
-              <span style={{ width: '23%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z"/></svg></span>
+              <span style={{ width: '23%', display: 'flex', alignItems: 'center', gap: 4 }}>Registration Date <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor"><path d="M858.9 535.7L530.5 207.3c-10.2-10.2-26.8-10.2-37 0L165.1 535.7c-10.2 10.2-10.2 26.8 0 37l45.3 45.3c9.9 9.9 25.9 10 35.9.1L456 414.2V836c0 13.3 10.7 24 24 24h64c13.3 0 24-10.7 24-24V414.2l209.7 203.9c10 9.8 26 9.8 35.9-.1l45.3-45.3c10.1-10.2 10.1-26.8 0-37z" /></svg></span>
               <span style={{ width: '21%' }}>Registration Method</span>
               <span style={{ width: '13%' }}>Status</span>
               <span style={{ width: '12%', textAlign: 'center' }}>Actions</span>
@@ -1654,10 +1700,10 @@ function Users() {
                 </div>
                 <div style={{ width: '23%', fontSize: '11px', color: 'rgba(var(--text-rgb),0.85)' }}>{u.date}</div>
                 <div style={{ width: '21%' }}>
-                  <span style={{ 
-                    display: 'inline-flex', 
-                    padding: '2px 8px', 
-                    borderRadius: '4px', 
+                  <span style={{
+                    display: 'inline-flex',
+                    padding: '2px 8px',
+                    borderRadius: '4px',
                     fontSize: '10.5px',
                     fontWeight: 600,
                     background: u.method === 'SSO' ? 'var(--color-demo-accent)' : 'rgba(var(--text-rgb), 0.08)',
@@ -1665,15 +1711,15 @@ function Users() {
                   }}>{u.method}</span>
                 </div>
                 <div style={{ width: '13%' }}>
-                  <span style={{ 
-                    display: 'inline-flex', 
-                    padding: '2px 8px', 
-                    borderRadius: '4px', 
-                    fontSize: '10.5px', 
-                    background: 'rgba(0, 168, 67, 0.1)', 
-                    color: '#00a843', 
-                    border: '1px solid rgba(0, 168, 67, 0.2)', 
-                    fontWeight: 600 
+                  <span style={{
+                    display: 'inline-flex',
+                    padding: '2px 8px',
+                    borderRadius: '4px',
+                    fontSize: '10.5px',
+                    background: 'rgba(0, 168, 67, 0.1)',
+                    color: '#00a843',
+                    border: '1px solid rgba(0, 168, 67, 0.2)',
+                    fontWeight: 600
                   }}>Active</span>
                 </div>
                 <div style={{ width: '12%', display: 'flex', justifyContent: 'center' }}>
@@ -1682,10 +1728,10 @@ function Users() {
               </div>
             ))}
           </div>
-          
+
           <div className={s.pagination} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12, gap: 4 }}>
             <button className={s.pgBtn} style={{ background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.6)', cursor: 'pointer', padding: '4px 8px' }}>&lt;</button>
-            {[1, 2, 3, 4, 5, 6, 7].map(n => 
+            {[1, 2, 3, 4, 5, 6, 7].map(n =>
               <button key={n} className={`${s.pgBtn} ${n === 1 ? s.pgActive : ''}`} style={n === 1 ? { background: '#d6336c', border: 'none', borderRadius: 4, color: '#fff', width: 24, height: 24, padding: 0 } : { background: 'none', border: 'none', color: 'rgba(var(--text-rgb),0.8)', width: 24, height: 24, padding: 0, cursor: 'pointer' }}>
                 {n}
               </button>
@@ -1764,7 +1810,7 @@ function Settings() {
               <h2 className={s.pageH1}>Notifier Settings</h2>
               <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Configure notification preferences and delivery methods.</div>
             </div>
-            
+
             <div className={s.ssoCard} style={{ background: 'var(--color-bg-surface)', border: '1px solid var(--color-border-subtle)', borderRadius: 8, maxWidth: 640 }}>
               <div className={s.ssoCardTop} style={{ padding: '12px 16px', borderBottom: '1px solid var(--color-border-subtle)' }}>
                 <div className={s.ssoCardLeft}>
@@ -1788,7 +1834,7 @@ function Settings() {
             </div>
           </div>
         )}
-        
+
         {activeTab === 'Mail Templates' && (
           <div className={s.page}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
@@ -1798,36 +1844,36 @@ function Settings() {
               </div>
               <button className={s.btnPrimary} style={{ background: '#d8305b', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600 }}>+ Add New Template</button>
             </div>
-            
+
             <div style={{ border: '1px solid var(--color-border-subtle)', borderRadius: 8, background: 'var(--color-bg-surface)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 16px', fontWeight: 600, fontSize: 13, borderBottom: '1px solid var(--color-border-subtle)' }}>
                 Build Templates (3)
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width={14} height={14} style={{ opacity: 0.5, strokeWidth: 2 }}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, padding: '16px' }}>
-                {[{t:'Build Completed'}, {t:'Build Failure'}, {t:'Build Success'}].map((m,i)=> (
+                {[{ t: 'Build Completed' }, { t: 'Build Failure' }, { t: 'Build Success' }].map((m, i) => (
                   <div key={i} style={{ border: '1px solid var(--color-border-subtle)', borderRadius: 6, padding: '16px', background: 'var(--color-bg-panel)', display: 'flex', flexDirection: 'column' }}>
-                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-                        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                          <span style={{ fontSize: 13, fontWeight: 600 }}>{m.t}</span>
-                          <span style={{ fontSize: 10, color: 'rgba(var(--text-rgb), 0.5)' }}>Default</span>
-                        </div>
-                        <Ic.Dots />
-                     </div>
-                     <div style={{ fontSize: 11.5, fontWeight: 600, marginBottom: 16, color: 'rgba(var(--text-rgb), 0.9)' }}>
-                        Subject: CI/CD Build <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.buildStatusName}}`}</span> – <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.configName}}`}</span>
-                     </div>
-                     <div style={{ fontSize: 10,  color: 'rgba(var(--text-rgb), 0.7)', lineHeight: 1.6 }}>
-                       Hi Team,<br/><br/>
-                       The build for configuration <span style={{ color: '#d8305b' }}>{`{{.configName}}`}</span> has {m.t === 'Build Failure' ? 'failed' : 'completed successfully'}.<br/>
-                       - Build Number: <span style={{ color: '#d8305b' }}>{`{{.counter}}`}</span><br/>
-                       - Timestamp: <span style={{ color: '#d8305b' }}>{`{{.buildCompletionTime}}`}</span><br/>
-                       - Completed In: <span style={{ color: '#d8305b' }}>{`{{.buildDuration}}`}</span> seconds<br/><br/>
-                       {m.t === 'Build Failure' ? 'Please review the error logs: ' : 'You can view build logs here: '} 
-                       <span style={{ color: '#d8305b', textDecoration: 'underline' }}>{`{{.buildHomeUrl}}?tab=buildlogs`}</span><br/><br/>
-                       Regards,<br/>
-                       BuildNinja Team
-                     </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                        <span style={{ fontSize: 13, fontWeight: 600 }}>{m.t}</span>
+                        <span style={{ fontSize: 10, color: 'rgba(var(--text-rgb), 0.5)' }}>Default</span>
+                      </div>
+                      <Ic.Dots />
+                    </div>
+                    <div style={{ fontSize: 11.5, fontWeight: 600, marginBottom: 16, color: 'rgba(var(--text-rgb), 0.9)' }}>
+                      Subject: CI/CD Build <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.buildStatusName}}`}</span> – <span style={{ color: '#d8305b', fontWeight: 400 }}>{`{{.configName}}`}</span>
+                    </div>
+                    <div style={{ fontSize: 10, color: 'rgba(var(--text-rgb), 0.7)', lineHeight: 1.6 }}>
+                      Hi Team,<br /><br />
+                      The build for configuration <span style={{ color: '#d8305b' }}>{`{{.configName}}`}</span> has {m.t === 'Build Failure' ? 'failed' : 'completed successfully'}.<br />
+                      - Build Number: <span style={{ color: '#d8305b' }}>{`{{.counter}}`}</span><br />
+                      - Timestamp: <span style={{ color: '#d8305b' }}>{`{{.buildCompletionTime}}`}</span><br />
+                      - Completed In: <span style={{ color: '#d8305b' }}>{`{{.buildDuration}}`}</span> seconds<br /><br />
+                      {m.t === 'Build Failure' ? 'Please review the error logs: ' : 'You can view build logs here: '}
+                      <span style={{ color: '#d8305b', textDecoration: 'underline' }}>{`{{.buildHomeUrl}}?tab=buildlogs`}</span><br /><br />
+                      Regards,<br />
+                      BuildNinja Team
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1841,7 +1887,7 @@ function Settings() {
               <h2 className={s.pageH1}>Activate License</h2>
               <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Register your license to unlock features</div>
             </div>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {/* Top Card: License Information */}
               <div style={{ border: '1px solid var(--color-border-subtle)', background: 'rgba(255,255,255,0.02)', padding: '16px 20px', borderRadius: 8 }}>
@@ -1873,12 +1919,12 @@ function Settings() {
                   <div style={{ marginBottom: 6, fontSize: 11, color: 'rgba(var(--text-rgb), 0.85)' }}><span style={{ color: '#d8305b' }}>*</span> License Key</div>
                   <input className={s.searchInput} placeholder="Enter your license key here..." style={{ width: '100%', padding: '8px 12px', background: 'transparent', border: '1px solid rgba(var(--text-rgb), 0.15)', borderRadius: 4, color: 'var(--color-text)', fontSize: 12 }} />
                 </div>
-                
+
                 <div style={{ background: 'rgba(24, 144, 255, 0.1)', border: '1px solid rgba(24, 144, 255, 0.2)', padding: '10px 12px', borderRadius: 4, color: '#1890ff', fontSize: 11, display: 'flex', gap: 10, alignItems: 'center' }}>
-                  <svg fill="currentColor" viewBox="64 64 896 896" width={14} height={14}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"/><path d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"/></svg>
+                  <svg fill="currentColor" viewBox="64 64 896 896" width={14} height={14}><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" /><path d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z" /></svg>
                   Ensure you are connected to the internet for activation.
                 </div>
-                
+
                 <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
                   <button className={s.btnPrimary} style={{ background: '#d8305b', color: '#fff', border: 'none', padding: '6px 16px', borderRadius: 4, fontSize: 11.5, fontWeight: 600 }}>Activate Online</button>
                   <span className={s.link} style={{ fontSize: 11.5, color: '#d8305b', textDecoration: 'underline', cursor: 'pointer', fontWeight: 500 }}>Need to activate offline?</span>
