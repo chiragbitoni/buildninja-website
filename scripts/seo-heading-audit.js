@@ -34,7 +34,13 @@ files.forEach((file) => {
 
   traverse(ast, {
     JSXOpeningElement(p) {
-      const name = p.node.name.name;
+      let name = null;
+
+      if (p.node.name.type === "JSXIdentifier") {
+        name = p.node.name.name;
+      } else if (p.node.name.type === "JSXMemberExpression") {
+        name = p.node.name.property.name; // handles motion.h1
+      }
 
       if (localCounts[name] !== undefined) {
         localCounts[name]++;
