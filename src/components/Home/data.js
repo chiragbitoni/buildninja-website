@@ -17,12 +17,13 @@ export const SUCCESS_CONFIGS = [
 ];
 
 export const TOP5_CONFIGS = [
-  { name:'Config-A', color:'#d8305b' },
-  { name:'Config-B', color:'#40a9ff' },
-  { name:'Config-C', color:'#00c951' },
-  { name:'Config-D', color:'#faad14' },
-  { name:'Config-E', color:'#fa54aa' },
+  { name: 'Config-A', color: '#d8305b', points: [108, 105, 80, 40, 30, 22] },
+  { name: 'Config-B', color: '#40a9ff', points: [100, 95, 98, 90, 85, 88] },
+  { name: 'Config-C', color: '#00c951', points: [30, 35, 32, 28, 25, 20] },
+  { name: 'Config-D', color: '#faad14', points: [110, 108, 105, 102, 100, 98] },
+  { name: 'Config-E', color: '#fa54aa', points: [60, 65, 55, 62, 58, 60] },
 ];
+
 
 export const AGENT_TREEMAP = [
   { name:'agent-7dd6d', pct:60, builds:'157 builds', runtime:'2d 4h/30d', color:'#2a6e2a' },
