@@ -51,12 +51,15 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Agents Tab Layout Restoration**: Resolved grid distortion issues in the Agents view by restoring the `.agentRow` CSS structure and ensuring consistent use of semantic variables.
 - ✅ **Footer CSS Modules Conversion**: Refactored the global Footer to use CSS Modules (`Footer.module.css`) while maintaining 1:1 visual parity with the original design.
 - ✅ **EULA Page Overhaul**: Fully modernized the `/eula` page with a two-component architecture (`EulaHero` and `EulaContent`). Implemented premium ambient backgrounds (orbs + grids), glassmorphic content cards, CSS Modules, and semantic typography (Syne + Inter).
+- ✅ **BuildNinjaDemo SEO Optimization**: Systematically removed all `<h1>` and `<h2>` tags within the `BuildNinjaDemo` component to ensure a single `<h1>` per page (typically in the Hero) and prevent heading conflicts. Replaced dashboard and pane headers with styled `<div>` elements to maintain visual parity without impacting SEO ranking.
+- ✅ **Global SEO Audit & Cleanup**: Resolved "Missing H1" issues in `src/app/not-found.jsx` and verified landing pages (Hero, Partner, Pricing) maintain a single semantic `<h1>`.
 - ✅ **Marketing Landing Page Modernization**: Refactored the `/landing-page` (Hero, Features, and About sections) to use CSS Modules and Framer Motion. Implemented a lead-gen focused Hero with a glassmorphic form, animated background drifting orbs, and staggered scroll-reveal animations for all feature segments.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
 2. ~~**Pricing Page Overhaul**~~: ✅ Complete — see Evolution Log.
 3. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
+4. **Final SEO Polish**: Conduct a final crawl of all internal routes to ensure no legacy components are introducing hidden `h1` tags.
 
 ## Learned Rules 
 1. **Semantic Coloring**: Never use hardcoded colors (like `#303030` or `#fff`) in components. Always use centralized CSS variables (`var(--color-bg-panel)`, `var(--color-text)`, etc.) defined in the `:root` of `globals.css`.
@@ -68,3 +71,4 @@ The Home and Feature pages have been significantly modernized with a premium, da
 7. **Bento Logic**: For feature-heavy pages, group related data into cards with varying sizes and hover physics to create visual hierarchy.
 8. **Generic Data Names**: Never use original project or user names (e.g., "Asher", "onlyvcs") found in reference links or internal systems. Always replace them with generic alternatives (e.g., "Alpha", "Project Alpha", "Main Build") in demonstration components and mocks.
 9. **Production UI Parity**: When updating demonstration components (like BuildNinjaDemo), always cross-reference against verified production screenshots or site logs to ensure functional and visual parity (e.g., timeline paths, specific SVG paths, and status toggle behaviors).
+10. **Heading Hierarchy (SEO)**: Never use `<h1>` tags inside reusable components or demos that are intended to be nested within a page's Hero section. Use `<div>` or `<span>` with existing typography classes (e.g., `s.pageH1`, `s.paneTitle`) to maintain the visual hierarchy while keeping the page-level `<h1>` unique for SEO. Use `<h2>` sparingly for top-level section headers only.

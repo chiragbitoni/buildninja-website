@@ -672,7 +672,7 @@ function ConfigDetailsTab({ config }) {
   return (
     <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
       <div className={s.configDetailsHeader}>
-        <h2 className={s.paneTitle}>Build Configurations</h2>
+        <div className={s.paneTitle}>Build Configurations</div>
         <div className={s.muted} style={{ fontSize: 11.5 }}>Expand sections to view and manage configuration details</div>
         <button className={s.exportBtn}><svg viewBox="64 64 896 896" width="13" height="13" fill="currentColor"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-56 640l-56-56 128-128-128-128 56-56 184 184-184 184z" /></svg> Export</button>
       </div>
@@ -860,7 +860,7 @@ function ConfigTriggersTab() {
   return (
     <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
       <div className={s.configDetailsHeader}>
-        <h2 className={s.paneTitle}>Configuration Triggers</h2>
+        <div className={s.paneTitle}>Configuration Triggers</div>
         <div className={s.muted} style={{ fontSize: 11.5 }}>Configure automated build triggers and schedules</div>
         <button className={s.exportBtn} style={{ background: 'var(--color-demo-accent)', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 4, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, position: 'absolute', top: 14, right: 0 }}>
           <Ic.Plus /> Add Trigger
@@ -938,7 +938,7 @@ function ConfigNotificationsTab() {
   return (
     <div className={s.projRightPane} style={{ padding: '4px 18px 24px' }}>
       <div className={s.configDetailsHeader}>
-        <h2 className={s.paneTitle}>Notification Settings</h2>
+        <div className={s.paneTitle}>Notification Settings</div>
         <div className={s.muted} style={{ fontSize: 11.5 }}>Build notifications settings</div>
         <button className={s.exportBtn} style={{ background: 'var(--color-demo-accent)', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 4, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, position: 'absolute', top: 14, right: 0 }}>
           <Ic.Plus /> Add Notification
@@ -1288,7 +1288,7 @@ function Agents() {
             <div>
               <div className={s.agentRightName}>
                 <svg fill="currentColor" viewBox="0 0 16 16" style={{ width: 16, height: 16, opacity: .6 }}><path d="M13.13 1.593H2.87C1.84 1.593 1 2.437 1 3.474v6.466c0 1.037.84 1.88 1.87 1.88h4.542v1.411H5.435c-.325 0-.588.263-.588.588s.263.588.588.588h5.13c.325 0 .588-.263.588-.588s-.263-.588-.588-.588H8.588v-1.411h4.542c1.031 0 1.87-.843 1.87-1.88V3.474c0-1.037-.839-1.881-1.87-1.881zm.694 8.347c0 .389-.312.705-.694.705H2.87c-.383 0-.695-.316-.695-.705V3.474c0-.389.312-.705.695-.705h10.26c.382 0 .694.316.694.705v6.466z" /></svg>
-                <h2 className={s.agentTitle}>{agent.name}</h2>
+                <div className={s.agentTitle}>{agent.name}</div>
               </div>
               <div className={s.agentSubHead}><Tag label="Idle" /> <span className={s.muted} style={{ fontSize: 11 }}>ID: {agent.id}</span></div>
             </div>
@@ -1436,7 +1436,7 @@ function Queue() {
   return (
     <div className={s.page}>
       <div className={s.queueHeader}>
-        <h1 className={s.pageH1}>Builds Queue</h1>
+        <div className={s.pageH1}>Builds Queue</div>
         <p className={s.pageSub}>Monitor and manage all currently queued builds across configuration. Drag rows to reorder the queue.</p>
       </div>
       <div className={s.queueFilters} style={{ flexWrap: 'wrap' }}>
@@ -1502,7 +1502,7 @@ function TriggersDash() {
   return (
     <div className={s.page}>
       <div className={s.trigHead}>
-        <h1 className={s.pageH1}>Triggers Dashboard</h1>
+        <div className={s.pageH1}>Triggers Dashboard</div>
         <button className={s.btnPrimary} style={{ padding: '6px 14px', borderRadius: '4px', background: 'var(--color-demo-accent)', color: '#fff', fontSize: '12px', fontWeight: 600 }}>
           <Ic.Plus /> Add Trigger
         </button>
@@ -1599,7 +1599,7 @@ function Users() {
   return (
     <div className={s.page}>
       <div className={s.usersHead} style={{ marginBottom: '16px' }}>
-        <h1 className={s.pageH1}>User Management</h1>
+        <div className={s.pageH1}>User Management</div>
         <div className={s.usersBadges}>
           <div className={s.usersBadge} style={{ background: 'var(--color-warning-bg)', border: '1px solid rgba(250, 173, 20, 0.25)', color: 'var(--color-warning)' }}>
             <Ic.Info />
@@ -1774,7 +1774,7 @@ function Settings() {
           <div className={s.page}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
               <div>
-                <h2 className={s.pageH1}>SSO Settings</h2>
+                <div className={s.pageH1}>SSO Settings</div>
                 <p className={s.pageSub}>Manage Single Sign-On(SSO) providers for your organization.</p>
               </div>
               <button className={s.btnPrimary}><Ic.Plus /> Add SSO Provider</button>
@@ -1811,7 +1811,7 @@ function Settings() {
         {activeTab === 'Notifier Settings' && (
           <div className={s.page}>
             <div style={{ marginBottom: 16 }}>
-              <h2 className={s.pageH1}>Notifier Settings</h2>
+              <div className={s.pageH1}>Notifier Settings</div>
               <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Configure notification preferences and delivery methods.</div>
             </div>
 
@@ -1843,7 +1843,7 @@ function Settings() {
           <div className={s.page}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
               <div>
-                <h2 className={s.pageH1}>Template Settings</h2>
+                <div className={s.pageH1}>Template Settings</div>
                 <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Create or modify email templates</div>
               </div>
               <button className={s.btnPrimary} style={{ background: '#d8305b', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600 }}>+ Add New Template</button>
@@ -1888,7 +1888,7 @@ function Settings() {
         {activeTab === 'Manage License' && (
           <div className={s.page}>
             <div style={{ marginBottom: 24 }}>
-              <h2 className={s.pageH1}>Activate License</h2>
+              <div className={s.pageH1}>Activate License</div>
               <div className={s.muted} style={{ fontSize: 11, marginTop: 4 }}>Register your license to unlock features</div>
             </div>
 
