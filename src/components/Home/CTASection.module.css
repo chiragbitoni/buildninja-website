@@ -23,7 +23,6 @@
   padding: 60px 80px;
   text-align: center;
   position: relative;
-  overflow: hidden;
   box-shadow: var(--shadow-xl);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -110,7 +109,8 @@
   color: var(--color-text);
   letter-spacing: -0.04em;
   margin: 0 0 16px;
-  line-height: 1.1;
+  line-height: 1.25;
+  padding: 10px 0;
   position: relative;
   z-index: 2;
   font-family: var(--font-display);
