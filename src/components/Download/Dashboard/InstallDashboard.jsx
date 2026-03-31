@@ -29,8 +29,10 @@ import {
   faLifeRing,
   faCalendarAlt,
   faCheckCircle,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faCircleNotch
 } from "@fortawesome/free-solid-svg-icons";
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -59,10 +61,13 @@ export default function InstallDashboard() {
   const [loading, setLoading] = useState(true);
   const [hasHistory, setHasHistory] = useState(false);
 
+  const [copiedType, setCopiedType] = useState(null);
+
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
     posthog.capture("docker_command_copied", { type });
-    // Potential toast notification could go here
+    setCopiedType(type);
+    setTimeout(() => setCopiedType(null), 2000);
   };
 
   useEffect(() => {
@@ -96,13 +101,20 @@ export default function InstallDashboard() {
     load();
   }, []);
 
-  const handleDownload = (url, meta) => {
+  const [downloadingUrl, setDownloadingUrl] = useState(null);
+
+  const handleDownload = async (url, meta) => {
     if (!url) return;
+    setDownloadingUrl(url);
     posthog.capture("installer_download_clicked", {
       ...meta,
       source_page: "download_dashboard",
     });
-    downloadInstaller(url.split("/").pop());
+    try {
+      await downloadInstaller(url.split("/").pop());
+    } finally {
+      setDownloadingUrl(null);
+    }
   };
 
   const latestWindows = data.latest?.windows;
@@ -153,8 +165,13 @@ export default function InstallDashboard() {
                   <button 
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestWindows.downloadUrl, { os: "windows", version: latestWindows.version })}
+                    disabled={downloadingUrl === latestWindows.downloadUrl}
                   >
-                    <FontAwesomeIcon icon={faDownload} /> Download .exe
+                    {downloadingUrl === latestWindows.downloadUrl ? (
+                      <><FontAwesomeIcon icon={faCircleNotch} spin /> Downloading...</>
+                    ) : (
+                      <><FontAwesomeIcon icon={faDownload} /> Download .exe</>
+                    )}
                   </button>
                   <button 
                     className={styles.guideBtn}
@@ -185,14 +202,24 @@ export default function InstallDashboard() {
                   <button 
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestLinux.serverDownloadUrl, { os: "linux", type: "server", version: latestLinux.serverVersion })}
+                    disabled={downloadingUrl === latestLinux.serverDownloadUrl}
                   >
-                    <FontAwesomeIcon icon={faDownload} /> Server
+                    {downloadingUrl === latestLinux.serverDownloadUrl ? (
+                      <><FontAwesomeIcon icon={faCircleNotch} spin /> Downloading...</>
+                    ) : (
+                      <><FontAwesomeIcon icon={faDownload} /> Server</>
+                    )}
                   </button>
                   <button 
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestLinux.agentDownloadUrl, { os: "linux", type: "agent", version: latestLinux.agentVersion })}
+                    disabled={downloadingUrl === latestLinux.agentDownloadUrl}
                   >
-                    <FontAwesomeIcon icon={faDownload} /> Agent
+                    {downloadingUrl === latestLinux.agentDownloadUrl ? (
+                      <><FontAwesomeIcon icon={faCircleNotch} spin /> Downloading...</>
+                    ) : (
+                      <><FontAwesomeIcon icon={faDownload} /> Agent</>
+                    )}
                   </button>
                 </div>
               </div>
@@ -212,18 +239,29 @@ export default function InstallDashboard() {
                   <button 
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestMac.serverDownloadUrl, { os: "mac", type: "server", version: latestMac.serverVersion })}
+                    disabled={downloadingUrl === latestMac.serverDownloadUrl}
                   >
-                    <FontAwesomeIcon icon={faDownload} /> Server
+                    {downloadingUrl === latestMac.serverDownloadUrl ? (
+                      <><FontAwesomeIcon icon={faCircleNotch} spin /> Downloading...</>
+                    ) : (
+                      <><FontAwesomeIcon icon={faDownload} /> Server</>
+                    )}
                   </button>
                   <button 
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestMac.agentDownloadUrl, { os: "mac", type: "agent", version: latestMac.agentVersion })}
+                    disabled={downloadingUrl === latestMac.agentDownloadUrl}
                   >
-                    <FontAwesomeIcon icon={faDownload} /> Agent
+                    {downloadingUrl === latestMac.agentDownloadUrl ? (
+                      <><FontAwesomeIcon icon={faCircleNotch} spin /> Downloading...</>
+                    ) : (
+                      <><FontAwesomeIcon icon={faDownload} /> Agent</>
+                    )}
                   </button>
                 </div>
               </div>
             )}
+
           </div>
 
           {/* Docker Commands Sub-section */}
@@ -238,8 +276,8 @@ export default function InstallDashboard() {
                   {staticData.docker.serverCmd}
                 </div>
                 <FontAwesomeIcon 
-                  icon={faCopy} 
-                  className={styles.copyIcon} 
+                  icon={copiedType === "server" ? faCheckCircle : faCopy} 
+                  className={`${styles.copyIcon} ${copiedType === "server" ? styles.copied : ""}`} 
                   onClick={() => copyToClipboard(staticData.docker.serverCmd, "server")}
                 />
               </div>
@@ -249,8 +287,8 @@ export default function InstallDashboard() {
                   {staticData.docker.agentCmd}
                 </div>
                 <FontAwesomeIcon 
-                  icon={faCopy} 
-                  className={styles.copyIcon} 
+                  icon={copiedType === "agent" ? faCheckCircle : faCopy} 
+                  className={`${styles.copyIcon} ${copiedType === "agent" ? styles.copied : ""}`} 
                   onClick={() => copyToClipboard(staticData.docker.agentCmd, "agent")}
                 />
               </div>
@@ -285,15 +323,17 @@ export default function InstallDashboard() {
                       className={styles.guideBtn} 
                       style={{ padding: '8px 16px' }}
                       onClick={() => handleDownload(v.serverDownloadUrl, { type: "server", version: v.serverVersion })}
+                      disabled={downloadingUrl === v.serverDownloadUrl}
                     >
-                      Server
+                      {downloadingUrl === v.serverDownloadUrl ? "Wait..." : "Server"}
                     </button>
                     <button 
                       className={styles.guideBtn} 
                       style={{ padding: '8px 16px' }}
                       onClick={() => handleDownload(v.agentDownloadUrl, { type: "agent", version: v.agentVersion })}
+                      disabled={downloadingUrl === v.agentDownloadUrl}
                     >
-                      Agent
+                      {downloadingUrl === v.agentDownloadUrl ? "Wait..." : "Agent"}
                     </button>
                   </div>
                 </div>
@@ -301,6 +341,7 @@ export default function InstallDashboard() {
             </div>
           </motion.div>
         )}
+
 
         {/* ── System Requirements ── */}
         <motion.div className={styles.systemSection} variants={itemVariants}>

@@ -258,6 +258,11 @@
   color: var(--color-primary);
 }
 
+.copyIcon.copied {
+  color: var(--color-success);
+}
+
+
 /* ── History Table ── */
 .historySection {
   margin-top: 60px;

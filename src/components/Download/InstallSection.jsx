@@ -148,7 +148,7 @@ export default function InstallSection() {
                             disabled={isLoading}
                         >
                             <FontAwesomeIcon icon={faDownload} />
-                            {isLoading ? "Starting Download..." : heroSectionText.downloadCContainerText.buttonText}
+                            {isLoading ? "Granting Access..." : heroSectionText.downloadCContainerText.buttonText}
                         </button>
                     </form>
                 </motion.div>
