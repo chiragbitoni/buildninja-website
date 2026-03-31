@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <section className={styles.notFoundWrapper}>
       <div className={styles.notFoundContent}>
-        <h3>404</h3>
+        <h1>404</h1>
         <h4>Page Not Found</h4>
         <p>
           The page you’re looking for doesn’t exist or may have been moved.
