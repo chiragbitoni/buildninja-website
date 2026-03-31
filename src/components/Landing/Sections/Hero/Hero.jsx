@@ -1,19 +1,24 @@
-import { useState } from "react";
-import "./Hero.css";
+"use client";
+import { useState, useEffect, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { motion } from "framer-motion";
 import { sendLeadEmail } from "@/services/email/sendEmail";
-import { useEffect, useRef } from "react";
 import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
 import { siteConfig } from "@/config/site";
 import { useRouter } from "next/navigation";
+import s from "./Hero.module.css";
 
 export default function Hero() {
     const router = useRouter();
-
     const hasStartedRef = useRef(false);
+    const formRef = useRef(null);
+    const orb1 = useRef(null);
+    const orb2 = useRef(null);
 
+    const [loading, setLoading] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState(null);
     const [form, setForm] = useState({
         name: "",
         phone: "",
@@ -22,12 +27,27 @@ export default function Hero() {
         teamSize: "",
         countryCode: "+1",
     });
-    const formRef = useRef(null);
-    const [loading, setLoading] = useState(false);
-    const [captchaToken, setCaptchaToken] = useState(null);
+
+    // Background animation
+    useEffect(() => {
+        let t = 0;
+        const tick = () => {
+            t += 0.003;
+            if (orb1.current) {
+                orb1.current.style.transform = `translate(${Math.sin(t) * 40}px, ${Math.cos(t * 0.8) * 50}px)`;
+            }
+            if (orb2.current) {
+                orb2.current.style.transform = `translate(${Math.cos(t * 0.7) * 45}px, ${Math.sin(t * 1.2) * 35}px)`;
+            }
+            requestAnimationFrame(tick);
+        };
+        const id = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(id);
+    }, []);
+
+    // UTM and PH setup
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
-
         const utmData = {
             utm_source: params.get("utm_source") || "",
             utm_medium: params.get("utm_medium") || "",
@@ -37,6 +57,14 @@ export default function Hero() {
 
         if (utmData.utm_source) {
             localStorage.setItem("utm_data", JSON.stringify(utmData));
+        } else if (document.referrer) {
+            localStorage.setItem(
+                "utm_data",
+                JSON.stringify({
+                    utm_source: document.referrer,
+                    utm_medium: "referral",
+                })
+            );
         }
 
         posthog.capture("marketing_landing_viewed", {
@@ -44,6 +72,7 @@ export default function Hero() {
             ...utmData,
         });
     }, []);
+
     const handleChange = (e) => {
         if (!hasStartedRef.current) {
             hasStartedRef.current = true;
@@ -55,7 +84,6 @@ export default function Hero() {
     };
 
     const handleSubmit = async (e) => {
-
         e.preventDefault();
         const submitStart = Date.now();
         if (!form.phone || form.phone.trim().length < 6) {
@@ -77,7 +105,7 @@ export default function Hero() {
         setLoading(true);
         const { success, message } = await sendLeadEmail({
             ...form,
-            fullPhone: `${form.countryCode} ${form.phone}`, // cleaner
+            fullPhone: `${form.countryCode} ${form.phone}`,
             utmSource: utmData.utm_source,
             utmMedium: utmData.utm_medium,
             utmCampaign: utmData.utm_campaign,
@@ -98,33 +126,15 @@ export default function Hero() {
                 page: "landing-page",
                 team_size: form.teamSize,
                 latency_ms: Date.now() - submitStart,
-
             });
-
         } else {
             posthog.capture("marketing_lead_failed", {
                 page: "landing-page",
                 reason: message || "unknown",
             });
-
             alert(message || "Something went wrong");
         }
     };
-    useEffect(() => {
-        const stored = JSON.parse(localStorage.getItem("utm_data") || "{}");
-
-        if (!stored.utm_source && document.referrer) {
-            localStorage.setItem(
-                "utm_data",
-                JSON.stringify({
-                    utm_source: document.referrer,
-                    utm_medium: "referral",
-                })
-            );
-        }
-    }, []);
-
-
 
     useEffect(() => {
         const el = formRef.current;
@@ -139,151 +149,186 @@ export default function Hero() {
         el.addEventListener("mousemove", handleMouseMove);
         return () => el.removeEventListener("mousemove", handleMouseMove);
     }, []);
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    };
+
     return (
-        <section className="landingPageHeroSection">
-            <div className="landingPageHeroContainer">
+        <section className={s.section}>
+            <div ref={orb1} className={s.orb1} />
+            <div ref={orb2} className={s.orb2} />
+            <div className={s.grid} />
 
+            <div className={s.container}>
                 {/* LEFT CONTENT */}
-                <div className="landingPageHeroLeft">
-                    <div className="w-[100%] absolute top-[-90px] xl:top-[-110px]">
-                        <div className="inline-block p-1 bg-[#1a1a2e] text-[#d6b4fc] text-xs font-semibold rounded-full border border-[rgba(255,255,255,0.05)] shadow-[0_0_15px_rgba(255,100,50,0.4)] mb-2 mt-4 transition-transform duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(255,100,50,0.6)] animate-fade-in-up hover:cursor-pointer mx-auto text-center"
-                            onClick={() => { router.push("/install"); }}
-                        >
-                            BUILDNINJA {siteConfig.version.toUpperCase()} NOW AVAILABLE
-                        </div>
-                    </div>
+                <motion.div 
+                    className={s.left}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
+                    <motion.div 
+                        className={s.badge}
+                        variants={itemVariants}
+                        onClick={() => { router.push("/install"); }}
+                    >
+                        BUILDNINJA {siteConfig.version.toUpperCase()} NOW AVAILABLE
+                    </motion.div>
 
-                    <h2 className="landingPageHeroTitle">
+                    <motion.h2 className={s.title} variants={itemVariants}>
                         Stop Fighting <br />
                         <span>Your CI/CD Tool</span>
-                    </h2>
+                    </motion.h2>
 
-                    <p className="landingPageHeroSubtitle">
+                    <motion.p className={s.subtitle} variants={itemVariants}>
                         Self-hosted CI/CD that just works out of the box.
                         Deploy in minutes. Ship features, not infrastructure.
-                    </p>
+                    </motion.p>
 
-                    <div className="landingPageHeroStats">
-                        <div className="landingPageHeroStatCard">
-                            <strong>Unlimited</strong>
-                            <span>Agents</span>
-                        </div>
-
-                        <div className="landingPageHeroStatCard">
-                            <strong>3 Concurrent</strong>
-                            <span>Free Builds</span>
-                        </div>
-
-                        <div className="landingPageHeroStatCard">
-                            <strong>$199/mo</strong>
-                            <span>Unlimited Scale</span>
-                        </div>
+                    <div className={s.stats}>
+                        {[
+                            { label: "Agents", value: "Unlimited" },
+                            { label: "Free Builds", value: "3 Concurrent" },
+                            { label: "Unlimited Scale", value: "$199/mo" }
+                        ].map((stat, i) => (
+                            <motion.div 
+                                className={s.statCard} 
+                                key={i}
+                                variants={itemVariants}
+                            >
+                                <strong>{stat.value}</strong>
+                                <span>{stat.label}</span>
+                            </motion.div>
+                        ))}
                     </div>
-                </div>
+                </motion.div>
 
                 {/* RIGHT FORM */}
-                <div className="landingPageHeroRight" ref={formRef}>
-                    <h3 className="landingPageHeroFormTitle">Get Started</h3>
-                    <p className="landingPageHeroFormSubtitle">
-                        Fill out the form and we’ll help you get set up instantly.
-                    </p>
+                <motion.div 
+                    className={s.right} 
+                    ref={formRef}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                    <div className={s.formContent}>
+                        <h3 className={s.formTitle}>Get Started</h3>
+                        <p className={s.formSubtitle}>
+                            Fill out the form and we’ll help you get set up instantly.
+                        </p>
 
-                    <form className="landingPageHeroForm" onSubmit={handleSubmit}>
-                        <div className="landingPageHeroFormRow">
-                            <label>
-                                <div>
-                                    First Name<span className="landingPageHeroRequired">*</span>
-                                </div>
-                                <input type="text" placeholder="Name" required value={form.name} onChange={handleChange} name="name" />
-                            </label>
-                            <label>
-                                <div>
-                                    Phone Number<span className="landingPageHeroRequired">*</span>
-                                </div>
-                                <PhoneInput
-                                    defaultCountry="us"
-                                    value={form.phone}
-                                    onChange={(phone) => setForm({ ...form, phone })}
-                                    className="react-international-phone-input-container"
-                                />
+                        <form className={s.form} onSubmit={handleSubmit}>
+                            <div className={s.formRow}>
+                                <label className={s.formLabel}>
+                                    <div>First Name<span className={s.required}>*</span></div>
+                                    <input 
+                                        type="text" 
+                                        className={s.input}
+                                        placeholder="Name" 
+                                        required 
+                                        value={form.name} 
+                                        onChange={handleChange} 
+                                        name="name" 
+                                    />
+                                </label>
+                                <label className={s.formLabel}>
+                                    <div>Phone Number<span className={s.required}>*</span></div>
+                                    <div className={s.phoneWrap}>
+                                        <PhoneInput
+                                            defaultCountry="us"
+                                            value={form.phone}
+                                            onChange={(phone) => setForm({ ...form, phone })}
+                                        />
+                                    </div>
+                                </label>
 
-                            </label>
-
-                        </div>
-
-                        <div className="landingPageHeroFormRow">
-                            <label>
-                                <div>
-                                    Company Email<span className="landingPageHeroRequired">*</span>
-                                </div>
-                                <input
-                                    type="email"
-                                    placeholder="info@company.com"
-                                    name="email"
-                                    value={form.email}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </label>
-                            <label><div>
-
-                                Company Name<span className="landingPageHeroRequired">*</span>
                             </div>
-                                <input
-                                    type="text"
-                                    placeholder="Enter Company Name"
-                                    name="company"
-                                    value={form.company}
-                                    onChange={handleChange}
-                                    required
+
+                            <div className={s.formRow}>
+                                <label className={s.formLabel}>
+                                    <div>Company Email<span className={s.required}>*</span></div>
+                                    <input
+                                        type="email"
+                                        className={s.input}
+                                        placeholder="info@company.com"
+                                        name="email"
+                                        value={form.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>
+                                <label className={s.formLabel}>
+                                    <div>Company Name<span className={s.required}>*</span></div>
+                                    <input
+                                        type="text"
+                                        className={s.input}
+                                        placeholder="Enter Company Name"
+                                        name="company"
+                                        value={form.company}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>
+                            </div>
+
+                            <div className={s.formRow}>
+                                <label className={s.formLabel}>
+                                    <div>Team Size<span className={s.required}>*</span></div>
+                                    <select 
+                                        className={s.select}
+                                        name="teamSize"
+                                        value={form.teamSize}
+                                        onChange={handleChange}
+                                        required
+                                    >
+                                        <option value="">Select Team Size</option>
+                                        <option>1–50</option>
+                                        <option>51-100</option>
+                                        <option>101-200</option>
+                                        <option>201-500</option>
+                                        <option>501-1000</option>
+                                        <option>1000+</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div className={s.captcha}>
+                                <ReCAPTCHA
+                                    theme="dark"
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                    onChange={(token) => {
+                                        setCaptchaToken(token);
+                                        posthog.capture("marketing_captcha_verified", {
+                                            page: "landing-page",
+                                        });
+                                    }}
                                 />
-                            </label>
-                        </div>
-                        <div className="landingPageHeroFormRow">
-                            <label>
-                                <div>
-                                    Team Size<span className="landingPageHeroRequired">*</span>
-                                </div>
-                                <select className="landingPageHeroSelect"
-                                    name="teamSize"
-                                    value={form.teamSize}
-                                    onChange={handleChange}
-                                    required>
-                                    <option value="">Select Team Size</option>
-                                    <option>1–50</option>
-                                    <option>51-100</option>
-                                    <option>101-200</option>
-                                    <option>201-500</option>
-                                    <option>501-1000</option>
-                                    <option>1000+</option>
-                                </select>
-                            </label>
-                        </div>
-                        <ReCAPTCHA
-                            className="landingPageHeroFormCaptcha"
-                            theme="dark"
-                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                            onChange={(token) => {
-                                setCaptchaToken(token);
+                            </div>
 
-                                posthog.capture("marketing_captcha_verified", {
-                                    page: "landing-page",
-                                });
-                            }}
-                        />
-
-                        <button
-                            type="submit"
-                            className="landingPageHeroSubmit"
-                            disabled={loading}
-                        >
-                            {loading ? "Submitting..." : "Submit Request"}
-                        </button>
-
-                    </form>
-                </div>
-
+                            <button
+                                type="submit"
+                                className={s.submit}
+                                disabled={loading}
+                            >
+                                {loading ? "Submitting..." : "Submit Request"}
+                            </button>
+                        </form>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
 }
+

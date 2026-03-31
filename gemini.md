@@ -50,6 +50,8 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Configuration Details Optimization**: Refactored the Config Detail tab with a hybrid timeline-accordion structure, ensuring all sections are collapsed by default and expand seamlessly into shell grids.
 - ✅ **Agents Tab Layout Restoration**: Resolved grid distortion issues in the Agents view by restoring the `.agentRow` CSS structure and ensuring consistent use of semantic variables.
 - ✅ **Footer CSS Modules Conversion**: Refactored the global Footer to use CSS Modules (`Footer.module.css`) while maintaining 1:1 visual parity with the original design.
+- ✅ **EULA Page Overhaul**: Fully modernized the `/eula` page with a two-component architecture (`EulaHero` and `EulaContent`). Implemented premium ambient backgrounds (orbs + grids), glassmorphic content cards, CSS Modules, and semantic typography (Syne + Inter).
+- ✅ **Marketing Landing Page Modernization**: Refactored the `/landing-page` (Hero, Features, and About sections) to use CSS Modules and Framer Motion. Implemented a lead-gen focused Hero with a glassmorphic form, animated background drifting orbs, and staggered scroll-reveal animations for all feature segments.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
