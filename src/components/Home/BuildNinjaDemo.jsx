@@ -222,9 +222,9 @@ function Dashboard() {
           <div className={s.dashPanelHead}>CONFIGURATION SUCCESS RATE <button className={s.iconBtn}><Ic.Filter /></button></div>
           <div className={s.dashPanelBody}>
             <div className={s.statRow}>
-              <span className={s.bigPct} style={{ color: '#d8305b' }}>49%</span>
+              <span className={s.bigPct} style={{ color: '#00c951' }}>83.6%</span>
               <span className={s.statLabel}>Overall Success Rate</span>
-              <span className={s.statRight}>All data • 49 processes</span>
+              <span className={s.statRight}>All data • 6 configurations</span>
             </div>
             <div className={s.barChart}>
               {SUCCESS_CONFIGS.map((c, i) => {
@@ -248,15 +248,19 @@ function Dashboard() {
             <div className={s.lineChartWrap}>
               <div className={s.lineYLabel}>Runtime</div>
               <svg className={s.lineSvg} viewBox="0 0 300 110" preserveAspectRatio="none">
-                <path d="M0 108 L50 105 L100 100 L150 80 L200 30 L250 25 L300 22" fill="none" stroke="#d8305b" strokeWidth="2" />
-                <path d="M0 108 L60 107 L120 107 L180 107 L240 107 L300 107" fill="none" stroke="#40a9ff" strokeWidth="1.5" opacity=".7" />
-                <path d="M0 108 L60 107 L120 107 L180 107 L240 107 L300 107" fill="none" stroke="#00c951" strokeWidth="1.5" opacity=".5" />
-                <path d="M0 108 L50 108 L100 108 L150 108 L200 107 L250 106 L300 105" fill="none" stroke="#faad14" strokeWidth="1.5" opacity=".5" />
-                {[0, 60, 120, 180, 240, 300].map((x, i) => {
-                  const ys = [108, 105, 100, 80, 30, 22];
-                  return <circle key={i} cx={x} cy={ys[i]} r="3.5" fill="#40a9ff" />;
+                {TOP5_CONFIGS.map((c, ci) => {
+                  const d = c.points.map((y, i) => `${i === 0 ? 'M' : 'L'} ${i * 60} ${y}`).join(' ');
+                  return (
+                    <g key={ci}>
+                      <path d={d} fill="none" stroke={c.color} strokeWidth="1.5" opacity=".6" />
+                      {c.points.map((y, i) => (
+                        <circle key={i} cx={i * 60} cy={y} r="2.5" fill={c.color} opacity=".8" />
+                      ))}
+                    </g>
+                  );
                 })}
               </svg>
+
             </div>
             <div className={s.legend}>
               {TOP5_CONFIGS.map(c => (
