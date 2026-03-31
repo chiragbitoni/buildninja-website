@@ -20,8 +20,9 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
-    { name: "Docs", path: "/docs" },
     { name: "Pricing", path: "/pricing" },
+    { name: "Dojo", path: "/dojo" },
+    { name: "Docs", path: "/docs" },
     { name: "Install", path: "/install" },
     { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
@@ -101,6 +102,7 @@ export default function Navbar() {
                 }}
               >
                 {item.name}
+                {item.name === "Dojo" && <span className={styles.navDot} />}
               </a>
             </li>
           ))}
@@ -120,7 +122,7 @@ export default function Navbar() {
             className={styles.navbarStartTrialButton}
             onClick={() => handleNavigation("/install")}
           >
-            Try BuildNinja Free
+            Try Free
           </button>
         </ul>
 

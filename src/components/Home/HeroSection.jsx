@@ -44,16 +44,16 @@ export default function HeroSection() {
 
         <div className={styles.heroBadge} onClick={() => { router.push("/install"); }}>
           <span className={styles.badgeDot} />
-          AI Build Intelligence — now in {siteConfig.version}
+          Deploy in minutes, not weeks of complex setup.
         </div>
 
         <h1 className={styles.heading}>
-          Stop Fighting Your
-          <span className={styles.headingGradient}> CI/CD Tool. </span>
+          Powerful Features,
+          <span className={styles.headingGradient}> Without the Maintenance Burden.</span>
         </h1>
 
         <p className={styles.subtext}>
-          Self-hosted CI/CD that just works out of the box. Deploy in minutes. Ship features, not infrastructure. <br />AI-powered build optimization, predictive test selection, and conversational pipeline setup, all in one platform. No per-seat tax.
+          All the capabilities you need, none of the plugin chaos. Self-hosted CI/CD that deploys in minutes — no per-seat pricing, no DevOps PhD required.
         </p>
 
         <div className={styles.ctas}>
@@ -63,13 +63,19 @@ export default function HeroSection() {
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Install BuildNinja Free
+            Try BuildNinja Free
           </a>
           <a className={styles.ctaSecondary} onClick={() => { dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works", link: "https://buildninja.grapehub.io/docs/category/getting-started" })) }}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
-            See 3-Minute Demo
+            See the 3-Minute Demo
+          </a>
+          <a className={styles.ctaTertiary} onClick={() => { router.push("/dojo") }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Try The Dojo
           </a>
         </div>
       </div>

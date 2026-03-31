@@ -104,6 +104,17 @@
 
 }
 
+.navDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 8px var(--color-primary-glow);
+}
+
 /* ── CTA Button ── */
 .navbarStartTrialButton {
   border-radius: var(--radius-pill);
@@ -177,7 +188,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
   .navbarLinks {
     position: absolute;
     top: 77px;
