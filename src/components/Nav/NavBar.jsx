@@ -45,8 +45,8 @@ export default function Navbar() {
   const getLogoSrc = () => {
     if (!mounted) return "/resources/BuildNinjaDark.png";
     if (isHover) return "/resources/BuildNinjaPink.png";
-    return resolvedTheme === "dark"
-      ? "/resources/BuildNinjaDark.png"
+    return resolvedTheme === "dark" 
+      ? "/resources/BuildNinjaDark.png" 
       : "/resources/BuildNinjaLight.png";
   };
 
@@ -101,13 +101,11 @@ export default function Navbar() {
                   dispatch(closeVideo());
                 }}
               >
-<<<<<<< HEAD
-  { item.name }
-  { item.name === "Dojo" && <span className={styles.navDot} /> }
-              </a >
-            </li >
-          ))
-}
+                {item.name}
+                {item.name === "Dojo" && <span className={styles.navDot} />}
+              </a>
+            </li>
+          ))}
 
           <Image
             width={22}
@@ -126,29 +124,10 @@ export default function Navbar() {
           >
             Try Free
           </button>
-=======
-                <a
-                  href={item.path}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation(item.path);
-                    dispatch(closeVideo());
-                  }}
-                  className="navbar-anchor"
-                >
-                  {item.name}
-                  {item.isNew && <span className="glowing-dot"></span>}
-                </a>
-              </li>
+        </ul>
 
-            ))}
-          <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
-          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try Free</button>
->>>>>>> dev
-        </ul >
-
-  <AvatarMenu />
-      </div >
-    </nav >
+        <AvatarMenu />
+      </div>
+    </nav>
   );
 }
