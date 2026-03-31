@@ -28,6 +28,7 @@ export default function FeatureHero() {
     <>
       <section className={styles.hero}>
         <NetworkBackground />
+        <div className={styles.bottomFade} />
         <motion.div 
           className={styles.inner}
           variants={containerVariants}

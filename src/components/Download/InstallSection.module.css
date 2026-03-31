@@ -11,6 +11,17 @@
   text-align: center;
 }
 
+.bottomFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(transparent, var(--color-bg));
+  pointer-events: none;
+  z-index: 1;
+}
+
 .grid {
   position: absolute;
   inset: 0;

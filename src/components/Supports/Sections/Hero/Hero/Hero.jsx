@@ -84,6 +84,7 @@ export default function SupportHero() {
     return (
         <section className={styles.supportSection}>
             <NetworkBackground />
+            <div className={styles.bottomFade} />
             
             {/* Header Content */}
             <motion.div 
