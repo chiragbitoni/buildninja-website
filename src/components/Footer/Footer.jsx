@@ -20,6 +20,7 @@ const footerText = {
                 { label: "Features", link: "/features" },
                 { label: "Pricing", link: "/pricing" },
                 { label: "Install", link: "/install" },
+                { label: "Dojo", link: "/dojo" },
                 { label: "FAQ", link: "/faq" },
                 // { label: "Roadmap", link: "/roadmap" },
             ],

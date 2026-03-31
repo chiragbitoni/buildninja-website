@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&display=swap");
 @import "tailwindcss";
 
@@ -156,3 +157,230 @@ GLOBAL RESETS & BASE
     cursor: none;
   }
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black, transparent 85%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* Not Found Page */
+.notFoundWrapper {
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    height: 600px;
+}
+
+.notFoundContent h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.notFoundContent h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.notFoundContent p {
+    color: #ffffffee;
+    margin-bottom: 30px;
+}
+
+.notFoundActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.notFoundActions a {
+    padding: 10px 40px;
+    border-radius: 999px;
+    background: #ff4172;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.notFoundActions a:hover {
+    opacity: 0.85;
+}
+
+
+/* ═══════════════════════════════════════════
+DESIGN TOKENS
+   ═══════════════════════════════════════════ */
+:root {
+  /* Brand */
+  --color-primary: #ff4172;
+  --color-primary-alt: #ff6135;
+  --color-primary-glow: rgba(255, 65, 114, 0.4);
+  --color-primary-subtle: rgba(240, 58, 73, 0.08);
+  --color-primary-border: rgba(240, 58, 119, 0.25);
+
+  /* Backgrounds */
+  --color-bg: #08080b;
+  --bg-rgb: 8, 8, 11;
+  --color-bg-shell: #2c2c2c;
+  --color-bg-panel: #313131;
+  --color-bg-surface: #3c3b3b;
+  --color-bg-surface-hover: #4a4a4a;
+
+  /* Text */
+  --color-text: rgba(255, 255, 255, 0.9);
+  --color-text-secondary: rgba(255, 255, 255, 0.65);
+  --color-text-muted: rgba(255, 255, 255, 0.32);
+  --color-text-faint: rgba(255, 255, 255, 0.22);
+  --color-text-disabled: rgba(238, 238, 245, 0.25);
+  --text-rgb: 255, 255, 255;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-medium: rgba(255, 255, 255, 0.12);
+  --color-border-accent: rgba(120, 120, 255, 0.1);
+
+  /* Semantic */
+  --color-success: #62de56;
+  --color-success-bg: rgba(0, 201, 81, 0.14);
+  --color-success-border: rgba(0, 201, 81, 0.28);
+  --color-error: #ff7276;
+  --color-error-bg: rgba(255, 92, 92, 0.08);
+  --color-error-border: rgba(255, 92, 92, 0.22);
+  --color-info: #40a9ff;
+  --color-info-bg: rgba(64, 169, 255, 0.12);
+  --color-warning: #fa54aa;
+  --color-warning-bg: rgba(250, 84, 170, 0.12);
+
+  /* Demo accent (BuildNinja dark theme) */
+  --color-demo-accent: #d8305b;
+  --color-demo-accent-bg: rgba(216, 48, 91, 0.12);
+  --color-demo-accent-border: rgba(216, 48, 91, 0.35);
+
+  /* Typography */
+  --font-display: 'Inter', sans-serif;
+  --font-accent: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-ui: 'Inter', system-ui, sans-serif;
+
+  /* Spacing & Shape */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-card: 9px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-shell: 0 32px 80px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-cta: 0 4px 24px var(--color-primary-glow);
+  --shadow-xl: 0 40px 100px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* Demo shell dimensions */
+  --shell-width: 1200px;
+  --shell-height: 640px;
+  --shell-aspect: calc(640 / 1200 * 100%);
+
+  /* Utilities */
+  --icon-filter: none;
+}
+
+[data-theme='light'] {
+  /* Backgrounds */
+  --color-bg: #f8fafc;
+  --bg-rgb: 248, 250, 252;
+  --color-bg-shell: #ffffff;
+  --color-bg-panel: #f1f5f9;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f1f5f9;
+
+  /* Text */
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-faint: #94a3b8;
+  --color-text-disabled: #cbd5e1;
+  --text-rgb: 15, 23, 42;
+
+  /* Borders */
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.16);
+  --color-border-subtle: rgba(15, 23, 42, 0.04);
+  --color-border-medium: rgba(15, 23, 42, 0.1);
+  --color-border-accent: rgba(59, 130, 246, 0.05);
+
+  /* Shadows */
+  --shadow-shell: 0 32px 80px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.08), 0 10px 24px rgba(0, 0, 0, 0.04);
+
+  /* Adjust glow/accent variables for light bg if necessary */
+  --color-primary-subtle: rgba(255, 65, 114, 0.05);
+  --color-primary-border: rgba(255, 65, 114, 0.15);
+
+  /* Semantic */
+  --color-success: #16a34a;
+  --color-success-bg: rgba(22, 163, 74, 0.1);
+  --color-success-border: rgba(22, 163, 74, 0.2);
+  --color-error: #dc2626;
+  --color-error-bg: rgba(220, 38, 38, 0.08);
+  --color-error-border: rgba(220, 38, 38, 0.18);
+  --color-info: #2563eb;
+  --color-info-bg: rgba(37, 99, 235, 0.1);
+  --color-warning: #d97706;
+  --color-warning-bg: rgba(217, 119, 6, 0.1);
+
+  /* Utilities */
+  --icon-filter: invert(1);
+}
+
+/* ═══════════════════════════════════════════
+GLOBAL RESETS & BASE
+═══════════════════════════════════════════ */
+* {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: var(--color-primary-glow) var(--color-bg);
+  /* thumb color track color */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    font-family: var(--font-body);
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+>>>>>>> dev
