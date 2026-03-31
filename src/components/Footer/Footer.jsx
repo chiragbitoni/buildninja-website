@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import "./Footer.css";
+import styles from "./Footer.module.css";
 import { useRouter } from "next/navigation";
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 const GRAPEHUB_URL = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "";
@@ -70,36 +70,36 @@ export default function Footer() {
     };
 
     return (
-        <footer className="footerContainer">
-            <div className="footerWrapper">
-                <div className="footerContent">
+        <footer className={styles.footerContainer}>
+            <div className={styles.footerWrapper}>
+                <div className={styles.footerContent}>
                     {/* Left Section */}
-                    <div className="footerBrand">
-                        <div className="footerLogoContainer">
-                            <div className="footerLogo">
-                                <Image width={0} height={0} src="/resources/logo_buildninja.svg" alt="BuildNinja Logo" className="footerBuildNinjaLogo" />
+                    <div className={styles.footerBrand}>
+                        <div className={styles.footerLogoContainer}>
+                            <div className={styles.footerLogo}>
+                                <Image width={0} height={0} src="/resources/logo_buildninja.svg" alt="BuildNinja Logo" className={styles.footerBuildNinjaLogo} />
                             </div>
-                            {/* <h3 className="footerTitle">{footerText.company.name}</h3> */}
+                            {/* <h3 className={styles.footerTitle}>{footerText.company.name}</h3> */}
                         </div>
-                        <p className="footerDesc">{footerText.company.description}<br />{footerText.company.description2}</p>
-                        <Image width={0} height={0} src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className="footerGCLogo" />
-                        <div className="footerGCSocial">
-                            <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.linkedin.com/showcase/build-ninja/" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://www.youtube.com/@BuildNinja_CICD" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="footerSocialIcons" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
+                        <p className={styles.footerDesc}>{footerText.company.description}<br />{footerText.company.description2}</p>
+                        <Image width={0} height={0} src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className={styles.footerGCLogo} />
+                        <div className={styles.footerGCSocial}>
+                            <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.linkedin.com/showcase/build-ninja/" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.youtube.com/@BuildNinja_CICD" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
                         </div>
-                        <p className="footerCopy">{footerText.company.copyright}</p>
+                        <p className={styles.footerCopy}>{footerText.company.copyright}</p>
                     </div>
                     {/* Links Sections */}
-                    <div className="footerLinksContainer">
+                    <div className={styles.footerLinksContainer}>
                         {footerText.sections.map((section, idx) => (
-                            <div className="footerColumn" key={idx}>
-                                <h4 className="footerHeading">{section.title}</h4>
-                                <ul className="footerList">
+                            <div className={styles.footerColumn} key={idx}>
+                                <h4 className={styles.footerHeading}>{section.title}</h4>
+                                <ul className={styles.footerList}>
                                     {section.links.map((item, i) => (
-                                        <li key={i} className="footerListItem">
+                                        <li key={i} className={styles.footerListItem}>
                                             <a
                                                 href={item.link}
                                                 onClick={(e) => {
@@ -108,7 +108,7 @@ export default function Footer() {
                                                         router.push(item.link);
                                                     }
                                                 }}
-                                                className="footerLink"
+                                                className={styles.footerLink}
                                             >
                                                 {item.label}
                                             </a>

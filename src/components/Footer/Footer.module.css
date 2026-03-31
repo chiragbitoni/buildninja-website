@@ -1,20 +1,10 @@
-/* =========================
-   1️⃣ BASE — Mobile First
-========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 .footerContainer {
   background-color: var(--color-bg);
   background: var(--color-bg);
   color: var(--color-text-secondary);
   padding: 6vw 4vw;
   /* tighter mobile padding */
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-
+  font-family: var(--font-body);
   line-height: 1.45;
 }
 
@@ -48,7 +38,6 @@
 .footerLogo {
   width: 180px;
   height: auto;
-  /* background-color: #f4f4f4; */
   border-radius: 6px;
   flex-shrink: 0;
 }
@@ -63,13 +52,13 @@
   display: flex;
   gap: 10px;
   justify-content: space-between;
-  width: 25px;
+  width: 125px; /* Fixed width to match icons */
 }
 
 .footerSocialIcons {
   cursor: pointer;
-  width: auto;
-  height: auto;
+  width: 20px;
+  height: 20px;
   filter: var(--icon-filter);
 }
 
@@ -153,16 +142,9 @@
   outline: none;
 }
 
-/* Prevent horizontal scroll on very small screens */
-html,
-body {
-  -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
-}
-
 /* =========================
    2️⃣ Small Tablet / Landscape Mobile (≥600px)
-========================= */
+ ========================= */
 @media (min-width: 600px) {
   .footerContainer {
     padding: 5vw 5vw;
@@ -185,13 +167,13 @@ body {
 
   .footerGCLogo {
     margin-top: 10px;
-    width: 30%
+    width: 30%;
   }
 }
 
 /* =========================
    3️⃣ Tablet / Small Desktop (≥768px)
-========================= */
+ ========================= */
 @media (min-width: 768px) {
   .footerContent {
     flex-direction: row;
@@ -214,13 +196,13 @@ body {
 
   .footerGCLogo {
     margin-top: 10px;
-    width: 60%
+    width: 60%;
   }
 }
 
 /* =========================
    4️⃣ Desktop (≥1024px)
-========================= */
+ ========================= */
 @media (min-width: 1024px) {
   .footerContainer {
     padding: 4vw 6vw;
@@ -255,6 +237,6 @@ body {
 
   .footerGCLogo {
     margin-top: 10px;
-    width: 60%
+    width: 60%;
   }
 }

@@ -49,6 +49,7 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **BuildNinjaDemo Parity (Triggers & Notifications)**: Fully modernized the Triggers and Notifications tabs to match the production "Timeline" architecture. Standardized all icons (Mail, Thunder, Cog) and implemented theme-aware interactive cards.
 - ✅ **Configuration Details Optimization**: Refactored the Config Detail tab with a hybrid timeline-accordion structure, ensuring all sections are collapsed by default and expand seamlessly into shell grids.
 - ✅ **Agents Tab Layout Restoration**: Resolved grid distortion issues in the Agents view by restoring the `.agentRow` CSS structure and ensuring consistent use of semantic variables.
+- ✅ **Footer CSS Modules Conversion**: Refactored the global Footer to use CSS Modules (`Footer.module.css`) while maintaining 1:1 visual parity with the original design.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
