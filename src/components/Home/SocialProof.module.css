@@ -108,7 +108,7 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 24px;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent) !important;
 }
 
 .title {
