@@ -48,7 +48,7 @@ export default function HeroSection() {
         </div>
 
         <h1 className={styles.heading}>
-          Powerful Features,
+          Powerful Features,<br />
           <span className={styles.headingGradient}> Without the Maintenance Burden.</span>
         </h1>
 

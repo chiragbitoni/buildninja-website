@@ -115,7 +115,7 @@
   letter-spacing: -2.5px;
   margin: 0 0 20px;
   opacity: 0;
-  width: 700px;
+  width: 1100px;
   animation: var(--anim-fadeSlideDown, fadeSlideDown) 0.65s 0.28s ease forwards;
 }
 
@@ -160,8 +160,10 @@
     max-width: 300px;
     gap: 12px;
   }
-  
-  .ctaPrimary, .ctaSecondary, .ctaTertiary {
+
+  .ctaPrimary,
+  .ctaSecondary,
+  .ctaTertiary {
     width: 100%;
     justify-content: center;
     padding: 14px 20px;
