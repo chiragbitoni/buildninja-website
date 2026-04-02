@@ -70,20 +70,7 @@
 
 /* Badge */
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 20px;
-  border-radius: var(--radius-pill);
-  background: var(--color-primary-subtle);
-  border: 1px solid var(--color-primary-border);
-  color: var(--color-primary);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 24px;
-  font-family: var(--font-accent);
+  composes: badge from global;
 }
 
 .badgeDot {
@@ -314,17 +301,9 @@
 
 /* highlight badge */
 .cardHighlight {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  width: fit-content;
+  composes: badge from global;
   margin-bottom: 16px;
-  font-family: var(--font-accent);
+  cursor: default; /* Information indicator, not clickable */
 }
 
 .cardHighlightDefault {
@@ -374,19 +353,12 @@
 }
 
 .cardSavings {
-  display: inline-flex;
-  align-items: center;
+  composes: badge from global;
   background: var(--color-success-bg);
-  border: 1px solid var(--color-success-border);
+  border-color: var(--color-success-border);
   color: var(--color-success);
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
   margin-bottom: 16px;
-  font-family: var(--font-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  cursor: default;
 }
 
 /* Feature lists inside card */
@@ -558,19 +530,7 @@
 }
 
 .enterpriseBadge {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 16px;
-  border-radius: var(--radius-pill);
-  background: var(--color-primary-subtle);
-  border: 1px solid var(--color-primary-border);
-  color: var(--color-primary);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 20px;
-  font-family: var(--font-accent);
+  composes: badge from global;
 }
 
 .enterpriseTitle {

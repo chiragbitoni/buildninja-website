@@ -171,9 +171,18 @@ GLOBAL RESETS & BASE
     letter-spacing: 0.12em;
     margin-bottom: 24px;
     width: fit-content;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
-  /* Badge variant for secondary/alternate sections */
+  .badge:hover {
+    background: rgba(255, 65, 114, 0.12);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 65, 114, 0.1);
+  }
+
+  /* Badge variant for secondary/alternate sections - Not Interative */
   .badge-alt {
     display: inline-flex;
     align-items: center;
@@ -190,6 +199,7 @@ GLOBAL RESETS & BASE
     letter-spacing: 0.12em;
     margin-bottom: 24px;
     width: fit-content;
+    cursor: default;
   }
 
   /* Global Headings */
