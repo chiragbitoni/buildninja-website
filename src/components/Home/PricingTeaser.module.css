@@ -15,7 +15,7 @@
 }
 
 .badge {
-  composes: badge from global;
+  composes: badge-alt from global;
 }
 
 .title {
@@ -88,15 +88,13 @@
 }
 
 .saveBadge {
+  composes: badge-alt from global;
   background: var(--color-success-bg);
   color: var(--color-success);
-  border: 1px solid var(--color-success-border);
+  border-color: var(--color-success-border);
   padding: 2px 8px;
   border-radius: 12px;
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-bottom: 0 !important;
 }
 
 .grid {
@@ -159,21 +157,9 @@
 }
 
 .cardHighlightFeatured {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  width: fit-content;
+  composes: badge from global;
   margin-bottom: 16px;
-  font-family: var(--font-accent);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
-  color: #fff;
-  box-shadow: 0 4px 12px -4px var(--color-primary-glow);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: default; /* Information indicator, not clickable */
 }
 
 .cardHeader {

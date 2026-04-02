@@ -45,8 +45,8 @@ export default function Navbar() {
   const getLogoSrc = () => {
     if (!mounted) return "/resources/BuildNinjaDark.png";
     if (isHover) return "/resources/BuildNinjaPink.png";
-    return resolvedTheme === "dark" 
-      ? "/resources/BuildNinjaDark.png" 
+    return resolvedTheme === "dark"
+      ? "/resources/BuildNinjaDark.png"
       : "/resources/BuildNinjaLight.png";
   };
 
@@ -116,7 +116,6 @@ export default function Navbar() {
             onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
           />
 
-          <ThemeToggle />
 
           <button
             className={styles.navbarStartTrialButton}
@@ -127,6 +126,7 @@ export default function Navbar() {
         </ul>
 
         <AvatarMenu />
+        <ThemeToggle />
       </div>
     </nav>
   );
