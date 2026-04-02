@@ -7,7 +7,7 @@ const steps = [
     step: "01",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
       </svg>
     ),
     title: "Pull and Run",
@@ -18,7 +18,7 @@ const steps = [
     step: "02",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
       </svg>
     ),
     title: "Connect Code",
@@ -28,7 +28,7 @@ const steps = [
     step: "03",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+        <circle cx="12" cy="12" r="3" /><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14" />
       </svg>
     ),
     title: "Smart Config",
@@ -38,7 +38,7 @@ const steps = [
     step: "04",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" />
       </svg>
     ),
     title: "Scale Instantly",
@@ -72,10 +72,10 @@ export default function HowItWorks() {
   return (
     <section className={styles.section} id="how-it-works">
       <div className={styles.glow} aria-hidden="true" />
-      
+
       <div className={styles.container}>
         {/* Header Section */}
-        <motion.div 
+        <motion.div
           className={styles.header}
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className={styles.badge}>
-             Quick Launch
+            Quick Launch
           </div>
           <motion.h2 className={styles.title}>
             The Simple <span>Self-Hosted</span> Solution
@@ -94,7 +94,7 @@ export default function HowItWorks() {
         </motion.div>
 
         {/* Steps Grid */}
-        <motion.div 
+        <motion.div
           className={styles.grid}
           variants={containerVariants}
           initial="hidden"
@@ -112,13 +112,13 @@ export default function HowItWorks() {
                 </div>
 
                 <h3 className={styles.stepTitle}>{s.title}</h3>
-                
+
                 {s.code && (
                   <div className={styles.codeBlock}>
                     {s.code}
                   </div>
                 )}
-                
+
                 <p className={styles.desc}>{s.desc}</p>
               </div>
             </motion.div>
