@@ -50,7 +50,7 @@ export default function Cursor() {
         // Only hide the native cursor once we've confirmed the custom one is tracking
         var hideStyle = document.createElement('style');
         hideStyle.id = 'bn-cursor-hide';
-        hideStyle.textContent = 'body, a, button, [data-cursor-grow], .badge { cursor: none !important; }';
+        hideStyle.textContent = 'body, a, button, [data-cursor-grow], .badge, .badge-alt, [role="button"] { cursor: none !important; }';
         document.head.appendChild(hideStyle);
       }
 

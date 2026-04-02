@@ -42,7 +42,7 @@ export default function HeroSection() {
       {/* Hero copy — each child has its own animation class */}
       <div className={styles.copy}>
 
-        <div className={styles.heroBadge} onClick={() => { router.push("/install"); }}>
+        <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
           <span className={styles.badgeDot} />
           {siteConfig.version} is Live, with AI build analysis.
         </div>
@@ -57,7 +57,7 @@ export default function HeroSection() {
         </p>
 
         <div className={styles.ctas}>
-          <a className={styles.ctaPrimary} onClick={() => { router.push("/install") }}>
+          <a className={styles.ctaPrimary} onClick={() => { router.push("/install") }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -65,13 +65,13 @@ export default function HeroSection() {
             </svg>
             Try BuildNinja Free
           </a>
-          <a className={styles.ctaSecondary} onClick={() => { dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works", link: "https://buildninja.grapehub.io/docs/category/getting-started" })) }}>
+          <a className={styles.ctaSecondary} onClick={() => { dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works", link: "https://buildninja.grapehub.io/docs/category/getting-started" })) }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
             See the 3-Minute Demo
           </a>
-          <a className={styles.ctaTertiary} onClick={() => { router.push("/dojo") }}>
+          <a className={styles.ctaTertiary} onClick={() => { router.push("/dojo") }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
