@@ -83,6 +83,15 @@ export default function HeroSection() {
       {/* Dashboard with border-draw reveal */}
       <div className={styles.dashWrap}>
         <div className={styles.dashBorderBox}>
+          {/* Interactive Demo Hint */}
+          <div className={styles.interactiveHint}>
+            <span className={styles.hintDot} />
+            <svg className={styles.hintCursor} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 3l14 9-7 1-4 7-3-17z" />
+            </svg>
+            Interactive Demo — Click Around to Explore
+          </div>
+
           {/* SVG border that draws itself */}
           <svg className={styles.borderSvg} viewBox="0 0 1160 600" preserveAspectRatio="none">
             <defs>
