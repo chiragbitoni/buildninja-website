@@ -130,7 +130,7 @@
 }
 
 .stepCard:hover .iconWrapper {
-  transform: scale(1.1) rotate(-5deg);
+  transform: scale(1.1);
   background: var(--color-primary);
   color: #fff;
 }
@@ -206,12 +206,11 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(to right, 
-    transparent, 
-    var(--color-border-strong) 20%, 
-    var(--color-border-strong) 80%, 
-    transparent
-  );
+  background: linear-gradient(to right,
+      transparent,
+      var(--color-border-strong) 20%,
+      var(--color-border-strong) 80%,
+      transparent);
   z-index: 1;
 }
 
@@ -227,6 +226,7 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
   }
+
   .grid::after {
     display: none;
   }
@@ -236,14 +236,17 @@
   .section {
     padding: 80px 20px;
   }
+
   .grid {
     grid-template-columns: 1fr;
     justify-items: center;
   }
+
   .header {
     margin-bottom: 48px;
     text-align: left;
   }
+
   .subtitle {
     margin: 0;
     max-width: 100%;
