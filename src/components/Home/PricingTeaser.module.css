@@ -157,9 +157,8 @@
 }
 
 .cardHighlightFeatured {
-  composes: badge from global;
-  margin-bottom: 16px;
-  cursor: default; /* Information indicator, not clickable */
+  composes: badge-alt from global;
+  margin-bottom: 20px;
 }
 
 .cardHeader {

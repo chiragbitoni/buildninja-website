@@ -11,7 +11,7 @@ export default function Cursor() {
       if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
       if (document.getElementById('bn-cursor-dot')) return;
 
-      // Inject styles
+      // Inject cursor element styles only (NO cursor:none yet — use native as fallback)
       var style = document.createElement('style');
       style.textContent = [
         '#bn-cursor-dot {',
@@ -28,9 +28,7 @@ export default function Cursor() {
         '  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;',
         '  pointer-events: none; z-index: 10000;',
         '  background: transparent;',
-        '}',
-        'body { cursor: none !important; }',
-        'a, button, [data-cursor-grow], .badge { cursor: none !important; }'
+        '}'
       ].join('');
       document.head.appendChild(style);
 
@@ -44,12 +42,26 @@ export default function Cursor() {
 
       var mouse = { x: -100, y: -100 };
       var ringPos = { x: -100, y: -100 };
+      var nativeCursorHidden = false;
+
+      function hidNativeCursor() {
+        if (nativeCursorHidden) return;
+        nativeCursorHidden = true;
+        // Only hide the native cursor once we've confirmed the custom one is tracking
+        var hideStyle = document.createElement('style');
+        hideStyle.id = 'bn-cursor-hide';
+        hideStyle.textContent = 'body, a, button, [data-cursor-grow], .badge, .badge-alt, [role="button"] { cursor: none !important; }';
+        document.head.appendChild(hideStyle);
+      }
 
       function onMove(e) {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
         dot.style.left = mouse.x + 'px';
         dot.style.top = mouse.y + 'px';
+
+        // Confirm cursor is working, then hide native
+        hidNativeCursor();
 
         var t = e.target;
         var hoverable = t.closest('a, button, .badge, [data-cursor-grow]');

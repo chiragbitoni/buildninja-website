@@ -83,7 +83,15 @@ export default function Footer() {
                             {/* <h3 className={styles.footerTitle}>{footerText.company.name}</h3> */}
                         </div>
                         <p className={styles.footerDesc}>{footerText.company.description}<br />{footerText.company.description2}</p>
-                        <Image width={0} height={0} src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className={styles.footerGCLogo} />
+                        <a 
+                          href="https://www.grapecity.in/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className={styles.footerGCLogoLink}
+                          data-cursor-grow
+                        >
+                          <Image width={0} height={0} src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className={styles.footerGCLogo} />
+                        </a>
                         <div className={styles.footerGCSocial}>
                             <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.linkedin.com/showcase/build-ninja/" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
