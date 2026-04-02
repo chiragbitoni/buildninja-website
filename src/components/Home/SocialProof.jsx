@@ -2,6 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
+  faCalendarDays,
+  faBox,
+  faBug,
+  faFire,
+  faHeadset,
+  faStopwatch,
   faBolt, 
   faLayerGroup, 
   faRocket, 
@@ -17,32 +23,35 @@ import {
 import styles from "./SocialProof.module.css";
 
 const problems = [
-  { icon: faClock, text: "Spending weeks on Jenkins plugins." },
-  { icon: faExclamationTriangle, text: "Opaque deployment failures." },
-  { icon: faUsersSlash, text: "Burning out engineering talent." },
-  { icon: faArrowTrendUp, text: "Escalating per-seat SaaS costs." },
-  { icon: faLayerGroup, text: "Buggy, unreliable pipelines." },
-  { icon: faBolt, text: "Missing critical delivery deadlines." }
+  { icon: faCalendarDays, text: "Spending weeks configuring Jenkins or other complex CI/CD tools" },
+  { icon: faBox, text: "Dealing with deployment failures during critical business moments" },
+  { icon: faBug, text: "Losing customers due to slow feature delivery and buggy releases" },
+  { icon: faFire, text: "Burning out your best engineers on infrastructure instead of innovation" },
+  { icon: faHeadset, text: "Paying escalating per-seat costs as your team grows" },
+  { icon: faStopwatch, text: "Missing deadlines because your deployment pipeline is unreliable" }
 ];
 
 const whys = [
   {
     title: "Eliminate Friction",
     icon: faBolt,
+    tag: "Performance",
     desc: "CI/CD tools often promise simplicity but deliver hidden complexity. BuildNinja removes the abstraction layers, giving you raw speed without the YAML headaches.",
     color: "var(--color-primary)"
   },
   {
     title: "Optimized Flow",
     icon: faLayerGroup,
+    tag: "Experience",
     desc: "If an engineer can't understand the pipeline in 5 minutes, it's failed. Built by a team with 25+ years of software delivery expertise.",
-    color: "#40a9ff"
+    color: "var(--color-info)"
   },
   {
     title: "Scale Confidently",
     icon: faRocket,
+    tag: "Reliability",
     desc: "Ship features multiple times daily on your own hardware. No DevOps PhD required. Just reliable builds that work every single time.",
-    color: "#62de56"
+    color: "var(--color-success)"
   }
 ];
 
@@ -132,14 +141,18 @@ export default function SocialProof() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className={styles.whyIcon} style={{ "--accent": w.color }}>
-                  <FontAwesomeIcon icon={w.icon} />
+                <div className={styles.cardHeader}>
+                  <div className={styles.whyIcon} style={{ "--accent": w.color }}>
+                    <FontAwesomeIcon icon={w.icon} />
+                  </div>
+                  <span className={styles.cardTag} style={{ "--accent": w.color }}>{w.tag}</span>
                 </div>
                 <h3 className={styles.whyTitle}>{w.title}</h3>
                 <p className={styles.whyDesc}>{w.desc}</p>
-                <div className={styles.cardBg} />
+                <div className={styles.cardGlow} style={{ "--accent": w.color }} />
+                <div className={styles.cardNoise} />
               </motion.div>
             ))}
           </div>

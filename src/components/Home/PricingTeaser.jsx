@@ -1,41 +1,62 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./PricingTeaser.module.css";
 
-const pricingPlans = [
-  {
-    name: "Solo Edition",
-    price: "Free Forever",
-    desc: "Perfect for individuals and small teams.",
-    features: [
-      "Up to 10 users",
-      "Unlimited agents",
-      "3 concurrent builds",
-      "1 SSO provider"
-    ],
-    button: "Install Free",
-    link: "/install",
-    highlight: false,
-  },
-  {
-    name: "Shogun Edition",
-    price: "$199",
-    period: "/month",
-    desc: "The full platform. Unlimited everything. No commitment.",
-    features: [
-      "Unlimited users & agents",
-      "Unlimited concurrent builds",
-      "Kubernetes high-availability",
-      "Priority direct engineering support"
-    ],
-    button: "Start 30-Day Trial",
-    link: "/addtocart?planid=ebf94a66-a86f-4ea5-a5cc-f401d81ead21",
-    highlight: true,
-  }
-];
+import { useSelector, useDispatch } from "react-redux";
+import { setBilling } from "@/redux/slice/pricingSlice";
 
 export default function PricingTeaser() {
+  const dispatch = useDispatch();
+  const region = useSelector((state) => state.pricing?.region || "worldwide");
+  const billing = useSelector((state) => state.pricing?.billing || "monthly");
+
+  const isIndia = region === "india";
+  const isAnnual = billing === "annual";
+
+  const shogunPrice = isIndia
+    ? isAnnual ? "₹11,666" : "₹17,499"
+    : isAnnual ? "$133" : "$199";
+
+  const shogunPeriod = isAnnual ? "/mo (billed annually)" : "/month";
+
+  const pricingPlans = [
+    {
+      name: "Solo Edition",
+      price: "Free Forever",
+      period: "",
+      desc: "Perfect for individuals and small growing teams.",
+      features: [
+        "Up to 10 users",
+        "3 concurrent builds",
+        "Unlimited build agents",
+        "30-day build history",
+        "1 SSO provider choice"
+      ],
+      button: "Get Your Free Key",
+      link: "/install",
+      note: "No strings attached",
+      highlight: false,
+    },
+    {
+      name: "Shogun Edition",
+      price: shogunPrice,
+      period: shogunPeriod,
+      desc: "Enterprise scale without per-seat cost anxiety.",
+      features: [
+        "Unlimited users & projects",
+        "Unlimited concurrent builds",
+        "Unlimited build agents",
+        "Perpetual build history",
+        "Priority business support"
+      ],
+      button: "Start Trial License",
+      link: "/addtocart?planid=ebf94a66-a86f-4ea5-a5cc-f401d81ead21",
+      note: "No credit card required",
+      highlight: true,
+    }
+  ];
+
   return (
     <section className={styles.section} id="pricing">
       <div className={styles.container}>
@@ -55,10 +76,34 @@ export default function PricingTeaser() {
           </p>
         </motion.div>
 
+        <motion.div 
+          className={styles.toggleWrapper}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          <div className={styles.toggleGroup}>
+            <button
+              className={`${styles.toggleBtn} ${!isAnnual ? styles.activeToggle : ""}`}
+              onClick={() => dispatch(setBilling("monthly"))}
+            >
+              Monthly
+            </button>
+            <button
+              className={`${styles.toggleBtn} ${isAnnual ? styles.activeToggle : ""}`}
+              onClick={() => dispatch(setBilling("annual"))}
+            >
+              Annual <span className={styles.saveBadge}>Save 33%</span>
+            </button>
+          </div>
+        </motion.div>
+
         <div className={styles.grid}>
           {pricingPlans.map((plan, i) => (
             <motion.div
               key={plan.name}
+              layout
               className={`${styles.card} ${plan.highlight ? styles.highlightCard : ""}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -66,15 +111,43 @@ export default function PricingTeaser() {
               transition={{ delay: i * 0.2, duration: 0.6 }}
             >
               <div className={styles.cardHeader}>
-                <h3 className={styles.planName}>{plan.name}</h3>
-                <div className={styles.priceRow}>
-                  <span className={styles.price}>{plan.price}</span>
-                  {plan.period && <span className={styles.period}>{plan.period}</span>}
-                </div>
-                <p className={styles.planDesc}>{plan.desc}</p>
+                {plan.highlight && (
+                  <span className={styles.cardHighlightFeatured}>MOST POPULAR</span>
+                )}
+                <motion.h3 layout className={styles.planName}>{plan.name}</motion.h3>
+                <motion.div layout className={styles.priceRow}>
+                  <AnimatePresence mode="popLayout">
+                    <motion.span
+                      key={plan.price}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className={styles.price}
+                    >
+                      {plan.price}
+                    </motion.span>
+                  </AnimatePresence>
+                  
+                  {plan.period && (
+                    <AnimatePresence mode="popLayout">
+                      <motion.span
+                        key={plan.period}
+                        initial={{ opacity: 0, x: -5 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 5 }}
+                        transition={{ duration: 0.2 }}
+                        className={styles.period}
+                      >
+                        {plan.period}
+                      </motion.span>
+                    </AnimatePresence>
+                  )}
+                </motion.div>
+                <motion.p layout className={styles.planDesc}>{plan.desc}</motion.p>
               </div>
 
-              <ul className={styles.featureList}>
+              <motion.ul layout className={styles.featureList}>
                 {plan.features.map((feat, idx) => (
                   <li key={idx} className={styles.featureItem}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.checkIcon}>
@@ -83,14 +156,14 @@ export default function PricingTeaser() {
                     {feat}
                   </li>
                 ))}
-              </ul>
+              </motion.ul>
 
-              <div className={styles.cardFooter}>
+              <motion.div layout className={styles.cardFooter}>
                 <Link href={plan.link} className={plan.highlight ? styles.primaryBtn : styles.secondaryBtn}>
                   {plan.button}
                 </Link>
-                {plan.highlight && <p className={styles.guarantee}>No credit card required</p>}
-              </div>
+                {plan.note && <p className={styles.guarantee}>{plan.note}</p>}
+              </motion.div>
             </motion.div>
           ))}
         </div>

@@ -44,7 +44,7 @@ export default function HeroSection() {
 
         <div className={styles.heroBadge} onClick={() => { router.push("/install"); }}>
           <span className={styles.badgeDot} />
-          Deploy in minutes, not weeks of complex setup.
+          {siteConfig.version} is Live, with AI build analysis.
         </div>
 
         <h1 className={styles.heading}>
