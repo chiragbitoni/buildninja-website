@@ -150,6 +150,67 @@ GLOBAL RESETS & BASE
   }
 }
 
+/* ═══════════════════════════════════════════
+   GLOBAL TYPOGRAPHY & UTILITY CLASSES
+   ═══════════════════════════════════════════ */
+@layer components {
+  /* Global Badge Utility - Premium Accent Style */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-subtle);
+    border: 1px solid var(--color-primary-border);
+    color: var(--color-primary);
+    font-family: var(--font-accent);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+    width: fit-content;
+  }
+
+  /* Badge variant for secondary/alternate sections */
+  .badge-alt {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--color-demo-accent-bg);
+    border: 1px solid var(--color-demo-accent-border);
+    color: var(--color-demo-accent);
+    font-family: var(--font-accent);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+    width: fit-content;
+  }
+
+  /* Global Headings */
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 700px;
+  }
+}
+
 /* Hide native cursor ONLY on devices with a mouse/precise pointer */
 @media (pointer: fine) {
   body {
