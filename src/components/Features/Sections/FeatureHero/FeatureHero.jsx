@@ -35,9 +35,14 @@ export default function FeatureHero() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div className={styles.badge} variants={itemVariants}>
+          <motion.div 
+            className={styles.badge} 
+            variants={itemVariants}
+            onClick={() => window.location.href = '/install'}
+            style={{ cursor: 'pointer' }}
+          >
             <span className={styles.badgeDot} />
-            {siteConfig.version} &nbsp;·&nbsp; Generally Available
+            {siteConfig.version} is Live, with AI build analysis.
           </motion.div>
 
           <motion.h1 className={styles.heading} variants={itemVariants}>

@@ -36,7 +36,8 @@ export default function Cursor() {
       mouse.current = { x: e.clientX, y: e.clientY };
       
       const target = e.target;
-      const isHoverable = target.closest('a, button, [data-cursor-grow]');
+      // Also grow on badges, links, buttons, and custom attributes
+      const isHoverable = target.closest('a, button, .badge, [data-cursor-grow]');
       if (isHoverable) grow();
       else shrink();
     };
