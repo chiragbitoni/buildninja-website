@@ -54,6 +54,9 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **BuildNinjaDemo SEO Optimization**: Systematically removed all `<h1>` and `<h2>` tags within the `BuildNinjaDemo` component to ensure a single `<h1>` per page (typically in the Hero) and prevent heading conflicts. Replaced dashboard and pane headers with styled `<div>` elements to maintain visual parity without impacting SEO ranking.
 - ✅ **Global SEO Audit & Cleanup**: Resolved "Missing H1" issues in `src/app/not-found.jsx` and verified landing pages (Hero, Partner, Pricing) maintain a single semantic `<h1>`.
 - ✅ **Marketing Landing Page Modernization**: Refactored the `/landing-page` (Hero, Features, and About sections) to use CSS Modules and Framer Motion. Implemented a lead-gen focused Hero with a glassmorphic form, animated background drifting orbs, and staggered scroll-reveal animations for all feature segments.
+- ✅ **Social Proof Modernization**: Overhauled the `SocialProof` component with glassmorphic stats, a modernized "WhyUs" bento-lite grid, and premium card effects (glow, noise, semantic tagging).
+- ✅ **How It Works Iconography Stabilization**: Removed icon tilt/rotation in the "Simple Self-Hosted Solution" section to adhere to new stable iconography rules.
+- ✅ **Pricing Teaser Alignment**: Synced `PricingTeaser` on the homepage with the main `/pricing` page data. It now uses Redux to get the selected region and accurately displays Shogun/Solo features and Indian/Global pricing.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
@@ -72,3 +75,4 @@ The Home and Feature pages have been significantly modernized with a premium, da
 8. **Generic Data Names**: Never use original project or user names (e.g., "Asher", "onlyvcs") found in reference links or internal systems. Always replace them with generic alternatives (e.g., "Alpha", "Project Alpha", "Main Build") in demonstration components and mocks.
 9. **Production UI Parity**: When updating demonstration components (like BuildNinjaDemo), always cross-reference against verified production screenshots or site logs to ensure functional and visual parity (e.g., timeline paths, specific SVG paths, and status toggle behaviors).
 10. **Heading Hierarchy (SEO)**: Never use `<h1>` tags inside reusable components or demos that are intended to be nested within a page's Hero section. Use `<div>` or `<span>` with existing typography classes (e.g., `s.pageH1`, `s.paneTitle`) to maintain the visual hierarchy while keeping the page-level `<h1>` unique for SEO. Use `<h2>` sparingly for top-level section headers only.
+11. **Stable Iconography**: Avoid using `rotate` or `tilt` transformations on icons during hover states. Keep animations focused on `scale`, `opacity`, or `color` transitions to maintain a professional, stable UI.
