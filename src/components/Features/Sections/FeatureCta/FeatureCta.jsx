@@ -39,12 +39,15 @@ export default function FeatureCta() {
               </svg>
               Install BuildNinja Free
             </Link>
-            <Link href="/support" className={styles.btnOutline}>
+            <a 
+              href={`mailto:${process.env.NEXT_PUBLIC_SALES_EMAIL_ID}?subject=Inquiry about BuildNinja Enterprise`} 
+              className={styles.btnOutline}
+            >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
               Talk to Sales
-            </Link>
+            </a>
           </div>
 
           <div className={styles.miniStats}>

@@ -33,7 +33,7 @@
 }
 
 .badge {
-  composes: badge from global;
+  composes: badge-alt from global;
   animation: fadeInDown 0.6s ease-out both; 
 }
 

@@ -53,7 +53,7 @@
 }
 
 .badge {
-  composes: badge from global;
+  composes: badge-alt from global;
 }
 
 .title {
