@@ -52,7 +52,8 @@
   display: flex;
   gap: 10px;
   justify-content: space-between;
-  width: 125px; /* Fixed width to match icons */
+  width: 125px;
+  /* Fixed width to match icons */
 }
 
 .footerSocialIcons {

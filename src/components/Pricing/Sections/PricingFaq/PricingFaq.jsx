@@ -28,6 +28,7 @@ export default function PricingFaq() {
               className={`${s.faqCard} ${openIndex === index ? s.faqCardOpen : ""}`}
               onClick={() => toggle(index)}
               role="button"
+              data-cursor-grow
               aria-expanded={openIndex === index}
               id={`pricing-faq-${index}`}
             >
