@@ -1,70 +1,94 @@
 "use client";
+import { useDispatch } from "react-redux";
+import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { motion } from "framer-motion";
 import styles from "./FeaturesGrid.module.css";
 
 const features = [
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+        <line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
-    title: "Instant Insight, No Detective Work",
-    desc: "Track every build with high-resolution logs and duration analytics in one sleek interface—stop hunting through plugin outputs.",
+    title: "Real-Time Dashboard & Logs",
+    desc: "Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.",
+    videoId: 'Pjl3muKtmhE',
+    videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view'
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    title: "Zero-Headache Infrastructure",
-    desc: "Monitor your entire build farm in real-time. Transparent status, health, and capacity without ever needing to SSH.",
+    title: "Agent Management",
+    desc: "Authorize, monitor, and configure build agents across Windows, Linux, and macOS. Set capability requirements to route builds to the right agent automatically.",
+    videoId: 'MnvaPLguA6c',
+    videoLink: 'https://buildninja.grapehub.io/docs/manage-agents/'
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
       </svg>
     ),
-    title: "Automated Loop Closures",
-    desc: "Critical alerts for build events delivered instantly. No complex configuration, no hidden costs, just reliable notification.",
+    title: "Notifications & Alerts",
+    desc: "Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.",
+    videoId: '2OuADSNMEoc',
+    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings'
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="18" cy="18" r="3" />
+        <circle cx="6" cy="6" r="3" />
+        <path d="M13 6h3a2 2 0 0 1 2 2v7" />
+        <line x1="6" y1="9" x2="6" y2="21" />
       </svg>
     ),
-    title: "Total Configuration Control",
-    desc: "Unified management for VCS, build steps, and artifacts. Modify your pipeline with confidence using clear, visual tools.",
+    title: "Version Control & Native Git",
+    desc: "Deep integrations with GitHub, GitLab, Bitbucket, and any Git host. Built-in Git with intelligent caching cuts clone time dramatically.",
+    videoId: 'YOpVrKIF8wE',
+    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-and-edit-builds'
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
     ),
-    title: "Enterprise-Grade RBAC",
-    desc: "Granular access control and powerful environment parameters. Built for professional teams requiring strict security standards.",
+    title: "Security & Access Control",
+    desc: "Role-based access control (RBAC) at project and system level. SSO with SAML 2.0, LDAP, OAuth. AES-256 encryption for all secrets.",
+    videoId: 'C-Ln6bbGo2E',
+    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" />
       </svg>
     ),
-    title: "Native Cloud Integration",
-    desc: "Clone, build, and deploy with native Git caching and SSH execution logic. No clunky plugins—just pure speed.",
+    title: "Pipeline Runners",
+    desc: "Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at config or project level.",
+    videoId: 'IOd9CmP6G4c',
+    videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners'
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: "Reliable Build Automation",
-    desc: "Flexible scheduling with custom, daily, or event-driven triggers. Know exactly what's queued, when it runs, and why — with simple, no-YAML configuration.",
+    title: "Smart Build Automation",
+    desc: "Trigger builds automatically on schedule, commit, or custom event. Multi-environment support with intelligent retry and dependency resolution.",
+    videoId: '5wFDALkVM0Y',
+    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/schedule-build-triggers'
   },
 ];
 
@@ -91,6 +115,21 @@ const cardVariants = {
 };
 
 export default function FeaturesGrid() {
+  const dispatch = useDispatch();
+
+  const handleVideoClick = (e, feature) => {
+    e.stopPropagation();
+    if (!feature.videoId) return;
+    dispatch(
+      openVideo({
+        videoId: feature.videoId,
+        title: feature.title,
+        ctaText: feature.desc,
+        link: feature.videoLink,
+      })
+    );
+  };
+
   return (
     <section className={styles.section} id="features">
       <div className={styles.glow} />
@@ -135,6 +174,18 @@ export default function FeaturesGrid() {
               </div>
               <h3 className={styles.cardTitle}>{f.title}</h3>
               <p className={styles.cardDesc}>{f.desc}</p>
+              {f.videoId && (
+                <button
+                  className={styles.videoBadge}
+                  onClick={(e) => handleVideoClick(e, f)}
+                  aria-label={`Watch ${f.title} demo`}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                  Watch Demo
+                </button>
+              )}
             </motion.div>
           ))}
         </motion.div>
