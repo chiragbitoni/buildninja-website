@@ -2,6 +2,28 @@
 import s from "./PartnerHero.module.css";
 import { useEffect, useRef } from "react";
 import NetworkBackground from "@/components/ui/NetworkBackground";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.1,
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    }
+};
 
 export default function PartnerHero() {
   const orb1 = useRef(null);
@@ -38,8 +60,13 @@ export default function PartnerHero() {
       <div className={s.grid} />
       <div className={s.bottomFade} />
       
-      <div className={s.inner}>
-        <div className={s.badgeWrap}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <motion.div className={s.badgeWrap} variants={itemVariants}>
             <span className={s.badge}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                 Self-hosted & secure
@@ -52,17 +79,17 @@ export default function PartnerHero() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 Predictable pricing
             </span>
-        </div>
+        </motion.div>
         
-        <h1 className={s.heading}>
+        <motion.h1 className={s.heading} variants={itemVariants}>
             Partner with <span className={s.accent}>BuildNinja.</span>
-        </h1>
+        </motion.h1>
         
-        <p className={s.description}>
+        <motion.p className={s.description} variants={itemVariants}>
           Ship secure CI/CD inside your customer's infrastructure. BuildNinja is a high-performance self-hosted CI/CD platform built for teams that need speed, security, and control—across cloud, on-prem, or air-gapped environments.
-        </p>
+        </motion.p>
 
-        <div className={s.btnGroup}>
+        <motion.div className={s.btnGroup} variants={itemVariants}>
             <button className={s.btnPrimary} onClick={scrollAndFocus}>
                 Let's grow together
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -71,8 +98,8 @@ export default function PartnerHero() {
                 Explore partnership models
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
