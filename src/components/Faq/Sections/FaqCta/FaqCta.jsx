@@ -5,12 +5,19 @@ import { fifthSectionText } from "../../../../../public/static/faqPageText";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
+import { motion } from "framer-motion";
 
 export default function FaqCta() {
   const dispatch = useDispatch();
   return (
     <section className={s.section}>
-      <div className={s.inner}>
+      <motion.div 
+        className={s.inner}
+        initial={{ opacity: 0, scale: 0.92, y: 60 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      >
         <h2 className={s.title}>{fifthSectionText.title}</h2>
         <p className={s.desc}>{fifthSectionText.description}</p>
         
@@ -32,7 +39,7 @@ export default function FaqCta() {
             </svg>
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

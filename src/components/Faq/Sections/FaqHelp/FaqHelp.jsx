@@ -3,20 +3,53 @@ import React from "react";
 import s from "./FaqHelp.module.css";
 import { fourthSectionText } from "../../../../../public/static/faqPageText";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+  }
+};
 
 export default function FaqHelp() {
   return (
     <section className={s.section}>
       <div className={s.inner}>
-        <div className={s.header}>
+        <motion.div 
+          className={s.header} 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={itemVariants}
+        >
           <h2 className={s.title}>{fourthSectionText.title}</h2>
           <p className={s.subTitle}>{fourthSectionText.subTitle}</p>
-        </div>
+        </motion.div>
 
-        <div className={s.grid}>
+        <motion.div 
+          className={s.grid}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {fourthSectionText.cards.map((card, idx) => {
             const isExternal = Boolean(card.link);
-            const CardTag = isExternal ? "a" : Link;
+            const CardTag = isExternal ? motion.a : motion(Link);
             const props = isExternal 
               ? { href: card.link, target: "_blank", rel: "noopener noreferrer" } 
               : { href: card.router || "#" };
@@ -51,7 +84,13 @@ export default function FaqHelp() {
             }
 
             return (
-              <CardTag key={idx} className={s.card} {...props}>
+              <CardTag 
+                key={idx} 
+                className={s.card} 
+                {...props}
+                variants={itemVariants}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              >
                 <div className={s.iconWrap}>
                   {IconSvg}
                 </div>
@@ -67,7 +106,7 @@ export default function FaqHelp() {
               </CardTag>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
