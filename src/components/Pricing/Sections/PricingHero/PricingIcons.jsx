@@ -25,7 +25,7 @@ export const ShogunIcon = () => (
 );
 
 export const EnterpriseIcon = () => (
-  <svg width="56" height="56" viewBox="0 0 102.58 149.34" style={{ color: 'var(--color-accent, #ff6135)' }}>
+  <svg width="56" height="56" viewBox="0 0 102.58 149.34" style={{ color: 'var(--color-primary-alt)' }}>
     <g fill="none" stroke="currentColor" strokeMiterlimit="10">
       <g strokeWidth="3.2">
         <line x1="51.25" y1="116.08" x2="51.25" y2="116.07"/>
