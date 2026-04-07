@@ -299,11 +299,18 @@
   box-shadow: 0 20px 60px -20px var(--color-primary-glow);
 }
 
-/* highlight badge */
+/* Highlight Badge - Replacing 'composes' with standard styles for better support */
 .cardHighlight {
-  composes: badge from global;
-  margin-bottom: 16px;
-  cursor: default; /* Information indicator, not clickable */
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  cursor: default;
 }
 
 .cardHighlightDefault {
@@ -323,21 +330,21 @@
 
 /* Plan Icons */
 .cardIcon {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--color-border-medium);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .cardFeatured .cardIcon {
@@ -357,12 +364,28 @@
   box-shadow: 0 0 20px rgba(255, 65, 114, 0.1);
 }
 
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.cardTitleText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .cardEdition {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--color-text);
-  margin: 0 0 6px;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .cardPrice {
@@ -565,13 +588,32 @@
   background: linear-gradient(90deg, transparent, var(--color-primary-border), transparent);
 }
 
+/* Enterprise Header Update */
+.enterpriseHead {
+  display: flex;
+  flex-direction: column; /* Centered column for enterprise as it's a wide hero card */
+  align-items: center;
+  margin-bottom: 32px;
+}
+
 .enterpriseBadge {
-  composes: badge from global;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255, 97, 53, 0.15);
+  color: #ff6135;
+  border: 1px solid rgba(255, 97, 53, 0.3);
+  margin-top: 12px;
 }
 
 .enterpriseIcon {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   background: rgba(255, 97, 53, 0.08); /* Warm accent for enterprise */
   border: 1px solid rgba(255, 97, 53, 0.2);
   border-radius: var(--radius-xl);

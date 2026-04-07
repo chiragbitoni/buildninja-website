@@ -95,13 +95,17 @@ export default function PricingHero() {
     const card = secondSectionText.monthCards.soloEditionCard;
     return (
       <div className={s.card}>
-        <div className={s.cardIcon}>
-          <FreeIcon />
+        <div className={s.cardHead}>
+          <div className={s.cardIcon}>
+            <FreeIcon />
+          </div>
+          <div className={s.cardTitleText}>
+            <span className={`${s.cardHighlight} ${s.cardHighlightDefault}`}>
+              {card.highlight}
+            </span>
+            <h3 className={s.cardEdition}>{card.edition}</h3>
+          </div>
         </div>
-        <span className={`${s.cardHighlight} ${s.cardHighlightDefault}`}>
-          {card.highlight}
-        </span>
-        <h3 className={s.cardEdition}>{card.edition}</h3>
         <p className={s.cardPrice}>{card.price}</p>
         {card.priceDescription && (
           <p className={s.cardDesc}>{card.priceDescription}</p>
@@ -175,13 +179,17 @@ export default function PricingHero() {
     const listItems = secondSectionText.annualCard?.list || [];
     return (
       <div className={`${s.card} ${s.cardFeatured}`}>
-        <div className={s.cardIcon}>
-          <ShogunIcon />
+        <div className={s.cardHead}>
+          <div className={s.cardIcon}>
+            <ShogunIcon />
+          </div>
+          <div className={s.cardTitleText}>
+            <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>
+              {card.highlight}
+            </span>
+            <h3 className={s.cardEdition}>{card.edition}</h3>
+          </div>
         </div>
-        <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>
-          {card.highlight}
-        </span>
-        <h3 className={s.cardEdition}>{card.edition}</h3>
         <p className={s.cardPrice}>{card.price}</p>
         {secondSectionText.annualCard?.ideal && (
           <p className={s.cardIdeal}>{secondSectionText.annualCard.ideal}</p>
@@ -226,11 +234,15 @@ export default function PricingHero() {
 
     return (
       <div className={`${s.card} ${s.cardFeatured}`}>
-        <div className={s.cardIcon}>
-          <ShogunIcon />
+        <div className={s.cardHead}>
+          <div className={s.cardIcon}>
+            <ShogunIcon />
+          </div>
+          <div className={s.cardTitleText}>
+            <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>{plan.highlight}</span>
+            <h3 className={s.cardEdition}>{plan.edition}</h3>
+          </div>
         </div>
-        <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>{plan.highlight}</span>
-        <h3 className={s.cardEdition}>{plan.edition}</h3>
         <p className={s.cardPrice}>{plan.price}</p>
         {plan.description && <p className={s.cardDesc}>{plan.description}</p>}
         {plan.savings && <span className={s.cardSavings}>{plan.savings}</span>}
@@ -268,10 +280,12 @@ export default function PricingHero() {
   /* ──────────────── Enterprise Card ──────────────── */
   const EnterpriseCard = () => (
     <div className={s.enterpriseCard}>
-      <div className={s.enterpriseIcon}>
-        <EnterpriseIcon />
+      <div className={s.enterpriseHead}>
+        <div className={s.enterpriseIcon}>
+          <EnterpriseIcon />
+        </div>
+        <span className={s.enterpriseBadge}>{secondSectionEnterpriseCardText.highlight}</span>
       </div>
-      <span className={s.enterpriseBadge}>{secondSectionEnterpriseCardText.highlight}</span>
       <h4 className={s.enterpriseTitle}>{secondSectionEnterpriseCardText.title}</h4>
       <p className={s.enterpriseDesc}>{secondSectionEnterpriseCardText.description}</p>
       <div className={s.enterpriseBtnRow}>
