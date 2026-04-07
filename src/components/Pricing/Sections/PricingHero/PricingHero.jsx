@@ -14,6 +14,38 @@ import { fetchPlansFromAPI } from "@/services/plans/plans";
 import Image from "next/image";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import { FreeIcon, ShogunIcon, EnterpriseIcon } from "./PricingIcons";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  }
+};
 
 export default function PricingHero() {
   const dispatch = useDispatch();
@@ -313,25 +345,30 @@ export default function PricingHero() {
       <div className={s.grid} />
       <div className={s.bottomFade} />
 
-      <div className={s.inner}>
-        <span className={s.badge}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <motion.span className={s.badge} variants={itemVariants}>
           <span className={s.badgeDot} />
           No Per-Seat Pricing · Ever
-        </span>
+        </motion.span>
 
-        <h1 className={s.heading}>
+        <motion.h1 className={s.heading} variants={itemVariants}>
           Self-Hosted CI/CD Without{" "}
           <span className={s.accent}>Pricing Surprises</span>
-        </h1>
+        </motion.h1>
 
-        <p className={s.description}>
+        <motion.p className={s.description} variants={itemVariants}>
           CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free with unlimited
           agents (up to 3 concurrent builds).{" "}
           Need more? Scale to unlimited concurrency — still no per-seat pricing, ever.
-        </p>
+        </motion.p>
 
         {/* ─── Toggle Controls ─── */}
-        <div className={s.controls}>
+        <motion.div className={s.controls} variants={itemVariants}>
           <div className={s.toggleRow}>
             <div className={s.toggleGroup}>
               <button
@@ -386,31 +423,49 @@ export default function PricingHero() {
               </div>
             </>
           )}
-        </div>
+        </motion.div>
 
-        <p className={s.footerNote}>
+        <motion.p className={s.footerNote} variants={itemVariants}>
           All features identical across regions. Prices displayed based on your selection.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       {/* ─── Cards ─── */}
-      <div className={s.cardsArea}>
+      <motion.div 
+        className={s.cardsArea}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0 }}
+        variants={containerVariants}
+      >
         <div className={s.cardsGrid}>
           {billing === "annual" ? (
             <>
-              <ShogunAnnualCard type={multiYear} />
-              <FreeCard />
+              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
+                <ShogunAnnualCard type={multiYear} />
+              </motion.div>
+              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
+                <FreeCard />
+              </motion.div>
             </>
           ) : (
             <>
-              <ShogunMonthlyCard />
-              <FreeCard />
+              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
+                <ShogunMonthlyCard />
+              </motion.div>
+              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
+                <FreeCard />
+              </motion.div>
             </>
           )}
         </div>
 
-        {billing === "annual" && <EnterpriseCard />}
-      </div>
+        {billing === "annual" && (
+          <motion.div variants={cardVariants} className={s.cardMotionWrapper} style={{ marginTop: '36px' }}>
+            <EnterpriseCard />
+          </motion.div>
+        )}
+      </motion.div>
     </section>
   );
 }
