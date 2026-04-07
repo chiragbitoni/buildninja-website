@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import s from "./FaqHero.module.css";
 import { heroSectionText, secondSectionText } from "../../../../../public/static/faqPageText";
+import { motion } from "framer-motion";
 
 export default function FaqHero() {
   const orb1 = useRef(null);
@@ -25,15 +26,39 @@ export default function FaqHero() {
       <div ref={orb2} className={s.orb2} />
       <div className={s.grid} />
       
-      <div className={s.inner}>
-        <span className={s.badge}>{heroSectionText.highlight}</span>
+      <motion.div 
+        className={s.inner}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <motion.span 
+          className={s.badge}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          {heroSectionText.highlight}
+        </motion.span>
         
-        <h1 className={s.heading}>{heroSectionText.title}</h1>
+        <motion.h1 
+          className={s.heading}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          {heroSectionText.title}
+        </motion.h1>
         
-        <p className={s.description}>
+        <motion.p 
+          className={s.description}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
           {heroSectionText.subTitle} {secondSectionText.content}
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </section>
   );
 }
