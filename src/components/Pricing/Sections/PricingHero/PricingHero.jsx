@@ -13,6 +13,7 @@ import { useEffect, useState, useRef } from "react";
 import { fetchPlansFromAPI } from "@/services/plans/plans";
 import Image from "next/image";
 import NetworkBackground from "@/components/ui/NetworkBackground";
+import { FreeIcon, ShogunIcon, EnterpriseIcon } from "./PricingIcons";
 
 export default function PricingHero() {
   const dispatch = useDispatch();
@@ -94,6 +95,9 @@ export default function PricingHero() {
     const card = secondSectionText.monthCards.soloEditionCard;
     return (
       <div className={s.card}>
+        <div className={s.cardIcon}>
+          <FreeIcon />
+        </div>
         <span className={`${s.cardHighlight} ${s.cardHighlightDefault}`}>
           {card.highlight}
         </span>
@@ -171,6 +175,9 @@ export default function PricingHero() {
     const listItems = secondSectionText.annualCard?.list || [];
     return (
       <div className={`${s.card} ${s.cardFeatured}`}>
+        <div className={s.cardIcon}>
+          <ShogunIcon />
+        </div>
         <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>
           {card.highlight}
         </span>
@@ -219,6 +226,9 @@ export default function PricingHero() {
 
     return (
       <div className={`${s.card} ${s.cardFeatured}`}>
+        <div className={s.cardIcon}>
+          <ShogunIcon />
+        </div>
         <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>{plan.highlight}</span>
         <h3 className={s.cardEdition}>{plan.edition}</h3>
         <p className={s.cardPrice}>{plan.price}</p>
@@ -258,6 +268,9 @@ export default function PricingHero() {
   /* ──────────────── Enterprise Card ──────────────── */
   const EnterpriseCard = () => (
     <div className={s.enterpriseCard}>
+      <div className={s.enterpriseIcon}>
+        <EnterpriseIcon />
+      </div>
       <span className={s.enterpriseBadge}>{secondSectionEnterpriseCardText.highlight}</span>
       <h4 className={s.enterpriseTitle}>{secondSectionEnterpriseCardText.title}</h4>
       <p className={s.enterpriseDesc}>{secondSectionEnterpriseCardText.description}</p>
