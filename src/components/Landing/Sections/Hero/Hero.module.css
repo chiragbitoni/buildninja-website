@@ -3,7 +3,6 @@
   position: relative;
   overflow: hidden;
   padding: 120px 24px 80px;
-  font-family: var(--font-display);
 }
 
 .orb1 {
@@ -37,7 +36,7 @@
 .grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(var(--color-border-subtle) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px);
   background-size: 52px 52px;
@@ -92,7 +91,6 @@
 }
 
 .title {
-  /* font-family: var(--font-accent); */
   font-size: clamp(2.5rem, 6vw, 4.2rem);
   font-weight: 800;
   line-height: 1.1;
@@ -102,8 +100,13 @@
 }
 
 .title span {
-  color: var(--color-primary);
   font-style: italic;
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 0.1em;
+
 }
 
 .subtitle {
@@ -197,8 +200,8 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(300px circle at var(--x, 50%) var(--y, 50%),
-              rgba(255, 65, 114, 0.12),
-              transparent 70%);
+      rgba(255, 65, 114, 0.12),
+      transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -294,7 +297,7 @@
 .submit {
   margin-top: 10px;
   padding: 16px;
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   border: none;
   border-radius: var(--radius-md);
   color: #fff;
@@ -377,3 +380,7 @@
   background: rgba(255, 255, 255, 0.1) !important;
 }
 
+
+.captcha{
+  box-shadow: none;
+}
