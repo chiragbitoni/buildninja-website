@@ -44,8 +44,16 @@ DESIGN TOKENS
   --color-error-border: rgba(255, 92, 92, 0.22);
   --color-info: #40a9ff;
   --color-info-bg: rgba(64, 169, 255, 0.12);
+  --color-info-border: rgba(64, 169, 255, 0.5);
+  --color-info-subtle: rgba(64, 169, 255, 0.04);
   --color-warning: #fa54aa;
   --color-warning-bg: rgba(250, 84, 170, 0.12);
+
+  /* Pricing specific tiers */
+  --color-enterprise: #ff6135;
+  --color-enterprise-bg: rgba(255, 97, 53, 0.15);
+  --color-enterprise-border: rgba(255, 97, 53, 0.5);
+  --color-enterprise-glow: rgba(255, 97, 53, 0.15);
 
   /* Demo accent (BuildNinja dark theme) */
   --color-demo-accent: #d8305b;
@@ -122,8 +130,16 @@ DESIGN TOKENS
   --color-error-border: rgba(220, 38, 38, 0.18);
   --color-info: #2563eb;
   --color-info-bg: rgba(37, 99, 235, 0.1);
+  --color-info-border: rgba(37, 99, 235, 0.2);
+  --color-info-subtle: rgba(37, 99, 235, 0.04);
   --color-warning: #d97706;
   --color-warning-bg: rgba(217, 119, 6, 0.1);
+
+  /* Pricing specific tiers (Light) */
+  --color-enterprise: #ea580c;
+  --color-enterprise-bg: rgba(234, 88, 12, 0.1);
+  --color-enterprise-border: rgba(234, 88, 12, 0.2);
+  --color-enterprise-glow: rgba(234, 88, 12, 0.1);
 
   /* Utilities */
   --icon-filter: invert(1);

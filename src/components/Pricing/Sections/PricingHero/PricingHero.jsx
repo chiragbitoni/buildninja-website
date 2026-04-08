@@ -126,16 +126,16 @@ export default function PricingHero() {
   const FreeCard = () => {
     const card = secondSectionText.monthCards.soloEditionCard;
     return (
-      <div className={s.card}>
+      <div className={`${s.card} ${s.cardSolo}`}>
         <div className={s.cardHead}>
-          <div className={s.cardIcon}>
-            <FreeIcon />
-          </div>
           <div className={s.cardTitleText}>
-            <span className={`${s.cardHighlight} ${s.cardHighlightDefault}`}>
+            <span className={`${s.cardHighlight} ${s.cardHighlightSolo}`}>
               {card.highlight}
             </span>
             <h3 className={s.cardEdition}>{card.edition}</h3>
+          </div>
+          <div className={s.cardIcon}>
+            <FreeIcon />
           </div>
         </div>
         <p className={s.cardPrice}>{card.price}</p>
@@ -181,7 +181,7 @@ export default function PricingHero() {
 
         <div className={s.cardFooter}>
           <button
-            className={s.btnPrimary}
+            className={`${s.btnPrimary} ${s.btnSolo}`}
             disabled={loadingPlans}
             onClick={() => handleBuyNow("Solo")}
           >
@@ -212,14 +212,14 @@ export default function PricingHero() {
     return (
       <div className={`${s.card} ${s.cardFeatured}`}>
         <div className={s.cardHead}>
-          <div className={s.cardIcon}>
-            <ShogunIcon />
-          </div>
           <div className={s.cardTitleText}>
             <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>
               {card.highlight}
             </span>
             <h3 className={s.cardEdition}>{card.edition}</h3>
+          </div>
+          <div className={s.cardIcon}>
+            <ShogunIcon />
           </div>
         </div>
         <p className={s.cardPrice}>{card.price}</p>
@@ -267,12 +267,12 @@ export default function PricingHero() {
     return (
       <div className={`${s.card} ${s.cardFeatured}`}>
         <div className={s.cardHead}>
-          <div className={s.cardIcon}>
-            <ShogunIcon />
-          </div>
           <div className={s.cardTitleText}>
             <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>{plan.highlight}</span>
             <h3 className={s.cardEdition}>{plan.edition}</h3>
+          </div>
+          <div className={s.cardIcon}>
+            <ShogunIcon />
           </div>
         </div>
         <p className={s.cardPrice}>{plan.price}</p>
@@ -321,7 +321,7 @@ export default function PricingHero() {
       <h4 className={s.enterpriseTitle}>{secondSectionEnterpriseCardText.title}</h4>
       <p className={s.enterpriseDesc}>{secondSectionEnterpriseCardText.description}</p>
       <div className={s.enterpriseBtnRow}>
-        <button className={s.btnPrimary} onClick={() => router.push("/support")}>
+        <button className={`${s.btnPrimary} ${s.btnEnterprise}`} onClick={() => router.push("/support")}>
           {secondSectionEnterpriseCardText.buttonText}
         </button>
         <p className={s.enterpriseResponseNote}>{secondSectionEnterpriseCardText.responseTimeText}</p>
@@ -345,7 +345,7 @@ export default function PricingHero() {
       <div className={s.grid} />
       <div className={s.bottomFade} />
 
-      <motion.div 
+      <motion.div
         className={s.inner}
         initial="hidden"
         animate="visible"
@@ -431,7 +431,7 @@ export default function PricingHero() {
       </motion.div>
 
       {/* ─── Cards ─── */}
-      <motion.div 
+      <motion.div
         className={s.cardsArea}
         initial="hidden"
         whileInView="visible"
@@ -460,11 +460,9 @@ export default function PricingHero() {
           )}
         </div>
 
-        {billing === "annual" && (
-          <motion.div variants={cardVariants} className={s.cardMotionWrapper} style={{ marginTop: '36px' }}>
-            <EnterpriseCard />
-          </motion.div>
-        )}
+        <motion.div variants={cardVariants} className={s.cardMotionWrapper} style={{ marginTop: '36px' }}>
+          <EnterpriseCard />
+        </motion.div>
       </motion.div>
     </section>
   );
