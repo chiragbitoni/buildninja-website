@@ -12,7 +12,7 @@ export const FreeIcon = () => (
 );
 
 export const ShogunIcon = () => (
-  <svg width="42" height="42" viewBox="0 0 73.41 109.29" style={{ color: 'var(--color-primary)' }}>
+  <svg width="36" height="36" viewBox="0 0 73.41 109.29" style={{ color: 'var(--color-primary)' }}>
     <g fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="3.2" strokeLinecap="round">
       <path d="M51.12,84.36c4.04,7.52,1.39,16.92-6.04,21.21-7.58,4.37-17.27,1.78-21.65-5.81-2.78-4.82-2.75-10.48-.4-15.1" />
       <path d="M35.97,76.04h.01c.65-.06,1.31-.07,1.96-.03" />
@@ -25,7 +25,7 @@ export const ShogunIcon = () => (
 );
 
 export const EnterpriseIcon = () => (
-  <svg width="56" height="56" viewBox="0 0 102.58 149.34" style={{ color: 'var(--color-enterprise)' }}>
+  <svg width="52" height="52" viewBox="0 0 102.58 149.34" style={{ color: 'var(--color-enterprise)' }}>
     <g fill="none" stroke="currentColor" strokeMiterlimit="10">
       <g strokeWidth="3.2">
         <line x1="51.25" y1="116.08" x2="51.25" y2="116.07" />
