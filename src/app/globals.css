@@ -60,6 +60,9 @@ DESIGN TOKENS
   --color-demo-accent-bg: rgba(216, 48, 91, 0.12);
   --color-demo-accent-border: rgba(216, 48, 91, 0.35);
 
+  /* Hover States */
+  --color-card-icon-hover-bg: rgba(0, 0, 0, 0.6);
+
   /* Typography */
   --font-display: 'Inter', sans-serif;
   --font-accent: 'Syne', sans-serif;
@@ -140,6 +143,10 @@ DESIGN TOKENS
   --color-enterprise-bg: rgba(234, 88, 12, 0.1);
   --color-enterprise-border: rgba(234, 88, 12, 0.2);
   --color-enterprise-glow: rgba(234, 88, 12, 0.1);
+
+  /* Hover States (Light) */
+  --color-card-icon-hover-bg: rgba(255, 255, 255, 0.9);
+  --color-primary-glow: rgba(255, 65, 114, 0.15);
 
   /* Utilities */
   --icon-filter: invert(1);
