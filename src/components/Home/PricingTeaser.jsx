@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./PricingTeaser.module.css";
+import { FreeIcon, ShogunIcon } from "@/components/Pricing/Sections/PricingHero/PricingIcons";
 
 import { useSelector, useDispatch } from "react-redux";
 import { setBilling } from "@/redux/slice/pricingSlice";
@@ -22,23 +23,6 @@ export default function PricingTeaser() {
 
   const pricingPlans = [
     {
-      name: "Solo Edition",
-      price: "Free Forever",
-      period: "",
-      desc: "Perfect for individuals and small growing teams.",
-      features: [
-        "Up to 10 users",
-        "3 concurrent builds",
-        "Unlimited build agents",
-        "30-day build history",
-        "1 SSO provider choice"
-      ],
-      button: "Get Your Free Key",
-      link: "/install",
-      note: "No strings attached",
-      highlight: false,
-    },
-    {
       name: "Shogun Edition",
       price: shogunPrice,
       period: shogunPeriod,
@@ -54,6 +38,26 @@ export default function PricingTeaser() {
       link: "/addtocart?planid=ebf94a66-a86f-4ea5-a5cc-f401d81ead21",
       note: "No credit card required",
       highlight: true,
+      label: "MOST POPULAR",
+    },
+    {
+      name: "Solo Edition",
+      price: "Free Forever",
+      period: "",
+      desc: "Perfect for individuals and small growing teams.",
+      features: [
+        "Up to 10 users",
+        "3 concurrent builds",
+        "Unlimited build agents",
+        "30-day build history",
+        "1 SSO provider choice"
+      ],
+      button: "Get Your Free Key",
+      link: "/install",
+      note: "No strings attached",
+      highlight: false,
+      label: "START WITH CONFIDENCE",
+      isSolo: true,
     }
   ];
 
@@ -104,16 +108,27 @@ export default function PricingTeaser() {
             <motion.div
               key={plan.name}
               layout
-              className={`${styles.card} ${plan.highlight ? styles.highlightCard : ""}`}
+               className={`
+                ${styles.card} 
+                ${plan.highlight ? styles.highlightCard : ""} 
+                ${plan.isSolo ? styles.soloCard : ""}
+              `}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.6 }}
             >
               <div className={styles.cardHeader}>
-                {plan.highlight && (
-                  <span className={styles.cardHighlightFeatured}>MOST POPULAR</span>
-                )}
+                <div className={styles.cardTop}>
+                  {plan.label && (
+                    <span className={`${styles.cardHighlight} ${plan.isSolo ? styles.cardHighlightSolo : styles.cardHighlightFeatured}`}>
+                      {plan.label}
+                    </span>
+                  )}
+                  <div className={`${styles.planIcon} ${plan.highlight ? styles.planIconFeatured : styles.planIconSolo}`}>
+                    {plan.highlight ? <ShogunIcon /> : <FreeIcon />}
+                  </div>
+                </div>
                 <motion.h3 layout className={styles.planName}>{plan.name}</motion.h3>
                 <motion.div layout className={styles.priceRow}>
                   <AnimatePresence mode="popLayout">
@@ -159,7 +174,13 @@ export default function PricingTeaser() {
               </motion.ul>
 
               <motion.div layout className={styles.cardFooter}>
-                <Link href={plan.link} className={plan.highlight ? styles.primaryBtn : styles.secondaryBtn}>
+                <Link 
+                  href={plan.link} 
+                  className={`
+                    ${styles.btnBase} 
+                    ${plan.highlight ? styles.primaryBtn : (plan.isSolo ? styles.primaryBtnSolo : styles.secondaryBtn)}
+                  `}
+                >
                   {plan.button}
                 </Link>
                 {plan.note && <p className={styles.guarantee}>{plan.note}</p>}

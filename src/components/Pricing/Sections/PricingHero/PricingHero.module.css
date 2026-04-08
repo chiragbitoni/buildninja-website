@@ -83,8 +83,17 @@
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.5; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
 }
 
 /* Heading */
@@ -202,7 +211,7 @@
   font-family: var(--font-display);
 }
 
-.yearBtn:hover {
+.yearBtn:not(.yearBtnActive):hover {
   background: rgba(255, 255, 255, 0.06);
   border-color: var(--color-border-strong);
   color: var(--color-text);
@@ -288,7 +297,7 @@
 
 .card:hover {
   border-color: var(--color-border-strong);
-  box-shadow: 0 20px 60px -20px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.4);
   transform: translateY(-4px);
 }
 
@@ -306,6 +315,31 @@
   box-shadow: 0 20px 60px -20px var(--color-primary-glow);
 }
 
+.cardSolo {
+  border-color: var(--color-info-border);
+  background: linear-gradient(145deg, var(--color-info-subtle), rgba(var(--bg-rgb), 0.6));
+}
+
+.cardSolo::before {
+  background: linear-gradient(90deg, transparent, var(--color-info-border), transparent);
+}
+
+.cardSolo:hover {
+  border-color: var(--color-info);
+  box-shadow: 0 20px 60px -30px var(--color-info-bg);
+}
+
+.cardSolo .cardIcon {
+  background: var(--color-info-subtle);
+  border-color: var(--color-info-border);
+}
+
+.cardSolo:hover .cardIcon {
+  background: var(--color-info-bg);
+  border-color: var(--color-info);
+  box-shadow: 0 0 20px var(--color-info-subtle);
+}
+
 /* Highlight Badge - Replacing 'composes' with standard styles for better support */
 .cardHighlight {
   display: inline-flex;
@@ -320,12 +354,12 @@
   cursor: default;
 }
 
-.cardHighlightDefault {
-  background: rgba(255, 255, 255, 0.05);
+.cardHighlightSolo {
+  background: var(--color-info-bg);
+  color: var(--color-info);
+  border: 1px solid var(--color-info-border);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border-medium);
 }
 
 .cardHighlightFeatured {
@@ -355,20 +389,27 @@
 }
 
 .cardFeatured .cardIcon {
-  background: rgba(255, 65, 114, 0.08);
   border-color: rgba(255, 65, 114, 0.2);
 }
 
 .card:hover .cardIcon {
   transform: translateY(-2px) scale(1.05);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.7);
   border-color: var(--color-border-strong);
 }
 
 .cardFeatured:hover .cardIcon {
-  background: rgba(255, 65, 114, 0.12);
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(0, 0, 0, 0.7);
   border-color: var(--color-primary);
-  box-shadow: 0 0 20px rgba(255, 65, 114, 0.1);
+  box-shadow: 0 0 20px var(--color-primary-glow);
+}
+
+.cardSolo:hover .cardIcon {
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(0, 0, 0, 0.7);
+  border-color: var(--color-info);
+  box-shadow: 0 0 20px var(--color-info-bg);
 }
 
 .cardHead {
@@ -378,6 +419,7 @@
   margin-bottom: 24px;
   position: relative;
   z-index: 2;
+  justify-content: space-between;
 }
 
 .cardTitleText {
@@ -534,6 +576,24 @@
   cursor: not-allowed;
 }
 
+.btnSolo {
+  background: linear-gradient(135deg, var(--color-info), #2563eb);
+  box-shadow: 0 8px 24px -8px var(--color-info-border);
+}
+
+.btnSolo:hover:not(:disabled) {
+  box-shadow: 0 16px 32px -8px var(--color-info-border);
+}
+
+.btnEnterprise {
+  background: linear-gradient(135deg, var(--color-enterprise), #ea580c);
+  box-shadow: 0 8px 24px -8px var(--color-enterprise-glow);
+}
+
+.btnEnterprise:hover:not(:disabled) {
+  box-shadow: 0 16px 32px -8px var(--color-enterprise-glow);
+}
+
 .btnSecondary {
   display: flex;
   align-items: center;
@@ -598,7 +658,8 @@
 /* Enterprise Header Update */
 .enterpriseHead {
   display: flex;
-  flex-direction: column; /* Centered column for enterprise as it's a wide hero card */
+  flex-direction: column;
+  /* Centered column for enterprise as it's a wide hero card */
   align-items: center;
   margin-bottom: 32px;
 }
@@ -612,17 +673,17 @@
   border-radius: var(--radius-pill);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: rgba(255, 97, 53, 0.15);
-  color: #ff6135;
-  border: 1px solid rgba(255, 97, 53, 0.3);
+  background: var(--color-enterprise-bg);
+  color: var(--color-enterprise);
+  border: 1px solid var(--color-enterprise-border);
   margin-top: 12px;
 }
 
 .enterpriseIcon {
   width: 80px;
   height: 80px;
-  background: rgba(255, 97, 53, 0.08); /* Warm accent for enterprise */
-  border: 1px solid rgba(255, 97, 53, 0.2);
+  background: var(--color-enterprise-bg);
+  border: 1px solid var(--color-enterprise-border);
   border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
@@ -635,8 +696,8 @@
 
 .enterpriseCard:hover .enterpriseIcon {
   transform: translateY(-4px) scale(1.08);
-  box-shadow: 0 10px 25px rgba(255, 97, 53, 0.15);
-  border-color: #ff6135;
+  box-shadow: 0 10px 25px var(--color-enterprise-glow);
+  border-color: var(--color-enterprise);
 }
 
 .enterpriseTitle {
@@ -672,7 +733,7 @@
 .spinner {
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: #fff;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
@@ -680,7 +741,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ─── Responsive ─── */
@@ -689,6 +752,7 @@
     flex-direction: row;
     justify-content: center;
   }
+
   .yearBtn {
     min-width: 180px;
   }
@@ -710,9 +774,11 @@
   .section {
     padding: 90px 16px 50px;
   }
+
   .card {
     padding: 24px 20px;
   }
+
   .enterpriseCard {
     padding: 28px 20px;
   }
