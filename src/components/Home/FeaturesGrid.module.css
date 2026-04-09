@@ -82,9 +82,16 @@
   grid-column: span 2;
 }
 
-/* Row 3: 2 items (span 3 cols each) */
+/* Row 3: 3 items (span 2 cols each) */
 .card:nth-child(6),
-.card:nth-child(7) {
+.card:nth-child(7),
+.card:nth-child(8) {
+  grid-column: span 2;
+}
+
+/* Row 4: 2 items (span 3 cols each) */
+.card:nth-child(9),
+.card:nth-child(10) {
   grid-column: span 3;
 }
 

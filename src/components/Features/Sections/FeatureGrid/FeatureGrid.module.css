@@ -47,6 +47,19 @@
   overflow: hidden;
 }
 
+/* Bento Spans */
+.card:nth-child(1),
+.card:nth-child(7) {
+  grid-column: span 2;
+}
+
+@media (max-width: 1023px) {
+  .card:nth-child(n) {
+    grid-column: span 1;
+  }
+}
+
+
 /* ── Card ── */
 .card {
   position: relative;
