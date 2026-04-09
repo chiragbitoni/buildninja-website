@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
-import s from "./Second.module.css";
+import s from "./LandingFeatures.module.css";
 
 const features = [
     {
@@ -140,7 +140,7 @@ const features = [
     },
 ];
 
-export default function Second() {
+export default function LandingFeatures() {
     const dispatch = useDispatch();
 
     const handleVideoClick = (e, feature) => {

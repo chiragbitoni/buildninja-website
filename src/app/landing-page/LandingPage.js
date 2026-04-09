@@ -1,14 +1,14 @@
 "use client";
-import Hero from "../../components/Landing/Sections/Hero/Hero";
-import Second from "../../components/Landing/Sections/Second/Second";
-import Third from "../../components/Landing/Sections/Third/Third";
+import LandingHero from "../../components/Landing/Sections/LandingHero/LandingHero";
+import LandingFeatures from "../../components/Landing/Sections/LandingFeatures/LandingFeatures";
+import LandingAbout from "../../components/Landing/Sections/LandingAbout/LandingAbout";
 
 export default function LandingPage(){
     return (
         <main>
-            <Hero />
-            <Second />
-            <Third />
+            <LandingHero />
+            <LandingFeatures />
+            <LandingAbout />
         </main>
     );
-}
+}
