@@ -233,7 +233,7 @@ export default function LandingFeatures() {
                                 {feature.dojoLink && (
                                     <Link href={feature.dojoLink} className={s.dojoBadge}>
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <polygon points="5 3 12 12 5 21 5 3" />
+                                            <polygon points="5 3 19 12 5 21 5 3" />
                                         </svg>
                                         Try Dojo (No Install)
                                     </Link>
