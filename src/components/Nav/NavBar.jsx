@@ -100,10 +100,10 @@ export default function Navbar() {
         {/* Mobile menu and Desktop links */}
         <AnimatePresence>
           {(!mounted || menuOpen || (typeof window !== 'undefined' && window.innerWidth > 1150)) && (
-            <motion.ul
+                <motion.ul
               className={`${styles.navbarLinks} ${menuOpen ? styles.menuActive : ""}`}
               initial={menuOpen ? { opacity: 0, y: -20 } : false}
-              animate={{ opacity: 1, y: 0 }}
+              animate={!mounted ? {} : { opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
@@ -112,7 +112,7 @@ export default function Navbar() {
                   key={item.name}
                   className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
                   initial={menuOpen ? { opacity: 0, x: -10 } : false}
-                  animate={{ opacity: 1, x: 0 }}
+                  animate={!mounted ? {} : { opacity: 1, x: 0 }}
                   transition={{ delay: menuOpen ? idx * 0.05 : 0 }}
                 >
                   <a
@@ -133,7 +133,7 @@ export default function Navbar() {
               <motion.div
                 className={styles.navbarActionGroup}
                 initial={menuOpen ? { opacity: 0 } : false}
-                animate={{ opacity: 1 }}
+                animate={!mounted ? {} : { opacity: 1 }}
                 transition={{ delay: menuOpen ? 0.4 : 0 }}
               >
                 <Image
