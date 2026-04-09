@@ -14,7 +14,7 @@ export default function FeatureHighlights() {
     <section className={styles.section}>
 
       {/* ── Card 1: Real-time Visibility ── */}
-      <motion.div 
+      <motion.div
         className={styles.card}
         variants={cardVariants}
         initial="hidden"
@@ -83,8 +83,8 @@ export default function FeatureHighlights() {
       </motion.div>
 
       {/* ── Card 2: Enterprise Security ── */}
-      <motion.div 
-        className={styles.card} 
+      <motion.div
+        className={styles.card}
         style={{ marginTop: '24px' }}
         variants={cardVariants}
         initial="hidden"
@@ -117,14 +117,14 @@ export default function FeatureHighlights() {
 
           <div className={styles.screenshotWrap}>
             <Image
-              src="/resources/agents-view-dark.png"
+              src="/resources/project-members-dark.png"
               alt="BuildNinja Agents Management View"
               width={1440}
               height={900}
               className={`${styles.screenshotImg} ${styles.imgDark}`}
             />
             <Image
-              src="/resources/agents-view-light.png"
+              src="/resources/project-members-light.png"
               alt="BuildNinja Agents Management View"
               width={1440}
               height={900}
@@ -135,8 +135,8 @@ export default function FeatureHighlights() {
       </motion.div>
 
       {/* ── Card 3: Native Git & Pipeline Runners ── */}
-      <motion.div 
-        className={styles.card} 
+      <motion.div
+        className={styles.card}
         style={{ marginTop: '24px' }}
         variants={cardVariants}
         initial="hidden"
@@ -153,14 +153,14 @@ export default function FeatureHighlights() {
         <div className={styles.twoColReverse}>
           <div className={styles.screenshotWrap}>
             <Image
-              src="/resources/build-logs-dark.png"
+              src="/resources/project-changes-dark.png"
               alt="BuildNinja Build Execution Logs"
               width={1440}
               height={900}
               className={`${styles.screenshotImg} ${styles.imgDark}`}
             />
             <Image
-              src="/resources/build-logs-light.png"
+              src="/resources/project-changes-light.png"
               alt="BuildNinja Build Execution Logs"
               width={1440}
               height={900}
