@@ -284,7 +284,7 @@ export default function SupportHero() {
                         </div>
                         <h4 style={{ color: 'var(--color-text)', fontSize: '1.2rem', marginBottom: '8px' }}>Critical Assistance</h4>
                         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-                            Priority support for Enterprise customers is available 24/7/365 through the user console.
+                            Priority support for Enterprise customers is available 24/7/365.
                         </p>
                     </motion.div>
                 </div>
