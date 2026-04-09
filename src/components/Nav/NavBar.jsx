@@ -31,16 +31,25 @@ export default function Navbar() {
 
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [, setWindowWidth] = useState(0);
 
   useEffect(() => {
     setMounted(true);
+    setWindowWidth(window.innerWidth);
+    
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
     const storedPlans = localStorage.getItem("plans");
-    if (storedPlans) return;
-    async function init() {
-      const plans = await fetchPlansFromAPI();
-      if (plans) localStorage.setItem("plans", JSON.stringify(plans));
+    if (!storedPlans) {
+      async function init() {
+        const plans = await fetchPlansFromAPI();
+        if (plans) localStorage.setItem("plans", JSON.stringify(plans));
+      }
+      init();
     }
-    init();
+    
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const getLogoSrc = () => {
