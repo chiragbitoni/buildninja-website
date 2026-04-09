@@ -1,5 +1,6 @@
 "use client";
 import { useDispatch } from "react-redux";
+import Link from "next/link";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { motion } from "framer-motion";
 import styles from "./FeaturesGrid.module.css";
@@ -49,10 +50,11 @@ const features = [
         <line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
-    title: "Real-Time Dashboard & Logs",
+    title: "Real-time Visibility & High-Density Dashboards",
     desc: "Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.",
     videoId: 'Pjl3muKtmhE',
-    videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view'
+    videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
+    dojoLink: '/dojo'
   },
   {
     icon: (
@@ -212,17 +214,27 @@ export default function FeaturesGrid() {
               <h3 className={styles.cardTitle}>{f.title}</h3>
               <p className={styles.cardDesc}>{f.desc}</p>
               {f.videoId && (
-                <button
-                  className={styles.videoBadge}
-                  onClick={(e) => handleVideoClick(e, f)}
-                  aria-label={`Watch ${f.title} demo`}
-                  data-cursor-grow
-                >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                  Watch Demo
-                </button>
+                <div className={styles.buttonRow}>
+                  <button
+                    className={styles.videoBadge}
+                    onClick={(e) => handleVideoClick(e, f)}
+                    aria-label={`Watch ${f.title} demo`}
+                    data-cursor-grow
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Demo
+                  </button>
+                  {f.dojoLink && (
+                    <Link href={f.dojoLink} className={styles.dojoBadge}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                      Try Dojo (No Install)
+                    </Link>
+                  )}
+                </div>
               )}
             </motion.div>
           ))}
