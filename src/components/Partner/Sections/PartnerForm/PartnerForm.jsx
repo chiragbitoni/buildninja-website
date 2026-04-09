@@ -6,6 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import posthog from "posthog-js";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { useTheme } from "next-themes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
@@ -27,6 +28,8 @@ export default function PartnerForm() {
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState(null); // success | error
     const [captchaToken, setCaptchaToken] = useState(null);
+    const { resolvedTheme } = useTheme();
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -246,8 +249,14 @@ export default function PartnerForm() {
                             </div>
                             
                             <div className={s.captchaWrap}>
-                                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} theme="dark" onChange={(token) => setCaptchaToken(token)} onExpired={() => setCaptchaToken(null)} />
-                            </div>
+                                <ReCAPTCHA 
+                                    key={resolvedTheme}
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} 
+                                    theme={resolvedTheme === "light" ? "light" : "dark"} 
+                                    onChange={(token) => setCaptchaToken(token)} 
+                                    onExpired={() => setCaptchaToken(null)} 
+                                />
+                            </div>  
 
                             <button type="submit" className={s.btnPrimary} disabled={loading || !captchaToken}>
                                 {loading ? "Submitting..." : "Submit Inquiry"}
