@@ -8,11 +8,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-    faEnvelope, 
-    faFileLines, 
-    faLifeRing, 
-    faPaperPlane, 
+import {
+    faEnvelope,
+    faFileLines,
+    faLifeRing,
+    faPaperPlane,
     faCircleNotch,
     faArrowRight,
     faCheckCircle,
@@ -73,10 +73,10 @@ export default function SupportHero() {
         visible: (i) => ({
             opacity: 1,
             y: 0,
-            transition: { 
-                delay: i * 0.12, 
-                duration: 0.8, 
-                ease: [0.16, 1, 0.3, 1] 
+            transition: {
+                delay: i * 0.12,
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1]
             }
         })
     };
@@ -85,9 +85,9 @@ export default function SupportHero() {
         <section className={styles.supportSection}>
             <NetworkBackground />
             <div className={styles.bottomFade} />
-            
+
             {/* Header Content */}
-            <motion.div 
+            <motion.div
                 className={styles.supportHeader}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -103,14 +103,14 @@ export default function SupportHero() {
                             {index === 0 && <span className={styles.accent}>Build</span>}
                         </span>
                     ))}
-                </h1>
+                </h1>L
                 <p className={styles.subheading}>{t.subheading}</p>
             </motion.div>
 
             {/* Main Action Hub */}
             <div className={styles.mainContent}>
                 {/* Contact Form Card */}
-                <motion.div 
+                <motion.div
                     className={styles.glassCard}
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -118,7 +118,7 @@ export default function SupportHero() {
                 >
                     <AnimatePresence mode="wait">
                         {isSuccess ? (
-                            <motion.div 
+                            <motion.div
                                 key="success"
                                 className={styles.successOverlay}
                                 initial={{ opacity: 0, scale: 0.8 }}
@@ -133,7 +133,7 @@ export default function SupportHero() {
                                 </p>
                             </motion.div>
                         ) : (
-                            <motion.div 
+                            <motion.div
                                 key="form"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -142,7 +142,7 @@ export default function SupportHero() {
                                 <h3 className={styles.formTitle}>
                                     Send a Message
                                 </h3>
-                                
+
                                 <form className={styles.supportForm} onSubmit={handleSubmit}>
                                     <div className={styles.formGrid}>
                                         <motion.div className={styles.field} variants={fadeUp} initial="hidden" animate="visible" custom={1}>
@@ -211,9 +211,9 @@ export default function SupportHero() {
                                         />
                                     </motion.div>
 
-                                    <motion.button 
-                                        className={styles.submitBtn} 
-                                        type="submit" 
+                                    <motion.button
+                                        className={styles.submitBtn}
+                                        type="submit"
                                         disabled={loading}
                                         variants={fadeUp}
                                         initial="hidden"
@@ -240,7 +240,7 @@ export default function SupportHero() {
 
                 {/* Sidebar Cards */}
                 <div className={styles.sidebar}>
-                    <motion.div 
+                    <motion.div
                         className={styles.infoCard}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -256,7 +256,7 @@ export default function SupportHero() {
                         </a>
                     </motion.div>
 
-                    <motion.div 
+                    <motion.div
                         className={styles.infoCard}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -272,7 +272,7 @@ export default function SupportHero() {
                         </a>
                     </motion.div>
 
-                    <motion.div 
+                    <motion.div
                         className={styles.infoCard}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
