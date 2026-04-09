@@ -1,5 +1,5 @@
-"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import s from "./PartnerModels.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
@@ -9,6 +9,27 @@ import {
   faGraduationCap, 
   faMicrochip 
 } from "@fortawesome/free-solid-svg-icons";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 const models = [
   {
@@ -46,23 +67,29 @@ const models = [
 export default function PartnerModels() {
   return (
     <section className={s.section} id="partnershipModelsSection">
-      <div className={s.inner}>
-        <div className={s.header}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={containerVariants}
+      >
+        <motion.div className={s.header} variants={itemVariants}>
             <span className={s.tag}>How It Works</span>
             <h2 className={s.title}>Partnership models</h2>
             <p className={s.subTitle}>Choose a motion that matches your business—then we’ll co-design the rollout and go-to-market plan.</p>
-        </div>
+        </motion.div>
 
-        <div className={s.grid}>
+        <motion.div className={s.grid} variants={containerVariants}>
             {models.map((card, idx) => (
-                <div key={idx} className={`${s.card} ${card.wide ? s.wide : ""}`}>
+                <motion.div key={idx} className={`${s.card} ${card.wide ? s.wide : ""}`} variants={itemVariants}>
                     <div className={s.iconWrap}>{card.icon}</div>
                     <h3 className={s.cardTitle}>{card.title}</h3>
                     <p className={s.cardDesc}>{card.description}</p>
-                </div>
+                </motion.div>
             ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

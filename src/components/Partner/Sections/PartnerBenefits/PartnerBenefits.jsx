@@ -11,17 +11,25 @@ import {
   faServer 
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-const gridVariants = {
+const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 },
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 const benefits = [
@@ -60,31 +68,25 @@ const benefits = [
 export default function PartnerBenefits() {
   return (
     <section className={s.section}>
-      <div className={s.inner}>
-        <motion.div 
-          className={s.header}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={containerVariants}
+      >
+        <motion.div className={s.header} variants={itemVariants}>
             <span className={s.tag}>Why Partner</span>
             <h2 className={s.title}>Benefits built for real delivery</h2>
             <p className={s.subTitle}>A partner program designed to help you win, deliver, and expand without friction or surprise costs.</p>
         </motion.div>
 
-        <motion.div 
-          className={s.grid}
-          variants={gridVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
+        <motion.div className={s.grid} variants={containerVariants}>
             {benefits.map((card, idx) => (
                 <motion.div 
                   key={idx} 
                   className={s.card}
-                  variants={cardVariants}
+                  variants={itemVariants}
                 >
                     <div className={s.iconWrap}>{card.icon}</div>
                     <h3 className={s.cardTitle}>{card.title}</h3>
@@ -92,7 +94,7 @@ export default function PartnerBenefits() {
                 </motion.div>
             ))}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

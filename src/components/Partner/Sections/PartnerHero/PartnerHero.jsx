@@ -3,6 +3,12 @@ import s from "./PartnerHero.module.css";
 import { useEffect, useRef } from "react";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+  faShieldHalved, 
+  faBolt, 
+  faTag 
+} from "@fortawesome/free-solid-svg-icons";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,15 +74,15 @@ export default function PartnerHero() {
       >
         <motion.div className={s.badgeWrap} variants={itemVariants}>
             <span className={s.badge}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <FontAwesomeIcon icon={faShieldHalved} className={s.badgeIcon} />
                 Self-hosted & secure
             </span>
             <span className={s.badge}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="13 2 13 9 22 9"/><polygon points="13 2 2 22 12 22 11 29 22 9"/></svg>
+                <FontAwesomeIcon icon={faBolt} className={s.badgeIcon} />
                 Fast, parallel execution
             </span>
             <span className={s.badge}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <FontAwesomeIcon icon={faTag} className={s.badgeIcon} />
                 Predictable pricing
             </span>
         </motion.div>
