@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const FreeIcon = () => (
   <svg width="24" height="24" viewBox="0 0 54.38 65.98" style={{ color: 'var(--color-info)' }}>
-    <g fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="3.2">
+    <g fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="5">
       <circle cx="34.22" cy="45.82" r="18.56" />
       <path d="M26.41,12.17l3.91,15.49" />
       <path d="M52.78,1.44S3.6,25.1,1.56,15.91" />
@@ -13,7 +13,7 @@ export const FreeIcon = () => (
 
 export const ShogunIcon = () => (
   <svg width="36" height="36" viewBox="0 0 73.41 109.29" style={{ color: 'var(--color-primary)' }}>
-    <g fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="3.2" strokeLinecap="round">
+    <g fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="5" strokeLinecap="round">
       <path d="M51.12,84.36c4.04,7.52,1.39,16.92-6.04,21.21-7.58,4.37-17.27,1.78-21.65-5.81-2.78-4.82-2.75-10.48-.4-15.1" />
       <path d="M35.97,76.04h.01c.65-.06,1.31-.07,1.96-.03" />
       <path d="M36.94,74.25c.3.61.63,1.19,1,1.76,2.87,4.5,7.64,7.66,13.18,8.35.76.1,1.53.15,2.31.15,10.15,0,18.38-8.22,18.38-18.37s-8.23-18.38-18.38-18.38c-7.3,0-13.61,4.27-16.57,10.44" />
@@ -27,7 +27,7 @@ export const ShogunIcon = () => (
 export const EnterpriseIcon = () => (
   <svg width="52" height="52" viewBox="0 0 102.58 149.34" style={{ color: 'var(--color-enterprise)' }}>
     <g fill="none" stroke="currentColor" strokeMiterlimit="10">
-      <g strokeWidth="3.2">
+      <g strokeWidth="5">
         <line x1="51.25" y1="116.08" x2="51.25" y2="116.07" />
         <path d="M66.4,124.41c4.03,7.51,1.39,16.92-6.05,21.21-7.58,4.37-17.27,1.77-21.65-5.81-2.78-4.82-2.74-10.48-.39-15.1" />
         <path d="M85.12,97.94h.01c1.25,2.48,1.95,5.29,1.95,8.25,0,10.14-8.22,18.37-18.37,18.37-.78,0-1.55-.05-2.31-.15-5.55-.69-10.32-3.86-13.19-8.36-.37-.56-.7-1.14-.99-1.75h0" />
@@ -39,8 +39,8 @@ export const EnterpriseIcon = () => (
         <circle cx="52.84" cy="79.11" r="19.11" />
         <path strokeLinecap="round" d="M90.21,17.1h0c2.95,16.72-8.84,32.77-26.34,35.86l-7.37,1.3h0c-2.95-16.72,8.84-32.77,26.34-35.86l7.37-1.3h0Z" />
       </g>
-      <path strokeLinecap="round" strokeWidth="2" d="M75.19,33.46c-11.98,6.42-14.99,14.57-15.69,16.63" />
-      <path strokeLinecap="round" strokeWidth="3.2" d="M49.79,59.57S57.75,12.72,27.44,1.6" />
+      <path strokeLinecap="round" strokeWidth="3.2" d="M75.19,33.46c-11.98,6.42-14.99,14.57-15.69,16.63" />
+      <path strokeLinecap="round" strokeWidth="4.5" d="M49.79,59.57S57.75,12.72,27.44,1.6" />
     </g>
   </svg>
 );
