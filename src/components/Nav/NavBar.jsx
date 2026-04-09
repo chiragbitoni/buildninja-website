@@ -97,13 +97,53 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu and Desktop links */}
+        {/* Desktop Menu */}
+        <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
+          {navItems.map((item) => (
+            <li
+              key={item.name}
+              className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
+            >
+              <a
+                href={item.path}
+                className={styles.navbarAnchor}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(item.path);
+                  dispatch(closeVideo());
+                }}
+              >
+                {item.name}
+                {item.name === "Dojo" && <span className={styles.navDot} />}
+              </a>
+            </li>
+          ))}
+
+          <div className={styles.navbarActionGroup}>
+            <Image
+              width={22}
+              height={22}
+              src="/resources/Footer/social/github.svg"
+              alt="GitHub"
+              className={styles.navbarGithubIcon}
+              onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
+            />
+            <button
+              className={styles.navbarStartTrialButton}
+              onClick={() => handleNavigation("/install")}
+            >
+              Try Free
+            </button>
+          </div>
+        </ul>
+
+        {/* Mobile Menu */}
         <AnimatePresence>
-          {(!mounted || menuOpen || (typeof window !== 'undefined' && window.innerWidth > 1150)) && (
-                <motion.ul
-              className={`${styles.navbarLinks} ${menuOpen ? styles.menuActive : ""}`}
-              initial={menuOpen ? { opacity: 0, y: -20 } : false}
-              animate={!mounted ? {} : { opacity: 1, y: 0 }}
+          {menuOpen && mounted && (
+            <motion.ul
+              className={`${styles.navbarLinks} ${styles.mobileMenu} ${styles.menuActive}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
@@ -111,9 +151,9 @@ export default function Navbar() {
                 <motion.li
                   key={item.name}
                   className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
-                  initial={menuOpen ? { opacity: 0, x: -10 } : false}
-                  animate={!mounted ? {} : { opacity: 1, x: 0 }}
-                  transition={{ delay: menuOpen ? idx * 0.05 : 0 }}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.05 }}
                 >
                   <a
                     href={item.path}
@@ -132,9 +172,9 @@ export default function Navbar() {
 
               <motion.div
                 className={styles.navbarActionGroup}
-                initial={menuOpen ? { opacity: 0 } : false}
-                animate={!mounted ? {} : { opacity: 1 }}
-                transition={{ delay: menuOpen ? 0.4 : 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
               >
                 <Image
                   width={22}
@@ -144,7 +184,6 @@ export default function Navbar() {
                   className={styles.navbarGithubIcon}
                   onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
                 />
-
                 <button
                   className={styles.navbarStartTrialButton}
                   onClick={() => handleNavigation("/install")}
