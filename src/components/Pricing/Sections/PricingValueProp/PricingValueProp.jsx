@@ -1,10 +1,31 @@
-"use client";
 import React from "react";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import s from "./PricingValueProp.module.css";
 import { pricingFourthText } from "../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../public/static/paths";
 import Image from "next/image";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 // Inline SVG — uses currentColor so it's fully theme-aware
 const ShieldIcon = () => (
@@ -31,18 +52,24 @@ export default function PricingValueProp() {
 
   return (
     <section className={s.section}>
-      <div className={s.inner}>
-        <div className={s.header}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={containerVariants}
+      >
+        <motion.div className={s.header} variants={itemVariants}>
           <span className={s.sectionBadge}>Why BuildNinja</span>
           <h2 className={s.title}>
             Pricing That Makes Sense{" "}
             <span className={s.accent}>as You Grow</span>
           </h2>
           <p className={s.subtitle}>{text.subtitle}</p>
-        </div>
+        </motion.div>
 
         {/* Problem block */}
-        <div className={s.problemBlock}>
+        <motion.div className={s.problemBlock} variants={itemVariants}>
           <div className={s.problemMeta}>
             <span className={s.problemLabel}>{text.problemTitle}</span>
             <span className={s.problemTag}>{text.problemTag}</span>
@@ -51,14 +78,15 @@ export default function PricingValueProp() {
             className={s.problemDesc}
             dangerouslySetInnerHTML={{ __html: text.problemDesc }}
           />
-        </div>
+        </motion.div>
 
         {/* Bento cards */}
-        <div className={s.grid}>
+        <motion.div className={s.grid} variants={containerVariants}>
           {text.cards.map((card, index) => (
-            <div
+            <motion.div
               key={index}
               className={`${s.card} ${card.badges ? s.cardWide : ""}`}
+              variants={itemVariants}
             >
               <div className={s.cardIconWrap}>
                 <Image
@@ -89,10 +117,10 @@ export default function PricingValueProp() {
                   ))}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

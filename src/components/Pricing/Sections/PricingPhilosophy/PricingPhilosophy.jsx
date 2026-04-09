@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { paths } from "../../../../../public/static/paths";
 import s from "./PricingPhilosophy.module.css";
 
@@ -29,17 +30,52 @@ const cards = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 export default function PricingPhilosophy() {
   return (
     <section className={s.section}>
-      <div className={s.inner}>
-        <div style={{ textAlign: "center" }}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+      >
+        <motion.div style={{ textAlign: "center" }} variants={itemVariants}>
           <span className={s.sectionBadge}>Our Philosophy</span>
-        </div>
-        <h2 className={s.title}>Your Infrastructure. Your Rules.&nbsp;Zero Surprises.</h2>
-        <div className={s.grid}>
+        </motion.div>
+        
+        <motion.h2 className={s.title} variants={itemVariants}>
+          Your Infrastructure. Your Rules.&nbsp;Zero Surprises.
+        </motion.h2>
+
+        <motion.div className={s.grid} variants={containerVariants}>
           {cards.map((card, i) => (
-            <div key={i} className={s.card}>
+            <motion.div 
+              key={i} 
+              className={s.card}
+              variants={itemVariants}
+            >
               <div className={s.iconWrap}>
                 <Image width={28} height={28} className={s.icon} src={card.icon} alt={card.alt} />
               </div>
@@ -47,10 +83,10 @@ export default function PricingPhilosophy() {
                 <h3 className={s.cardTitle}>{card.title}</h3>
                 <p className={s.cardDesc}>{card.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

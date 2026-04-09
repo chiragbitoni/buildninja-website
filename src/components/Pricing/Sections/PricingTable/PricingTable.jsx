@@ -1,9 +1,30 @@
-"use client";
 import React from "react";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import s from "./PricingTable.module.css";
 import { paths } from "../../../../../public/static/paths";
 import Image from "next/image";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export default function PricingTable() {
   const { region } = useSelector((state) => state.pricing);
@@ -104,14 +125,20 @@ export default function PricingTable() {
 
   return (
     <section className={s.section}>
-      <div className={s.inner}>
-        <div className={s.header}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={containerVariants}
+      >
+        <motion.div className={s.header} variants={itemVariants}>
           <span className={s.sectionBadge}>Feature Breakdown</span>
           <h2 className={s.title}>{table.title}</h2>
           <p className={s.subtitle}>{table.subtitle}</p>
-        </div>
+        </motion.div>
 
-        <div className={s.tableWrap}>
+        <motion.div className={s.tableWrap} variants={itemVariants}>
           <table className={s.table}>
             <thead>
               <tr>
@@ -120,18 +147,23 @@ export default function PricingTable() {
                 <th>Solo Edition</th>
               </tr>
             </thead>
-            <tbody>
+            <motion.tbody 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
               {table.rows.map((row, i) => (
-                <tr key={i}>
+                <motion.tr key={i} variants={itemVariants}>
                   <td>{row.feature}</td>
                   <td>{row.shogun}</td>
                   <td>{row.solo}</td>
-                </tr>
+                </motion.tr>
               ))}
-            </tbody>
+            </motion.tbody>
           </table>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
