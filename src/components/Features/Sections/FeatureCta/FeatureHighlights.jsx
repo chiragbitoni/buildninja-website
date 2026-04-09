@@ -177,22 +177,31 @@ export default function FeatureHighlights() {
               SSH tunnels with zero-trust architecture. Script and SSH runners give
               you full control over every step.
             </p>
-            <div className={styles.terminal}>
-              <div className={styles.termLine}>
-                <span className={styles.termDot + ' ' + styles.termDotGreen} />
-                <span className={styles.termSystem}>ssh-tunnel: node-east-1 connected</span>
+            <div className={styles.terminal} style={{ background: 'var(--color-bg-panel)', boxShadow: 'inset 0 0 0 1px var(--color-border)', color: 'var(--color-text-secondary)', padding: '16px' }}>
+              <div className={styles.termLine} style={{ marginBottom: '8px' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#28c840" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span style={{ color: '#28c840', fontSize: '13px', marginLeft: '4px' }}>14:32:00</span>
+                <span style={{ color: '#28c840', fontSize: '13px', marginLeft: '8px' }}>System</span>
               </div>
-              <div className={styles.termLine}>
-                <span className={styles.termPrompt}>$</span>
-                <span className={styles.termCmd}>git push ninja main --force-with-lease</span>
+              <div className={styles.termLine} style={{ paddingLeft: '20px', marginBottom: '8px' }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#28c840" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="6"></circle></svg>
+                <span style={{ color: '#28c840', fontSize: '13px', marginLeft: '6px' }}>14:32:00</span>
+                <span style={{ opacity: 0.7, fontSize: '13px', marginLeft: '8px' }}>Build queued ...</span>
               </div>
-              <div className={styles.termLine}>
-                <span className={styles.termDot + ' ' + styles.termDotOrange} />
-                <span className={styles.termSystem}>Triggering build pipeline...</span>
+              <div className={styles.termLine} style={{ paddingLeft: '20px', marginBottom: '8px' }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#28c840" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="6"></circle></svg>
+                <span style={{ color: '#28c840', fontSize: '13px', marginLeft: '6px' }}>14:32:01</span>
+                <span style={{ opacity: 0.7, fontSize: '13px', marginLeft: '8px' }}>Authenticating SSH key pair</span>
               </div>
-              <div className={styles.termLine}>
-                <span className={styles.termPrompt}>✓</span>
-                <span className={styles.termSystem}>Build #45 queued — Duration: 22s</span>
+              <div className={styles.termLine} style={{ paddingLeft: '20px', marginBottom: '8px' }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#28c840" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="6"></circle></svg>
+                <span style={{ color: '#28c840', fontSize: '13px', marginLeft: '6px' }}>14:32:03</span>
+                <span style={{ opacity: 0.7, fontSize: '13px', marginLeft: '8px' }}>Connected to git@github.com via tunnel</span>
+              </div>
+              <div className={styles.termLine} style={{ paddingLeft: '20px' }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffbd2e" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="6"></circle></svg>
+                <span style={{ color: '#ffbd2e', fontSize: '13px', marginLeft: '6px' }}>14:32:05</span>
+                <span style={{ opacity: 0.7, fontSize: '13px', marginLeft: '8px' }}>Executing pipeline ...</span>
               </div>
             </div>
           </div>

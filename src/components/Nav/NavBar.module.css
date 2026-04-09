@@ -216,12 +216,12 @@
 /* ── Responsive ── */
 @media (max-width: 1150px) {
   .navbarLinks {
-    position: fixed;
-    top: 72px; /* Adjusted for navbar height */
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     height: auto;
-    max-height: calc(100vh - 72px);
+    max-height: calc(100vh - 60px);
     overflow-y: auto;
     background: rgba(var(--bg-rgb), 0.95);
     backdrop-filter: blur(25px) saturate(160%);
@@ -285,9 +285,22 @@
 @media (max-width: 600px) {
   .navbarContainer {
     padding: 14px 16px;
+    gap: 12px;
   }
 
   .logoImage {
-    width: 140px !important;
+    width: 130px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbarContainer {
+    padding: 12px 8px;
+    gap: 8px;
+  }
+
+  .logoImage {
+    width: 110px !important;
+    height: 38px !important;
   }
 }
