@@ -34,7 +34,7 @@
 .notFoundActions a {
     padding: 10px 40px;
     border-radius: var(--radius-pill);
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
     color: #ffffff;
     font-weight: 600;
     text-decoration: none;
@@ -43,4 +43,18 @@
 
 .notFoundActions a:hover {
     opacity: 0.85;
+}
+
+[data-theme="dark"] .notFoundContent h1,
+[data-theme="dark"] .notFoundContent h3,
+[data-theme="dark"] .notFoundContent h4,
+[data-theme="dark"] .notFoundContent p {
+    color: #ffffff;
+}
+
+[data-theme="light"] .notFoundContent h1,
+[data-theme="light"] .notFoundContent h3,
+[data-theme="light"] .notFoundContent h4,
+[data-theme="light"] .notFoundContent p {
+    color: #000000;
 }
