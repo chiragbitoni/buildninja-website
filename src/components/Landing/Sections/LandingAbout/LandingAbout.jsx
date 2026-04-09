@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { paths } from "../../../../../public/static/paths";
-import s from "./Third.module.css";
+import s from "./LandingAbout.module.css";
 
-export default function Third() {
+export default function LandingAbout() {
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {

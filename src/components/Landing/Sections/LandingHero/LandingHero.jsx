@@ -8,9 +8,9 @@ import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
 import { siteConfig } from "@/config/site";
 import { useRouter } from "next/navigation";
-import s from "./Hero.module.css";
+import s from "./LandingHero.module.css";
 
-export default function Hero() {
+export default function LandingHero() {
     const router = useRouter();
     const hasStartedRef = useRef(false);
     const formRef = useRef(null);
