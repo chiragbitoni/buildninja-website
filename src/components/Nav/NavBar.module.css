@@ -213,8 +213,23 @@
   background: var(--color-primary);
 }
 
+.desktopMenu {
+  display: flex;
+}
+
+.mobileMenu {
+  display: none !important;
+}
+
 /* ── Responsive ── */
 @media (max-width: 1150px) {
+  .desktopMenu {
+    display: none !important;
+  }
+  .mobileMenu {
+    display: flex !important;
+  }
+
   .navbarLinks {
     position: absolute;
     top: 100%;
