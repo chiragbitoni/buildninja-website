@@ -163,6 +163,14 @@
   border-radius: var(--radius-pill);
 }
 
+/* Button row for multiple badges */
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
 /* Video badge */
 .videoBadge {
   composes: badge from global;
@@ -174,6 +182,26 @@
   background: var(--color-primary-subtle);
   filter: brightness(1.2);
   transform: translateX(4px);
+}
+
+.dojoBadge {
+  composes: badge-alt from global;
+  margin-top: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-color: var(--color-primary-border);
+  color: var(--color-primary);
+  transition: all 0.2s ease;
+}
+
+.dojoBadge:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
 }
 
 /* ──────────────────────────────

@@ -226,6 +226,38 @@
   align-items: center;
 }
 
+
+.demoButton {
+  composes: badge from global;
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 12px 24px;
+  color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.demoButton:hover {
+  transform: translateX(6px) scale(1.05);
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 65, 114, 0.3);
+}
+
+.demoInfo {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 12px;
+  display: block;
+  color: var(--color-text-secondary);
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .twoCol,

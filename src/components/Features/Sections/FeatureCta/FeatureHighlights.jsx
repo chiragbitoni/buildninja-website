@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './FeatureHighlights.module.css';
 
@@ -52,6 +53,14 @@ export default function FeatureHighlights() {
                 <span className={styles.statLabel}>Build History</span>
               </div>
             </div>
+
+            <Link href="/dojo" className={styles.demoButton}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Explore Living Dashboard
+            </Link>
+            <span className={styles.demoInfo}>Zero Installation Required • Instant Access</span>
           </div>
 
           <div className={styles.screenshotWrap}>
