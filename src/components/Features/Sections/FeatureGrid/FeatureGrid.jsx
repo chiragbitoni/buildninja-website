@@ -25,10 +25,10 @@ const features = [
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: 'Smart Build Automation',
+    title: 'Build Automation & Scheduling',
     description:
-      'Trigger builds automatically on schedule, commit, or custom event. Multi-environment support (dev, staging, production) with intelligent retry and dependency resolution.',
-    tags: ['Scheduled Triggers', 'Multi-stage Pipelines', 'Smart Retry'],
+      'Trigger builds automatically with advanced scheduling and multi-environment support (dev, staging, production). Optimize workflows with flexible dependency resolution.',
+    tags: ['Cron Triggers', 'Multi-stage Pipelines', 'Environment Scoping'],
     videoId: '5wFDALkVM0Y',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/schedule-build-triggers',
   },
@@ -98,10 +98,24 @@ const features = [
         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
     ),
-    title: 'Security & Access Control',
+    title: 'Enterprise Security & RBAC',
     description:
-      'Role-based access control (RBAC) at project and system level. SSO with SAML 2.0, LDAP, OAuth. AES-256 encryption for all secrets.',
-    tags: ['RBAC', 'SSO / SAML 2.0', 'AES-256', 'ISO 27001'],
+      'Role-based access control (RBAC) at project and system level. Native support for LDAP and granular permissions management. AES-256 encryption for all secrets.',
+    tags: ['RBAC', 'LDAP Integration', 'AES-256'],
+    videoId: 'C-Ln6bbGo2E',
+    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+    ),
+    title: 'Single Sign-On (SSO) Support',
+    description:
+      'Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Slack, and custom OIDC providers.',
+    tags: ['OAuth 2.0', 'OIDC', 'SAML 2.0', 'Enterprise Ready'],
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
   },
