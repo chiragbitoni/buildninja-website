@@ -55,6 +55,7 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Global SEO Audit & Cleanup**: Resolved "Missing H1" issues in `src/app/not-found.jsx` and verified landing pages (Hero, Partner, Pricing) maintain a single semantic `<h1>`.
 - ✅ **Marketing Landing Page Modernization**: Refactored the `/landing-page` (Hero, Features, and About sections) to use CSS Modules and Framer Motion. Implemented a lead-gen focused Hero with a glassmorphic form, animated background drifting orbs, and staggered scroll-reveal animations for all feature segments.
 - ✅ **Social Proof Modernization**: Overhauled the `SocialProof` component with glassmorphic stats, a modernized "WhyUs" bento-lite grid, and premium card effects (glow, noise, semantic tagging).
+- ✅ **Partner Page Theme Refinement**: Made the reCAPTCHA component on the `/partners` page theme-aware (dynamic light/dark mode) and ensured no box-shadow is applied to its container.
 - ✅ **How It Works Iconography Stabilization**: Removed icon tilt/rotation in the "Simple Self-Hosted Solution" section to adhere to new stable iconography rules.
 - ✅ **Pricing Teaser Alignment**: Synced `PricingTeaser` on the homepage with the main `/pricing` page data. It now uses Redux to get the selected region and accurately displays Shogun/Solo features and Indian/Global pricing.
 
