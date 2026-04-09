@@ -39,6 +39,7 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Cookie-based Auth Migration**: Migrated authentication storage from `localStorage` to structured cookies with 30-day expiry.
 - ✅ **Network Background Global Refactor**: Renamed OrbitAnimation to NetworkBackground and moved it to a shared `src/components/ui/` directory. Added ultra-mobile support for all landing pages.
 - ✅ **Pricing Page Overhaul**: Rebuilt all 8 sections using CSS Modules and semantic CSS variables. New sections: PricingHero (glassmorphism cards + premium toggles), PricingPhilosophy (4-card bento), PricingTable (styled comparison table with Shogun column highlight), PricingValueProp (bento grid with problem block), PricingCoreFeatures (two-column feature list), PricingDetailedSpecs (pill grid with limited-time badge), PricingFaq (click-to-expand cards), PricingCta (dual CTA cards with feature pills). All hardcoded colors replaced with `var(--color-*)` tokens.
+- ✅ **Pricing Page Animation Overhaul**: Replaced whole-section entrance animations with granular, staggered scroll-reveal animations for all internal elements (headings, cards, table rows, and pills) across all 8 pricing sections. Utilized Framer Motion for high-fidelity transitions including blur reveals and coordinated physics.
 - ✅ **FAQ Page Overhaul**: Rebuilt into 4 modern components (`FaqHero`, `FaqQuestions`, `FaqHelp`, `FaqCta`) utilizing CSS modules, premium bento grids, and inline SVGs. Added **high-fidelity Framer Motion animations**, including staggered section reveals, smooth accordion height transitions, and interactive card hover physics.
 - ✅ **Install Page Overhaul**: Resolved blank rendering issues on the `/install` page, stabilized authentication redirection flows, updated typography to the new two-tier font system (Inter + Syne), and refactored `InstallSection` styles to utilize CSS modules.
 - ✅ **Install Dashboard Redesign**: Refactored the `/install/dashboard` (`InstallDashboard` component) into a premium interface utilizing CSS modules, structural grids, dynamic hover states, and semantic variables.
@@ -60,10 +61,11 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Pricing Teaser Alignment**: Synced `PricingTeaser` on the homepage with the main `/pricing` page data. It now uses Redux to get the selected region and accurately displays Shogun/Solo features and Indian/Global pricing.
 
 ## Next Steps for Website-wide Revamp
-1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing page now fully uses CSS vars)*
+1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing and FAQ pages now fully use CSS vars)*
 2. ~~**Pricing Page Overhaul**~~: ✅ Complete — see Evolution Log.
-3. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
-4. **Final SEO Polish**: Conduct a final crawl of all internal routes to ensure no legacy components are introducing hidden `h1` tags.
+3. ~~**Pricing Animation refinement**~~: ✅ Complete — see Evolution Log.
+4. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
+5. **Final SEO Polish**: Conduct a final crawl of all internal routes to ensure no legacy components are introducing hidden `h1` tags.
 
 ## Learned Rules 
 1. **Semantic Coloring**: Never use hardcoded colors (like `#303030` or `#fff`) in components. Always use centralized CSS variables (`var(--color-bg-panel)`, `var(--color-text)`, etc.) defined in the `:root` of `globals.css`.

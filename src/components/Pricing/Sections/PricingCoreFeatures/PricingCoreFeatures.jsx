@@ -1,22 +1,50 @@
 import React from "react";
+import { motion } from "framer-motion";
 import s from "./PricingCoreFeatures.module.css";
 import { pricingFifthText } from "../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../public/static/paths";
 import Image from "next/image";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 export default function PricingCoreFeatures() {
   const text = pricingFifthText;
   return (
     <section className={s.section}>
-      <div className={s.inner}>
-        <div className={s.header}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+      >
+        <motion.div className={s.header} variants={itemVariants}>
           <span className={s.sectionBadge}>Capabilities</span>
           <h2 className={s.title}>{text.title}</h2>
-        </div>
+        </motion.div>
 
-        <div className={s.columnsGrid}>
+        <motion.div className={s.columnsGrid} variants={containerVariants}>
           {text.columns.map((col, colIndex) => (
-            <div className={s.column} key={colIndex}>
+            <motion.div className={s.column} key={colIndex} variants={itemVariants}>
               <h3 className={s.columnTitle}>{col.title}</h3>
               {col.sections.map((section, secIndex) => (
                 <div className={s.featureGroup} key={secIndex}>
@@ -37,10 +65,10 @@ export default function PricingCoreFeatures() {
                   </ul>
                 </div>
               ))}
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
