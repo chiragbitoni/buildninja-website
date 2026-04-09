@@ -1,5 +1,5 @@
-"use client";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import s from "./PartnerForm.module.css";
 import { sendPartnershipEmail } from "@/services/email/sendEmail";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -16,6 +16,27 @@ import {
     faCreditCard, 
     faHandshakeAngle 
 } from "@fortawesome/free-solid-svg-icons";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export default function PartnerForm() {
     const [formData, setFormData] = useState({
@@ -133,15 +154,21 @@ export default function PartnerForm() {
 
     return (
         <section className={s.section} id="partner-form-section">
-            <div className={s.inner}>
-                <div className={s.header}>
+            <motion.div 
+              className={s.inner}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={containerVariants}
+            >
+                <motion.div className={s.header} variants={itemVariants}>
                     <h2 className={s.title}>Ready to explore a partnership?</h2>
                     <p className={s.subTitle}>If your organization is looking to enhance its DevOps offerings, improve client delivery, or build integrations within the CI/CD ecosystem, we'd love to talk.</p>
-                </div>
+                </motion.div>
 
-                <div className={s.container}>
+                <motion.div className={s.container} variants={containerVariants}>
                     {/* LEFT PANEL */}
-                    <div className={s.card}>
+                    <motion.div className={s.card} variants={itemVariants}>
                         <div className={s.cardTopLine}></div>
                         <h3 className={s.cardTitle}>BuildNinja in 30 seconds</h3>
                         <p className={s.cardDesc}>We align on a partner motion and map a pilot to a clear outcome.</p>
@@ -200,10 +227,10 @@ export default function PartnerForm() {
                         }}>
                             Email partnership
                         </button>
-                    </div>
+                    </motion.div>
 
                     {/* RIGHT PANEL - form */}
-                    <div className={s.card}>
+                    <motion.div className={s.card} variants={itemVariants}>
                         <div className={s.cardTopLine}></div>
                         <h3 className={s.cardTitle}>What kind of partnership?</h3>
                         <p className={s.cardDesc}>Fill out the form below and we will be in touch shortly.</p>
@@ -262,9 +289,9 @@ export default function PartnerForm() {
                                 {loading ? "Submitting..." : "Submit Inquiry"}
                             </button>
                         </form>
-                    </div>
-                </div>
-            </div>
+                    </motion.div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 }

@@ -1,5 +1,5 @@
-"use client";
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import s from "./PartnerDemographics.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
@@ -11,6 +11,27 @@ import {
   faCheck,
   faUserShield
 } from "@fortawesome/free-solid-svg-icons";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 const partnerData = [
   {
@@ -84,14 +105,20 @@ export default function PartnerDemographics() {
 
   return (
     <section className={s.section}>
-      <div className={s.inner}>
-        <div className={s.header}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={containerVariants}
+      >
+        <motion.div className={s.header} variants={itemVariants}>
             <span className={s.tag}>Why partner</span>
             <h2 className={s.title}>Teams we love working with</h2>
             <p className={s.subTitle}>DevOps-forward organizations who care about security, reliability, and a great developer experience.</p>
-        </div>
+        </motion.div>
 
-        <div className={s.container}>
+        <motion.div className={s.container} variants={itemVariants}>
             {/* LEFT SIDE - Tabs */}
             <div className={s.menuList}>
                 {partnerData.map((item, index) => {
@@ -152,8 +179,8 @@ export default function PartnerDemographics() {
                     </div>
                 </div>
             </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
