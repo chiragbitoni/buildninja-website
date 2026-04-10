@@ -138,6 +138,11 @@ export default function Hero() {
     }, []);
     return (
         <section className="landingPageHeroSection">
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `if (new URLSearchParams(window.location.search).get('form') === 'first') { document.documentElement.classList.add('form-first-override'); }`
+                }}
+            />
             <div className="landingPageHeroContainer">
 
                 {/* LEFT CONTENT */}

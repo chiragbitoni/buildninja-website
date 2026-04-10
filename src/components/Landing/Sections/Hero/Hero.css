@@ -20,6 +20,11 @@
     overflow: hidden;
 }
 
+.landingPageHeroContainer.form-first,
+html.form-first-override .landingPageHeroContainer {
+    flex-direction: column-reverse;
+}
+
 /* LEFT */
 .landingPageHeroLeft {
     padding: 28px 22px;
@@ -95,6 +100,12 @@
     background: #3B3B3B;
 
     padding: 28px 22px;
+}
+
+html.form-first-override .landingPageHeroRight,
+.landingPageHeroContainer.form-first .landingPageHeroRight {
+    margin-top: 32px;
+    margin-bottom: 24px;
 }
 
 .landingPageHeroFormTitle {
@@ -197,6 +208,11 @@ DESKTOP (≥ 1024px)
         gap: 50px;
     }
 
+    .landingPageHeroContainer.form-first,
+    html.form-first-override .landingPageHeroContainer {
+        flex-direction: row;
+    }
+
     .landingPageHeroBadge {
         font-size: 20px;
         font-weight: 600;
@@ -211,6 +227,12 @@ DESKTOP (≥ 1024px)
     .landingPageHeroRight {
         padding: 50px;
         flex: 1;
+    }
+    
+    html.form-first-override .landingPageHeroRight,
+    .landingPageHeroContainer.form-first .landingPageHeroRight {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .landingPageHeroTitle {
