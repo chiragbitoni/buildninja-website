@@ -22,6 +22,19 @@ export default function Hero() {
     const formRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [captchaToken, setCaptchaToken] = useState(null);
+    const [captchaError, setCaptchaError] = useState(false);
+
+    useEffect(() => {
+        // Safety net: If ReCAPTCHA is blocked by ad-blockers,
+        // window.grecaptcha won't exist after a few seconds.
+        const timer = setTimeout(() => {
+            if (typeof window !== "undefined" && !window.grecaptcha) {
+                setCaptchaError(true);
+            }
+        }, 3500);
+        return () => clearTimeout(timer);
+    }, []);
+
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
 
@@ -59,7 +72,9 @@ export default function Hero() {
             alert("Please enter a valid phone number");
             return;
         }
-        if (!captchaToken) {
+        
+        // Only enforce captcha if it hasn't completely errored out
+        if (!captchaToken && !captchaError) {
             posthog.capture("marketing_form_blocked_no_captcha", {
                 page: "landing-page",
             });
@@ -137,7 +152,7 @@ export default function Hero() {
         return () => el.removeEventListener("mousemove", handleMouseMove);
     }, []);
     return (
-        <section className="landingPageHeroSection">
+        <section className="landingPageHeroSection" suppressHydrationWarning>
             <script
                 dangerouslySetInnerHTML={{
                     __html: `if (new URLSearchParams(window.location.search).get('form') === 'first') { document.documentElement.classList.add('form-first-override'); }`
@@ -262,6 +277,7 @@ export default function Hero() {
                                 className="landingPageHeroFormCaptcha"
                                 theme="dark"
                                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                onErrored={() => setCaptchaError(true)}
                                 onChange={(token) => {
                                     setCaptchaToken(token);
 
