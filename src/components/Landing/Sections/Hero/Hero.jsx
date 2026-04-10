@@ -257,18 +257,20 @@ export default function Hero() {
                                 </select>
                             </label>
                         </div>
-                        <ReCAPTCHA
-                            className="landingPageHeroFormCaptcha"
-                            theme="dark"
-                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                            onChange={(token) => {
-                                setCaptchaToken(token);
+                        <div className="landingPageHeroCaptchaWrapper">
+                            <ReCAPTCHA
+                                className="landingPageHeroFormCaptcha"
+                                theme="dark"
+                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                onChange={(token) => {
+                                    setCaptchaToken(token);
 
-                                posthog.capture("marketing_captcha_verified", {
-                                    page: "landing-page",
-                                });
-                            }}
-                        />
+                                    posthog.capture("marketing_captcha_verified", {
+                                        page: "landing-page",
+                                    });
+                                }}
+                            />
+                        </div>
 
                         <button
                             type="submit"

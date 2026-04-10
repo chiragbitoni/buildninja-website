@@ -169,9 +169,34 @@ html.form-first-override .landingPageHeroRight,
     cursor: pointer;
 }
 
+.landingPageHeroCaptchaWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .landingPageHeroFormCaptcha {
-    justify-items: center;
-    margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 380px) {
+    .landingPageHeroFormCaptcha {
+        transform: scale(0.88);
+    }
+}
+
+@media (max-width: 340px) {
+    .landingPageHeroFormCaptcha {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 310px) {
+    .landingPageHeroFormCaptcha {
+        transform: scale(0.6);
+    }
 }
 
 /* =========================
