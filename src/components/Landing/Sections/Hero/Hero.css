@@ -20,6 +20,11 @@
     overflow: hidden;
 }
 
+.landingPageHeroContainer.form-first,
+html.form-first-override .landingPageHeroContainer {
+    flex-direction: column-reverse;
+}
+
 /* LEFT */
 .landingPageHeroLeft {
     padding: 28px 22px;
@@ -97,6 +102,12 @@
     padding: 28px 22px;
 }
 
+html.form-first-override .landingPageHeroRight,
+.landingPageHeroContainer.form-first .landingPageHeroRight {
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
 .landingPageHeroFormTitle {
     font-size: 25px;
     margin-bottom: 6px;
@@ -158,9 +169,34 @@
     cursor: pointer;
 }
 
+.landingPageHeroCaptchaWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .landingPageHeroFormCaptcha {
-    justify-items: center;
-    margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 380px) {
+    .landingPageHeroFormCaptcha {
+        transform: scale(0.88);
+    }
+}
+
+@media (max-width: 340px) {
+    .landingPageHeroFormCaptcha {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 310px) {
+    .landingPageHeroFormCaptcha {
+        transform: scale(0.6);
+    }
 }
 
 /* =========================
@@ -197,6 +233,11 @@ DESKTOP (≥ 1024px)
         gap: 50px;
     }
 
+    .landingPageHeroContainer.form-first,
+    html.form-first-override .landingPageHeroContainer {
+        flex-direction: row;
+    }
+
     .landingPageHeroBadge {
         font-size: 20px;
         font-weight: 600;
@@ -211,6 +252,12 @@ DESKTOP (≥ 1024px)
     .landingPageHeroRight {
         padding: 50px;
         flex: 1;
+    }
+    
+    html.form-first-override .landingPageHeroRight,
+    .landingPageHeroContainer.form-first .landingPageHeroRight {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .landingPageHeroTitle {
