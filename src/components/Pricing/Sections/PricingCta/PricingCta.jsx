@@ -77,7 +77,7 @@ export default function PricingCta() {
             <p className={s.cardDesc}>{text.enterprise.description}</p>
             <button
               id="pricing-cta-enterprise"
-              className={s.btnPrimary}
+              className={s.btnEnterprise}
               onClick={() => router.push("/support")}
             >
               {text.enterprise.buttonText}
