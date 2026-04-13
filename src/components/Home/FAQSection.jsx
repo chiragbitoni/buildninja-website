@@ -9,12 +9,12 @@ const faqs = [
     a: "Self-hosted only. BuildNinja runs on your own infrastructure — Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
   },
   {
-    q: "Is the Solo Edition really free forever?",
+    q: "Is the Free Edition really free forever?",
     a: "Yes. No credit card, no time limit, no expiry. Up to 10 users with 3 concurrent builds and unlimited agents — forever. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
   },
   {
     q: "What happens to my price when my team grows?",
-    a: "Nothing changes. Add 10 or 100 developers — the Shogun Edition is still a flat $199/month. You only pay for infrastructure capacity, never per developer."
+    a: "BuildNinja follows a capacity-based model rather than per-seat taxation. You can add more orchestration slots as you grow, or upgrade to an Enterprise plan for unlimited concurrent builds and 24/7 priority support."
   },
   {
     q: "Do I need a DevOps engineer to set up BuildNinja?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Can I migrate from Jenkins, GitLab CI, or Azure DevOps?",
-    a: "Yes. Free migration assistance for your first 3 projects is included with annual Shogun subscriptions — covering pipeline conversion guidance and initial configuration."
+    a: "Yes. Professional migration assistance is available for Enterprise customers — covering pipeline conversion guidance, custom workflow configuration, and best practices review."
   }
 ];
 

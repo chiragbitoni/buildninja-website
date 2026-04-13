@@ -5,7 +5,7 @@ export const heroSectionText = {
   title2: "That Just Works Out of the Box",
   subtitle:
     "Growing teams waste time on complex CI/CD tools and per-seat pricing",
-  subtitle2: "Start free up to 3 agents • $199/month unlimited as you scale",
+  subtitle2: "Start free up to 3 build slots • Enterprise scale as you grow",
   subtitle3: "Deploy in minutes. Ship features, not infrastructure.",
   primaryButton: "Get started",
   secondaryButton: "Watch 3-min demo",
@@ -61,7 +61,7 @@ export const thirdSectionText = {
   card3Text: "Set up builds, triggers, and notifications - no complexity",
   card4Title: "Deploy and Scale",
   card4Step: "STEP 4",
-  card4Text: "Ship confidently with $199/month unlimited users.",
+  card4Text: "Ship confidently with enterprise-grade orchestration.",
 };
 export const fourthSectionText = {
   title1: "Powerful Features,",
@@ -268,7 +268,7 @@ export const fifthSectionText = {
     {
       icon: paths.icons.predictablePricing,
       boldText: "Predictable pricing <br/>",
-      text: "$199/month unlimited users, not per-seat",
+      text: "Free forever or Enterprise scale, not per-seat",
     },
     {
       icon: paths.icons.infrastructure,
@@ -340,8 +340,8 @@ export const seventhSectionText = {
     description: "Setup Time",
   },
   card3: {
-    title: "$199/mo",
-    description: "Unlimited Scale",
+    title: "Unlimited",
+    description: "Enterprise Scale",
   },
   card4: {
     title: "Self-Hosted",
@@ -374,7 +374,7 @@ export const ninthSectionText = {
   subtitle:
     "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
   subtitle2: "Get your CI/CD build process running in under 5 minutes.",
-  subtitle3: "Free for 3 agents, $199/month unlimited as you scale.",
+  subtitle3: "Free up to 3 build slots, Enterprise grade as you scale.",
   primaryButton: "Try BuildNinja Free",
   secondaryButton: "See the 3-Minute Demo",
   secondTitle: "Risk-Free Guarantee",

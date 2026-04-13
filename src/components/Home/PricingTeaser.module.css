@@ -15,7 +15,19 @@
 }
 
 .badge {
-  composes: badge-alt from global;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  gap: 10px;
+  margin-bottom: 24px;
 }
 
 .title {
@@ -43,59 +55,7 @@
   line-height: 1.6;
 }
 
-/* ── Toggle Controls ── */
-.toggleWrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-}
 
-.toggleGroup {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--color-border-medium);
-  border-radius: var(--radius-pill);
-  padding: 4px;
-  overflow: hidden;
-}
-
-.toggleBtn {
-  background: transparent;
-  color: var(--color-text-secondary);
-  border: none;
-  padding: 10px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.toggleBtn:hover {
-  color: var(--color-text);
-}
-
-.activeToggle {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
-  color: #fff;
-  box-shadow: 0 4px 14px -4px var(--color-primary-glow);
-}
-
-.saveBadge {
-  composes: badge-alt from global;
-  background: var(--color-success-bg);
-  color: var(--color-success);
-  border-color: var(--color-success-border);
-  padding: 2px 8px;
-  border-radius: 12px;
-  margin-bottom: 0 !important;
-}
 
 .grid {
   display: grid;
@@ -103,42 +63,106 @@
   gap: 30px;
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: stretch;
-  }
+.centerGrid {
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px;
+}
+
+.centerGrid::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, var(--color-info-glow) 0%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .card {
-  background: rgba(var(--bg-rgb), 0.5);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(var(--bg-rgb), 0.4);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: 36px;
+  border-radius: 2.5rem;
+  padding: 60px;
   display: flex;
-  flex-direction: column;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  height: 100%;
+  z-index: 1;
+  text-align: left;
+  min-height: 420px;
 }
 
 .card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 40px;
-  right: 40px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
 }
 
-.card:hover {
-  border-color: var(--color-border-strong);
-  box-shadow: 0 20px 60px -20px rgba(0,0,0,0.4);
-  transform: translateY(-4px);
+.card:hover::before {
+  left: 100%;
+}
+
+.horizontalCard {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.cardLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 60px;
+}
+
+.cardRight {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+  border-left: 1px solid var(--color-border-subtle);
+  justify-content: center;
+}
+
+.cardBranding {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.planIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .highlightCard {
@@ -162,13 +186,35 @@
 }
 
 .soloCard::before {
-  background: linear-gradient(90deg, transparent, var(--color-info-border), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-info), transparent);
 }
 
 .soloCard:hover {
   border-color: var(--color-info);
-  box-shadow: 0 20px 60px -20px var(--color-info-bg);
-  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 60px -20px var(--color-info-bg),
+    0 0 20px rgba(var(--color-info-rgb), 0.1);
+  transform: translateY(-6px);
+}
+
+.soloCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-info), transparent, var(--color-info));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.soloCard:hover::after {
+  opacity: 0.8;
 }
 
 .cardHighlight,
@@ -176,49 +222,6 @@
 .cardHighlightSolo {
   composes: badge-alt from global;
   margin-bottom: 20px;
-}
-
-.cardHighlightFeatured {
-  background: var(--color-primary-bg) !important;
-  color: var(--color-primary) !important;
-  border: 1px solid var(--color-primary-border) !important;
-}
-
-.cardHighlightSolo {
-  background: var(--color-info-bg) !important;
-  color: var(--color-info) !important;
-  border: 1px solid var(--color-info-border) !important;
-}
-
-.cardTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.planIcon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-  margin-left: auto;
-}
-
-.planIconSolo {
-  background: var(--color-info-subtle);
-  border: 1px solid var(--color-info-border);
-}
-
-.planIconFeatured {
-  background: rgba(255, 65, 114, 0.06);
-  border: 1px solid rgba(255, 65, 114, 0.2);
 }
 
 .card:hover .planIcon {
@@ -272,10 +275,10 @@
 }
 
 .planDesc {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
-  line-height: 1.5;
-  margin-bottom: 8px;
+  line-height: 1.6;
+  margin-top: 12px;
 }
 
 .featureList {
@@ -412,7 +415,34 @@
   transform: translateX(4px);
 }
 
+@media (max-width: 900px) {
+  .card {
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 32px;
+  }
+
+  .cardRight {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: 32px;
+  }
+
+  .planIcon {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 600px) {
+  .card {
+    padding: 32px 24px;
+  }
+  
+  .price {
+    font-size: 2.8rem;
+  }
+
   .fullPricingLink {
     margin-top: 30px;
   }

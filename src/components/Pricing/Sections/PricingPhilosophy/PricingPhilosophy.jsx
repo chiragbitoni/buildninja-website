@@ -8,13 +8,13 @@ const cards = [
     icon: paths.icons.infinite,
     alt: "Infinity icon",
     title: "Unlimited Build Agents",
-    desc: "Connect as many machines as you want — available on both Solo and Shogun editions.",
+    desc: "Connect as many machines as you want — available on both Free and Enterprise editions.",
   },
   {
     icon: paths.icons.restricted,
     alt: "Restricted icon",
     title: "No Per-Seat Costs",
-    desc: "Add unlimited users without any price increases. Shogun scales with your team, not against it.",
+    desc: "Add unlimited users without any price increases. Enterprise scale for your team, not against it.",
   },
   {
     icon: paths.icons.shieldPink,
@@ -25,8 +25,8 @@ const cards = [
   {
     icon: paths.icons.clockPink,
     alt: "Clock icon",
-    title: "Start with Trial License",
-    desc: "30 days free with 10 users, 10 projects, and 3 concurrent builds. No credit card required.",
+    title: "Free Edition Forever",
+    desc: "Start with up to 10 users and 3 concurrent builds at zero cost. No credit card, no expiration.",
   },
 ];
 

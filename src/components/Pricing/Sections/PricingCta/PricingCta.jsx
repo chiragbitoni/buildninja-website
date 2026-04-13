@@ -34,12 +34,7 @@ export default function PricingCta() {
   const router = useRouter();
   const { region } = useSelector((state) => state.pricing);
 
-  const features = text.features.map((f) => {
-    if (f.includes("17,499") || f.includes("$199")) {
-      return region === "india" ? "₹17,499/month unlimited" : "$199/month unlimited";
-    }
-    return f;
-  });
+  const features = text.features;
 
   return (
     <section className={s.section}>
@@ -62,30 +57,30 @@ export default function PricingCta() {
         />
 
         <motion.div className={s.cardsGrid} variants={containerVariants}>
-          {/* Shogun */}
+          {/* Enterprise */}
           <motion.div className={`${s.card} ${s.cardFeatured}`} variants={itemVariants}>
-            <h3 className={s.cardTitle}>{text.shogun.title}</h3>
-            <p className={s.cardDesc}>{text.shogun.description}</p>
+            <h3 className={s.cardTitle}>{text.enterprise.title}</h3>
+            <p className={s.cardDesc}>{text.enterprise.description}</p>
             <button
-              id="pricing-cta-shogun"
+              id="pricing-cta-enterprise"
               className={s.btnPrimary}
-              onClick={() => router.push("/install")}
+              onClick={() => router.push("/support")}
             >
-              {text.shogun.buttonText}
+              {text.enterprise.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
             </button>
           </motion.div>
-
-          {/* Solo */}
+ 
+          {/* Free */}
           <motion.div className={s.card} variants={itemVariants}>
-            <h3 className={s.cardTitle}>{text.solo.title}</h3>
-            <p className={s.cardDesc}>{text.solo.description}</p>
+            <h3 className={s.cardTitle}>{text.free.title}</h3>
+            <p className={s.cardDesc}>{text.free.description}</p>
             <button
-              id="pricing-cta-solo"
+              id="pricing-cta-free"
               className={s.btnSecondary}
               onClick={() => router.push("/install")}
             >
-              {text.solo.buttonText}
+              {text.free.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
             </button>
           </motion.div>
