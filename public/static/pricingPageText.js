@@ -5,9 +5,9 @@ export const heroSectionText = {
   subtitle:
     "Transparent pricing designed for teams who want to deploy, not debug. Every feature built to solve real problems.",
   toggleSwitch: {
-    option1: "Monthly",
-    option2: "Annual",
-    savings: "Save up to ₹1,13,989/year",
+    option1: "Free",
+    option2: "Enterprise",
+    savings: "Predictable Infrastructure Costs",
   },
 };
 
@@ -17,9 +17,9 @@ export const heroSectionText = {
 export const secondSectionTextIndia = {
   monthCards: {
     soloEditionCard: {
-      highlight: "START WITH CONFIDENCE",
+      highlight: "FREE FOREVER",
       edition: "Free Edition",
-      price: "Free Forever",
+      price: "",
       priceDescription: "Forever free, no credit card required",
       ideal:
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
@@ -28,13 +28,6 @@ export const secondSectionTextIndia = {
         "Unlimited build agents - Connect as many machines as you want",
         "Execute up to 3 builds concurrently - Run 3 builds at the same time",
       ],
-      listCard: {
-        title: "Additional concurrent build slot",
-        list: [
-          { price: "Scalable as you grow" },
-          { price: "Contact us for additional slots" },
-        ],
-      },
       list2: [
         "Docker support included",
         "30-day build history",
@@ -52,25 +45,22 @@ export const secondSectionTextIndia = {
 
 export const secondSectionEnterpriseCardText = {
   highlight: "ENTERPRISE",
-  title: "Enterprise Edition",
-  price: "Custom",
+  title: "Enterprise Customers with Special Needs?",
+  price: "",
   ideal: "Ideal for: Large organizations and complex deployment environments",
   description:
-    "Need custom deployment, dedicated support, SLA guarantees, or special compliance requirements? We'll create a tailored solution.",
+    "We'll create a tailored solution that fits your organization's unique needs, including custom architecture and concierge onboarding.",
   list1: [
-    "Unlimited users & projects",
-    "Unlimited concurrent builds",
-    "Unlimited build agents",
-    "Perpetual build history",
+    "Custom Deployment (K8s / Air-gapped)",
+    "Dedicated 24/7 Priority Support",
+    "Tailored Organizational SLAs",
   ],
   list2: [
-    "Dedicated 24/7 priority support",
-    "Custom deployment (K8s / Air-gapped)",
-    "Professional migration assistance",
-    "Custom SLAs & compliance support",
-    "All 5 SSO providers included",
+    "Special Compliance Requirements",
+    "Concierge Onboarding & Migration",
+    "Advanced Strategic User Management",
   ],
-  buttonText: "Contact Support",
+  buttonText: "Contact Us for Custom Pricing",
   buttonText2: "Schedule a Demo",
   responseTimeText: "Response within 24 hours",
 };
@@ -80,9 +70,9 @@ export const secondSectionEnterpriseCardText = {
 export const secondSectionTextGlobal = {
   monthCards: {
     soloEditionCard: {
-      highlight: "START WITH CONFIDENCE",
+      highlight: "FREE FOREVER",
       edition: "Free Edition",
-      price: "Free Forever",
+      price: "",
       priceDescription: "Forever free, no credit card required",
       ideal:
         "Ideal for: Individual developers and small growing teams (up to 10 users)",
@@ -91,13 +81,6 @@ export const secondSectionTextGlobal = {
         "Unlimited build agents - Connect as many machines as you want",
         "Execute up to 3 builds concurrently - Run 3 builds at the same time",
       ],
-      listCard: {
-        title: "Additional concurrent build slot",
-        list: [
-          { price: "Scalable as you grow" },
-          { price: "Contact us for additional slots" },
-        ],
-      },
       list2: [
         "Docker support included",
         "30-day build history",
@@ -149,7 +132,7 @@ export const pricingFourthText = {
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
-      desc: "Free for up to 3 concurrent builds. Simple, transparent, and predictable for teams of any size.",
+      desc: "Free forever up to 3 concurrent slots. Scalable Enterprise Grade orchestration for organizations requiring unlimited capacity and dedicated support.",
       link: "Learn more →",
       id: "what-is-concurrent-agent",
     },
@@ -158,7 +141,7 @@ export const pricingFourthText = {
       alt: "BuildNinja Pink Headphone Icon",
       title: "Professional Support Included",
       tag: "Partnership",
-      desc: "Annual, 2-year, and 3-year plans include free migration assistance for 3 projects,4 hours of professional services, not upsells, but true partnership.",
+      desc: "Enterprise plans include free migration assistance for 3 projects, 4 hours of professional services, and high-priority onboarding — not upsells, but true partnership.",
       link: "Learn more →",
       id: "professional-services",
     },
@@ -268,7 +251,7 @@ export const pricingSixthText = {
   headline: "Early Adopter Program for first 100 Customers",
   subheadline: "LIMITED TIME",
   features: [
-    { title: "Price lock guarantee for multi-year plans" },
+    { title: "Price lock guarantee for your orchestration plan" },
     { title: "Priority feature requests, influence our roadmap" },
     { title: "Direct access to BuildNinja engineering team" },
     { title: "Founding customer recognition" },
