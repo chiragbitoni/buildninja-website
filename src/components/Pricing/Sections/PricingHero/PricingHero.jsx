@@ -123,84 +123,93 @@ export default function PricingHero() {
     
     return (
       <div className={`${s.card} ${isEnterprise ? s.cardFeatured : s.cardSolo}`}>
-        <div className={s.cardHead}>
-          <div className={s.cardTitleText}>
-            <span className={`${s.cardHighlight} ${isEnterprise ? s.cardHighlightFeatured : s.cardHighlightSolo}`}>
-              {card.highlight}
-            </span>
-            <h3 className={s.cardEdition}>{isEnterprise ? card.title : card.edition}</h3>
+        {/* Left Pane: Branding & Pricing */}
+        <div className={s.cardLeft}>
+          <div className={s.cardHead}>
+            <div className={s.cardTitleText}>
+              <span className={`${s.cardHighlight} ${isEnterprise ? s.cardHighlightFeatured : s.cardHighlightSolo}`}>
+                {card.highlight}
+              </span>
+              <h3 className={s.cardEdition}>{isEnterprise ? card.title : card.edition}</h3>
+            </div>
+            <div className={s.cardIcon}>
+              {isEnterprise ? <EnterpriseIcon /> : <ShogunIcon color="var(--color-info)" />}
+            </div>
           </div>
-          <div className={s.cardIcon}>
-            {isEnterprise ? <EnterpriseIcon /> : <ShogunIcon color="var(--color-info)" />}
+          
+          <div className={s.priceBlock}>
+            <p className={s.cardPrice}>{card.price}</p>
+            <p className={s.cardDesc}>{isEnterprise ? card.description : card.priceDescription}</p>
+            {card.ideal && <p className={s.cardIdeal}>{card.ideal}</p>}
           </div>
-        </div>
-        <p className={s.cardPrice}>{card.price}</p>
-        
-        {/* Description & Ideal */}
-        <p className={s.cardDesc}>{isEnterprise ? card.description : card.priceDescription}</p>
-        {card.ideal && <p className={s.cardIdeal}>{card.ideal}</p>}
 
-        {/* Concurrent upsell for Free Edition */}
-        {!isEnterprise && card.listCard && (
-          <div className={s.subCard}>
-            <p className={s.subCardTitle}>{card.listCard.title}</p>
-            {card.listCard.list.map((item, i) => (
-              <div key={i} className={s.subCardItem}>
-                <span>{item.price}</span>
-                <span className={s.subCardSaving}>{item.saving}</span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Feature list - Consolidated to avoid extra gaps */}
-        {(card.list1 || card.list2) && (
-          <ul className={s.featureList}>
-            {(card.list1 || []).map((item, i) => (
-              <li key={`l1-${i}`} className={s.featureItem}>
-                <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
-                <span dangerouslySetInnerHTML={{ __html: item }} />
-              </li>
-            ))}
-            {(card.list2 || []).map((item, i) => (
-              <li key={`l2-${i}`} className={s.featureItem}>
-                <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
-                <span dangerouslySetInnerHTML={{ __html: item }} />
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <div className={s.cardFooter}>
-          {isEnterprise ? (
-            <>
-              <button className={`${s.btnPrimary} ${s.btnEnterprise}`} onClick={() => router.push("/support")}>
-                {card.buttonText}
-                <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-              </button>
-              <button className={s.btnSecondary} onClick={() => router.push("/support")}>
-                {card.buttonText2}
-                <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-              </button>
-              {card.responseTimeText && <p className={s.cardCtaNote}>{card.responseTimeText}</p>}
-            </>
-          ) : (
-            <>
-              <button className={`${s.btnPrimary} ${s.btnSolo}`} disabled={loadingPlans} onClick={() => handleBuyNow("Solo")}>
-                {loadingPlans ? <Spinner /> : (
-                  <>
-                    {card.buttonText}
-                    <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-                  </>
-                )}
-              </button>
-              <button className={s.btnSecondary} onClick={() => router.push("/install")}>
-                {card.buttonText2}
-                <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-              </button>
-              {card.ctaText && <p className={s.cardCtaNote}>{card.ctaText}</p>}
-            </>
+          {/* Concurrent upsell for Free Edition */}
+          {!isEnterprise && card.listCard && (
+            <div className={s.subCard}>
+              <p className={s.subCardTitle}>{card.listCard.title}</p>
+              {card.listCard.list.map((item, i) => (
+                <div key={i} className={s.subCardItem}>
+                  <span>{item.price}</span>
+                  <span className={s.subCardSaving}>{item.saving}</span>
+                </div>
+              ))}
+            </div>
           )}
+        </div>
+
+        {/* Right Pane: Features & Actions */}
+        <div className={s.cardRight}>
+          <div className={s.featuresPane}>
+            <p className={s.paneHeading}>Inclusions:</p>
+            {(card.list1 || card.list2) && (
+              <ul className={s.featureList}>
+                {(card.list1 || []).map((item, i) => (
+                  <li key={`l1-${i}`} className={s.featureItem}>
+                    <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
+                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
+                {(card.list2 || []).map((item, i) => (
+                  <li key={`l2-${i}`} className={s.featureItem}>
+                    <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
+                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <div className={s.cardFooter}>
+            {isEnterprise ? (
+              <>
+                <button className={`${s.btnPrimary} ${s.btnEnterprise}`} onClick={() => router.push("/support")}>
+                  {card.buttonText}
+                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+                </button>
+                <button className={s.btnSecondary} onClick={() => router.push("/support")}>
+                  {card.buttonText2}
+                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+                </button>
+                {card.responseTimeText && <p className={s.cardCtaNote}>{card.responseTimeText}</p>}
+              </>
+            ) : (
+              <>
+                <button className={`${s.btnPrimary} ${s.btnSolo}`} disabled={loadingPlans} onClick={() => handleBuyNow("Solo")}>
+                  {loadingPlans ? <Spinner /> : (
+                    <>
+                      {card.buttonText}
+                      <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+                    </>
+                  )}
+                </button>
+                <button className={s.btnSecondary} onClick={() => router.push("/install")}>
+                  {card.buttonText2}
+                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+                </button>
+                {card.ctaText && <p className={s.cardCtaNote}>{card.ctaText}</p>}
+              </>
+            )}
+          </div>
         </div>
       </div>
     );
