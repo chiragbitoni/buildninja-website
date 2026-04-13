@@ -34,7 +34,7 @@ audience:
 - Teams migrating from complex CI/CD tools like Jenkins
 
 publisher:
-- GrapeCity India
+- GrapeHub
 - 25+ years experience building developer tools
 
 official_links:
