@@ -47,8 +47,8 @@ export default function PricingValueProp() {
   const text = JSON.parse(JSON.stringify(pricingFourthText));
   text.cards[2].desc =
     region === "india"
-      ? "Free up to 3 concurrent agents. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations."
-      : "Free up to 3 concurrent agents. $199/month unlimited users beyond that. No hidden costs, no complex calculations.";
+      ? "Free forever up to 3 concurrent slots. Scalable Enterprise Grade orchestration for organizations requiring unlimited capacity and dedicated support."
+      : "Free forever up to 3 concurrent slots. Scalable Enterprise Grade orchestration for organizations requiring unlimited capacity and dedicated support.";
 
   return (
     <section className={s.section}>

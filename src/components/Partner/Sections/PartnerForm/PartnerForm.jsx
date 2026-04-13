@@ -223,7 +223,7 @@ export default function PartnerForm() {
                         </div>
 
                         <button className={s.btnPrimary} onClick={() => {
-                            window.location.href = "mailto:marketing.in@grapecity.com?subject=Partnership Inquiry&body=Hi Team,%0D%0A%0D%0AI’d like to explore a partnership opportunity.%0D%0A";
+                            window.location.href = "mailto:marketing.in@GrapeHub.com?subject=Partnership Inquiry&body=Hi Team,%0D%0A%0D%0AI’d like to explore a partnership opportunity.%0D%0A";
                         }}>
                             Email partnership
                         </button>

@@ -28,8 +28,8 @@ THE SOFTWARE.
 <p><strong>License Account:</strong> The Licensee's registered account at grapehub.io through which License Keys are obtained and managed.</p>
 <p><strong>License Key:</strong> A unique key-code that enables Licensee to run the Software. Only Licensor and/or its representatives are permitted to produce License Keys.</p>
 <p><strong>Professional Services:</strong> Remote assistance to migrate from existing CI/CD platforms to BuildNinja, including installation support and basic configuration to replicate existing workflows. Services are limited to migration assistance only. Licensor makes no representation or warranty regarding the availability, scope, or outcome of such services.</p>
-<p><strong>Shogun Edition License:</strong> A license to use Software subject to clause 3.1(b) of this Agreement.</p>
-<p><strong>Solo Edition License:</strong> A license to use Software subject to clause 3.1(a) of this Agreement.</p>
+<p><strong>Enterprise Edition License:</strong> A license to use Software subject to clause 3.1(b) of this Agreement.</p>
+<p><strong>Free Edition License:</strong> A license to use Software subject to clause 3.1(a) of this Agreement.</p>
 <p><strong>Third-Party Software:</strong> Any software components, libraries, or modules owned by parties other than Licensor that are integrated with or made part of the Software.</p>
 <p><strong>User:</strong> Any person authorized by Licensee to use Software while performing duties within the scope of their employment or assignment with Licensee, including employees, independent contractors, and temporary workers.</p>
 <p><strong>Confidential Information:</strong> Non-public information designated confidential, or reasonably understood as such which includes: For Licensor – Software including but not limited to source code, algorithms, structure, documentation, trade secrets, business plans, pricing; For Licensee – User Data and business information.</p>
@@ -62,7 +62,7 @@ THE SOFTWARE.
 
 <h3>3.1 License Rights</h3>
 
-<p><strong>(a) Solo Edition License:</strong></p>
+<p><strong>(a) Free Edition License:</strong></p>
 <ul class="inline-list-disc">
   <li>Install and run unlimited number of Servers</li>
   <li>Use up to 10 Users per installation</li>
@@ -75,7 +75,7 @@ THE SOFTWARE.
   <li>Receive standard business hours support for the duration of the License Term via email (Monday-Friday, 10 AM - 4 PM IST, excluding Indian public holidays)</li>
 </ul>
 
-<p><strong>(b) Shogun Edition License:</strong></p>
+<p><strong>(b) Enterprise Edition License:</strong></p>
 <ul class="inline-list-disc">
   <li>Install and run unlimited number of Servers</li>
   <li>Use unlimited Users</li>
@@ -83,9 +83,9 @@ THE SOFTWARE.
   <li>Create unlimited Build Configurations per Server</li>
   <li>Retain build history for unlimited duration, subject to Licensee's available storage capacity</li>
   <li>Use all 5 SSO integration providers (Microsoft, GitLab, Bitbucket, GitHub, and Google)</li>
-  <li>Receive priority business hours support for the duration of the License Term via email (Monday-Friday, 10 AM - 4 PM IST, excluding Indian public holidays) with response time targets of 24 business hours</li>
-  <li>Access four (4) hours of remote CI/CD assistance (applicable to annual subscriptions only). Upon exhaustion of included hours, the Licensee may purchase additional services by contacting the Licensor's sales team</li>
-  <li>Receive free migration assistance (annual subscriptions only) limited to three (3) projects</li>
+  <li>Receive priority support for the duration of the License Term with dedicated response time targets</li>
+  <li>Access professional CI/CD assistance and custom deployment support</li>
+  <li>Receive free migration assistance for complex environments</li>
 </ul>
 
 <p><strong>(c) General Rights (Both Editions):</strong></p>
@@ -99,8 +99,8 @@ THE SOFTWARE.
 <ol>
   <li>Sell, redistribute, encumber, give, lend, rent, lease, sublicense, or transfer Software or any portion thereof without prior written consent of Licensor.</li>
   <li>Reverse engineer, decompile, disassemble, modify, translate, attempt to discover source code, or create derivative works from Software.</li>
-  <li>Use more concurrent builds than granted under the applicable license without purchasing additional build capacity (Solo Edition only) or without appropriate Shogun Edition licensing.</li>
-  <li>Use more Build Configurations per Server than allowed under Solo Edition License.</li>
+  <li>Use more concurrent builds than granted under the applicable license without purchasing additional build capacity (Free Edition only) or without appropriate Enterprise Edition licensing.</li>
+  <li>Use more Build Configurations per Server than allowed under Free Edition License.</li>
   <li>Use the same License Key for multiple Server installations.</li>
   <li>Remove, alter, or obscure any proprietary or copyright notices in the Software.</li>
 </ol>
@@ -113,21 +113,21 @@ THE SOFTWARE.
 <h3>Mandatory License Registration:</h3>
 <ul class="inline-list-disc">
   <li>All users must register at www.grapehub.io and obtain a valid license key before first use. Software will not function without a valid license key</li>
-  <li><strong>Solo Edition:</strong> Free license key (no payment required, valid for the License Term)</li>
-  <li><strong>Shogun Edition:</strong> Paid license key (requires active subscription)</li>
+  <li><strong>Free Edition:</strong> Free license key (no payment required, valid for the License Term)</li>
+  <li><strong>Enterprise Edition:</strong> Paid license key (requires active subscription / contract)</li>
 </ul>
 
 <h3>7-Day Grace Period:</h3>
 <p>Following license key installation, the Software shall continue to operate for seven (7) days notwithstanding any licensing validation issues, after which the Software will require successful validation to continue operating. During this grace period, Licensee shall resolve any technical problems without service interruption.</p>
 
-<h3>Misuse of Free Solo Edition Keys:</h3>
-<p>Licensee shall not misuse free Solo Edition license keys, including by creating multiple registrations, providing false or misleading information, circumventing registration limits, or using the keys for commercial, shared, bulk, or otherwise unauthorized purposes. Misuse shall constitute a material breach of this Agreement.</p>
+<h3>Misuse of Free Edition Keys:</h3>
+<p>Licensee shall not misuse Free Edition license keys, including by creating multiple registrations, providing false or misleading information, circumventing registration limits, or using the keys for commercial, shared, bulk, or otherwise unauthorized purposes. Misuse shall constitute a material breach of this Agreement.</p>
 
 <h3>Right to Suspend or Revoke License Keys:</h3>
 <p>If Licensor determines, in its sole discretion, that any License Keys have been obtained, activated, or used fraudulently or in violation of this Agreement, Licensor may immediately suspend, deactivate, or revoke such License Keys without prior notice and without liability to Licensee.</p>
 
 <h3>Consequences of Misuse:</h3>
-<p>In the event of misuse of free Solo Edition license keys, Licensor may charge the applicable commercial license fees for all unauthorized use, in addition to any other remedies available at law or in equity.</p>
+<p>In the event of misuse of Free Edition license keys, Licensor may charge the applicable commercial license fees for all unauthorized use, in addition to any other remedies available at law or in equity.</p>
 
 <h2>5. THIRD-PARTY SOFTWARE</h2>
 
@@ -140,8 +140,8 @@ THE SOFTWARE.
 <h2>6. UPGRADES</h2>
 <p>Licensor shall provide generally available Software upgrades as follows:</p>
 <ul class="inline-list-disc">
-  <li><strong>Solo Edition:</strong> Free upgrades during the License term.</li>
-  <li><strong>Shogun Edition:</strong> Free upgrades during the License Term ("Upgrade Subscription"). Licensee may renew for additional one (1) year period by paying the applicable renewal fees on Licensor's website.</li>
+  <li><strong>Free Edition:</strong> Free upgrades during the License term.</li>
+  <li><strong>Enterprise Edition:</strong> Free upgrades during the License Term ("Upgrade Subscription").</li>
 </ul>
 <p>If Licensee does not renew the Upgrade Subscription, Licensee shall retain a license valid for the remaining License Term.</p>
 

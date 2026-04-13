@@ -1,7 +1,7 @@
 import HomePage from "./HomePage";
 
 export const metadata = {
-  title: "Build Ninja Self-Hosted CI/CD DevOps Made Simple |Grapecity India",
+  title: "Build Ninja Self-Hosted CI/CD DevOps Made Simple |GrapeHub India",
   alternates: {
     canonical: "https://buildninja.grapehub.io/",
   },

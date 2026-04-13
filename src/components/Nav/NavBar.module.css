@@ -44,9 +44,10 @@
 
 .logoImage {
   object-fit: contain;
-  height: 48.5px !important;
-  width: 178px !important;
+  height: 40px;
+  width: auto;
   transition: opacity 0.25s ease;
+  filter: var(--logo-filter);
 }
 
 /* ── Nav Links ── */
@@ -58,6 +59,12 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.navbarRightGroup {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .navbarActionGroup {
@@ -121,7 +128,7 @@
 }
 
 /* ── CTA Button ── */
-.navbarStartTrialButton {
+.navbarGetStartedButton {
   border-radius: var(--radius-pill);
   color: #ffffff;
   background: var(--color-primary);
@@ -137,7 +144,7 @@
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
 }
 
-.navbarStartTrialButton:hover {
+.navbarGetStartedButton:hover {
   background: transparent;
   color: var(--color-primary);
   border-color: var(--color-primary);
@@ -223,7 +230,7 @@
 
 /* ── Responsive ── */
 @media (max-width: 1150px) {
-  .desktopMenu {
+  .navbarRightGroup {
     display: none !important;
   }
   .mobileMenu {
@@ -282,7 +289,7 @@
     padding-left: 32px;
   }
 
-  .navbarStartTrialButton {
+  .navbarGetStartedButton {
     width: 100%;
     margin: 0;
     padding: 12px;
@@ -304,7 +311,7 @@
   }
 
   .logoImage {
-    width: 130px !important;
+    width: 130px;
   }
 }
 
@@ -315,7 +322,7 @@
   }
 
   .logoImage {
-    width: 110px !important;
-    height: 38px !important;
+    width: 110px;
+    height: auto;
   }
 }

@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import s from "./PricingFaq.module.css";
-import { useSelector } from "react-redux";
 import { pricingSeventhText } from "../../../../../public/static/pricingPageText";
 import { useRouter } from "next/navigation";
 
@@ -28,8 +27,7 @@ const itemVariants = {
 };
 
 export default function PricingFaq() {
-  const { region } = useSelector((state) => state.pricing);
-  const text = pricingSeventhText[region] || pricingSeventhText.global;
+  const text = pricingSeventhText;
   const router = useRouter();
   const [openIndex, setOpenIndex] = useState(null);
 

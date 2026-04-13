@@ -21,7 +21,6 @@ export default function HomePage() {
       <SocialProof />
       <PricingTeaser />
       <AIRoadmap />
-      <TrustBanner />
       <FAQSection />
       <CTASection />
     </>

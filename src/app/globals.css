@@ -2,11 +2,12 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════
-DESIGN TOKENS
+   DESIGN TOKENS
    ═══════════════════════════════════════════ */
 :root {
   /* Brand */
   --color-primary: #ff4172;
+  --color-primary-rgb: 255, 65, 114;
   --color-primary-alt: #ff6135;
   --color-primary-glow: rgba(255, 65, 114, 0.4);
   --color-primary-subtle: rgba(240, 58, 73, 0.08);
@@ -43,6 +44,7 @@ DESIGN TOKENS
   --color-error-bg: rgba(255, 92, 92, 0.08);
   --color-error-border: rgba(255, 92, 92, 0.22);
   --color-info: #40a9ff;
+  --color-info-rgb: 64, 169, 255;
   --color-info-bg: rgba(64, 169, 255, 0.12);
   --color-info-border: rgba(64, 169, 255, 0.5);
   --color-info-subtle: rgba(64, 169, 255, 0.04);
@@ -88,8 +90,9 @@ DESIGN TOKENS
   --shell-height: 580px;
   --shell-aspect: calc(580 / 1100 * 100%);
 
-  /* Utilities */
-  --icon-filter: none;
+  /* Utilities (Default Dark) */
+  --icon-filter: none; /* White icons stay white on dark bg */
+  --logo-filter: invert(1) brightness(1.8); /* Black logo inverts to white */
 }
 
 [data-theme='light'] {
@@ -149,12 +152,13 @@ DESIGN TOKENS
   --color-primary-glow: rgba(255, 65, 114, 0.15);
 
   /* Utilities */
-  --icon-filter: invert(1);
+  --icon-filter: invert(1); /* White icons invert to black on light bg */
+  --logo-filter: none; /* Black logo stays black on light bg */
 }
 
 /* ═══════════════════════════════════════════
-GLOBAL RESETS & BASE
-═══════════════════════════════════════════ */
+   GLOBAL RESETS & BASE
+   ═══════════════════════════════════════════ */
 * {
   scrollbar-width: thin;
   /* "auto" or "thin" */

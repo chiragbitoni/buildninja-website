@@ -94,4 +94,4 @@ export default function Cursor() {
       dangerouslySetInnerHTML={{ __html: cursorScript }}
     />
   );
-}
+}

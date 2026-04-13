@@ -66,24 +66,6 @@ export default function AddToCartContent() {
     return ((monthPrice - effective) / monthPrice) * 100;
   };
 
-  const getEquivalentShogun = (plan) => {
-    const cached = localStorage.getItem("plans");
-    if (!cached) return undefined;
-
-    const arr = JSON.parse(cached);
-    const shogun = arr.find(
-      (x) =>
-        x.currency === plan.currency &&
-        x.billingCycle === plan.billingCycle &&
-        x.name.trim() === "Shogun"
-    );
-
-    if (shogun) {
-      shogun.savings = getPrice(plan, extra) - shogun.price;
-    }
-
-    return shogun;
-  };
 
   const extractPlanFeatures = (plan) => {
     const features = [];
@@ -106,7 +88,8 @@ export default function AddToCartContent() {
 
     features.push("Docker support included");
     features.push("Community Support");
-    features.push("30 days trial period for testing everything");
+    features.push("Full orchestration platform access");
+    features.push("No time limits or expiration");
 
     return features;
   };
@@ -205,7 +188,7 @@ export default function AddToCartContent() {
   const PlanHeader = () => (
     <div className={s.headerWrapper}>
       <h1 className={s.headerTitle}>
-        {currentPlan?.name} <span>Edition</span>
+        {currentPlan?.name === "Solo" ? "Free" : currentPlan?.name} <span>Edition</span>
       </h1>
 
       <div className="badge-alt">
@@ -215,7 +198,7 @@ export default function AddToCartContent() {
       <p className={s.headerSubtitle}>
         {currentPlan?.name === "Solo"
           ? "No credit card required. Ideal for individuals and small teams."
-          : "Built for enterprise teams that need unlimited scale, advanced controls, and zero operational limits."}
+          : "Enterprise-grade orchestration for teams that need unlimited scale, advanced controls, and zero operational limits."}
       </p>
     </div>
   );
@@ -341,7 +324,7 @@ export default function AddToCartContent() {
       >
         {currentPlan &&
           (currentPlan.name === "Solo" && value[0] === baseFree
-            ? "Using Free Plan"
+            ? "Using Free Edition"
             : "Purchase Subscription")}
       </button>
 
@@ -397,7 +380,7 @@ export default function AddToCartContent() {
                       <Shield className={s.propIcon} size={18} />
                       {currentPlan?.name === "Solo"
                         ? "No credit card required"
-                        : "30 days trial period for onboarding"}
+                        : "Priority enterprise onboarding support"}
                     </div>
 
                     <div className={s.propItem}>
@@ -493,23 +476,13 @@ export default function AddToCartContent() {
                   {currentPlan?.name !== "Solo" && (
                     <div className={s.highlightBox} style={{marginTop: 0, marginBottom: "2rem"}}>
                         Best suited for teams scaling beyond the limits of
-                        Solo—no restrictions, no bottlenecks, no concurrency
+                        standard plans—no restrictions, no bottlenecks, no concurrency
                         limits.
                     </div>
                   )}
 
                   <PriceBreakdown />
 
-                  {/* Shogun Suggestion */}
-                  {currentPlan?.name === "Solo" && (getEquivalentShogun(currentPlan)?.savings ?? 0) > 0 && (
-                      <div className={s.shogunNotice}>
-                        Unlock unlimited agents with the{" "}
-                        <a href={`/addtocart?planid=${getEquivalentShogun(currentPlan)?.id}`}>
-                          Shogun Edition
-                        </a>{" "}
-                        with similar price.
-                      </div>
-                  )}
                   
                   <BottomStickyButton />
                 </div>

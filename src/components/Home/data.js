@@ -113,5 +113,5 @@ export const SSO_PROVIDERS = [
   { abbr:'MS', icon:'🪟', name:'Microsoft', label:'Microsoft', enabled:true,  clientId:'ee79f37a-d0b8-4f13-a3d8-f66cefb1870a', authUrl:'https://login.microsoftonline.com/7f25deda-221b-44f6.../'           },
 ];
 
-export const LICENSE = { status:'Active', plan:'shogun', validUntil:'30/12/2026', remaining:'9 months remaining' };
+export const LICENSE = { status:'Active', plan:'Enterprise', validUntil:'30/12/2026', remaining:'9 months remaining' };
 export const SETTINGS_TABS = ['SSO Settings','Notifier Settings','Mail Templates','Manage License'];

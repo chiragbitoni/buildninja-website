@@ -18,7 +18,7 @@ export const secondSectionTextIndia = {
   monthCards: {
     soloEditionCard: {
       highlight: "START WITH CONFIDENCE",
-      edition: "Solo Edition",
+      edition: "Free Edition",
       price: "Free Forever",
       priceDescription: "Forever free, no credit card required",
       ideal:
@@ -31,10 +31,8 @@ export const secondSectionTextIndia = {
       listCard: {
         title: "Additional concurrent build slot",
         list: [
-          { price: "₹2,199/month" },
-          { price: "₹16,999/year ", saving: "(SAVE 36%)" },
-          { price: "₹25,999/2-year ", saving: "(SAVE 51%)" },
-          { price: "₹34,999/3-year ", saving: "(SAVE 56%)" },
+          { price: "Scalable as you grow" },
+          { price: "Contact us for additional slots" },
         ],
       },
       list2: [
@@ -43,86 +41,37 @@ export const secondSectionTextIndia = {
         "Up to 100 projects",
         "Up to 100 configurations",
         "Standard Email support",
-        "1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
       ],
-      buttonText: "Get Your Free Key",
-      buttonText2: "Start with Trial License",
-      ctaText: "No strings attached. Solo Edition stays free forever.",
-    },
-
-    shogunEditionCard: {
-      highlight: "MOST POPULAR",
-      edition: "Shogun Edition",
-      price: "₹17,499/month",
-      ideal:
-        "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
-      list: [
-        "<strong>Unlimited users</strong> - No per-seat costs as you grow",
-        "<strong>Unlimited projects</strong> - No artificial limits",
-        "<strong>Unlimited configurations</strong> - Scale without restrictions",
-        "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
-        "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
-        "<strong>Perpetual build history</strong> - Complete audit trail forever",
-        "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
-        "<strong>Priority business support</strong> - Direct engineering team access",
-      ],
-      buttonText: "Start with Trial License",
-      ctaText: "No credit card. No commitment.",
-    },
-  },
-
-  // Annual Plan
-  annualCard: {
-    highlight: "MOST POPULAR",
-    edition: "Shogun Edition",
-    price: "₹1,39,999/year",
-    description: "(₹11,666/month equivalent)",
-    savings: "SAVE 33%",
-    ideal:
-      "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
-    list: [
-      "<strong>Unlimited users</strong> - No per-seat costs as you grow",
-      "<strong>Unlimited projects</strong> - No artificial limits",
-      "<strong>Unlimited configurations</strong> - Scale without restrictions",
-      "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
-      "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
-      "<strong>Perpetual build history</strong> - Complete audit trail forever",
-      "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
-      "<strong>Priority business support</strong> - Direct engineering team access",
-    ],
-    buttonText: "Start with Trial License",
-    ctaText: "No credit card. No commitment.",
-  },
-
-  // Multi-year plans
-  multiYearCards: {
-    twoYear: {
-      highlight: "BEST VALUE",
-      edition: "Shogun Edition - 2-Year Upfront",
-      price: "₹2,19,999 ",
-      description: "(₹9,166/month equivalent)",
-      savings: "SAVE 48%",
-      buttonText: "Start with Trial License",
-      ctaText: "No credit card. No commitment.",
-    },
-    threeYear: {
-      highlight: "MAXIMUM SAVINGS",
-      edition: "Shogun Edition - 3-Year Upfront",
-      price: "₹2,79,999",
-      description: "(₹7,777/month) equivalent",
-      savings: "SAVE 56%",
-      buttonText: "Start with Trial License",
-      ctaText: "No credit card. No commitment.",
+      buttonText: "Get Started",
+      buttonText2: "Schedule a Demo",
+      ctaText: "No strings attached. Free Edition stays free forever.",
     },
   },
 };
 
+
 export const secondSectionEnterpriseCardText = {
   highlight: "ENTERPRISE",
-  title: "Enterprise Customers with Special Needs?",
+  title: "Enterprise Edition",
+  price: "Custom",
+  ideal: "Ideal for: Large organizations and complex deployment environments",
   description:
-    "Need custom deployment, dedicated support, SLA guarantees, or special compliance requirements? We'll create a tailored solution that fits your organization's unique needs.",
-  buttonText: "Contact Us for Custom Pricing",
+    "Need custom deployment, dedicated support, SLA guarantees, or special compliance requirements? We'll create a tailored solution.",
+  list1: [
+    "Unlimited users & projects",
+    "Unlimited concurrent builds",
+    "Unlimited build agents",
+    "Perpetual build history",
+  ],
+  list2: [
+    "Dedicated 24/7 priority support",
+    "Custom deployment (K8s / Air-gapped)",
+    "Professional migration assistance",
+    "Custom SLAs & compliance support",
+    "All 5 SSO providers included",
+  ],
+  buttonText: "Contact Support",
+  buttonText2: "Schedule a Demo",
   responseTimeText: "Response within 24 hours",
 };
 // ===========================
@@ -132,7 +81,7 @@ export const secondSectionTextGlobal = {
   monthCards: {
     soloEditionCard: {
       highlight: "START WITH CONFIDENCE",
-      edition: "Solo Edition",
+      edition: "Free Edition",
       price: "Free Forever",
       priceDescription: "Forever free, no credit card required",
       ideal:
@@ -145,10 +94,8 @@ export const secondSectionTextGlobal = {
       listCard: {
         title: "Additional concurrent build slot",
         list: [
-          { price: "$25/month" },
-          { price: "$199/year ", saving: "(SAVE 34%)" },
-          { price: "$299/2-year ", saving: "(SAVE 50%)" },
-          { price: "$399/3-year ", saving: "(SAVE 56%)" },
+          { price: "Scalable as you grow" },
+          { price: "Contact us for additional slots" },
         ],
       },
       list2: [
@@ -156,80 +103,14 @@ export const secondSectionTextGlobal = {
         "30-day build history",
         "Up to 100 projects",
         "Up to 100 configurations",
-        "Standard Email support",
-        "Any 1 SSO provider integration (choose: Microsoft, GitHub, GitLab, Bitbucket, or Google)",
-      ],
-      buttonText: "Get Your Free Key",
-      buttonText2: "Start with Trial License",
-      ctaText: "No strings attached. Solo Edition stays free forever.",
-    },
-
-    shogunEditionCard: {
-      highlight: "MOST POPULAR",
-      edition: "Shogun Edition",
-      price: "$199/month",
-      ideal:
-        "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
-      list: [
-        "<strong>Unlimited users</strong> - No per-seat costs as you grow",
-        "<strong>Unlimited projects</strong> - No artificial limits",
-        "<strong>Unlimited configurations</strong> - Scale without restrictions",
-        "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
-        "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
-        "<strong>Perpetual build history</strong> - Complete audit trail forever",
-        "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
-        "<strong>Priority business support</strong> - Direct engineering team access",
-      ],
-      buttonText: "Start with Trial License",
-      ctaText: "No credit card. No commitment.",
-    },
-  },
-
-  // Annual Plan
-  annualCard: {
-    highlight: "MOST POPULAR",
-    edition: "Shogun Edition",
-    price: "$1,599/year",
-    description: "($133/month) equivalent",
-    savings: "SAVE 33%",
-    ideal:
-      "Ideal for: Enterprise organizations and growing teams who need unlimited scale without per-seat cost anxiety",
-    list: [
-      "<strong>Unlimited users</strong> - No per-seat costs as you grow",
-      "<strong>Unlimited projects</strong> - No artificial limits",
-      "<strong>Unlimited configurations</strong> - Scale without restrictions",
-      "<strong>Unlimited concurrent builds</strong> - Run as many builds simultaneously as your infrastructure supports",
-      "<strong>Unlimited build agents</strong> - Connect as many machines as you want",
-      "<strong>Perpetual build history</strong> - Complete audit trail forever",
-      "<strong>All 5 SSO providers</strong> - Microsoft, GitHub, GitLab, Bitbucket, and Google",
-      "<strong>Priority business support</strong> - Direct engineering team access",
-    ],
-    buttonText: "Start with Trial License",
-    ctaText: "No credit card. No commitment.",
-  },
-
-  // Multi-year Plans
-  multiYearCards: {
-    twoYear: {
-      highlight: "BEST VALUE",
-      edition: "Shogun Edition - 2-Year Upfront",
-      price: "$2,499",
-      description: "($104/month equivalent)",
-      savings: "SAVE 48%",
-      buttonText: "Start with Trial License",
-      ctaText: "No credit card. No commitment.",
-    },
-    threeYear: {
-      highlight: "MAXIMUM SAVINGS",
-      edition: "Shogun Edition - 3-Year Upfront",
-      price: "$3,199",
-      description: "($89/month equivalent)",
-      savings: "SAVE 55%",
-      buttonText: "Start with Trial License",
-      ctaText: "No credit card. No commitment.",
+        "Standard Email support",],
+      buttonText: "Get Started",
+      buttonText2: "Schedule a Demo",
+      ctaText: "No strings attached. Free Edition stays free forever.",
     },
   },
 };
+
 
 // pricingFourthText.js
 
@@ -246,7 +127,7 @@ export const pricingFourthText = {
   cards: [
     {
       icon: paths.icons.usersPink,
-      alt: "Grapecity Pink Users Icon",
+      alt: "BuildNinja Pink Users Icon",
       title: "No Per-Seat Taxation",
       tag: "Scale Freely",
       desc: "Pay for your infrastructure scale, not your team size. Add 10 developers or 100, your BuildNinja cost stays the same.",
@@ -255,7 +136,7 @@ export const pricingFourthText = {
     },
     {
       icon: paths.icons.serverPink,
-      alt: "Grapecity Pink Server Icon",
+      alt: "BuildNinja Pink Server Icon",
       title: "Self-Hosted Freedom",
       tag: "Full Control",
       desc: "Run on your infrastructure with complete control. No vendor lock-in, no data sovereignty concerns, no surprise cloud bills.",
@@ -264,17 +145,17 @@ export const pricingFourthText = {
     },
     {
       icon: paths.icons.calculatorPink,
-      alt: "Grapecity Pink Calculator Icon",
+      alt: "BuildNinja Pink Calculator Icon",
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
-      desc: "Free up to 3 concurrent builds. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations.",
+      desc: "Free for up to 3 concurrent builds. Simple, transparent, and predictable for teams of any size.",
       link: "Learn more →",
       id: "what-is-concurrent-agent",
     },
     {
       icon: paths.icons.headphonesPink,
-      alt: "Grapecity Pink Headphone Icon",
+      alt: "BuildNinja Pink Headphone Icon",
       title: "Professional Support Included",
       tag: "Partnership",
       desc: "Annual, 2-year, and 3-year plans include free migration assistance for 3 projects,4 hours of professional services, not upsells, but true partnership.",
@@ -283,11 +164,11 @@ export const pricingFourthText = {
     },
     {
       icon: paths.icons.syncPink,
-      alt: "Grapecity Pink Sync Icon",
+      alt: "BuildNinja Pink Sync Icon",
       title: "Risk-Free Switching",
-      tag: "30-Day Demo",
-      desc: "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and a 30-day demo to validate everything works. We remove barriers that keep teams stuck on expensive tools.",
-      badges: ["Migration Support", "License Credits", "Zero Risk Trial"],
+      tag: "Migration Assistance",
+      desc: "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and professional onboarding. We remove barriers that keep teams stuck on expensive tools.",
+      badges: ["Migration Support", "License Credits", "Zero Risk"],
       // id: ""
     },
   ],
@@ -366,8 +247,7 @@ export const pricingFifthText = {
         {
           heading: "SSO Integrations",
           list: [
-            "Solo: 1 provider (choose your primary)",
-            "Shogun: All 5 providers (Microsoft, <br/>Azure AD, Google, GitHub, GitLab)",
+            "Free: 1 provider (choose your primary)",
           ],
         },
         {
@@ -399,90 +279,53 @@ export const pricingSixthText = {
 };
 
 export const pricingSeventhText = {
-  india: {
-    title: "Quick FAQ",
-    faqs: [
-      {
-        question: "What happens when my team grows?",
-        answer:
-          "Nothing to your BuildNinja price. Add 10 or 100 developers, still ₹17,499/month for unlimited users.",
-      },
-      {
-        question: "Is the free Solo Edition really free forever?",
-        answer:
-          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent builds forever.",
-      },
-      {
-        question:
-          "What's the difference between build agents and concurrent builds?",
-        answer:
-          "Build agents = machines you connect (unlimited). Concurrent builds = builds running at the same time (3 in Solo, unlimited in Shogun).",
-      },
-      {
-        question: "Can I try before buying?",
-        answer:
-          "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required.",
-      },
-      {
-        question: "What if I need to cancel?",
-        answer:
-          "Cancel anytime. You keep full control of your self-hosted setup and all your data.",
-      },
-    ],
-    button: "View Complete FAQ →",
-  },
-
-  global: {
-    title: "Quick FAQ",
-    faqs: [
-      {
-        question: "What happens when my team grows?",
-        answer:
-          "Nothing to your BuildNinja price. Add 10 or 100 developers, still $199/month for unlimited users.",
-      },
-      {
-        question: "Is the free Solo Edition really free forever?",
-        answer:
-          "Yes. No credit card, no time limit, no surprise bills. Up to 10 users with 3 concurrent builds forever.",
-      },
-      {
-        question:
-          "What's the difference between build agents and concurrent builds?",
-        answer:
-          "Build agents = machines you connect (unlimited). Concurrent builds = builds running at the same time (3 in Solo, unlimited in Shogun).",
-      },
-      {
-        question: "Can I try before buying?",
-        answer:
-          "Yes! All new users get a 30-day trial license that supports up to 10 users, 10 projects, and 3 concurrent builds. No credit card required.",
-      },
-      {
-        question: "What if I need to cancel?",
-        answer:
-          "Cancel anytime. You keep full control of your self-hosted setup and all your data.",
-      },
-    ],
-    button: "View Complete FAQ →",
-  },
+  title: "Frequently Asked Questions",
+  faqs: [
+    {
+      question: "How do I scale beyond 3 concurrent builds?",
+      answer:
+        "The Free Edition includes 3 concurrent build slots. If your team needs more capacity, please contact us for Enterprise orchestration. We provide tailored licensing for large-scale build environments.",
+    },
+    {
+      question: "Is the Free Edition really free forever?",
+      answer:
+        "Yes. No credit card, no time limit, no surprise bills. Up to 3 concurrent builds forever.",
+    },
+    {
+      question: "What's the difference between build agents and concurrent builds?",
+      answer:
+        "Build agents are the machines you connect (unlimited). Concurrent builds are the number of builds running at the exact same time (3 included for free, unlimited for Enterprise).",
+    },
+    {
+      question: "Can I try before committing to Enterprise?",
+      answer:
+        "Yes! The Free Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
+    },
+    {
+      question: "Can I cancel my Enterprise plan?",
+      answer:
+        "Yes. Since BuildNinja is self-hosted, you always maintain full control of your infrastructure and data, even if you decide to stop using our premium orchestration services.",
+    },
+  ],
+  button: "View Complete FAQ →",
 };
 export const pricingEighthText = {
-  title: "Stop Paying Per-Seat. Start Shipping Code.",
+  title: "DevOps Made Simple. Get Started.",
   subtitle:
     "Join engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. <br/>Get your CI/CD build process running in under 5 minutes.",
-  solo: {
-    title: "Solo Edition",
-    description: "No strings attached. Solo Edition stays free forever.",
-    buttonText: "Get Your Free Key",
+  enterprise: {
+    title: "Enterprise Edition",
+    description: "Built for teams requiring high availability, custom SLAs, and dedicated priority support.",
+    buttonText: "Contact Support",
   },
-  shogun: {
-    title: "Shogun Edition",
-    description: "No credit card. No commitment.",
-    buttonText: "Start with Trial License",
+  free: {
+    title: "Free Edition",
+    buttonText: "Get Started",
   },
   features: [
-    "Free forever - Solo Edition",
-    "₹17,499/month unlimited",
-    " 30-day trial license",
+    "Free forever - Free Edition",
+    "Enterprise Grade Scale",
+    "Full Platform Access",
     "5-minute setup",
     "Self-hosted control",
     "Direct support",

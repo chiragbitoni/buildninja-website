@@ -35,8 +35,8 @@ const schema = {
       logo: "https://buildninja.grapehub.io/resources/BuildNinja.png",
       sameAs: [
         "https://www.linkedin.com/showcase/build-ninja/",
-        "https://www.instagram.com/grapecityindia/",
-        "https://www.facebook.com/GrapeCityIndiaPvtLtd",
+        "https://www.instagram.com/GrapeHubindia/",
+        "https://www.facebook.com/GrapeHubIndiaPvtLtd",
         "https://www.youtube.com/@BuildNinja_CICD",
       ],
     },
@@ -54,7 +54,7 @@ const schema = {
 export const metadata = {
   title: {
     default:
-      "Build Ninja Self-Hosted CI/CD DevOps Made Simple |Grapecity India",
+      "Build Ninja Self-Hosted CI/CD DevOps Made Simple |GrapeHub India",
     template: "%s | BuildNinja",
   },
   description:
