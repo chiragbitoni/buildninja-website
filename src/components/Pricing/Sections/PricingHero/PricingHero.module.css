@@ -282,11 +282,44 @@
   display: flex;
   flex-direction: row; /* Horizontal layout */
   gap: 32px;
-  min-height: 380px;
+  min-height: 330px; /* Further reduced height */
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   position: relative;
   overflow: hidden;
   text-align: left;
+}
+
+.cardVertical {
+  flex-direction: column;
+  text-align: center;
+  gap: 24px;
+  min-height: auto;
+  align-items: center;
+  max-width: 680px; /* Reduced width */
+  margin: 0 auto;
+}
+
+.cardContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cardVertical .cardHead {
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.cardVertical .cardTitleText {
+  align-items: center;
+  text-align: center;
+}
+
+.cardVertical .priceBlock {
+  margin-top: 0;
 }
 
 .card::before {
@@ -305,20 +338,19 @@
   transform: translateY(-4px);
 }
 
-.cardFeatured {
-  border-color: var(--color-border);
-  background: rgba(var(--bg-rgb), 0.4);
-  opacity: 0.9;
-}
-
-.cardFeatured::before {
-  background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
-}
-
-.cardFeatured:hover {
-  border-color: var(--color-primary-border);
-  box-shadow: 0 10px 40px -20px var(--color-primary-glow);
+.cardEnterprise {
+  border-color: var(--color-enterprise-border);
+  background: linear-gradient(145deg, var(--color-enterprise-subtle), rgba(var(--bg-rgb), 0.5));
   opacity: 1;
+}
+
+.cardEnterprise::before {
+  background: linear-gradient(90deg, transparent, var(--color-enterprise), transparent);
+}
+
+.cardEnterprise:hover {
+  border-color: var(--color-enterprise);
+  box-shadow: 0 20px 80px -20px var(--color-enterprise-glow);
 }
 
 .cardSolo {
@@ -348,18 +380,38 @@
   box-shadow: 0 0 20px var(--color-info-subtle);
 }
 
-/* Highlight Badge - Replacing 'composes' with standard styles for better support */
 .cardHighlight {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
-  font-size: 0.72rem;
+  gap: 8px;
+  padding: 5px 14px;
+  font-size: 0.7rem;
   font-weight: 700;
   border-radius: var(--radius-pill);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
   cursor: default;
+  font-family: var(--font-accent);
+}
+
+.blinkDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: badgePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.4);
+  }
 }
 
 .cardHighlightSolo {
@@ -379,7 +431,7 @@
 
 /* Plan Icons */
 .cardLeft {
-  flex: 1.1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--color-border-subtle);
@@ -387,14 +439,14 @@
 }
 
 .cardRight {
-  flex: 1.9;
+  flex: 1.2;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
 .priceBlock {
-  margin-top: 24px;
+  margin-top: 16px; /* Reduced from 24px */
 }
 
 .featuresPane {
@@ -407,7 +459,7 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 20px;
+  margin-bottom: 12px; /* Reduced from 20px */
   font-family: var(--font-accent);
 }
 
@@ -479,7 +531,7 @@
   font-weight: 800;
   color: var(--color-text);
   line-height: 1;
-  margin: 12px 0 4px;
+  margin: 8px 0 2px; /* Reduced from 12px 0 4px */
   letter-spacing: -0.04em;
 }
 
@@ -582,9 +634,9 @@
 .cardFooter {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px; /* Reduced from 10px */
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 16px; /* Reduced from 24px */
 }
 
 .btnPrimary {
@@ -593,6 +645,8 @@
   justify-content: center;
   gap: 8px;
   padding: 14px 24px;
+  width: 100%; /* Full width in vertical mode */
+  max-width: 320px;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: #fff;
   border: none;
@@ -640,6 +694,8 @@
   justify-content: center;
   gap: 8px;
   padding: 13px 24px;
+  width: 100%; /* Full width in vertical mode */
+  max-width: 320px;
   background: var(--color-bg-panel);
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border-medium);

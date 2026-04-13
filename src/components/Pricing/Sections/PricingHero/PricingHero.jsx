@@ -122,15 +122,16 @@ export default function PricingHero() {
     const isEnterprise = type === "enterprise";
     
     return (
-      <div className={`${s.card} ${isEnterprise ? s.cardFeatured : s.cardSolo}`}>
-        {/* Left Pane: Branding & Pricing */}
-        <div className={s.cardLeft}>
+      <div className={`${s.card} ${isEnterprise ? s.cardVertical + " " + s.cardEnterprise : s.cardSolo}`}>
+        {/* Left Pane: Branding & Pricing (For Solo) / Main Content (For Enterprise) */}
+        <div className={isEnterprise ? s.cardContent : s.cardLeft}>
           <div className={s.cardHead}>
             <div className={s.cardTitleText}>
               <span className={`${s.cardHighlight} ${isEnterprise ? s.cardHighlightFeatured : s.cardHighlightSolo}`}>
+                <span className={s.blinkDot} />
                 {card.highlight}
               </span>
-              <h3 className={s.cardEdition}>{isEnterprise ? card.title : card.edition}</h3>
+              <h3 className={s.cardEdition}>{card.title || card.edition}</h3>
             </div>
             <div className={s.cardIcon}>
               {isEnterprise ? <EnterpriseIcon /> : <ShogunIcon color="var(--color-info)" />}
@@ -138,12 +139,11 @@ export default function PricingHero() {
           </div>
           
           <div className={s.priceBlock}>
-            <p className={s.cardPrice}>{card.price}</p>
+            {card.price && <p className={s.cardPrice}>{card.price}</p>}
             <p className={s.cardDesc}>{isEnterprise ? card.description : card.priceDescription}</p>
             {card.ideal && <p className={s.cardIdeal}>{card.ideal}</p>}
           </div>
 
-          {/* Concurrent upsell for Free Edition */}
           {!isEnterprise && card.listCard && (
             <div className={s.subCard}>
               <p className={s.subCardTitle}>{card.listCard.title}</p>
@@ -155,13 +155,32 @@ export default function PricingHero() {
               ))}
             </div>
           )}
+
+          <div className={s.cardFooter}>
+            <button className={`${s.btnPrimary} ${isEnterprise ? s.btnEnterprise : s.btnSolo}`} disabled={!isEnterprise && loadingPlans} onClick={() => isEnterprise ? router.push("/support") : handleBuyNow("Solo")}>
+              {loadingPlans ? <Spinner /> : (
+                <>
+                  {card.buttonText}
+                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+                </>
+              )}
+            </button>
+            {card.buttonText2 && (
+              <button className={s.btnSecondary} onClick={() => router.push(isEnterprise ? "/support" : "/install")}>
+                {card.buttonText2}
+                <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+              </button>
+            )}
+            {card.ctaText && <p className={s.cardCtaNote}>{card.ctaText}</p>}
+            {isEnterprise && card.responseTimeText && <p className={s.cardCtaNote}>{card.responseTimeText}</p>}
+          </div>
         </div>
 
-        {/* Right Pane: Features & Actions */}
-        <div className={s.cardRight}>
-          <div className={s.featuresPane}>
-            <p className={s.paneHeading}>Inclusions:</p>
-            {(card.list1 || card.list2) && (
+        {/* Right Pane: Features (Only for Solo) */}
+        {!isEnterprise && (
+          <div className={s.cardRight}>
+            <div className={s.featuresPane}>
+              <p className={s.paneHeading}>Inclusions:</p>
               <ul className={s.featureList}>
                 {(card.list1 || []).map((item, i) => (
                   <li key={`l1-${i}`} className={s.featureItem}>
@@ -176,44 +195,13 @@ export default function PricingHero() {
                   </li>
                 ))}
               </ul>
-            )}
+            </div>
           </div>
-
-          <div className={s.cardFooter}>
-            {isEnterprise ? (
-              <>
-                <button className={`${s.btnPrimary} ${s.btnEnterprise}`} onClick={() => router.push("/support")}>
-                  {card.buttonText}
-                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-                </button>
-                <button className={s.btnSecondary} onClick={() => router.push("/support")}>
-                  {card.buttonText2}
-                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-                </button>
-                {card.responseTimeText && <p className={s.cardCtaNote}>{card.responseTimeText}</p>}
-              </>
-            ) : (
-              <>
-                <button className={`${s.btnPrimary} ${s.btnSolo}`} disabled={loadingPlans} onClick={() => handleBuyNow("Solo")}>
-                  {loadingPlans ? <Spinner /> : (
-                    <>
-                      {card.buttonText}
-                      <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-                    </>
-                  )}
-                </button>
-                <button className={s.btnSecondary} onClick={() => router.push("/install")}>
-                  {card.buttonText2}
-                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-                </button>
-                {card.ctaText && <p className={s.cardCtaNote}>{card.ctaText}</p>}
-              </>
-            )}
-          </div>
-        </div>
+        )}
       </div>
     );
   };
+
 
 
   return (

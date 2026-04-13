@@ -57,8 +57,22 @@ export default function PricingCta() {
         />
 
         <motion.div className={s.cardsGrid} variants={containerVariants}>
+          {/* Free */}
+          <motion.div className={`${s.card} ${s.cardSolo}`} variants={itemVariants}>
+            <h3 className={s.cardTitle}>{text.free.title}</h3>
+            <p className={s.cardDesc}>{text.free.description}</p>
+            <button
+              id="pricing-cta-free"
+              className={s.btnInfo}
+              onClick={() => router.push("/install")}
+            >
+              {text.free.buttonText}
+              <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+            </button>
+          </motion.div>
+
           {/* Enterprise */}
-          <motion.div className={`${s.card} ${s.cardFeatured}`} variants={itemVariants}>
+          <motion.div className={`${s.card} ${s.cardEnterprise}`} variants={itemVariants}>
             <h3 className={s.cardTitle}>{text.enterprise.title}</h3>
             <p className={s.cardDesc}>{text.enterprise.description}</p>
             <button
@@ -67,20 +81,6 @@ export default function PricingCta() {
               onClick={() => router.push("/support")}
             >
               {text.enterprise.buttonText}
-              <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-            </button>
-          </motion.div>
- 
-          {/* Free */}
-          <motion.div className={s.card} variants={itemVariants}>
-            <h3 className={s.cardTitle}>{text.free.title}</h3>
-            <p className={s.cardDesc}>{text.free.description}</p>
-            <button
-              id="pricing-cta-free"
-              className={s.btnSecondary}
-              onClick={() => router.push("/install")}
-            >
-              {text.free.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
             </button>
           </motion.div>
