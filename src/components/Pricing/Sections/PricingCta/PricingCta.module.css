@@ -99,6 +99,9 @@
   padding: 36px;
   text-align: center;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card:hover {
@@ -118,13 +121,13 @@
 }
 
 .cardEnterprise {
-  border-color: var(--color-primary-border);
-  background: linear-gradient(145deg, rgba(255, 65, 114, 0.06), rgba(var(--bg-rgb), 0.5));
+  border-color: var(--color-enterprise-border);
+  background: linear-gradient(145deg, var(--color-enterprise-bg), rgba(var(--bg-rgb), 0.5));
 }
 
 .cardEnterprise:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 20px 50px -20px var(--color-primary-glow);
+  border-color: var(--color-enterprise);
+  box-shadow: 0 20px 50px -20px var(--color-enterprise-glow);
 }
 
 .cardTitle {
@@ -142,12 +145,12 @@
   line-height: 1.5;
 }
 
-.btnPrimary {
+.btnEnterprise {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  background: linear-gradient(135deg, var(--color-enterprise), #ea580c);
   color: #fff;
   border: none;
   border-radius: var(--radius-md);
@@ -155,13 +158,14 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 24px -8px var(--color-primary-glow);
+  box-shadow: 0 8px 24px -8px var(--color-enterprise-border);
   font-family: var(--font-display);
+  margin-top: auto; /* Align to bottom */
 }
 
-.btnPrimary:hover {
+.btnEnterprise:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -8px var(--color-primary-glow);
+  box-shadow: 0 14px 30px -8px var(--color-enterprise-glow);
   filter: brightness(1.08);
 }
 
@@ -170,7 +174,7 @@
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--color-info), var(--color-info-bg));
+  background: linear-gradient(135deg, var(--color-info), #2563eb);
   color: #fff;
   border: none;
   border-radius: var(--radius-md);
@@ -178,13 +182,14 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 24px -8px var(--color-info-subtle);
+  box-shadow: 0 8px 24px -8px var(--color-info-border);
   font-family: var(--font-display);
+  margin-top: auto; /* Align to bottom */
 }
 
 .btnInfo:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -8px var(--color-info-subtle);
+  box-shadow: 0 14px 30px -8px var(--color-info-border);
   filter: brightness(1.08);
 }
 
