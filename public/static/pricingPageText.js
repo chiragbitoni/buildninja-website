@@ -87,7 +87,7 @@ export const secondSectionTextGlobal = {
         "Up to 100 projects",
         "Up to 100 configurations",
         "Standard Email support",],
-      buttonText: "Get Started",
+      buttonText: "Get Your Free Key",
       buttonText2: "Schedule a Demo",
       ctaText: "No strings attached. Free Edition stays free forever.",
     },
@@ -303,7 +303,8 @@ export const pricingEighthText = {
   },
   free: {
     title: "Free Edition",
-    buttonText: "Get Started",
+    description: "Deploy your own CI/CD in minutes. No credit card, no seat limits, no expiry — free forever.",
+    buttonText: "Get Your Free Key",
   },
   features: [
     "Free forever - Free Edition",
