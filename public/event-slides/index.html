@@ -714,6 +714,12 @@
     const bar      = document.getElementById('progress-bar');
     let   current  = 0;
     let   busy     = false;
+    let   timer    = null;
+
+    function resetTimer() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(next, 10000);
+    }
 
     // Build dots
     const dots = slides.map((_, i) => {
@@ -748,6 +754,7 @@
       slides[current].classList.add('active', inClass);
 
       updateUI();
+      resetTimer();
 
       // Clean up animation classes after transition
       setTimeout(() => {
@@ -774,6 +781,7 @@
     document.addEventListener('touchend',   e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 55) dx < 0 ? next() : prev(); });
 
     updateUI();
+    resetTimer();
   </script>
 </body>
 </html>
