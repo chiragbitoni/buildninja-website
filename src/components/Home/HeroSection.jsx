@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useRef } from "react";
 import BuildNinjaDemo from "./BuildNinjaDemo";
 import NetworkBackground from "@/components/ui/NetworkBackground";
@@ -39,12 +39,12 @@ export default function HeroSection() {
       {/* Bottom fade */}
       <div className={styles.bottomFade} />
 
-      {/* Hero copy — each child has its own animation class */}
+      {/* Hero copy - each child has its own animation class */}
       <div className={styles.copy}>
 
         <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
           <span className={styles.badgeDot} />
-          {siteConfig.version} is Live — Self-Hosted CI/CD, Reimagined.
+          {siteConfig.version} is Live - Self-Hosted CI/CD, Reimagined.
         </div>
 
         <h1 className={styles.heading}>
@@ -89,7 +89,7 @@ export default function HeroSection() {
             <svg className={styles.hintCursor} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 3l14 9-7 1-4 7-3-17z" />
             </svg>
-            Interactive Demo — Click Around to Explore
+            Interactive Demo - Click Around to Explore
           </div>
 
           {/* SVG border that draws itself */}
@@ -105,14 +105,14 @@ export default function HeroSection() {
               </linearGradient>
             </defs>
 
-            {/* Top edge — draws rightward from top-left, fades to transparent halfway */}
+            {/* Top edge - draws rightward from top-left, fades to transparent halfway */}
             <line
               className={styles.borderTop}
               x1="1" y1="1"
               x2="580" y2="1"
             />
 
-            {/* Left edge — draws downward from top-left, fades to transparent halfway */}
+            {/* Left edge - draws downward from top-left, fades to transparent halfway */}
             <line
               className={styles.borderLeft}
               x1="1" y1="1"
@@ -133,3 +133,4 @@ export default function HeroSection() {
     </section>
   );
 }
+

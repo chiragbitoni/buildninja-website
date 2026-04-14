@@ -42,20 +42,20 @@ export default function PricingTable() {
   );
 
   const table = {
-    title: "Everything You Need, Choose Your Scale",
-    subtitle: "Enterprise-grade features for teams of all sizes",
+    title: "Everything You Need, Always Free",
+    subtitle: "Enterprise-grade features available to teams of all sizes",
     rows: [
-      { feature: "Monthly Price", free: "FREE", enterprise: "Contact Us" },
-      { feature: "Best For", free: "Individual developers & small teams", enterprise: "Large Organizations" },
-      { feature: "Users", free: "Up to 10", enterprise: <Tick>Unlimited</Tick> },
-      { feature: "Build Agents", free: <Tick>Unlimited</Tick>, enterprise: <Tick>Unlimited</Tick> },
-      { feature: "Concurrent Agents", free: "3 builds at same time", enterprise: <Tick>Unlimited</Tick> },
-      { feature: "Projects", free: "Up to 100", enterprise: <Tick>Unlimited</Tick> },
-      { feature: "Configurations", free: "Up to 100", enterprise: <Tick>Unlimited</Tick> },
-      { feature: "Build History", free: "30 days", enterprise: <Tick>Perpetual (forever)</Tick> },
-      { feature: "SSO Integrations", free: "1 provider", enterprise: <Tick>All available providers</Tick> },
-      { feature: "Support", free: "Standard Email Support", enterprise: <Tick>Dedicated 24/7 + SLA</Tick> },
-      { feature: "Custom Deployment", free: "Standard Docker", enterprise: <Tick>K8s / Air-gapped / Custom</Tick> },
+      { feature: "Monthly Price", free: "FREE" },
+      { feature: "Best For", free: "Teams of all sizes, from startups to enterprises" },
+      { feature: "Users", free: <Tick>Unlimited users - No per-seat costs as you grow</Tick> },
+      { feature: "Projects", free: <Tick>Unlimited projects - No artificial limits</Tick> },
+      { feature: "Configurations", free: <Tick>Unlimited configurations - Scale without restrictions</Tick> },
+      { feature: "Concurrent Builds", free: <Tick>Unlimited - Run as many as your infra supports</Tick> },
+      { feature: "Build Agents", free: <Tick>Unlimited build agents - Connect as many as you want</Tick> },
+      { feature: "Build History", free: <Tick>Perpetual build history - Complete audit trail forever</Tick> },
+      { feature: "SSO Integrations", free: <Tick>All 5 SSO providers - MS, GitHub, GitLab, BB, Google</Tick> },
+      { feature: "Support", free: <Tick>Priority business support - Direct engineering team access</Tick> },
+      { feature: "Custom Deployment", free: <Tick>Standard Docker / K8s / Air-gapped / Custom</Tick> },
     ],
   };
 
@@ -79,8 +79,7 @@ export default function PricingTable() {
             <thead>
               <tr>
                 <th>Feature</th>
-                <th>Free Edition</th>
-                <th className={s.thShogun}>Enterprise</th>
+                <th>Standard Edition</th>
               </tr>
             </thead>
             <motion.tbody 
@@ -93,7 +92,6 @@ export default function PricingTable() {
                 <motion.tr key={i} variants={itemVariants}>
                   <td>{row.feature}</td>
                   <td>{row.free}</td>
-                  <td>{row.enterprise}</td>
                 </motion.tr>
               ))}
             </motion.tbody>

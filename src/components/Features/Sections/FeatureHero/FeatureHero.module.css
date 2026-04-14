@@ -1,5 +1,5 @@
-/* ═══════════════════════════════════════
-   FEATURE HERO — Stitch-inspired
+﻿/* ═══════════════════════════════════════
+   FEATURE HERO - Stitch-inspired
 ═══════════════════════════════════════ */
 .hero {
   position: relative;
@@ -165,3 +165,4 @@
 .btnSecondary:hover {
   background: var(--color-bg-surface-hover);
 }
+

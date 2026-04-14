@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 import s from "./PartnerModels.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -77,7 +77,7 @@ export default function PartnerModels() {
         <motion.div className={s.header} variants={itemVariants}>
             <span className={s.tag}>How It Works</span>
             <h2 className={s.title}>Partnership models</h2>
-            <p className={s.subTitle}>Choose a motion that matches your business—then we’ll co-design the rollout and go-to-market plan.</p>
+            <p className={s.subTitle}>Choose a motion that matches your business-then we’ll co-design the rollout and go-to-market plan.</p>
         </motion.div>
 
         <motion.div className={s.grid} variants={containerVariants}>
@@ -93,3 +93,4 @@ export default function PartnerModels() {
     </section>
   );
 }
+

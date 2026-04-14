@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { motion } from "framer-motion";
 import { paths } from "../../../../../public/static/paths";
 import s from "./PricingPhilosophy.module.css";
@@ -8,7 +8,7 @@ const cards = [
     icon: paths.icons.infinite,
     alt: "Infinity icon",
     title: "Unlimited Build Agents",
-    desc: "Connect as many machines as you want — available on both Free and Enterprise editions.",
+    desc: "Connect as many machines as you want - available on both Free and Enterprise editions.",
   },
   {
     icon: paths.icons.restricted,
@@ -25,8 +25,8 @@ const cards = [
   {
     icon: paths.icons.clockPink,
     alt: "Clock icon",
-    title: "Free Edition Forever",
-    desc: "Start with up to 10 users and 3 concurrent builds at zero cost. No credit card, no expiration.",
+    title: "Standard Edition",
+    desc: "Start with unlimited access to the core platform at zero cost. No credit card, no expiration.",
   },
 ];
 
@@ -90,3 +90,4 @@ export default function PricingPhilosophy() {
     </section>
   );
 }
+

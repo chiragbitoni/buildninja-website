@@ -1,5 +1,5 @@
-/* ═══════════════════════════════════════
-   FEATURE HIGHLIGHTS — Stitch-inspired bento cards
+﻿/* ═══════════════════════════════════════
+   FEATURE HIGHLIGHTS - Stitch-inspired bento cards
 ═══════════════════════════════════════ */
 
 .section {
@@ -80,7 +80,7 @@
   margin-bottom: 36px;
 }
 
-/* ── Stats grid — for visibility card ── */
+/* ── Stats grid - for visibility card ── */
 .statsRow {
   display: flex;
   gap: 40px;
@@ -280,3 +280,4 @@
     font-size: 28px;
   }
 }
+

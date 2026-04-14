@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import styles from "./InstallDashboard.module.css";
 import { useEffect, useState } from "react";
@@ -181,7 +181,7 @@ export default function InstallDashboard() {
             </div>
             <div className={styles.versionItem}>
               <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: 8, opacity: 0.6 }} />
-              Released: <b>{releaseDate ? new Date(releaseDate).toLocaleDateString("en-GB") : "—"}</b>
+              Released: <b>{releaseDate ? new Date(releaseDate).toLocaleDateString("en-GB") : "-"}</b>
             </div>
           </div>
 
@@ -470,3 +470,4 @@ export default function InstallDashboard() {
     </section>
   );
 }
+

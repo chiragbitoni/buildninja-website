@@ -1,4 +1,4 @@
-# Progress Report: Website Revamp (Ongoing)
+﻿# Progress Report: Website Revamp (Ongoing)
 
 ## Agent Instructions (Auto-Update Protocol)
 1. **Continuous Documentation**: If a coding decision is made that contradicts previous logic or establishes a new "Best Practice," update the **Learned Rules** section immediately.
@@ -60,15 +60,15 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Partner Page Theme Refinement**: Made the reCAPTCHA component on the `/partners` page theme-aware (dynamic light/dark mode) and ensured no box-shadow is applied to its container.
 - ✅ **How It Works Iconography Stabilization**: Removed icon tilt/rotation in the "Simple Self-Hosted Solution" section to adhere to new stable iconography rules.
 - ✅ **Pricing Teaser Alignment**: Synced `PricingTeaser` on the homepage with the main `/pricing` page data. It now uses Redux to get the selected region and accurately displays Shogun/Solo features and Indian/Global pricing.
-- ✅ **Shogun Plan Removal & Free Tier Transition**: Completely purged all references to the "Shogun" plan ($199/mo) across the entire website. Renamed "Solo Edition" to "Free Edition" globally. Rebuilt the Pricing, FAQ, EULA, and Checkout pages to reflect a simplified Free + Enterprise model. Updated all marketing copy, stats, and documentation (`llms.txt`) to emphasize pr- ✅ **Pricing Page Simplification & Global Refactor**: Removed legacy billing toggles (Monthly/Annual/Multi-year) and region selectors (India/Worldwide). Consolidated the Pricing Hero, Table, and FAQ into a unified global model. Refactored the Free and Enterprise cards into a balanced side-by-side grid using a shared `PricingCard` component to ensure perfect visual parity and eliminate excessive vertical gaps.
-- ✅ **Trial & Grace Period Purge**: Systematically removed all mentions of "30-day trial" and "Grace Period" from the Pricing page, Table, FAQ, Homepage, and Navbar. Renamed all internal CSS classes (e.g., `navbarStartTrialButton` -> `navbarGetStartedButton`) to eliminate legacy terminology.
-- ✅ **Pricing Teaser Transformation**: Redesigned the homepage Pricing Teaser into a wide, horizontal CTA-style section focused on the "Always Free Core" mission. Optimized the layout for premium horizontal impact on desktop and seamless stacking on mobile.
-- ✅ **Iconography Optimization**: Standardized the Enterprise icon (Shogun warrior helmet for Free, Enterprise icon for Enterprise) across all interactive cards and tables.
-- ✅ **Global Branding Alignment**: Replaced all mentions of "GrapeCity" with "GrapeHub" across the entire codebase.
-- ✅ **Install Dashboard License CTA**: Implemented a "Get Free License Key" call-to-action on the `/install/dashboard` page. The section dynamically highlights and smooth-scrolls into view after a successful installer download, pointing users to the Free Edition license registration flow.
+- ✅ **Install Dashboard License CTA**: Implemented a "Get Free License Key" call-to-action on the `/install/dashboard` page. The section dynamically highlights and smooth-scrolls into view after a successful installer download.
+- ✅ **Standard Edition Rebranding**: Renamed "Free Edition" to "**Standard Edition**" across the entire website to better reflect its status as the primary, feature-complete version of BuildNinja.
+- ✅ **Standard Edition Unlimited Upgrade**: Upgraded the Standard Edition to include unlimited users, projects, configurations, concurrent builds, and build agents. Integrated "All 5 SSO providers" and "Priority Business Support" into the Standard tier.
+- ✅ **Pricing Table Simplification**: Removed the Enterprise column from the pricing breakdown table and refactored it to focus on a single "Everything Included" model for the Standard Edition.
+- ✅ **Free Terminology Cleanup**: Systematically removed "forever" from "free forever" across the entire website to align with the refined Standard Edition branding.
+- ✅ **Marketing Slides Finalization**: Completed a 5-slide standalone presentation (`event-slides.html`) with theme-aware image swapping, Inter typography, and clean production screenshots.
 
 ## Next Steps for Website-wide Revamp
-1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing and FAQ pages now fully use CSS vars)*
+1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done - Pricing and FAQ pages now fully use CSS vars)*
 2. **Mobile Optimization**: Audit the complex bento layouts on Home/Features for mobile performance.
 3. **Final SEO Polish**: Conduct a final crawl of all internal routes to ensure no legacy components are introducing hidden `h1` tags.
 
@@ -85,8 +85,10 @@ The Home and Feature pages have been significantly modernized with a premium, da
 10. **Heading Hierarchy (SEO)**: Never use `<h1>` tags inside reusable components or demos that are intended to be nested within a page's Hero section. Use `<div>` or `<span>` with existing typography classes (e.g., `s.pageH1`, `s.paneTitle`) to maintain the visual hierarchy while keeping the page-level `<h1>` unique for SEO. Use `<h2>` sparingly for top-level section headers only.
 11. **Stable Iconography**: Avoid using `rotate` or `tilt` transformations on icons during hover states. Keep animations focused on `scale`, `opacity`, or `color` transitions to maintain a professional, stable UI.
 12. **Badge Interactivity**: Always use the global `.badge` and `.badge-alt` utility classes for version indicators and section labels. Use `.badge` ONLY for elements that are clickable/interactive (e.g., Hero badges, CTAs), as it includes a hover lift and glow effect. Use `.badge-alt` for static section labels to avoid giving the false impression of interactivity.
-13. **Model Simplification**: When refactoring marketing pages, prioritize the simplified **Free + Enterprise** model. Remove time-based billing toggles (Monthly/Annual) and regional currency toggles if the business model has shifted to a "Contact Us" approach for premium tiers. Ensure the UI remains clean and focused on a direct two-tier value proposition.
-14. **Consistent Tiered Comparison**: For pricing tiers or service models, use side-by-side grid layouts (2-column on desktop) rather than stacked banners. Ensure all tiers share a consistent structural hierarchy (Icon → Title → Price → Lists → CTA) to allow for 1:1 visual comparison. Use shared functional components where possible to maintain parity in spacing and interactive physics.
-15. **Horizontal CTA Layouts**: For single-tier teasers or high-impact highlight sections on the homepage, utilize wide horizontal layouts instead of vertical cards. Split content into logical columns (e.g., Branding/Pricing vs. Features/CTA) to maximize screen real estate and alignment with other CTA sections.
-16. **Pure CSS Modules**: Avoid using global selectors like `*` inside CSS Modules. Never use Unicode decorative characters (like `───`) in CSS comments as they can break build-time parsing in certain environments.
-nal components where possible to maintain parity in spacing and interactive physics.
+13. **Model Simplification**: When refactoring marketing pages, prioritize the simplified **Free** model. Remove legacy pricing tiers and focus on a direct "Unlimited Free" value proposition.
+14. **Consistent Tiered Comparison**: If comparing features, ensure the hierarchy (Icon → Title → Description → List → CTA) is maintained across all display locations.
+15. **Unlimited Free Messaging**: Use strictly "Free" or "Free Edition" instead of "Free Forever" or "Free for life". Emphasize the removal of artificial limits (Unlimited Users/Builds).
+16. **Horizontal CTA Layouts**: For high-impact highlight sections on the homepage, utilize wide horizontal layouts instead of vertical cards. Split content into logical columns (e.g., Branding/Pricing vs. Features/CTA) to maximize screen real estate and alignment with other CTA sections.
+17. **Pure CSS Modules**: Avoid using global selectors like `*` inside CSS Modules. Never use Unicode decorative characters (like `───`) in CSS comments as they can break build-time parsing in certain environments.
+18. **Enterprise Positioning**: Position "Enterprise" as a contact-based custom solution for specialized deployment (K8s/Air-gapped) and custom SLAs, rather than a tier with gatekept core features.
+

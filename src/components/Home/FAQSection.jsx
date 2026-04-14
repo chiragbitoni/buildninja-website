@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./FAQSection.module.css";
@@ -6,15 +6,15 @@ import styles from "./FAQSection.module.css";
 const faqs = [
   {
     q: "Is BuildNinja cloud-based or self-hosted?",
-    a: "Self-hosted only. BuildNinja runs on your own infrastructure — Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
+    a: "Self-hosted only. BuildNinja runs on your own infrastructure - Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
   },
   {
-    q: "Is the Free Edition really free forever?",
-    a: "Yes. No credit card, no time limit, no expiry. Up to 10 users with 3 concurrent builds and unlimited agents — forever. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
+    q: "Is the Standard Edition really free?",
+    a: "Yes. No credit card, no time limit, no expiry. Built for scale with unlimited users, unlimited projects, and unlimited builders. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
   },
   {
     q: "What happens to my price when my team grows?",
-    a: "BuildNinja follows a capacity-based model rather than per-seat taxation. You can add more orchestration slots as you grow, or upgrade to an Enterprise plan for unlimited concurrent builds and 24/7 priority support."
+    a: "Nothing. BuildNinja Standard Edition is designed to grow with you. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
   },
   {
     q: "Do I need a DevOps engineer to set up BuildNinja?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Can I migrate from Jenkins, GitLab CI, or Azure DevOps?",
-    a: "Yes. Professional migration assistance is available for Enterprise customers — covering pipeline conversion guidance, custom workflow configuration, and best practices review."
+    a: "Yes. Professional migration assistance is available for Enterprise customers - covering pipeline conversion guidance, custom workflow configuration, and best practices review."
   }
 ];
 
@@ -95,3 +95,4 @@ export default function FAQSection() {
     </section>
   );
 }
+

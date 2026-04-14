@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import s from "./PricingValueProp.module.css";
@@ -27,7 +27,7 @@ const itemVariants = {
   },
 };
 
-// Inline SVG — uses currentColor so it's fully theme-aware
+// Inline SVG - uses currentColor so it's fully theme-aware
 const ShieldIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +46,7 @@ export default function PricingValueProp() {
   const { region } = useSelector((state) => state.pricing);
   const text = JSON.parse(JSON.stringify(pricingFourthText));
   text.cards[2].desc =
-    region === "india"
-      ? "Free forever up to 3 concurrent slots. Scalable Enterprise Grade orchestration for organizations requiring unlimited capacity and dedicated support."
-      : "Free forever up to 3 concurrent slots. Scalable Enterprise Grade orchestration for organizations requiring unlimited capacity and dedicated support.";
+    "Unlimited users, projects, and configurations. Scale your build orchestration as much as your infrastructure allows with zero per-seat costs.";
 
   return (
     <section className={s.section}>
@@ -124,3 +122,4 @@ export default function PricingValueProp() {
     </section>
   );
 }
+

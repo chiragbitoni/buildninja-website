@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
@@ -51,7 +51,7 @@ const features = [
       </svg>
     ),
     title: "Real-time Visibility & High-Density Dashboards",
-    desc: "Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.",
+    desc: "Monitor builds live - filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.",
     videoId: 'Pjl3muKtmhE',
     videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
     dojoLink: '/dojo'
@@ -243,3 +243,4 @@ export default function FeaturesGrid() {
     </section>
   );
 }
+

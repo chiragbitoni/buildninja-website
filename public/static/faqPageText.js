@@ -89,10 +89,7 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "license-needed",
           question: "Do I need a license to use BuildNinja?",
-          answer: `<p>BuildNinja is available in two distinct editions tailored to your scale:</p>
-<ul>
-<li>Free Edition (Free forever): Perfect for individuals and growing teams. Register and generate your free license key to get started immediately.</li>
-<li>Enterprise Edition: Designed for large-scale operations. Contact us for custom deployment and orchestration licensing.</li>
+          answer: `<li>BuildNinja Standard Edition: Designed for engineering teams of all sizes. Register and generate your free license key to get unlimited access to all core features, including unlimited users, projects, and concurrent builds.</li>
 </ul>
 <p>Activate your license through Settings > Manage License (online or offline activation available).</p>`,
         },
@@ -158,21 +155,17 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "pricing-overview",
           question: "How much does BuildNinja cost?",
-          answer: `BuildNinja offers two tiers:
-
-Free Edition - perfect for individual developers and small teams, includes up to 10 users, 3 concurrent builds, and essential CI/CD features.
-
-Enterprise - designed for large-scale operations requiring unlimited concurrency, dedicated support, and custom SLAs. Contact us for pricing.`,
+          answer: `Standard Edition - provides unlimited access to the core platform, including unlimited users, projects, configurations, and concurrent builds. It's designed to be the only CI/CD tool you'll ever need.`,
         },
         {
           id: "pricing-for-teams",
           question: "How does pricing work for growing teams?",
-          answer: `<p>BuildNinja charges based on concurrent build slots beyond the free tier, not team size. Add 10 or 100 developers - your price stays the same as you only pay for simultaneous execution capacity.</p>
-<p>Free Edition supports up to 10 users with 3 concurrent builds forever. If you need more builds at once, you can add slots or upgrade to Enterprise for unlimited orchestration.</p>`,
+          answer: `<p>BuildNinja is designed to scale with you at zero cost. We do not charge per seat or per build. You can add unlimited developers and run as many concurrent builds as your hardware can handle without ever paying for a license.</p>
+<p>Standard Edition supports unlimited users and unlimited concurrent builds. There are no artificial caps on your growth.</p>`,
         },
         {
           id: "solo-plan-free",
-          question: "Is the Free plan really free forever?",
+          question: "Is the Free plan really free?",
           answer:
             "Yes! The Free plan is completely free with no time limits or hidden costs. It includes everything a growing team needs: automated builds, version control integration, artifact management, real-time logs, and email notifications.",
         },
@@ -180,13 +173,13 @@ Enterprise - designed for large-scale operations requiring unlimited concurrency
           id: "more-concurrent-builds",
           question: "What happens if I need more concurrent builds?",
           answer:
-            "The Free Edition includes 3 concurrent builds. You can add additional concurrent builds as needed through the portal, or switch to an Enterprise plan for unlimited concurrent execution.",
+            "BuildNinja Standard Edition includes unlimited concurrent builds. Your scale is only limited by your own infrastructure (CPU/RAM). We don't place any software-level restrictions on how many builds you can run at once.",
         },
         {
           id: "annual-billing",
           question: "Do you offer discounts?",
-          answer: `<p>Yes! We offer significant discounts for annual and multi-year commitments on additional build slots and Enterprise plans.</p>
-<p>As an early adopter benefit, the first 100 customers receive price lock guarantees and dedicated migration assistance.</p>`,
+          answer: `<p>Since the core platform is now free with unlimited capacity, most teams find everything they need in the Standard Edition.</p>
+<p>As an early adopter benefit, the first 100 customers receive priority access to our roadmap and dedicated onboarding assistance.</p>`,
         },
         {
           id: "payment-methods",
@@ -221,9 +214,8 @@ Enterprise - designed for large-scale operations requiring unlimited concurrency
         {
           id: "what-is-concurrent-agent",
           question: "What is a concurrent agent and how many do I need?",
-          answer: `<p>A concurrent agent/slot is one build agent executing a build at the same time. With 3 concurrent slots, you can run 3 builds simultaneously - additional builds queue automatically.</p>
-<p>Example: A team of 20 developers typically runs fine with 3-5 concurrent slots, while 50+ developers may need 5-10.</p>
-<p>Free Edition includes 3 concurrent slots. Enterprise Edition supports unlimited concurrent execution - scale without limits.</p>`,
+          answer: `<p>A concurrent agent/slot is a build executing at the same time. With BuildNinja, you can run as many simultaneous builds as your infrastructure supports.</p>
+<p>Unlike other tools that charge for concurrency, BuildNinja Standard Edition is unlimited. Whether you need 3 or 300 concurrent builds, the software won't stop you.</p>`,
         },
         {
           id: "notifications",
@@ -284,7 +276,7 @@ Enterprise - designed for large-scale operations requiring unlimited concurrency
           id: "sso-support",
           question: "Does BuildNinja support Single Sign-On (SSO)?",
           answer: `<p>Yes! BuildNinja supports SSO integration with major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
-<p>Free Edition includes 1 SSO provider (of your choice), while Enterprise Edition includes all providers. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
+<p>All 5 SSO providers are included in the Standard Edition. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
 <p>Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.</p>`,
         },
         {
@@ -303,7 +295,7 @@ Enterprise - designed for large-scale operations requiring unlimited concurrency
           id: "can-i-control-user-permissions-and-access",
           question: "Can I control user permissions and access?",
           answer:
-            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. Free Edition supports up to 10 users, while Enterprise supports unlimited users. In addition, BuildNinja supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
+            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. BuildNinja supports unlimited users in the Standard Edition, allowing your team to grow without any artificial limits. In addition, BuildNinja supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
         },
         {
           id: "can-permission-changes-affect-running-builds",
@@ -321,7 +313,7 @@ Enterprise - designed for large-scale operations requiring unlimited concurrency
           id: "support-included",
           question: "What support is included?",
           answer:
-            "Free Edition includes community support and comprehensive documentation. Enterprise Edition includes dedicated 24/7 priority support and SLA guarantees. Migration assistance and professional services are available for Enterprise customers to help with setup and configuration.",
+            "BuildNinja Standard Edition now includes priority business support with direct access to our engineering team. We are committed to ensuring our users have the best experience possible, regardless of their scale. Migration assistance is also available to help you get started quickly.",
         },
         {
           id: "documentation",
@@ -332,7 +324,7 @@ Enterprise - designed for large-scale operations requiring unlimited concurrency
         {
           id: "reporting-bugs",
           question: "What if I encounter a bug or issue?",
-          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Free Edition users receive community support, while Enterprise users receive dedicated priority support. We actively work on resolving reported issues and provide regular updates and patches.`,
+          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Standard Edition users receive community support, while Enterprise users receive dedicated priority support. We actively work on resolving reported issues and provide regular updates and patches.`,
         },
         {
           id: "update-frequency",
@@ -384,7 +376,7 @@ export const fourthSectionText = {
 
 export const fifthSectionText = {
   title: "Ready to streamline your deployments?",
-  description: "Download the Free Edition and experience CI/CD that just works.",
+  description: "Download the Standard Edition and experience CI/CD that just works.",
   button1: "Download Now",
   button2: "Request Demo",
 };

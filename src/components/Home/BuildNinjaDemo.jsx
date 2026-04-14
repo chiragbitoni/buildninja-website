@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import s from './BuildNinjaDemo.module.css';
 import { useTheme } from 'next-themes';
@@ -338,14 +338,14 @@ const FolderOutlineIcon = () => (
   </svg>
 );
 
-// Root-level "Projects" page — matches original: same two-pane layout, right pane = flat row list
+// Root-level "Projects" page - matches original: same two-pane layout, right pane = flat row list
 function ProjectList({ onSelect }) {
   const [tab, setTab] = useState('Projects');
   const project = { name: 'Projects', id: 'root' };
 
   return (
     <div className={s.projShell}>
-      {/* Left sidebar — identical to ProjectDetail */}
+      {/* Left sidebar - identical to ProjectDetail */}
       <div className={s.projSidebar}>
         <div className={s.projSidebarHead}>
           <div className={s.projActiveDot} />
@@ -1010,7 +1010,7 @@ function ConfigDetail({ config }) {
 
   return (
     <div className={s.projShell}>
-      {/* Left sidebar — Config Layout */}
+      {/* Left sidebar - Config Layout */}
       <div className={s.projSidebar}>
         <div className={s.projSidebarHead}>
           <div className={s.projActiveDot} style={{ background: config.status === 'Failed' ? '#ff4d4f' : '#00c951' }} />
@@ -1056,7 +1056,7 @@ function ConfigDetail({ config }) {
         </div>
       </div>
 
-      {/* Right pane — Dynamic Content */}
+      {/* Right pane - Dynamic Content */}
       {tab === 'History' && (
         <div className={s.projRightPane} style={{ background: 'var(--color-bg-base)' }}>
           <div className={s.projRightHead} style={{ borderBottom: 'none', paddingBottom: 0 }}>
@@ -2031,3 +2031,4 @@ export default function BuildNinjaDemo() {
     </div>
   );
 }
+

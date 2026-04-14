@@ -1,30 +1,31 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+import { paths } from "../../../public/static/paths";
 import styles from "./PricingTeaser.module.css";
 import { ShogunIcon } from "@/components/Pricing/Sections/PricingHero/PricingIcons";
 
 export default function PricingTeaser() {
   const plan = {
-    name: "Free Edition",
-    price: "Free Forever",
+    name: "Standard Edition",
+    price: "Free",
     period: "No credit card required",
-    desc: "The core BuildNinja orchestration platform is 100% free for individual developers and small teams.",
+    desc: "The core BuildNinja orchestration platform is free for engineering teams of all sizes.",
     features: [
-      "Up to 10 users",
+      "Unlimited users - No per-seat costs",
+      "Unlimited projects & configurations",
+      "Unlimited concurrent builds",
       "Unlimited build agents",
-      "Execute up to 3 builds concurrently",
-      "Docker support included",
-      "30-day build history",
-      "Up to 100 projects",
-      "Up to 100 configurations",
-      "Standard Email support",
-
+      "Perpetual build history",
+      "Priority business support",
+      "All 5 SSO providers (MS, GitHub, etc)",
+      "Standard Docker & K8s support",
     ],
     button: "Get Started",
     link: "/install",
     note: "No hidden fees. No strings attached.",
-    label: "FREE FOREVER",
+    label: "FREE",
     isSolo: true,
   };
 
@@ -44,7 +45,7 @@ export default function PricingTeaser() {
           </h2>
           <p className={styles.subtitle}>
             Experience high-performance build orchestration without the per-seat tax.
-            Download the Free Edition and scale your automation today.
+            Download the Standard Edition and scale your automation today.
           </p>
         </motion.div>
 
@@ -58,20 +59,17 @@ export default function PricingTeaser() {
             transition={{ duration: 0.6 }}
           >
             <div className={styles.cardLeft}>
-              <div className={styles.cardTop}>
-                <span className={`${styles.cardHighlight} ${styles.cardHighlightSolo}`}>
-                  {plan.label}
-                </span>
-              </div>
-              <div className={styles.cardBranding}>
+              <div className={styles.cardHead}>
+                <div className={styles.cardTitleText}>
+                  <span className={`${styles.cardHighlight} ${styles.cardHighlightSolo}`}>
+                    <span className={styles.blinkDot} />
+                    {plan.label}
+                  </span>
+                  <motion.h3 layout className={styles.planName}>{plan.name}</motion.h3>
+                </div>
                 <div className={`${styles.planIcon} ${styles.planIconSolo}`}>
                   <ShogunIcon color="var(--color-info)" />
                 </div>
-                <motion.h3 layout className={styles.planName}>{plan.name}</motion.h3>
-              </div>
-              <div className={styles.priceRow}>
-                {/* <span className={styles.price}>{plan.price}</span> */}
-                {/* <span className={styles.period}>{plan.period}</span> */}
               </div>
               <p className={styles.planDesc}>{plan.desc}</p>
             </div>
@@ -91,6 +89,7 @@ export default function PricingTeaser() {
               <div className={styles.cardFooter}>
                 <Link href={plan.link} className={`${styles.btnBase} ${styles.primaryBtnSolo}`}>
                   {plan.button}
+                  <Image width={16} height={16} className={styles.btnIcon} src={paths.icons.navigation} alt="→" />
                 </Link>
                 <p className={styles.guarantee}>{plan.note}</p>
               </div>

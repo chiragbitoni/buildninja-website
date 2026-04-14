@@ -1,4 +1,4 @@
-// Generic data — no real usernames or project names
+﻿// Generic data - no real usernames or project names
 
 export const BUILDS = [
   { id:'#3800', config:'Frontend CI',     status:'Completed', trigger:'15 min Ago', completed:'15 min Ago', duration:'<1 second' },
@@ -6,7 +6,7 @@ export const BUILDS = [
   { id:'#3798', config:'Frontend CI',     status:'Completed', trigger:'2 hrs Ago',  completed:'2 hrs Ago',  duration:'<1 second' },
   { id:'#3797', config:'Frontend CI',     status:'Completed', trigger:'3 hrs Ago',  completed:'3 hrs Ago',  duration:'<1 second' },
   { id:'#3796', config:'E2E Test Suite',  status:'Failed',    trigger:'4 hrs Ago',  completed:'4 hrs Ago',  duration:'1m 22s'    },
-  { id:'#3795', config:'Backend Build',   status:'Running',   trigger:'5 hrs Ago',  completed:'—',          duration:'2m 10s…'   },
+  { id:'#3795', config:'Backend Build',   status:'Running',   trigger:'5 hrs Ago',  completed:'-',          duration:'2m 10s…'   },
   { id:'#3794', config:'Docs Build',      status:'Failed',    trigger:'6 hrs Ago',  completed:'6 hrs Ago',  duration:'0m 08s'    },
   { id:'#3793', config:'Backend Build',   status:'Completed', trigger:'8 hrs Ago',  completed:'8 hrs Ago',  duration:'4m 31s'    },
 ];
@@ -85,11 +85,11 @@ export const TRIGGERS = [
   { name:'test34',           config:'Documentation / Configured Build',schedule:'Daily',  detail:'At 01:01 AM',                                  tz:'Asia/Calcutta',      nextRun:'in 15 hours',   enabled:true  },
   { name:'lastdat',          config:'QA / Main CI',                    schedule:'Custom', detail:'At 05:06 PM, on day 30 and 31 of the month',   tz:'Asia/Calcutta',      nextRun:'in 18 days',    enabled:true  },
   { name:'month',            config:'QA / Main CI',                    schedule:'Custom', detail:'At 15 minutes past the hour, only in July',    tz:'Asia/Calcutta',      nextRun:'in 4 months',   enabled:true  },
-  { name:'test',             config:'Alpha / Main Build',              schedule:'Custom', detail:'Every minute',                                 tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
-  { name:'daily',            config:'QA / Main CI',                    schedule:'Daily',  detail:'At 03:32 PM',                                  tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
-  { name:'4hours',           config:'QA / Main CI',                    schedule:'Custom', detail:'At 0 minutes past the hour, every 4 hours',    tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
-  { name:'every other day',  config:'QA / Main CI',                    schedule:'Custom', detail:'At 25 minutes past the hour, every 2 hours, every 2 days', tz:'Asia/Calcutta', nextRun:'—', enabled:false },
-  { name:'2minute',          config:'QA / Source Build',               schedule:'Custom', detail:'Every 4 minutes',                              tz:'Asia/Calcutta',      nextRun:'—',             enabled:false },
+  { name:'test',             config:'Alpha / Main Build',              schedule:'Custom', detail:'Every minute',                                 tz:'Asia/Calcutta',      nextRun:'-',             enabled:false },
+  { name:'daily',            config:'QA / Main CI',                    schedule:'Daily',  detail:'At 03:32 PM',                                  tz:'Asia/Calcutta',      nextRun:'-',             enabled:false },
+  { name:'4hours',           config:'QA / Main CI',                    schedule:'Custom', detail:'At 0 minutes past the hour, every 4 hours',    tz:'Asia/Calcutta',      nextRun:'-',             enabled:false },
+  { name:'every other day',  config:'QA / Main CI',                    schedule:'Custom', detail:'At 25 minutes past the hour, every 2 hours, every 2 days', tz:'Asia/Calcutta', nextRun:'-', enabled:false },
+  { name:'2minute',          config:'QA / Source Build',               schedule:'Custom', detail:'Every 4 minutes',                              tz:'Asia/Calcutta',      nextRun:'-',             enabled:false },
 ];
 
 export const USERS_STATS = { pending:2, total:27 };
