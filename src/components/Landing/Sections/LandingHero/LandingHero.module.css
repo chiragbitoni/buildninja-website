@@ -63,6 +63,16 @@
   }
 }
 
+.formFirst .container {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 1024px) {
+  .formFirst .container {
+    flex-direction: row;
+  }
+}
+
 /* LEFT CONTENT */
 .left {
   flex: 1;
