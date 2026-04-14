@@ -11,16 +11,20 @@ export default function PricingTeaser() {
     period: "No credit card required",
     desc: "The core BuildNinja orchestration platform is 100% free for individual developers and small teams.",
     features: [
-      "Up to 10 users included",
-      "3 concurrent builds",
+      "Up to 10 users",
       "Unlimited build agents",
-      "Full dashboard access",
-      "Standard Docker deployment"
+      "Execute up to 3 builds concurrently",
+      "Docker support included",
+      "30-day build history",
+      "Up to 100 projects",
+      "Up to 100 configurations",
+      "Standard Email support",
+
     ],
     button: "Get Started",
     link: "/install",
     note: "No hidden fees. No strings attached.",
-    label: "FREE EDITION",
+    label: "FREE FOREVER",
     isSolo: true,
   };
 
@@ -39,7 +43,7 @@ export default function PricingTeaser() {
             Self-Hosted CI/CD. <span className={styles.gradient}>Always Free Core.</span>
           </h2>
           <p className={styles.subtitle}>
-            Experience high-performance build orchestration without the per-seat tax. 
+            Experience high-performance build orchestration without the per-seat tax.
             Download the Free Edition and scale your automation today.
           </p>
         </motion.div>
@@ -66,8 +70,8 @@ export default function PricingTeaser() {
                 <motion.h3 layout className={styles.planName}>{plan.name}</motion.h3>
               </div>
               <div className={styles.priceRow}>
-                <span className={styles.price}>{plan.price}</span>
-                <span className={styles.period}>{plan.period}</span>
+                {/* <span className={styles.price}>{plan.price}</span> */}
+                {/* <span className={styles.period}>{plan.period}</span> */}
               </div>
               <p className={styles.planDesc}>{plan.desc}</p>
             </div>
@@ -93,8 +97,8 @@ export default function PricingTeaser() {
             </div>
           </motion.div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className={styles.fullPricingLink}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
