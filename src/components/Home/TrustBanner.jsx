@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import styles from "./TrustBanner.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ const trustPoints = [
   "25+ Years of Innovation",
   "Trusted by Global Enterprises",
   "Self-Contained Deployment",
-  "Predictable Scale — Enterprise Grade",
+  "Predictable Scale - Enterprise Grade",
   "Business Hours Support"
 ];
 
@@ -30,7 +30,7 @@ export default function TrustBanner() {
               Built by <span className={styles.highlight}>GrapeHub India</span>
             </h2>
             <p className={styles.desc}>
-              Backed by GrapeHub's 25+ years of global developer tools expertise. Support means direct access to actual engineers during business hours — not chatbots.
+              Backed by GrapeHub's 25+ years of global developer tools expertise. Support means direct access to actual engineers during business hours - not chatbots.
             </p>
           </div>
 
@@ -56,3 +56,4 @@ export default function TrustBanner() {
     </section>
   );
 }
+

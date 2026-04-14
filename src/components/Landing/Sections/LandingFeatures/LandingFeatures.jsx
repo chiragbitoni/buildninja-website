@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
@@ -55,7 +55,7 @@ const features = [
             </svg>
         ),
         title: 'Real-time Visibility & High-Density Dashboards',
-        description: 'Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
+        description: 'Monitor builds live - filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
         tags: ['Live Logs', 'Auto-refresh', 'Build Charts'],
         videoId: 'Pjl3muKtmhE',
         videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
@@ -183,7 +183,7 @@ export default function LandingFeatures() {
                 <span className={s.label}>Powerful Features</span>
                 <h3 className={s.title}>One platform, zero compromises</h3>
                 <p className={s.subtitle}>
-                    Every capability your engineering team needs — packaged into a cohesive, self-hosted CI/CD platform.
+                    Every capability your engineering team needs - packaged into a cohesive, self-hosted CI/CD platform.
                 </p>
             </motion.div>
 
@@ -246,3 +246,4 @@ export default function LandingFeatures() {
         </section>
     );
 }
+

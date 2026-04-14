@@ -1,4 +1,4 @@
-import { paths } from "./paths";
+﻿import { paths } from "./paths";
 
 export const heroSectionText = {
   title: "CI/CD That Just Works – Pick Your Plan",
@@ -17,27 +17,27 @@ export const heroSectionText = {
 export const secondSectionTextIndia = {
   monthCards: {
     soloEditionCard: {
-      highlight: "FREE FOREVER",
-      edition: "Free Edition",
+      highlight: "FREE",
+      edition: "Standard Edition",
       price: "",
-      priceDescription: "Forever free, no credit card required",
+      priceDescription: "Free, no credit card required",
       ideal:
-        "Ideal for: Individual developers and small growing teams (up to 10 users)",
+        "Ideal for: Teams of all sizes, from startups to enterprises",
       list1: [
-        "Up to 10 users",
-        "Unlimited build agents - Connect as many machines as you want",
-        "Execute up to 3 builds concurrently - Run 3 builds at the same time",
+        "Unlimited users - No per-seat costs as you grow",
+        "Unlimited projects - No artificial limits",
+        "Unlimited configurations - Scale without restrictions",
       ],
       list2: [
-        "Docker support included",
-        "30-day build history",
-        "Up to 100 projects",
-        "Up to 100 configurations",
-        "Standard Email support",
+        "Unlimited concurrent builds - Run as many as your infra supports",
+        "Unlimited build agents - Connect as many machines as you want",
+        "Perpetual build history - Complete audit trail forever",
+        "All 5 SSO providers - MS, GitHub, GitLab, BB, Google",
+        "Priority support - Direct engineering team access",
       ],
       buttonText: "Get Started",
       buttonText2: "Schedule a Demo",
-      ctaText: "No strings attached. Free Edition stays free forever.",
+      ctaText: "No strings attached. BuildNinja Standard Edition.",
     },
   },
 };
@@ -70,26 +70,27 @@ export const secondSectionEnterpriseCardText = {
 export const secondSectionTextGlobal = {
   monthCards: {
     soloEditionCard: {
-      highlight: "FREE FOREVER",
-      edition: "Free Edition",
+      highlight: "FREE",
+      edition: "Standard Edition",
       price: "",
-      priceDescription: "Forever free, no credit card required",
+      priceDescription: "Free, no credit card required",
       ideal:
-        "Ideal for: Individual developers and small growing teams (up to 10 users)",
+        "Ideal for: Teams of all sizes, from startups to enterprises",
       list1: [
-        "Up to 10 users",
-        "Unlimited build agents - Connect as many machines as you want",
-        "Execute up to 3 builds concurrently - Run 3 builds at the same time",
+        "Unlimited users - No per-seat costs as you grow",
+        "Unlimited projects - No artificial limits",
+        "Unlimited configurations - Scale without restrictions",
       ],
       list2: [
-        "Docker support included",
-        "30-day build history",
-        "Up to 100 projects",
-        "Up to 100 configurations",
-        "Standard Email support",],
+        "Unlimited concurrent builds - Run as many as your infra supports",
+        "Unlimited build agents - Connect as machines as you want",
+        "Perpetual build history - Complete audit trail forever",
+        "All 5 SSO providers - MS, GitHub, GitLab, BB, Google",
+        "Priority support - Direct engineering team access",
+      ],
       buttonText: "Get Your Free Key",
       buttonText2: "Schedule a Demo",
-      ctaText: "No strings attached. Free Edition stays free forever.",
+      ctaText: "No strings attached. BuildNinja Standard Edition.",
     },
   },
 };
@@ -132,7 +133,7 @@ export const pricingFourthText = {
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
-      desc: "Free forever up to 3 concurrent slots. Scalable Enterprise Grade orchestration for organizations requiring unlimited capacity and dedicated support.",
+      desc: "Unlimited users, projects, and configurations. Scale your build orchestration as much as your infrastructure allows with zero per-seat costs.",
       link: "Learn more →",
       id: "what-is-concurrent-agent",
     },
@@ -141,7 +142,7 @@ export const pricingFourthText = {
       alt: "BuildNinja Pink Headphone Icon",
       title: "Professional Support Included",
       tag: "Partnership",
-      desc: "Enterprise plans include free migration assistance for 3 projects, 4 hours of professional services, and high-priority onboarding — not upsells, but true partnership.",
+      desc: "Enterprise plans include free migration assistance for 3 projects, 4 hours of professional services, and high-priority onboarding - not upsells, but true partnership.",
       link: "Learn more →",
       id: "professional-services",
     },
@@ -230,7 +231,7 @@ export const pricingFifthText = {
         {
           heading: "SSO Integrations",
           list: [
-            "Free: 1 provider (choose your primary)",
+            "Included for all: Microsoft, GitHub, GitLab, Bitbucket, and Google",
           ],
         },
         {
@@ -265,24 +266,24 @@ export const pricingSeventhText = {
   title: "Frequently Asked Questions",
   faqs: [
     {
-      question: "How do I scale beyond 3 concurrent builds?",
+      question: "How do I scale my build capacity?",
       answer:
-        "The Free Edition includes 3 concurrent build slots. If your team needs more capacity, please contact us for Enterprise orchestration. We provide tailored licensing for large-scale build environments.",
+        "The Standard Edition has no artificial limits on concurrent builds. You can run as many builds simultaneously as your infrastructure supports. We don't throttle your scale.",
     },
     {
-      question: "Is the Free Edition really free forever?",
+      question: "Is the Standard Edition really free?",
       answer:
-        "Yes. No credit card, no time limit, no surprise bills. Up to 3 concurrent builds forever.",
+        "Yes. No credit card, no time limit, no surprise bills. BuildNinja Standard Edition gives you unlimited access to the core platform.",
     },
     {
       question: "What's the difference between build agents and concurrent builds?",
       answer:
-        "Build agents are the machines you connect (unlimited). Concurrent builds are the number of builds running at the exact same time (3 included for free, unlimited for Enterprise).",
+        "Build agents are the machines you connect. Concurrent builds are the number of builds running at the exact same time. Both are unlimited in the BuildNinja Standard Edition.",
     },
     {
       question: "Can I try before committing to Enterprise?",
       answer:
-        "Yes! The Free Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
+        "Yes! The Standard Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
     },
     {
       question: "Can I cancel my Enterprise plan?",
@@ -302,12 +303,12 @@ export const pricingEighthText = {
     buttonText: "Contact Support",
   },
   free: {
-    title: "Free Edition",
-    description: "Deploy your own CI/CD in minutes. No credit card, no seat limits, no expiry — free forever.",
+    title: "Standard Edition",
+    description: "Deploy your own CI/CD in minutes. No credit card, no seat limits, no expiry - free.",
     buttonText: "Get Your Free Key",
   },
   features: [
-    "Free forever - Free Edition",
+    "Standard Edition",
     "Enterprise Grade Scale",
     "Full Platform Access",
     "5-minute setup",
@@ -315,3 +316,5 @@ export const pricingEighthText = {
     "Direct support",
   ],
 };
+
+

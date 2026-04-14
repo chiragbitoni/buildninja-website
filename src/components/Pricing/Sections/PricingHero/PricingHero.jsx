@@ -100,7 +100,7 @@ export default function PricingHero() {
     if (!plans.length) return null;
     const currency = getCurrency();
     const normalized = planName.trim().toLowerCase();
-    // For Free Edition, we always want the Monthly version as it's the base
+    // For Standard Edition, we always want the Monthly version as it's the base
     return plans.find(
       (p) =>
         p.name.trim().toLowerCase() === normalized &&
@@ -232,13 +232,13 @@ export default function PricingHero() {
 
         <motion.p className={s.description} variants={itemVariants}>
           CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free with unlimited
-          agents (up to 3 concurrent builds). Need more capacity? Contact us for
-          enterprise-level orchestration and dedicated support.
+          users, unlimited projects, and unlimited concurrent builds. Scale your orchestration
+          as much as your infrastructure allows.
         </motion.p>
 
 
         <motion.p className={s.footerNote} variants={itemVariants}>
-          Start your CI/CD journey with our Free Edition or contact us for Enterprise orchestration.
+          Start your CI/CD journey with our Standard Edition or contact us for Enterprise orchestration.
         </motion.p>
       </motion.div>
 

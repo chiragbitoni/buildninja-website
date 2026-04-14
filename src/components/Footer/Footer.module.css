@@ -1,4 +1,4 @@
-.footerContainer {
+﻿.footerContainer {
   background-color: var(--color-bg);
   background: var(--color-bg);
   color: var(--color-text-secondary);
@@ -93,7 +93,7 @@
   font-size: 12px;
 }
 
-/* LINKS — stacked full-width on mobile */
+/* LINKS - stacked full-width on mobile */
 .footerLinksContainer {
   display: grid;
   grid-template-columns: 1fr;
@@ -241,3 +241,4 @@
     width: 60%;
   }
 }
+

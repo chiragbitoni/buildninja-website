@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -37,7 +37,7 @@ export default function FeatureHighlights() {
             <p className={styles.cardDesc}>
               Visualizing CI/CD performance at scale requires more than charts.
               Monitor every log line, step status, and infrastructure health
-              metric in a single, unified command center — updated every 10 seconds.
+              metric in a single, unified command center - updated every 10 seconds.
             </p>
             <div className={styles.statsRow}>
               <div className={styles.stat}>
@@ -211,3 +211,4 @@ export default function FeatureHighlights() {
     </section>
   );
 }
+

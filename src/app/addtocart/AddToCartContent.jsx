@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import s from "./AddToCart.module.css";
 import { Suspense, useEffect, useState } from "react";
@@ -192,7 +192,7 @@ export default function AddToCartContent() {
       </h1>
 
       <div className="badge-alt">
-        {currentPlan?.name === "Solo" ? "Free Forever" : "Most Popular"}
+        {currentPlan?.name === "Solo" ? "Free" : "Most Popular"}
       </div>
 
       <p className={s.headerSubtitle}>
@@ -330,7 +330,7 @@ export default function AddToCartContent() {
 
       {currentPlan?.name === "Solo" && value[0] === baseFree && (
         <p className={s.ctaSub}>
-          Free forever
+          Free
         </p>
       )}
     </div>
@@ -386,7 +386,7 @@ export default function AddToCartContent() {
                     <div className={s.propItem}>
                       <InfinityIcon className={s.propIcon} size={18} />
                       {currentPlan?.name === "Solo"
-                        ? "Free forever"
+                        ? "Free"
                         : "Instance activation after purchase"}
                     </div>
 
@@ -476,7 +476,7 @@ export default function AddToCartContent() {
                   {currentPlan?.name !== "Solo" && (
                     <div className={s.highlightBox} style={{marginTop: 0, marginBottom: "2rem"}}>
                         Best suited for teams scaling beyond the limits of
-                        standard plans—no restrictions, no bottlenecks, no concurrency
+                        standard plans-no restrictions, no bottlenecks, no concurrency
                         limits.
                     </div>
                   )}
@@ -493,3 +493,4 @@ export default function AddToCartContent() {
     </TailwindPageWrapper>
   );
 }
+

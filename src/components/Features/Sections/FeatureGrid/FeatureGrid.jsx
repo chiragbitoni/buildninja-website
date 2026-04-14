@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import { openVideo } from '@/redux/slice/videoPopupSlice';
@@ -72,7 +72,7 @@ const features = [
     ),
     title: 'Real-time Visibility & High-Density Dashboards',
     description:
-      'Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
+      'Monitor builds live - filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
     tags: ['Live Logs', 'Auto-refresh', 'Build Charts'],
     videoId: 'Pjl3muKtmhE',
     videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
@@ -195,7 +195,7 @@ export default function FeatureGrid() {
           One platform, zero compromises
         </h2>
         <p className={styles.sectionSubtitle}>
-          Every capability your engineering team needs — packaged into a
+          Every capability your engineering team needs - packaged into a
           cohesive, self-hosted CI/CD platform.
         </p>
       </motion.div>
@@ -255,3 +255,4 @@ export default function FeatureGrid() {
     </section>
   );
 }
+

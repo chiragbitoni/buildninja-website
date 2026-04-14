@@ -1,5 +1,5 @@
-/* ═══════════════════════════════════════════
-   HowItWorks.module.css — Modern & Theme-aware
+﻿/* ═══════════════════════════════════════════
+   HowItWorks.module.css - Modern & Theme-aware
    Uses CSS variables for seamless theme switching
    ═══════════════════════════════════════════ */
 
@@ -240,3 +240,4 @@
     max-width: 100%;
   }
 }
+

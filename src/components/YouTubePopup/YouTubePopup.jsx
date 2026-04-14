@@ -4,7 +4,7 @@ import { closeVideo } from "@/redux/slice/videoPopupSlice";
 import { useRouter } from "next/navigation";
 import styles from "./YouTubePopup.module.css";
 
-/** Inline X icon — uses currentColor so it adapts to both themes */
+/** Inline X icon - uses currentColor so it adapts to both themes */
 function CloseIcon() {
   return (
     <svg

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import styles from "./AIRoadmap.module.css";
 
@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: "Predictive Test Selection",
-    desc: "ML-based test prioritization — automatically identifies tests affected by your specific code changes and runs only those first. Dramatically faster feedback loops.",
+    desc: "ML-based test prioritization - automatically identifies tests affected by your specific code changes and runs only those first. Dramatically faster feedback loops.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -24,7 +24,7 @@ const features = [
   },
   {
     title: "Conversational Pipelines",
-    desc: "Create and edit complete build pipelines using plain English. No CI/CD syntax expertise required. Describe what you want — BuildNinja builds the configuration for you.",
+    desc: "Create and edit complete build pipelines using plain English. No CI/CD syntax expertise required. Describe what you want - BuildNinja builds the configuration for you.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -105,3 +105,4 @@ export default function AIRoadmap() {
     </section>
   );
 }
+

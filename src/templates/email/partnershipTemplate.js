@@ -1,4 +1,4 @@
-import { baseEmailTemplate } from "./baseTemplate";
+﻿import { baseEmailTemplate } from "./baseTemplate";
 
 function row(label, value) {
   return `
@@ -7,7 +7,7 @@ function row(label, value) {
         ${label}
       </td>
       <td style="border:1px solid #e5e7eb;">
-        ${value || "—"}
+        ${value || "-"}
       </td>
     </tr>
   `;
@@ -58,3 +58,4 @@ export function partnershipTemplate({
     content,
   });
 }
+
