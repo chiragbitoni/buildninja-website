@@ -120,7 +120,7 @@ export default function PricingHero() {
   /* ──────────────── Shared Pricing Card ──────────────── */
   const PricingCard = ({ card, type }) => {
     const isEnterprise = type === "enterprise";
-    
+
     return (
       <div className={`${s.card} ${isEnterprise ? s.cardVertical + " " + s.cardEnterprise : s.cardSolo}`}>
         {/* Left Pane: Branding & Pricing (For Solo) / Main Content (For Enterprise) */}
@@ -137,7 +137,7 @@ export default function PricingHero() {
               {isEnterprise ? <EnterpriseIcon /> : <ShogunIcon color="var(--color-info)" />}
             </div>
           </div>
-          
+
           <div className={s.priceBlock}>
             {card.price && <p className={s.cardPrice}>{card.price}</p>}
             <p className={s.cardDesc}>{isEnterprise ? card.description : card.priceDescription}</p>
@@ -232,7 +232,7 @@ export default function PricingHero() {
 
         <motion.p className={s.description} variants={itemVariants}>
           CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free with unlimited
-          agents (up to 3 concurrent builds). Need more capacity? Contact us for 
+          agents (up to 3 concurrent builds). Need more capacity? Contact us for
           enterprise-level orchestration and dedicated support.
         </motion.p>
 
