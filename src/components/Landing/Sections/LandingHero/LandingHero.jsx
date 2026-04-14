@@ -7,7 +7,7 @@ import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
 import { siteConfig } from "@/config/site";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import s from "./LandingHero.module.css";
 
 export default function LandingHero() {
@@ -150,6 +150,9 @@ export default function LandingHero() {
         return () => el.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
+    const searchParams = useSearchParams();
+    const isFormFirst = searchParams.get("form") === "first";
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -164,7 +167,7 @@ export default function LandingHero() {
     };
 
     return (
-        <section className={s.section}>
+        <section className={`${s.section} ${isFormFirst ? s.formFirst : ""}`}>
             <div ref={orb1} className={s.orb1} />
             <div ref={orb2} className={s.orb2} />
             <div className={s.grid} />

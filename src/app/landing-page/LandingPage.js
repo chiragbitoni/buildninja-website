@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import LandingHero from "../../components/Landing/Sections/LandingHero/LandingHero";
 import LandingFeatures from "../../components/Landing/Sections/LandingFeatures/LandingFeatures";
 import LandingAbout from "../../components/Landing/Sections/LandingAbout/LandingAbout";
@@ -6,7 +7,9 @@ import LandingAbout from "../../components/Landing/Sections/LandingAbout/Landing
 export default function LandingPage(){
     return (
         <main>
-            <LandingHero />
+            <Suspense fallback={null}>
+                <LandingHero />
+            </Suspense>
             <LandingFeatures />
             <LandingAbout />
         </main>
