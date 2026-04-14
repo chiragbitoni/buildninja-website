@@ -1,4 +1,4 @@
-﻿import { paths } from "./paths";
+import { paths } from "./paths";
 
 export const heroSectionText = {
   title: "CI/CD That Just Works – Pick Your Plan",
@@ -61,7 +61,6 @@ export const secondSectionEnterpriseCardText = {
     "Advanced Strategic User Management",
   ],
   buttonText: "Contact Us for Custom Pricing",
-  buttonText2: "Schedule a Demo",
   responseTimeText: "Response within 24 hours",
 };
 // ===========================
