@@ -39,7 +39,7 @@ export default function PricingTeaser() {
             Self-Hosted CI/CD. <span className={styles.gradient}>Always Free Core.</span>
           </h2>
           <p className={styles.subtitle}>
-            Experience high-performance build intelligence without the per-seat tax. 
+            Experience high-performance build orchestration without the per-seat tax. 
             Download the Free Edition and scale your automation today.
           </p>
         </motion.div>

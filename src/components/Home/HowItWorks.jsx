@@ -32,7 +32,7 @@ const steps = [
       </svg>
     ),
     title: "Smart Config",
-    desc: "Use AI-assisted triggers and pipeline logic to optimize builds automatically.",
+    desc: "Configure flexible triggers and pipeline logic to optimize and automate your builds.",
   },
   {
     step: "04",

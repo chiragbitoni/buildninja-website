@@ -44,16 +44,16 @@ export default function HeroSection() {
 
         <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
           <span className={styles.badgeDot} />
-          {siteConfig.version} is Live, with AI build analysis.
+          {siteConfig.version} is Live — Self-Hosted CI/CD, Reimagined.
         </div>
 
         <h1 className={styles.heading}>
-          Powerful Features,<br />
-          <span className={styles.headingGradient}> Without the Maintenance Burden.</span>
+          Ship Faster with CI/CD<br />
+          <span className={styles.headingGradient}>Built for Your Infrastructure.</span>
         </h1>
 
         <p className={styles.subtext}>
-          All the capabilities you need, none of the plugin chaos. Self-hosted CI/CD that deploys in minutes — no per-seat pricing, no DevOps PhD required.
+          Deploy in minutes, build on your own servers, and scale with your team. No seat limits, no vendor lock-in, no cloud dependency.
         </p>
 
         <div className={styles.ctas}>
