@@ -30,7 +30,8 @@ import {
   faCalendarAlt,
   faCheckCircle,
   faExternalLinkAlt,
-  faCircleNotch
+  faCircleNotch,
+  faKey
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -62,6 +63,8 @@ export default function InstallDashboard() {
   const [hasHistory, setHasHistory] = useState(false);
 
   const [copiedType, setCopiedType] = useState(null);
+  const [hasDownloaded, setHasDownloaded] = useState(false);
+  const [plans, setPlans] = useState([]);
 
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
@@ -99,7 +102,31 @@ export default function InstallDashboard() {
       }
     }
     load();
+
+    // Fetch plans for license key link
+    const storedPlans = localStorage.getItem("plans");
+    if (storedPlans) {
+      setPlans(JSON.parse(storedPlans));
+    } else {
+      import("@/services/plans/plans").then(({ fetchPlansFromAPI }) => {
+        fetchPlansFromAPI().then(fetched => {
+          if (fetched) {
+            setPlans(fetched);
+            localStorage.setItem("plans", JSON.stringify(fetched));
+          }
+        });
+      });
+    }
   }, []);
+
+  const handleGetFreeKey = () => {
+    const soloPlan = plans.find(p => p.name.trim().toLowerCase() === "solo" && p.billingCycle === "Monthly");
+    if (soloPlan) {
+      router.push(`/addtocart?planid=${soloPlan.id}`);
+    } else {
+      router.push("/pricing");
+    }
+  };
 
   const [downloadingUrl, setDownloadingUrl] = useState(null);
 
@@ -112,6 +139,12 @@ export default function InstallDashboard() {
     });
     try {
       await downloadInstaller(url.split("/").pop());
+      setHasDownloaded(true);
+      // Optional: Smooth scroll to license section if not visible
+      setTimeout(() => {
+        const licenseEl = document.getElementById('license-section');
+        if (licenseEl) licenseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 500);
     } finally {
       setDownloadingUrl(null);
     }
@@ -376,6 +409,32 @@ export default function InstallDashboard() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </motion.div>
+        
+        {/* ── License Activation CTA ── */}
+        <motion.div 
+          id="license-section"
+          className={`${styles.licenseSection} ${hasDownloaded ? styles.highlight : ""}`}
+          variants={itemVariants}
+        >
+          <div className={styles.licenseCard}>
+            <div className={styles.licenseContent}>
+              <div className={styles.licenseIcon}>
+                <FontAwesomeIcon icon={faKey} />
+              </div>
+              <div>
+                <h2 className={styles.licenseTitle}>{staticData.license.title}</h2>
+                <p className={styles.licenseDesc}>{staticData.license.desc}</p>
+              </div>
+            </div>
+            <button 
+              className={styles.licenseBtn}
+              onClick={handleGetFreeKey}
+            >
+              {staticData.license.btn}
+              <FontAwesomeIcon icon={faExternalLinkAlt} style={{ marginLeft: 10, fontSize: 13 }} />
+            </button>
           </div>
         </motion.div>
 
