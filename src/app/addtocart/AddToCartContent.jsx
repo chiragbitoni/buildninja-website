@@ -324,7 +324,7 @@ export default function AddToCartContent() {
       >
         {currentPlan &&
           (currentPlan.name === "Solo" && value[0] === baseFree
-            ? "Using Free Edition"
+            ? "Get Your Free Key"
             : "Purchase Subscription")}
       </button>
 

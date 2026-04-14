@@ -380,6 +380,11 @@
   box-shadow: 0 0 20px var(--color-info-subtle);
 }
 
+.cardEnterprise .cardIcon {
+  background: var(--color-enterprise-subtle);
+  border-color: var(--color-enterprise-border);
+}
+
 .cardHighlight {
   display: inline-flex;
   align-items: center;
@@ -498,6 +503,13 @@
   background: var(--color-card-icon-hover-bg);
   border-color: var(--color-info);
   box-shadow: 0 0 20px var(--color-info-bg);
+}
+
+.cardEnterprise:hover .cardIcon {
+  transform: translateY(-2px) scale(1.05);
+  background: var(--color-card-icon-hover-bg);
+  border-color: var(--color-enterprise);
+  box-shadow: 0 0 20px var(--color-enterprise-glow);
 }
 
 .cardHead {
