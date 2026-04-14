@@ -79,4 +79,11 @@ export const downloadDashboardData = {
       },
     ],
   },
+
+  license: {
+    title: "Activate Your Instance",
+    desc: "Download complete? Get your free license key to activate BuildNinja and start automating your builds.",
+    btn: "Get Free License Key",
+    link: "/install/license", // Assuming this is the path
+  },
 };

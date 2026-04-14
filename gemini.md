@@ -65,6 +65,7 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **Pricing Teaser Transformation**: Redesigned the homepage Pricing Teaser into a wide, horizontal CTA-style section focused on the "Always Free Core" mission. Optimized the layout for premium horizontal impact on desktop and seamless stacking on mobile.
 - ✅ **Iconography Optimization**: Standardized the Enterprise icon (Shogun warrior helmet for Free, Enterprise icon for Enterprise) across all interactive cards and tables.
 - ✅ **Global Branding Alignment**: Replaced all mentions of "GrapeCity" with "GrapeHub" across the entire codebase.
+- ✅ **Install Dashboard License CTA**: Implemented a "Get Free License Key" call-to-action on the `/install/dashboard` page. The section dynamically highlights and smooth-scrolls into view after a successful installer download, pointing users to the Free Edition license registration flow.
 
 ## Next Steps for Website-wide Revamp
 1. **Unify Design Tokens**: Extract the colors and gradients used on the Home page into `globals.css` as CSS variables. *(Partially done — Pricing and FAQ pages now fully use CSS vars)*

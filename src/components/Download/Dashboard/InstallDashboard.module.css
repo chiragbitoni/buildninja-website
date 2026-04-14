@@ -424,3 +424,111 @@
     font-size: 32px;
   }
 }
+
+/* ── License CTA Section ── */
+.licenseSection {
+  margin-top: 60px;
+  transition: all 0.5s ease;
+}
+
+.licenseSection.highlight {
+  transform: scale(1.02);
+}
+
+.licenseCard {
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--bg-rgb), 0.8));
+  border: 2px solid var(--color-primary-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(var(--primary-rgb), 0.05);
+}
+
+.licenseSection.highlight .licenseCard {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 60px rgba(var(--primary-rgb), 0.2);
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0% { box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.1); }
+  50% { box-shadow: 0 0 40px rgba(var(--primary-rgb), 0.3); }
+  100% { box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.1); }
+}
+
+.licenseContent {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.licenseIcon {
+  width: 64px;
+  height: 64px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.3);
+}
+
+.licenseTitle {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.licenseDesc {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 450px;
+}
+
+.licenseBtn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.licenseBtn:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary-alt);
+  box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.4);
+}
+
+@media (max-width: 768px) {
+  .licenseCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  .licenseContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .licenseDesc {
+    max-width: 100%;
+  }
+  .licenseBtn {
+    width: 100%;
+  }
+}
