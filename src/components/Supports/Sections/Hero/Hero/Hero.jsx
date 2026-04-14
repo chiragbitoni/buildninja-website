@@ -103,7 +103,7 @@ export default function SupportHero() {
                             {index === 0 && <span className={styles.accent}>Build</span>}
                         </span>
                     ))}
-                </h1>L
+                </h1>
                 <p className={styles.subheading}>{t.subheading}</p>
             </motion.div>
 
