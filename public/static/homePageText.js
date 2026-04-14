@@ -238,47 +238,7 @@ export const fourthSectionText = {
     },
   ],
 };
-export const fifthSectionText = {
-  title: "We Understand Your CI/CD Pain",
-  subTitle:
-    "We understand how frustrating it is when CI/CD tools break right before critical releases. ",
-  subTitle2: "We believe deploying code shouldn't require a PhD in DevOps. ",
-  subTitle3:
-    "We know how expensive per-seat licensing gets as your team grows. ",
-  subTitle4:
-    "We've seen how cloud vendor lock-in limits your infrastructure choices.",
-  subHeading1: "Built by ",
-  subHeading2: "India",
-  cards: [
-    {
-      icon: paths.icons.twentyFivePlus,
-      text: "25+ years into developer tools (GrapeCity)",
-    },
 
-    {
-      icon: paths.icons.customerStars,
-      boldText: "Trusted partner to global enterprises ",
-      text: "Delivering software excellence worldwide ",
-    },
-    {
-      icon: paths.icons.singleBinary,
-      boldText: "Self-contained deployment <br/>",
-      text: "No plugin dependency chaos",
-    },
-    {
-      icon: paths.icons.predictablePricing,
-      boldText: "Predictable pricing <br/>",
-      text: "Free forever or Enterprise scale, not per-seat",
-    },
-    {
-      icon: paths.icons.infrastructure,
-      boldText: "Your infrastructure <br/>",
-      text: "Complete control without vendor lock-in",
-    },
-  ],
-  secondTitle: "Business Hours Support",
-  thirdTitle: "Expert support from actual engineers, not chatbots.",
-};
 
 export const sixthSectionText = {
   title: "Don't Let Your CI/CD Tool Become Your Biggest Bottleneck",
@@ -369,19 +329,4 @@ export const eighthSectionText = {
       "Ship features confidently, multiple times daily. No YAML headaches. No DevOps PhD required. Just reliable deployments so you can build software customers love.",
   },
 };
-export const ninthSectionText = {
-  title: "Stop Fighting Your CI/CD Tool. Start Shipping Code.",
-  subtitle:
-    "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
-  subtitle2: "Get your CI/CD build process running in under 5 minutes.",
-  subtitle3: "Free up to 3 build slots, Enterprise grade as you scale.",
-  primaryButton: "Try BuildNinja Free",
-  secondaryButton: "See the 3-Minute Demo",
-  secondTitle: "Risk-Free Guarantee",
-  list: [
-    "30-day free trial License, no credit card required",
-    "Cancel anytime, keep full control of your setup",
-    "Deploy in minutes with Docker and test on your infrastructure",
-    "Direct support from our engineering team",
-  ],
-};
+
