@@ -185,8 +185,10 @@ export default function LandingHero() {
                         className={s.badge}
                         variants={itemVariants}
                         onClick={() => { router.push("/install"); }}
+                        data-cursor-grow
                     >
-                        BUILDNINJA {siteConfig.version.toUpperCase()} NOW AVAILABLE
+                        <span className={s.badgeDot} />
+                        BUILDNINJA {siteConfig.version.toUpperCase()} IS LIVE, CI/CD REIMAGINED.
                     </motion.div>
 
                     <motion.h2 className={s.title} variants={itemVariants}>
