@@ -51,22 +51,11 @@
 }
 
 .badge {
-  display: inline-flex;
-  padding: 6px 14px;
-  background: var(--color-primary-subtle);
-  border: 1px solid var(--color-primary-border);
-  color: var(--color-primary);
-  border-radius: var(--radius-pill);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 24px;
-  font-family: var(--font-accent);
+  composes: badge-alt from global;
 }
 
 .title {
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   color: var(--color-text);
@@ -121,7 +110,7 @@
   font-size: 1.1rem;
   color: var(--color-text);
   margin-bottom: 4px;
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
 }
 
 .listItemText p {
@@ -177,7 +166,7 @@
 }
 
 .cardValue {
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 800;
   color: var(--color-text);
