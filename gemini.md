@@ -1,4 +1,4 @@
-﻿# Progress Report: Website Revamp (Ongoing)
+# Progress Report: Website Revamp (Ongoing)
 
 ## Agent Instructions (Auto-Update Protocol)
 1. **Continuous Documentation**: If a coding decision is made that contradicts previous logic or establishes a new "Best Practice," update the **Learned Rules** section immediately.
@@ -61,10 +61,10 @@ The Home and Feature pages have been significantly modernized with a premium, da
 - ✅ **How It Works Iconography Stabilization**: Removed icon tilt/rotation in the "Simple Self-Hosted Solution" section to adhere to new stable iconography rules.
 - ✅ **Pricing Teaser Alignment**: Synced `PricingTeaser` on the homepage with the main `/pricing` page data. It now uses Redux to get the selected region and accurately displays Shogun/Solo features and Indian/Global pricing.
 - ✅ **Install Dashboard License CTA**: Implemented a "Get Free License Key" call-to-action on the `/install/dashboard` page. The section dynamically highlights and smooth-scrolls into view after a successful installer download.
-- ✅ **Standard Edition Rebranding**: Renamed "Free Edition" to "**Standard Edition**" across the entire website to better reflect its status as the primary, feature-complete version of BuildNinja.
-- ✅ **Standard Edition Unlimited Upgrade**: Upgraded the Standard Edition to include unlimited users, projects, configurations, concurrent builds, and build agents. Integrated "All 5 SSO providers" and "Priority Business Support" into the Standard tier.
-- ✅ **Pricing Table Simplification**: Removed the Enterprise column from the pricing breakdown table and refactored it to focus on a single "Everything Included" model for the Standard Edition.
-- ✅ **Free Terminology Cleanup**: Systematically removed "forever" from "free forever" across the entire website to align with the refined Standard Edition branding.
+- ✅ **Growth Edition Rebranding**: Renamed "Free Edition" to "**Growth Edition**" across the entire website to better reflect its status as the primary, feature-complete version of BuildNinja.
+- ✅ **Growth Edition Unlimited Upgrade**: Upgraded the Growth Edition to include unlimited users, projects, configurations, concurrent builds, and build agents. Integrated "All 5 SSO providers" and "Priority Business Support" into the Standard tier.
+- ✅ **Pricing Table Simplification**: Removed the Enterprise column from the pricing breakdown table and refactored it to focus on a single "Everything Included" model for the Growth Edition.
+- ✅ **Free Terminology Cleanup**: Systematically removed "forever" from "free forever" across the entire website to align with the refined Growth Edition branding.
 - ✅ **Marketing Slides Finalization**: Completed a 5-slide standalone presentation (`event-slides.html`) with theme-aware image swapping, Inter typography, and clean production screenshots.
 
 ## Next Steps for Website-wide Revamp

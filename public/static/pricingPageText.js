@@ -18,7 +18,7 @@ export const secondSectionTextIndia = {
   monthCards: {
     soloEditionCard: {
       highlight: "FREE",
-      edition: "Standard Edition",
+      edition: "Growth Edition",
       price: "",
       priceDescription: "Free, no credit card required",
       ideal:
@@ -37,7 +37,7 @@ export const secondSectionTextIndia = {
       ],
       buttonText: "Get Started",
       buttonText2: "Schedule a Demo",
-      ctaText: "No strings attached. BuildNinja Standard Edition.",
+      ctaText: "No strings attached. BuildNinja Growth Edition.",
     },
   },
 };
@@ -70,7 +70,7 @@ export const secondSectionTextGlobal = {
   monthCards: {
     soloEditionCard: {
       highlight: "FREE",
-      edition: "Standard Edition",
+      edition: "Growth Edition",
       price: "",
       priceDescription: "Free, no credit card required",
       ideal:
@@ -89,7 +89,7 @@ export const secondSectionTextGlobal = {
       ],
       buttonText: "Get Your Free Key",
       buttonText2: "Schedule a Demo",
-      ctaText: "No strings attached. BuildNinja Standard Edition.",
+      ctaText: "No strings attached. BuildNinja Growth Edition.",
     },
   },
 };
@@ -267,22 +267,22 @@ export const pricingSeventhText = {
     {
       question: "How do I scale my build capacity?",
       answer:
-        "The Standard Edition has no artificial limits on concurrent builds. You can run as many builds simultaneously as your infrastructure supports. We don't throttle your scale.",
+        "The Growth Edition has no artificial limits on concurrent builds. You can run as many builds simultaneously as your infrastructure supports. We don't throttle your scale.",
     },
     {
-      question: "Is the Standard Edition really free?",
+      question: "Is the Growth Edition really free?",
       answer:
-        "Yes. No credit card, no time limit, no surprise bills. BuildNinja Standard Edition gives you unlimited access to the core platform.",
+        "Yes. No credit card, no time limit, no surprise bills. BuildNinja Growth Edition gives you unlimited access to the core platform.",
     },
     {
       question: "What's the difference between build agents and concurrent builds?",
       answer:
-        "Build agents are the machines you connect. Concurrent builds are the number of builds running at the exact same time. Both are unlimited in the BuildNinja Standard Edition.",
+        "Build agents are the machines you connect. Concurrent builds are the number of builds running at the exact same time. Both are unlimited in the BuildNinja Growth Edition.",
     },
     {
       question: "Can I try before committing to Enterprise?",
       answer:
-        "Yes! The Standard Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
+        "Yes! The Growth Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
     },
     {
       question: "Can I cancel my Enterprise plan?",
@@ -302,12 +302,12 @@ export const pricingEighthText = {
     buttonText: "Contact Support",
   },
   free: {
-    title: "Standard Edition",
+    title: "Growth Edition",
     description: "Deploy your own CI/CD in minutes. No credit card, no seat limits, no expiry - free.",
     buttonText: "Get Your Free Key",
   },
   features: [
-    "Standard Edition",
+    "Growth Edition",
     "Enterprise Grade Scale",
     "Full Platform Access",
     "5-minute setup",

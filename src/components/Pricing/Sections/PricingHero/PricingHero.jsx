@@ -100,7 +100,7 @@ export default function PricingHero() {
     if (!plans.length) return null;
     const currency = getCurrency();
     const normalized = planName.trim().toLowerCase();
-    // For Standard Edition, we always want the Monthly version as it's the base
+    // For Growth Edition, we always want the Monthly version as it's the base
     return plans.find(
       (p) =>
         p.name.trim().toLowerCase() === normalized &&
@@ -238,7 +238,7 @@ export default function PricingHero() {
 
 
         <motion.p className={s.footerNote} variants={itemVariants}>
-          Start your CI/CD journey with our Standard Edition or contact us for Enterprise orchestration.
+          Start your CI/CD journey with our Growth Edition or contact us for Enterprise orchestration.
         </motion.p>
       </motion.div>
 

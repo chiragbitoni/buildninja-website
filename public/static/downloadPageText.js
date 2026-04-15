@@ -4,7 +4,7 @@ export const heroSectionText = {
   highlight: "Install",
   title: "Download BuildNinja",
   subTitle:
-    "Standard Edition - no credit card required, no expiry.",
+    "Growth Edition - no credit card required, no expiry.",
     downloadCContainerText: {
       placeHolder: "Enter your email address",
       buttonText: "Download BuildNinja",

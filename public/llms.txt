@@ -1,4 +1,4 @@
-﻿# llms.txt - BuildNinja
+# llms.txt - BuildNinja
 
 site: https://buildninja.grapehub.io
 name: BuildNinja
@@ -20,7 +20,7 @@ key_features:
 - Simple configuration without plugin dependency chaos
 
 pricing:
-- Standard Edition: Unlimited users, projects, configurations, and concurrent builds.
+- Growth Edition: Unlimited users, projects, configurations, and concurrent builds.
 - Enterprise: Custom orchestration and dedicated support for large scale teams
 
 setup:

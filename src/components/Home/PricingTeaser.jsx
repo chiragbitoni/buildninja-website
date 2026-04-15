@@ -8,7 +8,7 @@ import { ShogunIcon } from "@/components/Pricing/Sections/PricingHero/PricingIco
 
 export default function PricingTeaser() {
   const plan = {
-    name: "Standard Edition",
+    name: "Growth Edition",
     price: "Free",
     period: "No credit card required",
     desc: "The core BuildNinja orchestration platform is free for engineering teams of all sizes.",
@@ -20,7 +20,7 @@ export default function PricingTeaser() {
       "Perpetual build history",
       "Priority business support",
       "All 5 SSO providers (MS, GitHub, etc)",
-      "Standard Docker & K8s support",
+      "Docker & K8s support",
     ],
     button: "Get Started",
     link: "/install",
@@ -45,7 +45,7 @@ export default function PricingTeaser() {
           </h2>
           <p className={styles.subtitle}>
             Experience high-performance build orchestration without the per-seat tax.
-            Download the Standard Edition and scale your automation today.
+            Download the Growth Edition and scale your automation today.
           </p>
         </motion.div>
 

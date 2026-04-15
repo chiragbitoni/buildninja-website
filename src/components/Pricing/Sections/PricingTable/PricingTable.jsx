@@ -55,7 +55,7 @@ export default function PricingTable() {
       { feature: "Build History", free: <Tick>Perpetual build history - Complete audit trail forever</Tick> },
       { feature: "SSO Integrations", free: <Tick>All 5 SSO providers - MS, GitHub, GitLab, BB, Google</Tick> },
       { feature: "Support", free: <Tick>Priority business support - Direct engineering team access</Tick> },
-      { feature: "Custom Deployment", free: <Tick>Standard Docker / K8s / Air-gapped / Custom</Tick> },
+      { feature: "Custom Deployment", free: <Tick>Built-in Docker / K8s / Air-gapped / Custom</Tick> },
     ],
   };
 
@@ -79,7 +79,7 @@ export default function PricingTable() {
             <thead>
               <tr>
                 <th>Feature</th>
-                <th>Standard Edition</th>
+                <th>Growth Edition</th>
               </tr>
             </thead>
             <motion.tbody 

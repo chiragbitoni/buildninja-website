@@ -205,7 +205,7 @@ export default function LandingHero() {
                         {[
                             { label: "Build Agents", value: "Unlimited" },
                             { label: "Concurrent Builds", value: "Unlimited" },
-                            { label: "Standard Edition", value: "Enterprise Scale" }
+                            { label: "Growth Edition", value: "Enterprise Scale" }
                         ].map((stat, i) => (
                             <motion.div 
                                 className={s.statCard} 

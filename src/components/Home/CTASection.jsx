@@ -125,7 +125,7 @@ export default function CTASection() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>Standard Edition includes all core features, no credit card required</span>
+              <span>Growth Edition includes all core features, no credit card required</span>
             </div>
             
             <div className={styles.guaranteeItem}>

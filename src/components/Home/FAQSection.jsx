@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./FAQSection.module.css";
@@ -9,12 +9,12 @@ const faqs = [
     a: "Self-hosted only. BuildNinja runs on your own infrastructure - Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
   },
   {
-    q: "Is the Standard Edition really free?",
+    q: "Is the Growth Edition really free?",
     a: "Yes. No credit card, no time limit, no expiry. Built for scale with unlimited users, unlimited projects, and unlimited builders. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
   },
   {
     q: "What happens to my price when my team grows?",
-    a: "Nothing. BuildNinja Standard Edition is designed to grow with you. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
+    a: "Nothing. BuildNinja Growth Edition is designed to grow with you. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
   },
   {
     q: "Do I need a DevOps engineer to set up BuildNinja?",
