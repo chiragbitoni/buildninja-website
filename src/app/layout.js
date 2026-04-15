@@ -92,6 +92,9 @@ export const metadata = {
       "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
     images: ["https://buildninja.grapehub.io/resources/BuildNinja.png"],
   },
+  verification: {
+    google: "TXxGesv5AA45OhGIYqDoLArrrfIWPRPpi8LV5hYQAK8",  
+  },
 };
 
 export default function RootLayout({ children }) {
