@@ -89,7 +89,7 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "license-needed",
           question: "Do I need a license to use BuildNinja?",
-          answer: `<li>BuildNinja Standard Edition: Designed for engineering teams of all sizes. Register and generate your free license key to get unlimited access to all core features, including unlimited users, projects, and concurrent builds.</li>
+          answer: `<li>BuildNinja Growth Edition: Designed for engineering teams of all sizes. Register and generate your free license key to get unlimited access to all core features, including unlimited users, projects, and concurrent builds.</li>
 </ul>
 <p>Activate your license through Settings > Manage License (online or offline activation available).</p>`,
         },
@@ -155,13 +155,13 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "pricing-overview",
           question: "How much does BuildNinja cost?",
-          answer: `Standard Edition - provides unlimited access to the core platform, including unlimited users, projects, configurations, and concurrent builds. It's designed to be the only CI/CD tool you'll ever need.`,
+          answer: `Growth Edition - provides unlimited access to the core platform, including unlimited users, projects, configurations, and concurrent builds. It's designed to be the only CI/CD tool you'll ever need.`,
         },
         {
           id: "pricing-for-teams",
           question: "How does pricing work for growing teams?",
           answer: `<p>BuildNinja is designed to scale with you at zero cost. We do not charge per seat or per build. You can add unlimited developers and run as many concurrent builds as your hardware can handle without ever paying for a license.</p>
-<p>Standard Edition supports unlimited users and unlimited concurrent builds. There are no artificial caps on your growth.</p>`,
+<p>Growth Edition supports unlimited users and unlimited concurrent builds. There are no artificial caps on your growth.</p>`,
         },
         {
           id: "solo-plan-free",
@@ -173,12 +173,12 @@ See complete system requirements for network, browser compatibility, and additio
           id: "more-concurrent-builds",
           question: "What happens if I need more concurrent builds?",
           answer:
-            "BuildNinja Standard Edition includes unlimited concurrent builds. Your scale is only limited by your own infrastructure (CPU/RAM). We don't place any software-level restrictions on how many builds you can run at once.",
+            "BuildNinja Growth Edition includes unlimited concurrent builds. Your scale is only limited by your own infrastructure (CPU/RAM). We don't place any software-level restrictions on how many builds you can run at once.",
         },
         {
           id: "annual-billing",
           question: "Do you offer discounts?",
-          answer: `<p>Since the core platform is now free with unlimited capacity, most teams find everything they need in the Standard Edition.</p>
+          answer: `<p>Since the core platform is now free with unlimited capacity, most teams find everything they need in the Growth Edition.</p>
 <p>As an early adopter benefit, the first 100 customers receive priority access to our roadmap and dedicated onboarding assistance.</p>`,
         },
         {
@@ -215,7 +215,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "what-is-concurrent-agent",
           question: "What is a concurrent agent and how many do I need?",
           answer: `<p>A concurrent agent/slot is a build executing at the same time. With BuildNinja, you can run as many simultaneous builds as your infrastructure supports.</p>
-<p>Unlike other tools that charge for concurrency, BuildNinja Standard Edition is unlimited. Whether you need 3 or 300 concurrent builds, the software won't stop you.</p>`,
+<p>Unlike other tools that charge for concurrency, BuildNinja Growth Edition is unlimited. Whether you need 3 or 300 concurrent builds, the software won't stop you.</p>`,
         },
         {
           id: "notifications",
@@ -276,7 +276,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "sso-support",
           question: "Does BuildNinja support Single Sign-On (SSO)?",
           answer: `<p>Yes! BuildNinja supports SSO integration with major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
-<p>All 5 SSO providers are included in the Standard Edition. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
+<p>All 5 SSO providers are included in the Growth Edition. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
 <p>Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.</p>`,
         },
         {
@@ -295,7 +295,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "can-i-control-user-permissions-and-access",
           question: "Can I control user permissions and access?",
           answer:
-            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. BuildNinja supports unlimited users in the Standard Edition, allowing your team to grow without any artificial limits. In addition, BuildNinja supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
+            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. BuildNinja supports unlimited users in the Growth Edition, allowing your team to grow without any artificial limits. In addition, BuildNinja supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
         },
         {
           id: "can-permission-changes-affect-running-builds",
@@ -313,7 +313,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "support-included",
           question: "What support is included?",
           answer:
-            "BuildNinja Standard Edition now includes priority business support with direct access to our engineering team. We are committed to ensuring our users have the best experience possible, regardless of their scale. Migration assistance is also available to help you get started quickly.",
+            "BuildNinja Growth Edition now includes priority business support with direct access to our engineering team. We are committed to ensuring our users have the best experience possible, regardless of their scale. Migration assistance is also available to help you get started quickly.",
         },
         {
           id: "documentation",
@@ -324,7 +324,7 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "reporting-bugs",
           question: "What if I encounter a bug or issue?",
-          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Standard Edition users receive community support, while Enterprise users receive dedicated priority support. We actively work on resolving reported issues and provide regular updates and patches.`,
+          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Growth Edition users receive community support, while Enterprise users receive dedicated priority support. We actively work on resolving reported issues and provide regular updates and patches.`,
         },
         {
           id: "update-frequency",
@@ -376,7 +376,7 @@ export const fourthSectionText = {
 
 export const fifthSectionText = {
   title: "Ready to streamline your deployments?",
-  description: "Download the Standard Edition and experience CI/CD that just works.",
+  description: "Download the Growth Edition and experience CI/CD that just works.",
   button1: "Download Now",
   button2: "Request Demo",
 };

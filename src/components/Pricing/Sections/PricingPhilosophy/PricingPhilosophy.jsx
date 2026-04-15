@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { paths } from "../../../../../public/static/paths";
 import s from "./PricingPhilosophy.module.css";
@@ -25,7 +25,7 @@ const cards = [
   {
     icon: paths.icons.clockPink,
     alt: "Clock icon",
-    title: "Standard Edition",
+    title: "Growth Edition",
     desc: "Start with unlimited access to the core platform at zero cost. No credit card, no expiration.",
   },
 ];
