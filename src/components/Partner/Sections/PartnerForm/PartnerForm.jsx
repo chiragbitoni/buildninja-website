@@ -262,7 +262,7 @@ export default function PartnerForm() {
                             <div className={s.formLabel}>
                                 <span>Phone Number <span className={s.formRequirement}>*</span></span>
                                 <div className={s.phoneWrap}>
-                                    <PhoneInput defaultCountry="us" value={formData.phone} onChange={(phone) => setFormData((prev) => ({ ...prev, phone }))} />
+                                    <PhoneInput defaultCountry="in" value={formData.phone} onChange={(phone) => setFormData((prev) => ({ ...prev, phone }))} />
                                 </div>
                             </div>
                             

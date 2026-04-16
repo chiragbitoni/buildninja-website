@@ -252,7 +252,7 @@ export default function LandingHero() {
                                     <div>Phone Number<span className={s.required}>*</span></div>
                                     <div className={s.phoneWrap}>
                                         <PhoneInput
-                                            defaultCountry="us"
+                                            defaultCountry="in"
                                             value={form.phone}
                                             onChange={(phone) => setForm({ ...form, phone })}
                                         />
