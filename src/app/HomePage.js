@@ -16,7 +16,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WorksWith />
-      <FeaturesGrid />
+      {/* <FeaturesGrid /> */}
       <HowItWorks />
       <SocialProof />
       {/* <PricingTeaser /> */}
