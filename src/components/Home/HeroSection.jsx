@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useRef } from "react";
 import BuildNinjaDemo from "./BuildNinjaDemo";
 import NetworkBackground from "@/components/ui/NetworkBackground";
@@ -88,7 +88,8 @@ export default function HeroSection() {
             <svg className={styles.hintCursor} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 3l14 9-7 1-4 7-3-17z" />
             </svg>
-            Interactive Demo - Click Around to Explore
+            <span className={styles.hintTextFull}>Interactive Demo - Click Around to Explore</span>
+            <span className={styles.hintTextMobile}>Interactive Demo - Click to Explore</span>
           </div>
 
           {/* SVG border that draws itself */}

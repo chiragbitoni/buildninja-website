@@ -52,8 +52,9 @@
 
 /* ── Stats Strip ── */
 .statsStrip {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   position: relative;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
@@ -128,6 +129,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 /* ── Headers ── */
@@ -144,7 +146,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(36px, 6vw, 64px);
+  font-size: clamp(28px, 8vw, 64px);
   font-weight: 800;
   color: var(--color-text);
   line-height: 1.1;
@@ -334,12 +336,12 @@
 /* ── Responsive ── */
 @media (max-width: 1100px) {
   .statsStrip {
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 40px;
-    border-radius: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 32px;
+    border-radius: 24px;
+    margin-bottom: 80px;
   }
-  .statItem::after {
+  .statItem::before {
     display: none;
   }
   .problemGrid {
@@ -350,22 +352,32 @@
 @media (max-width: 900px) {
   .whyGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   .section {
-    padding: 100px 20px;
+    padding: 60px 0 100px;
+  }
+  .whyCard {
+    padding: 32px 24px;
   }
 }
 
 @media (max-width: 650px) {
   .statsStrip {
-    justify-content: center;
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
   }
   .problemGrid {
     grid-template-columns: 1fr;
   }
   .statItem {
     width: 100%;
-    max-width: 200px;
+    max-width: none;
+    justify-content: center;
+  }
+  .statItem::before {
+    display: none;
   }
 }
+

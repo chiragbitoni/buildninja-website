@@ -170,6 +170,18 @@
   --logo-filter: none; /* Black logo stays black on light bg */
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+  }
+}
+
 /* ═══════════════════════════════════════════
    GLOBAL RESETS & BASE
    ═══════════════════════════════════════════ */
@@ -215,6 +227,8 @@
     cursor: pointer;
     cursor: none !important;
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    white-space: nowrap;
+    max-width: 100%;
   }
 
   .badge:hover {
@@ -243,6 +257,15 @@
     width: fit-content;
     cursor: default;
     cursor: none !important;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .badge, .badge-alt {
+      font-size: 10px;
+      padding: 4px 12px;
+    }
   }
 
   /* Global Headings */

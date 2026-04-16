@@ -13,10 +13,16 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 40px;
     justify-content: flex-start;
     min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 110px;
   }
 }
 
@@ -79,7 +85,15 @@
 
 @media (max-width: 768px) {
   .copy {
-    margin-bottom: 32px;
+    margin-bottom: 48px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .copy {
+    margin-bottom: 56px;
+    padding: 0 16px;
   }
 }
 
@@ -88,8 +102,23 @@
   margin-bottom: 28px;
   opacity: 0;
   animation: var(--anim-fadeSlideDown, fadeSlideDown) 0.6s 0.1s ease forwards;
-  cursor: pointer;
   transition: background 0.2s ease;
+  max-width: 100%;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  .heroBadge {
+    padding: 8px 16px;
+    font-size: 10px;
+    white-space: normal;
+    text-align: center;
+    max-width: 90vw;
+    line-height: 1.4;
+  }
 }
 
 .heroBadge:hover {
@@ -108,7 +137,7 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(40px, 6.5vw, 84px);
+  font-size: clamp(28px, 8vw, 84px);
   font-weight: 800;
   color: var(--color-text);
   line-height: 1.05;
@@ -246,6 +275,12 @@
 
 @media (max-width: 768px) {
   .dashWrap {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashWrap {
     padding: 0 16px;
   }
 }
@@ -258,10 +293,10 @@
 /* ── Interactive Hint ── */
 .interactiveHint {
   position: absolute;
-  top: -18px;
+  top: -24px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 9999;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -281,6 +316,17 @@
   pointer-events: none;
   animation: hintFloat 3s ease-in-out infinite;
   box-shadow: 0 4px 20px rgba(255, 65, 114, 0.15);
+  max-width: 90vw;
+}
+
+@media (max-width: 480px) {
+  .interactiveHint {
+    font-size: 8px;
+    padding: 4px 10px;
+    top: -18px;
+    width: auto;
+    white-space: nowrap;
+  }
 }
 
 .hintCursor {
@@ -366,4 +412,30 @@
   opacity: 0;
   transform: translateY(16px);
   animation: var(--anim-dashReveal, dashReveal) 0.7s 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.badgeTextMobile {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .badgeTextFull {
+    display: none;
+  }
+  .badgeTextMobile {
+    display: inline;
+  }
+}
+
+.hintTextMobile {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .hintTextFull {
+    display: none;
+  }
+  .hintTextMobile {
+    display: inline;
+  }
 }
