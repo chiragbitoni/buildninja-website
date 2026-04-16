@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -103,8 +103,8 @@ export default function FeatureHighlights() {
               Enterprise-Grade Security
             </h2>
             <p className={styles.cardDesc}>
-              Hardened RBAC, end-to-end encryption for all secrets, SSO with SAML 2.0
-              and LDAP, and automated security scanning. Your build infrastructure is
+              Hardened RBAC, end-to-end encryption for all secrets, SSO,
+              and automated security scanning. Your build infrastructure is
               protected at every layer.
             </p>
             <div className={styles.pillRow}>

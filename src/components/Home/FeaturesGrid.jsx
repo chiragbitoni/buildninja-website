@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
@@ -77,7 +77,7 @@ const features = [
       </svg>
     ),
     title: "Enterprise Security & RBAC",
-    desc: "Role-based access control (RBAC) at project and system level. Native support for LDAP and granular permissions management. AES-256 encryption for all secrets.",
+    desc: "Role-based access control (RBAC) at project and system level with granular permissions management and AES-256 encryption for all secrets.",
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
   },
