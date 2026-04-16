@@ -103,6 +103,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   font-style: italic;
   display: inline-block;
   padding-right: 0.1em;
