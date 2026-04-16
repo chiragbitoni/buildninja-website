@@ -4,7 +4,7 @@
 
 .section {
   width: 100%;
-  padding: 80px 24px 0;
+  padding: 80px 0 0;
   background: var(--color-bg);
 }
 
@@ -20,7 +20,7 @@
 }
 
 .sectionTitle {
-  font-size: clamp(32px, 5vw, 60px);
+  font-size: clamp(28px, 6vw, 60px);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -1.5px;
@@ -221,25 +221,32 @@
 /* ──────────────────────────────
    RESPONSIVE
 ─────────────────────────────── */
-@media (max-width: 767px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 28px 24px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    background: transparent;
+    border: none;
+    padding: 0 var(--container-padding);
+  }
+  .card {
+     border: 1px solid var(--color-border);
+     border-radius: 16px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 650px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .sectionHeader {
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+  .card {
+    padding: 24px;
+    border-radius: 12px;
   }
 }
 

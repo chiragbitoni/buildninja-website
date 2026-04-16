@@ -5,11 +5,17 @@
 .section {
   position: relative;
   width: 100%;
-  padding: 0 24px 120px;
+  padding: 0 0 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-bottom: 80px;
+  }
 }
 
 .inner {
@@ -17,11 +23,11 @@
   z-index: 2;
   max-width: var(--container-width);
   width: 100%;
-  padding: 0 var(--container-padding);
+  padding: 72px 80px;
+  margin: 0 var(--container-padding);
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border-strong);
   border-radius: 20px;
-  padding: 72px 80px;
   text-align: center;
   overflow: hidden;
 }
@@ -169,11 +175,34 @@
 
 @media (max-width: 767px) {
   .inner {
-    padding: 48px 28px;
+    padding: 60px 24px;
+    margin: 0 16px;
+    border-radius: 16px;
+  }
+
+  .btnRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btnPrimary, .btnOutline {
+    width: 100%;
+    justify-content: center;
   }
 
   .miniStats {
-    gap: 20px;
+    gap: 24px;
+    flex-direction: column;
+  }
+  
+  .miniStat {
+     border-bottom: 1px solid var(--color-border);
+     padding-bottom: 16px;
+     width: 100%;
+  }
+  
+  .miniStat:last-child {
+     border-bottom: none;
   }
 }
 

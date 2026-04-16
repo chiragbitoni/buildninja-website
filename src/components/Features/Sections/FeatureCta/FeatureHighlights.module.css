@@ -5,7 +5,7 @@
 .section {
   width: 100%;
   max-width: var(--container-width);
-  padding: 100px var(--container-padding);
+  padding: 80px 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: 56px 56px;
+  padding: 60px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -260,24 +260,39 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
+  .section {
+    padding: 60px var(--container-padding);
+    gap: 16px;
+  }
   .twoCol,
   .twoColWide,
   .twoColReverse {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .card {
+    padding: 48px 32px;
   }
 }
 
 @media (max-width: 767px) {
   .card {
-    padding: 36px 24px;
+    padding: 32px 24px;
+    border-radius: 16px;
   }
 
   .statsRow {
-    gap: 24px;
+    gap: 32px;
+    flex-direction: column;
   }
 
   .statValue {
-    font-size: 28px;
+    font-size: 32px;
+  }
+
+  .terminal {
+    padding: 16px;
+    font-size: 12px;
   }
 }
 
