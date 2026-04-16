@@ -188,7 +188,8 @@ export default function LandingHero() {
                         data-cursor-grow
                     >
                         <span className={s.badgeDot} />
-                        {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+                        <span className={s.badgeFull}>{siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features</span>
+                        <span className={s.badgeMobile}>{siteConfig.version} is Live </span>
                     </motion.div>
 
                     <motion.h2 className={s.title} variants={itemVariants}>
@@ -309,17 +310,19 @@ export default function LandingHero() {
                                 </label>
                             </div>
 
-                            <div className={s.captcha}>
-                                <ReCAPTCHA
-                                    theme="dark"
-                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                    onChange={(token) => {
-                                        setCaptchaToken(token);
-                                        posthog.capture("marketing_captcha_verified", {
-                                            page: "landing-page",
-                                        });
-                                    }}
-                                />
+                            <div className="captcha-container">
+                                <div className="captcha-inner">
+                                    <ReCAPTCHA
+                                        theme="dark"
+                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                        onChange={(token) => {
+                                            setCaptchaToken(token);
+                                            posthog.capture("marketing_captcha_verified", {
+                                                page: "landing-page",
+                                            });
+                                        }}
+                                    />
+                                </div>
                             </div>
 
                             <button

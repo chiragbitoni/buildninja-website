@@ -127,8 +127,8 @@ export default function InstallSection() {
                             />
                         </div>
 
-                        <div className={styles.captchaWrapper}>
-                            <div className={styles.captchaScale}>
+                        <div className="captcha-container">
+                            <div className="captcha-inner">
                                 <ReCAPTCHA
                                     key={currentTheme}
                                     theme={currentTheme || "dark"}

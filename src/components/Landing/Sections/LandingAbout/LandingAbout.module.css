@@ -1,5 +1,5 @@
 .section {
-  padding: 100px 24px;
+  padding: 100px 0;
   background: var(--color-bg);
   display: flex;
   justify-content: center;
@@ -181,14 +181,47 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 60px 20px;
+    padding: 60px 0;
   }
   
   .container {
-    padding: 40px 30px;
+    padding: 60px 24px;
+    gap: 48px;
+    border-radius: var(--radius-xl);
   }
   
   .grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 20px;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .cardValue {
+    font-size: 2.5rem;
+  }
+  .listItemText strong {
+    font-size: 1.15rem;
+  }
+  .listItemText p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    padding: 32px 16px;
+  }
+  .cardValue {
+    font-size: 2.25rem;
+  }
+  .list {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }

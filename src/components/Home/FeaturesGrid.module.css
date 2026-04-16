@@ -1,5 +1,5 @@
 .section {
-  padding: 100px 24px;
+  padding: 100px 0;
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
@@ -96,11 +96,44 @@
 }
 
 @media (max-width: 900px) {
+  .section {
+    padding: 80px 0;
+  }
   .grid {
     grid-template-columns: 1fr;
+    margin: 0 16px;
+    border-radius: 12px;
   }
   .card:nth-child(n) {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    margin: 0 12px;
+  }
+  .card {
+     padding: 24px 20px;
+  }
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .grid {
+    margin: 0 8px;
+  }
+  .card {
+    padding: 20px 16px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .buttonRow {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

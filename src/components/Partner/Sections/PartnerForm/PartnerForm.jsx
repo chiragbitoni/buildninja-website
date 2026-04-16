@@ -266,14 +266,16 @@ export default function PartnerForm() {
                                 </div>
                             </div>
                             
-                            <div className={s.captchaWrap}>
-                                <ReCAPTCHA 
-                                    key={resolvedTheme}
-                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} 
-                                    theme={resolvedTheme === "light" ? "light" : "dark"} 
-                                    onChange={(token) => setCaptchaToken(token)} 
-                                    onExpired={() => setCaptchaToken(null)} 
-                                />
+                             <div className="captcha-container">
+                                <div className="captcha-inner">
+                                    <ReCAPTCHA 
+                                        key={resolvedTheme}
+                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} 
+                                        theme={resolvedTheme === "light" ? "light" : "dark"} 
+                                        onChange={(token) => setCaptchaToken(token)} 
+                                        onExpired={() => setCaptchaToken(null)} 
+                                    />
+                                </div>
                             </div>  
 
                             <button type="submit" className={s.btnPrimary} disabled={loading || !captchaToken}>

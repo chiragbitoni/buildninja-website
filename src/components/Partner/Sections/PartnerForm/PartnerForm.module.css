@@ -289,11 +289,7 @@
   background: rgba(255, 255, 255, 0.1) !important;
 }
 
-.captchaWrap {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
-}
+
 
 .statusMessage {
   padding: 16px;

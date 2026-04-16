@@ -158,51 +158,6 @@
   box-shadow: 0 0 0 3px var(--color-primary-subtle);
 }
 
-.captchaWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  overflow: hidden;
-  height: 80px; /* Default height for normal ReCAPTCHA */
-}
-
-.captchaScale {
-  transform-origin: top center;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  background: rgba(var(--bg-rgb), 0.6);
-  clip-path: inset(1px); /* Cuts off the stubborn 1px white border from ReCAPTCHA */
-}
-
-@media (max-width: 420px) {
-  .captchaScale {
-    transform: scale(0.85);
-  }
-  .captchaWrapper {
-    height: 68px;
-  }
-}
-
-@media (max-width: 360px) {
-  .captchaScale {
-    transform: scale(0.75);
-  }
-  .captchaWrapper {
-    height: 60px;
-  }
-}
-
-@media (max-width: 320px) {
-  .captchaScale {
-    transform: scale(0.68);
-  }
-  .captchaWrapper {
-    height: 55px;
-  }
-}
-
 .submitBtn {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: #fff;

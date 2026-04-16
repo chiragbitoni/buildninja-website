@@ -2,7 +2,7 @@
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
-  padding: 120px 24px 80px;
+  padding: 120px 0 80px;
 }
 
 .orb1 {
@@ -100,6 +100,15 @@
   animation: var(--anim-blinkDot, blinkDot) 2s ease-in-out infinite;
 }
 
+.badgeMobile {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .badgeFull { display: none; }
+  .badgeMobile { display: inline; }
+}
+
 .title {
   font-family: var(--font-display);
   font-size: clamp(28px, 8vw, 84px);
@@ -163,6 +172,12 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
 }
 
 @media (max-width: 640px) {
@@ -300,11 +315,7 @@
   color: var(--color-text-muted);
 }
 
-.captcha {
-  margin: 10px 0;
-  display: flex;
-  justify-content: center;
-}
+
 
 .submit {
   margin-top: 10px;
@@ -325,6 +336,41 @@
   transform: translateY(-2px);
   filter: brightness(1.1);
   box-shadow: 0 8px 24px var(--color-primary-glow);
+}
+
+@media (max-width: 768px) {
+  .right {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .right {
+    padding: 24px 20px;
+  }
+  .formTitle {
+    font-size: 1.75rem;
+  }
+  .formSubtitle {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .right {
+    padding: 20px 16px;
+  }
+  .formTitle {
+    font-size: 1.5rem;
+  }
+  .submit {
+    font-size: 1rem;
+    padding: 14px;
+  }
+  .statCard {
+    padding: 16px;
+  }
 }
 
 .submit:disabled {
