@@ -248,6 +248,12 @@
   justify-content: center;
 }
 
+.infoCardLink {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
 .infoCard {
   background: rgba(var(--bg-rgb), 0.4);
   backdrop-filter: blur(10px);

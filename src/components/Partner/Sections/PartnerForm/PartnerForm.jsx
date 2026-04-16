@@ -201,15 +201,6 @@ export default function PartnerForm() {
                                     <p>Kubernetes, VMs, on-prem, or air-gapped.</p>
                                 </div>
                             </div>
-                            <div className={s.featureItem}>
-                                <div className={s.featureIcon}>
-                                    <FontAwesomeIcon icon={faCreditCard} />
-                                </div>
-                                <div>
-                                    <h4>Predictable pricing</h4>
-                                    <p>No build-minute billing, transparent and consistent.</p>
-                                </div>
-                            </div>
                         </div>
 
                         <div className={s.nextStepBox}>

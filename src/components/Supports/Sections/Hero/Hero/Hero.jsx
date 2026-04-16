@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import styles from "./Hero.module.css";
+import Link from "next/link";
 import { supportHeroText } from "../../../../../../public/static/supportPageText";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendSupportEmail } from "@/services/email/sendEmail";
@@ -245,32 +246,37 @@ export default function SupportHero() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        onClick={() => window.location.href = "mailto:hello@grapehub.io"}
+                        style={{ cursor: 'pointer' }}
                     >
                         <div className={styles.iconBox}>
                             <FontAwesomeIcon icon={faEnvelope} />
                         </div>
                         <span className={styles.cardLabel}>Direct Access</span>
                         <h4 className={styles.cardValue}>hello@grapehub.io</h4>
-                        <a href="mailto:hello@grapehub.io" className={styles.cardAction}>
+                        <a href="mailto:hello@grapehub.io" className={styles.cardAction} onClick={(e) => e.stopPropagation()}>
                             Send an email <FontAwesomeIcon icon={faArrowRight} />
                         </a>
                     </motion.div>
 
-                    <motion.div
-                        className={styles.infoCard}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                        <div className={styles.iconBox}>
-                            <FontAwesomeIcon icon={faFileLines} />
-                        </div>
-                        <span className={styles.cardLabel}>Documentation</span>
-                        <h4 className={styles.cardValue}>Self-Service Guides</h4>
-                        <a href="https://docs.buildninja.com" className={styles.cardAction}>
-                            Browse Academy <FontAwesomeIcon icon={faArrowRight} />
-                        </a>
-                    </motion.div>
+                    <Link href="/docs" className={styles.infoCardLink}>
+                        <motion.div
+                            className={styles.infoCard}
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className={styles.iconBox}>
+                                <FontAwesomeIcon icon={faFileLines} />
+                            </div>
+                            <span className={styles.cardLabel}>Documentation</span>
+                            <h4 className={styles.cardValue}>Self-Service Guides</h4>
+                            <div className={styles.cardAction}>
+                                Browse Docs <FontAwesomeIcon icon={faArrowRight} />
+                            </div>
+                        </motion.div>
+                    </Link>
 
                     <motion.div
                         className={styles.infoCard}

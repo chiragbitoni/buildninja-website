@@ -283,7 +283,7 @@ export const pricingEighthText = {
   enterprise: {
     title: "Enterprise Edition",
     description: "Built for teams requiring high availability, custom SLAs, and dedicated priority support.",
-    buttonText: "Contact Support",
+    buttonText: "Contact Us",
   },
   free: {
     title: "Growth Edition",
