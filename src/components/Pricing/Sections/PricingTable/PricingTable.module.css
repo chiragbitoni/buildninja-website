@@ -16,7 +16,8 @@
 }
 
 .inner {
-  max-width: 1100px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -43,7 +44,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.03em;
@@ -51,7 +52,7 @@
 }
 
 .subtitle {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-text-secondary);
 }
 
@@ -69,7 +70,7 @@
   width: 100%;
   border-collapse: collapse;
   min-width: 640px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   background: transparent;
 }
 
@@ -98,7 +99,7 @@
 }
 
 .table td {
-  padding: 18px 28px;
+  padding: 22px 32px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   color: var(--color-text-secondary);
   vertical-align: top;

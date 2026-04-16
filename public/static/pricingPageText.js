@@ -20,7 +20,7 @@ export const secondSectionTextIndia = {
       highlight: "FREE",
       edition: "Growth Edition",
       price: "",
-      priceDescription: "Free, no credit card required",
+      priceDescription: "No credit card required",
       ideal:
         "Ideal for: Teams of all sizes, from startups to enterprises",
       list1: [
@@ -72,7 +72,7 @@ export const secondSectionTextGlobal = {
       highlight: "FREE",
       edition: "Growth Edition",
       price: "",
-      priceDescription: "Free, no credit card required",
+      priceDescription: "No credit card required",
       ideal:
         "Ideal for: Teams of all sizes, from startups to enterprises",
       list1: [
