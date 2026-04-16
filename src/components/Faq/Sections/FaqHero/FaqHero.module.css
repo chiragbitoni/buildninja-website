@@ -84,7 +84,6 @@
   font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  max-width: 640px;
   margin: 0 auto;
 }
 
