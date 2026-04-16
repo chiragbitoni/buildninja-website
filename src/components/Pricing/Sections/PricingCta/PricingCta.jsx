@@ -64,7 +64,9 @@ export default function PricingCta() {
             <button
               id="pricing-cta-free"
               className={s.btnInfo}
-              onClick={() => router.push("/install")}
+              onClick={() => {
+                window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=2874404d-a36f-4079-a94f-07e034050804`;
+              }}
             >
               {text.free.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
