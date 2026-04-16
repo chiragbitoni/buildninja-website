@@ -116,7 +116,7 @@ const features = [
     ),
     title: 'Single Sign-On (SSO) Support',
     description:
-      'Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Slack, and custom OIDC providers.',
+      'Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Bitbucket, and custom OIDC providers.',
     tags: ['OAuth 2.0', 'OIDC', 'SAML 2.0', 'Enterprise Ready'],
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
@@ -144,7 +144,7 @@ const features = [
     title: 'Notifications & Alerts',
     description:
       'Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.',
-    tags: ['SMTP', 'Custom Templates', 'Slack-ready'],
+    tags: ['SMTP', 'Custom Templates'],
     videoId: '2OuADSNMEoc',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings',
   },

@@ -89,7 +89,7 @@ const features = [
       </svg>
     ),
     title: "Single Sign-On (SSO) Support",
-    desc: "Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Slack, and custom OIDC providers.",
+    desc: "Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Bitbucket, and custom OIDC providers.",
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
   },
