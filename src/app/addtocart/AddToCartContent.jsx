@@ -328,11 +328,11 @@ export default function AddToCartContent() {
             : "Purchase Subscription")}
       </button>
 
-      {currentPlan?.name === "Solo" && value[0] === baseFree && (
+      {/* {currentPlan?.name === "Solo" && value[0] === baseFree && (
         <p className={s.ctaSub}>
           Free
         </p>
-      )}
+      )} */}
     </div>
   );
 
@@ -355,7 +355,7 @@ export default function AddToCartContent() {
               <div className={s.featuresWrapper}>
                 <FeatureList />
 
-                {currentPlan?.name === "Solo" && (
+                {/* {currentPlan?.name === "Solo" && (
                   <div className={s.highlightBox}>
                     <h4 className={s.highlightTitle}>Additional concurrent capacity (per build agent)</h4>
                     <ul className={s.highlightList}>
@@ -373,7 +373,7 @@ export default function AddToCartContent() {
                       </li>
                     </ul>
                   </div>
-                )}
+                )} */}
 
                 <div className={s.valueProps}>
                   <div className={s.propItem}>
