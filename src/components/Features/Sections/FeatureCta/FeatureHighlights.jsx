@@ -109,7 +109,6 @@ export default function FeatureHighlights() {
             </p>
             <div className={styles.pillRow}>
               <span className={styles.pill}>AES-256</span>
-              <span className={styles.pill}>SAML 2.0</span>
               <span className={styles.pill}>RBAC</span>
               <span className={styles.pill}>Zero-trust</span>
             </div>
