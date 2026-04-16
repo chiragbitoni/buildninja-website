@@ -171,12 +171,6 @@ See complete system requirements for network, browser compatibility, and additio
             "BuildNinja Growth Edition includes unlimited concurrent builds. Your scale is only limited by your own infrastructure (CPU/RAM). We don't place any software-level restrictions on how many builds you can run at once.",
         },
         {
-          id: "annual-billing",
-          question: "Do you offer discounts?",
-          answer: `<p>Since the core platform is now free with unlimited capacity, most teams find everything they need in the Growth Edition.</p>
-<p>As an early adopter benefit, the first 100 customers receive priority access to our roadmap and dedicated onboarding assistance.</p>`,
-        },
-        {
           id: "payment-methods",
           question: "What payment methods do you accept?",
           answer:
