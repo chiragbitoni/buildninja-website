@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════
+/* ═══════════════════════════════════════════
    HowItWorks.module.css - Modern & Theme-aware
    Uses CSS variables for seamless theme switching
    ═══════════════════════════════════════════ */
@@ -23,7 +23,8 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -38,7 +39,7 @@
 }
 
 .title {
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(36px, 6vw, 64px);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -1.5px;
@@ -53,9 +54,9 @@
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--color-text-secondary);
-  max-width: 500px;
+  max-width: 650px;
   margin: 0 auto;
   line-height: 1.6;
   font-weight: 450;
@@ -132,7 +133,7 @@
 }
 
 .stepTitle {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--color-text);
   margin: 0 0 12px;
@@ -164,7 +165,7 @@
 }
 
 .desc {
-  font-size: 14.5px;
+  font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 1.7;
   margin: 0;

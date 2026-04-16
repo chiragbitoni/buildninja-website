@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════
+/* ═══════════════════════════════════════════
    CTASection.module.css - High-Conversion & Theme-aware
    ═══════════════════════════════════════════ */
 
@@ -10,7 +10,8 @@
 }
 
 .container {
-  max-width: 1140px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -105,7 +106,7 @@
 }
 
 .title {
-  font-size: clamp(30px, 5.5vw, 54px);
+  font-size: clamp(36px, 6vw, 68px);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.04em;
@@ -126,10 +127,10 @@
 }
 
 .subtitle {
-  font-size: clamp(15px, 1.6vw, 18px);
+  font-size: 20px;
   color: var(--color-text-secondary);
-  max-width: 700px;
-  margin: 0 auto 40px;
+  max-width: 850px;
+  margin: 0 auto 48px;
   line-height: 1.5;
   position: relative;
   z-index: 2;

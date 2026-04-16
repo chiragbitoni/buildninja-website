@@ -268,11 +268,6 @@ export const pricingSeventhText = {
       answer:
         "Yes! The Growth Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
     },
-    {
-      question: "Can I cancel my Enterprise plan?",
-      answer:
-        "Yes. Since BuildNinja is self-hosted, you always maintain full control of your infrastructure and data, even if you decide to stop using our premium orchestration services.",
-    },
   ],
   button: "View Complete FAQ →",
 };
@@ -292,7 +287,6 @@ export const pricingEighthText = {
   },
   features: [
     "Growth Edition",
-    "Enterprise Grade Scale",
     "Full Platform Access",
     "5-minute setup",
     "Self-hosted control",

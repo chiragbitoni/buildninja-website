@@ -21,9 +21,9 @@
 .navbarHide  { transform: translateY(-100%); } */
 
 .navbarContainer {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 14px var(--container-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;

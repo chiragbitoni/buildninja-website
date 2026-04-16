@@ -84,7 +84,7 @@ export default function HeroSection() {
         <div className={styles.dashBorderBox}>
           {/* Interactive Demo Hint */}
           <div className={styles.interactiveHint}>
-            <span className={styles.hintDot} />
+            {/* <span className={styles.hintDot} /> */}
             <svg className={styles.hintCursor} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 3l14 9-7 1-4 7-3-17z" />
             </svg>

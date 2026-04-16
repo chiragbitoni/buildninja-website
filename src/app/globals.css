@@ -90,9 +90,18 @@
   --shell-height: 580px;
   --shell-aspect: calc(580 / 1100 * 100%);
 
+  /* Layout */
+  --container-width: 1400px;
+  --container-padding: 32px;
+
+  /* Typography Scale */
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+
   /* Utilities (Default Dark) */
-  --icon-filter: none; /* White icons stay white on dark bg */
-  --logo-filter: invert(1) brightness(1.8); /* Black logo inverts to white */
+  --icon-filter: none;
+  --logo-filter: invert(1) brightness(1.8);
 }
 
 [data-theme='light'] {

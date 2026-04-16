@@ -19,9 +19,9 @@ export default function HomePage() {
       <FeaturesGrid />
       <HowItWorks />
       <SocialProof />
-      <PricingTeaser />
+      {/* <PricingTeaser /> */}
       <AIRoadmap />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <CTASection />
     </>
   );
