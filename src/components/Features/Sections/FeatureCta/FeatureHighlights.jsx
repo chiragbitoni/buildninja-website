@@ -60,7 +60,7 @@ export default function FeatureHighlights() {
               </svg>
               Explore Living Dashboard
             </Link>
-            <span className={styles.demoInfo}>Zero Installation Required • Instant Access</span>
+            <span className={styles.demoInfo}>No Installation Required • Instant Access</span>
           </div>
 
           <div className={styles.screenshotWrap}>
