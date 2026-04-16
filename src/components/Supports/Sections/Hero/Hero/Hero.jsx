@@ -95,7 +95,9 @@ export default function SupportHero() {
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
                 <div className={styles.badge}>
-                    <span className={styles.badgeDot}></span> Dedicated Support: Engineering Online
+                    <span className={styles.badgeDot}></span>
+                    <span className={styles.badgeFull}>Dedicated Support: Engineering Online</span>
+                    <span className={styles.badgeMobile}>Engineering Support</span>
                 </div>
                 <h1 className={styles.heading}>
                     {t.heading.split("Build").map((part, index) => (
