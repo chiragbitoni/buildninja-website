@@ -101,11 +101,6 @@ See complete system requirements for network, browser compatibility, and additio
 <p>See complete system requirements in our documentation.</p>`,
         },
         {
-          id: "migration-support",
-          question: "Can I migrate from another CI/CD tool to BuildNinja?",
-          answer: `Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>`,
-        },
-        {
           id: "docker-support",
           question: "Is there Docker support?",
           answer:

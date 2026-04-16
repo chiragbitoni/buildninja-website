@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "What happens to my price when my team grows?",
-    a: "Nothing. BuildNinja Growth Edition is designed to grow with you. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
+    a: "Nothing. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
   },
   {
     q: "Do I need a DevOps engineer to set up BuildNinja?",
@@ -23,10 +23,6 @@ const faqs = [
   {
     q: "Does it support macOS / Apple Silicon?",
     a: "Yes. Full support for Apple Silicon (M-series) on both Server and Agent. You can run builds natively on your Mac infrastructure."
-  },
-  {
-    q: "Can I migrate from Jenkins, GitLab CI, or Azure DevOps?",
-    a: "Yes. Professional migration assistance is available for Enterprise customers - covering pipeline conversion guidance, custom workflow configuration, and best practices review."
   }
 ];
 
