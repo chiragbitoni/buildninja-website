@@ -50,7 +50,7 @@ export default function FeatureHighlights() {
               </div>
               <div className={styles.stat}>
                 <span className={styles.statValue}>∞</span>
-                <span className={styles.statLabel}>Build History</span>
+                <span className={styles.statLabel}>Perpetual Build History</span>
               </div>
             </div>
 
