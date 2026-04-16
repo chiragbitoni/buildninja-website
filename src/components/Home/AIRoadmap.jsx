@@ -1,11 +1,11 @@
-﻿"use client";
+"use client";
 import { motion } from "framer-motion";
 import styles from "./AIRoadmap.module.css";
 
 const features = [
   {
     title: "Configuration Analysis",
-    desc: "Analyse your build configuration with AI",
+    desc: "Leverage integrated AI models to intelligently analyze and evaluate your build configurations for better orchestration.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: "Logs analysis",
-    desc: "Analyse the Build execution logs with AI to detect problem in human readable",
+    desc: "Intelligently analyze detailed build execution logs with AI to detect issues and present them in human-readable terms.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -24,7 +24,7 @@ const features = [
   },
   {
     title: "Build Prediction",
-    desc: "Predict your build success using the AI",
+    desc: "Utilize AI models to accurately predict the eventual success of your build processes before they complete.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>

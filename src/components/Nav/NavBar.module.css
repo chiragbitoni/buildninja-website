@@ -166,6 +166,17 @@
   opacity: 1;
 }
 
+/* ── Mobile Controls (Outside Hamburger) ── */
+.mobileControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobileOnlyActions {
+  display: none;
+}
+
 /* ── Hamburger ── */
 .hamburgerWrapper {
   display: none;
@@ -235,6 +246,12 @@
   }
   .mobileMenu {
     display: flex !important;
+  }
+  
+  .mobileOnlyActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .navbarLinks {
@@ -317,12 +334,28 @@
 
 @media (max-width: 400px) {
   .navbarContainer {
-    padding: 12px 8px;
-    gap: 8px;
+    padding: 12px 10px;
+    gap: 4px;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .logoImage {
-    width: 110px;
+    width: 95px;
     height: auto;
+  }
+
+  .hamburgerWrapper {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+
+  .mobileControls {
+    gap: 8px;
+  }
+
+  .mobileOnlyActions {
+    gap: 8px;
   }
 }

@@ -79,15 +79,23 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Hamburger Trigger */}
-        <div
-          className={`${styles.hamburgerWrapper} ${menuOpen ? styles.hamburgerOpen : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <div className={styles.hamburger}>
-            <span></span>
-            <span></span>
-            <span></span>
+        {/* Mobile Controls Group */}
+        <div className={styles.mobileControls}>
+          <div className={styles.mobileOnlyActions}>
+            <AvatarMenu />
+            <ThemeToggle />
+          </div>
+
+          {/* Hamburger Trigger */}
+          <div
+            className={`${styles.hamburgerWrapper} ${menuOpen ? styles.hamburgerOpen : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <div className={styles.hamburger}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
 
