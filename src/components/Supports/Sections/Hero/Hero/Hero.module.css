@@ -78,14 +78,14 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   display: inline-block;
-  padding-right: 0.1em;
+  padding-right: 0.25em;
+  margin-right: -0.15em;
 }
 
 .subheading {
   font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  max-width: 720px;
   margin: 0 auto;
 }
 

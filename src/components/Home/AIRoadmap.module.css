@@ -52,14 +52,15 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   display: inline-block;
-  padding-right: 0.05em;
+  padding-right: 0.2em;
+  margin-right: -0.1em;
 }
 
 .subtitle {
   font-size: 20px;
   color: var(--color-text-secondary);
   line-height: 1.65;
-  max-width: 720px;
+  /* max-width: 720px; */
   margin: 0 auto;
 }
 

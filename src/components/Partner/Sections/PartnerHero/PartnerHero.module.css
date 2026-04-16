@@ -112,14 +112,15 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   display: inline-block;
-  padding-right: 0.05em;
+  padding-right: 0.25em;
+  margin-right: -0.15em;
 }
 
 .description {
   font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto 40px;
 }
 
@@ -181,11 +182,14 @@
   .section {
     padding: 100px 16px 60px;
   }
+
   .btnGroup {
     flex-direction: column;
     width: 100%;
   }
-  .btnPrimary, .btnSecondary {
+
+  .btnPrimary,
+  .btnSecondary {
     width: 100%;
     justify-content: center;
   }

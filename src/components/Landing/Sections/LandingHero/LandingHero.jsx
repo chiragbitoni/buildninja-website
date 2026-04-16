@@ -188,7 +188,7 @@ export default function LandingHero() {
                         data-cursor-grow
                     >
                         <span className={s.badgeDot} />
-                        {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soom with AI Features
+                        {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
                     </motion.div>
 
                     <motion.h2 className={s.title} variants={itemVariants}>
