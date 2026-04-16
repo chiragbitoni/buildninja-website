@@ -171,6 +171,23 @@
   margin-bottom: 8px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .captchaWrapper {
+    transform: scale(0.85);
+    transform-origin: center center;
+    margin: 24px -15px 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .captchaWrapper {
+    transform: scale(0.8);
+    margin: 16px -25px 0;
+  }
 }
 
 .inputWrapper {
@@ -454,11 +471,17 @@
 @media (max-width: 340px) {
   .heading {
     font-size: 1.8rem;
+    padding: 0 8px;
   }
   .supportSection {
     padding-top: 80px;
   }
   .glassCard {
     padding: 16px 12px;
+    border-radius: 12px;
+  }
+  .infoCard {
+    padding: 16px;
+    border-radius: 12px;
   }
 }
