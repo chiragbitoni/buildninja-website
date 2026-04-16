@@ -41,7 +41,7 @@ export default function PricingTeaser() {
         >
           <div className={styles.badge}>Transparent Orchestration</div>
           <h2 className={styles.title}>
-            Self-Hosted CI/CD. <span className={styles.gradient}>Always Free Core.</span>
+            Self-Hosted CI/CD. <span className={styles.gradient}>For Free.</span>
           </h2>
           <p className={styles.subtitle}>
             Experience high-performance build orchestration without the per-seat tax.

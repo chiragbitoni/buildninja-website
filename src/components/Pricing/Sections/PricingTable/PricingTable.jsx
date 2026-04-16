@@ -42,7 +42,7 @@ export default function PricingTable() {
   );
 
   const table = {
-    title: "Everything You Need, Always Free",
+    title: "Everything You Need, Free",
     subtitle: "Enterprise-grade features available to teams of all sizes",
     rows: [
       { feature: "Monthly Price", free: "FREE" },

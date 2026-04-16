@@ -45,7 +45,7 @@ export default function DojoPage() {
                         className="dojoEnterBtn" 
                         onClick={() => window.open(sandboxUrl, "_self")}
                     >
-                        Enter Dojo
+                        Try Dojo Sandbox
                     </motion.button>
                     <motion.p variants={itemVariants} className="dojoSmallInfo">No installation required • Resets every 6 hours</motion.p>
                 </div>

@@ -26,7 +26,7 @@ const cards = [
     icon: paths.icons.clockPink,
     alt: "Clock icon",
     title: "Growth Edition",
-    desc: "Start with unlimited access to the core platform at zero cost. No credit card, no expiration.",
+    desc: "Start with unlimited access to the core platform at zero cost. No credit card.",
   },
 ];
 
