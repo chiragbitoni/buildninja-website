@@ -25,7 +25,8 @@
 .container {
   position: relative;
   z-index: 5;
-  max-width: 1000px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -50,7 +51,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(40px, 6.5vw, 84px);
   font-weight: 800;
   letter-spacing: -1.5px;
   margin-bottom: 12px;
@@ -505,7 +506,7 @@
 
 .licenseTitle {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
