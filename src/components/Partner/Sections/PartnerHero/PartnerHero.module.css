@@ -60,7 +60,8 @@
 .inner {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -96,7 +97,7 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-size: clamp(40px, 6.5vw, 84px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -115,7 +116,7 @@
 }
 
 .description {
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
   line-height: 1.6;
   max-width: 700px;
