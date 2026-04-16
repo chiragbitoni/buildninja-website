@@ -102,8 +102,8 @@ const features = [
     ),
     title: 'Enterprise Security & RBAC',
     description:
-      'Role-based access control (RBAC) at project and system level. Native support for LDAP and granular permissions management. AES-256 encryption for all secrets.',
-    tags: ['RBAC', 'LDAP Integration', 'AES-256'],
+      'Role-based access control (RBAC) at project and system level with granular permissions management and AES-256 encryption for all secrets.',
+    tags: ['RBAC', 'Access Control', 'AES-256'],
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
   },
@@ -117,7 +117,7 @@ const features = [
     title: 'Single Sign-On (SSO) Support',
     description:
       'Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Bitbucket, and custom OIDC providers.',
-    tags: ['OAuth 2.0', 'OIDC', 'SAML 2.0', 'Enterprise Ready'],
+    tags: ['OAuth 2.0', 'OIDC', 'Enterprise Ready'],
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
   },
@@ -129,7 +129,7 @@ const features = [
     ),
     title: 'Pipeline Runners',
     description:
-      'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at config or project level.',
+      'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at configuration level or project level.',
     tags: ['SSH Runner', 'Script Runner', 'Build Params'],
     videoId: 'IOd9CmP6G4c',
     videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners',
@@ -143,7 +143,7 @@ const features = [
     ),
     title: 'Notifications & Alerts',
     description:
-      'Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.',
+      'Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.',
     tags: ['SMTP', 'Custom Templates'],
     videoId: '2OuADSNMEoc',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings',

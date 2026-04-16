@@ -50,7 +50,7 @@ export default function PricingValueProp() {
 
   return (
     <section className={s.section}>
-      <motion.div 
+      <motion.div
         className={s.inner}
         initial="hidden"
         whileInView="visible"

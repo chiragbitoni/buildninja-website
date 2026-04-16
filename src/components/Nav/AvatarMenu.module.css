@@ -16,7 +16,7 @@
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 700;
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
   transition: all 0.3s ease;
   white-space: nowrap;
   box-shadow: var(--shadow-cta);

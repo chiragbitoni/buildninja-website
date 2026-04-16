@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -50,7 +50,7 @@ export default function FeatureHighlights() {
               </div>
               <div className={styles.stat}>
                 <span className={styles.statValue}>∞</span>
-                <span className={styles.statLabel}>Build History</span>
+                <span className={styles.statLabel}>Perpetual Build History</span>
               </div>
             </div>
 
@@ -60,7 +60,7 @@ export default function FeatureHighlights() {
               </svg>
               Explore Living Dashboard
             </Link>
-            <span className={styles.demoInfo}>Zero Installation Required • Instant Access</span>
+            <span className={styles.demoInfo}>No Installation Required • Instant Access</span>
           </div>
 
           <div className={styles.screenshotWrap}>
@@ -103,13 +103,12 @@ export default function FeatureHighlights() {
               Enterprise-Grade Security
             </h2>
             <p className={styles.cardDesc}>
-              Hardened RBAC, end-to-end encryption for all secrets, SSO with SAML 2.0
-              and LDAP, and automated security scanning. Your build infrastructure is
+              Hardened RBAC, end-to-end encryption for all secrets, SSO,
+              and automated security scanning. Your build infrastructure is
               protected at every layer.
             </p>
             <div className={styles.pillRow}>
               <span className={styles.pill}>AES-256</span>
-              <span className={styles.pill}>SAML 2.0</span>
               <span className={styles.pill}>RBAC</span>
               <span className={styles.pill}>Zero-trust</span>
             </div>

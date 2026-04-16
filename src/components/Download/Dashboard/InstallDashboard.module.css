@@ -3,7 +3,7 @@
   background: var(--color-bg);
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scroll for entire section */
-  padding: 100px 24px 80px;
+  padding: 100px 0 80px;
   color: var(--color-text);
 }
 
@@ -25,7 +25,8 @@
 .container {
   position: relative;
   z-index: 5;
-  max-width: 1000px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -50,10 +51,11 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(32px, 8vw, 84px);
   font-weight: 800;
   letter-spacing: -1.5px;
   margin-bottom: 12px;
+  padding: 0 16px;
 }
 
 /* ── Main Release Card ── */
@@ -83,8 +85,8 @@
 }
 
 .badge {
-  background: var(--color-success);
-  color: #000;
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   font-family: var(--font-accent);
@@ -284,6 +286,7 @@
   align-items: center;
   gap: 20px;
   transition: border-color 0.2s;
+  min-width: 0;
 }
 
 .historyRow:hover {
@@ -344,6 +347,16 @@
   font-size: 15px;
 }
 
+@media (max-width: 600px) {
+  .systemTableWrap {
+     overflow-x: auto;
+     -webkit-overflow-scrolling: touch;
+  }
+  .systemTable {
+     min-width: 500px;
+  }
+}
+
 /* ── Support Grid ── */
 .supportGrid {
   display: grid;
@@ -370,15 +383,14 @@
 
 @media (max-width: 768px) {
   .dashboard {
-    padding: 60px 20px;
+    padding: 60px 0;
+  }
+  .container {
+    padding: 0 16px;
   }
   .cardHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-  }
-  .historyRow {
-    grid-template-columns: 1fr; /* Stack earlier for history */
     gap: 16px;
   }
 }
@@ -386,15 +398,18 @@
 @media (max-width: 500px) {
   .mainCard, .systemSection {
     padding: 24px 16px;
+    border-radius: 16px;
   }
   
   .historyRow {
     grid-template-columns: 1fr;
     gap: 12px;
+    padding: 20px 16px;
   }
   
   .dockerGrid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
   
   .osSection {
@@ -417,11 +432,27 @@
     white-space: normal;
     height: auto;
     min-height: 44px;
-    padding: 10px 16px;
+    padding: 12px 16px;
   }
 
   .title {
-    font-size: 32px;
+    font-size: 28px;
+  }
+  .breadcrumb {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .mainCard, .systemSection {
+    padding: 20px 12px;
+  }
+  .dockerBox {
+    padding: 10px 12px;
+  }
+  .dockerCode {
+    font-size: 12px;
   }
 }
 
@@ -451,6 +482,7 @@
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   transition: all 0.3s ease;
+  min-width: 0;
 }
 
 .licenseCard::before {
@@ -505,7 +537,7 @@
 
 .licenseTitle {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
@@ -530,8 +562,9 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
+  white-space: normal; /* Changed from nowrap */
   box-shadow: 0 4px 15px -4px var(--color-primary-glow);
+  text-align: center;
 }
 
 .licenseBtn:hover {
@@ -557,5 +590,21 @@
   .licenseBtn {
     width: 100%;
     padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .licenseCard {
+    padding: 24px 12px;
+  }
+  .licenseTitle {
+    font-size: 20px;
+  }
+  .licenseBtn {
+    font-size: 14px;
+    padding: 12px 16px;
   }
 }

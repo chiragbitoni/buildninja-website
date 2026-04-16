@@ -181,7 +181,7 @@ export default function InstallDashboard() {
             </div>
             <div className={styles.versionItem}>
               <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: 8, opacity: 0.6 }} />
-              Released: <b>{releaseDate ? new Date(releaseDate).toLocaleDateString("en-GB") : "-"}</b>
+              Recent Release: <b>{releaseDate ? new Date(releaseDate).toLocaleDateString("en-GB") : "-"}</b>
             </div>
           </div>
 

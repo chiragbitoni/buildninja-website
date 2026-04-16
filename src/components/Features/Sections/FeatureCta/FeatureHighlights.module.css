@@ -1,15 +1,15 @@
-﻿/* ═══════════════════════════════════════
+/* ═══════════════════════════════════════
    FEATURE HIGHLIGHTS - Stitch-inspired bento cards
 ═══════════════════════════════════════ */
 
 .section {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-width);
+  padding: 80px 0;
   margin: 0 auto;
-  padding: 100px 24px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 24px;
 }
 
 .card {
@@ -17,7 +17,7 @@
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: 56px 56px;
+  padding: 60px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@
 /* ── Card header ── */
 .cardTitle {
   font-family: var(--font-display), 'Inter', system-ui, sans-serif;
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(32px, 5vw, 56px);
   font-weight: 800;
   color: var(--color-text);
   line-height: 1.1;
@@ -73,11 +73,11 @@
 }
 
 .cardDesc {
-  font-size: 17px;
+  font-size: 20px;
   color: var(--color-text-secondary);
-  line-height: 1.7;
-  max-width: 560px;
-  margin-bottom: 36px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 40px;
 }
 
 /* ── Stats grid - for visibility card ── */
@@ -260,24 +260,39 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
+  .section {
+    padding: 60px var(--container-padding);
+    gap: 16px;
+  }
   .twoCol,
   .twoColWide,
   .twoColReverse {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .card {
+    padding: 48px 32px;
   }
 }
 
 @media (max-width: 767px) {
   .card {
-    padding: 36px 24px;
+    padding: 32px 24px;
+    border-radius: 16px;
   }
 
   .statsRow {
-    gap: 24px;
+    gap: 32px;
+    flex-direction: column;
   }
 
   .statValue {
-    font-size: 28px;
+    font-size: 32px;
+  }
+
+  .terminal {
+    padding: 16px;
+    font-size: 12px;
   }
 }
 

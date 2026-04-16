@@ -20,7 +20,7 @@ export const secondSectionTextIndia = {
       highlight: "FREE",
       edition: "Growth Edition",
       price: "",
-      priceDescription: "Free, no credit card required",
+      priceDescription: "No credit card required",
       ideal:
         "Ideal for: Teams of all sizes, from startups to enterprises",
       list1: [
@@ -33,7 +33,7 @@ export const secondSectionTextIndia = {
         "Unlimited build agents - Connect as many machines as you want",
         "Perpetual build history - Complete audit trail forever",
         "Microsoft, GitHub, GitLab, Bitbucket, and Google",
-        "Priority support - Direct engineering team access",
+        "Email support - Direct engineering team access",
       ],
       buttonText: "Get Started",
       buttonText2: "Schedule a Demo",
@@ -52,7 +52,7 @@ export const secondSectionEnterpriseCardText = {
     "We'll create a tailored solution that fits your organization's unique needs, including custom architecture and concierge onboarding.",
   list1: [
     "Custom Deployment (K8s / Air-gapped)",
-    "Dedicated 24/7 Priority Support",
+    "Dedicated 24/7 Email Support",
     "Tailored Organizational SLAs",
   ],
   list2: [
@@ -72,7 +72,7 @@ export const secondSectionTextGlobal = {
       highlight: "FREE",
       edition: "Growth Edition",
       price: "",
-      priceDescription: "Free, no credit card required",
+      priceDescription: "No credit card required",
       ideal:
         "Ideal for: Teams of all sizes, from startups to enterprises",
       list1: [
@@ -85,7 +85,7 @@ export const secondSectionTextGlobal = {
         "Unlimited build agents - Connect as machines as you want",
         "Perpetual build history - Complete audit trail forever",
         "All 5 SSO providers - Microsoft, GitHub, GitLab, Bitbucket, and Google",
-        "Priority support - Direct engineering team access",
+        "Email support - Direct engineering team access",
       ],
       buttonText: "Get Your Free Key",
       buttonText2: "Schedule a Demo",
@@ -103,7 +103,7 @@ export const pricingFourthText = {
   subtitle: "Simple, transparent, and predictable for teams of any size.",
 
   problemTitle: "The Problem",
-  problemTag: "Legacy Pricing",
+  problemTag: "LEGACY PRICING",
   problemDesc:
     "Most CI/CD tools <strong>punish team growth</strong> with escalating per-seat costs. You're forced to choose between expensive cloud platforms that bill per user or complex self-hosted setups that drain DevOps time. Either way, <strong>costs become unpredictable.</strong>",
 
@@ -127,6 +127,8 @@ export const pricingFourthText = {
       id: "infrastructure-needed",
     },
     {
+      badges: [],
+      // id: ""
       icon: paths.icons.calculatorPink,
       alt: "BuildNinja Pink Calculator Icon",
       title: "Simple, Transparent Pricing",
@@ -135,24 +137,6 @@ export const pricingFourthText = {
       desc: "Unlimited users, projects, and configurations. Scale your build orchestration as much as your infrastructure allows with zero per-seat costs.",
       link: "Learn more →",
       id: "what-is-concurrent-agent",
-    },
-    {
-      icon: paths.icons.headphonesPink,
-      alt: "BuildNinja Pink Headphone Icon",
-      title: "Professional Support Included",
-      tag: "Partnership",
-      desc: "Enterprise plans include free migration assistance for 3 projects, 4 hours of professional services, and high-priority onboarding - not upsells, but true partnership.",
-      link: "Learn more →",
-      id: "professional-services",
-    },
-    {
-      icon: paths.icons.syncPink,
-      alt: "BuildNinja Pink Sync Icon",
-      title: "Risk-Free Switching",
-      tag: "Migration Assistance",
-      desc: "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and professional onboarding. We remove barriers that keep teams stuck on expensive tools.",
-      badges: ["Migration Support", "License Credits", "Zero Risk"],
-      // id: ""
     },
   ],
 };
@@ -284,11 +268,6 @@ export const pricingSeventhText = {
       answer:
         "Yes! The Growth Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
     },
-    {
-      question: "Can I cancel my Enterprise plan?",
-      answer:
-        "Yes. Since BuildNinja is self-hosted, you always maintain full control of your infrastructure and data, even if you decide to stop using our premium orchestration services.",
-    },
   ],
   button: "View Complete FAQ →",
 };
@@ -299,7 +278,7 @@ export const pricingEighthText = {
   enterprise: {
     title: "Enterprise Edition",
     description: "Built for teams requiring high availability, custom SLAs, and dedicated priority support.",
-    buttonText: "Contact Support",
+    buttonText: "Contact Us",
   },
   free: {
     title: "Growth Edition",
@@ -308,7 +287,6 @@ export const pricingEighthText = {
   },
   features: [
     "Growth Edition",
-    "Enterprise Grade Scale",
     "Full Platform Access",
     "5-minute setup",
     "Self-hosted control",

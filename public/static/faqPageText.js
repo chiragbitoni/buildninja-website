@@ -101,11 +101,6 @@ See complete system requirements for network, browser compatibility, and additio
 <p>See complete system requirements in our documentation.</p>`,
         },
         {
-          id: "migration-support",
-          question: "Can I migrate from another CI/CD tool to BuildNinja?",
-          answer: `Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>`,
-        },
-        {
           id: "docker-support",
           question: "Is there Docker support?",
           answer:
@@ -174,12 +169,6 @@ See complete system requirements for network, browser compatibility, and additio
           question: "What happens if I need more concurrent builds?",
           answer:
             "BuildNinja Growth Edition includes unlimited concurrent builds. Your scale is only limited by your own infrastructure (CPU/RAM). We don't place any software-level restrictions on how many builds you can run at once.",
-        },
-        {
-          id: "annual-billing",
-          question: "Do you offer discounts?",
-          answer: `<p>Since the core platform is now free with unlimited capacity, most teams find everything they need in the Growth Edition.</p>
-<p>As an early adopter benefit, the first 100 customers receive priority access to our roadmap and dedicated onboarding assistance.</p>`,
         },
         {
           id: "payment-methods",

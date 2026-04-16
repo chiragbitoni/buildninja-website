@@ -1,4 +1,4 @@
-﻿.footerContainer {
+.footerContainer {
   background-color: var(--color-bg);
   background: var(--color-bg);
   color: var(--color-text-secondary);
@@ -10,8 +10,9 @@
 
 /* center content and prevent touching edges */
 .footerWrapper {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 /* main content stacks vertically on mobile */

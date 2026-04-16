@@ -81,10 +81,6 @@ export default function PartnerHero() {
                 <FontAwesomeIcon icon={faBolt} className={s.badgeIcon} />
                 Fast, parallel execution
             </span>
-            <span className={s.badge}>
-                <FontAwesomeIcon icon={faTag} className={s.badgeIcon} />
-                Predictable pricing
-            </span>
         </motion.div>
         
         <motion.h1 className={s.heading} variants={itemVariants}>

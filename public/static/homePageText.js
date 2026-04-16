@@ -65,7 +65,7 @@ export const thirdSectionText = {
 };
 export const fourthSectionText = {
   title1: "Powerful Features,",
-  title2: "Without the Maintenance Burden",
+  title2: "Without Maintenance Burden",
   subtitle: "All the capabilities you need, none of the plugin chaos.",
   featuresCard: [
     {

@@ -201,15 +201,6 @@ export default function PartnerForm() {
                                     <p>Kubernetes, VMs, on-prem, or air-gapped.</p>
                                 </div>
                             </div>
-                            <div className={s.featureItem}>
-                                <div className={s.featureIcon}>
-                                    <FontAwesomeIcon icon={faCreditCard} />
-                                </div>
-                                <div>
-                                    <h4>Predictable pricing</h4>
-                                    <p>No build-minute billing, transparent and consistent.</p>
-                                </div>
-                            </div>
                         </div>
 
                         <div className={s.nextStepBox}>
@@ -271,7 +262,7 @@ export default function PartnerForm() {
                             <div className={s.formLabel}>
                                 <span>Phone Number <span className={s.formRequirement}>*</span></span>
                                 <div className={s.phoneWrap}>
-                                    <PhoneInput defaultCountry="us" value={formData.phone} onChange={(phone) => setFormData((prev) => ({ ...prev, phone }))} />
+                                    <PhoneInput defaultCountry="in" value={formData.phone} onChange={(phone) => setFormData((prev) => ({ ...prev, phone }))} />
                                 </div>
                             </div>
                             

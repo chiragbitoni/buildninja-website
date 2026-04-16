@@ -57,7 +57,7 @@ const whys = [
 
 const stats = [
   { value: "Free", label: "Unlimited Builds", icon: faInfinity },
-  { value: "Included", label: "Priority Support", icon: faHeadset },
+  { value: "Included", label: "Email Support", icon: faHeadset },
   { value: "Unlimited", label: "Users & Projects", icon: faArrowTrendUp },
   { value: "Self-Hosted", label: "Full Control", icon: faServer }
 ];

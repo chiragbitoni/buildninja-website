@@ -1,6 +1,6 @@
 .section {
   background: var(--color-bg);
-  padding: 140px 24px 80px;
+  padding: 120px 0 80px;
   font-family: var(--font-display);
   border-bottom: 1px solid var(--color-border-subtle);
   position: relative;
@@ -60,7 +60,8 @@
 .inner {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -88,6 +89,15 @@
   font-family: var(--font-accent);
 }
 
+@media (max-width: 480px) {
+  .badge {
+    white-space: normal;
+    text-align: center;
+    max-width: 90vw;
+    line-height: 1.4;
+  }
+}
+
 .badge svg,
 .badgeIcon {
   width: 12px;
@@ -96,7 +106,7 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-size: clamp(40px, 6.5vw, 84px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -111,14 +121,15 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   display: inline-block;
-  padding-right: 0.05em;
+  padding-right: 0.25em;
+  margin-right: -0.15em;
 }
 
 .description {
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto 40px;
 }
 
@@ -178,14 +189,26 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 100px 16px 60px;
+    padding-top: 100px;
   }
+
+  .inner {
+    padding: 0 16px;
+  }
+
   .btnGroup {
     flex-direction: column;
     width: 100%;
+    padding: 0 12px;
   }
-  .btnPrimary, .btnSecondary {
+
+  .btnPrimary,
+  .btnSecondary {
     width: 100%;
     justify-content: center;
+  }
+
+  .description {
+    padding: 0 12px;
   }
 }

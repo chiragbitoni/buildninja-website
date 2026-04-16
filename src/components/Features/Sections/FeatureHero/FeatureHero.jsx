@@ -42,12 +42,12 @@ export default function FeatureHero() {
             style={{ cursor: 'pointer' }}
           >
             <span className={styles.badgeDot} />
-            {siteConfig.version} is Live - New Features Shipped.
+            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
           </motion.div>
 
           <motion.h1 className={styles.heading} variants={itemVariants}>
             Powerful Features,{' '}
-            <span className={styles.headingAccent}>Without the Maintenance Burden.</span>{' '}
+            <span className={styles.headingAccent}>Without Maintenance Burden.</span>{' '}
           </motion.h1>
 
           <motion.p className={styles.subtitle} variants={itemVariants}>

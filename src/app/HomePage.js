@@ -16,12 +16,12 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WorksWith />
-      <FeaturesGrid />
+      {/* <FeaturesGrid /> */}
       <HowItWorks />
       <SocialProof />
-      <PricingTeaser />
+      {/* <PricingTeaser /> */}
       <AIRoadmap />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <CTASection />
     </>
   );

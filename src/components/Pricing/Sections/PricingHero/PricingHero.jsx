@@ -238,7 +238,7 @@ export default function PricingHero() {
 
 
         <motion.p className={s.footerNote} variants={itemVariants}>
-          Start your CI/CD journey with our Growth Edition or contact us for Enterprise orchestration.
+          Start your CI/CD journey with our <span className={s.growthText}>Growth Edition</span> or contact us for Enterprise orchestration.
         </motion.p>
       </motion.div>
 
