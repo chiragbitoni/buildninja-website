@@ -1,6 +1,6 @@
 .section {
   background: var(--color-bg);
-  padding: 100px 24px;
+  padding: 80px 0;
   font-family: var(--font-display);
   border-top: 1px solid var(--color-border-subtle);
   position: relative;
@@ -159,6 +159,9 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 80px 16px;
+    padding: 60px 0;
+  }
+  .inner {
+    padding: 0 16px;
   }
 }
