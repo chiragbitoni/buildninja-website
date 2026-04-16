@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Do I need a DevOps engineer to set up BuildNinja?",
-    a: "No. Most engineering leads set up BuildNinja in under 30 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables."
+    a: "No. Engineer may set up BuildNinja in under 30 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables."
   },
   {
     q: "Does it support macOS / Apple Silicon?",

@@ -112,7 +112,7 @@ const features = [
       </svg>
     ),
     title: "Notifications & Alerts",
-    desc: "Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.",
+    desc: "Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.",
     videoId: '2OuADSNMEoc',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings'
   },

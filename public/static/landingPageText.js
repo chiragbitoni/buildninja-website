@@ -81,7 +81,7 @@ export const secondSectionText = {
       iconHover: paths.icons.landingPageAssets.email_pink,
       title: "Email Notification System",
       description:
-        "Alerts for key events (registrations, password resets, approvals, build results, agent disconnections). Supports SMTP configuration.",
+        "Alerts for key events (registrations, password resets, build results, user approval and rejection and more). Supports SMTP configuration.",
       videoId: "2OuADSNMEoc",
       link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },

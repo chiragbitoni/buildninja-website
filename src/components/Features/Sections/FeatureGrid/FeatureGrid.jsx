@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import { openVideo } from '@/redux/slice/videoPopupSlice';
@@ -143,7 +143,7 @@ const features = [
     ),
     title: 'Notifications & Alerts',
     description:
-      'Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.',
+      'Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.',
     tags: ['SMTP', 'Custom Templates'],
     videoId: '2OuADSNMEoc',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings',

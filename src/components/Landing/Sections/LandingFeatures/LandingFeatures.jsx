@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
@@ -121,7 +121,7 @@ const features = [
             </svg>
         ),
         title: 'Notifications & Alerts',
-        description: 'Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.',
+        description: 'Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.',
         tags: ['SMTP', 'Custom Templates'],
         videoId: '2OuADSNMEoc',
         videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings',

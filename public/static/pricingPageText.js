@@ -52,7 +52,7 @@ export const secondSectionEnterpriseCardText = {
     "We'll create a tailored solution that fits your organization's unique needs, including custom architecture and concierge onboarding.",
   list1: [
     "Custom Deployment (K8s / Air-gapped)",
-    "Dedicated 24/7 Priority Support",
+    "Dedicated 24/7 Email Support",
     "Tailored Organizational SLAs",
   ],
   list2: [
