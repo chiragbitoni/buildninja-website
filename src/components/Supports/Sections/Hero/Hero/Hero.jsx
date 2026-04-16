@@ -205,13 +205,15 @@ export default function SupportHero() {
                                         </motion.div>
                                     </div>
 
-                                    <motion.div className={styles.captchaWrapper} variants={fadeUp} initial="hidden" animate="visible" custom={5}>
-                                        <ReCAPTCHA
-                                            key={currentTheme}
-                                            theme={currentTheme || "dark"}
-                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            onChange={(token) => setCaptchaToken(token)}
-                                        />
+                                    <motion.div className="captcha-container" variants={fadeUp} initial="hidden" animate="visible" custom={5}>
+                                        <div className="captcha-inner">
+                                            <ReCAPTCHA
+                                                key={currentTheme}
+                                                theme={currentTheme || "dark"}
+                                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                                onChange={(token) => setCaptchaToken(token)}
+                                            />
+                                        </div>
                                     </motion.div>
 
                                     <motion.button

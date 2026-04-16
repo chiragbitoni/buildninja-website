@@ -1,13 +1,20 @@
 .supportSection {
   min-height: 100vh;
-  padding: 120px 24px 100px;
+  padding: 120px 0 100px; /* Let container handle side padding */
   background: var(--color-bg);
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden !important;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: var(--font-display);
+}
+
+.supportSection *,
+.supportSection *::before,
+.supportSection *::after {
+  box-sizing: border-box;
 }
 
 .bottomFade {
@@ -120,6 +127,8 @@
   padding: 60px;
   box-shadow: var(--shadow-xl);
   position: relative;
+  min-width: 0; /* Prevent flex/grid blowout */
+  width: 100%;
 }
 
 .glassCard::before {
@@ -166,29 +175,7 @@
 }
 
 /* Input Styles */
-.captchaWrapper {
-  margin-top: 48px;
-  margin-bottom: 8px;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;
-}
 
-@media (max-width: 400px) {
-  .captchaWrapper {
-    transform: scale(0.85);
-    transform-origin: center center;
-    margin: 24px -15px 0;
-  }
-}
-
-@media (max-width: 320px) {
-  .captchaWrapper {
-    transform: scale(0.8);
-    margin: 16px -25px 0;
-  }
-}
 
 .inputWrapper {
   position: relative;
@@ -207,6 +194,8 @@
 
 .field input, .field textarea {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -291,6 +280,7 @@
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
+  min-width: 0; /* Prevent blowout */
 }
 
 .infoCard::after {
@@ -468,10 +458,10 @@
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 320px) {
   .heading {
     font-size: 1.8rem;
-    padding: 0 8px;
+    padding: 0 12px;
   }
   .supportSection {
     padding-top: 80px;
@@ -483,5 +473,22 @@
   .infoCard {
     padding: 16px;
     border-radius: 12px;
+  }
+  .cardValue {
+    font-size: 1.05rem; /* Further reduced to ensure no clipping */
+    word-break: break-all;
+  }
+  .formTitle {
+    font-size: 1.25rem;
+    gap: 8px;
+  }
+  .submitBtn {
+    font-size: 1rem;
+    padding: 14px;
+    min-width: 0;
+    width: 100%;
+  }
+  .supportHeader {
+     padding: 0 12px;
   }
 }
