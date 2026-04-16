@@ -120,6 +120,9 @@
   border: 1px solid var(--color-border-strong);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   margin-top: 8px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .screenshotImg {
@@ -171,6 +174,9 @@
   line-height: 2;
   margin-top: 24px;
   overflow-x: auto;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .termLine {
@@ -273,7 +279,7 @@
   .twoCol,
   .twoColWide,
   .twoColReverse {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 
