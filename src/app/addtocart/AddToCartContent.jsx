@@ -133,7 +133,7 @@ export default function AddToCartContent() {
         setBaseFree(Number(base));
         setStaticFeature(soloFeatures);
       }
-      else{
+      else {
         setStaticFeature(shogunFeatures);
       }
       setTicks(
@@ -188,11 +188,11 @@ export default function AddToCartContent() {
   const PlanHeader = () => (
     <div className={s.headerWrapper}>
       <h1 className={s.headerTitle}>
-        {currentPlan?.name === "Solo" ? "Free" : currentPlan?.name} <span>Edition</span>
+        {currentPlan?.name === "Solo" ? "Growth" : currentPlan?.name} <span>Edition</span>
       </h1>
 
       <div className="badge-alt">
-        {currentPlan?.name === "Solo" ? "Free" : "Most Popular"}
+        {currentPlan?.name === "Solo" ? "FREE" : "Most Popular"}
       </div>
 
       <p className={s.headerSubtitle}>
@@ -207,7 +207,7 @@ export default function AddToCartContent() {
       {staticFeature.map((item, i) => (
         <li key={i} className={s.featureItem}>
           <Check className={s.featureIcon} size={18} />
-          <span dangerouslySetInnerHTML={{__html:item}}></span>
+          <span dangerouslySetInnerHTML={{ __html: item }}></span>
         </li>
       ))}
     </ul>
@@ -233,91 +233,91 @@ export default function AddToCartContent() {
           className={`${s.billingCard} ${selected ? s.billingCardSelected : ""}`}
           data-cursor-grow="true"
         >
-            <label className={s.radioLabel}>
-              <input type="radio" checked={selected} readOnly className={s.radioInput} />
-              {plan.billingCycle}
-              {getSavings(plan) !== 0 && (
-                <span className={s.savingsBadge}>
-                  SAVE {Math.round(getSavings(plan))}%
-                </span>
-              )}
-            </label>
+          <label className={s.radioLabel}>
+            <input type="radio" checked={selected} readOnly className={s.radioInput} />
+            {plan.billingCycle}
+            {getSavings(plan) !== 0 && (
+              <span className={s.savingsBadge}>
+                SAVE {Math.round(getSavings(plan))}%
+              </span>
+            )}
+          </label>
 
-            <span className={s.billingPrice}>
-              {getCurrency(
-                plan.currency,
-                getPrice(plan) / getMonths(plan.billingCycle)
-              )}
-              /mo
-            </span>
+          <span className={s.billingPrice}>
+            {getCurrency(
+              plan.currency,
+              getPrice(plan) / getMonths(plan.billingCycle)
+            )}
+            /mo
+          </span>
         </div>
       );
     });
 
   const PriceBreakdown = () => (
     <div className={s.breakdownBox}>
-        {/* Solo Addon Detail */}
-        {currentPlan?.name === "Solo" && extra > 0 && (
-          <>
-            <div className={s.breakdownRow}>
-              <span>Add On Price:</span>
-              <span>
-                {getCurrency(currentPlan.currency, getPrice(currentPlan))}
-              </span>
-            </div>
-
-            <div className={s.breakdownRow}>
-              <span>Qty</span>
-              <span>{extra}</span>
-            </div>
-
-            <div className={s.breakdownRow}>
-              <span>Total:</span>
-              <strong>
-                {getCurrency(
-                  currentPlan.currency,
-                  getPrice(currentPlan, extra)
-                )}
-              </strong>
-            </div>
-
-            <span style={{fontSize: "0.8rem", color: "var(--color-text-muted)", alignSelf: "flex-end"}}>
-              +{gst}% GST calculated automatically
+      {/* Solo Addon Detail */}
+      {currentPlan?.name === "Solo" && extra > 0 && (
+        <>
+          <div className={s.breakdownRow}>
+            <span>Add On Price:</span>
+            <span>
+              {getCurrency(currentPlan.currency, getPrice(currentPlan))}
             </span>
+          </div>
 
-            <div className={s.breakdownDivider} />
-          </>
-        )}
+          <div className={s.breakdownRow}>
+            <span>Qty</span>
+            <span>{extra}</span>
+          </div>
 
-        {/* Subtotal */}
-        <div className={s.breakdownRow}>
-          <span>Subtotal:</span>
-          <span>
-            {getCurrency(currentPlan?.currency, getPrice(currentPlan, extra))}
+          <div className={s.breakdownRow}>
+            <span>Total:</span>
+            <strong>
+              {getCurrency(
+                currentPlan.currency,
+                getPrice(currentPlan, extra)
+              )}
+            </strong>
+          </div>
+
+          <span style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", alignSelf: "flex-end" }}>
+            +{gst}% GST calculated automatically
           </span>
-        </div>
 
-        <div className={s.breakdownRow}>
-          <span>GST ({gst}%):</span>
-          <span>{getCurrency(currentPlan?.currency, getGST(extra))}</span>
-        </div>
+          <div className={s.breakdownDivider} />
+        </>
+      )}
 
-        <div className={s.breakdownDivider} />
+      {/* Subtotal */}
+      <div className={s.breakdownRow}>
+        <span>Subtotal:</span>
+        <span>
+          {getCurrency(currentPlan?.currency, getPrice(currentPlan, extra))}
+        </span>
+      </div>
 
-        <div className={s.totalRow}>
-          <span>Grand Total:</span>
-          <span>
-            {getCurrency(
-              currentPlan?.currency,
-              getPrice(currentPlan, extra) + getGST(extra)
-            )}
-          </span>
-        </div>
+      <div className={s.breakdownRow}>
+        <span>GST ({gst}%):</span>
+        <span>{getCurrency(currentPlan?.currency, getGST(extra))}</span>
+      </div>
+
+      <div className={s.breakdownDivider} />
+
+      <div className={s.totalRow}>
+        <span>Grand Total:</span>
+        <span>
+          {getCurrency(
+            currentPlan?.currency,
+            getPrice(currentPlan, extra) + getGST(extra)
+          )}
+        </span>
+      </div>
     </div>
   );
 
   const BottomStickyButton = () => (
-    <div style={{marginTop: "auto", paddingTop: "1.5rem"}}>
+    <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
       <button
         onClick={handleSubmit}
         className={s.ctaButton}
@@ -345,147 +345,147 @@ export default function AddToCartContent() {
       <div className={s.pageWrapper}>
         <div className={s.ambientGrid}></div>
         <div className={s.ambientOrb}></div>
-        
+
         <div className={s.contentContainer}>
           <PlanHeader />
 
           <div className={s.checkoutGrid}>
             {/* LEFT - Features */}
             <div className={`${s.glassCard} ${s.leftPanel}`}>
-                <div className={s.featuresWrapper}>
-                  <FeatureList />
+              <div className={s.featuresWrapper}>
+                <FeatureList />
 
-                  {currentPlan?.name === "Solo" && (
-                    <div className={s.highlightBox}>
-                        <h4 className={s.highlightTitle}>Additional concurrent capacity (per build agent)</h4>
-                        <ul className={s.highlightList}>
-                          <li className={s.highlightItem}>
-                            • {getCurrency(
-                              currentPlan.currency,
-                              getPrice(currentPlan, 1)
-                            )} / {currentPlan.billingCycle.replace("ly", "").toLowerCase()}
-                          </li>
-                          <li className={s.highlightItem}>
-                            • Save with annual or multi-year plans
-                          </li>
-                          <li className={s.highlightItem}>
-                            • Yearly discounts applied automatically
-                          </li>
-                        </ul>
-                    </div>
-                  )}
+                {currentPlan?.name === "Solo" && (
+                  <div className={s.highlightBox}>
+                    <h4 className={s.highlightTitle}>Additional concurrent capacity (per build agent)</h4>
+                    <ul className={s.highlightList}>
+                      <li className={s.highlightItem}>
+                        • {getCurrency(
+                          currentPlan.currency,
+                          getPrice(currentPlan, 1)
+                        )} / {currentPlan.billingCycle.replace("ly", "").toLowerCase()}
+                      </li>
+                      <li className={s.highlightItem}>
+                        • Save with annual or multi-year plans
+                      </li>
+                      <li className={s.highlightItem}>
+                        • Yearly discounts applied automatically
+                      </li>
+                    </ul>
+                  </div>
+                )}
 
-                  <div className={s.valueProps}>
-                    <div className={s.propItem}>
-                      <Shield className={s.propIcon} size={18} />
-                      {currentPlan?.name === "Solo"
-                        ? "No credit card required"
-                        : "Priority enterprise onboarding support"}
-                    </div>
+                <div className={s.valueProps}>
+                  <div className={s.propItem}>
+                    <Shield className={s.propIcon} size={18} />
+                    {currentPlan?.name === "Solo"
+                      ? "No credit card required"
+                      : "Priority enterprise onboarding support"}
+                  </div>
 
-                    <div className={s.propItem}>
-                      <InfinityIcon className={s.propIcon} size={18} />
-                      {currentPlan?.name === "Solo"
-                        ? "Free"
-                        : "Instance activation after purchase"}
-                    </div>
+                  <div className={s.propItem}>
+                    <InfinityIcon className={s.propIcon} size={18} />
+                    {currentPlan?.name === "Solo"
+                      ? "Free"
+                      : "Instance activation after purchase"}
+                  </div>
 
-                    <div className={s.propItem}>
-                      <Server className={s.propIcon} size={18} />
-                      {currentPlan?.name === "Solo"
-                        ? "Self-hosted on your infra"
-                        : "No infrastructure lock-in"}
-                    </div>
+                  <div className={s.propItem}>
+                    <Server className={s.propIcon} size={18} />
+                    {currentPlan?.name === "Solo"
+                      ? "Self-hosted on your infra"
+                      : "No infrastructure lock-in"}
                   </div>
                 </div>
+              </div>
             </div>
 
             {/* RIGHT - Checkout Panel */}
             <div className={`${s.glassCard} ${s.checkoutPanel}`}>
 
-                {currentPlan?.name === "Solo" && (
-                  <h3 className={s.priceTitle}>
-                    Increase Parallel Build Execution on Build Agents
-                  </h3>
-                )}
+              {/* ` {currentPlan?.name === "Solo" && (
+                <h3 className={s.priceTitle}>
+                  Increase Parallel Build Execution on Build Agents
+                </h3>
+              )}` */}
 
-                {/* Main Price */}
-                {!(currentPlan?.name === "Solo" && extra === 0) && currentPlan && (
-                    <div className={s.priceLarge}>
-                      {getCurrency(currentPlan.currency, getPrice(currentPlan))}
-                      <span className={s.priceSuffix}>
-                        / {currentPlan.name === "Solo" ? "concurrent build execution / " : ""}{currentPlan.billingCycle.replace("ly", "").toLowerCase()}
-                      </span>
-                    </div>
-                )}
-                
-                {currentPlan && currentPlan.billingCycle !== "Monthly" && extra != 0 && (
-                    <div className={s.billingSubtitle}>
-                        {getCurrency(
-                          currentPlan.currency,
-                          getPrice(currentPlan) / getMonths(currentPlan.billingCycle)
-                        )} / month equivalent
-                        
-                        {getSavings(currentPlan) !== 0 && (
-                          <span className={s.savingsBadge}>
-                            SAVE {Math.round(getSavings(currentPlan))}%
-                          </span>
-                        )}
-                    </div>
-                )}
+              {/* Main Price */}
+              {!(currentPlan?.name === "Solo" && extra === 0) && currentPlan && (
+                <div className={s.priceLarge}>
+                  {getCurrency(currentPlan.currency, getPrice(currentPlan))}
+                  <span className={s.priceSuffix}>
+                    / {currentPlan.name === "Solo" ? "concurrent build execution / " : ""}{currentPlan.billingCycle.replace("ly", "").toLowerCase()}
+                  </span>
+                </div>
+              )}
 
-                {gst !== 0 && extra !== 0 && (
-                  <div className={s.billingSubtitle}>
-                    +{gst}% GST applied at checkout
+              {currentPlan && currentPlan.billingCycle !== "Monthly" && extra != 0 && (
+                <div className={s.billingSubtitle}>
+                  {getCurrency(
+                    currentPlan.currency,
+                    getPrice(currentPlan) / getMonths(currentPlan.billingCycle)
+                  )} / month equivalent
+
+                  {getSavings(currentPlan) !== 0 && (
+                    <span className={s.savingsBadge}>
+                      SAVE {Math.round(getSavings(currentPlan))}%
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {gst !== 0 && extra !== 0 && (
+                <div className={s.billingSubtitle}>
+                  +{gst}% GST applied at checkout
+                </div>
+              )}
+
+              <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+                {/* SOLO Slider */}
+                {/* {currentPlan?.name === "Solo" && (
+                  <div className={s.sliderWrapper} data-cursor-grow="true">
+                    <Slider
+                      className="slider"
+                      value={value}
+                      max={maxVal}
+                      min={baseFree}
+                      step={1}
+                      onValueChange={setValue}
+                    />
+                    <div className={s.sliderLabels}>
+                      <span>{baseFree}</span>
+                      <span>12</span>
+                    </div>
+                    <p className={s.sliderStatus}>
+                      {value} concurrent builds (includes {baseFree} free)
+                    </p>
+                  </div>
+                )} */}
+
+                {/* Billing Options */}
+                {currentPlan && !(currentPlan.name === "Solo" && extra === 0) && (
+                  <div className={s.billingOptions}>
+                    <span className={s.billingLabel}>
+                      Select billing period:
+                    </span>
+                    <BillingOptions />
                   </div>
                 )}
 
-                <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
-                  {/* SOLO Slider */}
-                  {currentPlan?.name === "Solo" && (
-                    <div className={s.sliderWrapper} data-cursor-grow="true">
-                      <Slider
-                        className="slider"
-                        value={value}
-                        max={maxVal}
-                        min={baseFree}
-                        step={1}
-                        onValueChange={setValue}
-                      />
-                      <div className={s.sliderLabels}>
-                        <span>{baseFree}</span>
-                        <span>12</span>
-                      </div>
-                      <p className={s.sliderStatus}>
-                        {value} concurrent builds (includes {baseFree} free)
-                      </p>
-                    </div>
-                  )}
+                {/* Non-Solo Info */}
+                {currentPlan?.name !== "Solo" && (
+                  <div className={s.highlightBox} style={{ marginTop: 0, marginBottom: "2rem" }}>
+                    Best suited for teams scaling beyond the limits of
+                    Growth plans—no restrictions, no bottlenecks, no concurrency
+                    limits.
+                  </div>
+                )}
 
-                  {/* Billing Options */}
-                  {currentPlan && !(currentPlan.name === "Solo" && extra === 0) && (
-                      <div className={s.billingOptions}>
-                        <span className={s.billingLabel}>
-                          Select billing period:
-                        </span>
-                        <BillingOptions />
-                      </div>
-                  )}
+                <PriceBreakdown />
 
-                  {/* Non-Solo Info */}
-                  {currentPlan?.name !== "Solo" && (
-                    <div className={s.highlightBox} style={{marginTop: 0, marginBottom: "2rem"}}>
-                        Best suited for teams scaling beyond the limits of
-                        Growth plans—no restrictions, no bottlenecks, no concurrency
-                        limits.
-                    </div>
-                  )}
 
-                  <PriceBreakdown />
-
-                  
-                  <BottomStickyButton />
-                </div>
+                <BottomStickyButton />
+              </div>
             </div>
           </div>
         </div>

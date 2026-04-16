@@ -53,7 +53,7 @@ export default function PricingTable() {
       { feature: "Concurrent Builds", free: <Tick>Unlimited - Run as many as your infra supports</Tick> },
       { feature: "Build Agents", free: <Tick>Unlimited build agents - Connect as many as you want</Tick> },
       { feature: "Build History", free: <Tick>Perpetual build history - Complete audit trail forever</Tick> },
-      { feature: "SSO Integrations", free: <Tick>All 5 SSO providers - MS, GitHub, GitLab, BB, Google</Tick> },
+      { feature: "SSO Integrations", free: <Tick>All 5 SSO providers -  Microsoft, GitHub, GitLab, Bitbucket, and Google</Tick> },
       { feature: "Support", free: <Tick>Priority business support - Direct engineering team access</Tick> },
       { feature: "Custom Deployment", free: <Tick>Built-in Docker / K8s / Air-gapped / Custom</Tick> },
     ],
