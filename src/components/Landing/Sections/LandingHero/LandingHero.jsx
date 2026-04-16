@@ -174,21 +174,21 @@ export default function LandingHero() {
 
             <div className={s.container}>
                 {/* LEFT CONTENT */}
-                <motion.div 
+                <motion.div
                     className={s.left}
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <motion.div 
+                    <motion.div
                         className={s.badge}
                         variants={itemVariants}
                         onClick={() => { router.push("/install"); }}
                         data-cursor-grow
                     >
                         <span className={s.badgeDot} />
-                        BUILDNINJA {siteConfig.version.toUpperCase()} IS LIVE, CI/CD REIMAGINED.
+                        {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soom with AI Features
                     </motion.div>
 
                     <motion.h2 className={s.title} variants={itemVariants}>
@@ -207,8 +207,8 @@ export default function LandingHero() {
                             { label: "Concurrent Builds", value: "Unlimited" },
                             { label: "Growth Edition", value: "Enterprise Scale" }
                         ].map((stat, i) => (
-                            <motion.div 
-                                className={s.statCard} 
+                            <motion.div
+                                className={s.statCard}
                                 key={i}
                                 variants={itemVariants}
                             >
@@ -220,8 +220,8 @@ export default function LandingHero() {
                 </motion.div>
 
                 {/* RIGHT FORM */}
-                <motion.div 
-                    className={s.right} 
+                <motion.div
+                    className={s.right}
                     ref={formRef}
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -238,14 +238,14 @@ export default function LandingHero() {
                             <div className={s.formRow}>
                                 <label className={s.formLabel}>
                                     <div>First Name<span className={s.required}>*</span></div>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         className={s.input}
-                                        placeholder="Name" 
-                                        required 
-                                        value={form.name} 
-                                        onChange={handleChange} 
-                                        name="name" 
+                                        placeholder="Name"
+                                        required
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        name="name"
                                     />
                                 </label>
                                 <label className={s.formLabel}>
@@ -291,7 +291,7 @@ export default function LandingHero() {
                             <div className={s.formRow}>
                                 <label className={s.formLabel}>
                                     <div>Team Size<span className={s.required}>*</span></div>
-                                    <select 
+                                    <select
                                         className={s.select}
                                         name="teamSize"
                                         value={form.teamSize}

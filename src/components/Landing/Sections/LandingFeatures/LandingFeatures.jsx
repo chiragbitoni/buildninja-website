@@ -108,7 +108,7 @@ const features = [
             </svg>
         ),
         title: 'Pipeline Runners',
-        description: 'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at config or project level.',
+        description: 'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at configuration level or project level.',
         tags: ['SSH Runner', 'Script Runner', 'Build Params'],
         videoId: 'IOd9CmP6G4c',
         videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners',

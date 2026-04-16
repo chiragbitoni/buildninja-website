@@ -42,7 +42,7 @@ export default function FeatureHero() {
             style={{ cursor: 'pointer' }}
           >
             <span className={styles.badgeDot} />
-            {siteConfig.version} is Live - New Features Shipped.
+            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soom with AI Features
           </motion.div>
 
           <motion.h1 className={styles.heading} variants={itemVariants}>

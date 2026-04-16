@@ -41,10 +41,9 @@ export default function HeroSection() {
 
       {/* Hero copy - each child has its own animation class */}
       <div className={styles.copy}>
-
         <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
           <span className={styles.badgeDot} />
-          {siteConfig.version} is Live - Self-Hosted CI/CD, Reimagined.
+          {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soom with AI Features
         </div>
 
         <h1 className={styles.heading}>
