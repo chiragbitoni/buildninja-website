@@ -103,7 +103,7 @@ export const pricingFourthText = {
   subtitle: "Simple, transparent, and predictable for teams of any size.",
 
   problemTitle: "The Problem",
-  problemTag: "Legacy Pricing",
+  problemTag: "LEGACY PRICING",
   problemDesc:
     "Most CI/CD tools <strong>punish team growth</strong> with escalating per-seat costs. You're forced to choose between expensive cloud platforms that bill per user or complex self-hosted setups that drain DevOps time. Either way, <strong>costs become unpredictable.</strong>",
 
@@ -127,6 +127,8 @@ export const pricingFourthText = {
       id: "infrastructure-needed",
     },
     {
+      badges: [],
+      // id: ""
       icon: paths.icons.calculatorPink,
       alt: "BuildNinja Pink Calculator Icon",
       title: "Simple, Transparent Pricing",
@@ -135,24 +137,6 @@ export const pricingFourthText = {
       desc: "Unlimited users, projects, and configurations. Scale your build orchestration as much as your infrastructure allows with zero per-seat costs.",
       link: "Learn more →",
       id: "what-is-concurrent-agent",
-    },
-    {
-      icon: paths.icons.headphonesPink,
-      alt: "BuildNinja Pink Headphone Icon",
-      title: "Professional Support Included",
-      tag: "Partnership",
-      desc: "Enterprise plans include free migration assistance for 3 projects, 4 hours of professional services, and high-priority onboarding - not upsells, but true partnership.",
-      link: "Learn more →",
-      id: "professional-services",
-    },
-    {
-      icon: paths.icons.syncPink,
-      alt: "BuildNinja Pink Sync Icon",
-      title: "Risk-Free Switching",
-      tag: "Migration Assistance",
-      desc: "We make it easy to leave your current platform. Free migration help for 10 projects, license credits for unused time, and professional onboarding. We remove barriers that keep teams stuck on expensive tools.",
-      badges: ["Migration Support", "License Credits", "Zero Risk"],
-      // id: ""
     },
   ],
 };
