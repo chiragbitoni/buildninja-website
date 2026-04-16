@@ -151,6 +151,11 @@
   --color-card-icon-hover-bg: rgba(255, 255, 255, 0.9);
   --color-primary-glow: rgba(255, 65, 114, 0.15);
 
+  /* Demo accent (Light) */
+  --color-demo-accent: #be123c;
+  --color-demo-accent-bg: rgba(225, 29, 72, 0.08);
+  --color-demo-accent-border: rgba(225, 29, 72, 0.15);
+
   /* Utilities */
   --icon-filter: invert(1); /* White icons invert to black on light bg */
   --logo-filter: none; /* Black logo stays black on light bg */
