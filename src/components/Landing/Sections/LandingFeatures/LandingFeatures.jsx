@@ -97,7 +97,7 @@ const features = [
         ),
         title: 'Single Sign-On (SSO) Support',
         description: 'Supports multiple SSO providers including GitHub, GitLab, Google, Microsoft, and Bitbucket for streamlined enterprise authentication.',
-        tags: ['OAuth 2.0', 'OIDC', 'SAML 2.0', 'Enterprise Ready'],
+        tags: ['OAuth 2.0', 'OIDC', 'Enterprise Ready'],
         videoId: 'C-Ln6bbGo2E',
         videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
     },
