@@ -5,10 +5,7 @@ export default function TailwindPageWrapper({ children }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    if (ref.current) ref.current.classList.add("dark");
-    return () => {
-      if (ref.current) ref.current.classList.remove("dark");
-    };
+    // We used to force "dark" here, but now we let the global theme handle it
   }, []);
 
   return (

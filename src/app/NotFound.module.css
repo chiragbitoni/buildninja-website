@@ -1,0 +1,60 @@
+.notFoundWrapper {
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    height: 600px;
+}
+
+.notFoundContent h3 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.notFoundContent h4 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.notFoundContent p {
+    color: #ffffffee;
+    margin-bottom: 30px;
+}
+
+.notFoundActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.notFoundActions a {
+    padding: 10px 40px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.notFoundActions a:hover {
+    opacity: 0.85;
+}
+
+[data-theme="dark"] .notFoundContent h1,
+[data-theme="dark"] .notFoundContent h3,
+[data-theme="dark"] .notFoundContent h4,
+[data-theme="dark"] .notFoundContent p {
+    color: #ffffff;
+}
+
+[data-theme="light"] .notFoundContent h1,
+[data-theme="light"] .notFoundContent h3,
+[data-theme="light"] .notFoundContent h4,
+[data-theme="light"] .notFoundContent p {
+    color: #000000;
+}

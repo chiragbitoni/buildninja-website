@@ -1,0 +1,124 @@
+.section {
+  padding: 100px 24px;
+  position: relative;
+  background: var(--color-bg);
+  overflow: hidden;
+  border-top: 1px solid var(--color-border);
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  opacity: 0.1;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .leftCol {
+    align-items: center;
+  }
+}
+
+.badge {
+  composes: badge-alt from global;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--color-text) 30%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  padding-right: 0.12em;
+}
+
+.desc {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* ── Trust Grid ── */
+.trustGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: rgba(var(--bg-rgb), 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.trustItem:hover {
+  background: rgba(var(--bg-rgb), 0.6);
+  border-color: var(--color-primary-border);
+  transform: translateX(10px);
+}
+
+@media (max-width: 900px) {
+  .trustItem:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.icon {
+  color: var(--color-primary);
+  font-size: 18px;
+  flex-shrink: 0;
+}

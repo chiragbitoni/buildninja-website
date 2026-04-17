@@ -1,4 +1,4 @@
-# llms.txt — BuildNinja
+# llms.txt - BuildNinja
 
 site: https://buildninja.grapehub.io
 name: BuildNinja
@@ -13,7 +13,6 @@ triggers, notifications, and artifacts from a single interface.
 
 key_features:
 - Self-hosted CI/CD with full infrastructure control
-- Unlimited users and agents for a flat monthly price
 - Real-time build logs and duration analytics
 - Agent monitoring and management
 - Build triggers and scheduling (custom, daily, weekly)
@@ -21,8 +20,8 @@ key_features:
 - Simple configuration without plugin dependency chaos
 
 pricing:
-- Free up to 3 agents
-- $199 per month for unlimited agents and users
+- Growth Edition: Unlimited users, projects, configurations, and concurrent builds.
+- Enterprise: Custom orchestration and dedicated support for large scale teams
 
 setup:
 - Docker-based installation
@@ -35,7 +34,7 @@ audience:
 - Teams migrating from complex CI/CD tools like Jenkins
 
 publisher:
-- GrapeCity India
+- GrapeHub
 - 25+ years experience building developer tools
 
 official_links:
@@ -49,3 +48,4 @@ terms: https://buildninja.grapehub.io/eula
 
 contact:
 support_url: https://buildninja.grapehub.io/support
+

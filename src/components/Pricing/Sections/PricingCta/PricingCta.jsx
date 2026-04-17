@@ -1,0 +1,102 @@
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import s from "./PricingCta.module.css";
+import { pricingEighthText } from "../../../../../public/static/pricingPageText";
+import { paths } from "../../../../../public/static/paths";
+import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
+import Image from "next/image";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+export default function PricingCta() {
+  const text = pricingEighthText;
+  const router = useRouter();
+  const { region } = useSelector((state) => state.pricing);
+
+  const features = text.features;
+
+  return (
+    <section className={s.section}>
+      <motion.div 
+        className={s.inner}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        variants={containerVariants}
+      >
+        <motion.span className={s.sectionBadge} variants={itemVariants}>Get Started</motion.span>
+        <motion.h2 className={s.title} variants={itemVariants}>
+          Stop Paying Per-Seat.{" "}
+          <span className={s.accent}>Start Shipping Code.</span>
+        </motion.h2>
+        <motion.p
+          className={s.subtitle}
+          dangerouslySetInnerHTML={{ __html: text.subtitle }}
+          variants={itemVariants}
+        />
+
+        <motion.div className={s.cardsGrid} variants={containerVariants}>
+          {/* Free */}
+          <motion.div className={`${s.card} ${s.cardSolo}`} variants={itemVariants}>
+            <h3 className={s.cardTitle}>{text.free.title}</h3>
+            <p className={s.cardDesc}>{text.free.description}</p>
+            <button
+              id="pricing-cta-free"
+              className={s.btnInfo}
+              onClick={() => {
+                window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=2874404d-a36f-4079-a94f-07e034050804`;
+              }}
+            >
+              {text.free.buttonText}
+              <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+            </button>
+          </motion.div>
+
+          {/* Enterprise */}
+          <motion.div className={`${s.card} ${s.cardEnterprise}`} variants={itemVariants}>
+            <h3 className={s.cardTitle}>{text.enterprise.title}</h3>
+            <p className={s.cardDesc}>{text.enterprise.description}</p>
+            <button
+              id="pricing-cta-enterprise"
+              className={s.btnEnterprise}
+              onClick={() => router.push("/support")}
+            >
+              {text.enterprise.buttonText}
+              <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+            </button>
+          </motion.div>
+        </motion.div>
+
+        <motion.div className={s.featureRow} variants={containerVariants}>
+          {features.map((f, i) => (
+            <motion.span key={i} className={s.featurePill} variants={itemVariants}>
+              <Image width={15} height={15} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
+              {f}
+            </motion.span>
+          ))}
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}

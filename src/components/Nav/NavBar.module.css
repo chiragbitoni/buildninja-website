@@ -1,0 +1,361 @@
+/* ── Base Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(var(--bg-rgb), 0.85);
+  backdrop-filter: blur(50px) saturate(120%);
+  -webkit-backdrop-filter: blur(50px) saturate(120%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 8px 32px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+  font-family: var(--font-display);
+}
+
+/* Uncomment for sticky navbar */
+/* .navbarShow { transform: translateY(0); }
+.navbarHide  { transform: translateY(-100%); } */
+
+.navbarContainer {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 14px var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbarContainer > *:first-child {
+  margin-right: auto;
+}
+
+/* ── Logo ── */
+.navbarLogo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  object-fit: contain;
+  height: 40px;
+  width: auto;
+  transition: opacity 0.25s ease;
+  filter: var(--logo-filter);
+}
+
+/* ── Nav Links ── */
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbarRightGroup {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbarActionGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbarLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 0.2s;
+  border-radius: var(--radius-sm);
+}
+
+.navbarLink:hover {
+  color: var(--color-text);
+}
+
+.activeLink {
+  color: var(--color-primary) !important;
+}
+
+.navbarAnchor {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-sm);
+  position: relative;
+  white-space: nowrap;
+}
+
+/* active underline */
+.activeLink .navbarAnchor::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+
+}
+
+.navDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-top: -8px; /* Slightly above text center */
+  box-shadow: 0 0 8px var(--color-primary-glow);
+  flex-shrink: 0;
+}
+
+/* ── CTA Button ── */
+.navbarGetStartedButton {
+  border-radius: var(--radius-pill);
+  color: #ffffff;
+  background: var(--color-primary);
+  padding: 7px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+}
+
+.navbarGetStartedButton:hover {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ── GitHub Icon ── */
+.navbarGithubIcon {
+  height: 40px !important;
+  width: 40px !important;
+  padding: 0 4px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+  filter: var(--icon-filter, none);
+}
+
+.navbarGithubIcon:hover {
+  opacity: 1;
+}
+
+/* ── Mobile Controls (Outside Hamburger) ── */
+.mobileControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobileOnlyActions {
+  display: none;
+}
+
+/* ── Hamburger ── */
+.hamburgerWrapper {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  background: rgba(var(--bg-rgb), 0.05);
+  border: 1px solid transparent;
+  z-index: 60;
+}
+
+.hamburgerWrapper:hover {
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border-color: rgba(var(--color-primary-rgb), 0.2);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 14px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburgerOpen .hamburger span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  background: var(--color-primary);
+}
+
+.hamburgerOpen .hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburgerOpen .hamburger span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  background: var(--color-primary);
+}
+
+.desktopMenu {
+  display: flex;
+}
+
+.mobileMenu {
+  display: none !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1150px) {
+  .navbarRightGroup {
+    display: none !important;
+  }
+  .mobileMenu {
+    display: flex !important;
+  }
+  
+  .mobileOnlyActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .navbarLinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    background: rgba(var(--bg-rgb), 0.95);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 0 24px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 49;
+  }
+
+  /* When menu is active, motion handles display, but we need these specifics */
+  .navbarLinks.menuActive {
+    pointer-events: auto;
+    opacity: 1;
+    display: flex;
+  }
+
+  .hamburgerWrapper {
+    display: flex;
+  }
+
+  .navbarLink {
+    font-size: 16px;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .navbarAnchor {
+    padding: 14px 24px;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .navbarAnchor:hover {
+    background: rgba(var(--color-primary-rgb), 0.05);
+    padding-left: 32px;
+  }
+
+  .navbarGetStartedButton {
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .navbarActionGroup {
+    padding: 24px;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbarContainer {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .logoImage {
+    width: 130px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbarContainer {
+    padding: 12px 10px;
+    gap: 4px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .logoImage {
+    width: 95px;
+    height: auto;
+  }
+
+  .hamburgerWrapper {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+
+  .mobileControls {
+    gap: 8px;
+  }
+
+  .mobileOnlyActions {
+    gap: 8px;
+  }
+}
