@@ -295,16 +295,16 @@
   .captcha-container {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: hidden;
     margin: 24px 0;
     min-height: 78px;
   }
 
   .captcha-inner {
-    transform-origin: top left;
+    transform-origin: top center;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     width: 304px; /* Standard ReCAPTCHA width */
   }
 
