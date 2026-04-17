@@ -10,6 +10,7 @@ function RegionInitializer({ children }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    /*
     async function checkRegion() {
       const regionCode = await fetchUserRegionAPI();
       if (regionCode === "IN" || (regionCode && regionCode.includes("IN"))) {
@@ -18,6 +19,7 @@ function RegionInitializer({ children }) {
     }
 
     checkRegion();
+    */
   }, [dispatch]);
 
   return <>{children}</>;

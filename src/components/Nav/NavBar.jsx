@@ -40,6 +40,7 @@ export default function Navbar() {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
 
+    /*
     const storedPlans = localStorage.getItem("plans");
     if (!storedPlans) {
       async function init() {
@@ -48,6 +49,7 @@ export default function Navbar() {
       }
       init();
     }
+    */
     
     return () => window.removeEventListener("resize", handleResize);
   }, []);

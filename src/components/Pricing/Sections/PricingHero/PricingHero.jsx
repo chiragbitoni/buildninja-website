@@ -81,6 +81,7 @@ export default function PricingHero() {
   }
 
   useEffect(() => {
+    /*
     const stored = localStorage.getItem("plans");
     if (!stored) { fetchAndStorePlans(); return; }
     try {
@@ -88,6 +89,7 @@ export default function PricingHero() {
       if (!Array.isArray(parsed) || parsed.length === 0) { fetchAndStorePlans(); return; }
       setPlans(parsed);
     } catch { fetchAndStorePlans(); }
+    */
     setLoadingPlans(false);
   }, []);
 
