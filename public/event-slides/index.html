@@ -506,7 +506,7 @@
           </div>
           <div>
             <div class="splash-stat-num" style="font-size:32px;padding-top:2px">Free</div>
-            <div class="splash-stat-label">Core Edition</div>
+            <div class="splash-stat-label">Growth Edition</div>
           </div>
         </div>
         <div class="platform-tags">
@@ -531,7 +531,7 @@
       <div class="slide-inner">
         <div>
           <div class="slide-badge">Analytics &amp; Observability</div>
-          <h2 class="slide-title">Every Build.<br><span class="accent">Total Visibility.</span></h2>
+          <h2 class="slide-title">Complete Visibility<br><span class="accent">for Every Build.</span></h2>
           <div class="divider"></div>
           <p class="slide-sub">Real-time success rates, runtime trends, and agent utilization - all in a single command center dashboard.</p>
           <div class="slide-features">
@@ -666,8 +666,64 @@
       <div class="ghost-num">05</div>
     </div>
 
-    <!-- ── SLIDE 6: CONNECT ── -->
-    <div class="slide" id="slide-6" data-color="blue">
+    <!-- ── SLIDE 6: NO PLUGIN CHAOS ── -->
+    <div class="slide" id="slide-6" data-color="purple">
+      <div class="slide-inner">
+        <div>
+          <div class="slide-badge">Everything Built-in</div>
+          <h2 class="slide-title">No More<br><span class="accent">Plugin Chaos.</span></h2>
+          <div class="divider"></div>
+          <p class="slide-sub">BuildNinja comes with everything you need out of the box. Stop spending days hunting for plugins or debugging version conflicts just to get basic CI/CD working.</p>
+          <div class="slide-features">
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Native capabilities</strong> - no third-party dependencies required</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Seamless upgrades</strong> - no more plugin conflicts or breakages</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Secure by default</strong> - avoid vulnerable community extensions</span></div>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="screenshot-glow"></div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" 
+                 src="/resources/event-slides/project-changes-dark.png" 
+                 data-dark="/resources/event-slides/project-changes-dark.png"
+                 data-light="/resources/event-slides/project-changes-light.png"
+                 alt="Built in Capabilities" />
+          </div>
+        </div>
+      </div>
+      <div class="ghost-num">06</div>
+    </div>
+
+    <!-- ── SLIDE 7: NO VENDOR LOCK-IN ── -->
+    <div class="slide" id="slide-7" data-color="amber">
+      <div class="slide-inner">
+        <div>
+          <div class="slide-badge">Infrastructure Freedom</div>
+          <h2 class="slide-title">No Vendor Lock-in.<br><span class="accent">Total Freedom.</span></h2>
+          <div class="divider"></div>
+          <p class="slide-sub">Your CI/CD belongs to you. BuildNinja ensures your pipelines remain portable and your infrastructure stays under your control, forever.</p>
+          <div class="slide-features">
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Self-hosted control</strong> - deploy anywhere, anytime</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Data sovereignty</strong> - total ownership of your build data</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Infrastructure flexible</strong> - zero cloud provider lock-in</span></div>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="screenshot-glow"></div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" 
+                 src="/resources/event-slides/dashboard-dark.png" 
+                 data-dark="/resources/event-slides/dashboard-dark.png"
+                 data-light="/resources/event-slides/dashboard-light.png"
+                 alt="Complete Freedom" />
+          </div>
+        </div>
+      </div>
+      <div class="ghost-num">07</div>
+    </div>
+
+    <!-- ── SLIDE 8: CONNECT ── -->
+    <div class="slide" id="slide-8" data-color="blue">
       <div class="slide-inner" style="grid-template-columns: 45% 55%;">
         <div>
           <div class="slide-badge">Network & Support</div>
@@ -694,7 +750,7 @@
           </div>
         </div>
       </div>
-      <div class="ghost-num">06</div>
+      <div class="ghost-num">08</div>
     </div>
 
   </div>
@@ -705,6 +761,10 @@
     <div class="nav-arrows">
       <div class="nav-arrow" id="btn-prev">
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </div>
+      <div class="nav-arrow" id="btn-pause" onclick="togglePause()" title="Pause/Resume">
+        <svg id="icon-pause" viewBox="0 0 24 24" style="fill:currentColor; stroke:none;"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>
+        <svg id="icon-play" viewBox="0 0 24 24" style="fill:currentColor; stroke:none; display:none;"><polygon points="5 3 19 12 5 21 5 3" /></svg>
       </div>
       <div class="nav-arrow" id="btn-next">
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
@@ -734,17 +794,24 @@
     }
 
     /* ── Slides ── */
-    const TOTAL   = 7;
+    const TOTAL   = 9;
     const slides  = Array.from(document.querySelectorAll('.slide'));
     const dotsWrap = document.getElementById('dots');
     let   current  = 0;
     let   busy     = false;
+    let   isPaused = false;
     let   timer    = null;
 
     function resetTimer() {
       if (timer) clearInterval(timer);
-      
       const tbar = document.getElementById('timer-bar');
+      
+      if (isPaused) {
+        tbar.style.transition = 'none';
+        tbar.style.width = '0%';
+        return;
+      }
+      
       tbar.style.transition = 'none';
       tbar.style.width = '0%';
       void tbar.offsetWidth; // force reflow
@@ -752,6 +819,13 @@
       tbar.style.width = '100%';
 
       timer = setInterval(next, 10000);
+    }
+
+    function togglePause() {
+      isPaused = !isPaused;
+      document.getElementById('icon-pause').style.display = isPaused ? 'none' : 'block';
+      document.getElementById('icon-play').style.display = isPaused ? 'block' : 'none';
+      resetTimer();
     }
 
     // Build dots

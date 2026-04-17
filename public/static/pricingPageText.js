@@ -60,7 +60,7 @@ export const secondSectionEnterpriseCardText = {
     "Concierge Onboarding & Migration",
     "Advanced Strategic User Management",
   ],
-  buttonText: "Contact Us for Custom Pricing",
+  buttonText: "Contact Us",
   responseTimeText: "Response within 24 hours",
 };
 // ===========================
