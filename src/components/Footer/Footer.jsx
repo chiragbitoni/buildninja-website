@@ -78,7 +78,7 @@ export default function Footer() {
                     <div className={styles.footerBrand}>
                         <div className={styles.footerLogoContainer}>
                             <div className={styles.footerLogo}>
-                                <Image width={178} height={48} src="/resources/logo-buildninja.svg" alt="BuildNinja Logo" className={styles.footerBuildNinjaLogo} />
+                                <Image width={178} height={48} src="/resources/logo_buildninja.svg" alt="BuildNinja Logo" className={styles.footerBuildNinjaLogo} />
                             </div>
                             {/* <h3 className={styles.footerTitle}>{footerText.company.name}</h3> */}
                         </div>
