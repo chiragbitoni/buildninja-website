@@ -140,7 +140,7 @@
   font-size: clamp(28px, 8vw, 84px);
   font-weight: 800;
   color: var(--color-text);
-  line-height: 1.05;
+  line-height: 1.15;
   letter-spacing: -0.04em;
   margin: 0 0 24px;
   opacity: 0;
@@ -164,6 +164,27 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
   display: inline-block;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+  vertical-align: top;
+}
+
+.typewriter {
+  min-height: 1em;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 6px;
+  -webkit-text-fill-color: var(--color-primary);
+  color: var(--color-primary);
+  animation: cursorBlink 1.1s step-end infinite;
+  font-weight: 400;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .subtext {

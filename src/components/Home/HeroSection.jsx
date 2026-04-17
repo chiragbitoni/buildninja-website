@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import BuildNinjaDemo from "./BuildNinjaDemo";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./HeroSection.module.css";
@@ -7,6 +7,43 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
+
+const Typewriter = ({ texts }) => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(100);
+
+  useEffect(() => {
+    const handleType = () => {
+      const fullText = texts[currentTextIndex];
+      setCurrentText(
+        isDeleting
+          ? fullText.substring(0, currentText.length - 1)
+          : fullText.substring(0, currentText.length + 1)
+      );
+
+      setSpeed(isDeleting ? 40 : 100);
+
+      if (!isDeleting && currentText === fullText) {
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && currentText === "") {
+        setIsDeleting(false);
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      }
+    };
+
+    const timer = setTimeout(handleType, speed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, speed, texts, currentTextIndex]);
+
+  return (
+    <span className={styles.typewriter}>
+      {currentText}
+      <span className={styles.cursor}>|</span>
+    </span>
+  );
+};
 
 export default function HeroSection() {
   const orb1 = useRef(null);
@@ -47,8 +84,16 @@ export default function HeroSection() {
         </div>
 
         <h1 className={styles.heading}>
-          Ship Faster with CI/CD<br />
-          <span className={styles.headingGradient}>Built for Your Infrastructure.</span>
+          Your Self Hosted CI/CD tool<br />
+          <span className={styles.headingGradient}>
+            <Typewriter texts={[
+              "No plugin Chaos",
+              "Low Maintenance",
+              "Real-time Build Updates",
+              "Zero Complexity",
+              "Quick & Easy Setup"
+            ]} />
+          </span>
         </h1>
 
         <p className={styles.subtext}>

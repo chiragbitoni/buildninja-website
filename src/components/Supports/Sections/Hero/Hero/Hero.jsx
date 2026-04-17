@@ -282,7 +282,7 @@ export default function SupportHero() {
                         </motion.div>
                     </Link>
 
-                    <motion.div
+                    {/* <motion.div
                         className={styles.infoCard}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -296,7 +296,7 @@ export default function SupportHero() {
                         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                             Priority support for Enterprise customers is available 24/7/365.
                         </p>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </div>
         </section>
