@@ -1,27 +1,28 @@
 "use client";
 
-import Hero from "../components/Home/Hero/Hero";
-import Second from "../components/Home/Second/Second";
-import Third from "../components/Home/Third/Third";
-import Fourth from "../components/Home/Fourth/Fourth";
-import Fifth from "../components/Home/Fifth/Fifth";
-import Sixth from "../components/Home/Sixth/Sixth";
-import Seventh from "../components/Home/Seventh/Seventh";
-import Eighth from "../components/Home/Eighth/Eighth";
-import Ninth from "../components/Home/Ninth/Ninth";
+import HeroSection from "@/components/Home/HeroSection";
+import TrustBanner from "@/components/Home/TrustBanner";
+import CTASection from "@/components/Home/CTASection";
+import FeaturesGrid from "@/components/Home/FeaturesGrid";
+import HowItWorks from "@/components/Home/HowItWorks";
+import SocialProof from "@/components/Home/SocialProof";
+import WorksWith from "@/components/Home/WorksWith";
+import PricingTeaser from "@/components/Home/PricingTeaser";
+import AIRoadmap from "@/components/Home/AIRoadmap";
+import FAQSection from "@/components/Home/FAQSection";
 
 export default function HomePage() {
   return (
-    <div className="homePage">
-      <Hero />
-      <Second />
-      <Fifth />
-      <Third />
-      <Fourth />
-      <Sixth />
-      <Seventh />
-      <Eighth />
-      <Ninth />
-    </div>
+    <>
+      <HeroSection />
+      <WorksWith />
+      {/* <FeaturesGrid /> */}
+      <HowItWorks />
+      <SocialProof />
+      {/* <PricingTeaser /> */}
+      <AIRoadmap />
+      {/* <FAQSection /> */}
+      <CTASection />
+    </>
   );
 }

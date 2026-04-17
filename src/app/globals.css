@@ -1,60 +1,332 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
-body {
-    background-color: black;
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════════ */
+:root {
+  /* Brand */
+  --color-primary: #ff4172;
+  --color-primary-rgb: 255, 65, 114;
+  --color-primary-alt: #ff6135;
+  --color-primary-glow: rgba(255, 65, 114, 0.4);
+  --color-primary-subtle: rgba(240, 58, 73, 0.08);
+  --color-primary-border: rgba(240, 58, 119, 0.25);
+
+  /* Backgrounds */
+  --color-bg: #08080b;
+  --bg-rgb: 8, 8, 11;
+  --color-bg-shell: #2c2c2c;
+  --color-bg-panel: #313131;
+  --color-bg-surface: #3c3b3b;
+  --color-bg-surface-hover: #4a4a4a;
+
+  /* Text */
+  --color-text: rgba(255, 255, 255, 0.9);
+  --color-text-secondary: rgba(255, 255, 255, 0.65);
+  --color-text-muted: rgba(255, 255, 255, 0.32);
+  --color-text-faint: rgba(255, 255, 255, 0.22);
+  --color-text-disabled: rgba(238, 238, 245, 0.25);
+  --text-rgb: 255, 255, 255;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-medium: rgba(255, 255, 255, 0.12);
+  --color-border-accent: rgba(120, 120, 255, 0.1);
+
+  /* Semantic */
+  --color-success: #62de56;
+  --color-success-bg: rgba(0, 201, 81, 0.14);
+  --color-success-border: rgba(0, 201, 81, 0.28);
+  --color-error: #ff7276;
+  --color-error-bg: rgba(255, 92, 92, 0.08);
+  --color-error-border: rgba(255, 92, 92, 0.22);
+  --color-info: #40a9ff;
+  --color-info-rgb: 64, 169, 255;
+  --color-info-bg: rgba(64, 169, 255, 0.12);
+  --color-info-border: rgba(64, 169, 255, 0.5);
+  --color-info-subtle: rgba(64, 169, 255, 0.04);
+  --color-warning: #fa54aa;
+  --color-warning-bg: rgba(250, 84, 170, 0.12);
+
+  /* Pricing specific tiers */
+  --color-enterprise: #ff6135;
+  --color-enterprise-bg: rgba(255, 97, 53, 0.15);
+  --color-enterprise-border: rgba(255, 97, 53, 0.5);
+  --color-enterprise-glow: rgba(255, 97, 53, 0.15);
+
+  /* Demo accent (BuildNinja dark theme) */
+  --color-demo-accent: #d8305b;
+  --color-demo-accent-bg: rgba(216, 48, 91, 0.12);
+  --color-demo-accent-border: rgba(216, 48, 91, 0.35);
+
+  /* Hover States */
+  --color-card-icon-hover-bg: rgba(0, 0, 0, 0.6);
+
+  /* Typography */
+  --font-display: 'Inter', sans-serif;
+  --font-accent: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-ui: 'Inter', system-ui, sans-serif;
+
+  /* Spacing & Shape */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-card: 9px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-shell: 0 32px 80px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-cta: 0 4px 24px var(--color-primary-glow);
+  --shadow-xl: 0 40px 100px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* Demo shell dimensions */
+  --shell-width: 1100px;
+  --shell-height: 580px;
+  --shell-aspect: calc(580 / 1100 * 100%);
+
+  /* Layout */
+  --container-width: 1400px;
+  --container-padding: 32px;
+
+  /* Typography Scale */
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+
+  /* Hero Section Top Margins (To align perfectly below persistent Navbar) */
+  --hero-pt-desktop: 120px;
+  --hero-pt-tablet: 80px;
+  --hero-pt-mobile: 70px;
+
+  /* Utilities (Default Dark) */
+  --icon-filter: none;
+  --logo-filter: invert(1) brightness(1.8);
 }
 
-button {
+[data-theme='light'] {
+  /* Backgrounds */
+  --color-bg: #f8fafc;
+  --bg-rgb: 248, 250, 252;
+  --color-bg-shell: #ffffff;
+  --color-bg-panel: #f1f5f9;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f1f5f9;
+
+  /* Text */
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-faint: #94a3b8;
+  --color-text-disabled: #cbd5e1;
+  --text-rgb: 15, 23, 42;
+
+  /* Borders */
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.16);
+  --color-border-subtle: rgba(15, 23, 42, 0.04);
+  --color-border-medium: rgba(15, 23, 42, 0.1);
+  --color-border-accent: rgba(59, 130, 246, 0.05);
+
+  /* Shadows */
+  --shadow-shell: 0 32px 80px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.08), 0 10px 24px rgba(0, 0, 0, 0.04);
+
+  /* Adjust glow/accent variables for light bg if necessary */
+  --color-primary-subtle: rgba(255, 65, 114, 0.05);
+  --color-primary-border: rgba(255, 65, 114, 0.15);
+
+  /* Semantic */
+  --color-success: #16a34a;
+  --color-success-bg: rgba(22, 163, 74, 0.1);
+  --color-success-border: rgba(22, 163, 74, 0.2);
+  --color-error: #dc2626;
+  --color-error-bg: rgba(220, 38, 38, 0.08);
+  --color-error-border: rgba(220, 38, 38, 0.18);
+  --color-info: #2563eb;
+  --color-info-bg: rgba(37, 99, 235, 0.1);
+  --color-info-border: rgba(37, 99, 235, 0.2);
+  --color-info-subtle: rgba(37, 99, 235, 0.04);
+  --color-warning: #d97706;
+  --color-warning-bg: rgba(217, 119, 6, 0.1);
+
+  /* Pricing specific tiers (Light) */
+  --color-enterprise: #ea580c;
+  --color-enterprise-bg: rgba(234, 88, 12, 0.1);
+  --color-enterprise-border: rgba(234, 88, 12, 0.2);
+  --color-enterprise-glow: rgba(234, 88, 12, 0.1);
+
+  /* Hover States (Light) */
+  --color-card-icon-hover-bg: rgba(255, 255, 255, 0.9);
+  --color-primary-glow: rgba(255, 65, 114, 0.15);
+
+  /* Demo accent (Light) */
+  --color-demo-accent: #be123c;
+  --color-demo-accent-bg: rgba(225, 29, 72, 0.08);
+  --color-demo-accent-border: rgba(225, 29, 72, 0.15);
+
+  /* Utilities */
+  --icon-filter: invert(1); /* White icons invert to black on light bg */
+  --logo-filter: none; /* Black logo stays black on light bg */
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   GLOBAL RESETS & BASE
+   ═══════════════════════════════════════════ */
+* {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: var(--color-primary-glow) var(--color-bg);
+  /* thumb color track color */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    font-family: var(--font-body);
+  }
+
+  button {
     cursor: pointer;
+  }
 }
 
-
-/* Not Found Page */
-.notFoundWrapper {
-    width: 100%;
-    color: #ffffff;
-    display: flex;
+/* ═══════════════════════════════════════════
+   GLOBAL TYPOGRAPHY & UTILITY CLASSES
+   ═══════════════════════════════════════════ */
+@layer components {
+  /* Global Badge Utility - Premium Accent Style */
+  .badge {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    text-align: center;
-    height: 600px;
-}
-
-.notFoundContent h1 {
-    font-size: 60px;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-subtle);
+    border: 1px solid var(--color-primary-border);
+    color: var(--color-primary);
+    font-family: var(--font-accent);
+    font-size: 11px;
     font-weight: 700;
-    margin-bottom: 10px;
-}
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+    width: fit-content;
+    cursor: pointer;
+    cursor: none !important;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    white-space: nowrap;
+    max-width: 100%;
+  }
 
-.notFoundContent h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
+  .badge:hover {
+    background: rgba(255, 65, 114, 0.12);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 65, 114, 0.1);
+  }
 
-.notFoundContent p {
-    color: #ffffffee;
-    margin-bottom: 30px;
-}
+  /* Badge variant for secondary/alternate sections - Not Interative */
+  .badge-alt {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--color-demo-accent-bg);
+    border: 1px solid var(--color-demo-accent-border);
+    color: var(--color-demo-accent);
+    font-family: var(--font-accent);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+    width: fit-content;
+    cursor: default;
+    cursor: none !important;
+    white-space: nowrap;
+    max-width: 100%;
+  }
 
-.notFoundActions {
+  @media (max-width: 480px) {
+    .badge, .badge-alt {
+      font-size: 10px;
+      padding: 4px 12px;
+    }
+  }
+
+  /* Global Headings */
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  /* Global reCAPTCHA responsive utility */
+  .captcha-container {
+    width: 100%;
     display: flex;
-    gap: 20px;
     justify-content: center;
+    overflow: hidden;
+    margin: 24px 0;
+    min-height: 78px;
+  }
+
+  .captcha-inner {
+    transform-origin: top center;
+    display: flex;
+    justify-content: center;
+    width: 304px; /* Standard ReCAPTCHA width */
+  }
+
+  @media (max-width: 420px) {
+    .captcha-inner { transform: scale(0.85); }
+    .captcha-container { min-height: 68px; }
+  }
+
+  @media (max-width: 360px) {
+    .captcha-inner { transform: scale(0.75); }
+    .captcha-container { min-height: 60px; }
+  }
+
+  @media (max-width: 320px) {
+    .captcha-inner { transform: scale(0.7); }
+    .captcha-container { min-height: 56px; }
+  }
 }
 
-.notFoundActions a {
-    padding: 10px 40px;
-    border-radius: 999px;
-    background: #ff4172;
-    color: #ffffff;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.notFoundActions a:hover {
-    opacity: 0.85;
+/* Hide native cursor ONLY on devices with a mouse/precise pointer */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }

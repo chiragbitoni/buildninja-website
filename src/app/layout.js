@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Navbar from "../components/Nav/NavBar";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
@@ -10,6 +9,12 @@ import YouTubePopup from "../components/YouTubePopup/YouTubePopup";
 import PHProviderWrapper from "../components/Analytics/Providers";
 import PosthogWrapper from "../components/Analytics/PostHogWrapper";
 import Script from "next/script";
+import "./globals.css";
+import "./animations.css";
+import Cursor from "@/components/ui/Cursor";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import DynamicFavicon from "@/components/DynamicFavicon";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,9 +35,9 @@ const schema = {
       logo: "https://buildninja.grapehub.io/resources/BuildNinja.png",
       sameAs: [
         "https://www.linkedin.com/showcase/build-ninja/",
-        "https://www.instagram.com/grapecityindia/",
-        "https://www.facebook.com/GrapeCityIndiaPvtLtd",
-        "https://www.youtube.com/@BuildNinja_CICD"
+        "https://www.instagram.com/GrapeHubindia/",
+        "https://www.facebook.com/GrapeHubIndiaPvtLtd",
+        "https://www.youtube.com/@BuildNinja_CICD",
       ],
     },
     {
@@ -48,7 +53,8 @@ const schema = {
 };
 export const metadata = {
   title: {
-    default: "Build Ninja Self-Hosted CI/CD DevOps Made Simple |Grapecity India",
+    default:
+      "Build Ninja Self-Hosted CI/CD DevOps Made Simple |GrapeHub India",
     template: "%s | BuildNinja",
   },
   description:
@@ -86,11 +92,14 @@ export const metadata = {
       "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
     images: ["https://buildninja.grapehub.io/resources/BuildNinja.png"],
   },
+  verification: {
+    google: "TXxGesv5AA45OhGIYqDoLArrrfIWPRPpi8LV5hYQAK8",  
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link
           rel="alternate"
@@ -107,17 +116,21 @@ export default function RootLayout({ children }) {
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
+        <Cursor />
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>
-            <ClientAuthProvider>
-              <Navbar />
-              <main className="pt-16">
-                <YouTubePopup />
-                {children}
-              </main>
-              <Footer />
-            </ClientAuthProvider>
+            <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+              <DynamicFavicon />
+              <ClientAuthProvider>
+                <Navbar />
+                <main className="pt-16">
+                  <YouTubePopup />
+                  {children}
+                </main>
+                <Footer />
+              </ClientAuthProvider>
+            </ThemeProvider>
           </ReduxProvider>
         </PHProviderWrapper>
       </body>

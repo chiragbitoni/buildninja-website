@@ -28,8 +28,8 @@ export const downloadAccessHeroText = {
     step1Link: "Get MongoDB",
     step2Title: "Install BuildNinja",
     step2Desc: "Run the installer or deploy using Docker",
-    step3Title: "Trial starts automatically",
-    step3Desc: "Your 30-day trial begins when you first launch BuildNinja",
+    step3Title: "You're all set",
+    step3Desc: "BuildNinja is ready to use once launched. Connect your agents and start building.",
   },
 
   bottomLinks: {

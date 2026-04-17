@@ -1,0 +1,83 @@
+/* ═══════════════════════════════════════════
+SHARED KEYFRAMES
+(Modules don't scope @keyframes, so keep
+all reusable animations here)
+═══════════════════════════════════════════ */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes glowIn {
+    0% {
+        box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0);
+    }
+
+    60% {
+        box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.07);
+    }
+
+    100% {
+        box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.04);
+    }
+}
+
+@keyframes dashReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blinkDot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}

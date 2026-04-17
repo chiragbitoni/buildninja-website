@@ -6,7 +6,7 @@ export const downloadDashboardData = {
 
   latest: {
     windows: {
-      title: "Window Installer",
+      title: "Windows Installer",
       name: "BuildNinja_Installer_2026.1.1.7.exe",
       version: "2026.1.1.7",
       downloadUrl: "/api/installers/download/BuildNinja_2026.1.1.7.exe",
@@ -25,7 +25,7 @@ export const downloadDashboardData = {
     },
 
     mac: {
-      title: "Mac Distributables",
+      title: "macOS Distributables",
       serverName: "BuildNinja_server_mac_1.1.0-rc",
       serverVersion: "1.1.0-rc",
       serverDownloadUrl: "/api/installers/download/bn_server_mac_1.1.0-rc",
@@ -78,5 +78,12 @@ export const downloadDashboardData = {
         router: "/support",
       },
     ],
+  },
+
+  license: {
+    title: "Activate Your Instance",
+    desc: "Download complete? Get your free license key to activate BuildNinja and start automating your builds.",
+    btn: "Get Your Free License Key",
+    link: "/install/license", // Assuming this is the path
   },
 };

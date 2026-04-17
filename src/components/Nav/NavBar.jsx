@@ -1,129 +1,209 @@
 "use client";
-import "./NavBar.css";
+import styles from "./NavBar.module.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import AvatarMenu from "./AvatarMenu";
+import ThemeToggle from "./ThemeToggle";
 import { fetchPlansFromAPI } from "../../services/plans/plans";
-import Banner from "./Banner/Banner";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
+import { motion, AnimatePresence } from "framer-motion";
+
 export default function Navbar() {
-  // const [show, setShow] = useState(true);
-  // const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHover, setHover] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const storedPlans = localStorage.getItem("plans");
-
-    // If plans already exist → do not fetch
-    if (storedPlans) return;
-    async function init() {
-      const plans = await fetchPlansFromAPI();
-      if (plans) {
-        localStorage.setItem("plans", JSON.stringify(plans));
-      }
-    }
-    init();
-  }, []);
-
-  // uncomment this for sticky navbar
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > lastScrollY && window.scrollY > 50) {
-  //       setShow(false);
-  //     } else {
-  //       setShow(true);
-  //     }
-  //     setLastScrollY(window.scrollY);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [lastScrollY]);
-
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
-    // { name: "Docs", link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview` },
-    { name: "Docs", path: "/docs" },
     { name: "Pricing", path: "/pricing" },
+    { name: "Dojo", path: "/dojo" },
+    { name: "Docs", path: "/docs" },
     { name: "Install", path: "/install" },
     { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
-    // { name: "FAQ", path: "/faq" },
   ];
+
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+    setWindowWidth(window.innerWidth);
+    
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    /*
+    const storedPlans = localStorage.getItem("plans");
+    if (!storedPlans) {
+      async function init() {
+        const plans = await fetchPlansFromAPI();
+        if (plans) localStorage.setItem("plans", JSON.stringify(plans));
+      }
+      init();
+    }
+    */
+    
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const getLogoSrc = () => "/resources/logo-buildninja.svg";
 
   const handleNavigation = (path) => {
     router.push(path);
     setMenuOpen(false);
   };
 
+  const isActive = (path) =>
+    path === "/" ? pathname === "/" : pathname.startsWith(path);
+
   return (
-    //For Non-sticky
-    // <nav className={`navbar ${show ? "navbar-show" : "navbar-hide"}`}> 
-    //For Sticky
-    <nav className={"navbar"}>
-      <div className="navbar-container">
+    <nav className={styles.navbar}>
+      <div className={styles.navbarContainer}>
+
         {/* Logo */}
-        <div className="navbar-logo" onClick={() => handleNavigation("/")}>
+        <div className={styles.navbarLogo} onClick={() => handleNavigation("/")}>
           <Image
-            src={isHover ? "/resources/BuildNinjaPink.png" : "/resources/BuildNinjaDark.png"}
+            src={getLogoSrc()}
             alt="BuildNinja Logo"
             width={178}
             height={48.5}
-            className="logo-image"
+            className={styles.logoImage}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           />
         </div>
-        <div
-          className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+
+        {/* Mobile Controls Group */}
+        <div className={styles.mobileControls}>
+          <div className={styles.mobileOnlyActions}>
+            <AvatarMenu />
+            <ThemeToggle />
+          </div>
+
+          {/* Hamburger Trigger */}
+          <div
+            className={`${styles.hamburgerWrapper} ${menuOpen ? styles.hamburgerOpen : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <div className={styles.hamburger}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
 
-
-        {/* Navigation Links */}
-        <ul className={`navbar-links ${menuOpen ? "menu-active" : ""}`}>
-          {
-            navItems.map((item) => (
+        {/* Desktop Menu Group */}
+        <div className={styles.navbarRightGroup}>
+          <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
+            {navItems.map((item) => (
               <li
                 key={item.name}
-                className={`navbar-link ${item.path === "/"
-                  ? pathname === "/" ? "active-link" : ""
-                  : pathname.startsWith(item.path)
-                    ? "active-link"
-                    : ""
-                  }`}
+                className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
               >
                 <a
                   href={item.path}
+                  className={styles.navbarAnchor}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.path);
                     dispatch(closeVideo());
                   }}
-                  className="navbar-anchor"
                 >
                   {item.name}
+                  {item.name === "Dojo" && <span className={styles.navDot} />}
                 </a>
               </li>
-
             ))}
-          <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className="navbarGithubIcon" onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
-          <button className="navbarStartTrialButton" onClick={() => handleNavigation("/install")}>Try BuildNinja Free</button>
-        </ul>
-        <AvatarMenu />
+          </ul>
+
+          <div className={styles.navbarActionGroup}>
+            <Image
+              width={22}
+              height={22}
+              src="/resources/Footer/social/github.svg"
+              alt="GitHub"
+              className={styles.navbarGithubIcon}
+              onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
+            />
+            <button
+              className={styles.navbarGetStartedButton}
+              onClick={() => handleNavigation("/install")}
+            >
+              Get Started
+            </button>
+            <AvatarMenu />
+            <ThemeToggle />
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {menuOpen && mounted && (
+            <motion.ul
+              className={`${styles.navbarLinks} ${styles.mobileMenu} ${styles.menuActive}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              {navItems.map((item, idx) => (
+                <motion.li
+                  key={item.name}
+                  className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.05 }}
+                >
+                  <a
+                    href={item.path}
+                    className={styles.navbarAnchor}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(item.path);
+                      dispatch(closeVideo());
+                    }}
+                  >
+                    {item.name}
+                    {item.name === "Dojo" && <span className={styles.navDot} />}
+                  </a>
+                </motion.li>
+              ))}
+
+              <motion.div
+                className={styles.navbarActionGroup}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Image
+                  width={22}
+                  height={22}
+                  src="/resources/Footer/social/github.svg"
+                  alt="GitHub"
+                  className={styles.navbarGithubIcon}
+                  onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
+                />
+                <button
+                  className={styles.navbarGetStartedButton}
+                  onClick={() => handleNavigation("/install")}
+                >
+                  Get Started
+                </button>
+              </motion.div>
+            </motion.ul>
+          )}
+        </AnimatePresence>
+
       </div>
-      {/* <Banner /> */}
     </nav>
   );
 }

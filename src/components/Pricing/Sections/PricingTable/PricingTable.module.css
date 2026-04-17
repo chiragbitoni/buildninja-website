@@ -1,0 +1,182 @@
+.section {
+  background: var(--color-bg);
+  padding: 80px 0;
+  font-family: var(--font-display);
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-subtle), transparent);
+}
+
+.inner {
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  font-family: var(--font-accent);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-medium);
+  box-shadow: 0 40px 100px -40px rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+/* Header row */
+.table thead tr {
+  background: rgba(var(--bg-rgb), 0.4);
+}
+
+.table th {
+  padding: 24px 28px;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 2px solid var(--color-border-subtle);
+  font-family: var(--font-accent);
+}
+
+/* Shogun header gets accent highlight */
+.thShogun {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt)) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.table td {
+  padding: 22px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--color-text-secondary);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+/* Feature column (first col) */
+.table td:first-child {
+  color: var(--color-text);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* Shogun column */
+.table td:nth-child(2) {
+  background: rgba(255, 65, 114, 0.035);
+}
+
+.table tr:hover td {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.table tr:hover td:nth-child(2) {
+  background: rgba(255, 65, 114, 0.06);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table td small {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 3px;
+}
+
+.greenText {
+  color: var(--color-success);
+  font-weight: 600;
+  font-size: 0.82rem;
+  background: var(--color-success-bg);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  margin-left: 4px;
+}
+
+.tickText {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.tick {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 100px 40px;
+  }
+  .table td,
+  .table th {
+    padding: 16px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+  .inner {
+    padding: 0 16px;
+  }
+}
