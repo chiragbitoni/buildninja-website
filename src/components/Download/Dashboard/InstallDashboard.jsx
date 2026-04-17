@@ -120,12 +120,7 @@ export default function InstallDashboard() {
   }, []);
 
   const handleGetFreeKey = () => {
-    const soloPlan = plans.find(p => p.name.trim().toLowerCase() === "solo" && p.billingCycle === "Monthly");
-    if (soloPlan) {
-      router.push(`/addtocart?planid=${soloPlan.id}`);
-    } else {
-      router.push("/pricing");
-    }
+    window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=2874404d-a36f-4079-a94f-07e034050804`;
   };
 
   const [downloadingUrl, setDownloadingUrl] = useState(null);
