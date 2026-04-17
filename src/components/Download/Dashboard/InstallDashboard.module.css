@@ -97,15 +97,22 @@
 
 .versionGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 12px 40px; /* Reduced vertical gap for mobile */
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .osSection {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-width: 0; /* Critical for flex/grid shrink */
+  min-width: 0;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.osSection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .osTitle {
@@ -410,15 +417,6 @@
   .dockerGrid {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-  
-  .osSection {
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--color-border-subtle);
-  }
-  
-  .osSection:last-child {
-    border-bottom: none;
   }
 
   .actions {
