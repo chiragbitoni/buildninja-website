@@ -15,7 +15,7 @@ export const secondSectionText = {
 export const thirdSectionText = {
   faqs: [
     {
-      catrgory: "General",
+      category: "General",
       faqs: [
         {
           id: "what-is-buildninja",
@@ -63,7 +63,7 @@ export const thirdSectionText = {
     },
 
     {
-      catrgory: "Installation & Setup",
+      category: "Installation & Setup",
       faqs: [
         {
           id: "installation-time",
@@ -145,7 +145,7 @@ See complete system requirements for network, browser compatibility, and additio
     },
 
     {
-      catrgory: "Pricing & Plans",
+      category: "Pricing & Plans",
       faqs: [
         {
           id: "pricing-overview",
@@ -180,7 +180,7 @@ See complete system requirements for network, browser compatibility, and additio
     },
 
     {
-      catrgory: "Features & Capabilities",
+      category: "Features & Capabilities",
       faqs: [
         {
           id: "vcs-support",
@@ -253,7 +253,7 @@ See complete system requirements for network, browser compatibility, and additio
     },
 
     {
-      catrgory: "Security & Compliance",
+      category: "Security & Compliance",
       faqs: [
         {
           id: "data-security",
@@ -296,7 +296,7 @@ See complete system requirements for network, browser compatibility, and additio
     },
 
     {
-      catrgory: "Support & Resources",
+      category: "Support & Resources",
       faqs: [
         {
           id: "support-included",

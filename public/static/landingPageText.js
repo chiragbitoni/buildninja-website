@@ -2,7 +2,7 @@ import { paths } from "./paths";
 export const secondSectionText = {
   title: "Powerful Features to Supercharge",
   subTitle:
-    "From automated builds to enterprise-grade security, everythng you need to build, test, and deploy with confidence.",
+    "From automated builds to enterprise-grade security, everything you need to build, test, and deploy with confidence.",
   cards: [
     {
       icon: paths.icons.landingPageAssets.automated_builds,
@@ -81,7 +81,7 @@ export const secondSectionText = {
       iconHover: paths.icons.landingPageAssets.email_pink,
       title: "Email Notification System",
       description:
-        "Alerts for key events (registrations, password resets, build results, user approval and rejection and more). Supports SMTP configuration.",
+        "Alerts for key events (registrations, password resets, build results, user approval, rejection, and more). Supports SMTP configuration.",
       videoId: "2OuADSNMEoc",
       link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },
@@ -165,7 +165,7 @@ export const secondSectionText = {
       icon: paths.icons.landingPageAssets.cross_platform_config,
       iconHover: paths.icons.landingPageAssets.cross_platform_config_pink,
       title: "Cross-Platform Configuration",
-      description: "Seamless setup across Windows, Linux, & MacOS.",
+      description: "Seamless setup across Windows, Linux, & macOS.",
       // videoId: "XLcMnvfpwBw",
       link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
     },

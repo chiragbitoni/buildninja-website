@@ -51,7 +51,7 @@ export const thirdSectionText = {
   card1Title: "Pull and Run",
   card1Step: "STEP 1",
   card1command: "docker pull buildninja/buildninja ",
-  card1Requirements: "Requirements: Mongo DB",
+  card1Requirements: "Requirements: MongoDB",
   card1Text: "Deploy in minutes, not weeks of complex setup.",
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
@@ -79,7 +79,7 @@ export const fourthSectionText = {
         },
         {
           title: "See exactly what happened",
-          desc: "See exactly what happened – View detailed execution logs",
+          desc: "View detailed execution logs",
         },
         {
           title: "Spot problems before they escalate",
@@ -286,7 +286,7 @@ export const sixthSectionText = {
 export const seventhSectionText = {
   title: "Ship Features, Not Pipeline Fixes",
   subTitle:
-    "Become productive teams shipping features instead of fixing pipelines.",
+    "Become a productive team shipping features instead of fixing pipelines.",
   subTitle2:
     "Deploy with confidence in critical moments. Budget predictably without per-seat growth taxation.",
   subTitle3:

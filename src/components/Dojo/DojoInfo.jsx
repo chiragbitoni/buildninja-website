@@ -25,7 +25,7 @@ const infoCards = [
   {
     title: "Periodic Persistence",
     icon: faRotate,
-    text: "Any configurations or scripts you create will be available till next 6-hour reset cycle."
+    text: "Any configurations or scripts you create will be available until the next 6-hour reset cycle."
   }
 ];
 

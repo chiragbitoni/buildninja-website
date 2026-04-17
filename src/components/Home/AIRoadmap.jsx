@@ -13,7 +13,7 @@ const features = [
     ),
   },
   {
-    title: "Logs analysis",
+    title: "Logs Analysis",
     desc: "Intelligently analyze detailed build execution logs with AI to detect issues and present them in human-readable terms.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

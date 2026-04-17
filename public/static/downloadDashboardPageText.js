@@ -6,7 +6,7 @@ export const downloadDashboardData = {
 
   latest: {
     windows: {
-      title: "Window Installer",
+      title: "Windows Installer",
       name: "BuildNinja_Installer_2026.1.1.7.exe",
       version: "2026.1.1.7",
       downloadUrl: "/api/installers/download/BuildNinja_2026.1.1.7.exe",
@@ -25,7 +25,7 @@ export const downloadDashboardData = {
     },
 
     mac: {
-      title: "Mac Distributables",
+      title: "macOS Distributables",
       serverName: "BuildNinja_server_mac_1.1.0-rc",
       serverVersion: "1.1.0-rc",
       serverDownloadUrl: "/api/installers/download/bn_server_mac_1.1.0-rc",

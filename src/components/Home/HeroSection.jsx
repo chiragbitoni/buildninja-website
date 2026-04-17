@@ -84,12 +84,12 @@ export default function HeroSection() {
         </div>
 
         <h1 className={styles.heading}>
-          Your Self Hosted CI/CD tool<br />
+          Your Self Hosted CI/CD Tool<br />
           <span className={styles.headingGradient}>
             <Typewriter texts={[
-              "No plugin Chaos",
+              "No Plugin Chaos",
               "Low Maintenance",
-              "Real-time Build Updates",
+              "Real-Time Build Updates",
               "Zero Complexity",
               "Quick & Easy Setup"
             ]} />

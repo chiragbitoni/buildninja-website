@@ -82,7 +82,7 @@ export const secondSectionTextGlobal = {
       ],
       list2: [
         "Unlimited concurrent builds - Run as many as your infra supports",
-        "Unlimited build agents - Connect as machines as you want",
+        "Unlimited build agents - Connect as many machines as you want",
         "Perpetual build history - Complete audit trail forever",
         "All 5 SSO providers - Microsoft, GitHub, GitLab, Bitbucket, and Google",
         "Email support - Direct engineering team access",

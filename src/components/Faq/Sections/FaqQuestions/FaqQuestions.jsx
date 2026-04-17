@@ -149,8 +149,8 @@ export default function FaqQuestions() {
               viewport={{ once: true, margin: "-50px" }}
               variants={itemVariants}
             >
-              {(category.category || category.catrgory) && (
-                <h2 className={s.categoryTitle}>{category.category || category.catrgory}</h2>
+              {category.category && (
+                <h2 className={s.categoryTitle}>{category.category}</h2>
               )}
               <div className={s.faqList}>
                 {category.faqs.map((faq, faqIdx) => {

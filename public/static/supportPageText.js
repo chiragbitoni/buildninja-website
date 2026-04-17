@@ -3,7 +3,7 @@ import { paths } from "./paths";
 export const supportHeroText = {
   heading: "We’re Here to Help You Build Without Roadblocks",
   subheading:
-    "Whether you have a question, need technical help, or want to learn more our team is just a message away.",
+    "Whether you have a question, need technical help, or want to learn more, our team is just a message away.",
   getHelp: "Get Help",
   helpText: "We’re here to help you succeed with BuildNinja",
   options: [

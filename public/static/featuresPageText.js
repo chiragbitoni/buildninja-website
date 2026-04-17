@@ -85,7 +85,7 @@ export const secondSectionText = {
       iconHover: paths.icons.emailPink,
       title: "Email Notification System",
       description:
-        "Alerts for key events (registrations, password resets, build results, user approval and rejection and more). Supports SMTP configuration.",
+        "Alerts for key events (registrations, password resets, build results, user approval, rejection, and more). Supports SMTP configuration.",
       videoId: "2OuADSNMEoc",
       link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },
@@ -169,7 +169,7 @@ export const secondSectionText = {
       icon: paths.icons.crossPlatformWhite,
       iconHover: paths.icons.crossPlatformPink,
       title: "Cross-Platform Configuration",
-      description: "Seamless setup across Windows, Linux, & MacOS.",
+      description: "Seamless setup across Windows, Linux, & macOS.",
       // videoId: "XLcMnvfpwBw",
       // link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
     },
