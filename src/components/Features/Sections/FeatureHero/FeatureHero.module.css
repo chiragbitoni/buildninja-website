@@ -6,7 +6,7 @@
   width: 100%;
   background: var(--color-bg);
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: var(--hero-pt-desktop) 0 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,9 +15,15 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding-top: var(--hero-pt-tablet);
+  }
+}
+
 @media (max-width: 480px) {
   .hero {
-    padding-top: 100px;
+    padding-top: var(--hero-pt-mobile);
   }
 }
 

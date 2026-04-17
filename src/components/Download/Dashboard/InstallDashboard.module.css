@@ -3,8 +3,20 @@
   background: var(--color-bg);
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scroll for entire section */
-  padding: 100px 0 80px;
+  padding: var(--hero-pt-desktop) 0 80px;
   color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding-top: var(--hero-pt-tablet);
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding-top: var(--hero-pt-mobile);
+  }
 }
 
 .dashboard *, .dashboard *::before, .dashboard *::after {
@@ -389,9 +401,6 @@
 }
 
 @media (max-width: 768px) {
-  .dashboard {
-    padding: 60px 0;
-  }
   .container {
     padding: 0 16px;
   }

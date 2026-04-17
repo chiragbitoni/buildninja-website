@@ -1,6 +1,6 @@
 .supportSection {
   min-height: 100vh;
-  padding: 120px 0 100px; /* Let container handle side padding */
+  padding: var(--hero-pt-desktop) 0 100px; /* Let container handle side padding */
   background: var(--color-bg);
   position: relative;
   overflow-x: hidden !important;
@@ -9,6 +9,18 @@
   flex-direction: column;
   align-items: center;
   font-family: var(--font-display);
+}
+
+@media (max-width: 768px) {
+  .supportSection {
+    padding-top: var(--hero-pt-tablet);
+  }
+}
+
+@media (max-width: 480px) {
+  .supportSection {
+    padding-top: var(--hero-pt-mobile);
+  }
 }
 
 .supportSection *,

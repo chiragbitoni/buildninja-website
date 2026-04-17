@@ -2,9 +2,21 @@
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
-  padding: 120px 24px 60px;
+  padding: var(--hero-pt-desktop) 24px 60px;
   font-family: var(--font-display);
   border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--hero-pt-tablet);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-top: var(--hero-pt-mobile);
+  }
 }
 
 .orb1 {
