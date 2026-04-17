@@ -97,9 +97,9 @@ export default function AIRoadmap() {
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <p>
+          {/* <p>
             <strong>Also coming:</strong> Intelligent Error Analysis, Auto Branch Configuration, and Proactive Agent Management.
-          </p>
+          </p> */}
         </motion.div>
       </div>
     </section>
