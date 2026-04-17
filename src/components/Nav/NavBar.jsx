@@ -54,7 +54,7 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getLogoSrc = () => "/resources/logo-buildninja.svg";
+  const getLogoSrc = () => "/resources/logo_buildninja.svg";
 
   const handleNavigation = (path) => {
     router.push(path);
