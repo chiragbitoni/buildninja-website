@@ -565,7 +565,7 @@
           <div class="slide-features">
             <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Change tracking</strong> - pinpoint exactly what triggered each build</span></div>
             <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>VCS Roots</strong> - deep integration with GitHub, GitLab, and Bitbucket</span></div>
-            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Versioned settings</strong> - store your CI/CD setup as code</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Build Parameters</strong> - define and manage variables securely</span></div>
           </div>
         </div>
         <div class="slide-visual">
@@ -675,19 +675,67 @@
           <div class="divider"></div>
           <p class="slide-sub">BuildNinja comes with everything you need out of the box. Stop spending days hunting for plugins or debugging version conflicts just to get basic CI/CD working.</p>
           <div class="slide-features">
-            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Native capabilities</strong> - no third-party dependencies required</span></div>
-            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Seamless upgrades</strong> - no more plugin conflicts or breakages</span></div>
-            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Secure by default</strong> - avoid vulnerable community extensions</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Native Git Support</strong> - built-in with intelligent caching for faster builds</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Script & SSH Runners</strong> - configure and execute tasks in any environment</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Email Notifications</strong> - complete support with customizable templates</span></div>
           </div>
         </div>
         <div class="slide-visual">
           <div class="screenshot-glow"></div>
-          <div class="screenshot-frame">
-            <img class="screenshot-img" 
-                 src="/resources/event-slides/project-changes-dark.png" 
-                 data-dark="/resources/event-slides/project-changes-dark.png"
-                 data-light="/resources/event-slides/project-changes-light.png"
-                 alt="Built in Capabilities" />
+          <div class="screenshot-frame" style="background: var(--bg-glass);">
+            <div class="custom-vis" style="aspect-ratio: 16/9; display: flex; flex-direction: column; padding: 36px; width: 100%;">
+              <div style="margin-bottom: 24px;">
+                <img class="logo-img" src="/resources/logo-buildninja.svg" alt="BuildNinja" style="width: 140px; height: auto; margin-bottom: 12px; display: block;" />
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Core Integrations</div>
+                  <div style="font-size: 12px; padding: 5px 12px; background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); border-radius: 20px; font-weight: 700;">100% Native</div>
+                </div>
+              </div>
+              
+              <div style="display: flex; flex-direction: column; gap: 16px; flex: 1; justify-content: center;">
+                <!-- Integration 1 -->
+                <div style="display: flex; align-items: center; padding: 18px 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 14px;">
+                  <div style="width: 46px; height: 46px; border-radius: 10px; background: rgba(240, 80, 50, 0.1); display: flex; align-items: center; justify-content: center; margin-right: 18px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#F05032"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.772 2.771c.642-.22 1.386-.076 1.9.438.932.932.932 2.443 0 3.375-.932.933-2.443.933-3.375 0-.518-.518-.659-1.267-.435-1.91l-2.617-2.617v4.619c.218.22.35.52.35.852 0 .668-.543 1.21-1.211 1.21-.667 0-1.21-.542-1.21-1.21 0-.324.127-.618.337-.835v-4.632c-.21-.217-.336-.511-.336-.835 0-.138.026-.268.069-.391l-2.92-2.92L.452 13.068c-.603.604-.603 1.583 0 2.188l10.479 10.48c.604.604 1.582.604 2.188 0l10.427-10.427c.603-.604.603-1.584 0-2.188z"/></svg>
+                  </div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 16px; font-weight: 600; color: var(--text-strong);">Version Control Integration</div>
+                    <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Integrates with Git, GitHub, GitLab, Bitbucket</div>
+                  </div>
+                  <div style="width: 44px; height: 24px; border-radius: 12px; background: var(--accent); position: relative;">
+                    <div style="width: 18px; height: 18px; background: #fff; border-radius: 50%; position: absolute; right: 3px; top: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+                  </div>
+                </div>
+
+                <!-- Integration 2 -->
+                <div style="display: flex; align-items: center; padding: 18px 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 14px;">
+                  <div style="width: 46px; height: 46px; border-radius: 10px; background: rgba(36, 150, 237, 0.1); display: flex; align-items: center; justify-content: center; margin-right: 18px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#2496ED"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.46h2.118a.186.186 0 00.186-.186V3.544a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.262a.187.187 0 00-.186-.186h-2.118a.185.185 0 00-.185.186v1.888c0 .102.082.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.262a.185.185 0 00-.185-.186H8.065a.185.185 0 00-.185.186v1.888c0 .102.082.186.185.186m0 2.744h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186H8.065a.185.185 0 00-.185.186v1.888c0 .102.082.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.101a.186.186 0 00-.186.186v1.888c0 .102.084.185.186.185m-2.964 0h2.119a.186.186 0 00.185-.185V9.006a.186.186 0 00-.185-.186H2.137a.186.186 0 00-.186.186v1.888c0 .102.084.185.186.185m14.81-2.744h2.119a.186.186 0 00.185-.186V6.262a.186.186 0 00-.185-.186h-2.119a.186.186 0 00-.185.186v1.888c0 .102.084.186.185.186m-2.964 5.46h2.118a.186.186 0 00.186-.185v-1.888a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.186v1.888c0 .102.082.185.185.185m-2.964 0h2.119a.186.186 0 00.185-.185v-1.888a.186.186 0 00-.185-.186H8.065a.185.185 0 00-.185.186v1.888c0 .102.082.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185v-1.888a.185.185 0 00-.185-.186H5.101a.186.186 0 00-.186.186v1.888c0 .102.084.185.186.185M22.68 12.012c-.226 0-.441.036-.641.096l-.801-2.585a.186.186 0 00-.177-.132h-2.107a.186.186 0 00-.186.186v.292c-1.34-1.282-3.176-2.072-5.184-2.072-1.868 0-3.593.702-4.887 1.868v-.088a.185.185 0 00-.185-.186H6.4c-.074 0-.14.043-.169.11l-2.053 4.542a3.754 3.754 0 00-1.895-.506 3.784 3.784 0 100 7.567h16.634a4.417 4.417 0 10.001-8.834z"/></svg>
+                  </div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 16px; font-weight: 600; color: var(--text-strong);">Containerized Deployment</div>
+                    <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Docker & Kubernetes deployments</div>
+                  </div>
+                  <div style="width: 44px; height: 24px; border-radius: 12px; background: var(--accent); position: relative;">
+                    <div style="width: 18px; height: 18px; background: #fff; border-radius: 50%; position: absolute; right: 3px; top: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+                  </div>
+                </div>
+
+                <!-- Integration 3 -->
+                <div style="display: flex; align-items: center; padding: 18px 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 14px;">
+                  <div style="width: 46px; height: 46px; border-radius: 10px; background: rgba(144, 19, 254, 0.1); display: flex; align-items: center; justify-content: center; margin-right: 18px; color: #b757f6;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                  </div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 16px; font-weight: 600; color: var(--text-strong);">Artifact Management</div>
+                    <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Stores build outputs for future distribution</div>
+                  </div>
+                  <div style="width: 44px; height: 24px; border-radius: 12px; background: var(--accent); position: relative;">
+                    <div style="width: 18px; height: 18px; background: #fff; border-radius: 50%; position: absolute; right: 3px; top: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -703,19 +751,67 @@
           <div class="divider"></div>
           <p class="slide-sub">Your CI/CD belongs to you. BuildNinja ensures your pipelines remain portable and your infrastructure stays under your control, forever.</p>
           <div class="slide-features">
-            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Self-hosted control</strong> - deploy anywhere, anytime</span></div>
-            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Data sovereignty</strong> - total ownership of your build data</span></div>
-            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Infrastructure flexible</strong> - zero cloud provider lock-in</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Cross-Platform</strong> - seamless configuration across Windows, Linux, & macOS</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Multi-Environment</strong> - robust support for dev, staging, and production</span></div>
+            <div class="slide-feature"><div class="slide-feature-dot"></div><span><strong>Unified Installer</strong> - installs Server, Agent, and MongoDB in minutes</span></div>
           </div>
         </div>
         <div class="slide-visual">
           <div class="screenshot-glow"></div>
-          <div class="screenshot-frame">
-            <img class="screenshot-img" 
-                 src="/resources/event-slides/dashboard-dark.png" 
-                 data-dark="/resources/event-slides/dashboard-dark.png"
-                 data-light="/resources/event-slides/dashboard-light.png"
-                 alt="Complete Freedom" />
+          <div class="screenshot-frame" style="background: var(--bg-glass);">
+            <div class="custom-vis" style="aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; width: 100%;">
+               
+               <!-- subtle glowing background -->
+               <div style="position:absolute; inset: 0; background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 80%);"></div>
+
+               <div style="display: flex; gap: 40px; align-items: center; position: relative; z-index: 2; margin-top: -30px;">
+                 
+                  <!-- Layer 1: Cloud -->
+                 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+                   <div style="width: 86px; height: 86px; border-radius: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                   </div>
+                   <span style="font-size: 14px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px;">Public Cloud</span>
+                 </div>
+
+                 <!-- Connector -->
+                 <div style="display: flex; gap: 8px;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--border);"></div>
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--border);"></div>
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--border);"></div>
+                 </div>
+
+                  <!-- Layer 2: Core Engine -->
+                 <div style="display: flex; flex-direction: column; align-items: center; gap: 18px;">
+                   <div style="width: 110px; height: 110px; border-radius: 26px; background: var(--bg-surface); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 35px var(--accent-glow);">
+                     <img class="logo-img" src="/resources/Favicon/favicon.png" alt="BuildNinja" style="width: 48px; height: 48px; object-fit: contain; opacity: 0.95;" />
+                   </div>
+                   <span style="font-size: 15px; font-weight: 800; color: var(--accent); letter-spacing: 1.5px;">ANYWHERE</span>
+                 </div>
+
+                 <!-- Connector -->
+                 <div style="display: flex; gap: 8px;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--border);"></div>
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--border);"></div>
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--border);"></div>
+                 </div>
+
+                  <!-- Layer 3: On-Prem -->
+                 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+                   <div style="width: 86px; height: 86px; border-radius: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                   </div>
+                   <span style="font-size: 13px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px;">On-Premise</span>
+                 </div>
+               </div>
+               
+               <!-- Info Box -->
+               <div style="position: absolute; bottom: 32px; left: 40px; right: 40px; padding: 20px; background: var(--bg-surface); border-radius: 14px; border: 1px dashed var(--border); text-align: center;">
+                 <div style="color: var(--text-muted); font-size: 14px; font-weight: 500; line-height: 1.6;">
+                   <strong style="color:var(--text-strong)">Flexible Infrastructure:</strong> Deploy on Kubernetes for scalable operations, or use Docker for local setups without locking into a provider.
+                 </div>
+               </div>
+            </div>
           </div>
         </div>
       </div>
