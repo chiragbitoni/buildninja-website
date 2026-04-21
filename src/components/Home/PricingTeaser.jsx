@@ -18,7 +18,7 @@ export default function PricingTeaser() {
       "Unlimited concurrent builds",
       "Unlimited build agents",
       "Perpetual build history",
-      "Priority business support",
+      "Email support",
       "All 5 SSO providers (MS, GitHub, etc)",
       "Docker & K8s support",
     ],
