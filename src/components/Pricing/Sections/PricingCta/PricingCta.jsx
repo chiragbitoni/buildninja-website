@@ -65,7 +65,7 @@ export default function PricingCta() {
               id="pricing-cta-free"
               className={s.btnInfo}
               onClick={() => {
-                window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=2874404d-a36f-4079-a94f-07e034050804`;
+                window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=${process.env.NEXT_PUBLIC_GROWTH_EDITION_GUID}`;
               }}
             >
               {text.free.buttonText}

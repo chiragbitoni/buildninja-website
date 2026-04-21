@@ -380,7 +380,7 @@ export default function AddToCartContent() {
                     <Shield className={s.propIcon} size={18} />
                     {currentPlan?.name === "Solo"
                       ? "No credit card required"
-                      : "Priority enterprise onboarding support"}
+                      : "Email onboarding support"}
                   </div>
 
                   <div className={s.propItem}>
