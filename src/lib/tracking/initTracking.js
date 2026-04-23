@@ -8,12 +8,12 @@ export const initTracking = () => {
   const existingSession = getCookie("gh_session_id");
   const existingUtm = getCookie("gh_utm");
 
-  // ✅ Session (create if missing)
+  // Session (create if missing)
   if (!existingSession) {
     setCookie("gh_session_id", crypto.randomUUID());
   }
 
-  // ✅ UTM (first-touch only)
+  // UTM (first-touch only)
   if (!existingUtm) {
     const utm = {
       source: params.get("utm_source"),
