@@ -14,6 +14,7 @@ import "./animations.css";
 import Cursor from "@/components/ui/Cursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import DynamicFavicon from "@/components/DynamicFavicon";
+import TrackingInitializer from "@/components/TrackingInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -124,6 +125,7 @@ export default function RootLayout({ children }) {
               <DynamicFavicon />
               <ClientAuthProvider>
                 <Navbar />
+                <TrackingInitializer />
                 <main className="pt-16">
                   <YouTubePopup />
                   {children}
