@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
@@ -55,7 +55,7 @@ const features = [
             </svg>
         ),
         title: 'Real-time Visibility & High-Density Dashboards',
-        description: 'Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
+        description: 'Monitor builds live - filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
         tags: ['Live Logs', 'Auto-refresh', 'Build Charts'],
         videoId: 'Pjl3muKtmhE',
         videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
@@ -83,8 +83,8 @@ const features = [
             </svg>
         ),
         title: 'Enterprise Security & RBAC',
-        description: 'Role-based access control (RBAC) at project and system level. Native support for LDAP and granular permissions management. AES-256 encryption for all secrets.',
-        tags: ['RBAC', 'LDAP Integration', 'AES-256'],
+        description: 'Role-based access control (RBAC) at project and system level with granular permissions management and AES-256 encryption for all secrets.',
+        tags: ['RBAC', 'Access Control', 'AES-256'],
         videoId: 'C-Ln6bbGo2E',
         videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
     },
@@ -96,8 +96,8 @@ const features = [
             </svg>
         ),
         title: 'Single Sign-On (SSO) Support',
-        description: 'Supports multiple SSO providers including GitHub, GitLab, Google, Microsoft, and Slack for streamlined enterprise authentication.',
-        tags: ['OAuth 2.0', 'OIDC', 'SAML 2.0', 'Enterprise Ready'],
+        description: 'Supports multiple SSO providers including GitHub, GitLab, Google, Microsoft, and Bitbucket for streamlined enterprise authentication.',
+        tags: ['OAuth 2.0', 'OIDC', 'Enterprise Ready'],
         videoId: 'C-Ln6bbGo2E',
         videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
     },
@@ -108,7 +108,7 @@ const features = [
             </svg>
         ),
         title: 'Pipeline Runners',
-        description: 'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at config or project level.',
+        description: 'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at configuration level or project level.',
         tags: ['SSH Runner', 'Script Runner', 'Build Params'],
         videoId: 'IOd9CmP6G4c',
         videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners',
@@ -121,8 +121,8 @@ const features = [
             </svg>
         ),
         title: 'Notifications & Alerts',
-        description: 'Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.',
-        tags: ['SMTP', 'Custom Templates', 'Slack-ready'],
+        description: 'Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.',
+        tags: ['SMTP', 'Custom Templates'],
         videoId: '2OuADSNMEoc',
         videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings',
     },
@@ -183,7 +183,7 @@ export default function LandingFeatures() {
                 <span className={s.label}>Powerful Features</span>
                 <h3 className={s.title}>One platform, zero compromises</h3>
                 <p className={s.subtitle}>
-                    Every capability your engineering team needs — packaged into a cohesive, self-hosted CI/CD platform.
+                    Every capability your engineering team needs - packaged into a cohesive, self-hosted CI/CD platform.
                 </p>
             </motion.div>
 
@@ -246,3 +246,4 @@ export default function LandingFeatures() {
         </section>
     );
 }
+

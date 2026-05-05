@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import s from "./PricingValueProp.module.css";
@@ -27,7 +27,7 @@ const itemVariants = {
   },
 };
 
-// Inline SVG — uses currentColor so it's fully theme-aware
+// Inline SVG - uses currentColor so it's fully theme-aware
 const ShieldIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -46,13 +46,11 @@ export default function PricingValueProp() {
   const { region } = useSelector((state) => state.pricing);
   const text = JSON.parse(JSON.stringify(pricingFourthText));
   text.cards[2].desc =
-    region === "india"
-      ? "Free up to 3 concurrent agents. ₹17,499/month unlimited users beyond that. No hidden costs, no complex calculations."
-      : "Free up to 3 concurrent agents. $199/month unlimited users beyond that. No hidden costs, no complex calculations.";
+    "Unlimited users, projects, and configurations. Scale your build orchestration as much as your infrastructure allows with zero per-seat costs.";
 
   return (
     <section className={s.section}>
-      <motion.div 
+      <motion.div
         className={s.inner}
         initial="hidden"
         whileInView="visible"
@@ -124,3 +122,4 @@ export default function PricingValueProp() {
     </section>
   );
 }
+

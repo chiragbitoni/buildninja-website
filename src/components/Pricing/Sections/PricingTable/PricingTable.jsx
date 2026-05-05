@@ -27,8 +27,6 @@ const itemVariants = {
 };
 
 export default function PricingTable() {
-  const { region } = useSelector((state) => state.pricing);
-
   const Tick = ({ children }) => (
     <span className={s.tickText}>
       <Image
@@ -43,85 +41,23 @@ export default function PricingTable() {
     </span>
   );
 
-  const Green = ({ children }) => (
-    <span className={s.greenText}>{children}</span>
-  );
-
-  const pricingData = {
-    india: {
-      title: "Everything You Need, Choose Your Scale",
-      subtitle: "Currently showing India (₹ INR) pricing",
-      rows: [
-        { feature: "Monthly Price", solo: "FREE", shogun: "₹17,499" },
-        {
-          feature: "Annual Price", solo: "FREE",
-          shogun: (<>₹1,39,999/year<small>(₹11,666/month)</small><Green>Save 33%</Green></>),
-        },
-        {
-          feature: "2-Year Upfront", solo: "FREE",
-          shogun: (<>₹2,19,999<small>(₹9,166/month)</small><Green>Save 48%</Green></>),
-        },
-        {
-          feature: "3-Year Upfront", solo: "FREE",
-          shogun: (<>₹2,79,999<small>(₹7,777/month)</small><Green>Save 56%</Green></>),
-        },
-        { feature: "Best For", solo: "Individual developers & small teams", shogun: "Growing Teams" },
-        { feature: "Users", solo: "Up to 10", shogun: <Tick>Unlimited</Tick> },
-        { feature: "Build Agents", solo: <Tick>Unlimited</Tick>, shogun: <Tick>Unlimited</Tick> },
-        { feature: "Concurrent Agents", solo: "3 builds at same time", shogun: <Tick>Unlimited builds at same time</Tick> },
-        {
-          feature: "Additional Concurrent", shogun: <Tick>Included</Tick>,
-          solo: (<>₹2,199/month <br />₹16,999/year <Green>SAVE 36%</Green><br />₹25,999/2-year <Green>SAVE 51%</Green><br />₹34,999/3-year <Green>SAVE 56%</Green></>),
-        },
-        { feature: "Projects", solo: "Up to 100", shogun: <Tick>Unlimited</Tick> },
-        { feature: "Configurations", solo: "Up to 100", shogun: <Tick>Unlimited</Tick> },
-        { feature: "Build History", solo: "30 days", shogun: <Tick>Perpetual (forever)</Tick> },
-        { feature: "SSO Integrations", solo: "1 provider", shogun: <Tick>All available providers</Tick> },
-        { feature: "Support", solo: "Community", shogun: <Tick>Priority business hours</Tick> },
-        { feature: "Migration Assistance", solo: "Self-service guides", shogun: <Tick>Free for 10 projects (annual/2-year/3-year)</Tick> },
-        { feature: "Professional Services", solo: "–", shogun: <Tick>20 hours/year (annual/2-year/3-year)</Tick> },
-        { feature: "License Buyout Credit", solo: "–", shogun: <Tick>25% credit (annual/2-year/3-year)</Tick> },
-        { feature: "Grace Period", solo: "7 days", shogun: "7 days" },
-      ],
-    },
-    global: {
-      title: "Everything You Need, Choose Your Scale",
-      subtitle: "Currently showing Global ($ USD) pricing",
-      rows: [
-        { feature: "Monthly Price", solo: "FREE", shogun: "$199" },
-        {
-          feature: "Annual Price", solo: "FREE",
-          shogun: (<>$1,599/year<small>($133/month)</small><Green>Save 33%</Green></>),
-        },
-        {
-          feature: "2-Year Upfront", solo: "FREE",
-          shogun: (<>$2,499/year<small>($104/month)</small><Green>Save 48%</Green></>),
-        },
-        {
-          feature: "3-Year Upfront", solo: "FREE",
-          shogun: (<>$3,199/year<small>($89/month)</small><Green>Save 55%</Green></>),
-        },
-        { feature: "Best For", solo: "Individual developers & small teams", shogun: "Growing Teams" },
-        { feature: "Users", solo: "Up to 10", shogun: <Tick>Unlimited</Tick> },
-        { feature: "Build Agents", solo: <Tick>Unlimited</Tick>, shogun: <Tick>Unlimited</Tick> },
-        { feature: "Concurrent Agents", solo: "3 builds at same time", shogun: <Tick>Unlimited builds at same time</Tick> },
-        {
-          feature: "Additional Concurrent", shogun: <Tick>Included</Tick>,
-          solo: (<>$25/month <br />$199/year <Green>SAVE 34%</Green><br />$299/2-year <Green>SAVE 50%</Green><br />$399/3-year <Green>SAVE 56%</Green></>),
-        },
-        { feature: "Projects", solo: "Up to 100", shogun: <Tick>Unlimited</Tick> },
-        { feature: "Configurations", solo: "Up to 100", shogun: <Tick>Unlimited</Tick> },
-        { feature: "Build History", solo: "30 days", shogun: <Tick>Perpetual (forever)</Tick> },
-        { feature: "SSO Integrations", solo: "1 provider", shogun: <Tick>All available providers</Tick> },
-        { feature: "Support", solo: "Standard Email Support", shogun: <Tick>Priority business hours</Tick> },
-        { feature: "Migration Assistance", solo: "Self-service guides", shogun: <Tick>Free for 3 projects (annual/2-year/3-year)</Tick> },
-        { feature: "Professional Services", solo: "–", shogun: <Tick>4 hours/year (annual/2-year/3-year)</Tick> },
-        { feature: "Grace Period", solo: "7 days", shogun: "7 days" },
-      ],
-    },
+  const table = {
+    title: "Everything You Need, Free",
+    subtitle: "Enterprise-grade features available to teams of all sizes",
+    rows: [
+      { feature: "Monthly Price", free: "FREE" },
+      { feature: "Best For", free: "Teams of all sizes, from startups to enterprises" },
+      { feature: "Users", free: <Tick>Unlimited users - No per-seat costs as you grow</Tick> },
+      { feature: "Projects", free: <Tick>Unlimited projects - No artificial limits</Tick> },
+      { feature: "Configurations", free: <Tick>Unlimited configurations - Scale without restrictions</Tick> },
+      { feature: "Concurrent Builds", free: <Tick>Unlimited - Run as many as your infra supports</Tick> },
+      { feature: "Build Agents", free: <Tick>Unlimited build agents - Connect as many as you want</Tick> },
+      { feature: "Build History", free: <Tick>Perpetual build history - Complete audit trail forever</Tick> },
+      { feature: "SSO Integrations", free: <Tick>All 5 SSO providers -  Microsoft, GitHub, GitLab, Bitbucket, and Google</Tick> },
+      { feature: "Support", free: <Tick>Email onboarding support</Tick> },
+      { feature: "Custom Deployment", free: <Tick>Built-in Docker / K8s / Air-gapped / Custom</Tick> },
+    ],
   };
-
-  const table = region === "india" ? pricingData.india : pricingData.global;
 
   return (
     <section className={s.section}>
@@ -143,8 +79,7 @@ export default function PricingTable() {
             <thead>
               <tr>
                 <th>Feature</th>
-                <th className={s.thShogun}>Shogun Edition</th>
-                <th>Solo Edition</th>
+                <th>Growth Edition</th>
               </tr>
             </thead>
             <motion.tbody 
@@ -156,8 +91,7 @@ export default function PricingTable() {
               {table.rows.map((row, i) => (
                 <motion.tr key={i} variants={itemVariants}>
                   <td>{row.feature}</td>
-                  <td>{row.shogun}</td>
-                  <td>{row.solo}</td>
+                  <td>{row.free}</td>
                 </motion.tr>
               ))}
             </motion.tbody>

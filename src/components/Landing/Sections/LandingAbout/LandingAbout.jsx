@@ -40,11 +40,11 @@ export default function LandingAbout() {
                     </motion.span>
 
                     <motion.h2 className={s.title} variants={itemVariants}>
-                        Built by <span>GrapeCity</span>
+                        Built by <span>GrapeHub</span>
                     </motion.h2>
 
                     <motion.p className={s.description} variants={itemVariants}>
-                        With over two decades of global trust, GrapeCity has been a pioneer in developer
+                        With over two decades of global trust, GrapeHub has been a pioneer in developer
                         tools. BuildNinja is the culmination of 25+ years of software engineering excellence,
                         designed to solve the real-world CI/CD pains we faced ourselves.
                     </motion.p>

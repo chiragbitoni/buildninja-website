@@ -67,6 +67,17 @@ export default function PartnerForm() {
             return;
         }
 
+        // Validate Indian Phone Number (Must start with +91 and have 10 digits after that, starting with 6-9)
+        const phoneDigits = formData.phone.replace(/\D/g, "");
+        const isIndian = formData.phone.startsWith("+91");
+        const numberPart = phoneDigits.slice(2); // remove 91
+        const isValidIndian = isIndian && /^[6-9]\d{9}$/.test(numberPart);
+
+        if (!isValidIndian) {
+            alert("Please enter a valid 10-digit Indian phone number starting with +91");
+            return;
+        }
+
         if (!captchaToken) {
             setStatus("error");
             return;
@@ -201,15 +212,6 @@ export default function PartnerForm() {
                                     <p>Kubernetes, VMs, on-prem, or air-gapped.</p>
                                 </div>
                             </div>
-                            <div className={s.featureItem}>
-                                <div className={s.featureIcon}>
-                                    <FontAwesomeIcon icon={faCreditCard} />
-                                </div>
-                                <div>
-                                    <h4>Predictable pricing</h4>
-                                    <p>No build-minute billing, transparent and consistent.</p>
-                                </div>
-                            </div>
                         </div>
 
                         <div className={s.nextStepBox}>
@@ -223,7 +225,7 @@ export default function PartnerForm() {
                         </div>
 
                         <button className={s.btnPrimary} onClick={() => {
-                            window.location.href = "mailto:marketing.in@grapecity.com?subject=Partnership Inquiry&body=Hi Team,%0D%0A%0D%0AI’d like to explore a partnership opportunity.%0D%0A";
+                            window.location.href = "mailto:marketing.in@GrapeHub.com?subject=Partnership Inquiry&body=Hi Team,%0D%0A%0D%0AI’d like to explore a partnership opportunity.%0D%0A";
                         }}>
                             Email partnership
                         </button>
@@ -271,18 +273,20 @@ export default function PartnerForm() {
                             <div className={s.formLabel}>
                                 <span>Phone Number <span className={s.formRequirement}>*</span></span>
                                 <div className={s.phoneWrap}>
-                                    <PhoneInput defaultCountry="us" value={formData.phone} onChange={(phone) => setFormData((prev) => ({ ...prev, phone }))} />
+                                    <PhoneInput defaultCountry="in" value={formData.phone} onChange={(phone) => setFormData((prev) => ({ ...prev, phone }))} />
                                 </div>
                             </div>
                             
-                            <div className={s.captchaWrap}>
-                                <ReCAPTCHA 
-                                    key={resolvedTheme}
-                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} 
-                                    theme={resolvedTheme === "light" ? "light" : "dark"} 
-                                    onChange={(token) => setCaptchaToken(token)} 
-                                    onExpired={() => setCaptchaToken(null)} 
-                                />
+                             <div className="captcha-container">
+                                <div className="captcha-inner">
+                                    <ReCAPTCHA 
+                                        key={resolvedTheme}
+                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} 
+                                        theme={resolvedTheme === "light" ? "light" : "dark"} 
+                                        onChange={(token) => setCaptchaToken(token)} 
+                                        onExpired={() => setCaptchaToken(null)} 
+                                    />
+                                </div>
                             </div>  
 
                             <button type="submit" className={s.btnPrimary} disabled={loading || !captchaToken}>

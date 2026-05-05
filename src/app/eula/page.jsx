@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import EulaHero from "../../components/EULA/Sections/EulaHero/EulaHero";
 import EulaContent from "../../components/EULA/Sections/EulaContent/EulaContent";
 
@@ -17,4 +18,26 @@ export default function EULA() {
             <EulaContent />
         </main>
     );
-}
+}
+=======
+import EulaHero from "../../components/EULA/Sections/EulaHero/EulaHero";
+import EulaContent from "../../components/EULA/Sections/EulaContent/EulaContent";
+
+export const metadata = {
+    title: "EULA | BuildNinja",
+    description: "BuildNinja End User License Agreement (EULA). Read about our licensing terms, usage rights, and data protection policies.",
+    keywords: ["BuildNinja EULA", "software license agreement", "CI/CD terms of use", "DevOps software licensing", "data protection policies"],
+    alternates: {
+        canonical: "https://buildninja.grapehub.io/eula",
+    },
+};
+
+export default function EULA() {
+    return (
+        <main>
+            <EulaHero />
+            <EulaContent />
+        </main>
+    );
+}
+>>>>>>> dojo-banner

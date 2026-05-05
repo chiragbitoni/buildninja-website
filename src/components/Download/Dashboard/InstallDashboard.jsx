@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import styles from "./InstallDashboard.module.css";
 import { useEffect, useState } from "react";
@@ -12,25 +12,26 @@ import { getAuthCookie } from "@/lib/cookieAuth";
 import { motion } from "framer-motion";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faWindows, 
-  faLinux, 
-  faApple, 
-  faDocker 
+import {
+  faWindows,
+  faLinux,
+  faApple,
+  faDocker
 } from "@fortawesome/free-brands-svg-icons";
-import { 
-  faDownload, 
-  faPlayCircle, 
-  faCopy, 
-  faTerminal, 
-  faHistory, 
-  faMicrochip, 
+import {
+  faDownload,
+  faPlayCircle,
+  faCopy,
+  faTerminal,
+  faHistory,
+  faMicrochip,
   faInfoCircle,
   faLifeRing,
   faCalendarAlt,
   faCheckCircle,
   faExternalLinkAlt,
-  faCircleNotch
+  faCircleNotch,
+  faKey
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -62,6 +63,8 @@ export default function InstallDashboard() {
   const [hasHistory, setHasHistory] = useState(false);
 
   const [copiedType, setCopiedType] = useState(null);
+  const [hasDownloaded, setHasDownloaded] = useState(false);
+  const [plans, setPlans] = useState([]);
 
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
@@ -75,7 +78,7 @@ export default function InstallDashboard() {
     if (user?.userId) {
       posthog.identify(user.userId, { email: user.email });
     }
-    
+
     posthog.capture("dashboard_viewed", {
       page: "download_dashboard",
     });
@@ -99,7 +102,26 @@ export default function InstallDashboard() {
       }
     }
     load();
+
+    // Fetch plans for license key link
+    const storedPlans = localStorage.getItem("plans");
+    if (storedPlans) {
+      setPlans(JSON.parse(storedPlans));
+    } else {
+      import("@/services/plans/plans").then(({ fetchPlansFromAPI }) => {
+        fetchPlansFromAPI().then(fetched => {
+          if (fetched) {
+            setPlans(fetched);
+            localStorage.setItem("plans", JSON.stringify(fetched));
+          }
+        });
+      });
+    }
   }, []);
+
+  const handleGetFreeKey = () => {
+    window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=${process.env.NEXT_PUBLIC_GROWTH_EDITION_GUID}`;
+  };
 
   const [downloadingUrl, setDownloadingUrl] = useState(null);
 
@@ -112,6 +134,12 @@ export default function InstallDashboard() {
     });
     try {
       await downloadInstaller(url.split("/").pop());
+      setHasDownloaded(true);
+      // Optional: Smooth scroll to license section if not visible
+      setTimeout(() => {
+        const licenseEl = document.getElementById('license-section');
+        if (licenseEl) licenseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 500);
     } finally {
       setDownloadingUrl(null);
     }
@@ -127,8 +155,8 @@ export default function InstallDashboard() {
       <div className={styles.grid} />
       <NetworkBackground />
       <div className={styles.bottomFade} />
-      
-      <motion.div 
+
+      <motion.div
         className={styles.container}
         variants={containerVariants}
         initial="hidden"
@@ -148,7 +176,7 @@ export default function InstallDashboard() {
             </div>
             <div className={styles.versionItem}>
               <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: 8, opacity: 0.6 }} />
-              Released: <b>{releaseDate ? new Date(releaseDate).toLocaleDateString("en-GB") : "—"}</b>
+              Recent Release: <b>{releaseDate ? new Date(releaseDate).toLocaleDateString("en-GB") : "-"}</b>
             </div>
           </div>
 
@@ -163,7 +191,7 @@ export default function InstallDashboard() {
                   <span className={styles.versionItem}>Version: <b>{latestWindows.version}</b></span>
                 </div>
                 <div className={styles.actions}>
-                  <button 
+                  <button
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestWindows.downloadUrl, { os: "windows", version: latestWindows.version })}
                     disabled={downloadingUrl === latestWindows.downloadUrl}
@@ -174,10 +202,10 @@ export default function InstallDashboard() {
                       <><FontAwesomeIcon icon={faDownload} /> Download .exe</>
                     )}
                   </button>
-                  <button 
+                  <button
                     className={styles.guideBtn}
-                    onClick={() => dispatch(openVideo({ 
-                      videoId: "zOW9BCYQkxk", 
+                    onClick={() => dispatch(openVideo({
+                      videoId: "zOW9BCYQkxk",
                       title: "Windows Installation Guide",
                       ctaText: "Official Setup Documentation",
                       link: "/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows"
@@ -200,7 +228,7 @@ export default function InstallDashboard() {
                   <span className={styles.versionItem}>Agent: <b>{latestLinux.agentVersion}</b></span>
                 </div>
                 <div className={styles.actions}>
-                  <button 
+                  <button
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestLinux.serverDownloadUrl, { os: "linux", type: "server", version: latestLinux.serverVersion })}
                     disabled={downloadingUrl === latestLinux.serverDownloadUrl}
@@ -211,7 +239,7 @@ export default function InstallDashboard() {
                       <><FontAwesomeIcon icon={faDownload} /> Server</>
                     )}
                   </button>
-                  <button 
+                  <button
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestLinux.agentDownloadUrl, { os: "linux", type: "agent", version: latestLinux.agentVersion })}
                     disabled={downloadingUrl === latestLinux.agentDownloadUrl}
@@ -237,7 +265,7 @@ export default function InstallDashboard() {
                   <span className={styles.versionItem}>Agent: <b>{latestMac.agentVersion}</b></span>
                 </div>
                 <div className={styles.actions}>
-                  <button 
+                  <button
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestMac.serverDownloadUrl, { os: "mac", type: "server", version: latestMac.serverVersion })}
                     disabled={downloadingUrl === latestMac.serverDownloadUrl}
@@ -248,7 +276,7 @@ export default function InstallDashboard() {
                       <><FontAwesomeIcon icon={faDownload} /> Server</>
                     )}
                   </button>
-                  <button 
+                  <button
                     className={styles.downloadBtn}
                     onClick={() => handleDownload(latestMac.agentDownloadUrl, { os: "mac", type: "agent", version: latestMac.agentVersion })}
                     disabled={downloadingUrl === latestMac.agentDownloadUrl}
@@ -276,9 +304,9 @@ export default function InstallDashboard() {
                   <span style={{ opacity: 0.5, marginRight: 8 }}>$</span>
                   {staticData.docker.serverCmd}
                 </div>
-                <FontAwesomeIcon 
-                  icon={copiedType === "server" ? faCheckCircle : faCopy} 
-                  className={`${styles.copyIcon} ${copiedType === "server" ? styles.copied : ""}`} 
+                <FontAwesomeIcon
+                  icon={copiedType === "server" ? faCheckCircle : faCopy}
+                  className={`${styles.copyIcon} ${copiedType === "server" ? styles.copied : ""}`}
                   onClick={() => copyToClipboard(staticData.docker.serverCmd, "server")}
                 />
               </div>
@@ -287,9 +315,9 @@ export default function InstallDashboard() {
                   <span style={{ opacity: 0.5, marginRight: 8 }}>$</span>
                   {staticData.docker.agentCmd}
                 </div>
-                <FontAwesomeIcon 
-                  icon={copiedType === "agent" ? faCheckCircle : faCopy} 
-                  className={`${styles.copyIcon} ${copiedType === "agent" ? styles.copied : ""}`} 
+                <FontAwesomeIcon
+                  icon={copiedType === "agent" ? faCheckCircle : faCopy}
+                  className={`${styles.copyIcon} ${copiedType === "agent" ? styles.copied : ""}`}
                   onClick={() => copyToClipboard(staticData.docker.agentCmd, "agent")}
                 />
               </div>
@@ -320,16 +348,16 @@ export default function InstallDashboard() {
                     <div className={styles.historyValue}>{new Date(v.releasedOn).toDateString()}</div>
                   </div>
                   <div className={styles.actions} style={{ gap: 8 }}>
-                    <button 
-                      className={styles.guideBtn} 
+                    <button
+                      className={styles.guideBtn}
                       style={{ padding: '8px 16px' }}
                       onClick={() => handleDownload(v.serverDownloadUrl, { type: "server", version: v.serverVersion })}
                       disabled={downloadingUrl === v.serverDownloadUrl}
                     >
                       {downloadingUrl === v.serverDownloadUrl ? "Wait..." : "Server"}
                     </button>
-                    <button 
-                      className={styles.guideBtn} 
+                    <button
+                      className={styles.guideBtn}
                       style={{ padding: '8px 16px' }}
                       onClick={() => handleDownload(v.agentDownloadUrl, { type: "agent", version: v.agentVersion })}
                       disabled={downloadingUrl === v.agentDownloadUrl}
@@ -343,14 +371,38 @@ export default function InstallDashboard() {
           </motion.div>
         )}
 
-
+        {/* ── License Activation CTA ── */}
+        <motion.div
+          id="license-section"
+          className={`${styles.licenseSection} ${hasDownloaded ? styles.highlight : ""}`}
+          variants={itemVariants}
+        >
+          <div className={styles.licenseCard}>
+            <div className={styles.licenseContent}>
+              <div className={styles.licenseIcon}>
+                <FontAwesomeIcon icon={faKey} />
+              </div>
+              <div>
+                <h2 className={styles.licenseTitle}>{staticData.license.title}</h2>
+                <p className={styles.licenseDesc}>{staticData.license.desc}</p>
+              </div>
+            </div>
+            <button
+              className={styles.licenseBtn}
+              onClick={handleGetFreeKey}
+            >
+              {staticData.license.btn}
+              <FontAwesomeIcon icon={faExternalLinkAlt} style={{ marginLeft: 10, fontSize: 13 }} />
+            </button>
+          </div>
+        </motion.div>
         {/* ── System Requirements ── */}
         <motion.div className={styles.systemSection} variants={itemVariants}>
           <h2 className={styles.sectionTitle}>
             <FontAwesomeIcon icon={faMicrochip} style={{ marginRight: 12, opacity: 0.7 }} />
             {staticData.systemRequirements.title}
           </h2>
-          
+
           <div className={styles.mongoNote}>
             <FontAwesomeIcon icon={faInfoCircle} style={{ fontSize: 20, marginTop: 2, color: "var(--color-info)" }} />
             <div>
@@ -379,6 +431,7 @@ export default function InstallDashboard() {
           </div>
         </motion.div>
 
+
         {/* ── Support Resources ── */}
         <motion.div style={{ marginTop: 80 }} variants={itemVariants}>
           <h2 className={styles.sectionTitle} style={{ textAlign: "center" }}>
@@ -393,8 +446,8 @@ export default function InstallDashboard() {
                   <h3 style={{ fontSize: 18, marginBottom: 12 }}>{card.title}</h3>
                   <p style={{ fontSize: 14, color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{card.desc}</p>
                 </div>
-                <button 
-                  className={styles.downloadBtn} 
+                <button
+                  className={styles.downloadBtn}
                   style={{ background: "var(--color-bg-panel)", border: "1px solid var(--color-border)", color: "var(--color-text)" }}
                   onClick={() => {
                     posthog.capture("support_cta_clicked", { title: card.title });
@@ -412,3 +465,4 @@ export default function InstallDashboard() {
     </section>
   );
 }
+

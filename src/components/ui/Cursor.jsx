@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Script from 'next/script';
 
@@ -11,7 +11,7 @@ export default function Cursor() {
       if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
       if (document.getElementById('bn-cursor-dot')) return;
 
-      // Inject cursor element styles only (NO cursor:none yet — use native as fallback)
+      // Inject cursor element styles only (NO cursor:none yet - use native as fallback)
       var style = document.createElement('style');
       style.textContent = [
         '#bn-cursor-dot {',
@@ -94,4 +94,5 @@ export default function Cursor() {
       dangerouslySetInnerHTML={{ __html: cursorScript }}
     />
   );
-}
+}
+

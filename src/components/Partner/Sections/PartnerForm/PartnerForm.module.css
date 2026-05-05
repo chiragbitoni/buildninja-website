@@ -1,13 +1,14 @@
 .section {
   background: var(--color-bg);
-  padding: 100px 24px;
+  padding: 80px 0;
   font-family: var(--font-display);
   border-top: 1px solid var(--color-border-subtle);
   position: relative;
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -38,7 +39,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(36px, 6vw, 64px);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.04em;
@@ -47,7 +48,7 @@
 }
 
 .subTitle {
-  font-size: 1.1rem;
+  font-size: 20px;
   color: var(--color-text-secondary);
   line-height: 1.6;
 }
@@ -80,7 +81,7 @@
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--color-text);
   margin-bottom: 16px;
@@ -288,11 +289,7 @@
   background: rgba(255, 255, 255, 0.1) !important;
 }
 
-.captchaWrap {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
-}
+
 
 .statusMessage {
   padding: 16px;
@@ -322,9 +319,20 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 80px 16px;
+    padding: 60px 0;
+  }
+  .inner {
+    padding: 0 16px;
   }
   .card {
-    padding: 24px;
+    padding: 32px 20px;
+  }
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+  .nextStepBox {
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
   }
 }

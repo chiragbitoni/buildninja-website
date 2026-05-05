@@ -1,9 +1,15 @@
 import FeaturesPage from "./FeaturePage";
 
 export const metadata = {
+<<<<<<< HEAD
   title: { absolute: "CI/CD Features & DevOps Pipeline Capabilities" },
   description: "Explore BuildNinja's extensive CI/CD features: pipeline automation, real-time collaboration, zero-downtime deployments, and secure self-hosting tailored for enterprise DevOps teams.",
   keywords: ["CI/CD features", "DevOps capabilities", "pipeline automation", "zero-downtime deployment", "enterprise CI/CD", "secure release management"],
+=======
+  title: "Powerful CI/CD Features for Modern Engineering | Features",
+  description: "Explore BuildNinja's features: self-hosted agents, real-time logs, multi-cloud deployments, and seamless integration with GitHub, GitLab, and Bitbucket.",
+  keywords: ["CI/CD features", "build automation capabilities", "self-hosted agents", "DevOps integrations", "multi-cloud deployment", "GitHub integration", "GitLab integration", "Bitbucket integration", "real-time build logs"],
+>>>>>>> dojo-banner
   alternates: {
     canonical: "https://buildninja.grapehub.io/features",
   },

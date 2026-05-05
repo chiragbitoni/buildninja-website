@@ -2,11 +2,12 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════
-DESIGN TOKENS
+   DESIGN TOKENS
    ═══════════════════════════════════════════ */
 :root {
   /* Brand */
   --color-primary: #ff4172;
+  --color-primary-rgb: 255, 65, 114;
   --color-primary-alt: #ff6135;
   --color-primary-glow: rgba(255, 65, 114, 0.4);
   --color-primary-subtle: rgba(240, 58, 73, 0.08);
@@ -43,6 +44,7 @@ DESIGN TOKENS
   --color-error-bg: rgba(255, 92, 92, 0.08);
   --color-error-border: rgba(255, 92, 92, 0.22);
   --color-info: #40a9ff;
+  --color-info-rgb: 64, 169, 255;
   --color-info-bg: rgba(64, 169, 255, 0.12);
   --color-info-border: rgba(64, 169, 255, 0.5);
   --color-info-subtle: rgba(64, 169, 255, 0.04);
@@ -88,8 +90,23 @@ DESIGN TOKENS
   --shell-height: 580px;
   --shell-aspect: calc(580 / 1100 * 100%);
 
-  /* Utilities */
+  /* Layout */
+  --container-width: 1400px;
+  --container-padding: 32px;
+
+  /* Typography Scale */
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+
+  /* Hero Section Top Margins (To align perfectly below persistent Navbar) */
+  --hero-pt-desktop: 120px;
+  --hero-pt-tablet: 80px;
+  --hero-pt-mobile: 70px;
+
+  /* Utilities (Default Dark) */
   --icon-filter: none;
+  --logo-filter: invert(1) brightness(1.8);
 }
 
 [data-theme='light'] {
@@ -148,13 +165,31 @@ DESIGN TOKENS
   --color-card-icon-hover-bg: rgba(255, 255, 255, 0.9);
   --color-primary-glow: rgba(255, 65, 114, 0.15);
 
+  /* Demo accent (Light) */
+  --color-demo-accent: #be123c;
+  --color-demo-accent-bg: rgba(225, 29, 72, 0.08);
+  --color-demo-accent-border: rgba(225, 29, 72, 0.15);
+
   /* Utilities */
-  --icon-filter: invert(1);
+  --icon-filter: invert(1); /* White icons invert to black on light bg */
+  --logo-filter: none; /* Black logo stays black on light bg */
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+  }
 }
 
 /* ═══════════════════════════════════════════
-GLOBAL RESETS & BASE
-═══════════════════════════════════════════ */
+   GLOBAL RESETS & BASE
+   ═══════════════════════════════════════════ */
 * {
   scrollbar-width: thin;
   /* "auto" or "thin" */
@@ -197,6 +232,8 @@ GLOBAL RESETS & BASE
     cursor: pointer;
     cursor: none !important;
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    white-space: nowrap;
+    max-width: 100%;
   }
 
   .badge:hover {
@@ -225,6 +262,15 @@ GLOBAL RESETS & BASE
     width: fit-content;
     cursor: default;
     cursor: none !important;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .badge, .badge-alt {
+      font-size: 10px;
+      padding: 4px 12px;
+    }
   }
 
   /* Global Headings */
@@ -243,6 +289,38 @@ GLOBAL RESETS & BASE
     color: var(--color-text-secondary);
     line-height: 1.6;
     max-width: 700px;
+  }
+
+  /* Global reCAPTCHA responsive utility */
+  .captcha-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 24px 0;
+    min-height: 78px;
+  }
+
+  .captcha-inner {
+    transform-origin: top center;
+    display: flex;
+    justify-content: center;
+    width: 304px; /* Standard ReCAPTCHA width */
+  }
+
+  @media (max-width: 420px) {
+    .captcha-inner { transform: scale(0.85); }
+    .captcha-container { min-height: 68px; }
+  }
+
+  @media (max-width: 360px) {
+    .captcha-inner { transform: scale(0.75); }
+    .captcha-container { min-height: 60px; }
+  }
+
+  @media (max-width: 320px) {
+    .captcha-inner { transform: scale(0.7); }
+    .captcha-container { min-height: 56px; }
   }
 }
 

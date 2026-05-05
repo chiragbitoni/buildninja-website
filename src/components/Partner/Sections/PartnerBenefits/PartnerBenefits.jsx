@@ -48,21 +48,6 @@ const benefits = [
     title: "Technical enablement",
     description: "Priority onboarding, architecture guidance, and direct engineering support to accelerate delivery.",
   },
-  {
-    icon: <FontAwesomeIcon icon={faShieldHalved} />,
-    title: "Self-hosted security posture",
-    description: "Source code, secrets, logs, and artifacts stay inside your customer's environment ideal for compliance.",
-  },
-  {
-    icon: <FontAwesomeIcon icon={faBolt} />,
-    title: "Fast parallel execution",
-    description: "High-throughput pipelines designed for speed and scale, without build-minute billing surprises.",
-  },
-  {
-    icon: <FontAwesomeIcon icon={faServer} />,
-    title: "Flexible deployment",
-    description: "Run on Kubernetes, VMs, private cloud, or fully air-gapped infrastructure.",
-  },
 ];
 
 export default function PartnerBenefits() {

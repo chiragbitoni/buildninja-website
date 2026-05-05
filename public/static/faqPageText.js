@@ -15,7 +15,7 @@ export const secondSectionText = {
 export const thirdSectionText = {
   faqs: [
     {
-      catrgory: "General",
+      category: "General",
       faqs: [
         {
           id: "what-is-buildninja",
@@ -63,7 +63,7 @@ export const thirdSectionText = {
     },
 
     {
-      catrgory: "Installation & Setup",
+      category: "Installation & Setup",
       faqs: [
         {
           id: "installation-time",
@@ -89,11 +89,7 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "license-needed",
           question: "Do I need a license to use BuildNinja?",
-          answer: `<p>Your first download includes a trial license (30 days, 10 users, 3 concurrent builds) - no license key needed.</p>
-<p>After the trial, acquire a license through the BuildNinja License Portal:</p>
-<ul>
-<li>Solo Edition (Free forever): Register and generate your free license key</li>
-<li>Shogun Edition ($199/month): Purchase and generate your license key</li>
+          answer: `<li>BuildNinja Growth Edition: Designed for engineering teams of all sizes. Register and generate your free license key to get unlimited access to all core features, including unlimited users, projects, and concurrent builds.</li>
 </ul>
 <p>Activate your license through Settings > Manage License (online or offline activation available).</p>`,
         },
@@ -103,11 +99,6 @@ See complete system requirements for network, browser compatibility, and additio
           answer: `<p>BuildNinja runs on your infrastructure - whether that's existing on-premise servers, AWS, Azure, GCP, or any Docker-compatible environment. Minimum requirements: 2-core CPU, 4GB RAM for the server, and 2GB RAM per build agent.</p>
 <p>The key advantage: you control your infrastructure costs with no per-minute build charges, no data egress fees, and no surprise cloud bills. Use existing servers at zero additional cost, or deploy on cloud infrastructure you already manage.</p>
 <p>See complete system requirements in our documentation.</p>`,
-        },
-        {
-          id: "migration-support",
-          question: "Can I migrate from another CI/CD tool to BuildNinja?",
-          answer: `Yes! BuildNinja integrates with Git, GitHub, GitLab, Bitbucket, and other version control systems. Import your repositories and configure workflows through our intuitive interface. For migration assistance, contact support at <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>`,
         },
         {
           id: "docker-support",
@@ -154,63 +145,42 @@ See complete system requirements for network, browser compatibility, and additio
     },
 
     {
-      catrgory: "Pricing & Plans",
+      category: "Pricing & Plans",
       faqs: [
         {
           id: "pricing-overview",
           question: "How much does BuildNinja cost?",
-          answer: `BuildNinja offers two plans:
-
-Solo (Free) - perfect for individual developers, includes 1 user, 3 concurrent builds, and essential features.
-
-Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds (with option to add more at $25/build/month), SSO support, priority support, and all features.`,
+          answer: `Growth Edition - provides unlimited access to the core platform, including unlimited users, projects, configurations, and concurrent builds. It's designed to be the only CI/CD tool you'll ever need.`,
         },
         {
           id: "pricing-for-teams",
           question: "How does pricing work for growing teams?",
-          answer: `<p>BuildNinja charges based on concurrent agents, not team size. Shogun Edition ($199/month) includes unlimited users and unlimited concurrent agents. Add your 11th, 50th, or 500th developer - your price stays the same.</p>
-<p>Solo Edition supports up to 10 users with 3 concurrent agents (additional agents at $25/month). You only pay for infrastructure capacity, never per developer.</p>`,
+          answer: `<p>BuildNinja is designed to scale with you at zero cost. We do not charge per seat or per build. You can add unlimited developers and run as many concurrent builds as your hardware can handle without ever paying for a license.</p>
+<p>Growth Edition supports unlimited users and unlimited concurrent builds. There are no artificial caps on your growth.</p>`,
         },
         {
           id: "solo-plan-free",
-          question: "Is the Solo plan really free forever?",
+          question: "Is the Free plan really free?",
           answer:
-            "Yes! The Solo plan is completely free with no time limits or hidden costs. It includes everything a solo developer needs: automated builds, version control integration, artifact management, real-time logs, and email notifications.",
+            "Yes! The Free plan is completely free with no time limits or hidden costs. It includes everything a growing team needs: automated builds, version control integration, artifact management, real-time logs, and email notifications.",
         },
         {
           id: "more-concurrent-builds",
           question: "What happens if I need more concurrent builds?",
           answer:
-            "For the Shogun plan, the first 3 concurrent builds are included. You can add additional concurrent builds at $25 per build per month. ",
-        },
-        {
-          id: "upgrade-solo-to-shogun",
-          question: "Can I upgrade from Solo to Shogun?",
-          answer:
-            "Yes, you can upgrade at any time. Your existing projects and configurations will be preserved. Simply switch to the Shogun plan from your dashboard, and you'll immediately gain access to team features, SSO, and additional build capacity.",
-        },
-        {
-          id: "annual-billing",
-          question: "Do you offer annual billing or discounts?",
-          answer: `<p>Yes! Annual billing saves you 33% compared to monthly - just $133/month (billed annually at $1,599) versus $199/month.</p>
-<p>We also offer multi-year plans with even greater savings:</p>
-<ul>
-<li>2-year upfront at $107/month (save $1,218)</li>
-<li>3-year upfront at $89/month (save $1,320)</li>
-</ul>
-<p>As an early adopter benefit, the first 100 customers receive price lock guarantees on multi-year plans, plus free migration assistance and 20 hours of professional services with annual subscriptions.</p>`,
+            "BuildNinja Growth Edition includes unlimited concurrent builds. Your scale is only limited by your own infrastructure (CPU/RAM). We don't place any software-level restrictions on how many builds you can run at once.",
         },
         {
           id: "payment-methods",
           question: "What payment methods do you accept?",
           answer:
-            "We accept major credit cards, debit cards, and bank transfers for enterprise customers. All payments are processed securely, and invoices are sent via email for each billing cycle.",
+            "We accept major credit cards, debit cards, and bank transfers for Enterprise customers. All payments are processed securely, and invoices are generated automatically for each billing cycle.",
         },
       ],
     },
 
     {
-      catrgory: "Features & Capabilities",
+      category: "Features & Capabilities",
       faqs: [
         {
           id: "vcs-support",
@@ -233,9 +203,8 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
         {
           id: "what-is-concurrent-agent",
           question: "What is a concurrent agent and how many do I need?",
-          answer: `<p>A concurrent agent is one build agent executing a build at the same time. With 3 concurrent agents, you can run 3 builds simultaneously - additional builds queue automatically.</p>
-<p>Example: A team of 20 developers typically runs fine with 3-5 concurrent agents, while 50+ developers may need 5-10.</p>
-<p>Solo Edition includes 3 concurrent agents (add more at $25/agent/month). Shogun Edition includes unlimited concurrent agents - scale without limits.</p>`,
+          answer: `<p>A concurrent agent/slot is a build executing at the same time. With BuildNinja, you can run as many simultaneous builds as your infrastructure supports.</p>
+<p>Unlike other tools that charge for concurrency, BuildNinja Growth Edition is unlimited. Whether you need 3 or 300 concurrent builds, the software won't stop you.</p>`,
         },
         {
           id: "notifications",
@@ -284,7 +253,7 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
     },
 
     {
-      catrgory: "Security & Compliance",
+      category: "Security & Compliance",
       faqs: [
         {
           id: "data-security",
@@ -295,8 +264,8 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
         {
           id: "sso-support",
           question: "Does BuildNinja support Single Sign-On (SSO)?",
-          answer: `<p>Yes! BuildNinja supports SSO integration with five major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
-<p>Solo Edition includes 1 SSO provider, while Shogun Edition includes all 5 providers. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
+          answer: `<p>Yes! BuildNinja supports SSO integration with major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
+<p>All 5 SSO providers are included in the Growth Edition. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
 <p>Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.</p>`,
         },
         {
@@ -315,7 +284,7 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
           id: "can-i-control-user-permissions-and-access",
           question: "Can I control user permissions and access?",
           answer:
-            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. Solo Edition supports up to 10 users, while Shogun Edition supports unlimited users. In addition, BuildNinja now supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
+            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. BuildNinja supports unlimited users in the Growth Edition, allowing your team to grow without any artificial limits. In addition, BuildNinja supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
         },
         {
           id: "can-permission-changes-affect-running-builds",
@@ -327,13 +296,13 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
     },
 
     {
-      catrgory: "Support & Resources",
+      category: "Support & Resources",
       faqs: [
         {
           id: "support-included",
           question: "What support is included?",
           answer:
-            "Solo Edition includes community support and comprehensive documentation. Shogun Edition includes priority email support during business hours. Annual Shogun plans also include free migration assistance and 4 hours of professional services to help with setup and configuration.",
+            "BuildNinja Growth Edition now includes priority business support with direct access to our engineering team. We are committed to ensuring our users have the best experience possible, regardless of their scale. Migration assistance is also available to help you get started quickly.",
         },
         {
           id: "documentation",
@@ -344,7 +313,7 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
         {
           id: "reporting-bugs",
           question: "What if I encounter a bug or issue?",
-          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Solo Edition users receive community support, while Shogun Edition users receive priority support during business hours. We actively work on resolving reported issues and provide regular updates and patches.`,
+          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Growth Edition users receive community support, while Enterprise users receive dedicated priority support. We actively work on resolving reported issues and provide regular updates and patches.`,
         },
         {
           id: "update-frequency",
@@ -356,8 +325,8 @@ Shogun ($199/month) - designed for teams, includes 10 users, 3 concurrent builds
           id: "professional-services",
           question:
             "What's included in professional services and migration assistance?",
-          answer: `<p>Annual Shogun subscriptions include 4 hours of professional services covering setup consultation, custom workflow configuration, best practices review, and troubleshooting.</p>
-<p>Free migration assistance helps you move up to 3 projects from Jenkins, GitLab CI, Azure DevOps, or other platforms - including pipeline conversion guidance and initial configuration.</p>
+          answer: `<p>Enterprise subscriptions include professional services covering setup consultation, custom workflow configuration, best practices review, and troubleshooting.</p>
+<p>Migration assistance helps you move your existing projects from Jenkins, GitLab CI, Azure DevOps, or other platforms - including pipeline conversion guidance and initial configuration.</p>
 
 <p>Contact hello@grapehub.io to get started.</p>`,
         },
@@ -396,7 +365,7 @@ export const fourthSectionText = {
 
 export const fifthSectionText = {
   title: "Ready to streamline your deployments?",
-  description: "Start your free trial and experience CI/CD that just works.",
-  button1: "Start Free Trial",
+  description: "Download the Growth Edition and experience CI/CD that just works.",
+  button1: "Download Now",
   button2: "Request Demo",
 };

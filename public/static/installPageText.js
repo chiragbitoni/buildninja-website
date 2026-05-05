@@ -21,7 +21,7 @@ export const thirdSectionText = {
     CPU: "2 cores (x64/ARM64)",
     RAM: "4 GB",
     Storage: "10 GB free space",
-    OS: "Windows 10/11, Linux, & MacOS",
+    OS: "Windows 10/11, Linux, & macOS",
     Network: "Internet connection required",
   },
   card2: {
@@ -65,7 +65,7 @@ export const fifthSectionText = {
 };
 
 export const installFormText = {
-  title: "Get BuildNinja Solo Edition",
+  title: "Get BuildNinja Growth Edition",
   description:
     "Fill out the form below to download BuildNinja and receive your license key.",
   formFields: {

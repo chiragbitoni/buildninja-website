@@ -10,8 +10,8 @@
 .section {
   position: relative;
   z-index: 2;
-  padding: 80px 24px;
-  max-width: 1200px;
+  padding: 80px 0;
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -78,7 +78,7 @@
 .description {
   font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
-  max-width: 700px;
+  /* max-width: 700px; */
   margin: 0 auto 40px;
   line-height: 1.6;
 }
@@ -197,13 +197,15 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--color-border);
   border-radius: 24px;
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .exerciseTable {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  min-width: 600px; /* Force minimum width to trigger scroll on mobile */
 }
 
 .exerciseTable th {
@@ -290,20 +292,78 @@
 }
 
 @media (max-width: 900px) {
+  .section {
+    padding: 60px 0;
+  }
   .infoGrid {
     grid-template-columns: 1fr;
+    margin: 0 16px 60px;
   }
   .tallCard {
     grid-row: auto;
   }
   .ctaCard {
     padding: 48px 24px;
+    margin: 0 16px;
   }
 }
 
 @media (max-width: 600px) {
-  .exerciseTable {
-    display: block;
+  .section {
+    padding: 60px 0;
+  }
+  .hero {
+    padding-top: 80px;
+  }
+  .title {
+    padding: 0 16px;
+  }
+  .description {
+    padding: 0 16px;
+  }
+  .exerciseTableWrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .exerciseTable {
+    min-width: 600px;
+  }
+  .infoCard {
+    border-radius: 16px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .section {
+    padding: 40px 0;
+  }
+  .title {
+    font-size: 28px;
+    letter-spacing: -1px;
+    padding: 0 12px;
+  }
+  .enterBtn {
+    padding: 14px 32px;
+    font-size: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  .heroActions {
+    padding: 0 16px;
+    width: 100%;
+  }
+  .infoGrid {
+    margin: 0 8px 40px;
+  }
+  .infoCard {
+    padding: 20px 16px;
+  }
+  .ctaCard {
+    padding: 32px 16px;
+    margin: 0 8px;
+  }
+  .ctaTitle {
+    font-size: 22px;
   }
 }

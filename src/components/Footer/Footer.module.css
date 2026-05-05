@@ -10,8 +10,9 @@
 
 /* center content and prevent touching edges */
 .footerWrapper {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 /* main content stacks vertically on mobile */
@@ -45,7 +46,7 @@
 .footerGCLogo {
   margin-top: 10px;
   width: 60%;
-  filter: var(--icon-filter);
+  /* No filter because asset is already white */
 }
 
 .footerGCSocial {
@@ -66,7 +67,7 @@
 .footerBuildNinjaLogo {
   width: auto;
   height: auto;
-  filter: var(--icon-filter);
+  filter: var(--logo-filter);
 }
 
 /* Name + desc in one block for small screens */
@@ -93,7 +94,7 @@
   font-size: 12px;
 }
 
-/* LINKS — stacked full-width on mobile */
+/* LINKS - stacked full-width on mobile */
 .footerLinksContainer {
   display: grid;
   grid-template-columns: 1fr;
@@ -241,3 +242,4 @@
     width: 60%;
   }
 }
+

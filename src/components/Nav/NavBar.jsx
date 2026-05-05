@@ -10,6 +10,7 @@ import { fetchPlansFromAPI } from "../../services/plans/plans";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
 import { motion, AnimatePresence } from "framer-motion";
+import DojoBanner from "../Dojo/DojoBanner";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,6 +41,7 @@ export default function Navbar() {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
 
+    /*
     const storedPlans = localStorage.getItem("plans");
     if (!storedPlans) {
       async function init() {
@@ -48,17 +50,12 @@ export default function Navbar() {
       }
       init();
     }
+    */
     
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getLogoSrc = () => {
-    if (!mounted) return "/resources/BuildNinjaDark.png";
-    if (isHover) return "/resources/BuildNinjaPink.png";
-    return resolvedTheme === "dark"
-      ? "/resources/BuildNinjaDark.png"
-      : "/resources/BuildNinjaLight.png";
-  };
+  const getLogoSrc = () => "/resources/logo_buildninja.svg";
 
   const handleNavigation = (path) => {
     router.push(path);
@@ -70,6 +67,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
+      <DojoBanner />
       <div className={styles.navbarContainer}>
 
         {/* Logo */}
@@ -85,39 +83,48 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Hamburger Trigger */}
-        <div
-          className={`${styles.hamburgerWrapper} ${menuOpen ? styles.hamburgerOpen : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <div className={styles.hamburger}>
-            <span></span>
-            <span></span>
-            <span></span>
+        {/* Mobile Controls Group */}
+        <div className={styles.mobileControls}>
+          <div className={styles.mobileOnlyActions}>
+            <AvatarMenu />
+            <ThemeToggle />
+          </div>
+
+          {/* Hamburger Trigger */}
+          <div
+            className={`${styles.hamburgerWrapper} ${menuOpen ? styles.hamburgerOpen : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <div className={styles.hamburger}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
 
-        {/* Desktop Menu */}
-        <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
-          {navItems.map((item) => (
-            <li
-              key={item.name}
-              className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
-            >
-              <a
-                href={item.path}
-                className={styles.navbarAnchor}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation(item.path);
-                  dispatch(closeVideo());
-                }}
+        {/* Desktop Menu Group */}
+        <div className={styles.navbarRightGroup}>
+          <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
+            {navItems.map((item) => (
+              <li
+                key={item.name}
+                className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
               >
-                {item.name}
-                {item.name === "Dojo" && <span className={styles.navDot} />}
-              </a>
-            </li>
-          ))}
+                <a
+                  href={item.path}
+                  className={styles.navbarAnchor}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                    dispatch(closeVideo());
+                  }}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
 
           <div className={styles.navbarActionGroup}>
             <Image
@@ -129,13 +136,15 @@ export default function Navbar() {
               onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
             />
             <button
-              className={styles.navbarStartTrialButton}
+              className={styles.navbarGetStartedButton}
               onClick={() => handleNavigation("/install")}
             >
-              Try Free
+              Get Started
             </button>
+            <AvatarMenu />
+            <ThemeToggle />
           </div>
-        </ul>
+        </div>
 
         {/* Mobile Menu */}
         <AnimatePresence>
@@ -165,7 +174,6 @@ export default function Navbar() {
                     }}
                   >
                     {item.name}
-                    {item.name === "Dojo" && <span className={styles.navDot} />}
                   </a>
                 </motion.li>
               ))}
@@ -185,18 +193,16 @@ export default function Navbar() {
                   onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
                 />
                 <button
-                  className={styles.navbarStartTrialButton}
+                  className={styles.navbarGetStartedButton}
                   onClick={() => handleNavigation("/install")}
                 >
-                  Try Free
+                  Get Started
                 </button>
               </motion.div>
             </motion.ul>
           )}
         </AnimatePresence>
 
-        <AvatarMenu />
-        <ThemeToggle />
       </div>
     </nav>
   );

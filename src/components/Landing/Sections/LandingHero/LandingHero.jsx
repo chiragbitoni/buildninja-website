@@ -7,7 +7,7 @@ import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
 import { siteConfig } from "@/config/site";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import s from "./LandingHero.module.css";
 
 export default function LandingHero() {
@@ -86,8 +86,14 @@ export default function LandingHero() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const submitStart = Date.now();
-        if (!form.phone || form.phone.trim().length < 6) {
-            alert("Please enter a valid phone number");
+        // Validate Indian Phone Number (Must start with +91 and have 10 digits after that, starting with 6-9)
+        const phoneDigits = form.phone.replace(/\D/g, "");
+        const isIndian = form.phone.startsWith("+91");
+        const numberPart = phoneDigits.slice(2); // remove 91
+        const isValidIndian = isIndian && /^[6-9]\d{9}$/.test(numberPart);
+
+        if (!isValidIndian) {
+            alert("Please enter a valid 10-digit Indian phone number starting with +91");
             return;
         }
         if (!captchaToken) {
@@ -150,6 +156,9 @@ export default function LandingHero() {
         return () => el.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
+    const searchParams = useSearchParams();
+    const isFormFirst = searchParams.get("form") === "first";
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -164,26 +173,29 @@ export default function LandingHero() {
     };
 
     return (
-        <section className={s.section}>
+        <section className={`${s.section} ${isFormFirst ? s.formFirst : ""}`}>
             <div ref={orb1} className={s.orb1} />
             <div ref={orb2} className={s.orb2} />
             <div className={s.grid} />
 
             <div className={s.container}>
                 {/* LEFT CONTENT */}
-                <motion.div 
+                <motion.div
                     className={s.left}
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <motion.div 
+                    <motion.div
                         className={s.badge}
                         variants={itemVariants}
                         onClick={() => { router.push("/install"); }}
+                        data-cursor-grow
                     >
-                        BUILDNINJA {siteConfig.version.toUpperCase()} NOW AVAILABLE
+                        <span className={s.badgeDot} />
+                        <span className={s.badgeFull}>{siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features</span>
+                        <span className={s.badgeMobile}>{siteConfig.version} is Live </span>
                     </motion.div>
 
                     <motion.h2 className={s.title} variants={itemVariants}>
@@ -198,12 +210,12 @@ export default function LandingHero() {
 
                     <div className={s.stats}>
                         {[
-                            { label: "Agents", value: "Unlimited" },
-                            { label: "Free Builds", value: "3 Concurrent" },
-                            { label: "Unlimited Scale", value: "$199/mo" }
+                            { label: "Build Agents", value: "Unlimited" },
+                            { label: "Concurrent Builds", value: "Unlimited" },
+                            { label: "Growth Edition", value: "Enterprise Scale" }
                         ].map((stat, i) => (
-                            <motion.div 
-                                className={s.statCard} 
+                            <motion.div
+                                className={s.statCard}
                                 key={i}
                                 variants={itemVariants}
                             >
@@ -215,8 +227,8 @@ export default function LandingHero() {
                 </motion.div>
 
                 {/* RIGHT FORM */}
-                <motion.div 
-                    className={s.right} 
+                <motion.div
+                    className={s.right}
                     ref={formRef}
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -233,21 +245,21 @@ export default function LandingHero() {
                             <div className={s.formRow}>
                                 <label className={s.formLabel}>
                                     <div>First Name<span className={s.required}>*</span></div>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         className={s.input}
-                                        placeholder="Name" 
-                                        required 
-                                        value={form.name} 
-                                        onChange={handleChange} 
-                                        name="name" 
+                                        placeholder="Name"
+                                        required
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        name="name"
                                     />
                                 </label>
                                 <label className={s.formLabel}>
                                     <div>Phone Number<span className={s.required}>*</span></div>
                                     <div className={s.phoneWrap}>
                                         <PhoneInput
-                                            defaultCountry="us"
+                                            defaultCountry="in"
                                             value={form.phone}
                                             onChange={(phone) => setForm({ ...form, phone })}
                                         />
@@ -286,7 +298,7 @@ export default function LandingHero() {
                             <div className={s.formRow}>
                                 <label className={s.formLabel}>
                                     <div>Team Size<span className={s.required}>*</span></div>
-                                    <select 
+                                    <select
                                         className={s.select}
                                         name="teamSize"
                                         value={form.teamSize}
@@ -304,17 +316,19 @@ export default function LandingHero() {
                                 </label>
                             </div>
 
-                            <div className={s.captcha}>
-                                <ReCAPTCHA
-                                    theme="dark"
-                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                    onChange={(token) => {
-                                        setCaptchaToken(token);
-                                        posthog.capture("marketing_captcha_verified", {
-                                            page: "landing-page",
-                                        });
-                                    }}
-                                />
+                            <div className="captcha-container">
+                                <div className="captcha-inner">
+                                    <ReCAPTCHA
+                                        theme="dark"
+                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                        onChange={(token) => {
+                                            setCaptchaToken(token);
+                                            posthog.capture("marketing_captcha_verified", {
+                                                page: "landing-page",
+                                            });
+                                        }}
+                                    />
+                                </div>
                             </div>
 
                             <button

@@ -11,18 +11,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const infoCards = [
-  {
-    title: "Sandbox Limitations",
-    icon: faShieldHalved,
-    text: "The Dojo is designed for exploration. Please note the following environmental constraints:",
-    bullets: [
-      "Environment resets every 6 hours",
-      "Build duration limit: 5 minutes",
-      "Shared resource pool (parallel builds)",
-      "Internet access restricted to Git providers"
-    ],
-    tall: true
-  },
+
   {
     title: "Template Projects",
     icon: faCube,
@@ -31,12 +20,12 @@ const infoCards = [
   {
     title: "Auto-Authentication",
     icon: faFingerprint,
-    text: "No login required. Your Dojo session is automatically authenticated using a temporary sandbox identity that expires when the environment resets."
+    text: "No login required. Your Dojo session is automatically authenticated using a Grapehub Account."
   },
   {
     title: "Periodic Persistence",
     icon: faRotate,
-    text: "Any configurations or scripts you create will be available for the duration of your session but will be permanently cleared during the next 6-hour reset cycle."
+    text: "Any configurations or scripts you create will be available until the next 6-hour reset cycle."
   }
 ];
 

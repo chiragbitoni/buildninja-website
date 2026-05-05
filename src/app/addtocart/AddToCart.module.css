@@ -33,13 +33,18 @@
   height: 800px;
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 60%);
-  opacity: 0.3;
+  opacity: 0.2;
   filter: blur(100px);
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
   pointer-events: none;
+}
+
+:global([data-theme='light']) .ambientOrb {
+  opacity: 0.15;
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
 }
 
 /* Content Container */
@@ -112,12 +117,11 @@
 /* Glassmorphism Cards */
 .glassCard {
   position: relative;
-  background: linear-gradient(145deg, rgba(49, 49, 49, 0.4) 0%, rgba(30, 30, 30, 0.8) 100%);
+  background: var(--color-bg-panel);
   border: 1px solid var(--color-border-strong);
-  border-top: 1px solid rgba(255, 255, 255, 0.15); /* glossy top */
   border-radius: var(--radius-xl);
   padding: 1rem;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-xl);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   display: flex;
@@ -126,12 +130,17 @@
   overflow: hidden;
 }
 
+:global([data-theme='dark']) .glassCard {
+  background: linear-gradient(145deg, rgba(49, 49, 49, 0.4) 0%, rgba(30, 30, 30, 0.8) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* glossy top only in dark */
+}
+
 .glassCard::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 100%;
-  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 0%), rgba(255,255,255,0.03), transparent 40%);
+  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 0%), rgba(var(--text-rgb), 0.03), transparent 40%);
   pointer-events: none;
   z-index: 0;
 }
@@ -232,8 +241,13 @@
 
 /* Right Panel - Checkout */
 .checkoutPanel {
-  background: linear-gradient(180deg, var(--color-bg-surface) 0%, rgba(45, 45, 45, 0.9) 100%);
+  background: var(--color-bg-surface);
   border: 1px solid var(--color-primary-border);
+  box-shadow: 0 16px 60px var(--color-primary-subtle);
+}
+
+:global([data-theme='dark']) .checkoutPanel {
+  background: linear-gradient(180deg, var(--color-bg-surface) 0%, rgba(45, 45, 45, 0.9) 100%);
   box-shadow: 0 16px 60px var(--color-primary-subtle),
               inset 0 1px 0 rgba(255, 65, 114, 0.2);
 }
@@ -301,7 +315,7 @@
 }
 
 .billingCard {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--text-rgb), 0.03);
   border: 1px solid var(--color-border-medium);
   border-radius: var(--radius-md);
   padding: 0.4rem 0.5rem;
@@ -313,7 +327,7 @@
 }
 
 .billingCard:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(var(--text-rgb), 0.06);
   border-color: var(--color-border-strong);
   transform: scale(1.02) translateY(-2px);
 }

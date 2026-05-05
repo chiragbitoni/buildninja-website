@@ -5,7 +5,7 @@ export const heroSectionText = {
   title2: "That Just Works Out of the Box",
   subtitle:
     "Growing teams waste time on complex CI/CD tools and per-seat pricing",
-  subtitle2: "Start free up to 3 agents • $199/month unlimited as you scale",
+  subtitle2: "Start free up to 3 build slots • Enterprise scale as you grow",
   subtitle3: "Deploy in minutes. Ship features, not infrastructure.",
   primaryButton: "Get started",
   secondaryButton: "Watch 3-min demo",
@@ -51,7 +51,7 @@ export const thirdSectionText = {
   card1Title: "Pull and Run",
   card1Step: "STEP 1",
   card1command: "docker pull buildninja/buildninja ",
-  card1Requirements: "Requirements: Mongo DB",
+  card1Requirements: "Requirements: MongoDB",
   card1Text: "Deploy in minutes, not weeks of complex setup.",
   card2Title: "Connect Your Code",
   card2Step: "STEP 2",
@@ -61,11 +61,11 @@ export const thirdSectionText = {
   card3Text: "Set up builds, triggers, and notifications - no complexity",
   card4Title: "Deploy and Scale",
   card4Step: "STEP 4",
-  card4Text: "Ship confidently with $199/month unlimited users.",
+  card4Text: "Ship confidently with enterprise-grade orchestration.",
 };
 export const fourthSectionText = {
   title1: "Powerful Features,",
-  title2: "Without the Maintenance Burden",
+  title2: "Without Maintenance Burden",
   subtitle: "All the capabilities you need, none of the plugin chaos.",
   featuresCard: [
     {
@@ -79,7 +79,7 @@ export const fourthSectionText = {
         },
         {
           title: "See exactly what happened",
-          desc: "See exactly what happened – View detailed execution logs",
+          desc: "View detailed execution logs",
         },
         {
           title: "Spot problems before they escalate",
@@ -238,47 +238,7 @@ export const fourthSectionText = {
     },
   ],
 };
-export const fifthSectionText = {
-  title: "We Understand Your CI/CD Pain",
-  subTitle:
-    "We understand how frustrating it is when CI/CD tools break right before critical releases. ",
-  subTitle2: "We believe deploying code shouldn't require a PhD in DevOps. ",
-  subTitle3:
-    "We know how expensive per-seat licensing gets as your team grows. ",
-  subTitle4:
-    "We've seen how cloud vendor lock-in limits your infrastructure choices.",
-  subHeading1: "Built by ",
-  subHeading2: "India",
-  cards: [
-    {
-      icon: paths.icons.twentyFivePlus,
-      text: "25+ years into developer tools (GrapeCity)",
-    },
 
-    {
-      icon: paths.icons.customerStars,
-      boldText: "Trusted partner to global enterprises ",
-      text: "Delivering software excellence worldwide ",
-    },
-    {
-      icon: paths.icons.singleBinary,
-      boldText: "Self-contained deployment <br/>",
-      text: "No plugin dependency chaos",
-    },
-    {
-      icon: paths.icons.predictablePricing,
-      boldText: "Predictable pricing <br/>",
-      text: "$199/month unlimited users, not per-seat",
-    },
-    {
-      icon: paths.icons.infrastructure,
-      boldText: "Your infrastructure <br/>",
-      text: "Complete control without vendor lock-in",
-    },
-  ],
-  secondTitle: "Business Hours Support",
-  thirdTitle: "Expert support from actual engineers, not chatbots.",
-};
 
 export const sixthSectionText = {
   title: "Don't Let Your CI/CD Tool Become Your Biggest Bottleneck",
@@ -326,7 +286,7 @@ export const sixthSectionText = {
 export const seventhSectionText = {
   title: "Ship Features, Not Pipeline Fixes",
   subTitle:
-    "Become productive teams shipping features instead of fixing pipelines.",
+    "Become a productive team shipping features instead of fixing pipelines.",
   subTitle2:
     "Deploy with confidence in critical moments. Budget predictably without per-seat growth taxation.",
   subTitle3:
@@ -340,8 +300,8 @@ export const seventhSectionText = {
     description: "Setup Time",
   },
   card3: {
-    title: "$199/mo",
-    description: "Unlimited Scale",
+    title: "Unlimited",
+    description: "Enterprise Scale",
   },
   card4: {
     title: "Self-Hosted",
@@ -369,19 +329,4 @@ export const eighthSectionText = {
       "Ship features confidently, multiple times daily. No YAML headaches. No DevOps PhD required. Just reliable deployments so you can build software customers love.",
   },
 };
-export const ninthSectionText = {
-  title: "Stop Fighting Your CI/CD Tool. Start Shipping Code.",
-  subtitle:
-    "Built by the GrapeCity India team with 25 years of enterprise deployment experience.",
-  subtitle2: "Get your CI/CD build process running in under 5 minutes.",
-  subtitle3: "Free for 3 agents, $199/month unlimited as you scale.",
-  primaryButton: "Try BuildNinja Free",
-  secondaryButton: "See the 3-Minute Demo",
-  secondTitle: "Risk-Free Guarantee",
-  list: [
-    "30-day free trial License, no credit card required",
-    "Cancel anytime, keep full control of your setup",
-    "Deploy in minutes with Docker and test on your infrastructure",
-    "Direct support from our engineering team",
-  ],
-};
+

@@ -21,25 +21,29 @@ export default function FeatureHighlights() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
       >
-        <div className={styles.cardIcon}>
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="18" y1="20" x2="18" y2="10" />
-            <line x1="12" y1="20" x2="12" y2="4" />
-            <line x1="6" y1="20" x2="6" y2="14" />
-          </svg>
+        {/* Row 1: Icon and Heading */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '32px' }}>
+          <div className={styles.cardIcon} style={{ margin: 0 }}>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </div>
+          <h2 className={styles.cardTitle} style={{ margin: 0 }}>
+            Real-time Visibility &amp; High-Density Dashboards
+          </h2>
         </div>
 
-        <div className={styles.twoColWide}>
+        {/* Row 2: Content and Image */}
+        <div className={styles.twoColWide} style={{ alignItems: 'flex-start' }}>
           <div>
-            <h2 className={styles.cardTitle}>
-              Real-time Visibility &amp; High-Density Dashboards
-            </h2>
             <p className={styles.cardDesc}>
               Visualizing CI/CD performance at scale requires more than charts.
               Monitor every log line, step status, and infrastructure health
-              metric in a single, unified command center — updated every 10 seconds.
+              metric in a single, unified command center - updated every 10 seconds.
             </p>
-            <div className={styles.statsRow}>
+            <div className={styles.statsRow} style={{ marginBottom: 0 }}>
               <div className={styles.stat}>
                 <span className={styles.statValue}>100%</span>
                 <span className={styles.statLabel}>Uptime Reliability</span>
@@ -50,20 +54,12 @@ export default function FeatureHighlights() {
               </div>
               <div className={styles.stat}>
                 <span className={styles.statValue}>∞</span>
-                <span className={styles.statLabel}>Build History</span>
+                <span className={styles.statLabel}>Perpetual Build History</span>
               </div>
             </div>
-
-            <Link href="/dojo" className={styles.demoButton}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-              Explore Living Dashboard
-            </Link>
-            <span className={styles.demoInfo}>Zero Installation Required • Instant Access</span>
           </div>
 
-          <div className={styles.screenshotWrap}>
+          <div className={styles.screenshotWrap} style={{ marginTop: 0 }}>
             <Image
               src="/resources/dashboard-overview-dark.png"
               alt="BuildNinja Dashboard Overview"
@@ -80,6 +76,17 @@ export default function FeatureHighlights() {
             />
           </div>
         </div>
+
+        {/* Row 3: Button and Text */}
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '16px', marginTop: '32px' }}>
+          <Link href="/dojo" className={styles.demoButton} style={{ margin: 0 }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            Explore Live Dashboard
+          </Link>
+          <span className={styles.demoInfo} style={{ margin: 0 }}>No Installation Required • Instant Access</span>
+        </div>
       </motion.div>
 
       {/* ── Card 2: Enterprise Security ── */}
@@ -91,25 +98,27 @@ export default function FeatureHighlights() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
       >
-        <div className={styles.cardIcon}>
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          </svg>
+        {/* Row 1: Icon and Heading */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '32px' }}>
+          <div className={styles.cardIcon} style={{ margin: 0 }}>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h2 className={styles.cardTitle} style={{ margin: 0 }}>
+            Enterprise-Grade Security
+          </h2>
         </div>
 
         <div className={styles.twoCol}>
           <div>
-            <h2 className={styles.cardTitle}>
-              Enterprise-Grade Security
-            </h2>
             <p className={styles.cardDesc}>
-              Hardened RBAC, end-to-end encryption for all secrets, SSO with SAML 2.0
-              and LDAP, and automated security scanning. Your build infrastructure is
+              Hardened RBAC, end-to-end encryption for all secrets, SSO,
+              and automated security scanning. Your build infrastructure is
               protected at every layer.
             </p>
             <div className={styles.pillRow}>
               <span className={styles.pill}>AES-256</span>
-              <span className={styles.pill}>SAML 2.0</span>
               <span className={styles.pill}>RBAC</span>
               <span className={styles.pill}>Zero-trust</span>
             </div>
@@ -143,11 +152,17 @@ export default function FeatureHighlights() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
       >
-        <div className={styles.cardIcon}>
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="4 17 10 11 4 5" />
-            <line x1="12" y1="19" x2="20" y2="19" />
-          </svg>
+        {/* Row 1: Icon and Heading */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '32px' }}>
+          <div className={styles.cardIcon} style={{ margin: 0 }}>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="4 17 10 11 4 5" />
+              <line x1="12" y1="19" x2="20" y2="19" />
+            </svg>
+          </div>
+          <h2 className={styles.cardTitle} style={{ margin: 0 }}>
+            Native Git &amp; SSH Integration
+          </h2>
         </div>
 
         <div className={styles.twoColReverse}>
@@ -169,9 +184,6 @@ export default function FeatureHighlights() {
           </div>
 
           <div>
-            <h2 className={styles.cardTitle}>
-              Native Git &amp; SSH Integration
-            </h2>
             <p className={styles.cardDesc}>
               Seamless integration with GitHub, GitLab, and Bitbucket. Deploy via
               SSH tunnels with zero-trust architecture. Script and SSH runners give
@@ -211,3 +223,4 @@ export default function FeatureHighlights() {
     </section>
   );
 }
+

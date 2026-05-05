@@ -48,7 +48,7 @@ export default function DojoHero() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <Link href={process.env.NEXT_PUBLIC_DOJO_URL} className={styles.enterBtn}>
-            Enter Dojo
+            Try Dojo Sandbox
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>

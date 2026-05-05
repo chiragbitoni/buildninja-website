@@ -1,12 +1,15 @@
 .section {
   background: var(--color-bg);
-  padding: 40px 24px 100px;
+  padding: 40px 0 100px;
   font-family: var(--font-display);
   position: relative;
 }
 
 .inner {
-  max-width: 900px;
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -63,7 +66,7 @@
 
 .categoryTitle {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.02em;
@@ -100,7 +103,7 @@
 }
 
 .faqQuestion {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-text);
   display: flex;
@@ -125,7 +128,7 @@
 }
 
 .faqAnswer {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
   margin: 16px 0 0;
@@ -175,11 +178,32 @@
   padding: 0 4px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .section {
-    padding: 20px 16px 80px;
+    padding: 20px 0 80px;
+  }
+  .inner {
+    padding: 0 16px;
   }
   .categoryTitle {
     font-size: 1.4rem;
+  }
+  .searchInput {
+    padding: 14px 16px 14px 44px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+  .searchIcon {
+    left: 14px;
+  }
+  .faqCard {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  .faqQuestion {
+    font-size: 1.05rem;
+  }
+  .faqAnswer {
+    font-size: 0.95rem;
   }
 }

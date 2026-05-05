@@ -6,27 +6,23 @@ import styles from "./FAQSection.module.css";
 const faqs = [
   {
     q: "Is BuildNinja cloud-based or self-hosted?",
-    a: "Self-hosted only. BuildNinja runs on your own infrastructure — Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
+    a: "Self-hosted only. BuildNinja runs on your own infrastructure - Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
   },
   {
-    q: "Is the Solo Edition really free forever?",
-    a: "Yes. No credit card, no time limit, no expiry. Up to 10 users with 3 concurrent builds and unlimited agents — forever. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
+    q: "Is the Growth Edition really free?",
+    a: "Yes. No credit card, no time limit, no expiry. Built for scale with unlimited users, unlimited projects, and unlimited builders. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
   },
   {
     q: "What happens to my price when my team grows?",
-    a: "Nothing changes. Add 10 or 100 developers — the Shogun Edition is still a flat $199/month. You only pay for infrastructure capacity, never per developer."
+    a: "Nothing. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
   },
   {
     q: "Do I need a DevOps engineer to set up BuildNinja?",
-    a: "No. Most engineering leads set up BuildNinja in under 30 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables."
+    a: "No. Engineer may set up BuildNinja in under 30 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables."
   },
   {
     q: "Does it support macOS / Apple Silicon?",
     a: "Yes. Full support for Apple Silicon (M-series) on both Server and Agent. You can run builds natively on your Mac infrastructure."
-  },
-  {
-    q: "Can I migrate from Jenkins, GitLab CI, or Azure DevOps?",
-    a: "Yes. Free migration assistance for your first 3 projects is included with annual Shogun subscriptions — covering pipeline conversion guidance and initial configuration."
   }
 ];
 
@@ -95,3 +91,4 @@ export default function FAQSection() {
     </section>
   );
 }
+

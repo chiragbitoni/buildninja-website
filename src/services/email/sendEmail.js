@@ -1,6 +1,17 @@
 import { supportConfirmationTemplate } from "@/templates/email/supportTemplate";
 import { leadTemplate } from "@/templates/email/leadTemplate";
 import { partnershipTemplate } from "@/templates/email/partnershipTemplate";
+import { getCookie, setCookie } from "@/lib/tracking/cookies";
+const getSessionId = () => {
+  let sessionId = getCookie("gh_session_id");
+
+  if (!sessionId) {
+    sessionId = crypto.randomUUID();
+    setCookie("gh_session_id", sessionId);
+  }
+
+  return sessionId;
+}
 const parseEmailList = (value) =>
   String(value || "")
     .split(",")
@@ -15,6 +26,30 @@ const escapeHtml = (val) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 
+const LEAD_API = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/leads`;
+export const normalizePhone = (phone, defaultCountryCode = "+91") => {
+  if (!phone) return null;
+
+  let cleaned = phone.replace(/[^\d+]/g, "");
+
+  // already international
+  if (cleaned.startsWith("+")) return cleaned;
+
+  // remove leading zero
+  if (cleaned.startsWith("0")) {
+    cleaned = cleaned.substring(1);
+  }
+
+  return defaultCountryCode + cleaned;
+};
+export const normalizeTeamSize = (value) => {
+  if (!value) return null;
+
+  return value
+    .replace("–", "-")   // fix en dash
+    .replace("+", "plus") // optional (DB safe)
+    .trim();
+};
 export async function sendSupportEmail({ name, email, subject, message }) {
   const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
   const htmlContent = supportConfirmationTemplate({
@@ -25,7 +60,13 @@ export async function sendSupportEmail({ name, email, subject, message }) {
   const supportCCs = parseEmailList(
     process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID,
   );
+  const sessionId = getSessionId();
 
+  let utm = {};
+  try {
+    const raw = getCookie("gh_utm");
+    if (raw) utm = JSON.parse(raw);
+  } catch { }
   const toCCs = [
     ...supportCCs,
     ...(email ? [email.trim()] : []), // add user email to CC
@@ -38,11 +79,31 @@ export async function sendSupportEmail({ name, email, subject, message }) {
     subject,
     htmlContent,
   };
-
+  try {
+    const leadRes = await fetch(LEAD_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        formType: "support",
+        sessionId,
+        formData: {
+          name,
+          subject,
+          message,
+        },
+        utm,
+      }),
+    });
+  } catch (e) {
+    console.warn("Lead tracking failed", e);
+  }
   try {
     const res = await fetch(API_URL, {
       method: "POST",
-      // credentials: "include", // send HttpOnly cookie
+      credentials: "include", // send HttpOnly cookie
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -80,22 +141,29 @@ export async function sendLeadEmail({
   email,
   company,
   teamSize,
-  utmSource,
-  utmMedium,
-  utmCampaign,
 }) {
   try {
     const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email`;
 
     const safeName = escapeHtml(name);
+    const normalizedPhone = normalizePhone(phone);
     const safePhone = escapeHtml(phone);
     const safeEmail = escapeHtml(email);
     const safeCompany = escapeHtml(company);
     const safeTeamSize = escapeHtml(teamSize);
-    const safeUtmSource = escapeHtml(utmSource || "unknown");
-    const safeUtmMedium = escapeHtml(utmMedium || "unknown");
-    const safeUtmCampaign = escapeHtml(utmCampaign || "unknown");
+    const sessionId = getSessionId();
+    const toEmails = parseEmailList(process.env.NEXT_PUBLIC_SALES_EMAIL_ID);
 
+    const toCCs = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID);
+
+    let utm = {};
+    try {
+      const raw = getCookie("gh_utm");
+      if (raw) utm = JSON.parse(raw);
+    } catch { }
+    const safeUtmSource = escapeHtml(utm.source || "unknown");
+    const safeUtmMedium = escapeHtml(utm.medium || "unknown");
+    const safeUtmCampaign = escapeHtml(utm.campaign || "unknown");
     const htmlContent = leadTemplate({
       name: safeName,
       email: safeEmail,
@@ -107,10 +175,6 @@ export async function sendLeadEmail({
       utmCampaign: safeUtmCampaign,
     });
 
-    const toEmails = parseEmailList(process.env.NEXT_PUBLIC_SALES_EMAIL_ID);
-
-    const toCCs = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID);
-
     const payload = {
       toEmails,
       toCCs,
@@ -118,9 +182,31 @@ export async function sendLeadEmail({
       htmlContent,
     };
 
+    try {
+      const leadRes = await fetch(LEAD_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          formType: "landing",
+          sessionId,
+          formData: {
+            name,
+            phone: normalizedPhone,
+            company,
+            teamSize: normalizeTeamSize(teamSize),
+          },
+          utm
+        }),
+      })
+    } catch (e) {
+      console.warn("Lead tracking failed", e);
+    }
     const res = await fetch(API_URL, {
       method: "POST",
-      // credentials: "include",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -150,23 +236,27 @@ export async function sendPartnershipEmail({
   email,
   phone,
   partnershipType,
-  utmSource,
-  utmMedium,
-  utmCampaign,
-  utmContent,
 }) {
   try {
+    const sessionId = getSessionId();
+
+    let utm = {};
+    try {
+      const raw = getCookie("gh_utm");
+      if (raw) utm = JSON.parse(raw);
+    } catch { }
     const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email`;
 
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
+    const normalizedPhone = normalizePhone(phone);
+
     const safePhone = escapeHtml(phone);
     const safePartnershipType = escapeHtml(partnershipType);
-    const safeUtmSource = escapeHtml(utmSource || "unknown");
-    const safeUtmMedium = escapeHtml(utmMedium || "unknown");
-    const safeUtmCampaign = escapeHtml(utmCampaign || "unknown");
-    const safeUtmContent = escapeHtml(utmContent || "unknown");
-    
+    const safeUtmSource = escapeHtml(utm.source || "unknown");
+    const safeUtmMedium = escapeHtml(utm.medium || "unknown");
+    const safeUtmCampaign = escapeHtml(utm.campaign || "unknown");
+    const safeUtmContent = escapeHtml(utm.content || "unknown");
     const htmlContent = partnershipTemplate({
       name: safeName,
       email: safeEmail,
@@ -187,7 +277,27 @@ export async function sendPartnershipEmail({
       subject: `New Partnership Inquiry – ${safePartnershipType}`,
       htmlContent,
     };
-
+    try {
+      const leadRes = await fetch(LEAD_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          formType: "partners",
+          sessionId,
+          formData: {
+            name,
+            phone: normalizedPhone,
+            partnershipType,
+          },
+          utm,
+        }),
+      });
+    } catch (e) {
+      console.warn("Lead tracking failed", e);
+    }
     const res = await fetch(API_URL, {
       method: "POST",
       headers: {
@@ -195,6 +305,7 @@ export async function sendPartnershipEmail({
         Accept: "application/json",
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_EMAIL_API_ACCESS_TOKEN}`,
       },
+      credentials: "include",
       body: JSON.stringify(payload),
     });
 

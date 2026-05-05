@@ -1,6 +1,6 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
-import { setRegion, setBilling, setMultiYear } from "@/redux/slice/pricingSlice";
+
 import s from "./PricingHero.module.css";
 import { useRouter } from "next/navigation";
 import {
@@ -49,7 +49,6 @@ const cardVariants = {
 
 export default function PricingHero() {
   const dispatch = useDispatch();
-  const { region, billing, multiYear } = useSelector((s) => s.pricing);
   const [plans, setPlans] = useState([]);
   const [loadingPlans, setLoadingPlans] = useState(true);
   const router = useRouter();
@@ -82,6 +81,7 @@ export default function PricingHero() {
   }
 
   useEffect(() => {
+    /*
     const stored = localStorage.getItem("plans");
     if (!stored) { fetchAndStorePlans(); return; }
     try {
@@ -89,251 +89,126 @@ export default function PricingHero() {
       if (!Array.isArray(parsed) || parsed.length === 0) { fetchAndStorePlans(); return; }
       setPlans(parsed);
     } catch { fetchAndStorePlans(); }
+    */
     setLoadingPlans(false);
   }, []);
 
-  const getCurrency = () => (region === "india" ? "INR" : "USD");
+  const getCurrency = () => "USD";
   const getBillingCycle = () => {
-    if (billing === "monthly") return "Monthly";
-    if (multiYear === "annual") return "Yearly";
-    if (multiYear === "twoYear") return "2-Years";
-    if (multiYear === "threeYear") return "3-Years";
+    return "Monthly";
   };
 
   const findSelectedPlan = (planName) => {
     if (!plans.length) return null;
     const currency = getCurrency();
-    const billingCycle = getBillingCycle();
     const normalized = planName.trim().toLowerCase();
+    // For Growth Edition, we always want the Monthly version as it's the base
     return plans.find(
       (p) =>
         p.name.trim().toLowerCase() === normalized &&
         p.currency === currency &&
-        p.billingCycle === billingCycle
+        p.billingCycle === "Monthly"
     );
   };
 
   const handleBuyNow = (planName) => {
+    if (planName === "Solo" || planName === "Growth" || planName === "Free") {
+      window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=${process.env.NEXT_PUBLIC_GROWTH_EDITION_GUID}`;
+      return;
+    }
     const selectedPlan = findSelectedPlan(planName);
     if (!selectedPlan) { console.error(`Plan not found: ${planName}`); return; }
     router.push(`/addtocart?planid=${selectedPlan.id}`);
   };
 
-  const secondSectionText =
-    region === "india" ? secondSectionTextIndia : secondSectionTextGlobal;
+  const secondSectionText = secondSectionTextGlobal;
 
-  /* ─────────────── SOLO / FREE CARD ─────────────── */
-  const FreeCard = () => {
-    const card = secondSectionText.monthCards.soloEditionCard;
+  /* ──────────────── Shared Pricing Card ──────────────── */
+  const PricingCard = ({ card, type }) => {
+    const isEnterprise = type === "enterprise";
+
     return (
-      <div className={`${s.card} ${s.cardSolo}`}>
-        <div className={s.cardHead}>
-          <div className={s.cardTitleText}>
-            <span className={`${s.cardHighlight} ${s.cardHighlightSolo}`}>
-              {card.highlight}
-            </span>
-            <h3 className={s.cardEdition}>{card.edition}</h3>
+      <div className={`${s.card} ${isEnterprise ? s.cardVertical + " " + s.cardEnterprise : s.cardSolo}`}>
+        {/* Left Pane: Branding & Pricing (For Solo) / Main Content (For Enterprise) */}
+        <div className={isEnterprise ? s.cardContent : s.cardLeft}>
+          <div className={s.cardHead}>
+            <div className={s.cardTitleText}>
+              <span className={`${s.cardHighlight} ${isEnterprise ? s.cardHighlightFeatured : s.cardHighlightSolo}`}>
+                <span className={s.blinkDot} />
+                {card.highlight}
+              </span>
+              <h3 className={s.cardEdition}>{card.title || card.edition}</h3>
+            </div>
+            <div className={s.cardIcon}>
+              {isEnterprise ? <EnterpriseIcon /> : <ShogunIcon color="var(--color-info)" />}
+            </div>
           </div>
-          <div className={s.cardIcon}>
-            <FreeIcon />
+
+          <div className={s.priceBlock}>
+            {card.price && <p className={s.cardPrice}>{card.price}</p>}
+            <p className={s.cardDesc}>{isEnterprise ? card.description : card.priceDescription}</p>
+            {card.ideal && <p className={s.cardIdeal}>{card.ideal}</p>}
           </div>
-        </div>
-        <p className={s.cardPrice}>{card.price}</p>
-        {card.priceDescription && (
-          <p className={s.cardDesc}>{card.priceDescription}</p>
-        )}
-        {card.ideal && <p className={s.cardIdeal}>{card.ideal}</p>}
 
-        {/* Concurrent upsell sub-card */}
-        {card.listCard && (
-          <div className={s.subCard}>
-            <p className={s.subCardTitle}>{card.listCard.title}</p>
-            {card.listCard.list.map((item, i) => (
-              <div key={i} className={s.subCardItem}>
-                <span>{item.price}</span>
-                <span className={s.subCardSaving}>{item.saving}</span>
-              </div>
-            ))}
-          </div>
-        )}
+          {!isEnterprise && card.listCard && (
+            <div className={s.subCard}>
+              <p className={s.subCardTitle}>{card.listCard.title}</p>
+              {card.listCard.list.map((item, i) => (
+                <div key={i} className={s.subCardItem}>
+                  <span>{item.price}</span>
+                  <span className={s.subCardSaving}>{item.saving}</span>
+                </div>
+              ))}
+            </div>
+          )}
 
-        {/* Feature list */}
-        {card.list1 && (
-          <ul className={s.featureList}>
-            {card.list1.map((item, i) => (
-              <li key={i} className={s.featureItem}>
-                <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
-                <span dangerouslySetInnerHTML={{ __html: item }} />
-              </li>
-            ))}
-          </ul>
-        )}
-        {card.list2 && (
-          <ul className={s.featureList}>
-            {card.list2.map((item, i) => (
-              <li key={i} className={s.featureItem}>
-                <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
-                <span dangerouslySetInnerHTML={{ __html: item }} />
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <div className={s.cardFooter}>
-          <button
-            className={`${s.btnPrimary} ${s.btnSolo}`}
-            disabled={loadingPlans}
-            onClick={() => handleBuyNow("Solo")}
-          >
-            {loadingPlans ? <Spinner /> : (
-              <>
-                {card.buttonText}
+          <div className={s.cardFooter}>
+            <button className={`${s.btnPrimary} ${isEnterprise ? s.btnEnterprise : s.btnSolo}`} disabled={!isEnterprise && loadingPlans} onClick={() => isEnterprise ? router.push("/support") : handleBuyNow("Solo")}>
+              {loadingPlans ? <Spinner /> : (
+                <>
+                  {card.buttonText}
+                  <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+                </>
+              )}
+            </button>
+            {card.buttonText2 && (
+              <button className={s.btnSecondary} onClick={() => router.push(isEnterprise ? "/support" : "/install")}>
+                {card.buttonText2}
                 <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-              </>
+              </button>
             )}
-          </button>
-          <button
-            className={s.btnSecondary}
-            onClick={() => router.push("/install")}
-          >
-            {card.buttonText2}
-            <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-          </button>
-          {card.ctaText && <p className={s.cardCtaNote}>{card.ctaText}</p>}
+            {card.ctaText && <p className={s.cardCtaNote}>{card.ctaText}</p>}
+            {isEnterprise && card.responseTimeText && <p className={s.cardCtaNote}>{card.responseTimeText}</p>}
+          </div>
         </div>
-      </div>
-    );
-  };
 
-  /* ──────────────── SHOGUN (MONTHLY) CARD ──────────────── */
-  const ShogunMonthlyCard = () => {
-    const card = secondSectionText.monthCards.shogunEditionCard;
-    const listItems = secondSectionText.annualCard?.list || [];
-    return (
-      <div className={`${s.card} ${s.cardFeatured}`}>
-        <div className={s.cardHead}>
-          <div className={s.cardTitleText}>
-            <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>
-              {card.highlight}
-            </span>
-            <h3 className={s.cardEdition}>{card.edition}</h3>
+        {/* Right Pane: Features (Only for Solo) */}
+        {!isEnterprise && (
+          <div className={s.cardRight}>
+            <div className={s.featuresPane}>
+              <p className={s.paneHeading}>Inclusions:</p>
+              <ul className={s.featureList}>
+                {(card.list1 || []).map((item, i) => (
+                  <li key={`l1-${i}`} className={s.featureItem}>
+                    <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
+                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
+                {(card.list2 || []).map((item, i) => (
+                  <li key={`l2-${i}`} className={s.featureItem}>
+                    <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
+                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className={s.cardIcon}>
-            <ShogunIcon />
-          </div>
-        </div>
-        <p className={s.cardPrice}>{card.price}</p>
-        {secondSectionText.annualCard?.ideal && (
-          <p className={s.cardIdeal}>{secondSectionText.annualCard.ideal}</p>
         )}
-
-        <ul className={s.featureList}>
-          {listItems.map((item, i) => (
-            <li key={i} className={s.featureItem}>
-              <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
-              <span dangerouslySetInnerHTML={{ __html: item }} />
-            </li>
-          ))}
-        </ul>
-
-        <div className={s.cardFooter}>
-          <button
-            className={s.btnPrimary}
-            disabled={loadingPlans}
-            onClick={() => handleBuyNow("Shogun")}
-          >
-            {loadingPlans ? <Spinner /> : (
-              <>Buy Now <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" /></>
-            )}
-          </button>
-          <button className={s.btnSecondary} onClick={() => router.push("/install")}>
-            {card.buttonText}
-            <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-          </button>
-          <p className={s.cardCtaNote}>{card.ctaText}</p>
-        </div>
       </div>
     );
   };
 
-  /* ──────────────── SHOGUN ANNUAL / MULTI-YEAR ──────────────── */
-  const ShogunAnnualCard = ({ type }) => {
-    const plan =
-      type === "annual"
-        ? secondSectionText.annualCard
-        : secondSectionText.multiYearCards?.[type];
-    if (!plan) return null;
 
-    return (
-      <div className={`${s.card} ${s.cardFeatured}`}>
-        <div className={s.cardHead}>
-          <div className={s.cardTitleText}>
-            <span className={`${s.cardHighlight} ${s.cardHighlightFeatured}`}>{plan.highlight}</span>
-            <h3 className={s.cardEdition}>{plan.edition}</h3>
-          </div>
-          <div className={s.cardIcon}>
-            <ShogunIcon />
-          </div>
-        </div>
-        <p className={s.cardPrice}>{plan.price}</p>
-        {plan.description && <p className={s.cardDesc}>{plan.description}</p>}
-        {plan.savings && <span className={s.cardSavings}>{plan.savings}</span>}
-        {plan.ideal && <p className={s.cardIdeal}>{plan.ideal}</p>}
-
-        <ul className={s.featureList}>
-          {secondSectionText.annualCard.list.map((item, i) => (
-            <li key={i} className={s.featureItem}>
-              <Image width={16} height={16} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
-              <span dangerouslySetInnerHTML={{ __html: item }} />
-            </li>
-          ))}
-        </ul>
-
-        <div className={s.cardFooter}>
-          <button
-            className={s.btnPrimary}
-            disabled={loadingPlans}
-            onClick={() => handleBuyNow("Shogun")}
-          >
-            {loadingPlans ? <Spinner /> : (
-              <>Buy Now <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" /></>
-            )}
-          </button>
-          <button className={s.btnSecondary} onClick={() => router.push("/install")}>
-            {plan.buttonText}
-            <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-          </button>
-          <p className={s.cardCtaNote}>{plan.ctaText}</p>
-        </div>
-      </div>
-    );
-  };
-
-  /* ──────────────── Enterprise Card ──────────────── */
-  const EnterpriseCard = () => (
-    <div className={s.enterpriseCard}>
-      <div className={s.enterpriseHead}>
-        <div className={s.enterpriseIcon}>
-          <EnterpriseIcon />
-        </div>
-        <span className={s.enterpriseBadge}>{secondSectionEnterpriseCardText.highlight}</span>
-      </div>
-      <h4 className={s.enterpriseTitle}>{secondSectionEnterpriseCardText.title}</h4>
-      <p className={s.enterpriseDesc}>{secondSectionEnterpriseCardText.description}</p>
-      <div className={s.enterpriseBtnRow}>
-        <button className={`${s.btnPrimary} ${s.btnEnterprise}`} onClick={() => router.push("/support")}>
-          {secondSectionEnterpriseCardText.buttonText}
-        </button>
-        <p className={s.enterpriseResponseNote}>{secondSectionEnterpriseCardText.responseTimeText}</p>
-      </div>
-    </div>
-  );
-
-  const multiYearOptions = [
-    { key: "annual", label: "Annual", saving: region === "india" ? "Save 33%" : "Save 33%" },
-    { key: "twoYear", label: "2-Year Upfront", saving: region === "india" ? "Save 48%" : "Save 48%" },
-    { key: "threeYear", label: "3-Year Upfront", saving: region === "india" ? "Save 56%" : "Save 55%" },
-  ];
 
   return (
     <section className={s.section}>
@@ -363,70 +238,13 @@ export default function PricingHero() {
 
         <motion.p className={s.description} variants={itemVariants}>
           CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free with unlimited
-          agents (up to 3 concurrent builds).{" "}
-          Need more? Scale to unlimited concurrency — still no per-seat pricing, ever.
+          users, unlimited projects, and unlimited concurrent builds. Scale your orchestration
+          as much as your infrastructure allows.
         </motion.p>
 
-        {/* ─── Toggle Controls ─── */}
-        <motion.div className={s.controls} variants={itemVariants}>
-          <div className={s.toggleRow}>
-            <div className={s.toggleGroup}>
-              <button
-                id="pricing-toggle-worldwide"
-                className={`${s.toggleBtn} ${region === "worldwide" ? s.toggleBtnActive : ""}`}
-                onClick={() => dispatch(setRegion("worldwide"))}
-              >
-                $ Worldwide
-              </button>
-              <button
-                id="pricing-toggle-india"
-                className={`${s.toggleBtn} ${region === "india" ? s.toggleBtnActive : ""}`}
-                onClick={() => dispatch(setRegion("india"))}
-              >
-                ₹ India
-              </button>
-            </div>
-
-            <div className={s.toggleGroup}>
-              <button
-                id="pricing-toggle-monthly"
-                className={`${s.toggleBtn} ${billing === "monthly" ? s.toggleBtnActive : ""}`}
-                onClick={() => dispatch(setBilling("monthly"))}
-              >
-                Monthly
-              </button>
-              <button
-                id="pricing-toggle-annual"
-                className={`${s.toggleBtn} ${billing === "annual" ? s.toggleBtnActive : ""}`}
-                onClick={() => dispatch(setBilling("annual"))}
-              >
-                Annual
-              </button>
-            </div>
-          </div>
-
-          {billing === "annual" && (
-            <>
-              <p className={s.multiYearLabel}>Select to view multi-year options for additional savings</p>
-              <div className={s.multiYearGrid}>
-                {multiYearOptions.map((opt) => (
-                  <button
-                    key={opt.key}
-                    id={`pricing-multiyear-${opt.key}`}
-                    className={`${s.yearBtn} ${multiYear === opt.key ? s.yearBtnActive : ""}`}
-                    onClick={() => dispatch(setMultiYear(opt.key))}
-                  >
-                    {opt.label}
-                    <span className={s.savingsPill}>{opt.saving}</span>
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
-        </motion.div>
 
         <motion.p className={s.footerNote} variants={itemVariants}>
-          All features identical across regions. Prices displayed based on your selection.
+          Start your CI/CD journey with our <span className={s.growthText}>Growth Edition</span> or contact us for Enterprise orchestration.
         </motion.p>
       </motion.div>
 
@@ -439,30 +257,14 @@ export default function PricingHero() {
         variants={containerVariants}
       >
         <div className={s.cardsGrid}>
-          {billing === "annual" ? (
-            <>
-              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
-                <ShogunAnnualCard type={multiYear} />
-              </motion.div>
-              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
-                <FreeCard />
-              </motion.div>
-            </>
-          ) : (
-            <>
-              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
-                <ShogunMonthlyCard />
-              </motion.div>
-              <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
-                <FreeCard />
-              </motion.div>
-            </>
-          )}
-        </div>
+          <motion.div className={s.cardMotionWrapper} variants={cardVariants}>
+            <PricingCard card={secondSectionText.monthCards.soloEditionCard} type="free" />
+          </motion.div>
 
-        <motion.div variants={cardVariants} className={s.cardMotionWrapper} style={{ marginTop: '36px' }}>
-          <EnterpriseCard />
-        </motion.div>
+          <motion.div variants={cardVariants} className={s.cardMotionWrapper}>
+            <PricingCard card={secondSectionEnterpriseCardText} type="enterprise" />
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );

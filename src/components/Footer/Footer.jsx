@@ -11,7 +11,7 @@ const footerText = {
         description:
             "CI/CD that just works.",
         description2: " Deploy with confidence, scale with ease.",
-        copyright: "© " + today.getFullYear().toString() + " GrapeCity India Pvt Ltd. All Rights Reserved.",
+        copyright: "© " + today.getFullYear().toString() + " BuildNinja. All Rights Reserved.",
     },
     sections: [
         {
@@ -78,26 +78,18 @@ export default function Footer() {
                     <div className={styles.footerBrand}>
                         <div className={styles.footerLogoContainer}>
                             <div className={styles.footerLogo}>
-                                <Image width={0} height={0} src="/resources/logo_buildninja.svg" alt="BuildNinja Logo" className={styles.footerBuildNinjaLogo} />
+                                <Image width={178} height={48} src="/resources/logo_buildninja.svg" alt="BuildNinja Logo" className={styles.footerBuildNinjaLogo} />
                             </div>
                             {/* <h3 className={styles.footerTitle}>{footerText.company.name}</h3> */}
                         </div>
                         <p className={styles.footerDesc}>{footerText.company.description}<br />{footerText.company.description2}</p>
-                        <a 
-                          href="https://www.grapecity.in/" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className={styles.footerGCLogoLink}
-                          data-cursor-grow
-                        >
-                          <Image width={0} height={0} src="/resources/GrapecityWhite.png" alt="GrapeCity white logo on transparent background" className={styles.footerGCLogo} />
-                        </a>
+                        
                         <div className={styles.footerGCSocial}>
-                            <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.linkedin.com/showcase/build-ninja/" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.youtube.com/@BuildNinja_CICD" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github logo icon for social media link" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.linkedin.com/showcase/build-ninja/" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.instagram.com/GrapeHubindia/" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.facebook.com/GrapeHubIndiaPvtLtd" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.youtube.com/@BuildNinja_CICD" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
                         </div>
                         <p className={styles.footerCopy}>{footerText.company.copyright}</p>
                     </div>

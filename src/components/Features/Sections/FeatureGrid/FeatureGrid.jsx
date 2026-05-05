@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import { openVideo } from '@/redux/slice/videoPopupSlice';
@@ -72,7 +72,7 @@ const features = [
     ),
     title: 'Real-time Visibility & High-Density Dashboards',
     description:
-      'Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
+      'Monitor builds live - filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.',
     tags: ['Live Logs', 'Auto-refresh', 'Build Charts'],
     videoId: 'Pjl3muKtmhE',
     videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
@@ -102,8 +102,8 @@ const features = [
     ),
     title: 'Enterprise Security & RBAC',
     description:
-      'Role-based access control (RBAC) at project and system level. Native support for LDAP and granular permissions management. AES-256 encryption for all secrets.',
-    tags: ['RBAC', 'LDAP Integration', 'AES-256'],
+      'Role-based access control (RBAC) at project and system level with granular permissions management and AES-256 encryption for all secrets.',
+    tags: ['RBAC', 'Access Control', 'AES-256'],
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
   },
@@ -116,8 +116,8 @@ const features = [
     ),
     title: 'Single Sign-On (SSO) Support',
     description:
-      'Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Slack, and custom OIDC providers.',
-    tags: ['OAuth 2.0', 'OIDC', 'SAML 2.0', 'Enterprise Ready'],
+      'Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Bitbucket, and custom OIDC providers.',
+    tags: ['OAuth 2.0', 'OIDC', 'Enterprise Ready'],
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access',
   },
@@ -129,7 +129,7 @@ const features = [
     ),
     title: 'Pipeline Runners',
     description:
-      'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at config or project level.',
+      'Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at configuration level or project level.',
     tags: ['SSH Runner', 'Script Runner', 'Build Params'],
     videoId: 'IOd9CmP6G4c',
     videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners',
@@ -143,8 +143,8 @@ const features = [
     ),
     title: 'Notifications & Alerts',
     description:
-      'Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.',
-    tags: ['SMTP', 'Custom Templates', 'Slack-ready'],
+      'Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.',
+    tags: ['SMTP', 'Custom Templates'],
     videoId: '2OuADSNMEoc',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings',
   },
@@ -195,7 +195,7 @@ export default function FeatureGrid() {
           One platform, zero compromises
         </h2>
         <p className={styles.sectionSubtitle}>
-          Every capability your engineering team needs — packaged into a
+          Every capability your engineering team needs - packaged into a
           cohesive, self-hosted CI/CD platform.
         </p>
       </motion.div>
@@ -255,3 +255,4 @@ export default function FeatureGrid() {
     </section>
   );
 }
+

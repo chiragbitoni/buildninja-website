@@ -14,6 +14,7 @@ import "./animations.css";
 import Cursor from "@/components/ui/Cursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import DynamicFavicon from "@/components/DynamicFavicon";
+import TrackingInitializer from "@/components/TrackingInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,8 +36,8 @@ const schema = {
       logo: "https://buildninja.grapehub.io/resources/BuildNinja.png",
       sameAs: [
         "https://www.linkedin.com/showcase/build-ninja/",
-        "https://www.instagram.com/grapecityindia/",
-        "https://www.facebook.com/GrapeCityIndiaPvtLtd",
+        "https://www.instagram.com/GrapeHubindia/",
+        "https://www.facebook.com/GrapeHubIndiaPvtLtd",
         "https://www.youtube.com/@BuildNinja_CICD",
       ],
     },
@@ -54,7 +55,7 @@ const schema = {
 export const metadata = {
   title: {
     default:
-      "Build Ninja Self-Hosted CI/CD DevOps Made Simple |Grapecity India",
+      "Build Ninja Self-Hosted CI/CD DevOps Made Simple |GrapeHub India",
     template: "%s | BuildNinja",
   },
   description:
@@ -92,6 +93,9 @@ export const metadata = {
       "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
     images: ["https://buildninja.grapehub.io/resources/BuildNinja.png"],
   },
+  verification: {
+    google: "TXxGesv5AA45OhGIYqDoLArrrfIWPRPpi8LV5hYQAK8",  
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -121,7 +125,8 @@ export default function RootLayout({ children }) {
               <DynamicFavicon />
               <ClientAuthProvider>
                 <Navbar />
-                <main className="pt-16">
+                <TrackingInitializer />
+                <main>
                   <YouTubePopup />
                   {children}
                 </main>

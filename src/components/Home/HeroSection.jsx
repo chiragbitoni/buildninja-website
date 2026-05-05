@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import BuildNinjaDemo from "./BuildNinjaDemo";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./HeroSection.module.css";
@@ -7,6 +7,43 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
+
+const Typewriter = ({ texts }) => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(100);
+
+  useEffect(() => {
+    const handleType = () => {
+      const fullText = texts[currentTextIndex];
+      setCurrentText(
+        isDeleting
+          ? fullText.substring(0, currentText.length - 1)
+          : fullText.substring(0, currentText.length + 1)
+      );
+
+      setSpeed(isDeleting ? 40 : 100);
+
+      if (!isDeleting && currentText === fullText) {
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && currentText === "") {
+        setIsDeleting(false);
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      }
+    };
+
+    const timer = setTimeout(handleType, speed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, speed, texts, currentTextIndex]);
+
+  return (
+    <span className={styles.typewriter}>
+      {currentText}
+      <span className={styles.cursor}>|</span>
+    </span>
+  );
+};
 
 export default function HeroSection() {
   const orb1 = useRef(null);
@@ -39,21 +76,28 @@ export default function HeroSection() {
       {/* Bottom fade */}
       <div className={styles.bottomFade} />
 
-      {/* Hero copy — each child has its own animation class */}
+      {/* Hero copy - each child has its own animation class */}
       <div className={styles.copy}>
-
         <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
           <span className={styles.badgeDot} />
-          {siteConfig.version} is Live, with AI build analysis.
+          {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
         </div>
 
         <h1 className={styles.heading}>
-          Powerful Features,<br />
-          <span className={styles.headingGradient}> Without the Maintenance Burden.</span>
+          Your Self Hosted CI/CD Tool<br />
+          <span className={styles.headingGradient}>
+            <Typewriter texts={[
+              "No Plugin Chaos",
+              "Low Maintenance",
+              "Real-Time Build Updates",
+              "Zero Complexity",
+              "Quick & Easy Setup"
+            ]} />
+          </span>
         </h1>
 
         <p className={styles.subtext}>
-          All the capabilities you need, none of the plugin chaos. Self-hosted CI/CD that deploys in minutes — no per-seat pricing, no DevOps PhD required.
+          Deploy in minutes, build on your own servers, and scale with your team. No seat limits, no vendor lock-in, no cloud dependency.
         </p>
 
         <div className={styles.ctas}>
@@ -63,7 +107,7 @@ export default function HeroSection() {
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Try BuildNinja Free
+            Get Started
           </a>
           <a className={styles.ctaSecondary} onClick={() => { dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works", link: "https://buildninja.grapehub.io/docs/category/getting-started" })) }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -85,11 +129,12 @@ export default function HeroSection() {
         <div className={styles.dashBorderBox}>
           {/* Interactive Demo Hint */}
           <div className={styles.interactiveHint}>
-            <span className={styles.hintDot} />
+            {/* <span className={styles.hintDot} /> */}
             <svg className={styles.hintCursor} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 3l14 9-7 1-4 7-3-17z" />
             </svg>
-            Interactive Demo — Click Around to Explore
+            <span className={styles.hintTextFull}>Interactive Demo - Click Around to Explore</span>
+            <span className={styles.hintTextMobile}>Interactive Demo - Click to Explore</span>
           </div>
 
           {/* SVG border that draws itself */}
@@ -105,14 +150,14 @@ export default function HeroSection() {
               </linearGradient>
             </defs>
 
-            {/* Top edge — draws rightward from top-left, fades to transparent halfway */}
+            {/* Top edge - draws rightward from top-left, fades to transparent halfway */}
             <line
               className={styles.borderTop}
               x1="1" y1="1"
               x2="580" y2="1"
             />
 
-            {/* Left edge — draws downward from top-left, fades to transparent halfway */}
+            {/* Left edge - draws downward from top-left, fades to transparent halfway */}
             <line
               className={styles.borderLeft}
               x1="1" y1="1"
@@ -133,3 +178,4 @@ export default function HeroSection() {
     </section>
   );
 }
+

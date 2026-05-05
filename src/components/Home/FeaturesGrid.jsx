@@ -51,7 +51,7 @@ const features = [
       </svg>
     ),
     title: "Real-time Visibility & High-Density Dashboards",
-    desc: "Monitor builds live — filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.",
+    desc: "Monitor builds live - filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.",
     videoId: 'Pjl3muKtmhE',
     videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
     dojoLink: '/dojo'
@@ -77,7 +77,7 @@ const features = [
       </svg>
     ),
     title: "Enterprise Security & RBAC",
-    desc: "Role-based access control (RBAC) at project and system level. Native support for LDAP and granular permissions management. AES-256 encryption for all secrets.",
+    desc: "Role-based access control (RBAC) at project and system level with granular permissions management and AES-256 encryption for all secrets.",
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
   },
@@ -89,7 +89,7 @@ const features = [
       </svg>
     ),
     title: "Single Sign-On (SSO) Support",
-    desc: "Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Slack, and custom OIDC providers.",
+    desc: "Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Bitbucket, and custom OIDC providers.",
     videoId: 'C-Ln6bbGo2E',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
   },
@@ -100,7 +100,7 @@ const features = [
       </svg>
     ),
     title: "Pipeline Runners",
-    desc: "Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at config or project level.",
+    desc: "Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at configuration level or project level.",
     videoId: 'IOd9CmP6G4c',
     videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners'
   },
@@ -112,7 +112,7 @@ const features = [
       </svg>
     ),
     title: "Notifications & Alerts",
-    desc: "Configurable alerts for build results, agent disconnections, approvals, and more. Full SMTP + customisable email templates for every event.",
+    desc: "Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.",
     videoId: '2OuADSNMEoc',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings'
   },
@@ -243,3 +243,4 @@ export default function FeaturesGrid() {
     </section>
   );
 }
+

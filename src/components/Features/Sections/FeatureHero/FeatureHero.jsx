@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
@@ -42,17 +42,16 @@ export default function FeatureHero() {
             style={{ cursor: 'pointer' }}
           >
             <span className={styles.badgeDot} />
-            {siteConfig.version} is Live, with AI build analysis.
+            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
           </motion.div>
 
           <motion.h1 className={styles.heading} variants={itemVariants}>
-            Engineered for{' '}
-            <span className={styles.headingAccent}>Absolute</span>{' '}
-            Control.
+            Powerful Features,{' '}
+            <span className={styles.headingAccent}>Without Maintenance Burden.</span>{' '}
           </motion.h1>
 
           <motion.p className={styles.subtitle} variants={itemVariants}>
-            BuildNinja isn't just a CI/CD tool — it's a high-performance
+            BuildNinja isn't just a CI/CD tool - it's a high-performance
             engine built for teams that demand speed, reliability, and
             full visibility over every build.
           </motion.p>
@@ -87,3 +86,4 @@ export default function FeatureHero() {
     </>
   );
 }
+

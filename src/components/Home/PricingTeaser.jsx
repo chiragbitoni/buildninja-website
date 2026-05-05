@@ -1,65 +1,33 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+import { paths } from "../../../public/static/paths";
 import styles from "./PricingTeaser.module.css";
-import { FreeIcon, ShogunIcon } from "@/components/Pricing/Sections/PricingHero/PricingIcons";
-
-import { useSelector, useDispatch } from "react-redux";
-import { setBilling } from "@/redux/slice/pricingSlice";
+import { ShogunIcon } from "@/components/Pricing/Sections/PricingHero/PricingIcons";
 
 export default function PricingTeaser() {
-  const dispatch = useDispatch();
-  const region = useSelector((state) => state.pricing?.region || "worldwide");
-  const billing = useSelector((state) => state.pricing?.billing || "monthly");
-
-  const isIndia = region === "india";
-  const isAnnual = billing === "annual";
-
-  const shogunPrice = isIndia
-    ? isAnnual ? "₹11,666" : "₹17,499"
-    : isAnnual ? "$133" : "$199";
-
-  const shogunPeriod = isAnnual ? "/mo (billed annually)" : "/month";
-
-  const pricingPlans = [
-    {
-      name: "Shogun Edition",
-      price: shogunPrice,
-      period: shogunPeriod,
-      desc: "Enterprise scale without per-seat cost anxiety.",
-      features: [
-        "Unlimited users & projects",
-        "Unlimited concurrent builds",
-        "Unlimited build agents",
-        "Perpetual build history",
-        "Priority business support"
-      ],
-      button: "Start Trial License",
-      link: "/addtocart?planid=ebf94a66-a86f-4ea5-a5cc-f401d81ead21",
-      note: "No credit card required",
-      highlight: true,
-      label: "MOST POPULAR",
-    },
-    {
-      name: "Solo Edition",
-      price: "Free Forever",
-      period: "",
-      desc: "Perfect for individuals and small growing teams.",
-      features: [
-        "Up to 10 users",
-        "3 concurrent builds",
-        "Unlimited build agents",
-        "30-day build history",
-        "1 SSO provider choice"
-      ],
-      button: "Get Your Free Key",
-      link: "/install",
-      note: "No strings attached",
-      highlight: false,
-      label: "START WITH CONFIDENCE",
-      isSolo: true,
-    }
-  ];
+  const plan = {
+    name: "Growth Edition",
+    price: "Free",
+    period: "No credit card required",
+    desc: "The core BuildNinja orchestration platform is free for engineering teams of all sizes.",
+    features: [
+      "Unlimited users - No per-seat costs",
+      "Unlimited projects & configurations",
+      "Unlimited concurrent builds",
+      "Unlimited build agents",
+      "Perpetual build history",
+      "Email support",
+      "All 5 SSO providers (MS, GitHub, etc)",
+      "Docker & K8s support",
+    ],
+    button: "Get Started",
+    link: "/install",
+    note: "No hidden fees. No strings attached.",
+    label: "FREE",
+    isSolo: true,
+  };
 
   return (
     <section className={styles.section} id="pricing">
@@ -71,98 +39,43 @@ export default function PricingTeaser() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className={styles.badge}>Predictable Pricing</div>
+          <div className={styles.badge}>Transparent Orchestration</div>
           <h2 className={styles.title}>
-            Self-Hosted CI/CD. <span className={styles.gradient}>No Per-Seat Surprises.</span>
+            Self-Hosted CI/CD. <span className={styles.gradient}>For Free.</span>
           </h2>
           <p className={styles.subtitle}>
-            CI/CD costs shouldn't spiral as your team grows. Pay for scale, not headcount.
+            Experience high-performance build orchestration without the per-seat tax.
+            Download the Growth Edition and scale your automation today.
           </p>
         </motion.div>
 
-        <motion.div 
-          className={styles.toggleWrapper}
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-          <div className={styles.toggleGroup}>
-            <button
-              className={`${styles.toggleBtn} ${!isAnnual ? styles.activeToggle : ""}`}
-              onClick={() => dispatch(setBilling("monthly"))}
-            >
-              Monthly
-            </button>
-            <button
-              className={`${styles.toggleBtn} ${isAnnual ? styles.activeToggle : ""}`}
-              onClick={() => dispatch(setBilling("annual"))}
-            >
-              Annual <span className={styles.saveBadge}>Save 33%</span>
-            </button>
-          </div>
-        </motion.div>
-
-        <div className={styles.grid}>
-          {pricingPlans.map((plan, i) => (
-            <motion.div
-              key={plan.name}
-              layout
-               className={`
-                ${styles.card} 
-                ${plan.highlight ? styles.highlightCard : ""} 
-                ${plan.isSolo ? styles.soloCard : ""}
-              `}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
-            >
-              <div className={styles.cardHeader}>
-                <div className={styles.cardTop}>
-                  {plan.label && (
-                    <span className={`${styles.cardHighlight} ${plan.isSolo ? styles.cardHighlightSolo : styles.cardHighlightFeatured}`}>
-                      {plan.label}
-                    </span>
-                  )}
-                  <div className={`${styles.planIcon} ${plan.highlight ? styles.planIconFeatured : styles.planIconSolo}`}>
-                    {plan.highlight ? <ShogunIcon /> : <FreeIcon />}
-                  </div>
+        <div className={styles.centerGrid}>
+          <motion.div
+            layout
+            className={`${styles.card} ${styles.horizontalCard}`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className={styles.cardLeft}>
+              <div className={styles.cardHead}>
+                <div className={styles.cardTitleText}>
+                  <span className={`${styles.cardHighlight} ${styles.cardHighlightSolo}`}>
+                    <span className={styles.blinkDot} />
+                    {plan.label}
+                  </span>
+                  <motion.h3 layout className={styles.planName}>{plan.name}</motion.h3>
                 </div>
-                <motion.h3 layout className={styles.planName}>{plan.name}</motion.h3>
-                <motion.div layout className={styles.priceRow}>
-                  <AnimatePresence mode="popLayout">
-                    <motion.span
-                      key={plan.price}
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className={styles.price}
-                    >
-                      {plan.price}
-                    </motion.span>
-                  </AnimatePresence>
-                  
-                  {plan.period && (
-                    <AnimatePresence mode="popLayout">
-                      <motion.span
-                        key={plan.period}
-                        initial={{ opacity: 0, x: -5 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 5 }}
-                        transition={{ duration: 0.2 }}
-                        className={styles.period}
-                      >
-                        {plan.period}
-                      </motion.span>
-                    </AnimatePresence>
-                  )}
-                </motion.div>
-                <motion.p layout className={styles.planDesc}>{plan.desc}</motion.p>
+                <div className={`${styles.planIcon} ${styles.planIconSolo}`}>
+                  <ShogunIcon color="var(--color-info)" />
+                </div>
               </div>
+              <p className={styles.planDesc}>{plan.desc}</p>
+            </div>
 
-              <motion.ul layout className={styles.featureList}>
+            <div className={styles.cardRight}>
+              <ul className={styles.featureList}>
                 {plan.features.map((feat, idx) => (
                   <li key={idx} className={styles.featureItem}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.checkIcon}>
@@ -171,25 +84,20 @@ export default function PricingTeaser() {
                     {feat}
                   </li>
                 ))}
-              </motion.ul>
+              </ul>
 
-              <motion.div layout className={styles.cardFooter}>
-                <Link 
-                  href={plan.link} 
-                  className={`
-                    ${styles.btnBase} 
-                    ${plan.highlight ? styles.primaryBtn : (plan.isSolo ? styles.primaryBtnSolo : styles.secondaryBtn)}
-                  `}
-                >
+              <div className={styles.cardFooter}>
+                <Link href={plan.link} className={`${styles.btnBase} ${styles.primaryBtnSolo}`}>
                   {plan.button}
+                  <Image width={16} height={16} className={styles.btnIcon} src={paths.icons.navigation} alt="→" />
                 </Link>
-                {plan.note && <p className={styles.guarantee}>{plan.note}</p>}
-              </motion.div>
-            </motion.div>
-          ))}
+                <p className={styles.guarantee}>{plan.note}</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className={styles.fullPricingLink}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -197,7 +105,7 @@ export default function PricingTeaser() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <Link href="/pricing" className={styles.compareBtn}>
-            Compare All Plans & Features
+            Scale to Enterprise? View Full Breakdown
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>

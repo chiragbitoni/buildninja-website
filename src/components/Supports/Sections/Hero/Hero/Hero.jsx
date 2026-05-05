@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import styles from "./Hero.module.css";
+import Link from "next/link";
 import { supportHeroText } from "../../../../../../public/static/supportPageText";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendSupportEmail } from "@/services/email/sendEmail";
@@ -94,7 +95,9 @@ export default function SupportHero() {
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
                 <div className={styles.badge}>
-                    <span className={styles.badgeDot}></span> Dedicated Support: Engineering Online
+                    <span className={styles.badgeDot}></span>
+                    <span className={styles.badgeFull}>Dedicated Support: Engineering Online</span>
+                    <span className={styles.badgeMobile}>Engineering Support</span>
                 </div>
                 <h1 className={styles.heading}>
                     {t.heading.split("Build").map((part, index) => (
@@ -103,7 +106,7 @@ export default function SupportHero() {
                             {index === 0 && <span className={styles.accent}>Build</span>}
                         </span>
                     ))}
-                </h1>L
+                </h1>
                 <p className={styles.subheading}>{t.subheading}</p>
             </motion.div>
 
@@ -202,13 +205,15 @@ export default function SupportHero() {
                                         </motion.div>
                                     </div>
 
-                                    <motion.div className={styles.captchaWrapper} variants={fadeUp} initial="hidden" animate="visible" custom={5}>
-                                        <ReCAPTCHA
-                                            key={currentTheme}
-                                            theme={currentTheme || "dark"}
-                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            onChange={(token) => setCaptchaToken(token)}
-                                        />
+                                    <motion.div className="captcha-container" variants={fadeUp} initial="hidden" animate="visible" custom={5}>
+                                        <div className="captcha-inner">
+                                            <ReCAPTCHA
+                                                key={currentTheme}
+                                                theme={currentTheme || "dark"}
+                                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                                onChange={(token) => setCaptchaToken(token)}
+                                            />
+                                        </div>
                                     </motion.div>
 
                                     <motion.button
@@ -245,34 +250,39 @@ export default function SupportHero() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        onClick={() => window.location.href = "mailto:hello@grapehub.io"}
+                        style={{ cursor: 'pointer' }}
                     >
                         <div className={styles.iconBox}>
                             <FontAwesomeIcon icon={faEnvelope} />
                         </div>
                         <span className={styles.cardLabel}>Direct Access</span>
                         <h4 className={styles.cardValue}>hello@grapehub.io</h4>
-                        <a href="mailto:hello@grapehub.io" className={styles.cardAction}>
+                        <a href="mailto:hello@grapehub.io" className={styles.cardAction} onClick={(e) => e.stopPropagation()}>
                             Send an email <FontAwesomeIcon icon={faArrowRight} />
                         </a>
                     </motion.div>
 
-                    <motion.div
-                        className={styles.infoCard}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                        <div className={styles.iconBox}>
-                            <FontAwesomeIcon icon={faFileLines} />
-                        </div>
-                        <span className={styles.cardLabel}>Documentation</span>
-                        <h4 className={styles.cardValue}>Self-Service Guides</h4>
-                        <a href="https://docs.buildninja.com" className={styles.cardAction}>
-                            Browse Academy <FontAwesomeIcon icon={faArrowRight} />
-                        </a>
-                    </motion.div>
+                    <Link href="/docs" className={styles.infoCardLink}>
+                        <motion.div
+                            className={styles.infoCard}
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className={styles.iconBox}>
+                                <FontAwesomeIcon icon={faFileLines} />
+                            </div>
+                            <span className={styles.cardLabel}>Documentation</span>
+                            <h4 className={styles.cardValue}>Self-Service Guides</h4>
+                            <div className={styles.cardAction}>
+                                Browse Docs <FontAwesomeIcon icon={faArrowRight} />
+                            </div>
+                        </motion.div>
+                    </Link>
 
-                    <motion.div
+                    {/* <motion.div
                         className={styles.infoCard}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -286,7 +296,7 @@ export default function SupportHero() {
                         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                             Priority support for Enterprise customers is available 24/7/365.
                         </p>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </div>
         </section>

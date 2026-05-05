@@ -34,12 +34,7 @@ export default function PricingCta() {
   const router = useRouter();
   const { region } = useSelector((state) => state.pricing);
 
-  const features = text.features.map((f) => {
-    if (f.includes("17,499") || f.includes("$199")) {
-      return region === "india" ? "₹17,499/month unlimited" : "$199/month unlimited";
-    }
-    return f;
-  });
+  const features = text.features;
 
   return (
     <section className={s.section}>
@@ -62,30 +57,32 @@ export default function PricingCta() {
         />
 
         <motion.div className={s.cardsGrid} variants={containerVariants}>
-          {/* Shogun */}
-          <motion.div className={`${s.card} ${s.cardFeatured}`} variants={itemVariants}>
-            <h3 className={s.cardTitle}>{text.shogun.title}</h3>
-            <p className={s.cardDesc}>{text.shogun.description}</p>
+          {/* Free */}
+          <motion.div className={`${s.card} ${s.cardSolo}`} variants={itemVariants}>
+            <h3 className={s.cardTitle}>{text.free.title}</h3>
+            <p className={s.cardDesc}>{text.free.description}</p>
             <button
-              id="pricing-cta-shogun"
-              className={s.btnPrimary}
-              onClick={() => router.push("/install")}
+              id="pricing-cta-free"
+              className={s.btnInfo}
+              onClick={() => {
+                window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=${process.env.NEXT_PUBLIC_GROWTH_EDITION_GUID}`;
+              }}
             >
-              {text.shogun.buttonText}
+              {text.free.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
             </button>
           </motion.div>
 
-          {/* Solo */}
-          <motion.div className={s.card} variants={itemVariants}>
-            <h3 className={s.cardTitle}>{text.solo.title}</h3>
-            <p className={s.cardDesc}>{text.solo.description}</p>
+          {/* Enterprise */}
+          <motion.div className={`${s.card} ${s.cardEnterprise}`} variants={itemVariants}>
+            <h3 className={s.cardTitle}>{text.enterprise.title}</h3>
+            <p className={s.cardDesc}>{text.enterprise.description}</p>
             <button
-              id="pricing-cta-solo"
-              className={s.btnSecondary}
-              onClick={() => router.push("/install")}
+              id="pricing-cta-enterprise"
+              className={s.btnEnterprise}
+              onClick={() => router.push("/support")}
             >
-              {text.solo.buttonText}
+              {text.enterprise.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
             </button>
           </motion.div>

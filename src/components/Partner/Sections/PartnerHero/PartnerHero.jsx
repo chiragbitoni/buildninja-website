@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import s from "./PartnerHero.module.css";
 import { useEffect, useRef } from "react";
 import NetworkBackground from "@/components/ui/NetworkBackground";
@@ -81,10 +81,6 @@ export default function PartnerHero() {
                 <FontAwesomeIcon icon={faBolt} className={s.badgeIcon} />
                 Fast, parallel execution
             </span>
-            <span className={s.badge}>
-                <FontAwesomeIcon icon={faTag} className={s.badgeIcon} />
-                Predictable pricing
-            </span>
         </motion.div>
         
         <motion.h1 className={s.heading} variants={itemVariants}>
@@ -92,7 +88,7 @@ export default function PartnerHero() {
         </motion.h1>
         
         <motion.p className={s.description} variants={itemVariants}>
-          Ship secure CI/CD inside your customer's infrastructure. BuildNinja is a high-performance self-hosted CI/CD platform built for teams that need speed, security, and control—across cloud, on-prem, or air-gapped environments.
+          Ship secure CI/CD inside your customer's infrastructure. BuildNinja is a high-performance self-hosted CI/CD platform built for teams that need speed, security, and control-across cloud, on-prem, or air-gapped environments.
         </motion.p>
 
         <motion.div className={s.btnGroup} variants={itemVariants}>
@@ -109,3 +105,4 @@ export default function PartnerHero() {
     </section>
   );
 }
+

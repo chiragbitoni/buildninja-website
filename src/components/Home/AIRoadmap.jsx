@@ -4,8 +4,8 @@ import styles from "./AIRoadmap.module.css";
 
 const features = [
   {
-    title: "AI Build Optimization",
-    desc: "Intelligent resource allocation that learns your build patterns to reduce build times by up to 70%. ML prediction models identify infrastructure bottlenecks before they slow you down.",
+    title: "Configuration Analysis",
+    desc: "Leverage integrated AI models to intelligently analyze and evaluate your build configurations for better orchestration.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
@@ -13,8 +13,8 @@ const features = [
     ),
   },
   {
-    title: "Predictive Test Selection",
-    desc: "ML-based test prioritization — automatically identifies tests affected by your specific code changes and runs only those first. Dramatically faster feedback loops.",
+    title: "Logs Analysis",
+    desc: "Intelligently analyze detailed build execution logs with AI to detect issues and present them in human-readable terms.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -23,8 +23,8 @@ const features = [
     ),
   },
   {
-    title: "Conversational Pipelines",
-    desc: "Create and edit complete build pipelines using plain English. No CI/CD syntax expertise required. Describe what you want — BuildNinja builds the configuration for you.",
+    title: "Build Prediction",
+    desc: "Utilize AI models to accurately predict the eventual success of your build processes before they complete.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -97,11 +97,12 @@ export default function AIRoadmap() {
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <p>
+          {/* <p>
             <strong>Also coming:</strong> Intelligent Error Analysis, Auto Branch Configuration, and Proactive Agent Management.
-          </p>
+          </p> */}
         </motion.div>
       </div>
     </section>
   );
 }
+

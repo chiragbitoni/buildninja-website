@@ -5,9 +5,9 @@
 }
 
 .card {
-  max-width: 1000px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 80px;
+  padding: 80px var(--container-padding);
   background: var(--color-bg-panel);
   backdrop-filter: blur(20px);
   border: 1px solid var(--color-border);
@@ -29,7 +29,7 @@
 
 .content :global(h1) {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
   font-weight: 800;
   color: var(--color-text);
@@ -38,7 +38,7 @@
 
 .content :global(h2) {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-top: 3.5rem;
   margin-bottom: 1.2rem;
   font-weight: 700;
@@ -50,7 +50,7 @@
 
 .content :global(h3) {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -68,7 +68,7 @@
 
 .content :global(p) {
   margin: 1.2rem 0;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--color-text-secondary);
 }
 

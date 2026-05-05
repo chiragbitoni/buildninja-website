@@ -56,9 +56,9 @@ const whys = [
 ];
 
 const stats = [
-  { value: "Free", label: "Up to 3 Agents", icon: faUsersSlash },
-  { value: "< 5m", label: "Setup Time", icon: faClock },
-  { value: "$199/mo", label: "Unlimited Scale", icon: faInfinity },
+  { value: "Free", label: "Unlimited Builds", icon: faInfinity },
+  { value: "Included", label: "Email Support", icon: faHeadset },
+  { value: "Unlimited", label: "Users & Projects", icon: faArrowTrendUp },
   { value: "Self-Hosted", label: "Full Control", icon: faServer }
 ];
 

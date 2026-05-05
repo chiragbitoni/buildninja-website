@@ -30,7 +30,7 @@ export default function DojoExercises() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.title} style={{ fontSize: '32px', textAlign: 'center' }}>Suggested Exercises</h2>
+        <h2 className={styles.title}>Suggested Exercises</h2>
       </motion.div>
 
       <div className={styles.tableContainer}>

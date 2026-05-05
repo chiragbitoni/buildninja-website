@@ -2,9 +2,21 @@
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
-  padding: 140px 24px 80px;
+  padding: var(--hero-pt-desktop) 0 80px;
   font-family: var(--font-display);
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--hero-pt-tablet);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-top: var(--hero-pt-mobile);
+  }
 }
 
 .orb1 {
@@ -48,7 +60,8 @@
 .inner {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 }
 
@@ -71,24 +84,27 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(32px, 8vw, 84px);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.04em;
   color: var(--color-text);
   margin-bottom: 24px;
+  padding: 0 16px;
 }
 
 .description {
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  max-width: 640px;
   margin: 0 auto;
 }
 
 @media (max-width: 480px) {
   .section {
-    padding: 100px 16px 60px;
+    padding: 100px 0 60px;
+  }
+  .inner {
+    padding: 0 16px;
   }
 }
