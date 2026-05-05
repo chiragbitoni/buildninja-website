@@ -10,6 +10,7 @@ import { fetchPlansFromAPI } from "../../services/plans/plans";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
 import { motion, AnimatePresence } from "framer-motion";
+import DojoBanner from "../Dojo/DojoBanner";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -66,6 +67,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
+      <DojoBanner />
       <div className={styles.navbarContainer}>
 
         {/* Logo */}
@@ -119,7 +121,6 @@ export default function Navbar() {
                   }}
                 >
                   {item.name}
-                  {item.name === "Dojo" && <span className={styles.navDot} />}
                 </a>
               </li>
             ))}
@@ -173,7 +174,6 @@ export default function Navbar() {
                     }}
                   >
                     {item.name}
-                    {item.name === "Dojo" && <span className={styles.navDot} />}
                   </a>
                 </motion.li>
               ))}
