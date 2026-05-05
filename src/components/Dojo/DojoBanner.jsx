@@ -4,6 +4,8 @@ import styles from "./DojoBanner.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import posthog from "posthog-js";
+import { getCookie } from "@/lib/tracking/cookies";
 
 export default function DojoBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,6 +30,37 @@ export default function DojoBanner() {
     const date = new Date();
     date.setTime(date.getTime() + (2 * 24 * 60 * 60 * 1000)); // 2 days
     document.cookie = `dojo-banner-closed=true; expires=${date.toUTCString()}; path=/`;
+  };
+
+  const handleDojoClick = () => {
+    const rawUtm = getCookie("gh_utm");
+    let utmData = {};
+    
+    if (rawUtm) {
+        try {
+            const parsed = JSON.parse(rawUtm);
+            utmData = {
+                utm_source: parsed.source || "",
+                utm_medium: parsed.medium || "",
+                utm_campaign: parsed.campaign || "",
+                utm_content: parsed.content || "",
+            };
+        } catch(e) {}
+    }
+    
+    if (!utmData.utm_source) {
+        const params = new URLSearchParams(window.location.search);
+        utmData = {
+            utm_source: params.get("utm_source") || "",
+            utm_medium: params.get("utm_medium") || "",
+            utm_campaign: params.get("utm_campaign") || "",
+            utm_content: params.get("utm_content") || "",
+        };
+    }
+
+    posthog.capture("banner_dojo_clicked", {
+        ...utmData,
+    });
   };
 
   return (
@@ -59,6 +92,7 @@ export default function DojoBanner() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className={styles.link}
+                  onClick={handleDojoClick}
                 >
                   Try Dojo
                   <svg
