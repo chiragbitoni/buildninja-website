@@ -46,7 +46,7 @@ export default function DojoBanner() {
                 <span className={styles.badge}>NEW</span>
                 <p className={styles.text}>
                   <span className={styles.textFull}>
-                    Experience the <strong>Dojo</strong> — Your instant, private playground for CI/CD automation. <span className={styles.highlight}>No installation required.</span>
+                    Experience the <strong>Dojo</strong> - Your instant, private playground for CI/CD automation. <span className={styles.highlight}>No installation required.</span>
                   </span>
                   <span className={styles.textMobile}>
                     <strong>Dojo:</strong> Instant CI/CD Sandbox
