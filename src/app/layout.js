@@ -126,7 +126,7 @@ export default function RootLayout({ children }) {
               <ClientAuthProvider>
                 <Navbar />
                 <TrackingInitializer />
-                <main className="pt-16">
+                <main>
                   <YouTubePopup />
                   {children}
                 </main>
