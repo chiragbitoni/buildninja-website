@@ -7,6 +7,9 @@ export const metadata = {
     index: false,
     follow: false,
   },
+  alternates: {
+    canonical: "https://buildninja.grapehub.io/addtocart",
+  },
 };
 
 export default function Page() {
