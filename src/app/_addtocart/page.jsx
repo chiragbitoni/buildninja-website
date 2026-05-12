@@ -1,7 +1,13 @@
-"use client";
-
 import { Suspense } from "react";
 import AddToCartContent from "./AddToCartContent";
+
+export const metadata = {
+  title: "Add to Cart | BuildNinja",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function Page() {
   return (

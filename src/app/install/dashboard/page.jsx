@@ -1,21 +1,13 @@
-"use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import InstallDashboard from "@/components/Download/Dashboard/InstallDashboard";
-import { checkAuth } from "@/services/auth/check";
-import { useSelector } from "react-redux";
+import DashboardClient from "./DashboardClient";
+
+export const metadata = {
+  title: "Dashboard | BuildNinja",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function Dashboard() {
-  const router = useRouter();
-  const { isLoggedIn } = useSelector((state) => state.auth);
-
-  useEffect(() => {
-    async function verify() {
-      const loggedIn = await checkAuth();
-      if (!loggedIn && !isLoggedIn) router.replace("/install");
-    }
-    verify();
-  }, []);
-
-  return <InstallDashboard />;
+  return <DashboardClient />;
 }
