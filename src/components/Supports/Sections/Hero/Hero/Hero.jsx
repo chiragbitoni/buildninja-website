@@ -263,7 +263,7 @@ export default function SupportHero() {
                         </a>
                     </motion.div>
 
-                    <Link href="/docs" className={styles.infoCardLink}>
+                    <Link href="/docs/overview" className={styles.infoCardLink}>
                         <motion.div
                             className={styles.infoCard}
                             initial={{ opacity: 0, x: 50 }}

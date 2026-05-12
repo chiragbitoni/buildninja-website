@@ -89,7 +89,7 @@ export default function CTASection() {
                   videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, 
                   title: "BuildNinja", 
                   ctaText: "Self Hosted CI/CD That Just Works",
-                  link: "/docs"
+                  link: "/docs/overview"
                 }));
               }}
             >

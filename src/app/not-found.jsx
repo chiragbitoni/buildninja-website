@@ -2,6 +2,10 @@ import Link from "next/link";
 import styles from "./NotFound.module.css";
 export const metadata = {
   title: "404 - Page Not Found | BuildNinja",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function NotFound() {
