@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import BuildNinjaDemo from "./BuildNinjaDemo";
+import dynamic from "next/dynamic";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./HeroSection.module.css";
 import { useRouter } from "next/navigation";
@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
 
+const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
 const Typewriter = ({ texts }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -170,7 +171,7 @@ export default function HeroSection() {
           <div className={styles.dashGlow} />
 
           {/* Actual dashboard */}
-          <div className={styles.dashInner}>
+          <div className={styles.dashInner} data-nosnippet>
             <BuildNinjaDemo />
           </div>
         </div>

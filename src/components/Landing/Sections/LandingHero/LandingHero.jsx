@@ -86,8 +86,14 @@ export default function LandingHero() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const submitStart = Date.now();
-        if (!form.phone || form.phone.trim().length < 6) {
-            alert("Please enter a valid phone number");
+        // Validate Indian Phone Number (Must start with +91 and have 10 digits after that, starting with 6-9)
+        const phoneDigits = form.phone.replace(/\D/g, "");
+        const isIndian = form.phone.startsWith("+91");
+        const numberPart = phoneDigits.slice(2); // remove 91
+        const isValidIndian = isIndian && /^[6-9]\d{9}$/.test(numberPart);
+
+        if (!isValidIndian) {
+            alert("Please enter a valid 10-digit Indian phone number starting with +91");
             return;
         }
         if (!captchaToken) {

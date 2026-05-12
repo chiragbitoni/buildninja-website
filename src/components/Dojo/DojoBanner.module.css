@@ -1,0 +1,226 @@
+.banner {
+  width: 100%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff9e7a 50%, var(--color-primary) 100%);
+  background-size: 200% 200%;
+  animation: bgPan 8s ease-in-out infinite;
+  position: relative;
+  padding: 14px 0;
+  z-index: 101;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(255, 65, 114, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@keyframes bgPan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.textMobile {
+  display: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  animation: badgePulse 2.5s infinite;
+}
+
+@keyframes badgePulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.text strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  padding: 10px 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 2px 0;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 65, 114, 0) 0%, rgba(255, 65, 114, 0.1) 50%, rgba(255, 65, 114, 0) 100%);
+  transform: skewX(-20deg);
+  animation: buttonShimmer 3s infinite ease-in-out;
+}
+
+@keyframes buttonShimmer {
+  0% { left: -100%; }
+  25% { left: 200%; }
+  100% { left: 200%; }
+}
+
+.link:hover {
+  background: #fafafa;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.icon {
+  transition: transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.link:hover .icon {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .text {
+    font-size: 14px;
+  }
+  .content {
+    gap: 16px;
+  }
+  .link {
+    padding: 8px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-right: 24px; /* Ensure close button doesn't overlap content */
+  }
+  .left {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .closeBtn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 580px) {
+  .textFull {
+    display: none;
+  }
+  .textMobile {
+    display: inline;
+  }
+  .content {
+    gap: 8px;
+  }
+  .badge {
+    display: none; /* Hide badge on very small screens to save space */
+  }
+}
+
+@media (max-width: 480px) {
+  .right {
+    gap: 12px;
+  }
+  .link {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}

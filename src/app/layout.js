@@ -14,6 +14,7 @@ import "./animations.css";
 import Cursor from "@/components/ui/Cursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import DynamicFavicon from "@/components/DynamicFavicon";
+import TrackingInitializer from "@/components/TrackingInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,6 +53,10 @@ const schema = {
   ],
 };
 export const metadata = {
+  metadataBase: new URL("https://buildninja.grapehub.io"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default:
       "Build Ninja Self-Hosted CI/CD DevOps Made Simple |GrapeHub India",
@@ -59,10 +64,6 @@ export const metadata = {
   },
   description:
     "Optimize your DevOps workflow with Build Ninja integrates with GitHub,GitLab & Bitbucket. Deploy in minutes without complexity.Jenkins Alternative Try free today",
-
-  alternates: {
-    canonical: "https://buildninja.grapehub.io/",
-  },
 
   icons: {
     icon: paths.icons.favicon,
@@ -101,11 +102,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href="https://buildninja.grapehub.io/"
-        />
         <Script
           id="schema-org"
           type="application/ld+json"
@@ -124,7 +120,8 @@ export default function RootLayout({ children }) {
               <DynamicFavicon />
               <ClientAuthProvider>
                 <Navbar />
-                <main className="pt-16">
+                <TrackingInitializer />
+                <main>
                   <YouTubePopup />
                   {children}
                 </main>
