@@ -22,6 +22,7 @@ const footerText = {
                 { label: "Install", link: "/install" },
                 { label: "Dojo", link: "/dojo" },
                 { label: "FAQ", link: "/faq" },
+                { label: "Partners", link: "/partners" }
                 // { label: "Roadmap", link: "/roadmap" },
             ],
         },
@@ -83,7 +84,7 @@ export default function Footer() {
                             {/* <h3 className={styles.footerTitle}>{footerText.company.name}</h3> */}
                         </div>
                         <p className={styles.footerDesc}>{footerText.company.description}<br />{footerText.company.description2}</p>
-                        
+
                         <div className={styles.footerGCSocial}>
                             <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.linkedin.com/showcase/build-ninja/" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.instagram.com/GrapeHubindia/" }}></Image>
