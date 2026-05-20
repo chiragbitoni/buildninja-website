@@ -8,6 +8,21 @@ export const metadata = {
   alternates: {
     canonical: "https://buildninja.grapehub.io/pricing",
   },
+  openGraph: {
+    title: "Simple & Transparent Pricing for Teams | Pricing",
+    description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
+    url: "https://buildninja.grapehub.io/pricing",
+    siteName: "BuildNinja",
+    images: [
+      {
+        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        width: 1200,
+        height: 630,
+        alt: "BuildNinja CI/CD Pricing Plans",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function Pricing() {
