@@ -1,4 +1,5 @@
 import PricingPage from "./PricingPage";
+import { pricingSeventhText } from "../../../public/static/pricingPageText";
 
 export const metadata = {
   title: "Simple & Transparent Pricing for Teams | Pricing",
@@ -10,6 +11,27 @@ export const metadata = {
 };
 
 export default function Pricing() {
-  return ( <PricingPage />
+  // Generate Pricing Page FAQ Schema dynamically
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": pricingSeventhText.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>/g, "") // strip HTML tags
+      }
+    }))
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <PricingPage />
+    </>
   );
 }

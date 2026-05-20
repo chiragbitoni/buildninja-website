@@ -330,3 +330,25 @@ export const eighthSectionText = {
   },
 };
 
+export const homeFaqs = [
+  {
+    q: "Is BuildNinja cloud-based or self-hosted?",
+    a: "Self-hosted only. BuildNinja runs on your own infrastructure - Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
+  },
+  {
+    q: "Is the Growth Edition really free?",
+    a: "Yes. No credit card, no time limit, no expiry. Built for scale with unlimited users, unlimited projects, and unlimited builders. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
+  },
+  {
+    q: "What happens to my price when my team grows?",
+    a: "Nothing. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
+  },
+  {
+    q: "Do I need a DevOps engineer to set up BuildNinja?",
+    a: "No. Engineer may set up BuildNinja in under 30 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables."
+  },
+  {
+    q: "Does it support macOS / Apple Silicon?",
+    a: "Yes. Full support for Apple Silicon (M-series) on both Server and Agent. You can run builds natively on your Mac infrastructure."
+  }
+];

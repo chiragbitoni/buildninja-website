@@ -1,4 +1,5 @@
 import FaqPage from "./FAQPage";
+import { thirdSectionText } from "../../../public/static/faqPageText";
 
 export const metadata = {
     title: "Frequently Asked Questions | FAQ",
@@ -10,7 +11,29 @@ export const metadata = {
 };
 
 export default function Faq() {
+    // Generate dynamic, search-compliant FAQPage JSON-LD schema
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": thirdSectionText.faqs.flatMap(category =>
+            category.faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer.replace(/<[^>]*>/g, "") // Clean HTML tags for compliant schema formatting
+                }
+            }))
+        )
+    };
+
     return (
-   <FaqPage/>
-    )
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <FaqPage />
+        </>
+    );
 }

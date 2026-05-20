@@ -1,4 +1,5 @@
 import HomePage from "./HomePage";
+import { homeFaqs } from "../../public/static/homePageText";
 
 export const metadata = {
   title: "Build Ninja | Self-Hosted CI/CD Platform for Seamless DevOps",
@@ -10,5 +11,27 @@ export const metadata = {
 };
 
 export default function Home() {
-  return <HomePage />;
+  // Generate Home Page FAQ Schema dynamically
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": homeFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <HomePage />
+    </>
+  );
 }
