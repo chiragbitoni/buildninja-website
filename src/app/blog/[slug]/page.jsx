@@ -4,9 +4,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { fetchGrapeHubBlogPosts, fetchGrapeHubBlogPost } from "@/services/grapehub/fetchPage";
 import styles from "./BlogPost.module.css";
-
-export const revalidate = 86400; // ISR: revalidate at most once per 24 hours
-
 // ── Pre-render all known post slugs at build time ──────────────────────────
 export async function generateStaticParams() {
   const posts = await fetchGrapeHubBlogPosts();

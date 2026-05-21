@@ -5,9 +5,7 @@
 export async function fetchGrapeHubPage(path) {
   try {
     const url = `${process.env.NEXT_PUBLIC_GRAPEHUB_URL}/${path}`;
-    const response = await fetch(url, {
-      next: { revalidate: 86400 } // Cache content on the server for 24 hours
-    });
+    const response = await fetch(url);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
@@ -80,9 +78,7 @@ export async function fetchGrapeHubBlogPosts() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "https://www.grapehub.io";
     const url = `${baseUrl}/blog/categories/buildninja`;
-    const response = await fetch(url, {
-      next: { revalidate: 86400 } // Cache for 24 hours
-    });
+    const response = await fetch(url);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch blog feed from ${url}: ${response.statusText}`);
@@ -145,9 +141,7 @@ export async function fetchGrapeHubBlogPost(slug) {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "https://www.grapehub.io";
     const url = `${baseUrl}/post/${slug}`;
-    const response = await fetch(url, {
-      next: { revalidate: 86400 } // Cache for 24 hours
-    });
+    const response = await fetch(url);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch blog post from ${url}: ${response.statusText}`);

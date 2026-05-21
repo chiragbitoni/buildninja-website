@@ -4,9 +4,6 @@ import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import styles from "./BlogPage.module.css";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import { Calendar, Clock } from "lucide-react";
-
-export const revalidate = 86400; // ISR: re-fetch at most once every 24h
-
 export const metadata = {
   title: "Blog | BuildNinja – CI/CD Insights & DevOps Tutorials",
   description:
