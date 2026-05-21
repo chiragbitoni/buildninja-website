@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "postbuild": "next-sitemap"
+    "build": "node scripts/generate-sitemaps.js && next build",
+    "start": "next start"
   },
   "dependencies": {
     "@babel/parser": "^7.29.2",

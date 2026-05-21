@@ -39,20 +39,20 @@ const footerText = {
         {
             title: "Company",
             links: [
-                { label: "About Us", link: `${GRAPEHUB_URL}/about` },
-                { label: "Blog", link: `${GRAPEHUB_URL}/blog/categories/buildninja` },
-                { label: "Contact", link: `${GRAPEHUB_URL}/contact` },
+                { label: "About Us", link: "/about" },
+                { label: "Blog", link: "/blog" },
+                { label: "Contact", link: "/contact" },
                 { label: "Support", link: `/support` },
             ],
         },
         {
             title: "Legal",
             links: [
-                { label: "Privacy Policy", link: `${GRAPEHUB_URL}/privacy-policy` },
-                { label: "Terms of Service", link: `${GRAPEHUB_URL}/terms-of-service` },
+                { label: "Privacy Policy", link: "/privacy-policy" },
+                { label: "Terms of Service", link: "/terms-of-service" },
                 { label: "EULA", link: `/eula` },
-                { label: "Refund & Cancellation", link: `${GRAPEHUB_URL}/refund-and-cancellation-policy` },
-                { label: "Shipping Policy", link: `${GRAPEHUB_URL}/shipping-policy` },
+                { label: "Refund & Cancellation", link: "/refund-and-cancellation-policy" },
+                { label: "Shipping Policy", link: "/shipping-policy" },
             ],
         },
     ],
