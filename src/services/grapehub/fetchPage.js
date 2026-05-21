@@ -187,16 +187,17 @@ export async function fetchGrapeHubBlogPost(slug) {
     }
 
     // Extract content
-    const contentMatch = html.match(/<section[^>]*data-hook="post-description"[^>]*>([\s\S]*?)<\/section>/);
+    const contentMatch = html.match(/<section[^>]*data-hook=["']post-description["'][^>]*>([\s\S]*?)<\/section>/i);
     let postBody = '';
     if (contentMatch) {
       postBody = contentMatch[1];
     } else {
-      const rceMatch = html.match(/<div[^>]*data-rce-version="[^"]*"[^>]*>([\s\S]*?)<\/div>/);
+      const rceMatch = html.match(/<div[^>]*data-rce-version=["'][^"]*["'][^>]*>([\s\S]*?)<\/div>/i);
       if (rceMatch) {
         postBody = rceMatch[1];
       } else {
-        throw new Error(`Could not find post body markup in ${url}`);
+        postBody = '';
+        console.warn(`Post body not found for ${url}`);
       }
     }
 
