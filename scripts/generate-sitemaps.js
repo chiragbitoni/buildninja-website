@@ -72,7 +72,6 @@ async function generateSitemaps() {
     "/pricing",
     "/privacy-policy",
     "/refund-and-cancellation-policy",
-    "/shipping-policy",
     "/support",
     "/terms-of-service",
     "/blog"

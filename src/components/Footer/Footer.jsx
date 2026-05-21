@@ -52,7 +52,6 @@ const footerText = {
                 { label: "Terms of Service", link: "/terms-of-service" },
                 { label: "EULA", link: `/eula` },
                 { label: "Refund & Cancellation", link: "/refund-and-cancellation-policy" },
-                { label: "Shipping Policy", link: "/shipping-policy" },
             ],
         },
     ],
