@@ -3,6 +3,7 @@ import Link from "next/link";
 import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import styles from "./BlogPage.module.css";
 import NetworkBackground from "@/components/ui/NetworkBackground";
+import { Calendar, Clock } from "lucide-react";
 
 export const revalidate = 86400; // ISR: re-fetch at most once every 24h
 
@@ -47,11 +48,11 @@ function formatDate(dateStr) {
 function AuthorAvatar({ author, avatarUrl }) {
   const initials = author
     ? author
-        .split(" ")
-        .map((w) => w[0])
-        .slice(0, 2)
-        .join("")
-        .toUpperCase()
+      .split(" ")
+      .map((w) => w[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase()
     : "BN";
 
   if (avatarUrl) {
@@ -130,14 +131,14 @@ export default async function BlogPage() {
                   <div className={styles.cardMeta}>
                     {post.firstPublishedDate && (
                       <span className={styles.cardMetaItem}>
-                        📅 {formatDate(post.firstPublishedDate)}
+                        <Calendar /> {formatDate(post.firstPublishedDate)}
                       </span>
                     )}
                     {post.minutesToRead && (
                       <>
                         <span className={styles.cardMetaDivider} />
                         <span className={styles.cardMetaItem}>
-                          ⏱ {post.minutesToRead} min read
+                          <Clock /> {post.minutesToRead} min read
                         </span>
                       </>
                     )}

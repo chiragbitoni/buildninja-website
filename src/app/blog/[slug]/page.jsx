@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { fetchGrapeHubBlogPosts, fetchGrapeHubBlogPost } from "@/services/grapehub/fetchPage";
 import styles from "./BlogPost.module.css";
 
@@ -177,11 +177,18 @@ export default async function BlogPostPage({ params }) {
         <header className={styles.postHeader}>
           {/* Meta row: date · read time */}
           <div className={styles.metaRow}>
-            {post.date && <span>📅 {post.date}</span>}
-            {post.date && post.readTime && (
-              <span className={styles.metaDot} />
+            {post.date && (
+              <>
+                <Calendar size={16} className={styles.metaIcon} />
+                <span>{post.date}</span>
+              </>
             )}
-            {post.readTime && <span>⏱ {post.readTime}</span>}
+            {post.readTime && (
+              <>
+                <Clock size={16} className={styles.metaIcon} />
+                <span>{post.readTime}</span>
+              </>
+            )}
           </div>
 
           <h1 className={styles.postTitle}>{post.title}</h1>
