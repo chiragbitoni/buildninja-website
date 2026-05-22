@@ -26,7 +26,7 @@ export default function Navbar() {
     { name: "Dojo", path: "/dojo" },
     { name: "Docs", path: "/docs/overview" },
     { name: "Install", path: "/install" },
-    { name: "Partners", path: "/partners" },
+    // { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
   ];
 

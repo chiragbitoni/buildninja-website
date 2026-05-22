@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import s from "./PricingFaq.module.css";
 import { pricingSeventhText } from "../../../../../public/static/pricingPageText";
 import { useRouter } from "next/navigation";
@@ -65,20 +65,23 @@ export default function PricingFaq() {
                   ▾
                 </span>
               </h3>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.p 
-                    className={s.faqAnswer}
-                    initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                    animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                    exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    style={{ overflow: "hidden" }}
-                  >
-                    {faq.answer}
-                  </motion.p>
-                )}
-              </AnimatePresence>
+              
+              <motion.p 
+                className={s.faqAnswer}
+                initial={false}
+                animate={{ 
+                  height: openIndex === index ? "auto" : 0, 
+                  opacity: openIndex === index ? 1 : 0, 
+                  marginTop: openIndex === index ? 16 : 0 
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                style={{ 
+                  overflow: "hidden",
+                  visibility: openIndex === index ? "visible" : "hidden"
+                }}
+              >
+                {faq.answer}
+              </motion.p>
             </motion.div>
           ))}
 

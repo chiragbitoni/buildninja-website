@@ -102,7 +102,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://buildninja.grapehub.io/sitemap.xml" />
+        <script
           id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

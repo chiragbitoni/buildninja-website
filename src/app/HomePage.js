@@ -21,7 +21,7 @@ export default function HomePage() {
       <SocialProof />
       {/* <PricingTeaser /> */}
       <AIRoadmap />
-      {/* <FAQSection /> */}
+      <FAQSection />
       <CTASection />
     </>
   );

@@ -1,4 +1,5 @@
 import { supportConfirmationTemplate } from "@/templates/email/supportTemplate";
+import { contactConfirmationTemplate } from "@/templates/email/contactTemplate";
 import { leadTemplate } from "@/templates/email/leadTemplate";
 import { partnershipTemplate } from "@/templates/email/partnershipTemplate";
 import { getCookie, setCookie } from "@/lib/tracking/cookies";
@@ -134,6 +135,85 @@ export async function sendSupportEmail({ name, email, subject, message }) {
     return { success: false, message: err.message };
   }
 }
+
+// New function for Contact form submissions
+export async function sendContactEmail({ name, email, subject, message }) {
+  const API_URL = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Email/withcc`;
+  const htmlContent = supportConfirmationTemplate({
+    name: escapeHtml(name),
+    message: escapeHtml(message),
+  });
+
+  const supportCCs = parseEmailList(
+    process.env.NEXT_PUBLIC_CONTACT_CC_EMAIL_ID,
+  );
+  const sessionId = getSessionId();
+
+  let utm = {};
+  try {
+    const raw = getCookie("gh_utm");
+    if (raw) utm = JSON.parse(raw);
+  } catch { }
+  const toCCs = [
+    ...supportCCs,
+    ...(email ? [email.trim()] : []), // add user email to CC
+  ];
+
+  const toEmails = parseEmailList(process.env.NEXT_PUBLIC_CONTACT_EMAIL_ID);
+  const payload = {
+    toEmails,
+    toCCs,
+    subject,
+    htmlContent,
+  };
+  try {
+    const leadRes = await fetch(LEAD_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        formType: "contact",
+        sessionId,
+        formData: {
+          name,
+          subject,
+          message,
+        },
+        utm,
+      }),
+    });
+  } catch (e) {
+    console.warn("Lead tracking failed", e);
+  }
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_EMAIL_API_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.status === 401) {
+      return { success: false, message: "Unauthorized" };
+    }
+    const text = await res.text();
+    if (!text) return { success: false };
+    const data = JSON.parse(text);
+    if (!res.ok) {
+      return { success: false, message: data.message || "Failed to send email" };
+    }
+    return { success: true, data };
+  } catch (err) {
+    return { success: false, message: err.message };
+  }
+}
+
 
 export async function sendLeadEmail({
   name,

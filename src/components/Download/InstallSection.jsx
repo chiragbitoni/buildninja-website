@@ -16,7 +16,7 @@ import NetworkBackground from "@/components/ui/NetworkBackground";
 
 const benefitIcons = [faRocket, faShieldAlt, faServer];
 
-export default function InstallSection() {
+export default function InstallSection({ onAuthSuccess }) {
     const router = useRouter();
     const { theme, resolvedTheme } = useTheme();
     const [email, setEmail] = useState("");
@@ -56,7 +56,11 @@ export default function InstallSection() {
                     location: "download_hero",
                 });
                 setAuthCookie({ userId, email: userEmail });
-                router.push("/install/dashboard");
+                if (onAuthSuccess) {
+                    onAuthSuccess();
+                } else {
+                    router.push("/install/dashboard");
+                }
             } else {
                 posthog.capture("email_signup_failed", {
                     reason: res?.message || "unknown",
