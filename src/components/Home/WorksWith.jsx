@@ -10,7 +10,6 @@ import {
   faMicrosoft, 
   faDocker, 
   faKubernetes,
-  faAws
 } from "@fortawesome/free-brands-svg-icons";
 import { 
   faServer, 
@@ -28,7 +27,6 @@ const Icons = {
   "Microsoft Azure AD": () => <FontAwesomeIcon icon={faMicrosoft} style={{ width: '100%', height: '100%' }} />,
   Docker: () => <FontAwesomeIcon icon={faDocker} style={{ width: '100%', height: '100%' }} />,
   Kubernetes: () => <FontAwesomeIcon icon={faKubernetes} style={{ width: '100%', height: '100%' }} />,
-  AWS: () => <FontAwesomeIcon icon={faAws} style={{ width: '100%', height: '100%' }} />,
   SSH: () => <FontAwesomeIcon icon={faServer} style={{ width: '100%', height: '100%' }} />,
   "Command Line": () => <FontAwesomeIcon icon={faTerminal} style={{ width: '100%', height: '100%' }} />,
   "Script Runner": () => <FontAwesomeIcon icon={faFileCode} style={{ width: '100%', height: '100%' }} />,
@@ -44,7 +42,6 @@ const tools = [
   "Microsoft Azure AD",
   "Docker",
   "Kubernetes",
-  "AWS",
   "SSH",
   "Command Line",
   "Script Runner",
@@ -131,7 +128,7 @@ export default function WorksWith() {
         >
           Accelerate your pipelines. BuildNinja brings enterprise-grade compilation speed and security to 
           <strong> GitHub</strong>, <strong>GitLab</strong>, <strong>Bitbucket</strong>, <strong>Docker</strong>, 
-          <strong> Kubernetes</strong>, <strong>AWS</strong>, and your daily developer tools.
+          <strong> Kubernetes</strong>, and your daily developer tools.
         </motion.p>
 
         {/* Scrolling Carousel with Alt Tags on Logos */}
