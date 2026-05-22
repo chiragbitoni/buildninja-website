@@ -86,8 +86,8 @@ export default function Footer() {
 
                         <div className={styles.footerGCSocial}>
                             <Image width={0} height={0} src="/resources/Footer/social/linkedin.png" alt="LinkedIn" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.linkedin.com/showcase/build-ninja/" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.instagram.com/GrapeHubindia/" }}></Image>
-                            <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.facebook.com/GrapeHubIndiaPvtLtd" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/instagram.png" alt="Instagram" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.instagram.com/grapecityindia/" }}></Image>
+                            <Image width={0} height={0} src="/resources/Footer/social/facebook.png" alt="Facebook" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.facebook.com/GrapeCityIndiaPvtLtd" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/youtube.png" alt="YouTube" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://www.youtube.com/@BuildNinja_CICD" }}></Image>
                             <Image width={0} height={0} src="/resources/Footer/social/github.svg" alt="Github" className={styles.footerSocialIcons} onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD" }}></Image>
                         </div>
