@@ -58,34 +58,52 @@ const scrollItems = [...tools, ...tools];
 const integrationDetails = [
   {
     name: "GitHub Integration",
-    desc: "Connect your GitHub repositories. Automatically trigger high-speed build jobs on pull requests, commits, or webhooks.",
-    icon: "GitHub"
+    desc: "Connect your GitHub repositories for seamless version control integration with intelligent caching and scheduled build automation."
   },
   {
     name: "GitLab Integration",
-    desc: "Integrate with GitLab CI/CD pipelines. Automate continuous integration steps and fetch build reports directly in your repository.",
-    icon: "GitLab"
+    desc: "Deep integration with GitLab for seamless version control, intelligent repository caching, and streamlined Single Sign-On (SSO) authentication."
   },
   {
     name: "Bitbucket Integration",
-    desc: "Sync with Bitbucket pipelines. Achieve total control over your git branches, build statuses, and deployment approvals.",
-    icon: "Bitbucket"
+    desc: "Deep integration with Bitbucket for native version control, intelligent git caching, and seamless SSO authentication."
+  },
+  {
+    name: "Google Integration",
+    desc: "Connect your Google account or Google Workspace for secure, streamlined OAuth authentication and Single Sign-On (SSO)."
+  },
+  {
+    name: "Microsoft Azure AD SSO",
+    desc: "Integrate with Microsoft Entra ID (Azure AD) for secure enterprise-grade Single Sign-On (SSO) and streamlined access management."
   },
   {
     name: "Docker Containerization",
-    desc: "Package and build standard Docker container images. Cache layers automatically for ultra-fast incremental containerization.",
-    icon: "Docker"
+    desc: "Package and build standard Docker container images. Cache layers automatically for ultra-fast incremental containerization."
   },
   {
     name: "Kubernetes Orchestration",
-    desc: "Deploy compiled artifacts to local or managed Kubernetes clusters (AWS EKS, Azure AKS, GKE) with automated rolling updates.",
-    icon: "Kubernetes"
+    desc: "Deploy compiled artifacts to local or managed Kubernetes clusters with zero downtime using canary strategies."
   },
   {
-    name: "AWS Cloud Deployment",
-    desc: "Deploy directly to Amazon Web Services (AWS) EC2, S3, or ECR using enterprise-grade secure role authentication and CLI integrations.",
-    icon: "AWS"
+    name: "SSH Deployment",
+    desc: "Securely connect and deploy to remote servers using SSH key authentication and automated execution of deployment scripts."
   },
+  {
+    name: "Command Line Terminal",
+    desc: "Execute custom commands and build scripts directly in a native terminal environment on Windows, Linux, and macOS."
+  },
+  {
+    name: "Script Runner",
+    desc: "Run bash, PowerShell, or custom scripts as part of your CI/CD pipeline steps with environment variable support."
+  },
+  {
+    name: "MSBuild compilation",
+    desc: "Compile .NET and C++ projects using MSBuild integration, optimized for fast and efficient windows builds."
+  },
+  {
+    name: "VSTest execution",
+    desc: "Execute unit tests and integration tests using VSTest runner, with automatic test results parsing and reporting."
+  }
 ];
 
 export default function WorksWith() {
@@ -158,32 +176,14 @@ export default function WorksWith() {
           </motion.div>
         </div>
 
-        {/* Grid of Key Integrations with SEO Descriptions */}
-        <div className={styles.detailsGrid}>
-          {integrationDetails.map((item, index) => {
-            const IconComponent = Icons[item.icon];
-            return (
-              <motion.div
-                key={item.name}
-                className={styles.detailsCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                whileHover={{ y: -6 }}
-              >
-                <div className={styles.cardHeader}>
-                  {IconComponent && (
-                    <div className={styles.cardIcon} title={item.name} aria-label={item.name}>
-                      <IconComponent />
-                    </div>
-                  )}
-                  <h3 className={styles.cardTitle}>{item.name}</h3>
-                </div>
-                <p className={styles.cardDesc}>{item.desc}</p>
-              </motion.div>
-            );
-          })}
+        {/* Visually hidden integration descriptions for SEO indexing by search engine crawlers */}
+        <div className={styles.visuallyHidden}>
+          {integrationDetails.map((item) => (
+            <div key={item.name}>
+              <h3>{item.name}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
