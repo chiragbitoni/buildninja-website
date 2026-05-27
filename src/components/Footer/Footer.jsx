@@ -22,7 +22,6 @@ const footerText = {
                 { label: "Install", link: "/install" },
                 { label: "Dojo", link: "/dojo" },
                 { label: "FAQ", link: "/faq" },
-                { label: "Partners", link: "/partners" }
                 // { label: "Roadmap", link: "/roadmap" },
             ],
         },
@@ -43,6 +42,7 @@ const footerText = {
                 { label: "Blog", link: "/blog" },
                 { label: "Contact", link: "/contact" },
                 { label: "Support", link: `/support` },
+                { label: "Partners", link: "/partners" }
             ],
         },
         {
