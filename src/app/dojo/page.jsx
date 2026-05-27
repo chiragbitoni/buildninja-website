@@ -7,6 +7,21 @@ export const metadata = {
   alternates: {
     canonical: "https://buildninja.grapehub.io/dojo",
   },
+  openGraph: {
+    title: "Interactive CI/CD Sandbox & Playground | Dojo",
+    description: "Master BuildNinja in our interactive Dojo. Experiment with build pipelines, configurations, and CI/CD workflows in a safe sandbox environment.",
+    url: "https://buildninja.grapehub.io/dojo",
+    siteName: "BuildNinja",
+    images: [
+      {
+        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        width: 1200,
+        height: 630,
+        alt: "BuildNinja CI/CD Dojo Sandbox",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function DojoPage() {

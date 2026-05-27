@@ -17,7 +17,7 @@ export default function PricingPage() {
       <PricingValueProp />
       <PricingCoreFeatures />
       {/* <PricingDetailedSpecs /> */}
-      {/* <PricingFaq /> */}
+      <PricingFaq />
       <PricingCta />
     </div>
   );

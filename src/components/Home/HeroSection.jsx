@@ -116,12 +116,7 @@ export default function HeroSection() {
             </svg>
             See the 3-Minute Demo
           </a>
-          <a className={styles.ctaTertiary} onClick={() => { router.push("/dojo") }} data-cursor-grow>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            Try The Dojo
-          </a>
+
         </div>
       </div>
 
