@@ -1,0 +1,199 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+}
+
+.calcTabs {
+  display: flex;
+  gap: 12px;
+  background: var(--color-bg-panel);
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  width: fit-content;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .calcTabs {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.ctab {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.ctab:hover {
+  color: var(--color-text);
+  background: var(--color-bg-surface-hover, rgba(0,0,0,0.04));
+}
+
+.ctab.active {
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+.calcPane {
+  display: none;
+}
+
+.calcPane.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.costGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .costGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.costCard {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl, 24px);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.costCard.featured {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.costHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.costTool {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.costBadgeRec {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.costLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-size: 14.5px;
+  gap: 16px;
+}
+
+.clLabel {
+  color: var(--color-text-secondary);
+}
+
+.clLabel small {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.clVal {
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.clVal.g { color: var(--color-success); }
+.clVal.r { color: var(--color-error); }
+
+.costBox {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.bnBox { background: var(--color-primary-subtle); }
+.ghBox { background: var(--color-error-bg); }
+
+.costBoxNum {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.costBoxNum.or { color: var(--color-primary); }
+.costBoxNum.rd { color: var(--color-error); }
+
+.costBoxSub {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.calloutGood {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  margin-top: 24px;
+}
+
+.calloutIco {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.calloutGood p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}

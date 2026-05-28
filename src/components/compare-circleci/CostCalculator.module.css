@@ -1,0 +1,130 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+}
+
+.calcGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  .calcGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calcPanel {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.calcPanelFeatured {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-subtle), var(--shadow-md);
+}
+
+.calcHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.calcLogo {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.calcBadgeRecommend {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.costLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.costLine:last-of-type {
+  border-bottom: none;
+}
+
+.costLine span:first-child {
+  color: var(--color-text-secondary);
+}
+
+.costLine span:last-child {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.costTotal {
+  background: var(--color-bg-shell);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin-top: 18px;
+  text-align: center;
+  border: 1px solid var(--color-border-medium);
+}
+
+.costTotalVal {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.costTotalValOrange {
+  color: var(--color-primary);
+}
+
+.costTotalValBlue {
+  color: var(--color-info);
+}
+
+.costTotalLbl {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.insightBox {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.insightBox p {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0;
+}
