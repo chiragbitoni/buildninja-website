@@ -1,9 +1,11 @@
 import Link from "next/link";
 import styles from "./NotFound.module.css";
 export const metadata = {
-  title: { absolute: "404 - Page Not Found | BuildNinja CI/CD" },
-  description: "The page you are looking for does not exist on BuildNinja. Explore our DevOps platform, CI/CD tools, or return to the homepage to automate your CI/CD pipelines.",
-  keywords: ["404", "page not found", "BuildNinja error", "DevOps resources", "CI/CD platform"],
+  title: "404 - Page Not Found | BuildNinja",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function NotFound() {

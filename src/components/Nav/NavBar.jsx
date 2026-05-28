@@ -24,9 +24,9 @@ export default function Navbar() {
     { name: "Features", path: "/features" },
     { name: "Pricing", path: "/pricing" },
     { name: "Dojo", path: "/dojo" },
-    { name: "Docs", path: "/docs" },
+    { name: "Docs", path: "/docs/overview" },
     { name: "Install", path: "/install" },
-    { name: "Partners", path: "/partners" },
+    // { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
   ];
 

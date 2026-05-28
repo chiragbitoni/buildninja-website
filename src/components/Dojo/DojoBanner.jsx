@@ -1,10 +1,11 @@
 "use client";
 
 import styles from "./DojoBanner.module.css";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import posthog from "posthog-js";
+import { getCookie } from "@/lib/tracking/cookies";
 
 export default function DojoBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,6 +32,37 @@ export default function DojoBanner() {
     document.cookie = `dojo-banner-closed=true; expires=${date.toUTCString()}; path=/`;
   };
 
+  const handleDojoClick = () => {
+    const rawUtm = getCookie("gh_utm");
+    let utmData = {};
+    
+    if (rawUtm) {
+        try {
+            const parsed = JSON.parse(rawUtm);
+            utmData = {
+                utm_source: parsed.source || "",
+                utm_medium: parsed.medium || "",
+                utm_campaign: parsed.campaign || "",
+                utm_content: parsed.content || "",
+            };
+        } catch(e) {}
+    }
+    
+    if (!utmData.utm_source) {
+        const params = new URLSearchParams(window.location.search);
+        utmData = {
+            utm_source: params.get("utm_source") || "",
+            utm_medium: params.get("utm_medium") || "",
+            utm_campaign: params.get("utm_campaign") || "",
+            utm_content: params.get("utm_content") || "",
+        };
+    }
+
+    posthog.capture("banner_dojo_clicked", {
+        ...utmData,
+    });
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -47,7 +79,7 @@ export default function DojoBanner() {
                 <span className={styles.badge}>NEW</span>
                 <p className={styles.text}>
                   <span className={styles.textFull}>
-                    Experience the <strong>Dojo</strong> — An instant, zero-risk CI/CD sandbox. <span className={styles.highlight}>No installation required.</span>
+                    Experience the <strong>Dojo</strong> - Your instant, private playground for CI/CD automation. <span className={styles.highlight}>No installation required.</span>
                   </span>
                   <span className={styles.textMobile}>
                     <strong>Dojo:</strong> Instant CI/CD Sandbox
@@ -55,7 +87,13 @@ export default function DojoBanner() {
                 </p>
               </div>
               <div className={styles.right}>
-                <Link href="/dojo" className={styles.link}>
+                <a 
+                  href={process.env.NEXT_PUBLIC_DOJO_URL} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.link}
+                  onClick={handleDojoClick}
+                >
                   Try Dojo
                   <svg
                     width="14"
@@ -73,7 +111,7 @@ export default function DojoBanner() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </Link>
+                </a>
                 <button className={styles.closeBtn} onClick={handleClose} aria-label="Close banner">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>

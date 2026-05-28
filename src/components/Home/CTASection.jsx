@@ -89,7 +89,7 @@ export default function CTASection() {
                   videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, 
                   title: "BuildNinja", 
                   ctaText: "Self Hosted CI/CD That Just Works",
-                  link: "/docs"
+                  link: "/docs/overview"
                 }));
               }}
             >
@@ -98,12 +98,6 @@ export default function CTASection() {
               </svg>
               See the 3-Minute Demo
             </button>
-            <Link href="/dojo" className={styles.btnTertiary}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              Try The Dojo
-            </Link>
           </motion.div>
 
           {/* Guarantee Grid */}

@@ -1,30 +1,11 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "./FAQSection.module.css";
+import { homeFaqs } from "../../../public/static/homePageText";
 
-const faqs = [
-  {
-    q: "Is BuildNinja cloud-based or self-hosted?",
-    a: "Self-hosted only. BuildNinja runs on your own infrastructure - Windows, Linux, macOS, Docker, or Kubernetes. Your code, credentials, and builds never leave your network."
-  },
-  {
-    q: "Is the Growth Edition really free?",
-    a: "Yes. No credit card, no time limit, no expiry. Built for scale with unlimited users, unlimited projects, and unlimited builders. Includes automated builds, VCS integration, artifacts, real-time logs, and email notifications."
-  },
-  {
-    q: "What happens to my price when my team grows?",
-    a: "Nothing. With zero per-seat costs and unlimited configurations, your cost stays at zero regardless of your team size or project count."
-  },
-  {
-    q: "Do I need a DevOps engineer to set up BuildNinja?",
-    a: "No. Engineer may set up BuildNinja in under 30 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables."
-  },
-  {
-    q: "Does it support macOS / Apple Silicon?",
-    a: "Yes. Full support for Apple Silicon (M-series) on both Server and Agent. You can run builds natively on your Mac infrastructure."
-  }
-];
+export const faqs = homeFaqs;
+
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -71,19 +52,21 @@ export default function FAQSection() {
                 </div>
               </button>
               
-              <AnimatePresence>
-                {openIndex === i && (
-                  <motion.div 
-                    className={styles.answerWrap}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <p className={styles.answer}>{faq.a}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div 
+                className={styles.answerWrap}
+                initial={false}
+                animate={{ 
+                  height: openIndex === i ? "auto" : 0, 
+                  opacity: openIndex === i ? 1 : 0 
+                }}
+                transition={{ duration: 0.3 }}
+                style={{ 
+                  overflow: "hidden",
+                  visibility: openIndex === i ? "visible" : "hidden"
+                }}
+              >
+                <p className={styles.answer}>{faq.a}</p>
+              </motion.div>
             </motion.div>
           ))}
         </div>
@@ -91,4 +74,3 @@ export default function FAQSection() {
     </section>
   );
 }
-

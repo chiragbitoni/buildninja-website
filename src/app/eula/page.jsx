@@ -31,6 +31,21 @@ export const metadata = {
     alternates: {
         canonical: "https://buildninja.grapehub.io/eula",
     },
+    openGraph: {
+        title: "EULA | BuildNinja",
+        description: "BuildNinja End User License Agreement (EULA). Read about our licensing terms, usage rights, and data protection policies.",
+        url: "https://buildninja.grapehub.io/eula",
+        siteName: "BuildNinja",
+        images: [
+            {
+                url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+                width: 1200,
+                height: 630,
+                alt: "BuildNinja CI/CD EULA",
+            },
+        ],
+        type: "website",
+    },
 };
 
 export default function EULA() {

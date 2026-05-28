@@ -1,0 +1,174 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+}
+
+.tableOuter {
+  border-radius: var(--radius-xl, 24px);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  margin-top: 40px;
+  overflow-x: auto;
+  background: var(--color-bg-panel);
+}
+
+.cmp {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.cmp thead tr {
+  background: var(--color-bg-shell);
+}
+
+.cmp thead th {
+  padding: 20px 22px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.cmp thead th:first-child {
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-size: 12px;
+  width: 35%;
+}
+
+.thBn {
+  color: var(--color-text) !important;
+  position: relative;
+  width: 32.5%;
+}
+
+.recBadge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.thGh {
+  width: 32.5%;
+  color: var(--color-text) !important;
+}
+
+.catRow td {
+  background: var(--color-bg);
+  padding: 10px 22px;
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-top: 2px solid var(--color-border);
+}
+
+.cmp tbody tr:not(.catRow) {
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.15s;
+}
+
+.cmp tbody tr:not(.catRow):hover {
+  background: var(--color-bg-surface-hover, var(--color-bg));
+}
+
+.cmp tbody td {
+  padding: 14px 22px;
+  font-size: 14px;
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+.cmp tbody td:first-child {
+  color: var(--color-text-secondary);
+  font-size: 13.5px;
+}
+
+.tdBn {
+  background: var(--color-primary-subtle);
+  font-weight: 500;
+}
+
+.tdGh {
+}
+
+.icYes {
+  color: var(--color-success);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.icNo {
+  color: var(--color-error);
+  font-size: 16px;
+}
+
+.icWarn {
+  color: var(--color-warning);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tagWin {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.tagBn {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.tagGh {
+  background: var(--color-info-subtle);
+  color: var(--color-info);
+}
+
+.tagTie {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.tblLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.tblLegend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

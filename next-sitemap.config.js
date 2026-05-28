@@ -24,4 +24,7 @@ module.exports = {
     '/api/**',
     '/landing-page'
   ],
+  additionalSitemaps: [
+    'https://buildninja.grapehub.io/docs/sitemap.xml',
+  ],
 };

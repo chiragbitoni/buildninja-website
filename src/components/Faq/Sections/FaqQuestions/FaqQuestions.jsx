@@ -2,8 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import s from "./FaqQuestions.module.css";
 import { thirdSectionText } from "../../../../../public/static/faqPageText";
-import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,7 +28,6 @@ export default function FaqQuestions() {
   const [activeIndex, setActiveIndex] = useState({ category: null, index: null });
   const [searchTerm, setSearchTerm] = useState("");
   const faqRefs = useRef({});
-  const searchParams = useSearchParams();
   const [hasAutoScrolled, setHasAutoScrolled] = useState(false);
 
   // Filter FAQs by question or answer, keeping only categories that have matches
@@ -84,7 +82,9 @@ export default function FaqQuestions() {
   useEffect(() => {
     if (hasAutoScrolled) return;
 
-    const openId = searchParams?.get("open");
+    // Synchronously parse location search parameters on client mount
+    const params = new URLSearchParams(window.location.search);
+    const openId = params.get("open");
     if (!openId) return;
 
     filteredFaqs.forEach((cat, catIndex) => {
@@ -103,7 +103,7 @@ export default function FaqQuestions() {
         }
       });
     });
-  }, [filteredFaqs, hasAutoScrolled, searchParams]);
+  }, [filteredFaqs, hasAutoScrolled]);
 
   return (
     <section className={s.section}>
@@ -171,21 +171,23 @@ export default function FaqQuestions() {
                           </svg>
                         </span>
                       </h3>
-                      <AnimatePresence>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                            animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                            exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className={s.faqAnswer}
-                            onClick={(e) => e.stopPropagation()}
-                            style={{ overflow: "hidden" }}
-                          >
-                            <div dangerouslySetInnerHTML={{ __html: highlightHTML(faq.answer, searchTerm) }} />
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <motion.div
+                        initial={false}
+                        animate={{ 
+                          height: isOpen ? "auto" : 0, 
+                          opacity: isOpen ? 1 : 0, 
+                          marginTop: isOpen ? 16 : 0 
+                        }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className={s.faqAnswer}
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ 
+                          overflow: "hidden",
+                          visibility: isOpen ? "visible" : "hidden"
+                        }}
+                      >
+                        <div dangerouslySetInnerHTML={{ __html: highlightHTML(faq.answer, searchTerm) }} />
+                      </motion.div>
                     </motion.div>
                   );
                 })}

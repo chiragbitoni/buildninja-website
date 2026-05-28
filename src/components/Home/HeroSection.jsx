@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import BuildNinjaDemo from "./BuildNinjaDemo";
+import dynamic from "next/dynamic";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./HeroSection.module.css";
 import { useRouter } from "next/navigation";
@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
 
+const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
 const Typewriter = ({ texts }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -115,12 +116,7 @@ export default function HeroSection() {
             </svg>
             See the 3-Minute Demo
           </a>
-          <a className={styles.ctaTertiary} onClick={() => { router.push("/dojo") }} data-cursor-grow>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            Try The Dojo
-          </a>
+
         </div>
       </div>
 
@@ -170,7 +166,7 @@ export default function HeroSection() {
           <div className={styles.dashGlow} />
 
           {/* Actual dashboard */}
-          <div className={styles.dashInner}>
+          <div className={styles.dashInner} data-nosnippet>
             <BuildNinjaDemo />
           </div>
         </div>
