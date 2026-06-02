@@ -1,0 +1,114 @@
+.section {
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.sectionDesc {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  max-width: 620px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.metricCard {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.metricLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.metricBars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.metricRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.metricRowLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.metricName {
+  color: var(--color-text);
+}
+
+.metricVal {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.metricBarTrack {
+  background: var(--color-bg);
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.metricBarFill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.fillNinja {
+  background: var(--color-primary);
+}
+
+.fillJenkins {
+  background: var(--color-text-muted);
+}
+
+.note {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: -1rem;
+}
