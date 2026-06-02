@@ -17,6 +17,9 @@ import CTABanner from '@/components/compare-github-actions/CTABanner';
 export const metadata = {
   title: 'BuildNinja vs GitHub Actions | 2026 Comparison',
   description: 'An honest, detailed comparison between BuildNinja and GitHub Actions. See how unlimited self-hosted builds compare against GitHub per-minute pricing.',
+  alternates: {
+    canonical: 'https://buildninja.grapehub.io/compare/buildninja-vs-github-actions',
+  },
 };
 
 export default function BuildNinjaVsGitHubActions() {
