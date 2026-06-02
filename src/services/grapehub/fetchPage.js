@@ -65,8 +65,10 @@ export async function fetchGrapeHubPage(path) {
     return cleanHtml.trim();
   } catch (error) {
     console.error(`Error in fetchGrapeHubPage for ${path}:`, error);
-    // Return friendly error markup rather than crashing the page
-    return `<p class="error-text">Content could not be loaded at this time. Please try again later.</p>`;
+    
+    // Always fail the build/render instead of silently baking the error message
+    // into the static export or rendering an empty error page.
+    throw error;
   }
 }
 
