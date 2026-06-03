@@ -5,8 +5,9 @@ import s from './Hero.module.css';
 export default function Hero() {
   return (
     <header className={s.hero} role="banner">
-      <div className={s.heroInner}>
-        <div className="badge-alt" style={{ marginBottom: '20px' }}>
+      <div className={s.container}>
+        <div className={s.heroInner}>
+          <div className="badge-alt" style={{ marginBottom: '20px' }}>
           Honest Comparison · Updated May 2026
         </div>
         
@@ -44,6 +45,7 @@ export default function Hero() {
             Jump to Comparison Table
           </a>
         </div>
+      </div>
       </div>
     </header>
   );
