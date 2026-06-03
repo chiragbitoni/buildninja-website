@@ -107,7 +107,7 @@ jobs:
                 <div className={s.codeDots}>
                   <div className={`${s.cd} ${s.cdR}`}></div><div className={`${s.cd} ${s.cdA}`}></div><div className={`${s.cd} ${s.cdG}`}></div>
                 </div>
-                <span className={s.codeFile}>.buildninja.yml</span>
+                <span className={s.codeFile}>.buildninja.yaml</span>
                 <span className={`${s.codeLabel} ${s.bn}`}>BuildNinja</span>
               </div>
               <button 

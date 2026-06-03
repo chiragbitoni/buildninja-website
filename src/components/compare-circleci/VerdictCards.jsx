@@ -27,7 +27,7 @@ export default function VerdictCards() {
             <div className={`${s.verdictIcon} ${s.verdictIconOrange}`}><Lock aria-label="Security" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <h3>Real Self-Hosting — Not "Bring Your Own Kubernetes"</h3>
             <p>
-              CircleCI offers a self-hosted "Server" product — but it requires Kubernetes, dedicated infrastructure management, and is gated behind enterprise contracts starting at five figures annually. BuildNinja self-hosts with a single <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker run</code> command on any $30/month VPS. For regulated industries, air-gapped environments, or cost-conscious teams — there's no real comparison.
+              CircleCI offers a self-hosted "Server" product — but it requires Kubernetes, dedicated infrastructure management, and is gated behind enterprise contracts starting at five figures annually. BuildNinja can be installed on any machine via the installer, or self-hosted with a single <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker run</code> command on any server. For regulated industries, air-gapped environments, or cost-conscious teams — there's no real comparison.
             </p>
           </div>
           <div className={`${s.verdictCard} ${s.verdictCardBlue}`}>

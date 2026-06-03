@@ -95,7 +95,7 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><Wrench aria-label="Configuration" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> CI/CD Pipeline Capabilities</td></tr>
               <tr>
                 <td>Pipeline syntax</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Clean YAML (<code style={{ fontSize: '11px' }}>.buildninja.yml</code>) — minimal boilerplate</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Clean YAML (<code style={{ fontSize: '11px' }}>.buildninja.yaml</code>) — minimal boilerplate</td>
                 <td className={s.tdGh}>YAML (<code style={{ fontSize: '11px' }}>.github/workflows/*.yml</code>) — verbose, trigger-heavy</td>
               </tr>
               <tr>

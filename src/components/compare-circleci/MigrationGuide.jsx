@@ -35,7 +35,7 @@ export default function MigrationGuide() {
             <div className={s.stepNum}>03</div>
             <h4>Translate Your Pipelines</h4>
             <p>
-              Convert your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>.circleci/config.yml</code> to <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>.buildninja.yml</code>. The syntax is similar — most pipelines translate in under 30 minutes. Use our migration guide for common patterns.
+              Convert your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>.circleci/config.yml</code> to <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>buildninja.yaml</code>. The syntax is similar — most pipelines translate in under 30 minutes. Use our migration guide for common patterns.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
           </div>
