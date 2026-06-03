@@ -87,7 +87,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Cloud SaaS option</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> In roadmap</td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self Hosted - Your infrastructure  your Rules </td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully managed SaaS <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
               </tr>
 
