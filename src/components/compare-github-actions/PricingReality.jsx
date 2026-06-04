@@ -11,7 +11,7 @@ export default function PricingReality() {
           What GitHub's March 2026 Pricing Change Actually Costs You
         </h2>
         <p className="section-subtitle">
-          GitHub reduced hosted runner prices by up to 39% — but added a $0.002/min charge for self-hosted runners. Here's what a real 20-person team actually pays each month.
+          GitHub reduced hosted runner prices by up to 39% - but added a $0.002/min charge for self-hosted runners. Here's what a real 20-person team actually pays each month.
         </p>
 
         <div className={s.prGrid}>
@@ -26,7 +26,7 @@ export default function PricingReality() {
             </div>
             <div className={s.costRow}>
               <span className={s.costLabel}>Self-hosted orchestration fee</span>
-              <span className={`${s.costValue} ${s.costValueGood}`}>$0.00 — never</span>
+              <span className={`${s.costValue} ${s.costValueGood}`}>$0.00 - never</span>
             </div>
             <div className={s.costRow}>
               <span className={s.costLabel}>Per-seat license cost</span>
@@ -34,7 +34,7 @@ export default function PricingReality() {
             </div>
             <div className={s.costRow}>
               <span className={s.costLabel}>100 builds/day × 8 min avg</span>
-              <span className={`${s.costValue} ${s.costValueGood}`}>Unlimited — $0</span>
+              <span className={`${s.costValue} ${s.costValueGood}`}>Unlimited - $0</span>
             </div>
             <div className={s.costRow}>
               <span className={s.costLabel}>Server infra (Hetzner CX21)</span>
@@ -89,7 +89,7 @@ export default function PricingReality() {
         <div className={`${s.callout} ${s.calloutWarn}`}>
           <span className={s.calloutIco}><Lightbulb aria-label="Idea" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
           <p>
-            <strong>The self-hosted trap:</strong> Many teams chose GitHub Actions self-hosted runners specifically to avoid per-minute costs. As of March 2026, those runners now incur a $0.002/min platform fee — on top of your own server costs. BuildNinja has no orchestration fee. Your hardware, your builds, your bill ends at the server.
+            <strong>The self-hosted trap:</strong> Many teams chose GitHub Actions self-hosted runners specifically to avoid per-minute costs. As of March 2026, those runners now incur a $0.002/min platform fee - on top of your own server costs. BuildNinja has no orchestration fee. Your hardware, your builds, your bill ends at the server.
           </p>
         </div>
       </div>

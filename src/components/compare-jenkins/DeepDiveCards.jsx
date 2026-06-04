@@ -17,7 +17,7 @@ export default function DeepDiveCards() {
           <div className={`${s.diveCard} ${s.featured}`}>
             <div className={s.diveIcon}><Timer size={28} className={s.iconPrimary} /></div>
             <h3>Time to First Build</h3>
-            <p>This is the single biggest practical difference. BuildNinja is designed to get your first pipeline running in under 5 minutes. Jenkins requires JDK installation, downloading the WAR file, running the setup wizard, installing suggested plugins, and then configuring your first job — a process that regularly takes new users 2–4 hours.</p>
+            <p>This is the single biggest practical difference. BuildNinja is designed to get your first pipeline running in under 5 minutes. Jenkins requires JDK installation, downloading the WAR file, running the setup wizard, installing suggested plugins, and then configuring your first job - a process that regularly takes new users 2–4 hours.</p>
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>5 minutes</div>
@@ -30,7 +30,7 @@ export default function DeepDiveCards() {
           <div className={s.diveCard}>
             <div className={s.diveIcon}><Puzzle size={28} className={s.iconDefault} /></div>
             <h3>Plugin Management Reality</h3>
-            <p>Jenkins' 1,800+ plugin ecosystem is both its greatest strength and its biggest operational headache. Plugin conflicts, security vulnerabilities in unmaintained plugins, and version incompatibilities are the #1 cause of Jenkins outages. BuildNinja ships as a unified platform — fewer moving parts, fewer failure points.</p>
+            <p>Jenkins' 1,800+ plugin ecosystem is both its greatest strength and its biggest operational headache. Plugin conflicts, security vulnerabilities in unmaintained plugins, and version incompatibilities are the #1 cause of Jenkins outages. BuildNinja ships as a unified platform - fewer moving parts, fewer failure points.</p>
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>Unified releases</div>
@@ -69,13 +69,13 @@ export default function DeepDiveCards() {
           <div className={s.diveCard}>
             <div className={s.diveIcon}><Lock size={28} className={s.iconDefault} /></div>
             <h3>Security Posture</h3>
-            <p>Jenkins' large plugin surface area is a real security concern — CVEs are regularly found in popular plugins. BuildNinja's smaller, controlled codebase and unified update model means fewer attack vectors. Both tools support self-hosting, which gives you full control over your secrets and build artifacts.</p>
+            <p>Jenkins' large plugin surface area is a real security concern - CVEs are regularly found in popular plugins. BuildNinja's smaller, controlled codebase and unified update model means fewer attack vectors. Both tools support self-hosting, which gives you full control over your secrets and build artifacts.</p>
           </div>
 
           <div className={s.diveCard}>
             <div className={s.diveIcon}><Bot size={28} className={s.iconDefault} /></div>
             <h3>The AI Advantage (Coming)</h3>
-            <p>BuildNinja v1.2.0 is bringing AI-powered log analysis, configuration review, and build outcome prediction — features Jenkins has no roadmap for. If your team wants CI/CD that actively helps you improve, BuildNinja is the forward-looking choice.</p>
+            <p>BuildNinja v1.2.0 is bringing AI-powered log analysis, configuration review, and build outcome prediction - features Jenkins has no roadmap for. If your team wants CI/CD that actively helps you improve, BuildNinja is the forward-looking choice.</p>
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>AI-native (v1.2)</div>

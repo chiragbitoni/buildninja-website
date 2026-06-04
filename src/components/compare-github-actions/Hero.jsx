@@ -17,13 +17,13 @@ export default function Hero() {
         </h1>
 
         <p className={s.heroSub}>
-          GitHub Actions is deeply embedded in GitHub's ecosystem — but <strong>March 2026 changed the math</strong>. Self-hosted runners now cost $0.002/min even on your own hardware. This page compares every feature, every cost, and every trade-off honestly.
+          GitHub Actions is deeply embedded in GitHub's ecosystem - but <strong>March 2026 changed the math</strong>. Self-hosted runners now cost $0.002/min even on your own hardware. This page compares every feature, every cost, and every trade-off honestly.
         </p>
 
         <div className={s.alertBar}>
           <span className={s.alertIcon}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />️</span>
           <p className={s.alertText}>
-            <strong>GitHub Actions Pricing Change (March 2026):</strong> GitHub now charges $0.002/min for self-hosted runner usage in private repos — on top of your own infrastructure costs. A team running 500 build-hours/month pays an extra <strong>$60/month</strong> to GitHub just for orchestration, even when builds run on their own servers. BuildNinja has no equivalent charge.
+            <strong>GitHub Actions Pricing Change (March 2026):</strong> GitHub now charges $0.002/min for self-hosted runner usage in private repos - on top of your own infrastructure costs. A team running 500 build-hours/month pays an extra <strong>$60/month</strong> to GitHub just for orchestration, even when builds run on their own servers. BuildNinja has no equivalent charge.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function Hero() {
         <div className={s.heroStats}>
           <div className={s.hsItem}>
             <div className={`${s.hsVal} ${s.hsValOrange}`}>Unlimited</div>
-            <div className={s.hsLbl}>BuildNinja builds/mo — no caps</div>
+            <div className={s.hsLbl}>BuildNinja builds/mo - no caps</div>
           </div>
           <div className={s.hsItem}>
             <div className={`${s.hsVal} ${s.hsValRed}`}>2,000 min</div>

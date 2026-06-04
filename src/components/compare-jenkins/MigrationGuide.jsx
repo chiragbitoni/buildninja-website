@@ -21,7 +21,7 @@ export default function MigrationGuide() {
               <div className={s.stepNum}>1</div>
               <div className={s.stepContent}>
                 <h4>Deploy BuildNinja alongside Jenkins</h4>
-                <p>Run <code className={s.codeSnippet}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep Jenkins running — no cutover yet.</p>
+                <p>Run <code className={s.codeSnippet}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep Jenkins running - no cutover yet.</p>
               </div>
             </div>
             

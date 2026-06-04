@@ -12,7 +12,7 @@ export default function CostCalculator() {
       <div className={s.container}>
         <span className="badge-alt" style={{ marginBottom: '10px' }}>Real Cost Math</span>
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
-          Actual Monthly Bills — 3 Team Sizes
+          Actual Monthly Bills - 3 Team Sizes
         </h2>
         <p className="section-subtitle">
           Based on 100 builds/day, 8 minutes average, 5-day working week. GitHub Actions pricing as of May 2026.
@@ -35,7 +35,7 @@ export default function CostCalculator() {
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Orchestration fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Per-seat cost (5 users)</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Server — Hetzner CX11 (2vCPU/2GB)</span><span className={s.clVal}>$6/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Server - Hetzner CX11 (2vCPU/2GB)</span><span className={s.clVal}>$6/mo</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Storage (50GB SSD)</span><span className={s.clVal}>$2/mo</span></div>
               <div className={`${s.costBox} ${s.bnBox}`}>
                 <div className={`${s.costBoxNum} ${s.or}`}>$8/mo</div>
@@ -74,7 +74,7 @@ export default function CostCalculator() {
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Self-hosted orchestration fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Per-seat cost (20 users)</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Server — Hetzner CX21 (3vCPU/4GB)</span><span className={s.clVal}>$12/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Server - Hetzner CX21 (3vCPU/4GB)</span><span className={s.clVal}>$12/mo</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Storage (100GB SSD)</span><span className={s.clVal}>$5/mo</span></div>
               <div className={`${s.costBox} ${s.bnBox}`}>
                 <div className={`${s.costBoxNum} ${s.or}`}>$17/mo</div>
@@ -98,7 +98,7 @@ export default function CostCalculator() {
           </div>
           <div className={s.calloutGood}>
             <span className={s.calloutIco}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
-            <p><strong>Savings with BuildNinja: ~$243/month ($2,916/year)</strong> for a 20-person team. Add self-hosted runner orchestration fees ($0.002/min × 24,000 min = $48/mo) if using self-hosted GH runners — that's $3,492/year in BuildNinja savings.</p>
+            <p><strong>Savings with BuildNinja: ~$243/month ($2,916/year)</strong> for a 20-person team. Add self-hosted runner orchestration fees ($0.002/min × 24,000 min = $48/mo) if using self-hosted GH runners - that's $3,492/year in BuildNinja savings.</p>
           </div>
         </div>
 
@@ -113,7 +113,7 @@ export default function CostCalculator() {
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Self-hosted orchestration fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Per-seat cost (50 users)</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Server — Hetzner CX31 (4vCPU/8GB)</span><span className={s.clVal}>$24/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Server - Hetzner CX31 (4vCPU/8GB)</span><span className={s.clVal}>$24/mo</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Storage (200GB SSD)</span><span className={s.clVal}>$10/mo</span></div>
               <div className={`${s.costBox} ${s.bnBox}`}>
                 <div className={`${s.costBoxNum} ${s.or}`}>$34/mo</div>

@@ -9,7 +9,7 @@ export default function ComparisonTable() {
       <div className={s.container}>
         <span className={s.sectionLabel}>Full Feature Comparison</span>
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
-          BuildNinja vs CircleCI — Every Feature, Honestly Scored
+          BuildNinja vs CircleCI - Every Feature, Honestly Scored
         </h2>
         <p className="section-subtitle">
           We've covered 40+ criteria across pricing, setup, CI/CD features, integrations, security, and scalability. No spin, no cherry-picking.
@@ -29,12 +29,12 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Pricing &amp; Cost Model</td></tr>
               <tr>
                 <td>Free tier build minutes</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Unlimited</strong> — no credit system</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Unlimited</strong> - no credit system</td>
                 <td>~300 build-minutes/mo (6,000 credits)</td>
               </tr>
               <tr>
                 <td>Per-seat cost</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0</strong> — no per-user pricing ever</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0</strong> - no per-user pricing ever</td>
                 <td>Scales with usage; credit-based tiers</td>
               </tr>
               <tr>
@@ -44,8 +44,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Predictable monthly bill</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Yes — server cost is fixed</td>
-                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Variable — spikes with build activity</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Yes - server cost is fixed</td>
+                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Variable - spikes with build activity</td>
               </tr>
               <tr>
                 <td>No credit card to start</td>
@@ -100,7 +100,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Pipeline as code (YAML)</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Supports YAML configuration — clean, minimal syntax</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Supports YAML configuration - clean, minimal syntax</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <code style={{fontSize:'12px'}}>.circleci/config.yml</code> + orbs</td>
               </tr>
               <tr>
@@ -120,7 +120,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Artifact storage</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> On your own storage — no limits</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> On your own storage - no limits</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Subject to plan storage limits</td>
               </tr>
               <tr>
@@ -211,7 +211,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>VPN / private network support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully compatible — your network, your rules</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully compatible - your network, your rules</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Requires runner config for private nets</td>
               </tr>
 
@@ -242,8 +242,8 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><Code aria-label="Developer Experience" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Developer Experience</td></tr>
               <tr>
                 <td>Interactive sandbox / demo</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Dojo — live CI/CD sandbox (unique) <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
-                <td><span className={s.cross}><X aria-label="No" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> No live sandbox — sign-up flow only</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Dojo - live CI/CD sandbox (unique) <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
+                <td><span className={s.cross}><X aria-label="No" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> No live sandbox - sign-up flow only</td>
               </tr>
               <tr>
                 <td>CLI tooling</td>
@@ -262,7 +262,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Community &amp; ecosystem</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Early stage — GrapeCity developer network</td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Early stage - GrapeCity developer network</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Large community, Discuss forum, podcast <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
               </tr>
 

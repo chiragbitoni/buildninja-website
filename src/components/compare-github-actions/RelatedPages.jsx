@@ -52,7 +52,7 @@ export default function RelatedPages() {
             <div className={s.relIcon} style={{ background: 'var(--color-success-bg)' }}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <div>
               <div className={s.relTitle}>BuildNinja Pricing</div>
-              <div className={s.relSub}>Free tier vs Growth Edition — full feature breakdown.</div>
+              <div className={s.relSub}>Free tier vs Growth Edition - full feature breakdown.</div>
             </div>
           </Link>
         </div>

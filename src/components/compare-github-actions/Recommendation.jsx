@@ -29,7 +29,7 @@ export default function Recommendation() {
               </li>
               <li className={s.recListItem}>
                 <span className={s.recListIconBn}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
-                <span className={s.recListItemBn}>Need data sovereignty — code cannot leave your network</span>
+                <span className={s.recListItemBn}>Need data sovereignty - code cannot leave your network</span>
               </li>
               <li className={s.recListItem}>
                 <span className={s.recListIconBn}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
@@ -50,7 +50,7 @@ export default function Recommendation() {
             </ul>
             <Link href="/install" className={s.btnPrimary}>
               <Zap size={14} color="currentColor" />
-              Start Free — No Card Needed
+              Start Free - No Card Needed
             </Link>
           </div>
 

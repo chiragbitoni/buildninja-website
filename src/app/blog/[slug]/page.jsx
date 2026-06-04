@@ -202,7 +202,7 @@ export default async function BlogPostPage({ params }) {
           </div>
         </header>
 
-        {/* Body — Wix-scraped HTML rendered safely */}
+        {/* Body - Wix-scraped HTML rendered safely */}
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{ __html: post.content }}

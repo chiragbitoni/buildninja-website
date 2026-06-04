@@ -51,7 +51,7 @@ export default function CostCalculator() {
         <div className={s.insightBox}>
           <span style={{ fontSize: '24px' }}><Lightbulb aria-label="Idea" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
           <p>
-            <strong>The compounding advantage:</strong> As your team grows from 20 to 50 to 200 people, CircleCI's bill scales proportionally. BuildNinja's server cost stays flat — or grows by a few dollars for a larger instance. A 200-person engineering team could realistically save $3,000–6,000/month by switching.
+            <strong>The compounding advantage:</strong> As your team grows from 20 to 50 to 200 people, CircleCI's bill scales proportionally. BuildNinja's server cost stays flat - or grows by a few dollars for a larger instance. A 200-person engineering team could realistically save $3,000–6,000/month by switching.
           </p>
         </div>
       </div>

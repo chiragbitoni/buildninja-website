@@ -9,7 +9,7 @@ export default function DecisionGuide() {
         <div className={s.sectionLabel}>Decision Guide</div>
         <h2 className={s.sectionTitle}>Which Tool is Right for You?</h2>
         <p className={s.sectionDesc}>
-          Be honest about your team's situation. Both tools can run CI/CD pipelines — the question is which is right for your constraints.
+          Be honest about your team's situation. Both tools can run CI/CD pipelines - the question is which is right for your constraints.
         </p>
 
         <div className={s.decisionGrid}>

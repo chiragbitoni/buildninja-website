@@ -45,7 +45,7 @@ export default function Recommendation() {
             </ul>
             <Link href="/install" className={s.btnPrimary}>
               <Zap size={14} color="currentColor" />
-              Start Free — No Card Needed
+              Start Free - No Card Needed
             </Link>
           </div>
 

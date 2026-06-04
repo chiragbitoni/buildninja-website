@@ -12,7 +12,7 @@ export default function CodeComparison() {
           Side-by-Side: Full Stack Pipeline
         </h2>
         <p className="section-subtitle">
-          Both accomplish the same thing — install dependencies, build the application, run tests, and store artifacts.
+          Both accomplish the same thing - install dependencies, build the application, run tests, and store artifacts.
         </p>
 
         <div className={s.codeCompare}>
@@ -75,7 +75,7 @@ export default function CodeComparison() {
           <div className={s.codeBlock}>
             <div className={`${s.codeHeader} ${s.codeHeaderCi}`}>CIRCLECI · .circleci/config.yml</div>
             <pre className={s.pre}>
-<span className={s.cm}># CircleCI pipeline — requires orbs, executors, and manual routing</span>{'\n'}
+<span className={s.cm}># CircleCI pipeline - requires orbs, executors, and manual routing</span>{'\n'}
 <span className={s.kw}>version</span>: <span className={s.val}>2.1</span>{'\n'}
 {'\n'}
 <span className={s.kw}>orbs</span>:{'\n'}

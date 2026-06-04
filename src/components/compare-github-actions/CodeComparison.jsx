@@ -14,7 +14,7 @@ export default function CodeComparison() {
     });
   };
 
-  const bnCode = `# BuildNinja — clean YAML, Git-provider agnostic
+  const bnCode = `# BuildNinja - clean YAML, Git-provider agnostic
 name: Node.js Production Pipeline
 on: [push, pull_request]
 
@@ -46,9 +46,9 @@ stages:
 
 # [<Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />] 24 lines · No marketplace dependencies
 # [<Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />] Works with GitHub, GitLab, Bitbucket
-# [<Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />] $0 per run — unlimited`;
+# [<Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />] $0 per run - unlimited`;
 
-  const ghCode = `# GitHub Actions — GitHub-only, verbose syntax
+  const ghCode = `# GitHub Actions - GitHub-only, verbose syntax
 name: Node.js Production Pipeline
 
 on:
@@ -93,7 +93,7 @@ jobs:
       <div className={s.container}>
         <span className="badge-alt" style={{ marginBottom: '10px' }}>Pipeline Syntax Side-by-Side</span>
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
-          Same Pipeline — BuildNinja vs GitHub Actions YAML
+          Same Pipeline - BuildNinja vs GitHub Actions YAML
         </h2>
         <p className="section-subtitle">
           Both pipelines do the same thing: build, test, and deploy a Node.js app. See which syntax you prefer.
@@ -118,7 +118,7 @@ jobs:
               </button>
             </div>
             <pre className={s.codePre} id="c1">
-<span className={s.cm}># BuildNinja — clean YAML, Git-provider agnostic</span>{'\n'}
+<span className={s.cm}># BuildNinja - clean YAML, Git-provider agnostic</span>{'\n'}
 <span className={s.kw}>name</span>: <span className={s.str}>Node.js Production Pipeline</span>{'\n'}
 <span className={s.kw}>on</span>: [push, pull_request]{'\n'}
 {'\n'}
@@ -150,7 +150,7 @@ jobs:
 {'\n'}
 <span className={s.cm}># <CheckCircle2 aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 24 lines · No marketplace dependencies{'\n'}
 # <CheckCircle2 aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Works with GitHub, GitLab, Bitbucket{'\n'}
-# <CheckCircle2 aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> $0 per run — unlimited</span>{'\n'}
+# <CheckCircle2 aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> $0 per run - unlimited</span>{'\n'}
             </pre>
           </div>
 
@@ -172,7 +172,7 @@ jobs:
               </button>
             </div>
             <pre className={s.codePre} id="c2">
-<span className={s.cm}># GitHub Actions — GitHub-only, verbose syntax</span>{'\n'}
+<span className={s.cm}># GitHub Actions - GitHub-only, verbose syntax</span>{'\n'}
 <span className={s.kw}>name</span>: <span className={s.str}>Node.js Production Pipeline</span>{'\n'}
 {'\n'}
 <span className={s.kw}>on</span>:{'\n'}
@@ -218,7 +218,7 @@ jobs:
         <div className={s.calloutInfo}>
           <span className={s.calloutIco}><Pin aria-label="Key difference" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
           <p>
-            <strong>Key syntax difference:</strong> GitHub Actions requires <code style={{ fontSize: '12px', background: 'transparent' }}>uses: actions/checkout@v4</code> and <code style={{ fontSize: '12px', background: 'transparent' }}>uses: actions/setup-node@v4</code> marketplace actions for basic tasks. BuildNinja uses standard Docker images directly — no marketplace dependency, no action version pinning, no supply-chain risk from third-party actions.
+            <strong>Key syntax difference:</strong> GitHub Actions requires <code style={{ fontSize: '12px', background: 'transparent' }}>uses: actions/checkout@v4</code> and <code style={{ fontSize: '12px', background: 'transparent' }}>uses: actions/setup-node@v4</code> marketplace actions for basic tasks. BuildNinja uses standard Docker images directly - no marketplace dependency, no action version pinning, no supply-chain risk from third-party actions.
           </p>
         </div>
       </div>

@@ -54,8 +54,8 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="4">🚀 Pipeline Capabilities</td></tr>
               <tr>
                 <td>Pipeline as Code</td>
-                <td className={s.ninjaTd}>Yes — clean YAML with smart defaults</td>
-                <td className={s.jenkinsTd}>Yes — Groovy DSL (Jenkinsfile)</td>
+                <td className={s.ninjaTd}>Yes - clean YAML with smart defaults</td>
+                <td className={s.jenkinsTd}>Yes - Groovy DSL (Jenkinsfile)</td>
                 <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
               </tr>
               <tr>
@@ -67,13 +67,13 @@ export default function ComparisonTable() {
               <tr>
                 <td>Build Triggers</td>
                 <td className={s.ninjaTd}>Push, PR, schedule, webhook, manual</td>
-                <td className={s.jenkinsTd}>Comprehensive — push, PR, cron, polling, API</td>
+                <td className={s.jenkinsTd}>Comprehensive - push, PR, cron, polling, API</td>
                 <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
               </tr>
               <tr>
                 <td>Conditional Logic</td>
                 <td className={s.ninjaTd}>Visual conditions + YAML expressions</td>
-                <td className={s.jenkinsTd}>Full Groovy scripting — powerful but complex</td>
+                <td className={s.jenkinsTd}>Full Groovy scripting - powerful but complex</td>
                 <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
               </tr>
               <tr>
@@ -84,7 +84,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-Powered Features</td>
-                <td className={s.ninjaTd}>Coming soon — log analysis, build prediction <span className={`${s.tag} ${s.tagBlue}`}>v1.2</span></td>
+                <td className={s.ninjaTd}>Coming soon - log analysis, build prediction <span className={`${s.tag} ${s.tagBlue}`}>v1.2</span></td>
                 <td className={s.jenkinsTd}>No built-in AI capabilities</td>
                 <td className={s.statusIcon}><CheckCircle2 size={18} className={s.iconWin} aria-label="BuildNinja wins" /></td>
               </tr>
@@ -100,7 +100,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Plugin Ecosystem</td>
                 <td className={s.ninjaTd}>Core integrations + growing library</td>
-                <td className={s.jenkinsTd}>1,800+ plugins — unmatched breadth <span className={`${s.tag} ${s.tagBlue}`}>Jenkins leads</span></td>
+                <td className={s.jenkinsTd}>1,800+ plugins - unmatched breadth <span className={`${s.tag} ${s.tagBlue}`}>Jenkins leads</span></td>
                 <td className={s.statusIcon}><XCircle size={18} className={s.iconLose} aria-label="Jenkins wins" /></td>
               </tr>
               <tr>
@@ -112,7 +112,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Kubernetes Integration</td>
                 <td className={s.ninjaTd}>Native Kubernetes deployment support</td>
-                <td className={s.jenkinsTd}>Via Kubernetes plugin — widely used</td>
+                <td className={s.jenkinsTd}>Via Kubernetes plugin - widely used</td>
                 <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
               </tr>
               <tr>
@@ -138,7 +138,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Plugin Security Patches</td>
-                <td className={s.ninjaTd}>Unified platform updates — no plugin sprawl</td>
+                <td className={s.ninjaTd}>Unified platform updates - no plugin sprawl</td>
                 <td className={s.jenkinsTd}>1,800+ plugins, each with own release cycle <span className={`${s.tag} ${s.tagAmber}`}>Risk</span></td>
                 <td className={s.statusIcon}><CheckCircle2 size={18} className={s.iconWin} aria-label="BuildNinja wins" /></td>
               </tr>
@@ -156,7 +156,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Backup & Recovery</td>
-                <td className={s.ninjaTd}>Simple — self-hosted on your infra</td>
+                <td className={s.ninjaTd}>Simple - self-hosted on your infra</td>
                 <td className={s.jenkinsTd}>Manual backup of JENKINS_HOME required</td>
                 <td className={s.statusIcon}><CheckCircle2 size={18} className={s.iconWin} aria-label="BuildNinja wins" /></td>
               </tr>
@@ -165,7 +165,7 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="4">👥 Team & Scalability</td></tr>
               <tr>
                 <td>User Limits</td>
-                <td className={s.ninjaTd}>Unlimited users — no per-seat pricing <span className={`${s.tag} ${s.tagGreen}`}>Free</span></td>
+                <td className={s.ninjaTd}>Unlimited users - no per-seat pricing <span className={`${s.tag} ${s.tagGreen}`}>Free</span></td>
                 <td className={s.jenkinsTd}>Unlimited (open source) but infra costs scale</td>
                 <td className={s.statusIcon}><CheckCircle2 size={18} className={s.iconWin} aria-label="BuildNinja wins" /></td>
               </tr>
@@ -184,7 +184,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Distributed Builds</td>
                 <td className={s.ninjaTd}>Parallel builds on owned hardware</td>
-                <td className={s.jenkinsTd}>Master-agent architecture — powerful but complex</td>
+                <td className={s.jenkinsTd}>Master-agent architecture - powerful but complex</td>
                 <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
               </tr>
 
@@ -193,7 +193,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Software License</td>
                 <td className={s.ninjaTd}>Free tier + Growth Edition (paid)</td>
-                <td className={s.jenkinsTd}>MIT License — always free</td>
+                <td className={s.jenkinsTd}>MIT License - always free</td>
                 <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
               </tr>
               <tr>
@@ -204,8 +204,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Vendor Lock-in</td>
-                <td className={s.ninjaTd}>No lock-in — self-hosted, portable</td>
-                <td className={s.jenkinsTd}>No lock-in — fully open source</td>
+                <td className={s.ninjaTd}>No lock-in - self-hosted, portable</td>
+                <td className={s.jenkinsTd}>No lock-in - fully open source</td>
                 <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
               </tr>
               <tr>
@@ -225,8 +225,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Community Size</td>
-                <td className={s.ninjaTd}>Growing — newer project</td>
-                <td className={s.jenkinsTd}>Massive — 14+ years, millions of users <span className={`${s.tag} ${s.tagBlue}`}>Jenkins leads</span></td>
+                <td className={s.ninjaTd}>Growing - newer project</td>
+                <td className={s.jenkinsTd}>Massive - 14+ years, millions of users <span className={`${s.tag} ${s.tagBlue}`}>Jenkins leads</span></td>
                 <td className={s.statusIcon}><XCircle size={18} className={s.iconLose} aria-label="Jenkins wins" /></td>
               </tr>
               <tr>

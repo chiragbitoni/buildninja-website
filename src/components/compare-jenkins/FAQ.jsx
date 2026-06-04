@@ -21,11 +21,11 @@ export default function FAQ() {
     },
     {
       q: "Can BuildNinja replace Jenkins for complex enterprise pipelines?",
-      a: "For most CI/CD workflows — build, test, static analysis, Docker publish, deploy — yes. If your Jenkins setup relies heavily on niche plugins (mainframe deployment, SAP integration, etc.) or extremely complex Groovy scripting, you should evaluate BuildNinja carefully in a proof-of-concept before committing to migration."
+      a: "For most CI/CD workflows - build, test, static analysis, Docker publish, deploy - yes. If your Jenkins setup relies heavily on niche plugins (mainframe deployment, SAP integration, etc.) or extremely complex Groovy scripting, you should evaluate BuildNinja carefully in a proof-of-concept before committing to migration."
     },
     {
       q: "Does BuildNinja work with GitHub Actions or GitLab CI?",
-      a: "BuildNinja is a separate self-hosted CI/CD platform — not a wrapper around GitHub Actions or GitLab CI. It connects to your GitHub, GitLab, or Bitbucket repos but runs builds on your own infrastructure, giving you full control over compute costs and data."
+      a: "BuildNinja is a separate self-hosted CI/CD platform - not a wrapper around GitHub Actions or GitLab CI. It connects to your GitHub, GitLab, or Bitbucket repos but runs builds on your own infrastructure, giving you full control over compute costs and data."
     },
     {
       q: "How does BuildNinja handle secrets and credentials?",
@@ -37,7 +37,7 @@ export default function FAQ() {
     },
     {
       q: "Is Jenkins being discontinued?",
-      a: "No. Jenkins is actively maintained as of 2025 and has a large, healthy open-source community. It's not going away. However, it's also not receiving significant UI/UX modernization or new architectural features — it's in maintenance mode for its core architecture. The cloud-native CI/CD world has largely moved on to newer platforms."
+      a: "No. Jenkins is actively maintained as of 2025 and has a large, healthy open-source community. It's not going away. However, it's also not receiving significant UI/UX modernization or new architectural features - it's in maintenance mode for its core architecture. The cloud-native CI/CD world has largely moved on to newer platforms."
     }
   ];
 

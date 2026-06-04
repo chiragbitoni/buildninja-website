@@ -12,26 +12,26 @@ export default function MigrationGuide() {
           Switching from GitHub Actions to BuildNinja in 4 Steps
         </h2>
         <p className="section-subtitle">
-          Most teams complete the migration in under 2 hours. You keep using GitHub for source code — just run your builds somewhere better.
+          Most teams complete the migration in under 2 hours. You keep using GitHub for source code - just run your builds somewhere better.
         </p>
 
         <div className={s.migGrid}>
           <div className={s.migCard}>
             <div className={s.migNum}>01</div>
             <h4>Install BuildNinja</h4>
-            <p>One Docker command on any Linux server. <code style={{ fontSize: '11px', background: 'transparent' }}>docker run -d -p 8080:8080 buildninja/server</code> — that's your CI/CD server.</p>
+            <p>One Docker command on any Linux server. <code style={{ fontSize: '11px', background: 'transparent' }}>docker run -d -p 8080:8080 buildninja/server</code> - that's your CI/CD server.</p>
             <span className={s.migTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 5 min</span>
           </div>
           <div className={s.migCard}>
             <div className={s.migNum}>02</div>
             <h4>Connect Your GitHub Repos</h4>
-            <p>OAuth connection to GitHub. BuildNinja sets up webhooks automatically. Your repos still live on GitHub — only the build runner changes.</p>
+            <p>OAuth connection to GitHub. BuildNinja sets up webhooks automatically. Your repos still live on GitHub - only the build runner changes.</p>
             <span className={s.migTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 3 min</span>
           </div>
           <div className={s.migCard}>
             <div className={s.migNum}>03</div>
             <h4>Convert Workflow Files</h4>
-            <p>Translate <code style={{ fontSize: '11px', background: 'transparent' }}>.github/workflows/*.yml</code> to <code style={{ fontSize: '11px', background: 'transparent' }}>.buildninja.yml</code>. Concepts map 1:1 — jobs <ArrowRight aria-label="Right Arrow" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> stages, steps <ArrowRight aria-label="Right Arrow" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> run. Most pipelines convert in 30 min.</p>
+            <p>Translate <code style={{ fontSize: '11px', background: 'transparent' }}>.github/workflows/*.yml</code> to <code style={{ fontSize: '11px', background: 'transparent' }}>.buildninja.yml</code>. Concepts map 1:1 - jobs <ArrowRight aria-label="Right Arrow" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> stages, steps <ArrowRight aria-label="Right Arrow" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> run. Most pipelines convert in 30 min.</p>
             <span className={s.migTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
           </div>
           <div className={s.migCard}>
@@ -45,7 +45,7 @@ export default function MigrationGuide() {
         <div className={s.calloutGood}>
           <span className={s.calloutIco}><CheckCircle2 aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
           <p>
-            <strong>Your GitHub stays the same:</strong> Repositories, pull requests, code review, Issues, GitHub Pages — all unchanged. BuildNinja only replaces the CI/CD execution layer. Your developers won't notice the difference except for seeing a different dashboard for build results.
+            <strong>Your GitHub stays the same:</strong> Repositories, pull requests, code review, Issues, GitHub Pages - all unchanged. BuildNinja only replaces the CI/CD execution layer. Your developers won't notice the difference except for seeing a different dashboard for build results.
           </p>
         </div>
       </div>

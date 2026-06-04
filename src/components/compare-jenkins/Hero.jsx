@@ -22,7 +22,7 @@ export default function Hero() {
       </h1>
       
       <p className={s.heroSub}>
-        A fair, detailed breakdown of both tools — setup time, performance, maintenance burden, plugin ecosystem, and total cost of ownership.
+        A fair, detailed breakdown of both tools - setup time, performance, maintenance burden, plugin ecosystem, and total cost of ownership.
       </p>
       
       <div className={s.heroMeta} role="list">

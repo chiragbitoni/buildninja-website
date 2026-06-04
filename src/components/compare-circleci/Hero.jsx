@@ -17,7 +17,7 @@ export default function Hero() {
         </h1>
         
         <p className={`${s.heroSub} ${s.fadeUp}`}>
-          Unlimited builds vs 6,000 credits. No seat pricing vs per-minute billing. True self-hosted vs SaaS-only. We compared every feature — honestly.
+          Unlimited builds vs 6,000 credits. No seat pricing vs per-minute billing. True self-hosted vs SaaS-only. We compared every feature - honestly.
         </p>
 
         <div className={`${s.heroBadges} ${s.fadeUp}`}>
