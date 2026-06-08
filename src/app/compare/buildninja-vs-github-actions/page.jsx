@@ -31,7 +31,7 @@ export default function BuildNinjaVsGitHubActions() {
       <ComparisonTable />
       <MidCTA />
       <CostCalculator />
-      <CodeComparison />
+      {/* <CodeComparison /> */}
       <MigrationGuide />
       <Recommendation />
       <FAQ />

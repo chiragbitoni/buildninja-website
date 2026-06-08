@@ -62,12 +62,12 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><Zap aria-label="Lightning bolt" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Setup &amp; Architecture</td></tr>
               <tr>
                 <td>Git provider dependency</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Any provider - GitHub, GitLab, Bitbucket <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Any provider - GitHub, GitLab, Bitbucket, Azure Repos, AWS Code Commit <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
                 <td className={s.tdGh}>GitHub only (tightly coupled)</td>
               </tr>
               <tr>
                 <td>Self-hosted setup complexity</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 1 Docker command, 5 minutes <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>  Docker, Kubernetes, or Installer on Windows, macOS, and Linux <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
                 <td className={s.tdGh}>Runner binary + registration + Kubernetes (for scale)</td>
               </tr>
               <tr>
@@ -95,7 +95,7 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><Wrench aria-label="Configuration" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> CI/CD Pipeline Capabilities</td></tr>
               <tr>
                 <td>Pipeline syntax</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Clean YAML (<code style={{ fontSize: '11px' }}>.buildninja.yaml</code>) - minimal boilerplate</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> UI based and Buildninja.Yaml can also be used</td>
                 <td className={s.tdGh}>YAML (<code style={{ fontSize: '11px' }}>.github/workflows/*.yml</code>) - verbose, trigger-heavy</td>
               </tr>
               <tr>
@@ -109,11 +109,6 @@ export default function ComparisonTable() {
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Cache action - up to 10GB per repo</td>
               </tr>
               <tr>
-                <td>Matrix builds</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Multi-dimension matrix support</td>
-                <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Matrix strategy with include/exclude</td>
-              </tr>
-              <tr>
                 <td>Reusable pipeline components</td>
                 <td className={s.tdBn}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Template library in development</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Actions marketplace (20,000+ actions) <span className={`${s.tagWin} ${s.tagGh}`}>GH Wins</span></td>
@@ -122,11 +117,6 @@ export default function ComparisonTable() {
                 <td>Scheduled builds (cron)</td>
                 <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Flexible cron scheduling</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> schedule event with cron expressions</td>
-              </tr>
-              <tr>
-                <td>Environment approvals / gates</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Environment-based deployment gates</td>
-                <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Required reviewers for environments</td>
               </tr>
               <tr>
                 <td>Concurrent builds - no extra cost</td>
@@ -158,7 +148,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Works across multiple Git hosts</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Single BuildNinja instance, all 3 providers <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Single BuildNinja instance, all 5 providers <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
                 <td className={s.tdGh}><span className={s.icNo}><X aria-label="No" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> GitHub repositories only</td>
               </tr>
               <tr>
@@ -183,7 +173,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Slack/notification integrations</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Webhook-based notifications</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Email-based notifications</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Slack GitHub action available</td>
               </tr>
 
@@ -266,13 +256,8 @@ export default function ComparisonTable() {
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Good workflow visualization UI</td>
               </tr>
               <tr>
-                <td>PR / merge request status checks</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Posts status back to GitHub PRs automatically</td>
-                <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Native, deeply integrated</td>
-              </tr>
-              <tr>
                 <td>Community &amp; documentation</td>
-                <td className={s.tdBn}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Growing - core docs complete</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Complete Documentation Available</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Enormous community, extensive docs <span className={`${s.tagWin} ${s.tagGh}`}>GH Wins</span></td>
               </tr>
               <tr>
