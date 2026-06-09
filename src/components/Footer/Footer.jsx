@@ -54,6 +54,15 @@ const footerText = {
                 { label: "Refund & Cancellation", link: "/refund-and-cancellation-policy" },
             ],
         },
+        {
+            title: "Compare",
+            links: [
+                { label: "All Comparisions", link: "/compare" },
+                { label: "vs GitHub Actions", link: "/compare/buildninja-vs-github-actions" },
+                { label: "vs Jenkins", link: "/compare/buildninja-vs-jenkins" },
+                { label: "vs Circle CI", link: `/compare/buildninja-vs-circleci` },
+            ],
+        },
     ],
 };
 
