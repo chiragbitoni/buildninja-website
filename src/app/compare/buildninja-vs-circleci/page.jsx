@@ -27,7 +27,7 @@ export default function CompareCircleCIPage() {
       <VerdictCards />
       <ComparisonTable />
       <CostCalculator />
-      <CodeComparison />
+      {/* <CodeComparison /> */}
       <MigrationGuide />
       <Recommendation />
       <FAQ />
