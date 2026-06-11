@@ -49,8 +49,13 @@ export default function ComparisonTable() {
             <thead>
               <tr>
                 <th style={{ width: '34%' }}>Feature / Criterion</th>
-                <th className={s.thBn} style={{ width: '33%' }}>BuildNinja</th>
-                <th style={{ width: '33%' }}>CircleCI</th>
+                <th className={s.thBn} style={{ width: '33%' }}>
+                  <span className={s.thHeaderInner}>
+                    <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.logoBn} />
+                    <span className={s.recBadge}>★ RECOMMENDED</span>
+                  </span>
+                </th>
+                <th style={{ width: '33%' }}><img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.logoCi} /></th>
               </tr>
             </thead>
             <tbody>
@@ -111,8 +116,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Cloud SaaS option</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self Hosted - Your infrastructure  your Rules </td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully managed SaaS <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self Hosted - Your infrastructure  your Rules </td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully managed SaaS</td>
               </tr>
 
               {/* CI/CD PIPELINE FEATURES */}
@@ -198,7 +203,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Third-party plugin ecosystem</td>
                 <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> No plugin chaos</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 1,000+ orbs from community <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 1,000+ orbs from community</td>
               </tr>
 
               {/* SECURITY & COMPLIANCE */}
