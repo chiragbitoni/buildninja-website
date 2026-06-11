@@ -23,15 +23,15 @@ export default function CompareCircleCIPage() {
   return (
     <>
       <Hero />
-      <SnapshotStats />
+      {/* <SnapshotStats /> */}
       <VerdictCards />
       <ComparisonTable />
-      <CostCalculator />
+      {/* <CostCalculator /> */}
       {/* <CodeComparison /> */}
       <MigrationGuide />
       <Recommendation />
       <FAQ />
-      <ExploreLinks />
+      {/* <ExploreLinks /> */}
       <CTABanner />
     </>
   );
