@@ -37,7 +37,7 @@ export default function FAQ() {
     },
     {
       q: "Is Jenkins being discontinued?",
-      a: "No. Jenkins is actively maintained as of 2025 and has a large, healthy open-source community. It's not going away. However, it's also not receiving significant UI/UX modernization or new architectural features - it's in maintenance mode for its core architecture. The cloud-native CI/CD world has largely moved on to newer platforms."
+      a: "No. Jenkins is actively maintained and has a large, healthy open-source community. It's not going away. However, it's also not receiving significant UI/UX modernization or new architectural features - it's in maintenance mode for its core architecture. The cloud-native CI/CD world has largely moved on to newer platforms."
     }
   ];
 

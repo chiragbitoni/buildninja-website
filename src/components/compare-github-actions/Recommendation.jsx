@@ -33,7 +33,7 @@ export default function Recommendation() {
               </li>
               <li className={s.recListItem}>
                 <span className={s.recListIconBn}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
-                <span className={s.recListItemBn}>Are affected by the March 2026 self-hosted runner fee change</span>
+                <span className={s.recListItemBn}>Are affected by the self-hosted runner fee change</span>
               </li>
               <li className={s.recListItem}>
                 <span className={s.recListIconBn}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>

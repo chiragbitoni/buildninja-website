@@ -40,7 +40,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Self-hosted runner orchestration fee</td>
                 <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0.00</strong> - no platform tax <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
-                <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> $0.002/min from March 2026 (private repos)</td>
+                <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> $0.002/min for self-hosted private repos</td>
               </tr>
               <tr>
                 <td>Per-seat pricing</td>
@@ -125,7 +125,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-powered pipeline intelligence</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence (Q3 2026) - failure prediction, log AI <span className={`${s.tagWin} ${s.tagBn}`}>BN Unique</span></td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence - failure prediction, log AI <span className={`${s.tagWin} ${s.tagBn}`}>BN Unique</span></td>
                 <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Copilot integrations, no native pipeline AI</td>
               </tr>
 

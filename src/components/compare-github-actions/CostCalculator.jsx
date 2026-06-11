@@ -15,7 +15,7 @@ export default function CostCalculator() {
           Actual Monthly Bills - 3 Team Sizes
         </h2>
         <p className="section-subtitle" style={{ margin: '0 auto' }}>
-          Based on 100 builds/day, 8 minutes average, 5-day working week. GitHub Actions pricing as of May 2026.
+          Based on 100 builds/day, 8 minutes average, 5-day working week. GitHub Actions pricing shown for comparison.
         </p>
 
         <div className={s.calcTabs}>

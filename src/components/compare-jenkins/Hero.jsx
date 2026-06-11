@@ -14,7 +14,7 @@ export default function Hero() {
         <span>BuildNinja vs Jenkins</span>
       </div>
       
-      <div className={s.heroBadge}>Updated May 2025 · Honest Comparison</div>
+      <div className={s.heroBadge}>Honest Comparison</div>
       
       <h1>
         <span className={s.highlight}>BuildNinja</span> vs Jenkins:<br />

@@ -15,7 +15,7 @@ export default function FAQ() {
       a: 'Yes. BuildNinja is self-hosted and free with unlimited builds. GitHub Actions gives 2,000 free minutes/month for private repos, then charges $0.008–$0.016/min depending on OS. For active teams exceeding that threshold, BuildNinja eliminates per-minute billing entirely - you pay only for your server infrastructure (typically $6–50/month depending on team size).'
     },
     {
-      q: 'Why is GitHub Actions charging for self-hosted runners from March 2026?',
+      q: 'Why is GitHub Actions charging for self-hosted runners?',
       a: 'GitHub introduced a $0.002/min "Actions cloud platform" charge for self-hosted runner usage in private repositories. This fee covers GitHub\'s orchestration layer - job scheduling, routing, and secrets management - even when compute runs on your own hardware. Public repositories remain free, as do GitHub Enterprise Server customers. BuildNinja has no equivalent charge; orchestration is built into the product at no per-minute cost.'
     },
     {
