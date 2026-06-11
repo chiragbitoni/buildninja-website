@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Check, ArrowRight, Zap } from 'lucide-react';
 import Link from 'next/link';
 import s from './Recommendation.module.css';
@@ -7,14 +9,35 @@ export default function Recommendation() {
   return (
     <section className={s.section}>
       <div className={s.container}>
-        <span className="badge-alt" style={{ marginBottom: '10px' }}>Honest Recommendation</span>
-        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)' }}>
+        <motion.span
+          className="badge-alt"
+          style={{ marginBottom: '10px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Honest Recommendation
+        </motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           Which tool is right for your team?
-        </h2>
+        </motion.h2>
 
         <div className={s.recGrid}>
-          {/* Choose BuildNinja */}
-          <div className={`${s.recCard} ${s.recCardBn}`}>
+          <motion.div
+            className={`${s.recCard} ${s.recCardBn}`}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <div className={s.recIcon}><img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.recLogoBn} /></div>
             <h3 className={s.recTitle}>Choose BuildNinja if you…</h3>
             <ul className={s.recList}>
@@ -47,10 +70,15 @@ export default function Recommendation() {
               <Zap size={14} color="currentColor" />
               Start Free - No Card Needed
             </Link>
-          </div>
+          </motion.div>
 
-          {/* Choose CircleCI */}
-          <div className={`${s.recCard} ${s.recCardAlt}`}>
+          <motion.div
+            className={`${s.recCard} ${s.recCardAlt}`}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+          >
             <div className={s.recIcon}><img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.recLogoCi} /></div>
             <h3 className={s.recTitle}>CircleCI may be better if you…</h3>
             <ul className={s.recList}>
@@ -75,7 +103,7 @@ export default function Recommendation() {
                 <span className={s.recListItemAlt}>Need CircleCI's advanced mobile (iOS/Android) build infrastructure</span>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

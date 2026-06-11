@@ -116,7 +116,8 @@
   gap: 8px;
 }
 
-.btnPrimary:hover {background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
+.btnPrimary:hover {
+  background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
   transform: translateY(-2px);
 }
 
@@ -155,16 +156,4 @@
 
 .fadeUp:nth-child(4) {
   animation-delay: 0.3s;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

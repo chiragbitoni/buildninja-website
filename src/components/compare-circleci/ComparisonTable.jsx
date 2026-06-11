@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Check, AlertTriangle, Zap, X, DollarSign, Wrench, Link, Lock, TrendingUp, Code, Handshake } from 'lucide-react';
 import s from './ComparisonTable.module.css';
 
@@ -7,15 +9,42 @@ export default function ComparisonTable() {
   return (
     <section id="comparison-table" className={s.section}>
       <div className={s.container}>
-        <span className={s.sectionLabel}>Full Feature Comparison</span>
-        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
+        <motion.span
+          className={s.sectionLabel}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Full Feature Comparison
+        </motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           BuildNinja vs CircleCI - Every Feature, Honestly Scored
-        </h2>
-        <p className="section-subtitle">
+        </motion.h2>
+        <motion.p
+          className="section-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           We've covered 40+ criteria across pricing, setup, CI/CD features, integrations, security, and scalability. No spin, no cherry-picking.
-        </p>
+        </motion.p>
 
-        <div className={s.tableWrap}>
+        <motion.div
+          className={s.tableWrap}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <table className={s.table} aria-label="BuildNinja vs CircleCI feature comparison table">
             <thead>
               <tr>
@@ -280,15 +309,21 @@ export default function ComparisonTable() {
               </tr>
             </tbody>
           </table>
-        </div>
+        </motion.div>
 
-        <div className={s.legend}>
+        <motion.div
+          className={s.legend}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           <span><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully supported</span>
           <span><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Partial / plan-dependent</span>
           <span><span className={s.cross}><X aria-label="No" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Not supported</span>
           <span><span className={`${s.winTag} ${s.winBn}`}>BN Wins</span> BuildNinja structural advantage</span>
           <span><span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span> CircleCI ahead</span>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import s from './FAQ.module.css';
 
 export default function FAQ() {
@@ -40,16 +41,39 @@ export default function FAQ() {
   return (
     <section className={s.section}>
       <div className={s.container}>
-        <span className="badge-alt" style={{ marginBottom: '10px' }}>Frequently Asked Questions</span>
-        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
+        <motion.span
+          className="badge-alt"
+          style={{ marginBottom: '10px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Frequently Asked Questions
+        </motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           BuildNinja vs CircleCI - Common Questions
-        </h2>
+        </motion.h2>
 
         <div className={s.faqList}>
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div key={index} className={`${s.faqItem} ${isOpen ? s.open : ''}`}>
+              <motion.div
+                key={index}
+                className={`${s.faqItem} ${isOpen ? s.open : ''}`}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+              >
                 <button className={s.faqQ} onClick={() => toggleFaq(index)} aria-expanded={isOpen}>
                   {faq.q}
                   <span className={s.faqArr}>+</span>
@@ -57,7 +81,7 @@ export default function FAQ() {
                 <div className={s.faqA}>
                   {faq.a}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
