@@ -10,7 +10,7 @@ export default function StructuralWins() {
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
           Three reasons BuildNinja wins where GitHub Actions can't compete
         </h2>
-        <p className="section-subtitle">
+        <p className="section-subtitle" style={{ margin: '0 auto' }}>
           These aren't feature preferences. They're structural differences GitHub cannot change without dismantling their revenue model.
         </p>
 

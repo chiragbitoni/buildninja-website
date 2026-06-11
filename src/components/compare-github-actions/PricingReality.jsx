@@ -10,7 +10,7 @@ export default function PricingReality() {
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
           What GitHub's March 2026 Pricing Change Actually Costs You
         </h2>
-        <p className="section-subtitle">
+        <p className="section-subtitle" style={{ margin: '0 auto' }}>
           GitHub reduced hosted runner prices by up to 39% - but added a $0.002/min charge for self-hosted runners. Here's what a real 20-person team actually pays each month.
         </p>
 

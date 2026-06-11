@@ -11,7 +11,7 @@ export default function MigrationGuide() {
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
           Switching from GitHub Actions to BuildNinja in 4 Steps
         </h2>
-        <p className="section-subtitle">
+        <p className="section-subtitle" style={{ margin: '0 auto' }}>
           Most teams complete the migration in under 2 hours. You keep using GitHub for source code - just run your builds somewhere better.
         </p>
 
