@@ -24,9 +24,86 @@ export const metadata = {
   }
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is BuildNinja really free for unlimited users?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. BuildNinja's core self-hosted edition supports unlimited users, unlimited projects, and unlimited builds at no per-seat cost. A paid Growth Edition exists for teams that want additional support SLAs and enterprise features, but the free tier is genuinely full-featured for most teams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can BuildNinja replace Jenkins for complex enterprise pipelines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most CI/CD workflows - build, test, static analysis, Docker publish, deploy - yes. If your Jenkins setup relies heavily on niche plugins (mainframe deployment, SAP integration, etc.) or extremely complex Groovy scripting, you should evaluate BuildNinja carefully in a proof-of-concept before committing to migration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does BuildNinja work with GitHub Actions or GitLab CI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BuildNinja is a separate self-hosted CI/CD platform - not a wrapper around GitHub Actions or GitLab CI. It connects to your GitHub, GitLab, or Bitbucket repos but runs builds on your own infrastructure, giving you full control over compute costs and data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does BuildNinja handle secrets and credentials?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Since BuildNinja is self-hosted, your secrets never leave your own infrastructure. Credentials are stored encrypted on your servers. There's no third-party cloud that can access your build environment or secrets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the migration from Jenkins look like in practice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most teams run BuildNinja in parallel with Jenkins for 1-2 weeks. You replicate your key pipelines, validate outputs match, then cut over webhooks and decommission Jenkins. For standard pipelines, the actual migration work takes 1-3 days. Complex enterprise setups with hundreds of jobs may take 1-2 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Jenkins being discontinued?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Jenkins is actively maintained as of 2025 and has a large, healthy open-source community. It's not going away. However, it's also not receiving significant UI/UX modernization or new architectural features - it's in maintenance mode for its core architecture. The cloud-native CI/CD world has largely moved on to newer platforms."
+      }
+    }
+  ]
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BuildNinja",
+  "operatingSystem": "Windows, Linux, macOS, Docker, Kubernetes",
+  "applicationCategory": "DeveloperApplication",
+  "description": "Experience lightning-fast, secure, and fully automated self-hosted CI/CD platform. The ultimate self-hosted alternative to Jenkins, GitLab CI, and GitHub Actions.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
 export default function CompareJenkinsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
         <Hero />
         <VerdictBanner />
         <MetricsBars />

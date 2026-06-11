@@ -27,7 +27,7 @@ export default function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            BuildNinja vs <em>CircleCI</em><br />
+            <em>BuildNinja</em> vs CircleCI<br />
             Which CI/CD Tool Wins in 2026?
           </motion.h1>
 
