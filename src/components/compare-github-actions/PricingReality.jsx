@@ -89,7 +89,7 @@ export default function PricingReality() {
         <div className={`${s.callout} ${s.calloutWarn}`}>
           <span className={s.calloutIco}><Lightbulb aria-label="Idea" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
           <p>
-            <strong>The self-hosted trap:</strong> Many teams chose GitHub Actions self-hosted runners specifically to avoid per-minute costs. As of March 2026, those runners now incur a $0.002/min platform fee - on top of your own server costs. BuildNinja has no orchestration fee. Your hardware, your builds, your bill ends at the server.
+            BuildNinja has no orchestration fee. Your hardware, your builds, your bill ends at the server.
           </p>
         </div>
       </div>

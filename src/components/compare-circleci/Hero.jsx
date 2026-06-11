@@ -16,24 +16,29 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <div className="badge-alt" style={{ marginBottom: '20px' }}>
-              Honest Comparison · Updated May 2026
+              Honest Comparison
             </div>
           </motion.div>
 
           <motion.h1
-            className={`${s.heroTitle} ${s.fadeUp}`}
+            className={`section-title ${s.fadeUp}`}
+            style={{ fontSize: 'clamp(32px, 5vw, 52px)', marginBottom: '18px' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <em>BuildNinja</em> vs CircleCI<br />
-            Which CI/CD Tool Wins in 2026?
+            <span style={{ fontStyle: 'normal', color: 'var(--color-text)' }}>BuildNinja</span> vs CircleCI<br />
+            Which CI/CD Tool Wins?
+
           </motion.h1>
 
           <motion.p
-            className={`${s.heroSub} ${s.fadeUp}`}
+            className={`section-subtitle ${s.fadeUp}`}
+            style={{ fontSize: '17px', marginBottom: '32px', maxWidth: '640px', lineHeight: 1.7, textAlign: 'center' }}
             initial={{ opacity: 0, y: 20 }}
+
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}

@@ -8,24 +8,25 @@ export default function Hero() {
   return (
     <header className={s.hero} role="banner">
       <div className={s.heroInner}>
-        <div className={s.heroBadge}><Zap aria-label="Lightning bolt" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Updated May 2026 · New GitHub Pricing in Effect</div>
+        <div className={s.heroBadge}><Zap aria-label="Lightning bolt" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Honest Comparision</div>
 
-        <h1 className={s.heroH1}>
-          <span className={s.dim}>BuildNinja</span> vs<br />
-          <span className={s.accent}>GitHub Actions</span><br />
+        <h1 className={`section-title ${s.fadeUp}`} style={{ marginBottom: '20px', fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 700 }}>
+          <span className={s.accent} style={{ fontStyle: 'normal' }}>BuildNinja</span> vs
+          <span style={{ fontStyle: 'normal' }}> GitHub Actions</span><br />
           The Honest 2026 Comparison
         </h1>
 
-        <p className={s.heroSub}>
+
+        <p className="section-subtitle" style={{ fontSize: '17.5px', maxWidth: '640px', margin: 'auto', marginBottom: '32px', lineHeight: 1.72 }}>
           GitHub Actions is deeply embedded in GitHub's ecosystem - but <strong>March 2026 changed the math</strong>. Self-hosted runners now cost $0.002/min even on your own hardware. This page compares every feature, every cost, and every trade-off honestly.
         </p>
 
-        <div className={s.alertBar}>
+        {/* <div className={s.alertBar}>
           <span className={s.alertIcon}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />️</span>
           <p className={s.alertText}>
             <strong>GitHub Actions Pricing Change (March 2026):</strong> GitHub now charges $0.002/min for self-hosted runner usage in private repos - on top of your own infrastructure costs. A team running 500 build-hours/month pays an extra <strong>$60/month</strong> to GitHub just for orchestration, even when builds run on their own servers. BuildNinja has no equivalent charge.
           </p>
-        </div>
+        </div> */}
 
         <div className={s.heroCtas}>
           <Link href="/install" className={s.btnPrimary}>

@@ -1,7 +1,7 @@
 .hero {
   background: linear-gradient(160deg, var(--color-bg-panel) 0%, var(--color-bg) 60%);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--hero-pt-desktop, 120px) 2rem 56px;
+  padding: 56px 2rem 56px;
   text-align: center;
 }
 

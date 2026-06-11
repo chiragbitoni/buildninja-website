@@ -2,6 +2,7 @@
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   padding: 64px 2rem 56px;
+  text-align: center;
 }
 
 .heroInner {
@@ -23,6 +24,8 @@
   padding: 5px 13px;
   border-radius: 20px;
   margin-bottom: 22px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heroBadge::before {
@@ -34,15 +37,11 @@
   animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
 
 .heroH1 {
   font-family: var(--font-display);
-  font-size: clamp(32px, 5.5vw, 56px);
-  font-weight: 800;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.04em;
   color: var(--color-text);
@@ -62,8 +61,8 @@
   font-size: 17.5px;
   color: var(--color-text-secondary);
   max-width: 640px;
+  margin: 0 auto 32px;
   line-height: 1.72;
-  margin-bottom: 32px;
 }
 
 .heroSub strong {
@@ -102,6 +101,7 @@
 .heroCtas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-bottom: 40px;
 }
@@ -117,13 +117,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: var(--shadow-cta, 0 4px 16px rgba(232,85,42,0.3));
+  box-shadow: var(--shadow-cta, 0 4px 16px rgba(232, 85, 42, 0.3));
   transition: all 0.2s;
 }
 
-.btnPrimary:hover {background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
+.btnPrimary:hover {
+  background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(232,85,42,0.38);
+  box-shadow: 0 6px 24px rgba(232, 85, 42, 0.38);
 }
 
 .btnOutline {
@@ -177,10 +178,21 @@
   margin-bottom: 4px;
 }
 
-.hsValOrange { color: var(--color-primary); }
-.hsValDark { color: var(--color-text); }
-.hsValGreen { color: var(--color-success); }
-.hsValRed { color: var(--color-error); }
+.hsValOrange {
+  color: var(--color-primary);
+}
+
+.hsValDark {
+  color: var(--color-text);
+}
+
+.hsValGreen {
+  color: var(--color-success);
+}
+
+.hsValRed {
+  color: var(--color-error);
+}
 
 .hsLbl {
   font-size: 11.5px;

@@ -15,7 +15,7 @@ import RelatedPages from '@/components/compare-github-actions/RelatedPages';
 import CTABanner from '@/components/compare-github-actions/CTABanner';
 
 export const metadata = {
-  title: 'BuildNinja vs GitHub Actions | 2026 Comparison',
+  title: 'BuildNinja vs GitHub Actions | Comparison',
   description: 'An honest, detailed comparison between BuildNinja and GitHub Actions. See how unlimited self-hosted builds compare against GitHub per-minute pricing.',
   alternates: {
     canonical: 'https://buildninja.grapehub.io/compare/buildninja-vs-github-actions',
@@ -36,7 +36,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Why is GitHub Actions charging for self-hosted runners from March 2026?",
+      "name": "Why is GitHub Actions charging for self-hosted runners?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "GitHub introduced a $0.002/min 'Actions cloud platform' charge for self-hosted runner usage in private repositories. This fee covers GitHub's orchestration layer - job scheduling, routing, and secrets management - even when compute runs on your own hardware. Public repositories remain free, as do GitHub Enterprise Server customers. BuildNinja has no equivalent charge; orchestration is built into the product at no per-minute cost."
