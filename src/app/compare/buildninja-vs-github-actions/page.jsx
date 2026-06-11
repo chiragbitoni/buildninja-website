@@ -115,12 +115,12 @@ export default function BuildNinjaVsGitHubActions() {
       <StructuralWins />
       <ComparisonTable />
       <MidCTA />
-      <CostCalculator />
+      {/* <CostCalculator /> */}
       {/* <CodeComparison /> */}
       <MigrationGuide />
       <Recommendation />
       <FAQ />
-      <RelatedPages />
+      {/* <RelatedPages />m */}
       <CTABanner />
     </div>
   );

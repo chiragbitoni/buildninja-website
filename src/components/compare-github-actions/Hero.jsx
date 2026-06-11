@@ -51,11 +51,11 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.45 }}
         >
           <span className={s.heroBadge}>
-            <span className={`${s.dot} ${s.dotGreen}`}></span>
+            <span className={`${s.dot} ${s.dotRed}`}></span>
             BuildNinja: Unlimited builds included
           </span>
           <span className={s.heroBadge}>
-            <span className={`${s.dot} ${s.dotRed}`}></span>
+            <span className={`${s.dot} ${s.dotGreen}`}></span>
             GitHub Actions: 2,000 min free, then pay-as-you-go
           </span>
         </motion.div>
