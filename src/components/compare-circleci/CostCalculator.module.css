@@ -56,11 +56,13 @@
 .calcLogoBn {
   height: 16px;
   width: auto;
+  filter: var(--logo-filter);
 }
 
 .calcLogoCi {
   height: 14px;
   width: auto;
+  filter: var(--logo-filter);
 }
 
 .calcBadgeRecommend {

@@ -95,15 +95,17 @@
 }
 
 .recLogoBn {
-  height: 24px;
+  height: 30px;
   width: auto;
   display: block;
+  filter: var(--logo-filter);
 }
 
 .recLogoCi {
   height: 22px;
   width: auto;
   display: block;
+  filter: var(--logo-filter);
 }
 
 .btnPrimary {
