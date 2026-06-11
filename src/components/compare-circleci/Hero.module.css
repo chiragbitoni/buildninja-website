@@ -38,9 +38,9 @@
   margin-bottom: 18px;
 }
 
-.heroTitle em {
+.gradientText {
   font-style: normal;
-  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt));
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

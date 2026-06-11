@@ -15,25 +15,26 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-alt" style={{ marginBottom: '22px' }}>
+          <div className="badge-alt" style={{ marginBottom: '20px' }}>
             Honest Comparison
           </div>
         </motion.div>
 
         <motion.h1
           className={`section-title ${s.fadeUp}`}
+          style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 700, marginBottom: '18px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
-          <span style={{ fontStyle: 'normal', color: 'var(--color-text)' }}>BuildNinja</span> vs GitHub Actions<br />
+          <span className={s.gradientText}>BuildNinja</span> vs GitHub Actions<br />
           The Honest 2026 Comparison
         </motion.h1>
 
         <motion.p
           className={`section-subtitle ${s.fadeUp}`}
-          style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '600px', lineHeight: 1.7, textAlign: 'center' }}
+          style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '640px', lineHeight: 1.7, textAlign: 'center' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
