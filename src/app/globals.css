@@ -104,6 +104,9 @@
   --hero-pt-tablet: 80px;
   --hero-pt-mobile: 70px;
 
+  /* Hero Background Gradient (used by comparison pages) */
+  --hero-bg: linear-gradient(160deg, var(--color-bg-panel) 0%, var(--color-bg) 60%);
+
   /* Utilities (Default Dark) */
   --icon-filter: none;
   --logo-filter: invert(1) brightness(1.8);

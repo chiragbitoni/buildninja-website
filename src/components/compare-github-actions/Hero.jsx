@@ -1,45 +1,92 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import s from './Hero.module.css';
-import { Zap, AlertTriangle } from 'lucide-react';
 
 
 export default function Hero() {
   return (
     <header className={s.hero} role="banner">
       <div className={s.heroInner}>
-        <div className={s.heroBadge}><Zap aria-label="Lightning bolt" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Honest Comparision</div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="badge-alt" style={{ marginBottom: '22px' }}>
+            Honest Comparison
+          </div>
+        </motion.div>
 
-        <h1 className={`section-title ${s.fadeUp}`} style={{ marginBottom: '20px', fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 700 }}>
-          <span className={s.accent} style={{ fontStyle: 'normal' }}>BuildNinja</span> vs
-          <span style={{ fontStyle: 'normal' }}> GitHub Actions</span><br />
+        <motion.h1
+          className={`section-title ${s.fadeUp}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
+          <span style={{ fontStyle: 'normal', color: 'var(--color-text)' }}>BuildNinja</span> vs GitHub Actions<br />
           The Honest 2026 Comparison
-        </h1>
+        </motion.h1>
 
-
-        <p className="section-subtitle" style={{ fontSize: '17.5px', maxWidth: '640px', margin: 'auto', marginBottom: '32px', lineHeight: 1.72 }}>
+        <motion.p
+          className={`section-subtitle ${s.fadeUp}`}
+          style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '600px', lineHeight: 1.7, textAlign: 'center' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           GitHub Actions is deeply embedded in GitHub's ecosystem - but <strong>March 2026 changed the math</strong>. Self-hosted runners now cost $0.002/min even on your own hardware. This page compares every feature, every cost, and every trade-off honestly.
-        </p>
+        </motion.p>
 
-        {/* <div className={s.alertBar}>
-          <span className={s.alertIcon}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />️</span>
-          <p className={s.alertText}>
-            <strong>GitHub Actions Pricing Change (March 2026):</strong> GitHub now charges $0.002/min for self-hosted runner usage in private repos - on top of your own infrastructure costs. A team running 500 build-hours/month pays an extra <strong>$60/month</strong> to GitHub just for orchestration, even when builds run on their own servers. BuildNinja has no equivalent charge.
-          </p>
-        </div> */}
+        <motion.div
+          className={`${s.heroBadges} ${s.fadeUp}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+        >
+          <span className={s.heroBadge}>
+            <span className={`${s.dot} ${s.dotGreen}`}></span>
+            BuildNinja: Unlimited builds included
+          </span>
+          <span className={s.heroBadge}>
+            <span className={`${s.dot} ${s.dotRed}`}></span>
+            GitHub Actions: 2,000 min free, then pay-as-you-go
+          </span>
+        </motion.div>
 
-        <div className={s.heroCtas}>
+        <motion.div
+          className={`${s.heroCtas} ${s.fadeUp}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
           <Link href="/install" className={s.btnPrimary}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
             Deploy BuildNinja Free
           </Link>
           <a href="#comparison-table" className={s.btnOutline}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="3" /></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="3" />
+            </svg>
             Jump to Comparison Table
           </a>
-        </div>
+        </motion.div>
 
-        <div className={s.heroStats}>
+        <motion.div
+          className={`${s.heroStats} ${s.fadeUp}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.75 }}
+        >
           <div className={s.hsItem}>
             <div className={`${s.hsVal} ${s.hsValOrange}`}>Unlimited</div>
             <div className={s.hsLbl}>BuildNinja builds/mo - no caps</div>
@@ -56,7 +103,7 @@ export default function Hero() {
             <div className={`${s.hsVal} ${s.hsValDark}`}>$0.008–.016<span style={{ fontSize: '14px' }}>/min</span></div>
             <div className={s.hsLbl}>GitHub Actions Linux runners</div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </header>
   );

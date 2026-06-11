@@ -1,40 +1,60 @@
 .hero {
-  background: var(--color-bg);
+  background: var(--hero-bg);
   border-bottom: 1px solid var(--color-border);
-  padding: 64px 2rem 56px;
+  padding: 56px 2rem 56px;
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .hero {
+    padding-top: var(--hero-pt-tablet, 80px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: var(--hero-pt-mobile, 70px);
+  }
+}
+
 .heroInner {
-  max-width: 840px;
+  max-width: 780px;
   margin: 0 auto;
+}
+
+.heroBadges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
 }
 
 .heroBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: var(--color-error-bg);
-  border: 1px solid var(--color-error);
-  color: var(--color-error);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 5px 13px;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border-medium);
+  padding: 6px 14px;
   border-radius: 20px;
-  margin-bottom: 22px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.heroBadge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
+.dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
+}
+
+.dotGreen {
+  background: var(--color-success);
+}
+
+.dotRed {
   background: var(--color-error);
-  animation: pulse 2s infinite;
 }
 
 
@@ -42,14 +62,23 @@
   font-family: var(--font-display);
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.04em;
   color: var(--color-text);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .accent {
-  color: var(--color-primary);
+  font-style: normal;
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+  vertical-align: top;
 }
 
 .dim {
@@ -58,11 +87,11 @@
 }
 
 .heroSub {
-  font-size: 17.5px;
+  font-size: 17px;
   color: var(--color-text-secondary);
-  max-width: 640px;
+  max-width: 600px;
   margin: 0 auto 32px;
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 .heroSub strong {
@@ -108,7 +137,7 @@
 
 .btnPrimary {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   padding: 13px 28px;
