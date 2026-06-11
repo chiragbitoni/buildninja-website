@@ -67,9 +67,43 @@
 }
 
 .compareTable thead th:first-child { width: 30%; }
-.compareTable thead th:nth-child(2) { color: var(--color-primary); width: 30%; }
-.compareTable thead th:nth-child(3) { width: 30%; color: var(--color-text-muted); }
+.compareTable thead th:nth-child(2) { width: 30%; }
+.compareTable thead th:nth-child(3) { width: 30%; }
 .compareTable th.statusCol { width: 10%; text-align: center; }
+
+.thBn {
+  position: relative;
+}
+
+.thHeaderInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoBn {
+  height: 26px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.logoJk {
+  height: 22px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.recBadge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  vertical-align: middle;
+}
 
 .compareTable tbody tr {
   border-bottom: 1px solid var(--color-border);

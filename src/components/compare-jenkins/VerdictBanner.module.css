@@ -55,13 +55,21 @@
 }
 
 .toolLogo {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 800;
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 8px;
+}
+
+.vbLogoBn {
+  height: 32px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.vbLogoJk {
+  height: 28px;
+  width: auto;
+  filter: var(--logo-filter);
 }
 
 .ninja {

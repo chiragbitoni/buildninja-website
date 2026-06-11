@@ -20,8 +20,13 @@ export default function ComparisonTable() {
             <thead>
               <tr>
                 <th>Feature / Criterion</th>
-                <th className={s.thBn}>BuildNinja <span className={s.recBadge}>RECOMMENDED</span></th>
-                <th className={s.thGh}>GitHub Actions</th>
+                <th className={s.thBn}>
+                  <span className={s.thHeaderInner}>
+                    <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.logoBn} />
+                    <span className={s.recBadge}>★ RECOMMENDED</span>
+                  </span>
+                </th>
+                <th className={s.thGh}><img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.logoGh} /></th>
               </tr>
             </thead>
             <tbody>

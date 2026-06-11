@@ -17,8 +17,13 @@ export default function ComparisonTable() {
             <thead>
               <tr>
                 <th scope="col">Feature</th>
-                <th scope="col">BuildNinja</th>
-                <th scope="col">Jenkins</th>
+                <th scope="col" className={s.thBn}>
+                  <span className={s.thHeaderInner}>
+                    <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.logoBn} />
+                    <span className={s.recBadge}>★ RECOMMENDED</span>
+                  </span>
+                </th>
+                <th scope="col"><img src="/resources/jenkins-logo.svg" alt="Jenkins" className={s.logoJk} /></th>
                 <th scope="col" className={s.statusCol}>Winner</th>
               </tr>
             </thead>

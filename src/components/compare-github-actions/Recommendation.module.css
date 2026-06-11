@@ -42,8 +42,19 @@
 }
 
 .recIcon {
-  font-size: 22px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.recLogoBn {
+  height: 28px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.recLogoGh {
+  height: 24px;
+  width: auto;
+  filter: var(--logo-filter);
 }
 
 .recTitle {
