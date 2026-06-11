@@ -94,6 +94,18 @@
   margin-top: 1px;
 }
 
+.recLogoBn {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.recLogoCi {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
 .btnPrimary {
   display: inline-flex;
   align-items: center;

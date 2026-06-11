@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Circle, ArrowRight, Sword, Zap } from 'lucide-react';
+import { Check, ArrowRight, Zap } from 'lucide-react';
 import Link from 'next/link';
 import s from './Recommendation.module.css';
 
@@ -15,7 +15,7 @@ export default function Recommendation() {
         <div className={s.recGrid}>
           {/* Choose BuildNinja */}
           <div className={`${s.recCard} ${s.recCardBn}`}>
-            <div className={s.recIcon}><Sword aria-label="BuildNinja" size={20} color="currentColor" /></div>
+            <div className={s.recIcon}><img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.recLogoBn} /></div>
             <h3 className={s.recTitle}>Choose BuildNinja if you…</h3>
             <ul className={s.recList}>
               <li className={s.recListItem}>
@@ -51,7 +51,7 @@ export default function Recommendation() {
 
           {/* Choose CircleCI */}
           <div className={`${s.recCard} ${s.recCardAlt}`}>
-            <div className={s.recIcon}><Circle aria-label="CircleCI" size={20} color="currentColor" /></div>
+            <div className={s.recIcon}><img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.recLogoCi} /></div>
             <h3 className={s.recTitle}>CircleCI may be better if you…</h3>
             <ul className={s.recList}>
               <li className={s.recListItem}>

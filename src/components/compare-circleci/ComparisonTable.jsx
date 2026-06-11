@@ -30,7 +30,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Free tier build minutes</td>
                 <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Unlimited</strong> - no credit system</td>
-                <td>~300 build-minutes/mo (6,000 credits)</td>
+                <td>~6,000 build-minutes/mo (30,000 credits)</td>
               </tr>
               <tr>
                 <td>Per-seat cost</td>
@@ -51,11 +51,6 @@ export default function ComparisonTable() {
                 <td>No credit card to start</td>
                 <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self-host, no card required</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Account required for full access</td>
-              </tr>
-              <tr>
-                <td>Free for open source</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> All plans include OSS support</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> OSS plan available</td>
               </tr>
 
               {/* SETUP & DEPLOYMENT */}
@@ -101,7 +96,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Pipeline as code (YAML)</td>
                 <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Supports YAML configuration - clean, minimal syntax</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <code style={{fontSize:'12px'}}>.circleci/config.yml</code> + orbs</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <code style={{ fontSize: '12px' }}>.circleci/config.yml</code> + orbs</td>
               </tr>
               <tr>
                 <td>Build caching</td>
@@ -224,8 +219,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Horizontal agent scaling</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents without cost increase</td>
-                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more credit consumption</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents freely</td>
+                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more resource consumption</td>
               </tr>
               <tr>
                 <td>Build queue management</td>
@@ -234,8 +229,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Multi-project support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects, no per-project cost</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects on paid plans</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects, no per-project limits</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects on enterprise plans</td>
               </tr>
 
               {/* DEVELOPER EXPERIENCE */}
@@ -270,7 +265,7 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><Handshake aria-label="Support" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Support</td></tr>
               <tr>
                 <td>Email / ticket support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Included in all plans</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Included</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Available on paid plans</td>
               </tr>
               <tr>
@@ -280,8 +275,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>SLA guarantees</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Enterprise SLA in roadmap</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> SLAs on Scale/Enterprise plans</td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Email Support within 48 hours</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Enterprise SLAs</td>
               </tr>
             </tbody>
           </table>

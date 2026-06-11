@@ -20,7 +20,7 @@ export default function VerdictCards() {
             <div className={`${s.verdictIcon} ${s.verdictIconGreen}`}><Infinity aria-label="Unlimited" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <h3>Truly Unlimited Builds - Not "Generous Limits"</h3>
             <p>
-              CircleCI's free tier offers 6,000 credits/month - roughly 300 build-minutes. A team running 50 builds/day exhausts that in 6 days. BuildNinja's self-hosted model means unlimited builds on your own server with zero per-build costs. CircleCI's credit model is their core revenue mechanism - they structurally cannot offer unlimited builds without destroying their business.
+              CircleCI's free tier offers ~6,000 build-minutes/month. A team running 50 builds/day exhausts that in 6 days. BuildNinja's self-hosted model means unlimited builds on your own server with zero per-build costs. CircleCI's credit model is their core revenue mechanism - they structurally cannot offer truly unlimited builds without destroying their business.
             </p>
           </div>
           <div className={`${s.verdictCard} ${s.verdictCardOrange}`}>
@@ -34,7 +34,7 @@ export default function VerdictCards() {
             <div className={`${s.verdictIcon} ${s.verdictIconBlue}`}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <h3>No Per-Seat Pricing - Your Bill Stays Flat as You Grow</h3>
             <p>
-              CircleCI's compute credits scale with build volume and team activity. A 10-person team spending $80/month becomes $400/month at 50 people - same tool, same features, just more team members triggering more builds. BuildNinja: flat infrastructure cost. Add 100 users tomorrow and pay exactly the same. The larger your team, the bigger BuildNinja's cost advantage.
+              BuildNinja puts you in control - from the hardware your builds run on to the network they operate in. Add build agents, configure private networking, and manage your own storage. CircleCI's SaaS model means you're limited to their infrastructure choices and plan constraints.
             </p>
           </div>
         </div>

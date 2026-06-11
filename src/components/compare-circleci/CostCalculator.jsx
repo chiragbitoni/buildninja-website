@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle, Sword, Lightbulb } from 'lucide-react';
+import { Lightbulb } from 'lucide-react';
 import s from './CostCalculator.module.css';
 
 
@@ -18,7 +18,7 @@ export default function CostCalculator() {
         <div className={s.calcGrid}>
           <div className={`${s.calcPanel} ${s.calcPanelFeatured}`}>
             <div className={s.calcHead}>
-              <span className={s.calcLogo}><Sword aria-label="BuildNinja" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> BuildNinja</span>
+              <span className={s.calcLogo}><img src="/resources/Favicon/favicon.png" alt="BuildNinja" className={s.calcLogoBn} /> BuildNinja</span>
               <span className={s.calcBadgeRecommend}>Recommended</span>
             </div>
             <div className={s.costLine}><span>Build compute</span><span>$0 /mo</span></div>
@@ -34,7 +34,7 @@ export default function CostCalculator() {
 
           <div className={s.calcPanel}>
             <div className={s.calcHead}>
-              <span className={s.calcLogo}><Circle aria-label="GitHub Actions" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> CircleCI</span>
+              <span className={s.calcLogo}><img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.calcLogoCi} /></span>
             </div>
             <div className={s.costLine}><span>100 builds × 8 min = 800 min/day</span><span>24,000 min/mo</span></div>
             <div className={s.costLine}><span>Free credit allowance</span><span>−300 min</span></div>
