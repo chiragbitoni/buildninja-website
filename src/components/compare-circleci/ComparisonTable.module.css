@@ -23,7 +23,7 @@
 .tableWrap {
   overflow-x: auto;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-shell, 0 8px 24px rgba(0,0,0,0.4));
+  box-shadow: var(--shadow-shell, 0 8px 24px rgba(0, 0, 0, 0.4));
   border: 1px solid var(--color-border);
   margin-top: 36px;
 }
@@ -51,8 +51,8 @@
 }
 
 .table thead th {
-  padding: 18px 20px;
-  font-size: 14px;
+  padding: 20px 20px;
+  font-size: 18px;
   font-weight: 700;
   text-align: left;
   color: var(--color-text);
@@ -62,8 +62,8 @@
 
 .table thead th:first-child {
   color: var(--color-text-secondary);
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 15px;
   letter-spacing: 0.03em;
 }
 
