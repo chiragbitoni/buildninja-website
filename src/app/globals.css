@@ -297,6 +297,11 @@
     max-width: 700px;
   }
 
+  /* Reduce section heading weight on comparison pages */
+  .compare-page .section-title {
+    font-weight: 600;
+  }
+
   /* Global reCAPTCHA responsive utility */
   .captcha-container {
     width: 100%;

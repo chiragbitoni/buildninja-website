@@ -90,7 +90,7 @@ const softwareSchema = {
 
 export default function CompareCircleCIPage() {
   return (
-    <>
+    <div className="compare-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -110,6 +110,6 @@ export default function CompareCircleCIPage() {
       <FAQ />
       {/* <ExploreLinks /> */}
       <CTABanner />
-    </>
+    </div>
   );
 }

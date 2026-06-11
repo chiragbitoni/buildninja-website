@@ -95,7 +95,7 @@ const softwareSchema = {
 
 export default function CompareJenkinsPage() {
   return (
-    <>
+    <div className="compare-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -120,6 +120,6 @@ export default function CompareJenkinsPage() {
         <div style={{ borderTop: '1px solid var(--color-border)', margin: '0' }} />
         <ExploreLinks />
         <CTABanner />
-    </>
+    </div>
   );
 }

@@ -101,7 +101,7 @@ const softwareSchema = {
 
 export default function BuildNinjaVsGitHubActions() {
   return (
-    <>
+    <div className="compare-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -122,6 +122,6 @@ export default function BuildNinjaVsGitHubActions() {
       <FAQ />
       <RelatedPages />
       <CTABanner />
-    </>
+    </div>
   );
 }
