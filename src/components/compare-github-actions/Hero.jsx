@@ -28,7 +28,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
-          <span className={s.gradientText}>BuildNinja</span> vs GitHub Actions<br />
+          <span style={{ fontStyle: 'normal', background: 'linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent', display: 'inline-block', paddingBottom: '0.15em', marginBottom: '-0.15em', verticalAlign: 'top' }}>BuildNinja</span> vs GitHub Actions<br />
           The Honest 2026 Comparison
         </motion.h1>
 
