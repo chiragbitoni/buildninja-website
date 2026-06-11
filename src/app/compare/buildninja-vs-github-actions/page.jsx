@@ -111,7 +111,7 @@ export default function BuildNinjaVsGitHubActions() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       <Hero />
-      <PricingReality />
+      {/* <PricingReality /> */}
       <StructuralWins />
       <ComparisonTable />
       <MidCTA />
