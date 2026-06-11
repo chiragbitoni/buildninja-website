@@ -38,7 +38,7 @@ export default function VerdictCards() {
         </motion.h2>
         <motion.p
           className="section-subtitle"
-          style={{ maxWidth: '580px' }}
+          style={{ maxWidth: '580px', margin: '0 auto' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
