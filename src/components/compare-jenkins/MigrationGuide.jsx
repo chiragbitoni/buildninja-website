@@ -94,6 +94,9 @@ export default function MigrationGuide() {
               Translate your Jenkinsfiles into BuildNinja's pipeline YAML. The syntax is similar for standard CI/CD workflows (build, test, deploy). Most pipelines translate in 30–60 minutes.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
+            <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
+              <ExternalLink size={14} /> YAML Reference
+            </Link>
           </motion.div>
           <motion.div
             className={s.stepCard}
@@ -109,6 +112,9 @@ export default function MigrationGuide() {
               Run both in parallel for 1 week. Compare build outputs, validate results match, then point all webhooks to BuildNinja and decommission Jenkins.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 1 week</span>
+            <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
+              <ExternalLink size={14} /> View Guide
+            </Link>
           </motion.div>
         </div>
       </div>
