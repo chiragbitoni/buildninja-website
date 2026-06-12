@@ -76,7 +76,7 @@ export default function MigrationGuide() {
             <div className={s.stepNum}>02</div>
             <h4>Connect Your Repos</h4>
             <p>
-              Connect GitHub, GitLab, or Bitbucket via OAuth. Builds are triggered manually or scheduled — no webhook automation required.
+              Connect GitHub, GitLab, or Bitbucket via OAuth. Builds are triggered manually or scheduled - no webhook automation required.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 3 min</span>
           </motion.div>
@@ -91,7 +91,7 @@ export default function MigrationGuide() {
             <div className={s.stepNum}>03</div>
             <h4>Convert Config to YAML</h4>
             <p>
-              Convert your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>.circleci/config.yml</code> to <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>buildninja.yaml</code>. The syntax is similar — most pipelines translate in under 30 minutes. Commit the YAML file to your repository.
+              Convert your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>.circleci/config.yml</code> to <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>buildninja.yaml</code>. The syntax is similar - most pipelines translate in under 30 minutes. Commit the YAML file to your repository.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
             <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
@@ -109,7 +109,7 @@ export default function MigrationGuide() {
             <div className={s.stepNum}>04</div>
             <h4>Run from Config File</h4>
             <p>
-              Create a new Build Configuration, select the <strong>Config File</strong> runner, and point it to your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>buildninja.yaml</code> in the repository. BuildNinja will execute all steps defined in the file — no manual pipeline setup needed.
+              Create a new Build Configuration, select the <strong>Config File</strong> runner, and point it to your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>buildninja.yaml</code> in the repository. BuildNinja will execute all steps defined in the file - no manual pipeline setup needed.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 5 min</span>
             <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
