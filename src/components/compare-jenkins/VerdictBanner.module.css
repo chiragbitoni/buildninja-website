@@ -1,7 +1,9 @@
 .verdictBanner {
   max-width: 1200px;
   margin: 0 auto 4rem;
-  padding: 0 2rem;
+  padding: 72px 2rem 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
 }
 
 .verdictGrid {
@@ -22,7 +24,7 @@
 }
 
 .ninjaCol {
-  background: linear-gradient(135deg, rgba(232, 82, 26, 0.06) 0%, rgba(10, 10, 10, 0) 100%);
+  background: linear-gradient(135deg, var(--color-primary-subtle) 0%, transparent 100%);
   border-right: 1px solid var(--color-border);
 }
 
@@ -40,7 +42,6 @@
 }
 
 .vsBadge {
-  font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--color-text-muted);
@@ -87,7 +88,6 @@
 }
 
 .verdictScore {
-  font-family: var(--font-display);
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1;

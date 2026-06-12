@@ -107,17 +107,11 @@ export default function CompareJenkinsPage() {
         <Hero />
         <VerdictBanner />
         <MetricsBars />
-        <div style={{ borderTop: '1px solid var(--color-border)', margin: '0' }} />
         <ComparisonTable />
-        <div style={{ borderTop: '1px solid var(--color-border)', margin: '0' }} />
         <DeepDiveCards />
-        <div style={{ borderTop: '1px solid var(--color-border)', margin: '0' }} />
         <DecisionGuide />
-        <div style={{ borderTop: '1px solid var(--color-border)', margin: '0' }} />
         <MigrationGuide />
-        <div style={{ borderTop: '1px solid var(--color-border)', margin: '0' }} />
         <FAQ />
-        <div style={{ borderTop: '1px solid var(--color-border)', margin: '0' }} />
         <ExploreLinks />
         <CTABanner />
     </div>

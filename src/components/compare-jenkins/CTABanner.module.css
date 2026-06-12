@@ -11,7 +11,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(232, 82, 26, 0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 0%, var(--color-primary-subtle) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -24,9 +24,9 @@
 
 .heroBadge {
   display: inline-block;
-  background: rgba(232, 82, 26, 0.1);
-  border: 1px solid rgba(232, 82, 26, 0.2);
-  color: var(--color-primary-alt);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
   padding: 4px 14px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -37,7 +37,6 @@
 }
 
 .ctaTitle {
-  font-family: var(--font-display);
   font-size: clamp(26px, 4vw, 40px);
   font-weight: 700;
   color: var(--color-text);
@@ -80,12 +79,12 @@
   font-size: 1rem;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(232, 82, 26, 0.2);
+  box-shadow: var(--shadow-cta);
 }
 
 .btnPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(232, 82, 26, 0.3);
+  box-shadow: var(--shadow-cta);
   background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
 }
 

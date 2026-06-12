@@ -1,20 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
 import s from './Hero.module.css';
-import { ChevronRight } from 'lucide-react';
 
 export default function Hero() {
   return (
     <header className={s.hero}>
-      <div className={s.breadcrumb} aria-label="Breadcrumb">
-        <Link href="/">Home</Link>
-        <ChevronRight size={14} className={s.breadcrumbSep} />
-        <span>Compare</span>
-        <ChevronRight size={14} className={s.breadcrumbSep} />
-        <span>BuildNinja vs Jenkins</span>
-      </div>
-      
-      <div className={s.heroBadge}>Honest Comparison</div>
+      <div className="badge-alt" style={{ marginBottom: '20px' }}>Honest Comparison</div>
       
       <h1>
         <span className={s.highlight}>BuildNinja</span> vs Jenkins:<br />

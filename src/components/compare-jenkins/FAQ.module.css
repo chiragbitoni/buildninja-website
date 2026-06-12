@@ -1,5 +1,7 @@
 .section {
-  padding: 4rem 0;
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
 }
 
 .container {
@@ -20,53 +22,57 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
 }
 
 .sectionDesc {
   color: var(--color-text-secondary);
-  font-size: 1.05rem;
-  max-width: 620px;
-  font-weight: 300;
-  line-height: 1.7;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.6;
+  max-width: 700px;
   margin-bottom: 3rem;
 }
 
 .faqList {
+  margin: 40px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: 800px;
+  gap: 12px;
+  max-width: 780px;
+  text-align: left;
 }
 
 .faqItem {
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  transition: border-color 0.2s;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
 }
 
 .faqItem:hover {
-  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
 }
 
 .faqQ {
-  padding: 1.25rem;
-  font-weight: 500;
-  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: 18px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: none;
+  border: none;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  user-select: none;
-  color: var(--color-text);
+  justify-content: space-between;
+  gap: 12px;
   transition: color 0.2s;
 }
 
@@ -75,32 +81,38 @@
 }
 
 .faqArrow {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--color-text-muted);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  transition: background 0.2s, transform 0.3s;
+  font-size: 14px;
+  color: var(--color-text-secondary);
 }
 
-.rotated {
-  transform: rotate(180deg);
-  color: var(--color-primary);
+.faqItem.open .faqArrow {
+  transform: rotate(45deg);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
 }
 
 .faqA {
-  padding: 0 1.25rem;
+  padding: 0 22px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  transition: max-height 0.35s ease, padding 0.35s ease;
 }
 
 .faqItem.open .faqA {
-  max-height: 300px;
-  padding: 0 1.25rem 1.25rem;
-  opacity: 1;
-}
-
-.faqA p {
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-  line-height: 1.7;
+  max-height: 500px;
+  padding: 0 22px 18px;
 }

@@ -1,5 +1,7 @@
 .section {
-  padding: 4rem 0;
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
 }
 
 .container {
@@ -20,20 +22,18 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
 }
 
 .sectionDesc {
   color: var(--color-text-secondary);
-  font-size: 1.05rem;
-  max-width: 620px;
-  font-weight: 300;
-  line-height: 1.7;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.6;
+  max-width: 700px;
   margin-bottom: 3rem;
 }
 
@@ -46,7 +46,6 @@
 }
 
 .migrationTitle {
-  font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -79,12 +78,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
   font-size: 0.9rem;
   font-weight: 700;
   color: #fff;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(232, 82, 26, 0.2);
+  box-shadow: var(--shadow-cta);
 }
 
 .stepContent h4 {
