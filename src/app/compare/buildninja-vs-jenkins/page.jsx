@@ -104,16 +104,16 @@ export default function CompareJenkinsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
-        <Hero />
-        <VerdictBanner />
-        <MetricsBars />
-        <ComparisonTable />
-        <DeepDiveCards />
-        <DecisionGuide />
-        <MigrationGuide />
-        <FAQ />
-        <ExploreLinks />
-        <CTABanner />
+      <Hero />
+      <VerdictBanner />
+      <MetricsBars />
+      <ComparisonTable />
+      <DeepDiveCards />
+      <DecisionGuide />
+      <MigrationGuide />
+      <FAQ />
+      {/* <ExploreLinks /> */}
+      <CTABanner />
     </div>
   );
 }
