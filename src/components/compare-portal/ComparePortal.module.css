@@ -232,9 +232,8 @@
 }
 
 .logoImg {
-  height: 22px;
+  height: 28px;
   width: auto;
-  filter: var(--logo-filter);
 }
 
 .badge {

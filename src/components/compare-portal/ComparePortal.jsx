@@ -10,7 +10,7 @@ export default function ComparePortal() {
       badge: "SaaS vs Self-Hosted",
       desc: "Compare GitHub's per-minute pricing and runner concurrency limits against BuildNinja's self-hosted, unlimited parallel build engine.",
       href: "/compare/buildninja-vs-github-actions",
-      icon: <img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.logoImg} />,
+      icon: <img src="/resources/githubactions.svg" alt="GitHub Actions" className={s.logoImg} />,
       points: [
         "No runner concurrency limits",
         "Save 70%+ on monthly DevOps bills",
@@ -23,7 +23,7 @@ export default function ComparePortal() {
       badge: "Seat Pricing vs Free",
       desc: "Stop paying for user seats and concurrent build containers. BuildNinja lets your entire engineering team build concurrently without tier gates.",
       href: "/compare/buildninja-vs-circleci",
-      icon: <img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.logoImg} />,
+      icon: <img src="/resources/Circleci.svg" alt="CircleCI" className={s.logoImg} />,
       points: [
         "Unlimited users on all tiers",
         "Full hardware utilization and sovereignty",
@@ -36,7 +36,7 @@ export default function ComparePortal() {
       badge: "Modern vs Legacy",
       desc: "Escape Jenkins plugin dependency nightmares and Java/Groovy setup complexity. Clean YAML pipelines meet a premium visual builder UI.",
       href: "/compare/buildninja-vs-jenkins",
-      icon: <img src="/resources/jenkins-logo.svg" alt="Jenkins" className={s.logoImg} />,
+      icon: <img src="/resources/jenkins.svg" alt="Jenkins" className={s.logoImg} />,
       points: [
         "Zero-downtime unified platform updates",
         "No complex Groovy DSL codebase required",

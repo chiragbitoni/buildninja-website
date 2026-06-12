@@ -51,9 +51,8 @@
   letter-spacing: 0.03em;
   width: 30%;
 }
-.compareTable thead th:nth-child(2) { width: 30%; }
-.compareTable thead th:nth-child(3) { width: 30%; }
-.compareTable th.statusCol { width: 10%; text-align: center; }
+.compareTable thead th:nth-child(2) { width: 35%; }
+.compareTable thead th:nth-child(3) { width: 35%; }
 
 .thBn {
   position: relative;
@@ -135,17 +134,6 @@
 }
 .jenkinsTd { color: var(--color-text-muted) !important; }
 
-.statusIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.iconWin { color: var(--color-success); }
-.iconPartial { color: var(--color-warning); }
-.iconLose { color: var(--color-error); }
-
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -170,15 +158,6 @@
   color: var(--color-text);
   border: 1px solid var(--color-border);
 }
-
-.legend {
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
-}
-
-.legendWin { color: var(--color-success); }
-.legendPartial { color: var(--color-warning); }
-.legendLose { color: var(--color-error); }
 
 @media (max-width: 768px) {
   .compareTable {
