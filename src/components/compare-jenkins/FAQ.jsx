@@ -40,7 +40,7 @@ export default function FAQ() {
     <section id="faq" className={s.section}>
       <div className={s.container}>
         <span className="badge-alt" style={{ marginBottom: '10px' }}>Common Questions</span>
-        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)' }}>
+        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
           BuildNinja vs Jenkins - Common Questions
         </h2>
 

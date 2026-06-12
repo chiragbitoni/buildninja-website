@@ -13,15 +13,6 @@
   box-sizing: border-box;
 }
 
-.sectionLabel {
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 10px;
-  display: block;
-}
 
 .metricsGrid {
   display: grid;

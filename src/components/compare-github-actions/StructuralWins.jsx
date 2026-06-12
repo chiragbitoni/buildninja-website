@@ -18,7 +18,8 @@ export default function StructuralWins() {
     <section className={s.section}>
       <div className={s.container}>
         <motion.span
-          className={s.sectionLabel}
+          className="badge-alt"
+          style={{ marginBottom: '10px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

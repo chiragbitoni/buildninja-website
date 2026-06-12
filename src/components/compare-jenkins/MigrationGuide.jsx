@@ -1,19 +1,33 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Clock, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import s from './MigrationGuide.module.css';
+
+const stepVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.15, ease: 'easeOut' }
+  })
+};
 
 export default function MigrationGuide() {
   return (
     <section id="migration" className={s.section}>
       <div className={s.container}>
         <motion.span
-          className={s.sectionLabel}
+          className="badge-alt"
+          style={{ marginBottom: '10px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-        >Migration Guide</motion.span>
+        >
+          Migration Guide
+        </motion.span>
         <motion.h2
           className="section-title"
           style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
@@ -21,7 +35,9 @@ export default function MigrationGuide() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-        >Switching from Jenkins to BuildNinja</motion.h2>
+        >
+          Switching from Jenkins to BuildNinja - 4 Steps
+        </motion.h2>
         <motion.p
           className="section-subtitle"
           style={{ margin: '0 auto' }}
@@ -30,63 +46,71 @@ export default function MigrationGuide() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Already on Jenkins and considering a switch? Here's how teams typically migrate without disrupting their delivery cadence.
+          Most teams complete their migration in under 1 day. Here's exactly how it works.
         </motion.p>
 
-        <motion.div
-          className={s.migrationBox}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <h3 className={s.migrationTitle}>Estimated migration time: 1–3 days for most teams</h3>
-          <p className={s.migrationSub}>Depending on pipeline complexity. Most teams run both in parallel during transition.</p>
-          
-          <div className={s.migrationSteps}>
-            
-            <div className={s.migrationStep}>
-              <div className={s.stepNum}>1</div>
-              <div className={s.stepContent}>
-                <h4>Deploy BuildNinja alongside Jenkins</h4>
-                <p>Run <code className={s.codeSnippet}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep Jenkins running - no cutover yet.</p>
-              </div>
-            </div>
-            
-            <div className={s.migrationStep}>
-              <div className={s.stepNum}>2</div>
-              <div className={s.stepContent}>
-                <h4>Connect your repositories</h4>
-                <p>Link your GitHub, GitLab, or Bitbucket repos. BuildNinja supports OAuth so this takes under 2 minutes per repo.</p>
-              </div>
-            </div>
-            
-            <div className={s.migrationStep}>
-              <div className={s.stepNum}>3</div>
-              <div className={s.stepContent}>
-                <h4>Recreate pipelines (usually faster than expected)</h4>
-                <p>Translate your Jenkinsfiles into BuildNinja's pipeline YAML. For most standard CI/CD workflows (build → test → deploy), this takes 30–60 minutes. Complex Groovy scripts take longer.</p>
-              </div>
-            </div>
-            
-            <div className={s.migrationStep}>
-              <div className={s.stepNum}>4</div>
-              <div className={s.stepContent}>
-                <h4>Run both in parallel for 1 week</h4>
-                <p>Compare outputs and build times. Validate that BuildNinja's results match Jenkins for your test suites and deployments before full cutover.</p>
-              </div>
-            </div>
-            
-            <div className={s.migrationStep}>
-              <div className={s.stepNum}>5</div>
-              <div className={s.stepContent}>
-                <h4>Decommission Jenkins</h4>
-                <p>Once confident, point all webhooks to BuildNinja, remove Jenkins from your infra, and reclaim that server budget.</p>
-              </div>
-            </div>
-            
-          </div>
-        </motion.div>
+        <div className={s.stepsGrid}>
+          <motion.div
+            className={s.stepCard}
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stepVariants}
+          >
+            <div className={s.stepNum}>01</div>
+            <h4>Deploy BuildNinja</h4>
+            <p>
+              Run <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep Jenkins running - no cutover yet.
+            </p>
+            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 5 min</span>
+          </motion.div>
+          <motion.div
+            className={s.stepCard}
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stepVariants}
+          >
+            <div className={s.stepNum}>02</div>
+            <h4>Connect Your Repos</h4>
+            <p>
+              Link your GitHub, GitLab, or Bitbucket repos via OAuth. BuildNinja sets up webhooks automatically - your repos stay where they are.
+            </p>
+            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 3 min</span>
+          </motion.div>
+          <motion.div
+            className={s.stepCard}
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stepVariants}
+          >
+            <div className={s.stepNum}>03</div>
+            <h4>Convert Pipelines to YAML</h4>
+            <p>
+              Translate your Jenkinsfiles into BuildNinja's pipeline YAML. The syntax is similar for standard CI/CD workflows (build, test, deploy). Most pipelines translate in 30–60 minutes.
+            </p>
+            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
+          </motion.div>
+          <motion.div
+            className={s.stepCard}
+            custom={3}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stepVariants}
+          >
+            <div className={s.stepNum}>04</div>
+            <h4>Validate & Cut Over</h4>
+            <p>
+              Run both in parallel for 1 week. Compare build outputs, validate results match, then point all webhooks to BuildNinja and decommission Jenkins.
+            </p>
+            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 1 week</span>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

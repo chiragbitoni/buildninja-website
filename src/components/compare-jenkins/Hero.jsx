@@ -16,17 +16,20 @@ export default function Hero() {
       </motion.div>
       
       <motion.h1
+        className="section-title"
+        style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 700, marginBottom: '18px' }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.15 }}
       >
-        <span className={s.highlight}>BuildNinja</span> vs Jenkins:<br />
+        <span style={{ fontStyle: 'normal', background: 'linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent', display: 'inline-block', paddingBottom: '0.15em', marginBottom: '-0.15em', verticalAlign: 'top' }}>BuildNinja</span> vs Jenkins:<br />
         Which CI/CD Platform Wins?
       </motion.h1>
       
       <motion.p
-        className={s.heroSub}
+        className="section-subtitle"
+        style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '640px', lineHeight: 1.7, textAlign: 'center' }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
