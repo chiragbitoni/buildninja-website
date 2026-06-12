@@ -52,21 +52,27 @@
 }
 
 .compareTable thead tr {
-  background: var(--color-bg-panel);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-primary-subtle);
 }
 
 .compareTable thead th {
-  padding: 1rem 1.25rem;
+  padding: 20px 20px;
   text-align: left;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-  color: var(--color-text-secondary);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  border-bottom: 2px solid var(--color-primary-border, var(--color-primary));
 }
 
-.compareTable thead th:first-child { width: 30%; }
+.compareTable thead th:first-child {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  width: 30%;
+}
 .compareTable thead th:nth-child(2) { width: 30%; }
 .compareTable thead th:nth-child(3) { width: 30%; }
 .compareTable th.statusCol { width: 10%; text-align: center; }
@@ -110,8 +116,8 @@
   transition: background 0.15s;
 }
 
-.compareTable tbody tr:hover {
-  background: rgba(255, 255, 255, 0.02);
+.compareTable tbody tr:not(.categoryRow):hover {
+  background: var(--color-bg-surface-hover, var(--color-bg-panel));
 }
 
 .compareTable tbody tr:last-child {
@@ -119,31 +125,36 @@
 }
 
 .categoryRow {
-  background: var(--color-bg-panel);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
 .categoryRow td {
-  padding: 0.6rem 1.25rem;
-  font-size: 0.75rem;
-  font-weight: 600;
+  padding: 11px 20px;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
 
 .compareTable td {
-  padding: 0.9rem 1.25rem;
+  padding: 15px 20px;
+  font-size: 14px;
   vertical-align: middle;
-  color: var(--color-text-secondary);
-}
-
-.compareTable td:first-child {
-  font-weight: 500;
   color: var(--color-text);
 }
 
-.ninjaTd { color: var(--color-text) !important; }
+.compareTable td:first-child {
+  color: var(--color-text-secondary);
+  font-size: 13.5px;
+}
+
+.ninjaTd {
+  color: var(--color-text) !important;
+  background: var(--color-primary-subtle);
+  font-weight: 500;
+}
 .jenkinsTd { color: var(--color-text-muted) !important; }
 
 .statusIcon {

@@ -54,6 +54,12 @@ export default function ComparisonTable() {
                 <td className={s.jenkinsTd}>Groovy pipelines, heavy XML/YAML config</td>
                 <td className={s.statusIcon}><CheckCircle2 size={18} className={s.iconWin} aria-label="BuildNinja wins" /></td>
               </tr>
+              <tr>
+                <td>Cloud SaaS option</td>
+                <td className={s.ninjaTd}><CheckCircle2 size={18} className={s.iconWin} style={{verticalAlign:'middle', display:'inline-block'}} /> Self Hosted - Your infrastructure  your Rules</td>
+                <td className={s.jenkinsTd}><CheckCircle2 size={18} className={s.iconWin} style={{verticalAlign:'middle', display:'inline-block'}} /> Self-hosted; CloudBees for managed SaaS</td>
+                <td className={s.statusIcon}><Minus size={18} className={s.iconPartial} aria-label="Tie" /></td>
+              </tr>
 
               {/* PIPELINES */}
               <tr className={s.categoryRow}><td colSpan="4">🚀 Pipeline Capabilities</td></tr>

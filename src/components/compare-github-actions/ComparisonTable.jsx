@@ -77,8 +77,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Cloud SaaS option</td>
-                <td className={s.tdBn}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> In roadmap</td>
-                <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully managed - zero infra needed <span className={`${s.tagWin} ${s.tagGh}`}>GH Wins</span></td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self Hosted - Your infrastructure  your Rules </td>
+                <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully managed SaaS</td>
               </tr>
               <tr>
                 <td>Works without internet (air-gapped)</td>
