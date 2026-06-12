@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Github, Infinity, Settings } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import s from './ComparePortal.module.css';
 
 export default function ComparePortal() {
@@ -10,7 +10,7 @@ export default function ComparePortal() {
       badge: "SaaS vs Self-Hosted",
       desc: "Compare GitHub's per-minute pricing and runner concurrency limits against BuildNinja's self-hosted, unlimited parallel build engine.",
       href: "/compare/buildninja-vs-github-actions",
-      icon: <Github size={20} />,
+      icon: <img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.logoImg} />,
       points: [
         "No runner concurrency limits",
         "Save 70%+ on monthly DevOps bills",
@@ -23,7 +23,7 @@ export default function ComparePortal() {
       badge: "Seat Pricing vs Free",
       desc: "Stop paying for user seats and concurrent build containers. BuildNinja lets your entire engineering team build concurrently without tier gates.",
       href: "/compare/buildninja-vs-circleci",
-      icon: <Infinity size={20} />,
+      icon: <img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.logoImg} />,
       points: [
         "Unlimited users on all tiers",
         "Full hardware utilization and sovereignty",
@@ -36,7 +36,7 @@ export default function ComparePortal() {
       badge: "Modern vs Legacy",
       desc: "Escape Jenkins plugin dependency nightmares and Java/Groovy setup complexity. Clean YAML pipelines meet a premium visual builder UI.",
       href: "/compare/buildninja-vs-jenkins",
-      icon: <Settings size={20} />,
+      icon: <img src="/resources/jenkins-logo.svg" alt="Jenkins" className={s.logoImg} />,
       points: [
         "Zero-downtime unified platform updates",
         "No complex Groovy DSL codebase required",
@@ -61,30 +61,44 @@ export default function ComparePortal() {
 
         <div className={s.grid} role="list">
           {comparisons.map((c, idx) => (
-            <div key={idx} className={s.card} role="listitem">
-              <div className={s.cardHeader}>
-                <div className={s.iconWrapper}>
-                  {c.icon}
+            <Link key={idx} href={c.href} className={s.card} role="listitem">
+              <div className={s.cardGlow} />
+              <div className={s.cardContent}>
+                <div className={s.cardHeader}>
+                  <div className={s.iconWrapper}>
+                    {c.icon}
+                  </div>
+                  <span className={s.badge}>{c.badge}</span>
                 </div>
-                <span className={s.badge}>{c.badge}</span>
+                
+                <h2 className={s.cardTitle}>{c.title}</h2>
+                <p className={s.cardDesc}>{c.desc}</p>
+                
+                <ul className={s.featureList}>
+                  {c.points.map((pt, pIdx) => (
+                    <li key={pIdx} className={s.featureItem}>
+                      <CheckCircle2 size={15} className={s.checkIcon} />
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <span className={s.cardLink}>
+                  <span className={s.cardLinkText}>View Full Comparison</span>
+                  <ArrowRight size={16} className={s.arrow} />
+                </span>
               </div>
-              
-              <h2 className={s.cardTitle}>{c.title}</h2>
-              <p className={s.cardDesc}>{c.desc}</p>
-              
-              <ul className={s.featureList}>
-                {c.points.map((pt, pIdx) => (
-                  <li key={pIdx} className={s.featureItem}>
-                    <CheckCircle2 size={15} className={s.checkIcon} />
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Link href={c.href} className={s.cardLink}>
-                View Full Comparison <ArrowRight size={16} className={s.arrow} />
-              </Link>
-            </div>
+
+              <div className={s.cardOverlay}>
+                <div className={s.overlayInner}>
+                  <h3 className={s.overlayTitle}>{c.title}</h3>
+                  <span className={s.overlayCta}>
+                    View Full Comparison
+                    <ArrowRight size={20} className={s.overlayArrow} />
+                  </span>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
