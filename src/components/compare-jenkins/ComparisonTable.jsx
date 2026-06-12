@@ -1,18 +1,48 @@
+"use client";
 import React from 'react';
-import { CheckCircle2, Minus, XCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { CheckCircle2, Minus, XCircle, Cog, Rocket, Link, Wrench, Users, DollarSign, LifeBuoy } from 'lucide-react';
 import s from './ComparisonTable.module.css';
 
 export default function ComparisonTable() {
   return (
     <section id="comparison-table" className={s.section}>
       <div className={s.container}>
-        <div className={s.sectionLabel}>Full Breakdown</div>
-        <h2 className={s.sectionTitle}>Feature-by-Feature Comparison</h2>
-        <p className={s.sectionDesc}>
+        <motion.span
+          className={s.sectionLabel}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >Full Breakdown</motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >Feature-by-Feature Comparison</motion.h2>
+        <motion.p
+          className="section-subtitle"
+          style={{ margin: '0 auto' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           Every major CI/CD capability compared honestly. Where Jenkins leads, we say so. Where BuildNinja leads, we explain why it matters to your team's velocity.
-        </p>
+        </motion.p>
 
-        <div className={s.compareTableWrap} role="region" aria-label="Feature comparison table">
+        <motion.div
+          className={s.compareTableWrap}
+          role="region"
+          aria-label="Feature comparison table"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <table className={s.compareTable}>
             <thead>
               <tr>
@@ -29,7 +59,7 @@ export default function ComparisonTable() {
             </thead>
             <tbody>
               {/* SETUP */}
-              <tr className={s.categoryRow}><td colSpan="4">⚙️ Setup & Installation</td></tr>
+              <tr className={s.categoryRow}><td colSpan="4"><Cog size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Setup & Installation</td></tr>
               <tr>
                 <td>Initial Setup Time</td>
                 <td className={s.ninjaTd}>Under 5 minutes via Docker <span className={`${s.tag} ${s.tagGreen}`}>Fast</span></td>
@@ -62,7 +92,7 @@ export default function ComparisonTable() {
               </tr>
 
               {/* PIPELINES */}
-              <tr className={s.categoryRow}><td colSpan="4">🚀 Pipeline Capabilities</td></tr>
+              <tr className={s.categoryRow}><td colSpan="4"><Rocket size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Pipeline Capabilities</td></tr>
               <tr>
                 <td>Pipeline as Code</td>
                 <td className={s.ninjaTd}>Yes - clean YAML with smart defaults</td>
@@ -101,7 +131,7 @@ export default function ComparisonTable() {
               </tr>
 
               {/* INTEGRATIONS */}
-              <tr className={s.categoryRow}><td colSpan="4">🔗 Integrations & Ecosystem</td></tr>
+              <tr className={s.categoryRow}><td colSpan="4"><Link size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Integrations & Ecosystem</td></tr>
               <tr>
                 <td>Source Control</td>
                 <td className={s.ninjaTd}>GitHub, GitLab, Bitbucket (native)</td>
@@ -140,7 +170,7 @@ export default function ComparisonTable() {
               </tr>
 
               {/* OPERATIONS */}
-              <tr className={s.categoryRow}><td colSpan="4">🛠 Operations & Maintenance</td></tr>
+              <tr className={s.categoryRow}><td colSpan="4"><Wrench size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Operations & Maintenance</td></tr>
               <tr>
                 <td>Update Management</td>
                 <td className={s.ninjaTd}>Zero-downtime updates, auto upgrade path</td>
@@ -173,7 +203,7 @@ export default function ComparisonTable() {
               </tr>
 
               {/* TEAM & SCALABILITY */}
-              <tr className={s.categoryRow}><td colSpan="4">👥 Team & Scalability</td></tr>
+              <tr className={s.categoryRow}><td colSpan="4"><Users size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Team & Scalability</td></tr>
               <tr>
                 <td>User Limits</td>
                 <td className={s.ninjaTd}>Unlimited users - no per-seat pricing <span className={`${s.tag} ${s.tagGreen}`}>Free</span></td>
@@ -200,7 +230,7 @@ export default function ComparisonTable() {
               </tr>
 
               {/* COST */}
-              <tr className={s.categoryRow}><td colSpan="4">💰 Licensing & Cost</td></tr>
+              <tr className={s.categoryRow}><td colSpan="4"><DollarSign size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Licensing & Cost</td></tr>
               <tr>
                 <td>Software License</td>
                 <td className={s.ninjaTd}>Free tier + Growth Edition (paid)</td>
@@ -227,7 +257,7 @@ export default function ComparisonTable() {
               </tr>
 
               {/* SUPPORT */}
-              <tr className={s.categoryRow}><td colSpan="4">🆘 Support & Community</td></tr>
+              <tr className={s.categoryRow}><td colSpan="4"><LifeBuoy size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Support & Community</td></tr>
               <tr>
                 <td>Official Support</td>
                 <td className={s.ninjaTd}>Engineer-to-engineer direct support</td>
@@ -254,13 +284,19 @@ export default function ComparisonTable() {
               </tr>
             </tbody>
           </table>
-        </div>
+        </motion.div>
 
-        <p className={s.legend}>
+        <motion.p
+          className={s.legend}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           Legend: <span className={s.legendWin}><CheckCircle2 size={14} style={{display:'inline', verticalAlign:'middle'}}/> BuildNinja leads</span> &nbsp;·&nbsp; 
           <span className={s.legendPartial}><Minus size={14} style={{display:'inline', verticalAlign:'middle'}}/> Comparable</span> &nbsp;·&nbsp; 
           <span className={s.legendLose}><XCircle size={14} style={{display:'inline', verticalAlign:'middle'}}/> Jenkins leads</span>
-        </p>
+        </motion.p>
       </div>
     </section>
   );

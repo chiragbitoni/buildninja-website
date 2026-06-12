@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
 import s from './DecisionGuide.module.css';
 
@@ -6,13 +8,39 @@ export default function DecisionGuide() {
   return (
     <section className={s.section}>
       <div className={s.container}>
-        <div className={s.sectionLabel}>Decision Guide</div>
-        <h2 className={s.sectionTitle}>Which Tool is Right for You?</h2>
-        <p className={s.sectionDesc}>
+        <motion.span
+          className={s.sectionLabel}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >Decision Guide</motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >Which Tool is Right for You?</motion.h2>
+        <motion.p
+          className="section-subtitle"
+          style={{ margin: '0 auto' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           Be honest about your team's situation. Both tools can run CI/CD pipelines - the question is which is right for your constraints.
-        </p>
+        </motion.p>
 
-        <div className={s.decisionGrid}>
+        <motion.div
+          className={s.decisionGrid}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           
           <div className={s.migrationBox}>
             <h3 className={s.chooseNinja}>Choose BuildNinja if…</h3>
@@ -38,7 +66,7 @@ export default function DecisionGuide() {
             </ul>
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import s from './FAQ.module.css';
 
 export default function FAQ() {
@@ -41,49 +39,25 @@ export default function FAQ() {
   return (
     <section className={s.section}>
       <div className={s.container}>
-        <motion.span
-          className="badge-alt"
-          style={{ marginBottom: '10px' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Frequently Asked Questions
-        </motion.span>
-        <motion.h2
-          className="section-title"
-          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
+        <span className="badge-alt" style={{ marginBottom: '10px' }}>Common Questions</span>
+        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)' }}>
           BuildNinja vs CircleCI - Common Questions
-        </motion.h2>
+        </h2>
 
-        <div className={s.faqList}>
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <motion.div
-                key={index}
-                className={`${s.faqItem} ${isOpen ? s.open : ''}`}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+        <div className={s.faqCol}>
+          {faqs.map((faq, index) => (
+            <div key={index} className={`${s.faqItem} ${openIndex === index ? s.open : ''}`}>
+              <button
+                className={s.faqQ}
+                onClick={() => toggleFaq(index)}
+                aria-expanded={openIndex === index}
               >
-                <button className={s.faqQ} onClick={() => toggleFaq(index)} aria-expanded={isOpen}>
-                  {faq.q}
-                  <span className={s.faqArr}>+</span>
-                </button>
-                <div className={s.faqA}>
-                  {faq.a}
-                </div>
-              </motion.div>
-            );
-          })}
+                {faq.q}
+                <span className={s.faqIcon}>+</span>
+              </button>
+              <div className={s.faqA}>{faq.a}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

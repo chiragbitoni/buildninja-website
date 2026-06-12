@@ -1,17 +1,45 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import s from './MigrationGuide.module.css';
 
 export default function MigrationGuide() {
   return (
     <section id="migration" className={s.section}>
       <div className={s.container}>
-        <div className={s.sectionLabel}>Migration Guide</div>
-        <h2 className={s.sectionTitle}>Switching from Jenkins to BuildNinja</h2>
-        <p className={s.sectionDesc}>
+        <motion.span
+          className={s.sectionLabel}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >Migration Guide</motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >Switching from Jenkins to BuildNinja</motion.h2>
+        <motion.p
+          className="section-subtitle"
+          style={{ margin: '0 auto' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           Already on Jenkins and considering a switch? Here's how teams typically migrate without disrupting their delivery cadence.
-        </p>
+        </motion.p>
 
-        <div className={s.migrationBox}>
+        <motion.div
+          className={s.migrationBox}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <h3 className={s.migrationTitle}>Estimated migration time: 1–3 days for most teams</h3>
           <p className={s.migrationSub}>Depending on pipeline complexity. Most teams run both in parallel during transition.</p>
           
@@ -58,7 +86,7 @@ export default function MigrationGuide() {
             </div>
             
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Timer, Puzzle, BadgeDollarSign, FileCode2, Lock, Bot } from 'lucide-react';
 import s from './DeepDiveCards.module.css';
 
@@ -6,13 +8,39 @@ export default function DeepDiveCards() {
   return (
     <section id="deep-dive" className={s.section}>
       <div className={s.container}>
-        <div className={s.sectionLabel}>Deep Dive</div>
-        <h2 className={s.sectionTitle}>Where the Real Differences Lie</h2>
-        <p className={s.sectionDesc}>
+        <motion.span
+          className={s.sectionLabel}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >Deep Dive</motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >Where the Real Differences Lie</motion.h2>
+        <motion.p
+          className="section-subtitle"
+          style={{ margin: '0 auto' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           The feature table tells you what exists. This section tells you what it <em>feels like</em> to use these tools every day.
-        </p>
+        </motion.p>
 
-        <div className={s.diveGrid}>
+        <motion.div
+          className={s.diveGrid}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           
           <div className={`${s.diveCard} ${s.featured}`}>
             <div className={s.diveIcon}><Timer size={28} className={s.iconPrimary} /></div>
@@ -85,7 +113,7 @@ export default function DeepDiveCards() {
             </div>
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

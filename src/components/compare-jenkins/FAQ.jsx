@@ -1,17 +1,12 @@
 'use client';
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
 import s from './FAQ.module.css';
 
 export default function FAQ() {
-  const [openIdx, setOpenIdx] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const toggle = (idx) => {
-    if (openIdx === idx) {
-      setOpenIdx(null);
-    } else {
-      setOpenIdx(idx);
-    }
+  const toggleFaq = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   const faqs = [
@@ -44,39 +39,25 @@ export default function FAQ() {
   return (
     <section id="faq" className={s.section}>
       <div className={s.container}>
-        <div className={s.sectionLabel}>FAQ</div>
-        <h2 className={s.sectionTitle}>Common Questions</h2>
-        <p className={s.sectionDesc}>
-          Questions we hear from teams evaluating a Jenkins alternative.
-        </p>
+        <span className="badge-alt" style={{ marginBottom: '10px' }}>Common Questions</span>
+        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)' }}>
+          BuildNinja vs Jenkins - Common Questions
+        </h2>
 
-        <div className={s.faqList} role="list">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIdx === idx;
-            return (
-              <div key={idx} className={`${s.faqItem} ${isOpen ? s.open : ''}`} role="listitem">
-                <div 
-                  className={s.faqQ} 
-                  role="button" 
-                  tabIndex="0" 
-                  aria-expanded={isOpen}
-                  onClick={() => toggle(idx)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      toggle(idx);
-                    }
-                  }}
-                >
-                  {faq.q}
-                  <ChevronDown size={16} className={`${s.faqArrow} ${isOpen ? s.rotated : ''}`} />
-                </div>
-                <div className={s.faqA} aria-hidden={!isOpen}>
-                  <p>{faq.a}</p>
-                </div>
-              </div>
-            );
-          })}
+        <div className={s.faqCol}>
+          {faqs.map((faq, idx) => (
+            <div key={idx} className={`${s.faqItem} ${openIndex === idx ? s.open : ''}`}>
+              <button
+                className={s.faqQ}
+                onClick={() => toggleFaq(idx)}
+                aria-expanded={openIndex === idx}
+              >
+                {faq.q}
+                <span className={s.faqIcon}>+</span>
+              </button>
+              <div className={s.faqA}>{faq.a}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

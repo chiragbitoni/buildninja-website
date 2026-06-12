@@ -63,11 +63,31 @@ export default function MetricsBars() {
   return (
     <section className={s.section}>
       <div className={s.container}>
-        <div className={s.sectionLabel}>At a Glance</div>
-        <h2 className={s.sectionTitle}>How They Stack Up</h2>
-        <p className={s.sectionDesc}>
+        <motion.span
+          className={s.sectionLabel}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >At a Glance</motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >How They Stack Up</motion.h2>
+        <motion.p
+          className="section-subtitle"
+          style={{ margin: '0 auto' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           Six key performance dimensions where modern teams feel the most friction. Scores are derived from setup documentation, community benchmarks, and real-world usage reports.
-        </p>
+        </motion.p>
 
         <div id="jenkins-metrics-grid" className={s.metricsGrid}>
           {metrics.map((m, idx) => (
