@@ -27,6 +27,8 @@
   border-radius: 12px;
   padding: 1.75rem;
   transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .diveCard:hover {
@@ -67,6 +69,7 @@
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
+  flex: 1;
 }
 
 .diveVersus {
