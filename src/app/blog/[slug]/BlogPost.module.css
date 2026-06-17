@@ -65,7 +65,7 @@
 
 /* ── Article Container ─────────────────────────────────── */
 .article {
-  max-width: 820px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 56px var(--container-padding) 120px;
 }
