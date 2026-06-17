@@ -37,6 +37,7 @@ export default function Download() {
       },
       {
         "@type": "HowTo",
+        "@id": "https://buildninja.grapehub.io/install#howto",
         "name": "How to Install BuildNinja",
         "description": "Learn how to deploy and configure the BuildNinja self-hosted CI/CD platform on your own infrastructure using the Windows Installer or Docker.",
         "step": [

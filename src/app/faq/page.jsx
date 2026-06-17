@@ -39,6 +39,7 @@ export default function Faq() {
             },
             {
                 "@type": "FAQPage",
+                "@id": "https://buildninja.grapehub.io/faq#faqpage",
                 "mainEntity": thirdSectionText.faqs.flatMap(category =>
                     category.faqs.map(faq => ({
                         "@type": "Question",

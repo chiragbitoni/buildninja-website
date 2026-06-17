@@ -39,6 +39,7 @@ export default function Pricing() {
       },
       {
         "@type": "FAQPage",
+        "@id": "https://buildninja.grapehub.io/pricing#faqpage",
         "mainEntity": pricingSeventhText.faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

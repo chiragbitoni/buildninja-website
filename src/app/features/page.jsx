@@ -37,6 +37,7 @@ export default function Features() {
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://buildninja.grapehub.io/features#softwareapplication",
         "name": "BuildNinja",
         "operatingSystem": "Windows, Linux, macOS, Docker, Kubernetes",
         "applicationCategory": "DeveloperApplication",

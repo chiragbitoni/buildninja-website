@@ -147,14 +147,7 @@ export default async function BlogPostPage({ params }) {
           "@type": "Person",
           name: post.author || "BuildNinja Team",
         },
-        publisher: {
-          "@type": "Organization",
-          name: "BuildNinja",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
-          },
-        },
+        publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
         datePublished: post.firstPublishedDate,
         dateModified: post.lastPublishedDate || post.firstPublishedDate,
         mainEntityOfPage: {
