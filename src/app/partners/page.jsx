@@ -26,5 +26,30 @@ export const metadata = {
 };
 
 export default function Partners() {
-  return <PartnerPage />;
+  const partnersSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
+          { "@type": "ListItem", position: 2, name: "Partners", item: "https://buildninja.grapehub.io/partners" },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://buildninja.grapehub.io/partners",
+        name: "BuildNinja Partner Program",
+        description: "Join the BuildNinja ecosystem. Collaborate with us to build better CI/CD experiences and empower engineering teams worldwide.",
+        publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(partnersSchema) }} />
+      <PartnerPage />
+    </>
+  );
 }

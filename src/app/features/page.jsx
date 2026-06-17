@@ -25,25 +25,36 @@ export const metadata = {
 };
 
 export default function Features() {
-  const softwareSchema = {
+  const featuresSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "BuildNinja",
-    "operatingSystem": "Windows, Linux, macOS, Docker, Kubernetes",
-    "applicationCategory": "DeveloperApplication",
-    "description": "Experience lightning-fast, secure, and fully automated self-hosted CI/CD platform. The ultimate self-hosted alternative to Jenkins, GitLab CI, and GitHub Actions.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
+          { "@type": "ListItem", position: 2, name: "Features", item: "https://buildninja.grapehub.io/features" },
+        ],
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "BuildNinja",
+        "operatingSystem": "Windows, Linux, macOS, Docker, Kubernetes",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Experience lightning-fast, secure, and fully automated self-hosted CI/CD platform. The ultimate self-hosted alternative to Jenkins, GitLab CI, and GitHub Actions.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(featuresSchema) }}
       />
       <div>
         <FeaturesPage />

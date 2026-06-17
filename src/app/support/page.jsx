@@ -25,5 +25,30 @@ export const metadata = {
 };
 
 export default function Support() {
-  return <SupportPage />;
+  const supportSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
+          { "@type": "ListItem", position: 2, name: "Support", item: "https://buildninja.grapehub.io/support" },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://buildninja.grapehub.io/support",
+        name: "BuildNinja Support & Technical Assistance",
+        description: "Need help? Access our documentation, join the community, or contact our technical support team for BuildNinja CI/CD assistance.",
+        publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(supportSchema) }} />
+      <SupportPage />
+    </>
+  );
 }

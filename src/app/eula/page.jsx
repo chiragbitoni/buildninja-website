@@ -26,10 +26,33 @@ export const metadata = {
 };
 
 export default function EULA() {
+    const eulaSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                    { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
+                    { "@type": "ListItem", position: 2, name: "EULA", item: "https://buildninja.grapehub.io/eula" },
+                ],
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://buildninja.grapehub.io/eula",
+                name: "EULA | BuildNinja",
+                description: "BuildNinja End User License Agreement (EULA). Read about our licensing terms, usage rights, and data protection policies.",
+                publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
+            },
+        ],
+    };
+
     return (
-        <main>
-            <EulaHero />
-            <EulaContent />
-        </main>
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eulaSchema) }} />
+            <main>
+                <EulaHero />
+                <EulaContent />
+            </main>
+        </>
     );
 }

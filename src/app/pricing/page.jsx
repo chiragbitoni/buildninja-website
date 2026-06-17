@@ -29,15 +29,26 @@ export default function Pricing() {
   // Generate Pricing Page FAQ Schema dynamically
   const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": pricingSeventhText.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer.replace(/<[^>]*>/g, "") // strip HTML tags
-      }
-    }))
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
+          { "@type": "ListItem", position: 2, name: "Pricing", item: "https://buildninja.grapehub.io/pricing" },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": pricingSeventhText.faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer.replace(/<[^>]*>/g, "") // strip HTML tags
+          }
+        }))
+      },
+    ],
   };
 
   return (

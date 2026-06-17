@@ -126,31 +126,43 @@ export default async function BlogPostPage({ params }) {
     console.error("Error retrieving author avatar from feed:", e);
   }
 
-  // Build JSON-LD Article schema
-  const articleSchema = {
+  // Build JSON-LD schema
+  const blogPostSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt || post.title,
-    image: post.coverImage || "https://buildninja.grapehub.io/resources/BuildNinja.png",
-    author: {
-      "@type": "Person",
-      name: post.author || "BuildNinja Team",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "BuildNinja",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://buildninja.grapehub.io/blog" },
+          { "@type": "ListItem", position: 3, name: post.title, item: `https://buildninja.grapehub.io/blog/${slug}` },
+        ],
       },
-    },
-    datePublished: post.firstPublishedDate,
-    dateModified: post.lastPublishedDate || post.firstPublishedDate,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://buildninja.grapehub.io/blog/${slug}`,
-    },
+      {
+        "@type": "Article",
+        headline: post.title,
+        description: post.excerpt || post.title,
+        image: post.coverImage || "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        author: {
+          "@type": "Person",
+          name: post.author || "BuildNinja Team",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "BuildNinja",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+          },
+        },
+        datePublished: post.firstPublishedDate,
+        dateModified: post.lastPublishedDate || post.firstPublishedDate,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://buildninja.grapehub.io/blog/${slug}`,
+        },
+      },
+    ],
   };
 
   return (
@@ -158,7 +170,7 @@ export default async function BlogPostPage({ params }) {
       {/* JSON-LD Article Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
       />
 
       {/* Back navigation */}
