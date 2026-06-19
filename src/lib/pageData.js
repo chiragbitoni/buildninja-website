@@ -21,6 +21,10 @@ export const pageDataMap = {
     schemaType: "WebApplication",
     name: "BuildNinja Dojo",
     description: "Master BuildNinja in our interactive Dojo. Experiment with build pipelines, configurations, and CI/CD workflows in a safe sandbox environment.",
+    extra: {
+      operatingSystem: "Windows, Linux, macOS",
+      applicationCategory: "DeveloperApplication",
+    },
   },
   "/eula": {
     breadcrumb: "EULA",

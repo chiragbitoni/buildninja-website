@@ -18,6 +18,7 @@ export default function SchemaScript() {
       name: data.name,
       description: data.description,
       publisher: { "@id": `${BASE_URL}/#organization` },
+      ...(data.extra || {}),
     });
   }
 

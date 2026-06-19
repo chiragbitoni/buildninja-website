@@ -25,21 +25,5 @@ export const metadata = {
 };
 
 export default function DojoPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "@id": "https://buildninja.grapehub.io/dojo",
-    name: "BuildNinja Dojo",
-    description: "Master BuildNinja in our interactive Dojo. Experiment with build pipelines, configurations, and CI/CD workflows in a safe sandbox environment.",
-    operatingSystem: "Windows, Linux, macOS",
-    applicationCategory: "DeveloperApplication",
-    publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
-  };
-
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <DojoClient />
-    </>
-  );
+  return <DojoClient />;
 }
