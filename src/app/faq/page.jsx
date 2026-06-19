@@ -26,32 +26,20 @@ export const metadata = {
 };
 
 export default function Faq() {
-    // Generate dynamic, search-compliant FAQPage JSON-LD schema
     const faqSchema = {
         "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                    { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
-                    { "@type": "ListItem", position: 2, name: "FAQ", item: "https://buildninja.grapehub.io/faq" },
-                ],
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://buildninja.grapehub.io/faq#faqpage",
-                "mainEntity": thirdSectionText.faqs.flatMap(category =>
-                    category.faqs.map(faq => ({
-                        "@type": "Question",
-                        "name": faq.question,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": faq.answer.replace(/<[^>]*>/g, "") // Clean HTML tags for compliant schema formatting
-                        }
-                    }))
-                )
-            },
-        ],
+        "@type": "FAQPage",
+        "@id": "https://buildninja.grapehub.io/faq#faqpage",
+        "mainEntity": thirdSectionText.faqs.flatMap(category =>
+            category.faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer.replace(/<[^>]*>/g, "")
+                }
+            }))
+        )
     };
 
     return (

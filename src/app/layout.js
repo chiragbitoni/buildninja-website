@@ -15,6 +15,7 @@ import Cursor from "@/components/ui/Cursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import DynamicFavicon from "@/components/DynamicFavicon";
 import TrackingInitializer from "@/components/TrackingInitializer";
+import SchemaScript from "@/components/SchemaScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -103,6 +104,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="sitemap" type="application/xml" title="Sitemap" href="https://buildninja.grapehub.io/sitemap.xml" />
+        <SchemaScript />
         <script
           id="schema-org"
           type="application/ld+json"

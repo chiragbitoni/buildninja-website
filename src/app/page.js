@@ -26,7 +26,6 @@ export const metadata = {
 };
 
 export default function Home() {
-  // Generate Home Page FAQ Schema dynamically
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -40,7 +39,6 @@ export default function Home() {
     }))
   };
 
-  // Generate SoftwareApplication Schema
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -55,21 +53,8 @@ export default function Home() {
     }
   };
 
-  // BreadcrumbList schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
-    ],
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

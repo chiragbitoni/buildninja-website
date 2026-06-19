@@ -18,36 +18,12 @@ export const metadata = {
 
 export default async function RefundPolicyPage() {
   const content = await fetchGrapeHubPage("refund-and-cancellation-policy");
-
-  const refundSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
-          { "@type": "ListItem", position: 2, name: "Refund and Cancellation Policy", item: "https://buildninja.grapehub.io/refund-and-cancellation-policy" },
-        ],
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://buildninja.grapehub.io/refund-and-cancellation-policy",
-        name: "Refund and Cancellation Policy | BuildNinja",
-        description: "Read BuildNinja's Refund and Cancellation Policy outlining the terms for service withdrawal, refund eligibility, and customer support assistance.",
-        publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
-      },
-    ],
-  };
-
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(refundSchema) }} />
-      <LegalContent 
-        title="Refund & Cancellation"
-        description="Read our refund, cancellation, and transaction policies for digital products and subscriptions."
-        badge="Legal Documents"
-        htmlContent={content}
-      />
-    </>
+    <LegalContent 
+      title="Refund & Cancellation"
+      description="Read our refund, cancellation, and transaction policies for digital products and subscriptions."
+      badge="Legal Documents"
+      htmlContent={content}
+    />
   );
 }

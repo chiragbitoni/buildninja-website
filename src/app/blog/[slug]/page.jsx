@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { fetchGrapeHubBlogPosts, fetchGrapeHubBlogPost } from "@/services/grapehub/fetchPage";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import styles from "./BlogPost.module.css";
 // ── Pre-render all known post slugs at build time ──────────────────────────
 export async function generateStaticParams() {
@@ -130,14 +131,11 @@ export default async function BlogPostPage({ params }) {
   const blogPostSchema = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
-          { "@type": "ListItem", position: 2, name: "Blog", item: "https://buildninja.grapehub.io/blog" },
-          { "@type": "ListItem", position: 3, name: post.title, item: `https://buildninja.grapehub.io/blog/${slug}` },
-        ],
-      },
+      generateBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: post.title, url: `/blog/${slug}` },
+      ]),
       {
         "@type": "Article",
         headline: post.title,

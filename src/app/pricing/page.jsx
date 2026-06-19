@@ -26,37 +26,25 @@ export const metadata = {
 };
 
 export default function Pricing() {
-  // Generate Pricing Page FAQ Schema dynamically
-  const faqSchema = {
+  const schema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
-          { "@type": "ListItem", position: 2, name: "Pricing", item: "https://buildninja.grapehub.io/pricing" },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://buildninja.grapehub.io/pricing#faqpage",
-        "mainEntity": pricingSeventhText.faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer.replace(/<[^>]*>/g, "") // strip HTML tags
-          }
-        }))
-      },
-    ],
+    "@type": "FAQPage",
+    "@id": "https://buildninja.grapehub.io/pricing#faqpage",
+    "mainEntity": pricingSeventhText.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>/g, "")
+      }
+    }))
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <PricingPage />
     </>

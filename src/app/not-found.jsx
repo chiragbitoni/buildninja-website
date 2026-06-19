@@ -9,22 +9,8 @@ export const metadata = {
 };
 
 export default function NotFound() {
-  const notFoundSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
-          { "@type": "ListItem", position: 2, name: "Page Not Found" },
-        ],
-      },
-    ],
-  };
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(notFoundSchema) }} />
       <section className={styles.notFoundWrapper}>
       <div className={styles.notFoundContent}>
         <h1>404</h1>

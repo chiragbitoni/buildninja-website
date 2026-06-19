@@ -25,52 +25,41 @@ export const metadata = {
 };
 
 export default function Download() {
-  const howToSchema = {
+  const schema = {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "HowTo",
+    "@id": "https://buildninja.grapehub.io/install#howto",
+    "name": "How to Install BuildNinja",
+    "description": "Learn how to deploy and configure the BuildNinja self-hosted CI/CD platform on your own infrastructure using the Windows Installer or Docker.",
+    "step": [
       {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://buildninja.grapehub.io" },
-          { "@type": "ListItem", position: 2, name: "Install", item: "https://buildninja.grapehub.io/install" },
-        ],
+        "@type": "HowToStep",
+        "name": "Check Requirements",
+        "text": "Ensure your system meets the minimum requirements: 2 CPU cores, 4 GB RAM, and 10 GB free space on Windows, Linux, or macOS."
       },
       {
-        "@type": "HowTo",
-        "@id": "https://buildninja.grapehub.io/install#howto",
-        "name": "How to Install BuildNinja",
-        "description": "Learn how to deploy and configure the BuildNinja self-hosted CI/CD platform on your own infrastructure using the Windows Installer or Docker.",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "name": "Check Requirements",
-            "text": "Ensure your system meets the minimum requirements: 2 CPU cores, 4 GB RAM, and 10 GB free space on Windows, Linux, or macOS."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Get License Key",
-            "text": "Sign up on the install page with your email to receive your free Growth Edition license key."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Run the Installer or Docker Command",
-            "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull buildninja/buildninja'."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Configure and Launch",
-            "text": "Configure VCS integrations (GitHub, GitLab, Bitbucket), add build steps, and start running continuous integration builds."
-          }
-        ]
+        "@type": "HowToStep",
+        "name": "Get License Key",
+        "text": "Sign up on the install page with your email to receive your free Growth Edition license key."
       },
-    ],
+      {
+        "@type": "HowToStep",
+        "name": "Run the Installer or Docker Command",
+        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull buildninja/buildninja'."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Configure and Launch",
+        "text": "Configure VCS integrations (GitHub, GitLab, Bitbucket), add build steps, and start running continuous integration builds."
+      }
+    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <DownloadPage />
     </>
