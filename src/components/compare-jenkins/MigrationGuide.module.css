@@ -28,6 +28,8 @@
   padding: 24px 22px;
   box-shadow: var(--shadow-sm);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .stepNum {
@@ -56,25 +58,36 @@
   font-size: 13px;
   color: var(--color-text-secondary);
   line-height: 1.6;
+  flex: 1;
+}
+
+.stepFooter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
 }
 
 .stepTime {
-  display: inline-block;
-  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-size: 11px;
   font-weight: 600;
   color: var(--color-success);
   background: var(--color-success-bg);
   padding: 2px 9px;
   border-radius: 10px;
+  white-space: nowrap;
 }
 
 .guideLink {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 10px;
-  margin-left: 8px;
   font-size: 12px;
   font-weight: 600;
   color: var(--color-primary);
@@ -83,6 +96,7 @@
   border: 1px solid var(--color-primary-border);
   border-radius: var(--radius-sm);
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 .guideLink:hover {

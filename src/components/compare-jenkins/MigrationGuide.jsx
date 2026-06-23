@@ -63,7 +63,9 @@ export default function MigrationGuide() {
             <p>
               Run <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep Jenkins running - no cutover yet.
             </p>
-            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 5 min</span>
+            <div className={s.stepFooter}>
+              <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 5 min</span>
+            </div>
           </motion.div>
           <motion.div
             className={s.stepCard}
@@ -78,7 +80,9 @@ export default function MigrationGuide() {
             <p>
               Link your GitHub, GitLab, or Bitbucket repos via OAuth. BuildNinja sets up webhooks automatically - your repos stay where they are.
             </p>
-            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 3 min</span>
+            <div className={s.stepFooter}>
+              <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 3 min</span>
+            </div>
           </motion.div>
           <motion.div
             className={s.stepCard}
@@ -93,10 +97,12 @@ export default function MigrationGuide() {
             <p>
               Translate your Jenkinsfiles into BuildNinja's pipeline YAML. The syntax is similar for standard CI/CD workflows (build, test, deploy). Most pipelines translate in 30–60 minutes.
             </p>
-            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
-            <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
-              <ExternalLink size={14} /> YAML Reference
-            </Link>
+            <div className={s.stepFooter}>
+              <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
+              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
+                <ExternalLink size={14} /> YAML Reference
+              </Link>
+            </div>
           </motion.div>
           <motion.div
             className={s.stepCard}
@@ -111,10 +117,12 @@ export default function MigrationGuide() {
             <p>
               Run both in parallel for 1 week. Compare build outputs, validate results match, then point all webhooks to BuildNinja and decommission Jenkins.
             </p>
-            <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 1 week</span>
-            <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
-              <ExternalLink size={14} /> View Guide
-            </Link>
+            <div className={s.stepFooter}>
+              <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 1 week</span>
+              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
+                <ExternalLink size={14} /> View Guide
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>

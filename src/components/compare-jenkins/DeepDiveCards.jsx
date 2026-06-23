@@ -48,10 +48,14 @@ export default function DeepDiveCards() {
             <h3>Time to First Build</h3>
             <p>This is the single biggest practical difference. BuildNinja is designed to get your first pipeline running in under 5 minutes. Jenkins requires JDK installation, downloading the WAR file, running the setup wizard, installing suggested plugins, and then configuring your first job - a process that regularly takes new users 2–4 hours.</p>
             <div className={s.diveVersus}>
-              <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>5 minutes</div>
-                <div className={s.diveVsLabel}>avg</div>
-                <div className={s.diveVsJenkins}>2–4 hours</div>
+              <div className={`${s.diveVsSide} ${s.diveVsNinjaSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsNinjaValue}`}>5 min</span>
+                <span className={s.diveVsSideLabel}>BuildNinja</span>
+              </div>
+              <div className={s.diveVsDivider}>vs</div>
+              <div className={`${s.diveVsSide} ${s.diveVsJenkinsSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsJenkinsValue}`}>2–4 hr</span>
+                <span className={s.diveVsSideLabel}>Jenkins</span>
               </div>
             </div>
           </div>
@@ -61,10 +65,14 @@ export default function DeepDiveCards() {
             <h3>Plugin Management Reality</h3>
             <p>Jenkins' 1,800+ plugin ecosystem is both its greatest strength and its biggest operational headache. Plugin conflicts, security vulnerabilities in unmaintained plugins, and version incompatibilities are the #1 cause of Jenkins outages. BuildNinja ships as a unified platform - fewer moving parts, fewer failure points.</p>
             <div className={s.diveVersus}>
-              <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>Unified releases</div>
-                <div className={s.diveVsLabel}>updates</div>
-                <div className={s.diveVsJenkins}>Per-plugin patches</div>
+              <div className={`${s.diveVsSide} ${s.diveVsNinjaSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsNinjaValue}`}>Unified</span>
+                <span className={s.diveVsSideLabel}>BuildNinja</span>
+              </div>
+              <div className={s.diveVsDivider}>vs</div>
+              <div className={`${s.diveVsSide} ${s.diveVsJenkinsSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsJenkinsValue}`}>Per-plugin</span>
+                <span className={s.diveVsSideLabel}>Jenkins</span>
               </div>
             </div>
           </div>
@@ -74,10 +82,14 @@ export default function DeepDiveCards() {
             <h3>Hidden Cost of Jenkins</h3>
             <p>Jenkins itself is free. But running Jenkins well isn't. Teams typically need a dedicated DevOps engineer (or a significant portion of one) to manage Jenkins infrastructure, plugin updates, scaling, and incident response. When you factor in server costs and engineering time, Jenkins often costs $500–$2,000/month for mid-size teams.</p>
             <div className={s.diveVersus}>
-              <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>$10–50/mo</div>
-                <div className={s.diveVsLabel}>TCO</div>
-                <div className={s.diveVsJenkins}>$500–$2k+/mo</div>
+              <div className={`${s.diveVsSide} ${s.diveVsNinjaSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsNinjaValue}`}>$10–50/mo</span>
+                <span className={s.diveVsSideLabel}>BuildNinja</span>
+              </div>
+              <div className={s.diveVsDivider}>vs</div>
+              <div className={`${s.diveVsSide} ${s.diveVsJenkinsSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsJenkinsValue}`}>$500–2k/mo</span>
+                <span className={s.diveVsSideLabel}>Jenkins</span>
               </div>
             </div>
           </div>
@@ -87,10 +99,14 @@ export default function DeepDiveCards() {
             <h3>Groovy vs. Clean YAML</h3>
             <p>Jenkins Declarative Pipelines are powerful, but Groovy scripted pipelines require developers to learn a JVM language just to configure their CI/CD. BuildNinja uses clean, expressive YAML with sensible defaults that any developer can understand and modify without consulting documentation.</p>
             <div className={s.diveVersus}>
-              <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>YAML + visual UI</div>
-                <div className={s.diveVsLabel}>config</div>
-                <div className={s.diveVsJenkins}>Groovy DSL</div>
+              <div className={`${s.diveVsSide} ${s.diveVsNinjaSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsNinjaValue}`}>YAML+UI</span>
+                <span className={s.diveVsSideLabel}>BuildNinja</span>
+              </div>
+              <div className={s.diveVsDivider}>vs</div>
+              <div className={`${s.diveVsSide} ${s.diveVsJenkinsSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsJenkinsValue}`}>Groovy</span>
+                <span className={s.diveVsSideLabel}>Jenkins</span>
               </div>
             </div>
           </div>
@@ -106,10 +122,14 @@ export default function DeepDiveCards() {
             <h3>The AI Advantage (Coming)</h3>
             <p>BuildNinja v1.2.0 is bringing AI-powered log analysis, configuration review, and build outcome prediction - features Jenkins has no roadmap for. If your team wants CI/CD that actively helps you improve, BuildNinja is the forward-looking choice.</p>
             <div className={s.diveVersus}>
-              <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>AI-native (v1.2)</div>
-                <div className={s.diveVsLabel}>roadmap</div>
-                <div className={s.diveVsJenkins}>No AI roadmap</div>
+              <div className={`${s.diveVsSide} ${s.diveVsNinjaSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsNinjaValue}`}>AI-native</span>
+                <span className={s.diveVsSideLabel}>BuildNinja</span>
+              </div>
+              <div className={s.diveVsDivider}>vs</div>
+              <div className={`${s.diveVsSide} ${s.diveVsJenkinsSide}`}>
+                <span className={`${s.diveVsValue} ${s.diveVsJenkinsValue}`}>No AI</span>
+                <span className={s.diveVsSideLabel}>Jenkins</span>
               </div>
             </div>
           </div>

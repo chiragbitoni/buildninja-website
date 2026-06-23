@@ -26,14 +26,16 @@
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.75rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 6px rgba(16,24,40,0.03), 0 4px 14px rgba(16,24,40,0.03);
 }
 
 .diveCard:hover {
+  transform: translateY(-4px);
   border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.08);
 }
 
 .featured {
@@ -43,6 +45,7 @@
 
 .featured:hover {
   border-color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.1), 0 0 0 1px var(--color-primary);
 }
 
 .diveIcon {
@@ -74,35 +77,65 @@
 
 .diveVersus {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: stretch;
+  gap: 0;
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid var(--color-border);
 }
 
-.diveVsRow {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 8px;
+.diveVsSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  font-size: 0.8rem;
+  gap: 2px;
+  padding: 0.75rem 0.5rem;
+  border-radius: 8px;
 }
 
-.diveVsNinja {
-  color: var(--color-text);
-  font-weight: 500;
+.diveVsNinjaSide {
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
 }
 
-.diveVsJenkins {
-  color: var(--color-text-muted);
-  text-align: right;
+.diveVsJenkinsSide {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
 }
 
-.diveVsLabel {
-  color: var(--color-text-muted);
-  text-align: center;
+.diveVsDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  flex-shrink: 0;
   font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.diveVsValue {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.diveVsNinjaValue {
+  color: var(--color-primary);
+}
+
+.diveVsJenkinsValue {
+  color: var(--color-text-muted);
+}
+
+.diveVsSideLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  opacity: 0.8;
 }
