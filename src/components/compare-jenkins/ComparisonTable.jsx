@@ -212,7 +212,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Total Cost for 20 Devs</td>
-                <td className={s.ninjaTd}>$0–$99/month</td>
+                <td className={s.ninjaTd}>$10–50/month</td>
                 <td className={s.jenkinsTd}>$500–$2,000+/mo (infra + DevOps time) <span className={`${s.tag} ${s.tagAmber}`}>Hidden costs</span></td>
               </tr>
               <tr>

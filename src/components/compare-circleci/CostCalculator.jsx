@@ -18,16 +18,15 @@ export default function CostCalculator() {
         <div className={s.calcGrid}>
           <div className={`${s.calcPanel} ${s.calcPanelFeatured}`}>
             <div className={s.calcHead}>
-              <span className={s.calcLogo}><img src="/resources/Favicon/favicon.png" alt="BuildNinja" className={s.calcLogoBn} /> BuildNinja</span>
+              <span className={s.calcLogo}><img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.calcLogoBn} /> BuildNinja</span>
               <span className={s.calcBadgeRecommend}>Recommended</span>
             </div>
             <div className={s.costLine}><span>Build compute</span><span>$0 /mo</span></div>
             <div className={s.costLine}><span>Per-seat cost (20 users)</span><span>$0 /mo</span></div>
-            <div className={s.costLine}><span>t3.xlarge server (AWS)</span><span>~$120 /mo</span></div>
-            <div className={s.costLine}><span>Storage (100GB EBS)</span><span>~$10 /mo</span></div>
+            <div className={s.costLine}><span>Your own server infrastructure</span><span>$10–50 /mo</span></div>
             <div className={s.costLine}><span>BuildNinja license</span><span>$0 /mo (free tier)</span></div>
             <div className={s.costTotal}>
-              <div className={`${s.costTotalVal} ${s.costTotalValOrange}`}>~$130/mo</div>
+              <div className={`${s.costTotalVal} ${s.costTotalValOrange}`}>$10–50/mo</div>
               <div className={s.costTotalLbl}>Total · Supports <strong>unlimited builds + unlimited users</strong></div>
             </div>
           </div>

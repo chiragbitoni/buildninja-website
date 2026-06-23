@@ -59,7 +59,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Cost for 20-person team (100 builds/day)</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>~$10–100/mo</strong> (your own server)</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$10–50/mo</strong> (your own server)</td>
                 <td className={s.tdGh}>$80–212/mo (plan + overages)</td>
               </tr>
 

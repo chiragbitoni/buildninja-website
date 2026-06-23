@@ -55,7 +55,7 @@ export default function MetricsBars() {
     },
     {
       label: 'Total Cost (team of 20)',
-      ninja: { label: '$0–$99/mo', width: '95%' },
+      ninja: { label: '$10–50/mo', width: '95%' },
       jenkins: { label: '$500–2k+/mo*', width: '45%' }
     }
   ];

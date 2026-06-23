@@ -75,7 +75,7 @@ export default function DeepDiveCards() {
             <p>Jenkins itself is free. But running Jenkins well isn't. Teams typically need a dedicated DevOps engineer (or a significant portion of one) to manage Jenkins infrastructure, plugin updates, scaling, and incident response. When you factor in server costs and engineering time, Jenkins often costs $500–$2,000/month for mid-size teams.</p>
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>$0–$99/mo</div>
+                <div className={s.diveVsNinja}>$10–50/mo</div>
                 <div className={s.diveVsLabel}>TCO</div>
                 <div className={s.diveVsJenkins}>$500–$2k+/mo</div>
               </div>
