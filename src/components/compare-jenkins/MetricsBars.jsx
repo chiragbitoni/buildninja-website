@@ -81,7 +81,7 @@ export default function MetricsBars() {
         >How They Stack Up</motion.h2>
         <motion.p
           className="section-subtitle"
-          style={{ margin: '0 auto' }}
+          style={{ margin: '0 auto', maxWidth: '1000px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

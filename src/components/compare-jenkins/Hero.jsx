@@ -40,16 +40,15 @@ export default function Hero() {
       
       <motion.div
         className={s.heroMeta}
-        role="list"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.45 }}
       >
-        <span role="listitem">Feature-by-feature comparison</span>
-        <span role="listitem">Real setup benchmarks</span>
-        <span role="listitem">Migration guide included</span>
-        <span role="listitem">No affiliate bias</span>
+        <span className={s.metaBadge}>Feature-by-feature comparison</span>
+        <span className={s.metaBadge}>Real setup benchmarks</span>
+        <span className={s.metaBadge}>Migration guide included</span>
+        <span className={s.metaBadge}>No affiliate bias</span>
       </motion.div>
     </header>
   );
