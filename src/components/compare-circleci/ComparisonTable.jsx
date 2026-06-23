@@ -66,7 +66,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Free tier build minutes</td>
                 <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Unlimited</strong> - no credit system</td>
-                <td>~6,000 build-minutes/mo (30,000 credits)</td>
+                <td>Up to ~6,000 build-minutes/mo (30,000 credits)</td>
               </tr>
               <tr>
                 <td>Per-seat cost</td>

@@ -36,14 +36,14 @@ export default function Hero() {
 
           <motion.p
             className={`section-subtitle ${s.fadeUp}`}
-            style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '640px', lineHeight: 1.7, textAlign: 'center' }}
+            style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '800px', lineHeight: 1.7, textAlign: 'center' }}
             initial={{ opacity: 0, y: 20 }}
 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Unlimited builds vs ~6,000 build-minutes/mo. No seat pricing vs per-minute billing. True self-hosted vs SaaS-only. We compared every feature - honestly.
+            Unlimited builds vs up to ~6,000 build-minutes/mo. No seat pricing vs per-minute billing. True self-hosted vs SaaS-only. We compared every feature - honestly.
           </motion.p>
 
           <motion.div
@@ -59,7 +59,7 @@ export default function Hero() {
             </span>
             <span className={s.heroBadge}>
               <span className={`${s.dot} ${s.dotGreen}`}></span>
-              CircleCI: ~6,000 min/mo free, then pay-per-credit
+              CircleCI: Up to ~6,000 min/mo free, then pay-per-credit
             </span>
           </motion.div>
 

@@ -22,9 +22,9 @@ export default function SnapshotStats() {
             <small>1 Docker command</small>
           </div>
           <div className={s.snapCard}>
-            <div className={`${s.snapVal} ${s.snapValCi}`}>~300 min</div>
+            <div className={`${s.snapVal} ${s.snapValCi}`}>Up to ~6,000 min</div>
             <div className={s.snapLbl}>CircleCI free builds/mo</div>
-            <small>6,000 credits @ ~20 cr/min</small>
+            <small>30,000 credits included</small>
           </div>
           <div className={s.snapCard}>
             <div className={`${s.snapVal} ${s.snapValCi}`}>$15+/user</div>

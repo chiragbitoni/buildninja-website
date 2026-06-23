@@ -37,13 +37,13 @@ export default function CostCalculator() {
               <span className={s.calcLogo}><img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.calcLogoCi} /></span>
             </div>
             <div className={s.costLine}><span>100 builds × 8 min = 800 min/day</span><span>24,000 min/mo</span></div>
-            <div className={s.costLine}><span>Free credit allowance</span><span>−300 min</span></div>
-            <div className={s.costLine}><span>Billable: 23,700 min @ ~$0.006/min</span><span>~$142 /mo</span></div>
-            <div className={s.costLine}><span>Performance plan (medium resource class)</span><span>+$15/user/mo</span></div>
-            <div className={s.costLine}><span>20 users on Scale plan</span><span>~$300 /mo</span></div>
+            <div className={s.costLine}><span>Free credit allowance</span><span>−6,000 min</span></div>
+            <div className={s.costLine}><span>Billable: 18,000 min @ ~$0.006/min</span><span>~$108 /mo</span></div>
+            <div className={s.costLine}><span>Performance plan (5 users)</span><span>$15 /mo</span></div>
+            <div className={s.costLine}><span>20 users: Scale plan (pricing not public)</span><span>Custom</span></div>
             <div className={s.costTotal}>
-              <div className={`${s.costTotalVal} ${s.costTotalValBlue}`}>~$442/mo</div>
-              <div className={s.costTotalLbl}>Total · Cost grows with every new hire and build</div>
+              <div className={`${s.costTotalVal} ${s.costTotalValBlue}`}>~$123/mo w/ 5 users</div>
+              <div className={s.costTotalLbl}>Total · 20+ users require Scale plan (undisclosed pricing)</div>
             </div>
           </div>
         </div>

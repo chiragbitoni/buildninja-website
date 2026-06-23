@@ -60,7 +60,7 @@ export default function VerdictCards() {
             <div className={`${s.verdictIcon} ${s.verdictIconGreen}`}><Infinity aria-label="Unlimited" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <h3>Truly Unlimited Builds - Not "Generous Limits"</h3>
             <p>
-              CircleCI's free tier offers ~6,000 build-minutes/month. A team running 50 builds/day exhausts that in 6 days. BuildNinja's self-hosted model means unlimited builds on your own server with zero per-build costs. CircleCI's credit model is their core revenue mechanism - they structurally cannot offer truly unlimited builds without destroying their business.
+              CircleCI's free tier offers up to ~6,000 build-minutes/month. A team running 50 builds/day exhausts that in 6 days. BuildNinja's self-hosted model means unlimited builds on your own server with zero per-build costs. CircleCI's credit model is their core revenue mechanism - they structurally cannot offer truly unlimited builds without destroying their business.
             </p>
           </motion.div>
           <motion.div

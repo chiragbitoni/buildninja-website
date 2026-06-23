@@ -29,7 +29,7 @@ export default function Hero() {
       
       <motion.p
         className="section-subtitle"
-        style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '640px', lineHeight: 1.7, textAlign: 'center' }}
+        style={{ fontSize: '17px', margin: '0 auto 32px', maxWidth: '800px', lineHeight: 1.7, textAlign: 'center' }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
