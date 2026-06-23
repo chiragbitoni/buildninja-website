@@ -40,7 +40,7 @@ export default function ComparisonTable() {
               <tr>
                 <td>Cost per build minute (overage)</td>
                 <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0.00</strong> - always</td>
-                <td className={s.tdGh}>$0.006/min Linux · $0.010/min Windows · $0.062/min macOS</td>
+                <td className={s.tdGh}>$0.006/min Linux · $0.010/min Windows · $0.048/min macOS</td>
               </tr>
               <tr>
                 <td>Self-hosted runner orchestration fee</td>
