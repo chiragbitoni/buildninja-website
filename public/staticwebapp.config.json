@@ -1,0 +1,6 @@
+{
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "statusCode": 404
+  }
+}

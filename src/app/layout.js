@@ -12,7 +12,6 @@ import PosthogWrapper from "../components/Analytics/PostHogWrapper";
 import Script from "next/script";
 import "./globals.css";
 import "./animations.css";
-import Cursor from "@/components/ui/Cursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import DynamicFavicon from "@/components/DynamicFavicon";
 import TrackingInitializer from "@/components/TrackingInitializer";
@@ -122,7 +121,6 @@ export default async function RootLayout({ children }) {
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
-        <Cursor />
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>

@@ -65,8 +65,10 @@ export async function fetchGrapeHubPage(path) {
     return cleanHtml.trim();
   } catch (error) {
     console.error(`Error in fetchGrapeHubPage for ${path}:`, error);
-    // Return friendly error markup rather than crashing the page
-    return `<p class="error-text">Content could not be loaded at this time. Please try again later.</p>`;
+    
+    // Always fail the build/render instead of silently baking the error message
+    // into the static export or rendering an empty error page.
+    throw error;
   }
 }
 
@@ -195,8 +197,38 @@ export async function fetchGrapeHubBlogPost(slug) {
       }
     }
 
-    // Clean wixGuards
-    postBody = postBody.replace(/<span class="wixGuard wixui-rich-text__text">.*?<\/span>/g, '');
+    // Remove wixGuard spacer spans
+    postBody = postBody.replace(/<span[^>]*class="[^"]*wixGuard[^"]*"[^>]*>.*?<\/span>/gi, '');
+
+    // Remove empty paragraphs Wix uses as visual spacers
+    postBody = postBody.replace(/<p[^>]*>\s*(?:&nbsp;|<br\s*\/?>\s*)+\s*<\/p>/gi, '');
+
+    // Remove empty divs Wix uses as spacers
+    postBody = postBody.replace(/<div[^>]*>\s*(?:&nbsp;|<br\s*\/?>\s*)+\s*<\/div>/gi, '');
+
+    // Strip the massive Ricos inline style attribute from the editor wrapper div
+    postBody = postBody.replace(/(<div class="_4lcfU")[^>]*>/g, '$1>');
+
+    // Remove empty-line blocks (<br> inside breakout wrapper, type marker optional)
+    postBody = postBody.replace(
+      /<div\s+data-breakout="normal">\s*<div[^>]*>\s*<span[^>]*>\s*<br\s+role="presentation"\s*\/?>\s*<\/span>\s*<\/div>\s*<\/div>\s*(?:<div\s+type="[^"]*"[^>]*><\/div>)?\s*/g,
+      ''
+    );
+
+    // Remove any remaining Wix spacer <br> elements
+    postBody = postBody.replace(/<br\s+role="presentation"\s*\/?>/g, '');
+
+    // Strip inline styles (padding, line-height) from p / h1-h6 elements
+    postBody = postBody.replace(/(<(?:p|h[1-6])\b[^>]*?)\s+style="[^"]*"/gi, '$1');
+
+    // Strip fixed width from figure wrappers so images stay responsive
+    postBody = postBody.replace(/(<(?:figure|div)\b[^>]*?)\s+style="[^"]*width:\s*\d+px[^"]*"/gi, '$1');
+
+    // Strip Wix inline styles from img tags so our own CSS controls display
+    postBody = postBody.replace(/(<img\b[^>]*?)\s+style="[^"]*"/gi, '$1');
+
+    // Collapse excessive whitespace lines into at most one
+    postBody = postBody.replace(/\n\s*\n\s*\n+/g, '\n\n');
 
     // Rewrite low-res image sources to high-res data-pin-media sources
     postBody = postBody.replace(/<img([^>]*)\bdata-pin-media="([^"]+)"([^>]*)>/gi, (match, p1, p2, p3) => {
@@ -212,6 +244,16 @@ export async function fetchGrapeHubBlogPost(slug) {
       }
       return tag;
     });
+
+    // Merge adjacent <a> tags with the same href (Wix sometimes splits them)
+    const mergeLinkRegex = /(<a\b[^>]*?\bhref="([^"]+)"[^>]*>[\s\S]*?<\/a>)\s*<a\b[^>]*?\bhref="\2"[^>]*>([\s\S]*?)<\/a>/g;
+    while (mergeLinkRegex.test(postBody)) {
+      postBody = postBody.replace(mergeLinkRegex, (match, link1, href, inner2) => {
+        const clean1 = link1.replace(/<span\s+style="color:[^"]*"[^>]*>/g, '<span>');
+        const cleanInner2 = inner2.replace(/<span\s+style="[^"]*">/g, '<span>');
+        return clean1.replace(/<\/a>$/, '') + cleanInner2 + '</a>';
+      });
+    }
 
     // Rewrite any links referencing GrapeHub posts to local /blog/ dynamic routes
     const postLinkRegex = new RegExp(`href="https:\\/\\/(www\\.)?grapehub\\.io\\/post\\/([^"]+)"`, 'gi');
