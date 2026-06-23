@@ -71,12 +71,12 @@
 .metaBadge {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--color-text-tertiary, var(--color-text-secondary));
-  background: var(--color-bg-inset, var(--color-bg));
-  border: 1px solid var(--color-border-subtle, var(--color-border));
-  padding: 4px 12px;
-  border-radius: 16px;
+  color: var(--color-text);
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border-medium);
+  padding: 5px 14px;
+  border-radius: 20px;
   white-space: nowrap;
 }
