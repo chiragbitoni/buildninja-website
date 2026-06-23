@@ -50,7 +50,7 @@ export default function DeepDiveCards() {
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>5 minutes</div>
-                <div className={s.diveVsLabel}>avg</div>
+                <div className={s.diveVsLabel}>setup time</div>
                 <div className={s.diveVsJenkins}>2–4 hours</div>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function DeepDiveCards() {
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>Unified releases</div>
-                <div className={s.diveVsLabel}>updates</div>
+                <div className={s.diveVsLabel}>update model</div>
                 <div className={s.diveVsJenkins}>Per-plugin patches</div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function DeepDiveCards() {
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>$10–50/mo</div>
-                <div className={s.diveVsLabel}>TCO</div>
+                <div className={s.diveVsLabel}>cost/mo</div>
                 <div className={s.diveVsJenkins}>$500–$2k+/mo</div>
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function DeepDiveCards() {
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>YAML + visual UI</div>
-                <div className={s.diveVsLabel}>config</div>
+                <div className={s.diveVsLabel}>syntax</div>
                 <div className={s.diveVsJenkins}>Groovy DSL</div>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function DeepDiveCards() {
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
                 <div className={s.diveVsNinja}>AI-native (v1.2)</div>
-                <div className={s.diveVsLabel}>roadmap</div>
+                <div className={s.diveVsLabel}>AI support</div>
                 <div className={s.diveVsJenkins}>No AI roadmap</div>
               </div>
             </div>
