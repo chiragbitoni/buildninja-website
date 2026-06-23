@@ -22,7 +22,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Ready to stop paying for <br /><em>every build?</em>
+          Ready to stop paying for <em>every build?</em>
         </motion.h2>
         <motion.p
           className={s.ctaSub}
@@ -57,7 +57,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Self-hosted in 5 minutes · Unlimited builds <br /> No seat pricing · Cancel anytime
+          Self-hosted in 5 minutes · Unlimited builds · No seat pricing · Cancel anytime
         </motion.p>
       </motion.div>
     </section>
