@@ -14,8 +14,6 @@ import NavDropdown from "./NavDropdown";
 
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 
-const DOCS_ITEM = { name: "Docs", path: "/docs/overview" };
-
 export default function Navbar({ blogPosts = [] }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHover, setHover] = useState(false);
@@ -69,8 +67,24 @@ export default function Navbar({ blogPosts = [] }) {
     path === "/" ? pathname === "/" : pathname.startsWith(path);
 
   const resourcesItems = [
-    DOCS_ITEM,
-    { name: "Blog", path: "/blog" },
+    {
+      name: "Docs",
+      path: `${DOCS_URL}/docs/overview`,
+      children: [
+        { name: "Getting Started", path: `${DOCS_URL}/docs/category/getting-started` },
+        { name: "Tutorials", path: `${DOCS_URL}/docs/category/quick-setup-guide` },
+        { name: "Licensing", path: `${DOCS_URL}/docs/category/licensing` },
+        { name: "Release Notes", path: `${DOCS_URL}/docs/category/release-notes` },
+      ],
+    },
+    {
+      name: "Blog",
+      path: "/blog",
+      children: blogPosts.slice(0, 5).map((post) => ({
+        name: post.title,
+        path: `/blog/${post.slug}`,
+      })),
+    },
     {
       name: "Compare",
       path: "/compare",

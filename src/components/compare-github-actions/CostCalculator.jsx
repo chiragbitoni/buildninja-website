@@ -14,7 +14,7 @@ export default function CostCalculator() {
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
           Actual Monthly Bills - 3 Team Sizes
         </h2>
-        <p className="section-subtitle" style={{ margin: '0 auto' }}>
+        <p className="section-subtitle" style={{ margin: '0', textAlign: 'left', width: '100%' }}>
           Based on 100 builds/day, 8 minutes average, 5-day working week. GitHub Actions pricing shown for comparison.
         </p>
 
