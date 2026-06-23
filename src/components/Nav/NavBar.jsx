@@ -89,9 +89,9 @@ export default function Navbar({ blogPosts = [] }) {
       name: "Compare",
       path: "/compare",
       children: [
-        { name: "vs GitHub Actions", path: "/compare/buildninja-vs-github-actions" },
-        { name: "vs CircleCI", path: "/compare/buildninja-vs-circleci" },
-        { name: "vs Jenkins", path: "/compare/buildninja-vs-jenkins" },
+        { name: "BuildNinja vs GitHub Actions", path: "/compare/buildninja-vs-github-actions" },
+        { name: "BuildNinja vs CircleCI", path: "/compare/buildninja-vs-circleci" },
+        { name: "BuildNinja vs Jenkins", path: "/compare/buildninja-vs-jenkins" },
       ],
     },
   ];
