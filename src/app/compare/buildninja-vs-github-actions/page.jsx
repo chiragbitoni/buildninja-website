@@ -31,15 +31,15 @@ const faqSchema = {
       "name": "Is BuildNinja a free GitHub Actions alternative?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. BuildNinja is self-hosted and free with unlimited builds. GitHub Actions gives 2,000 free minutes/month for private repos, then charges $0.008-$0.016/min depending on OS. For active teams exceeding that threshold, BuildNinja eliminates per-minute billing entirely - you pay only for your server infrastructure (typically $6-50/month depending on team size)."
+        "text": "Yes. BuildNinja is self-hosted and free with unlimited builds. GitHub Actions gives 2,000 free minutes/month for private repos, then charges $0.006-$0.062/min depending on runner type. For active teams exceeding that threshold, BuildNinja eliminates per-minute billing entirely - you pay only for your server infrastructure (typically $6-50/month depending on team size)."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is GitHub Actions charging for self-hosted runners?",
+      "name": "Is GitHub Actions free for self-hosted runners?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "GitHub introduced a $0.002/min 'Actions cloud platform' charge for self-hosted runner usage in private repositories. This fee covers GitHub's orchestration layer - job scheduling, routing, and secrets management - even when compute runs on your own hardware. Public repositories remain free, as do GitHub Enterprise Server customers. BuildNinja has no equivalent charge; orchestration is built into the product at no per-minute cost."
+        "text": "Yes. GitHub Actions self-hosted runner usage is free for both public and private repositories. However, you still need a paid GitHub plan for private repos (Team at $4/user/mo or Enterprise at $21/user/mo) and workflows are tied to GitHub repositories only. BuildNinja has no per-seat fees, works with any Git provider, and is free to self-host with unlimited builds."
       }
     },
     {
@@ -111,16 +111,16 @@ export default function BuildNinjaVsGitHubActions() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       <Hero />
-      {/* <PricingReality /> */}
+      <PricingReality />
       <StructuralWins />
       <ComparisonTable />
       <MidCTA />
-      {/* <CostCalculator /> */}
+      <CostCalculator />
       {/* <CodeComparison /> */}
       <MigrationGuide />
       <Recommendation />
       <FAQ />
-      {/* <RelatedPages />m */}
+      {/* <RelatedPages /> */}
       <CTABanner />
     </div>
   );

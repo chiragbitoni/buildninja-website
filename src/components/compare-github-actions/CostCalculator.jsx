@@ -35,10 +35,9 @@ export default function CostCalculator() {
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Orchestration fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Per-seat cost (5 users)</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Server - Hetzner CX11 (2vCPU/2GB)</span><span className={s.clVal}>$6/mo</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Storage (50GB SSD)</span><span className={s.clVal}>$2/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Your own server infrastructure</span><span className={s.clVal}>$6–50/mo</span></div>
               <div className={`${s.costBox} ${s.bnBox}`}>
-                <div className={`${s.costBoxNum} ${s.or}`}>$8/mo</div>
+                <div className={`${s.costBoxNum} ${s.or}`}>$6–50/mo</div>
                 <div className={s.costBoxSub}>Total · Unlimited builds · 5 users · Never changes</div>
               </div>
             </div>
@@ -49,17 +48,17 @@ export default function CostCalculator() {
                 <span className={s.clLabel}>Build usage: ~8,000 min/mo<br/><small>40 builds/day × 8 min × 25 days</small></span>
                 <span className={`${s.clVal} ${s.r}`}>6,000 billable min</span>
               </div>
-              <div className={s.costLine}><span className={s.clLabel}>Linux @ $0.008/min</span><span className={`${s.clVal} ${s.r}`}>$48/mo</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>GitHub Team plan (5 users)</span><span className={`${s.clVal} ${s.r}`}>$21/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Linux @ $0.006/min</span><span className={`${s.clVal} ${s.r}`}>$36/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>GitHub Team plan (5 users)</span><span className={`${s.clVal} ${s.r}`}>$20/mo</span></div>
               <div className={`${s.costBox} ${s.ghBox}`}>
-                <div className={`${s.costBoxNum} ${s.rd}`}>$69/mo</div>
+                <div className={`${s.costBoxNum} ${s.rd}`}>$56/mo</div>
                 <div className={s.costBoxSub}>Total · Grows with every build</div>
               </div>
             </div>
           </div>
           <div className={s.calloutGood}>
             <span className={s.calloutIco}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
-            <p><strong>Savings with BuildNinja: ~$61/month ($732/year)</strong> for a 5-person team at this build volume. That's a flight to an engineering conference, or 6 months of additional tooling budget.</p>
+            <p><strong>Savings with BuildNinja: up to $50/month ($600/year)</strong> for a 5-person team at this build volume. That's a flight to an engineering conference, or 6 months of additional tooling budget.</p>
           </div>
         </div>
 
@@ -74,10 +73,9 @@ export default function CostCalculator() {
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Self-hosted orchestration fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Per-seat cost (20 users)</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Server - Hetzner CX21 (3vCPU/4GB)</span><span className={s.clVal}>$12/mo</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Storage (100GB SSD)</span><span className={s.clVal}>$5/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Your own server infrastructure</span><span className={s.clVal}>$10–50/mo</span></div>
               <div className={`${s.costBox} ${s.bnBox}`}>
-                <div className={`${s.costBoxNum} ${s.or}`}>$17/mo</div>
+                <div className={`${s.costBoxNum} ${s.or}`}>$10–50/mo</div>
                 <div className={s.costBoxSub}>Total · Unlimited builds · 20 users · Flat forever</div>
               </div>
             </div>
@@ -88,17 +86,17 @@ export default function CostCalculator() {
                 <span className={s.clLabel}>Build usage: ~24,000 min/mo<br/><small>100 builds/day × 8 min × 25 days</small></span>
                 <span className={`${s.clVal} ${s.r}`}>22,000 billable min</span>
               </div>
-              <div className={s.costLine}><span className={s.clLabel}>Linux hosted @ $0.008/min</span><span className={`${s.clVal} ${s.r}`}>$176/mo</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>GitHub Team plan (20 users)</span><span className={`${s.clVal} ${s.r}`}>$84/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Linux hosted @ $0.006/min</span><span className={`${s.clVal} ${s.r}`}>$132/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>GitHub Team plan (20 users)</span><span className={`${s.clVal} ${s.r}`}>$80/mo</span></div>
               <div className={`${s.costBox} ${s.ghBox}`}>
-                <div className={`${s.costBoxNum} ${s.rd}`}>$260/mo</div>
+                <div className={`${s.costBoxNum} ${s.rd}`}>$212/mo</div>
                 <div className={s.costBoxSub}>Total · Grows every month builds increase</div>
               </div>
             </div>
           </div>
           <div className={s.calloutGood}>
             <span className={s.calloutIco}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
-            <p><strong>Savings with BuildNinja: ~$243/month ($2,916/year)</strong> for a 20-person team. Add self-hosted runner orchestration fees ($0.002/min × 24,000 min = $48/mo) if using self-hosted GH runners - that's $3,492/year in BuildNinja savings.</p>
+            <p><strong>Savings with BuildNinja: up to $202/month ($2,424/year)</strong> for a 20-person team. No per-seat or per-minute fees — just your own infrastructure.</p>
           </div>
         </div>
 
@@ -113,10 +111,9 @@ export default function CostCalculator() {
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Self-hosted orchestration fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
               <div className={s.costLine}><span className={s.clLabel}>Per-seat cost (50 users)</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Server - Hetzner CX31 (4vCPU/8GB)</span><span className={s.clVal}>$24/mo</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Storage (200GB SSD)</span><span className={s.clVal}>$10/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Your own server infrastructure</span><span className={s.clVal}>$20–100/mo</span></div>
               <div className={`${s.costBox} ${s.bnBox}`}>
-                <div className={`${s.costBoxNum} ${s.or}`}>$34/mo</div>
+                <div className={`${s.costBoxNum} ${s.or}`}>$20–100/mo</div>
                 <div className={s.costBoxSub}>Total · Unlimited builds · 50 users · Predictable</div>
               </div>
             </div>
@@ -126,18 +123,17 @@ export default function CostCalculator() {
                 <span className={s.clLabel}>Build usage: ~60,000 min/mo</span>
                 <span className={`${s.clVal} ${s.r}`}>58,000 billable min</span>
               </div>
-              <div className={s.costLine}><span className={s.clLabel}>Linux hosted @ $0.008/min</span><span className={`${s.clVal} ${s.r}`}>$464/mo</span></div>
+              <div className={s.costLine}><span className={s.clLabel}>Linux hosted @ $0.006/min</span><span className={`${s.clVal} ${s.r}`}>$348/mo</span></div>
               <div className={s.costLine}><span className={s.clLabel}>GitHub Enterprise (50 users @ $21)</span><span className={`${s.clVal} ${s.r}`}>$1,050/mo</span></div>
-              <div className={s.costLine}><span className={s.clLabel}>Self-hosted orchestration (if applicable)</span><span className={`${s.clVal} ${s.r}`}>+$120/mo</span></div>
               <div className={`${s.costBox} ${s.ghBox}`}>
-                <div className={`${s.costBoxNum} ${s.rd}`}>$1,514–1,634/mo</div>
+                <div className={`${s.costBoxNum} ${s.rd}`}>$1,398/mo</div>
                 <div className={s.costBoxSub}>Total at 50 users with enterprise needs</div>
               </div>
             </div>
           </div>
           <div className={s.calloutGood}>
             <span className={s.calloutIco}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
-            <p><strong>Savings with BuildNinja: $1,480–1,600/month ($17,760–19,200/year)</strong> for a 50-person engineering team. At this scale, BuildNinja pays for a junior engineer's salary in CI/CD savings alone.</p>
+            <p><strong>Savings with BuildNinja: up to $1,378/month ($16,536/year)</strong> for a 50-person engineering team. At this scale, BuildNinja pays for a junior engineer's salary in CI/CD savings alone.</p>
           </div>
         </div>
       </div>

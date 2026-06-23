@@ -74,7 +74,7 @@ export default function StructuralWins() {
             <div className={`${s.verdictIcon} ${s.verdictIconOrange}`}><Lock aria-label="Security" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <h3>Real Self-Hosting - Not "Bring Your Own Servers, Still Pay Per Minute"</h3>
             <p>
-              GitHub introduced $0.002/min for self-hosted runners - compute you already pay for, on servers you own. This "orchestration fee" applies even when no GitHub compute is consumed. BuildNinja can be installed on any machine via a single <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker run</code> command with zero per-build taxes. For regulated industries, air-gapped environments, or cost-conscious teams - there's no real comparison.
+              GitHub Actions self-hosted runners are free, but you're still tied to GitHub's ecosystem - paying $4-21/user/mo just for the plan, locked to GitHub repos, and hit with per-minute costs if you use hosted runners. BuildNinja can be installed on any machine via a single <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker run</code> command with zero per-build taxes, zero per-seat fees, and works with any Git provider. For regulated industries, air-gapped environments, or cost-conscious teams - there's no real comparison.
             </p>
           </motion.div>
           <motion.div

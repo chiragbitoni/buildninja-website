@@ -40,7 +40,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          GitHub Actions is deeply embedded in GitHub's ecosystem - but <strong>pricing changed the math</strong>. Self-hosted runners now cost $0.002/min even on your own hardware. This page compares every feature, every cost, and every trade-off honestly.
+          GitHub Actions is deeply embedded in GitHub's ecosystem - but <strong>pricing adds up fast</strong>. Self-hosted runners are free, but GitHub-hosted minutes, per-seat fees, and storage overages make costs unpredictable. This page compares every feature, every cost, and every trade-off honestly.
         </motion.p>
 
         <motion.div
@@ -101,8 +101,8 @@ export default function Hero() {
             <div className={s.hsLbl}>BuildNinja per-build cost</div>
           </div>
           <div className={s.hsItem}>
-            <div className={`${s.hsVal} ${s.hsValDark}`}>$0.008–.016<span style={{ fontSize: '14px' }}>/min</span></div>
-            <div className={s.hsLbl}>GitHub Actions Linux runners</div>
+            <div className={`${s.hsVal} ${s.hsValDark}`}>$0.006<span style={{ fontSize: '14px' }}>/min</span></div>
+            <div className={s.hsLbl}>GitHub Actions Linux runners (2-core)</div>
           </div>
         </motion.div>
       </div>

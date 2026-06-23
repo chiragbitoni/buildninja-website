@@ -59,7 +59,7 @@ on:
 
 jobs:
   install-and-test:
-    runs-on: ubuntu-latest  # $0.008/min
+      runs-on: ubuntu-latest  # $0.006/min
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -86,7 +86,7 @@ jobs:
 
 # [!] 36 lines · Marketplace dependencies
 # [!] GitHub repositories only
-# [!] ~$0.008–.016/min per job run`;
+# [!] ~$0.006/min per job run`;
 
   return (
     <section className={s.section}>
@@ -183,7 +183,7 @@ jobs:
 {'\n'}
 <span className={s.kw}>jobs</span>:{'\n'}
 {'  '}<span className={s.kw}>install-and-test</span>:{'\n'}
-{'    '}<span className={s.kw}>runs-on</span>: <span className={s.str}>ubuntu-latest</span>  <span className={s.cm}># $0.008/min</span>{'\n'}
+{'    '}<span className={s.kw}>runs-on</span>: <span className={s.str}>ubuntu-latest</span>  <span className={s.cm}># $0.006/min</span>{'\n'}
 {'    '}<span className={s.kw}>steps</span>:{'\n'}
 {'      '}- <span className={s.kw}>uses</span>: <span className={s.str}>actions/checkout@v4</span>{'\n'}
 {'      '}- <span className={s.kw}>uses</span>: <span className={s.str}>actions/setup-node@v4</span>{'\n'}
@@ -210,7 +210,7 @@ jobs:
 {'\n'}
 <span className={s.cm}># <AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 36 lines · Marketplace dependencies{'\n'}
 # <AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> GitHub repositories only{'\n'}
-# <AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> ~$0.008–.016/min per job run</span>{'\n'}
+# <AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> ~$0.006/min per job run</span>{'\n'}
             </pre>
           </div>
         </div>

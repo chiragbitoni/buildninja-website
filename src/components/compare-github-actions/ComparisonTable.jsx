@@ -40,17 +40,17 @@ export default function ComparisonTable() {
               <tr>
                 <td>Cost per build minute (overage)</td>
                 <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0.00</strong> - always</td>
-                <td className={s.tdGh}>$0.008/min Linux · $0.016/min Windows · $0.08/min macOS</td>
+                <td className={s.tdGh}>$0.006/min Linux · $0.010/min Windows · $0.062/min macOS</td>
               </tr>
               <tr>
                 <td>Self-hosted runner orchestration fee</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0.00</strong> - no platform tax <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
-                <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> $0.002/min for self-hosted private repos</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0.00</strong> - included</td>
+                <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Free for self-hosted runners</td>
               </tr>
               <tr>
                 <td>Per-seat pricing</td>
                 <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0/user</strong></td>
-                <td className={s.tdGh}>GitHub Team: $4.20/user/mo · Enterprise: $21/user/mo</td>
+                <td className={s.tdGh}>GitHub Team: $4.00/user/mo · Enterprise: $21/user/mo</td>
               </tr>
               <tr>
                 <td>Predictable monthly bill</td>
@@ -59,8 +59,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Cost for 20-person team (100 builds/day)</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>~$17–50/mo</strong> (server only)</td>
-                <td className={s.tdGh}>$250–440/mo (plan + overages + self-hosted fee)</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>~$10–100/mo</strong> (your own server)</td>
+                <td className={s.tdGh}>$80–212/mo (plan + overages)</td>
               </tr>
 
               {/* SETUP & ARCHITECTURE */}
