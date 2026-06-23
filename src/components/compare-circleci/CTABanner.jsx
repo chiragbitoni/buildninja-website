@@ -31,7 +31,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Join engineering teams who switched from CircleCI to BuildNinja and cut their CI/CD costs by 60–80% while gaining full data control.<br /> No credit card. No seat limits. No surprises.
+          Join engineering teams who switched from CircleCI to BuildNinja and cut their CI/CD costs by 60–80% while gaining full data control. No credit card. No seat limits. No surprises.
         </motion.p>
         <motion.div
           className={s.ctaBtns}
