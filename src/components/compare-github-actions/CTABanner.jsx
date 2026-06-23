@@ -18,7 +18,12 @@ export default function CTABanner() {
             Try the Dojo Sandbox <ArrowRight aria-label="Right Arrow" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} />
           </Link>
         </div>
-        <p className={s.ctaNote}>5-minute setup · No card <br /> No orchestration tax · Cancel anytime</p>
+        <p className={s.ctaNote}>
+          <span className={s.ctaBadge}>5-minute setup</span>
+          <span className={s.ctaBadge}>No card required</span>
+          <span className={s.ctaBadge}>No orchestration tax</span>
+          <span className={s.ctaBadge}>Cancel anytime</span>
+        </p>
       </div>
     </section>
   );
