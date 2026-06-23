@@ -36,7 +36,7 @@ export default function ComparePortal() {
       badge: "Modern vs Legacy",
       desc: "Escape Jenkins plugin dependency nightmares and Java/Groovy setup complexity. Clean YAML pipelines meet a premium visual builder UI.",
       href: "/compare/buildninja-vs-jenkins",
-      icon: <img src="/resources/jenkins.svg" alt="Jenkins" className={s.logoImg} />,
+      icon: <img src="/resources/jenkins.svg" alt="Jenkins" className={`${s.logoImg} ${s.logoImgJenkins}`} />,
       points: [
         "Zero-downtime unified platform updates",
         "No complex Groovy DSL codebase required",
