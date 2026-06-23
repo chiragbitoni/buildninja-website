@@ -107,6 +107,9 @@
   font-size: 20px;
   font-weight: 800;
   color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .costBadgeRec {
@@ -173,6 +176,18 @@
 .costBoxSub {
   font-size: 13px;
   color: var(--color-text-secondary);
+}
+
+.calcLogoBn {
+  height: 36px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.calcLogoGh {
+  height: 32px;
+  width: auto;
+  filter: var(--logo-filter);
 }
 
 .calloutGood {

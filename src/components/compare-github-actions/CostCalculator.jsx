@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Circle, Sword, DollarSign } from 'lucide-react';
+import { DollarSign } from 'lucide-react';
 import s from './CostCalculator.module.css';
 
 
@@ -29,7 +29,7 @@ export default function CostCalculator() {
           <div className={s.costGrid}>
             <div className={`${s.costCard} ${s.featured}`}>
               <div className={s.costHead}>
-                <span className={s.costTool}><Sword aria-label="BuildNinja" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> BuildNinja</span>
+                <span className={s.costTool}><img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.calcLogoBn} /></span>
                 <span className={s.costBadgeRec}>RECOMMENDED</span>
               </div>
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
@@ -42,7 +42,7 @@ export default function CostCalculator() {
               </div>
             </div>
             <div className={s.costCard}>
-              <div className={s.costHead}><span className={s.costTool}><Circle aria-label="GitHub Actions" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> GitHub Actions</span></div>
+              <div className={s.costHead}><span className={s.costTool}><img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.calcLogoGh} /></span></div>
               <div className={s.costLine}><span className={s.clLabel}>Free minutes (2,000/mo)</span><span className={s.clVal}>Included</span></div>
               <div className={s.costLine}>
                 <span className={s.clLabel}>Build usage: ~8,000 min/mo<br/><small>40 builds/day × 8 min × 25 days</small></span>
@@ -67,7 +67,7 @@ export default function CostCalculator() {
           <div className={s.costGrid}>
             <div className={`${s.costCard} ${s.featured}`}>
               <div className={s.costHead}>
-                <span className={s.costTool}><Sword aria-label="BuildNinja" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> BuildNinja</span>
+                <span className={s.costTool}><img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.calcLogoBn} /></span>
                 <span className={s.costBadgeRec}>RECOMMENDED</span>
               </div>
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
@@ -80,7 +80,7 @@ export default function CostCalculator() {
               </div>
             </div>
             <div className={s.costCard}>
-              <div className={s.costHead}><span className={s.costTool}><Circle aria-label="GitHub Actions" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> GitHub Actions</span></div>
+              <div className={s.costHead}><span className={s.costTool}><img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.calcLogoGh} /></span></div>
               <div className={s.costLine}><span className={s.clLabel}>Free minutes (2,000/mo)</span><span className={s.clVal}>Included</span></div>
               <div className={s.costLine}>
                 <span className={s.clLabel}>Build usage: ~24,000 min/mo<br/><small>100 builds/day × 8 min × 25 days</small></span>
@@ -105,7 +105,7 @@ export default function CostCalculator() {
           <div className={s.costGrid}>
             <div className={`${s.costCard} ${s.featured}`}>
               <div className={s.costHead}>
-                <span className={s.costTool}><Sword aria-label="BuildNinja" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> BuildNinja</span>
+                <span className={s.costTool}><img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.calcLogoBn} /></span>
                 <span className={s.costBadgeRec}>RECOMMENDED</span>
               </div>
               <div className={s.costLine}><span className={s.clLabel}>Build compute fee</span><span className={`${s.clVal} ${s.g}`}>$0.00</span></div>
@@ -118,7 +118,7 @@ export default function CostCalculator() {
               </div>
             </div>
             <div className={s.costCard}>
-              <div className={s.costHead}><span className={s.costTool}><Circle aria-label="GitHub Actions" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> GitHub Actions</span></div>
+              <div className={s.costHead}><span className={s.costTool}><img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.calcLogoGh} /></span></div>
               <div className={s.costLine}>
                 <span className={s.clLabel}>Build usage: ~60,000 min/mo</span>
                 <span className={`${s.clVal} ${s.r}`}>58,000 billable min</span>
