@@ -26,14 +26,16 @@
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.75rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.03), 0 4px 14px rgba(16, 24, 40, 0.03);
 }
 
 .diveCard:hover {
+  transform: translateY(-4px);
   border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
 }
 
 .featured {
@@ -43,6 +45,7 @@
 
 .featured:hover {
   border-color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.1), 0 0 0 1px var(--color-primary);
 }
 
 .diveIcon {

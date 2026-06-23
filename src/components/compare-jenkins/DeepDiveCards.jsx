@@ -42,7 +42,7 @@ export default function DeepDiveCards() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          
+
           <div className={`${s.diveCard} ${s.featured}`}>
             <div className={s.diveIcon}><Timer size={28} className={s.iconPrimary} /></div>
             <h3>Time to First Build</h3>
