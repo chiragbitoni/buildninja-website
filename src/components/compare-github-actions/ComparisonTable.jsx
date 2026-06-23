@@ -11,7 +11,7 @@ export default function ComparisonTable() {
         <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
           BuildNinja vs GitHub Actions - 45+ Criteria, Honestly Scored
         </h2>
-        <p className="section-subtitle" style={{ margin: '0 auto' }}>
+        <p className="section-subtitle" style={{ margin: '0 auto', maxWidth: '1000px' }}>
           Every feature from pricing to security to developer experience. We score this honestly - GitHub Actions wins on ecosystem and marketplace. BuildNinja wins on cost structure, data sovereignty, and platform independence.
         </p>
 
