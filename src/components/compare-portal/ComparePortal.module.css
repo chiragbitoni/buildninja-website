@@ -171,9 +171,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  justify-content: center;
+  gap: 20px;
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
+  width: 100%;
 }
 
 .overlayTitle {
@@ -239,6 +241,47 @@
 
 .logoImgJenkins {
   filter: none;
+}
+
+.overlayLogos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.overlayLogoLeft {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.overlayLogoRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.overlayLogoBninja {
+  height: 36px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.overlayLogoCompetitor {
+  height: 26px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.overlayVs {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
 }
 
 .badge {

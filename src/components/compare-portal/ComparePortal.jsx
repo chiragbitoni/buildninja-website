@@ -11,6 +11,7 @@ export default function ComparePortal() {
       desc: "Compare GitHub's per-minute pricing and runner concurrency limits against BuildNinja's self-hosted, unlimited parallel build engine.",
       href: "/compare/buildninja-vs-github-actions",
       icon: <img src="/resources/githubactions.svg" alt="GitHub Actions" className={s.logoImg} />,
+      logoHover: "/resources/github-actions-logo.svg",
       points: [
         "No runner concurrency limits",
         "Save 70%+ on monthly DevOps bills",
@@ -24,6 +25,7 @@ export default function ComparePortal() {
       desc: "Stop paying for user seats and concurrent build containers. BuildNinja lets your entire engineering team build concurrently without tier gates.",
       href: "/compare/buildninja-vs-circleci",
       icon: <img src="/resources/Circleci.svg" alt="CircleCI" className={s.logoImg} />,
+      logoHover: "/resources/circleci-logo.svg",
       points: [
         "Unlimited users on all tiers",
         "Full hardware utilization and sovereignty",
@@ -37,6 +39,7 @@ export default function ComparePortal() {
       desc: "Escape Jenkins plugin dependency nightmares and Java/Groovy setup complexity. Clean YAML pipelines meet a premium visual builder UI.",
       href: "/compare/buildninja-vs-jenkins",
       icon: <img src="/resources/jenkins.svg" alt="Jenkins" className={`${s.logoImg} ${s.logoImgJenkins}`} />,
+      logoHover: "/resources/jenkins-logo.svg",
       points: [
         "Zero-downtime unified platform updates",
         "No complex Groovy DSL codebase required",
@@ -91,7 +94,15 @@ export default function ComparePortal() {
 
               <div className={s.cardOverlay}>
                 <div className={s.overlayInner}>
-                  <h3 className={s.overlayTitle}>{c.title}</h3>
+                  <div className={s.overlayLogos}>
+                    <div className={s.overlayLogoLeft}>
+                      <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.overlayLogoBninja} />
+                    </div>
+                    <span className={s.overlayVs}>VS</span>
+                    <div className={s.overlayLogoRight}>
+                      <img src={c.logoHover} alt={c.title} className={s.overlayLogoCompetitor} />
+                    </div>
+                  </div>
                   <span className={s.overlayCta}>
                     View Full Comparison
                     <ArrowRight size={20} className={s.overlayArrow} />
