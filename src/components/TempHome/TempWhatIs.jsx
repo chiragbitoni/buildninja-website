@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import styles from "./TempWhatIs.module.css";
 
 const cards = [
@@ -10,17 +11,32 @@ const cards = [
   { label: "Operating systems", value: "Linux, Windows, macOS, Docker, Kubernetes", sub: "Build agents run on any platform your team uses" },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 export default function TempWhatIs() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.grid}>
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <span className={styles.eyebrow}>What is BuildNinja?</span>
             <h2 className={styles.title}>
               Self-hosted CI/CD built for teams who own their infrastructure
             </h2>
-            <p className={styles.prose} style={{ marginTop: 20 }}>
+            <p className={styles.prose} style={{ marginTop: 24 }}>
               BuildNinja is a continuous integration and continuous deployment (CI/CD) platform that engineering teams install on their own servers. Unlike cloud-based CI/CD tools such as CircleCI or GitHub Actions — which charge per build credit, per seat, or per compute minute — BuildNinja has no usage fees. You run it on infrastructure you already control, and it costs nothing beyond the server itself.
             </p>
             <p className={styles.prose}>
@@ -32,17 +48,23 @@ export default function TempWhatIs() {
             <p className={styles.prose} style={{ marginBottom: 0 }}>
               BuildNinja integrates natively with GitHub, GitLab, and Bitbucket for version control, supports Docker and Kubernetes for deployment, and includes role-based access control, AES-256 secret encryption, and SSO via OAuth 2.0 and OIDC out of the box. An upcoming suite of AI features — including build failure prediction and intelligent configuration analysis — is in active development as part of the BuildNinja Intelligence roadmap.
             </p>
-          </div>
+          </motion.div>
 
-          <div className={styles.aside}>
+          <motion.div
+            className={styles.aside}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {cards.map((card, i) => (
-              <div key={i} className={styles.card}>
+              <motion.div key={i} className={styles.card} variants={itemVariants}>
                 <div className={styles.cardLabel}>{card.label}</div>
                 <div className={styles.cardValue}>{card.value}</div>
                 <div className={styles.cardSub}>{card.sub}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

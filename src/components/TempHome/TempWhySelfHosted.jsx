@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { DollarSign, Shield, Wrench, Globe, Zap, Settings } from "lucide-react";
 import styles from "./TempWhySelfHosted.module.css";
 
@@ -11,30 +12,53 @@ const reasons = [
   { icon: Settings, title: "Full control without DevOps overhead", text: "Jenkins offered self-hosted CI/CD but required extensive plugin management, manual upgrades, and deep Groovy scripting knowledge. BuildNinja offers the same infrastructure control with a fraction of the operational overhead. One Docker command replaces weeks of Jenkins configuration." },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 export default function TempWhySelfHosted() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <span className={styles.eyebrow}>Why self-hosted CI/CD?</span>
-        <h2 className={styles.title}>Five reasons engineering teams choose self-hosted over SaaS CI/CD</h2>
-        <p className={styles.lead}>
-          Cloud-based CI/CD tools are convenient until they&apos;re not. Growing teams consistently run into the same four walls: cost, compliance, control, and credit limits. Self-hosted CI/CD eliminates all four.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className={styles.eyebrow}>Why self-hosted CI/CD?</span>
+          <h2 className={styles.title}>Five reasons engineering teams choose self-hosted over SaaS CI/CD</h2>
+          <p className={styles.lead}>
+            Cloud-based CI/CD tools are convenient until they&apos;re not. Growing teams consistently run into the same four walls: cost, compliance, control, and credit limits. Self-hosted CI/CD eliminates all four.
+          </p>
+        </motion.div>
 
-        <div className={styles.grid}>
+        <motion.div
+          className={styles.grid}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {reasons.map((r, i) => {
             const Icon = r.icon;
             return (
-              <div key={i} className={styles.card}>
+              <motion.div key={i} className={styles.card} variants={cardVariants}>
                 <div className={styles.cardIcon}>
                   <Icon size={18} />
                 </div>
                 <h3 className={styles.cardTitle}>{r.title}</h3>
                 <p className={styles.cardText}>{r.text}</p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

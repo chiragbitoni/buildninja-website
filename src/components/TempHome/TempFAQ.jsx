@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
 import styles from "./TempFAQ.module.css";
 
 const faqs = [
@@ -20,12 +22,26 @@ export default function TempFAQ() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <span className={styles.eyebrow}>Frequently asked questions</span>
-        <h2 className={styles.title}>Common questions about BuildNinja</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className={styles.eyebrow}>Frequently asked questions</span>
+          <h2 className={styles.title}>Common questions about BuildNinja</h2>
+        </motion.div>
 
         <div className={styles.list}>
           {faqs.map((faq, i) => (
-            <div key={i} className={`${styles.item} ${i === 0 ? styles.itemFirst : ""}`}>
+            <motion.div
+              key={i}
+              className={`${styles.item} ${openIndex === i ? styles.itemOpen : ""}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+            >
               <button
                 className={styles.trigger}
                 onClick={() => toggle(i)}
@@ -33,15 +49,20 @@ export default function TempFAQ() {
               >
                 <span>{faq.q}</span>
                 <span className={`${styles.triggerIcon} ${openIndex === i ? styles.triggerIconOpen : ""}`}>
-                  +
+                  <Plus size={20} />
                 </span>
               </button>
               {openIndex === i && (
-                <div className={styles.answer}>
+                <motion.div
+                  className={styles.answer}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <p className={styles.answerText}>{faq.a}</p>
-                </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
