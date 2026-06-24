@@ -46,6 +46,20 @@ export default function ComparePortal() {
         "Out-of-the-box SSO, OAuth & runner nodes",
         "A modern UI your developers will love"
       ]
+    },
+    {
+      title: "BuildNinja vs TeamCity",
+      badge: "Self-Hosted Showdown",
+      desc: "Two self-hosted giants compared. TeamCity's JVM overhead and agent licensing vs BuildNinja's lightweight, permanently free architecture.",
+      href: "/compare/buildninja-vs-teamcity",
+      icon: <img src="/resources/teamcity.svg" alt="TeamCity" className={s.logoImg} />,
+      logoHover: "/resources/teamcity-logo.svg",
+      points: [
+        "No JVM overhead — lightweight Docker deployment",
+        "Unlimited agents at $0 vs $359/yr each",
+        "Native MSBuild + VSTest with zero plugins",
+        "5 SSO providers included in the free tier"
+      ]
     }
   ];
 
