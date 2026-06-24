@@ -92,6 +92,7 @@ export default function Navbar({ blogPosts = [] }) {
         { name: "BuildNinja vs GitHub Actions", path: "/compare/buildninja-vs-github-actions" },
         { name: "BuildNinja vs CircleCI", path: "/compare/buildninja-vs-circleci" },
         { name: "BuildNinja vs Jenkins", path: "/compare/buildninja-vs-jenkins" },
+        { name: "BuildNinja vs TeamCity", path: "/compare/buildninja-vs-teamcity" },
       ],
     },
   ];
