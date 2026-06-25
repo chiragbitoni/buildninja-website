@@ -93,7 +93,7 @@ export default function Hero() {
             <div className={styles.statCell}>
               <div className={`${styles.statVal} ${styles.statPurple}`}>$9,120</div>
               <div className={styles.statKey}>Max annual savings</div>
-              <div className={styles.statSub}>25-dev team vs TeamCity</div>
+              <div className={styles.statSub}>Based on a 25-developer team using 10 build agents</div>
             </div>
           </div>
         </div>
