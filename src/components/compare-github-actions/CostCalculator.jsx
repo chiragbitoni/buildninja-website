@@ -76,7 +76,7 @@ export default function CostCalculator() {
               <div className={s.costLine}><span className={s.clLabel}>Your own server infrastructure</span><span className={s.clVal}>$10–50/mo</span></div>
               <div className={`${s.costBox} ${s.bnBox}`}>
                 <div className={`${s.costBoxNum} ${s.or}`}>$10–50/mo</div>
-                <div className={s.costBoxSub}>Total · Unlimited builds · 20 users · Flat forever</div>
+                <div className={s.costBoxSub}>Total · Unlimited builds · 20 users </div>
               </div>
             </div>
             <div className={s.costCard}>

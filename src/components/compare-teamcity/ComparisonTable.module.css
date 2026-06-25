@@ -232,7 +232,7 @@
 }
 
 .table tbody tr:not(.catRow):hover {
-  background: var(--color-bg-surface-hover, var(--color-bg-panel));
+  background: rgba(var(--bg-rgb), 0.3);
 }
 
 .table tbody td {
@@ -263,7 +263,7 @@
 .total td {
   font-weight: 700;
   font-size: 15px;
-  background: var(--color-bg-panel);
+  background: rgba(var(--bg-rgb), 0.5);
   border-top: 2px solid var(--color-border);
 }
 
@@ -298,7 +298,7 @@
 }
 
 .winTie {
-  background: var(--color-bg-panel);
+  background: rgba(var(--bg-rgb), 0.5);
   color: var(--color-text-muted);
   border: 1px solid var(--color-border);
 }

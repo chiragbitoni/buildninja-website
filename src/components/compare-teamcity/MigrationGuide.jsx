@@ -1,16 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Clock } from "lucide-react";
+import Link from "next/link";
 import styles from "./MigrationGuide.module.css";
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardVariants = {
+const stepVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.12, ease: "easeOut" },
+  }),
 };
 
 const transfers = [
@@ -27,11 +27,31 @@ const rebuilds = [
 ];
 
 const steps = [
-  { title: "Deploy BuildNinja alongside TeamCity", desc: "Both run simultaneously during transition — no production disruption on day one." },
-  { title: "Use the Dojo sandbox", desc: "Prototype your first two or three pipelines before touching any production infrastructure." },
-  { title: "Migrate low-risk projects first", desc: "Feature branch CI, documentation builds, and internal tooling pipelines." },
-  { title: "Move production deployment pipelines last", desc: "After validating behaviour on lower-risk builds over one or two sprint cycles." },
-  { title: "Decommission TeamCity", desc: "Once all pipelines are validated and the entire team is comfortable with BuildNinja's workflow." },
+  {
+    title: "Deploy BuildNinja alongside TeamCity",
+    desc: "Both run simultaneously during transition — no production disruption on day one.",
+    time: "5 min",
+  },
+  {
+    title: "Use the Dojo sandbox",
+    desc: "Prototype your first two or three pipelines before touching any production infrastructure.",
+    time: "10 min",
+  },
+  {
+    title: "Migrate low-risk projects first",
+    desc: "Feature branch CI, documentation builds, and internal tooling pipelines.",
+    time: "1–2 hrs",
+  },
+  {
+    title: "Move production pipelines last",
+    desc: "After validating behaviour on lower-risk builds over one or two sprint cycles.",
+    time: "2–4 hrs",
+  },
+  {
+    title: "Decommission TeamCity",
+    desc: "Once all pipelines are validated and the entire team is comfortable with BuildNinja's workflow.",
+    time: "30 min",
+  },
 ];
 
 export default function MigrationGuide() {
@@ -56,23 +76,23 @@ export default function MigrationGuide() {
 
         <motion.div
           className={styles.migCols}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <motion.div className={styles.migCard} variants={cardVariants}>
-            <h3 className={styles.migCardTitle}><Check size={16} style={{ color: "var(--color-success)" }} /> What transfers directly</h3>
+          <div className={styles.migCard}>
+            <h3 className={styles.migCardTitle}><Check size={16} className={styles.migCheckIcon} /> What transfers directly</h3>
             {transfers.map((t, i) => (
               <div key={i} className={styles.migItem}><span className={styles.migCheck}>→</span>{t}</div>
             ))}
-          </motion.div>
-          <motion.div className={styles.migCard} variants={cardVariants}>
+          </div>
+          <div className={styles.migCard}>
             <h3 className={styles.migCardTitle} style={{ color: "var(--color-warning)" }}> What requires rebuilding</h3>
             {rebuilds.map((r, i) => (
               <div key={i} className={styles.migItem}><span className={styles.migWarn}>→</span>{r}</div>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
 
         <motion.h3
@@ -85,23 +105,24 @@ export default function MigrationGuide() {
           Recommended migration steps
         </motion.h3>
 
-        <motion.div
-          className={styles.steps}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className={styles.stepsGrid}>
           {steps.map((s, i) => (
-            <motion.div key={i} className={styles.step} variants={cardVariants}>
-              <div className={styles.stepNum}>{i + 1}</div>
-              <div>
-                <strong>{s.title}</strong>
-                <p className={styles.stepDesc}>{s.desc}</p>
-              </div>
+            <motion.div
+              key={i}
+              className={styles.stepCard}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={stepVariants}
+            >
+              <div className={styles.stepNum}>0{i + 1}</div>
+              <h4>{s.title}</h4>
+              <p>{s.desc}</p>
+              <span className={styles.stepTime}><Clock size={14} /> {s.time}</span>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

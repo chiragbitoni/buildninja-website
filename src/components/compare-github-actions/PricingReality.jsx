@@ -42,7 +42,7 @@ export default function PricingReality() {
             </div>
             <div className={`${s.prTotal} ${s.prTotalBnBg}`}>
               <div className={`${s.prTotalVal} ${s.prTotalValOrange}`}>~$10–50/mo</div>
-              <div className={s.prTotalLbl}>Total · Unlimited builds · 20 users · Flat forever</div>
+              <div className={s.prTotalLbl}>Total · Unlimited builds · 20 users </div>
             </div>
           </div>
 

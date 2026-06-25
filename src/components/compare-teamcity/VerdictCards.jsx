@@ -25,11 +25,7 @@ export default function VerdictCards() {
           <span className="badge-alt" style={{ marginBottom: "10px", display: "inline-flex" }}>
             Quick verdict
           </span>
-          <h2 className={styles.sectionTitle}>At a glance: BuildNinja vs TeamCity</h2>
-          <p className={styles.sectionSub}>
-            Both platforms target self-hosted CI/CD. The divergence lies in cost architecture,
-            operational overhead, and setup complexity — not raw feature capability.
-          </p>
+          
         </motion.div>
 
         <motion.div
@@ -47,7 +43,7 @@ export default function VerdictCards() {
             <div className={styles.vstatGrid}>
               <div className={styles.vstat}>
                 <div className={`${styles.vstatVal} ${styles.tg}`}>$0</div>
-                <div className={styles.vstatKey}>License cost forever</div>
+                <div className={styles.vstatKey}>License cost</div>
               </div>
               <div className={styles.vstat}>
                 <div className={styles.vstatVal}>&lt; 5 min</div>
@@ -63,7 +59,7 @@ export default function VerdictCards() {
               </div>
             </div>
             <ul className={styles.vlist}>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Permanently free — no seat limits, no expiry, no credit card</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Free — no seat limits, no expiry, no credit card</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>One Docker command to full deployment — no JVM, no RAM overhead</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Native MSBuild + VSTest — zero plugin configuration needed</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>All 5 SSO providers: GitHub, GitLab, Bitbucket, Google, Azure AD</li>
@@ -78,7 +74,7 @@ export default function VerdictCards() {
             </div>
             <div className={styles.vstatGrid}>
               <div className={styles.vstat}>
-                <div className={`${styles.vstatVal} ${styles.tr2}`}>$2,351/yr</div>
+                <div className={`${styles.vstatVal} ${styles.tr2}`}>$2,351+</div>
                 <div className={styles.vstatKey}>Enterprise on-prem</div>
               </div>
               <div className={styles.vstat}>
@@ -86,8 +82,8 @@ export default function VerdictCards() {
                 <div className={styles.vstatKey}>Setup time</div>
               </div>
               <div className={styles.vstat}>
-                <div className={`${styles.vstatVal} ${styles.tr2}`}>$15/mo</div>
-                <div className={styles.vstatKey}>Per committer (Cloud)</div>
+                <div className={`${styles.vstatVal} ${styles.tr2}`}>$15/user</div>
+                <div className={styles.vstatKey}>Cloud (Per committer)</div>
               </div>
               <div className={styles.vstat}>
                 <div className={`${styles.vstatVal} ${styles.tr2}`}>3 free</div>

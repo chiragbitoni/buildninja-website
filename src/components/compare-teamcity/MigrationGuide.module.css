@@ -31,7 +31,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  margin-bottom: 36px;
+  margin-bottom: 48px;
   text-align: left;
 }
 
@@ -42,7 +42,9 @@
 }
 
 .migCard {
-  background: var(--color-bg-panel);
+  background: rgba(var(--bg-rgb), 0.4);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -56,6 +58,11 @@
   display: flex;
   align-items: center;
   gap: 7px;
+}
+
+.migCheckIcon {
+  color: var(--color-success);
+  flex-shrink: 0;
 }
 
 .migItem {
@@ -74,53 +81,64 @@
   font-size: 17px;
   font-weight: 700;
   color: var(--color-text);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 800px;
-  margin: 0 auto;
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
   text-align: left;
 }
 
-.step {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  background: var(--color-bg-panel);
+.stepCard {
+  background: rgba(var(--bg-rgb), 0.4);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 16px 20px;
+  padding: 24px 22px;
+  position: relative;
 }
 
 .stepNum {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  flex-shrink: 0;
   background: var(--color-primary-subtle);
   border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-primary);
+  margin-bottom: 14px;
 }
 
-.step strong {
+.stepCard h4 {
   font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 7px;
   color: var(--color-text);
-  display: block;
-  margin-bottom: 2px;
 }
 
-.stepDesc {
+.stepCard p {
   font-size: 13px;
   color: var(--color-text-secondary);
-  line-height: 1.55;
+  line-height: 1.6;
+}
+
+.stepTime {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-success);
+  background: var(--color-success-bg);
+  padding: 2px 9px;
+  border-radius: 10px;
 }

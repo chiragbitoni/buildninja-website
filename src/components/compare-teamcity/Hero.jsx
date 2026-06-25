@@ -24,7 +24,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.15 }}
           >
             <span style={{ fontStyle: 'normal', background: 'linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent', display: 'inline-block', paddingBottom: '0.15em', marginBottom: '-0.15em', verticalAlign: 'top' }}>BuildNinja</span> vs TeamCity:<br />
-            Which Self-Hosted CI/CD Is Right for Your Team?
+            Which Self-Hosted CI/CD Is <br/>Right for Your Team?
           </motion.h1>
 
           <motion.p
@@ -34,7 +34,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             Both are self-hosted. Both support Windows, .NET, and enterprise-scale builds.
-            Only one is permanently free for unlimited teams and deploys in under 5 minutes.
+            Only one is free for unlimited teams and deploys in under 5 minutes.
             Here is the honest, data-backed breakdown.
           </motion.p>
 
@@ -57,7 +57,7 @@ export default function Hero() {
               Deploy BuildNinja free
             </a>
             <a href="/dojo" className={styles.btnSecondary}>
-              Try Dojo sandbox
+              Try Dojo sandbox (no install)
             </a>
           </motion.div>
 

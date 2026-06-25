@@ -33,7 +33,7 @@ const faqSchema = {
       "name": "TeamCity Professional is also free — why choose BuildNinja?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition has no caps — unlimited agents, configurations, and users — permanently free."
+        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition has no caps — unlimited agents, configurations, and users — Free."
       }
     },
     {
@@ -49,7 +49,7 @@ const faqSchema = {
       "name": "How does BuildNinja compare to TeamCity on pricing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BuildNinja Growth Edition is permanently free. TeamCity Enterprise starts at $2,351/year plus $359/year per additional agent. A 25-developer team saves $300-$820 per month."
+        "text": "BuildNinja Growth Edition is Free. TeamCity Enterprise starts at $2,351/year plus $359/year per additional agent. A 25-developer team saves $300-$820 per month."
       }
     },
     {

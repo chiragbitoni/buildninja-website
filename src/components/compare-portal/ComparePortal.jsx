@@ -50,7 +50,7 @@ export default function ComparePortal() {
     {
       title: "BuildNinja vs TeamCity",
       badge: "Self-Hosted Showdown",
-      desc: "Two self-hosted giants compared. TeamCity's JVM overhead and agent licensing vs BuildNinja's lightweight, permanently free architecture.",
+      desc: "Two self-hosted giants compared. TeamCity's JVM overhead and agent licensing vs BuildNinja's lightweight.",
       href: "/compare/buildninja-vs-teamcity",
       icon: <img src="/resources/teamcity.svg" alt="TeamCity" className={s.logoImg} />,
       logoHover: "/resources/teamcity-logo.svg",

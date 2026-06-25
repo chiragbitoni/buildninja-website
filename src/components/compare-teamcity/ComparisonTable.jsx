@@ -7,9 +7,9 @@ const pricingData = [
   {
     plan: "BuildNinja — Growth Edition",
     amount: "$0",
-    period: "forever · no credit card required",
+    period: "No credit card required",
     sup: "",
-    desc: "Permanently free with zero feature gating, no seat limits, and no time restriction. Every feature included from day one.",
+    desc: "Free with zero feature gating, no seat limits, and no time restriction. Every feature included from day one.",
     featured: true,
     features: [
       "Unlimited users",
@@ -97,7 +97,7 @@ export default function ComparisonTable() {
           <h2 className={styles.sectionTitle}>What you actually pay</h2>
           <p className={styles.sectionSub}>
             TeamCity has three pricing tiers with meaningful hard limits at every level.
-            BuildNinja has one tier — permanently free — with no caps anywhere.
+            BuildNinja has one tier — free — with no caps anywhere.
           </p>
         </motion.div>
 
@@ -153,10 +153,10 @@ export default function ComparisonTable() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td className={styles.featName}>License / subscription</td><td className={styles.tdBn}>$0</td><td className={styles.cross}>~$360/mo</td><td className={styles.cross}>~$462/mo</td></tr>
-                <tr><td className={styles.featName}>Build agent fees</td><td className={styles.tdBn}>$0</td><td>Included in credits</td><td className={styles.cross}>~$299/mo</td></tr>
-                <tr><td className={styles.featName}>Infrastructure (VPS)</td><td className={styles.tdBn}>~$60–120/mo</td><td>Included</td><td>~$60–120/mo</td></tr>
-                <tr className={styles.total}><td className={styles.featName}>Total monthly</td><td className={`${styles.tdBn} ${styles.totalBn}`}>~$60–120</td><td className={styles.totalTc}>~$360</td><td className={styles.totalTc}>~$821</td></tr>
+                <tr><td className={styles.featName}>License / subscription</td><td className={styles.tdBn}>$0</td><td className={styles.cross}>~$360/mo ($15 × 24 users)</td><td className={styles.cross}>~$462/mo ($5,541 ÷ 12)</td></tr>
+                <tr><td className={styles.featName}>Build agent fees</td><td className={styles.tdBn}>$0</td><td>Included in credits</td><td className={styles.cross}>+$299/mo (10 agents × $359 ÷ 12)</td></tr>
+                <tr><td className={styles.featName}>Infrastructure (VPS)</td><td className={styles.tdBn}>~$60–120/mo</td><td>Included</td><td>~$60–120 VPS</td></tr>
+                <tr className={styles.total}><td className={styles.featName}>Total monthly cost</td><td className={`${styles.tdBn} ${styles.totalBn}`}>~$60–120</td><td className={styles.totalTc}>~$360</td><td className={styles.totalTc}>~$821</td></tr>
               </tbody>
             </table>
           </div>
