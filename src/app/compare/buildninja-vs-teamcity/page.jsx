@@ -99,8 +99,8 @@ export default function CompareTeamCityPage() {
       <Hero />
       <VerdictCards />
       <ComparisonTable />
-      <ChoiceCards />
       <PainPoints />
+      <ChoiceCards />
       <MigrationGuide />
       <FAQ />
       <CTABanner />
