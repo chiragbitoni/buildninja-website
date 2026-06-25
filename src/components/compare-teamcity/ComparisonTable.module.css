@@ -227,7 +227,7 @@
 .logoTc {
   height: 20px;
   width: auto;
-  filter: var(--logo-filter);
+  filter: none;
 }
 
 .recBadge {

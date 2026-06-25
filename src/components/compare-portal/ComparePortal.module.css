@@ -239,7 +239,8 @@
   filter: var(--logo-filter);
 }
 
-.logoImgJenkins {
+.logoImgJenkins,
+.logoImgTeamcity {
   filter: none;
 }
 
@@ -267,12 +268,17 @@
 .overlayLogoBninja {
   height: 36px;
   width: auto;
+  filter: var(--logo-filter);
 }
 
 .overlayLogoCompetitor {
   height: 26px;
   width: auto;
   filter: var(--logo-filter);
+}
+
+.overlayLogoTeamcity {
+  filter: none;
 }
 
 .overlayVs {

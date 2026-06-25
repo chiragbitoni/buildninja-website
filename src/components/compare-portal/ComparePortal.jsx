@@ -52,8 +52,9 @@ export default function ComparePortal() {
       badge: "Self-Hosted Showdown",
       desc: "Two self-hosted giants compared. TeamCity's JVM overhead and agent licensing vs BuildNinja's lightweight.",
       href: "/compare/buildninja-vs-teamcity",
-      icon: <img src="/resources/teamcity.svg" alt="TeamCity" className={s.logoImg} />,
+      icon: <img src="/resources/teamcity.svg" alt="TeamCity" className={`${s.logoImg} ${s.logoImgTeamcity}`} />,
       logoHover: "/resources/teamcity-logo.svg",
+      overlayTeamcity: true,
       points: [
         "No JVM overhead - lightweight Docker deployment",
         "Unlimited agents at $0 vs $359/yr each",
@@ -114,7 +115,7 @@ export default function ComparePortal() {
                     </div>
                     <span className={s.overlayVs}>VS</span>
                     <div className={s.overlayLogoRight}>
-                      <img src={c.logoHover} alt={c.title} className={s.overlayLogoCompetitor} />
+                      <img src={c.logoHover} alt={c.title} className={`${s.overlayLogoCompetitor}${c.overlayTeamcity ? ` ${s.overlayLogoTeamcity}` : ''}`} />
                     </div>
                   </div>
                   <span className={s.overlayCta}>
