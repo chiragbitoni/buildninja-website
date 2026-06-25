@@ -68,7 +68,7 @@ export default function Navbar({ blogPosts = [] }) {
 
   const resourcesItems = [
     {
-      name: "Docs",
+      name: "Documentation",
       path: `${DOCS_URL}/docs/overview`,
       children: [
         { name: "Getting Started", path: `${DOCS_URL}/docs/category/getting-started` },
