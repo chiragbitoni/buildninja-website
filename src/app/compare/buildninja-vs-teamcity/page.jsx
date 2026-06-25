@@ -9,10 +9,16 @@ import FAQ from '@/components/compare-teamcity/FAQ';
 import CTABanner from '@/components/compare-teamcity/CTABanner';
 
 export const metadata = {
-  title: 'BuildNinja vs TeamCity: Self-Hosted CI/CD Comparison | BuildNinja',
+  title: 'BuildNinja vs TeamCity: Self-Hosted CI/CD Comparison',
   description: 'Honest comparison of BuildNinja vs TeamCity. Side-by-side pricing, features, Windows/.NET support, and real user pain points. See why growing teams are switching to BuildNinja.',
   alternates: {
     canonical: 'https://buildninja.grapehub.io/compare/buildninja-vs-teamcity',
+  },
+  openGraph: {
+    title: 'BuildNinja vs TeamCity: Self-Hosted CI/CD Comparison',
+    description: 'Honest comparison of BuildNinja vs TeamCity. Side-by-side pricing, features, Windows/.NET support, and real user pain points. See why growing teams are switching to BuildNinja.',
+    url: 'https://buildninja.grapehub.io/compare/buildninja-vs-teamcity',
+    images: ['https://buildninja.grapehub.io/resources/BuildNinja.png'],
   },
 };
 
