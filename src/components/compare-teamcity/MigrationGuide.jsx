@@ -60,7 +60,7 @@ export default function MigrationGuide() {
             <div className={styles.stepNum}>01</div>
             <h4>Deploy BuildNinja</h4>
             <p>
-              Pull the BuildNinja Docker image and run it on your server alongside TeamCity. Both operate in parallel - zero disruption to existing builds.
+              Run <code className={styles.code}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep TeamCity running - no cutover yet.
             </p>
             <div className={styles.stepFooter}>
               <span className={styles.stepTime}><Clock size={14} /> 5 min</span>
@@ -77,10 +77,10 @@ export default function MigrationGuide() {
             <div className={styles.stepNum}>02</div>
             <h4>Connect Your Repos</h4>
             <p>
-              Connect GitHub, GitLab, or Bitbucket via OAuth. BuildNinja will pull your repositories and detect branch structures automatically.
+              Link your GitHub, GitLab, or Bitbucket repos via OAuth. BuildNinja sets up webhooks automatically - your repos stay where they are.
             </p>
             <div className={styles.stepFooter}>
-              <span className={styles.stepTime}><Clock size={14} /> 5 min</span>
+              <span className={styles.stepTime}><Clock size={14} /> 3 min</span>
             </div>
           </motion.div>
           <motion.div
@@ -92,9 +92,9 @@ export default function MigrationGuide() {
             variants={stepVariants}
           >
             <div className={styles.stepNum}>03</div>
-            <h4>Rebuild Pipelines</h4>
+            <h4>Convert Pipelines to YAML</h4>
             <p>
-              Recreate your pipeline logic in BuildNinja&apos;s step-based UI or YAML config. Kotlin DSL, XML, and complex dependency graphs map to BuildNinja step types. Many teams recreate typical pipelines in less than an hour.
+              Translate your Kotlin DSL or XML configs into BuildNinja&apos;s pipeline YAML. The syntax is similar for standard CI/CD workflows (build, test, deploy). Most pipelines translate in 30&ndash;60 minutes.
             </p>
             <div className={styles.stepFooter}>
               <span className={styles.stepTime}><Clock size={14} /> 30–60 min</span>
@@ -112,16 +112,21 @@ export default function MigrationGuide() {
             variants={stepVariants}
           >
             <div className={styles.stepNum}>04</div>
-            <h4>Validate &amp; Decommission</h4>
+            <h4>Set Run from Config File</h4>
             <p>
-              Run builds on BuildNinja alongside TeamCity for a sprint cycle. Once all pipelines validate, shut down TeamCity and own your CI/CD free forever.
+              BuildNinja can execute builds directly from a YAML file in your repository - no UI configuration needed. Point BuildNinja at your <code className={styles.code}>.buildninja.yaml</code> in your repository root and it handles the rest.
             </p>
             <div className={styles.stepFooter}>
-              <span className={styles.stepTime}><Clock size={14} /> 1–2 weeks</span>
+              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={styles.guideLink}>
+                <ExternalLink size={14} /> Run from Config Guide
+              </Link>
             </div>
           </motion.div>
         </div>
 
+        <p className={styles.cutoverNote}>
+          Run both in parallel for 1 week. Compare build outputs, validate results match, then point all webhooks to BuildNinja and decommission TeamCity.
+        </p>
 
       </div>
     </section>
