@@ -14,7 +14,7 @@ const cardVariants = {
 };
 
 const pains = [
-  { icon: "/resources/icons/calculatorPink.svg", title: "The agent cost cliff", body: "The Professional free tier locks teams at 3 agents and 100 configurations. Once outgrown, you face a $2,351/yr Enterprise license plus $359/yr per additional agent — $5,541/yr for a 10-agent setup." },
+  { icon: "/resources/icons/calculatorPink.svg", title: "The agent cost cliff", body: "The Professional free tier locks teams at 3 agents and 100 configurations. Once outgrown, you face a $2,399/yr Enterprise license plus $359/yr per additional agent — $4,912/yr for a 10-agent setup." },
   { icon: "/resources/icons/serverPink.svg", title: "Heavy JVM resource footprint", body: "TeamCity runs on the JVM and demands significant RAM to keep the UI responsive. Without enough memory, the interface becomes sluggish and build queues slow." },
   { icon: "/resources/icons/gearPink.svg", title: "Configuration complexity at scale", body: "Long-term TeamCity users report that the admin panel is difficult to navigate and reconfiguring existing projects is consistently error-prone." },
   { icon: "/resources/icons/walletPink.svg", title: "Renewal pricing restructuring", body: "JetBrains changed on-premises renewal pricing in late 2025, removing the 50% renewal discount for customers who miss the expiry window by more than one month." },

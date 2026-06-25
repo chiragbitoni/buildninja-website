@@ -49,7 +49,7 @@ const faqSchema = {
       "name": "How does BuildNinja compare to TeamCity on pricing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BuildNinja Growth Edition is Free. TeamCity Enterprise starts at $2,351/year plus $359/year per additional agent. A 25-developer team saves $300-$820 per month."
+        "text": "BuildNinja Growth Edition is free. TeamCity Enterprise starts at $2,399/year and includes 3 build agents. Additional build agents cost $359/year each. A 25-developer team spends approximately $469–529/month depending on infrastructure."
       }
     },
     {

@@ -74,7 +74,7 @@ export default function VerdictCards() {
             </div>
             <div className={styles.vstatGrid}>
               <div className={styles.vstat}>
-                <div className={`${styles.vstatVal} ${styles.tr2}`}>$2,351+</div>
+                <div className={`${styles.vstatVal} ${styles.tr2}`}>$2,399+</div>
                 <div className={styles.vstatKey}>Enterprise on-prem</div>
               </div>
               <div className={styles.vstat}>
@@ -94,7 +94,8 @@ export default function VerdictCards() {
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Mature platform — 15+ years of CI/CD development history</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Powerful build chains and DAG pipelines for complex workflows</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotA}`}></span>Professional free tier: hard cap at 3 agents, 100 configurations</li>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>Enterprise: $2,351/yr + $359/yr per additional build agent</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>Enterprise starts at $2,399/yr (includes 3 build agents)
+Additional build agents: $359/yr each</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>JVM dependency — high RAM requirement on-premises</li>
             </ul>
           </motion.div>

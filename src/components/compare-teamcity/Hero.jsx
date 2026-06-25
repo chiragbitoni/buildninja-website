@@ -80,7 +80,7 @@ export default function Hero() {
               <div className={styles.statSub}>Permanent Growth Edition</div>
             </div>
             <div className={styles.statCell}>
-              <div className={`${styles.statVal} ${styles.statRed}`}>$2,351+</div>
+              <div className={`${styles.statVal} ${styles.statRed}`}>$2,399+</div>
               <div className={styles.statKey}>TeamCity Enterprise / yr</div>
               <div className={styles.statSub}>On-premises, 3 agents only</div>
             </div>

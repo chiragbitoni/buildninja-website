@@ -39,16 +39,16 @@ const pricingData = [
   },
   {
     plan: "TeamCity — Enterprise",
-    amount: "$2,351",
+    amount: "$2,399",
     period: "on-premises server license /yr",
     sup: "/yr",
-    desc: "Agent add-ons compound fast. A 10-agent setup costs ~$5,541/yr before infrastructure.",
+    desc: "License includes 3 build agents. A 10-agent setup costs ~$4,912/yr before infrastructure.",
     featured: false,
     features: [
       "Unlimited build configurations",
-      { text: "Only 3 build agents included", ok: false },
+      { text: "3 build agents included", ok: false },
       { text: "+$359/yr per additional agent", ok: false },
-      { text: "10-agent setup: ~$5,541/yr", ok: false },
+      { text: "10-agent setup: ~$4,912/yr", ok: false },
       { text: "Cloud: $45/mo base + $15/committer", warn: true },
     ],
   },
@@ -56,7 +56,7 @@ const pricingData = [
 
 const featureRows = [
   { cat: "Pricing & licensing" },
-  { feat: "License cost", bn: "$0 forever", tc: "$0 / $2,351+/yr", win: "bn" },
+  { feat: "License cost", bn: "$0 forever", tc: "$0 / $2,399+/yr", win: "bn" },
   { feat: "Per-seat fees", bn: "None", tc: "$15/committer", win: "bn" },
   { feat: "Agent fees", bn: "None", tc: "$359/yr each", win: "bn" },
   { cat: "Setup & operations" },
@@ -153,14 +153,14 @@ export default function ComparisonTable() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td className={styles.featName}>License / subscription</td><td className={styles.tdBn}>$0</td><td className={styles.cross}>~$360/mo ($15 × 24 users)</td><td className={styles.cross}>~$462/mo ($5,541 ÷ 12)</td></tr>
-                <tr><td className={styles.featName}>Build agent fees</td><td className={styles.tdBn}>$0</td><td>Included in credits</td><td className={styles.cross}>+$299/mo (10 agents × $359 ÷ 12)</td></tr>
-                <tr><td className={styles.featName}>Infrastructure (VPS)</td><td className={styles.tdBn}>~$60–120/mo</td><td>Included</td><td>~$60–120 VPS</td></tr>
-                <tr className={styles.total}><td className={styles.featName}>Total monthly cost</td><td className={`${styles.tdBn} ${styles.totalBn}`}>~$60–120</td><td className={styles.totalTc}>~$360</td><td className={styles.totalTc}>~$821</td></tr>
+                <tr><td className={styles.featName}>License / subscription</td><td className={styles.tdBn}>$0</td><td className={styles.cross}>~$360/mo ($15 × 24 users)</td><td className={styles.cross}>~$200/mo (Enterprise license)</td></tr>
+                <tr><td className={styles.featName}>Build agent fees</td><td className={styles.tdBn}>$0</td><td>Included in credits</td><td className={styles.cross}>~$209/mo (7 additional × $359 ÷ 12)</td></tr>
+                <tr><td className={styles.featName}>Infrastructure (VPS)</td><td className={styles.tdBn}>~$60–120/mo</td><td>Included</td><td>~$60–120/mo</td></tr>
+                <tr className={styles.total}><td className={styles.featName}>Total monthly cost</td><td className={`${styles.tdBn} ${styles.totalBn}`}>~$60–120</td><td className={styles.totalTc}>~$360</td><td className={styles.totalTc}>~$469–529</td></tr>
               </tbody>
             </table>
           </div>
-          <p className={styles.costNote}>BuildNinja costs 3× to 7× less than TeamCity for a mid-size team — and that gap widens as team size grows.</p>
+          <p className={styles.costNote}>BuildNinja costs about 4×–8× less than TeamCity Enterprise for a mid-size team — and that gap widens as team size grows.</p>
         </motion.div>
 
         <motion.div
