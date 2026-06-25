@@ -104,6 +104,10 @@
   padding: 11px;
 }
 
+[data-theme='light'] .vstat {
+  background: rgba(0,0,0,0.04);
+}
+
 .vstatVal {
   font-size: 1.35rem;
   font-weight: 700;

@@ -114,27 +114,7 @@ export default function MigrationGuide() {
           </motion.div>
         </div>
 
-        <motion.div
-          className={styles.termSection}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <h3 className={styles.termTitle}>Terminology mapping</h3>
-          <div className={styles.termTable}>
-            <div className={styles.termRow}>
-              <span className={styles.termLabel}>TeamCity</span>
-              <span className={styles.termArrow}>→</span>
-              <span className={styles.termLabel}>BuildNinja</span>
-            </div>
-            <div className={styles.termRow}><span>Build Configuration</span><span className={styles.termArrow}>→</span><span>Pipeline</span></div>
-            <div className={styles.termRow}><span>Build Agent</span><span className={styles.termArrow}>→</span><span>Agent</span></div>
-            <div className={styles.termRow}><span>Build Parameters</span><span className={styles.termArrow}>→</span><span>Build Parameters</span></div>
-            <div className={styles.termRow}><span>VCS Root</span><span className={styles.termArrow}>→</span><span>Repository Connection</span></div>
-            <div className={styles.termRow}><span>Build Chain</span><span className={styles.termArrow}>→</span><span>Pipeline Dependencies</span></div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
