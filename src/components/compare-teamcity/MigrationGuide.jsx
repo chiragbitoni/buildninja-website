@@ -62,7 +62,9 @@ export default function MigrationGuide() {
             <p>
               Pull the BuildNinja Docker image and run it on your server alongside TeamCity. Both operate in parallel - zero disruption to existing builds.
             </p>
-            <span className={styles.stepTime}><Clock size={14} /> 5 min</span>
+            <div className={styles.stepFooter}>
+              <span className={styles.stepTime}><Clock size={14} /> 5 min</span>
+            </div>
           </motion.div>
           <motion.div
             className={styles.stepCard}
@@ -77,7 +79,9 @@ export default function MigrationGuide() {
             <p>
               Connect GitHub, GitLab, or Bitbucket via OAuth. BuildNinja will pull your repositories and detect branch structures automatically.
             </p>
-            <span className={styles.stepTime}><Clock size={14} /> 5 min</span>
+            <div className={styles.stepFooter}>
+              <span className={styles.stepTime}><Clock size={14} /> 5 min</span>
+            </div>
           </motion.div>
           <motion.div
             className={styles.stepCard}
@@ -92,10 +96,12 @@ export default function MigrationGuide() {
             <p>
               Recreate your pipeline logic in BuildNinja&apos;s step-based UI or YAML config. Kotlin DSL, XML, and complex dependency graphs map to BuildNinja step types. Many teams recreate typical pipelines in less than an hour.
             </p>
-            <span className={styles.stepTime}><Clock size={14} /> 30–60 min</span>
-            <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={styles.guideLink}>
-              <ExternalLink size={14} /> YAML Reference
-            </Link>
+            <div className={styles.stepFooter}>
+              <span className={styles.stepTime}><Clock size={14} /> 30–60 min</span>
+              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={styles.guideLink}>
+                <ExternalLink size={14} /> YAML Reference
+              </Link>
+            </div>
           </motion.div>
           <motion.div
             className={styles.stepCard}
@@ -110,7 +116,9 @@ export default function MigrationGuide() {
             <p>
               Run builds on BuildNinja alongside TeamCity for a sprint cycle. Once all pipelines validate, shut down TeamCity and own your CI/CD free forever.
             </p>
-            <span className={styles.stepTime}><Clock size={14} /> 1–2 weeks</span>
+            <div className={styles.stepFooter}>
+              <span className={styles.stepTime}><Clock size={14} /> 1–2 weeks</span>
+            </div>
           </motion.div>
         </div>
 

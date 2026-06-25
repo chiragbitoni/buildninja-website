@@ -26,6 +26,8 @@
   border-radius: var(--radius-md);
   padding: 24px 22px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .stepNum {
@@ -54,13 +56,22 @@
   font-size: 13px;
   color: var(--color-text-secondary);
   line-height: 1.6;
+  flex: 1;
+}
+
+.stepFooter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  min-height: 32px;
 }
 
 .stepTime {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  margin-top: 10px;
+  gap: 4px;
   font-size: 11px;
   font-weight: 600;
   color: var(--color-success);
