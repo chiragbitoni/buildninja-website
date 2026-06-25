@@ -44,16 +44,6 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          className={s.heroMeta}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-        >
-          Updated June 2026
-        </motion.div>
-
-        <motion.div
           className={`${s.heroBadges} ${s.fadeUp}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,6 +104,16 @@ export default function Hero() {
             <div className={`${s.hsVal} ${s.hsValDark}`}>$0.006<span style={{ fontSize: '14px' }}>/min</span></div>
             <div className={s.hsLbl}>GitHub Actions Linux runners (2-core)</div>
           </div>
+        </motion.div>
+
+        <motion.div
+          className={s.heroMeta}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          <span className={s.metaBadge}>Updated June 2026</span>
         </motion.div>
       </div>
     </header>
