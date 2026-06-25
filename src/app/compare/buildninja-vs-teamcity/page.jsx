@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '@/components/compare-teamcity/Hero';
 import VerdictCards from '@/components/compare-teamcity/VerdictCards';
 import ComparisonTable from '@/components/compare-teamcity/ComparisonTable';
+import ChoiceCards from '@/components/compare-teamcity/ChoiceCards';
 import PainPoints from '@/components/compare-teamcity/PainPoints';
 import MigrationGuide from '@/components/compare-teamcity/MigrationGuide';
 import FAQ from '@/components/compare-teamcity/FAQ';
@@ -98,6 +99,7 @@ export default function CompareTeamCityPage() {
       <Hero />
       <VerdictCards />
       <ComparisonTable />
+      <ChoiceCards />
       <PainPoints />
       <MigrationGuide />
       <FAQ />
