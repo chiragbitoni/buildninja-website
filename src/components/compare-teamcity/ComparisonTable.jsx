@@ -179,35 +179,50 @@ export default function ComparisonTable() {
               <thead>
                 <tr>
                   <th style={{ width: "38%" }}>Feature</th>
-                  <th style={{ width: "22%" }} className={styles.thBn}>BuildNinja</th>
-                  <th style={{ width: "22%" }}>TeamCity</th>
-                  <th style={{ width: "18%" }}>Winner</th>
+                  <th style={{ width: "31%" }} className={styles.thBn}>BuildNinja</th>
+                  <th style={{ width: "31%" }}>TeamCity</th>
                 </tr>
               </thead>
               <tbody>
-                {featureRows.map((r, i) => {
+                  {featureRows.map((r, i) => {
                   if (r.cat) {
                     return (
                       <tr key={i} className={styles.catRow}>
-                        <td colSpan={4}>{r.cat}</td>
+                        <td colSpan={3}>{r.cat}</td>
                       </tr>
                     );
                   }
+                  const bnWins = r.win === "bn";
+                  const tcWins = r.win === "tc";
+                  const isTie = r.win === "tie";
                   return (
                     <tr key={i}>
                       <td className={styles.featName}>{r.feat}</td>
-                      <td className={styles.tdBn}>{r.bn}</td>
-                      <td>{r.tc}</td>
+                      <td className={styles.tdBn}>
+                        {bnWins && <Check size={14} className={styles.icWin} />}
+                        {tcWins && <X size={14} className={styles.icLose} />}
+                        {isTie && <Check size={14} className={styles.icTie} />}
+                        {" "}{r.bn}
+                        {bnWins && <span className={`${styles.winTag} ${styles.winBn}`}>BN Wins</span>}
+                      </td>
                       <td>
-                        <span className={`${styles.winTag} ${r.win === "bn" ? styles.winBn : r.win === "tc" ? styles.winTc : styles.winTie}`}>
-                          {r.win === "bn" ? "BuildNinja" : r.win === "tc" ? "TeamCity" : "Tie"}
-                        </span>
+                        {tcWins && <Check size={14} className={styles.icWin} />}
+                        {bnWins && <X size={14} className={styles.icLose} />}
+                        {isTie && <Check size={14} className={styles.icTie} />}
+                        {" "}{r.tc}
+                        {tcWins && <span className={`${styles.winTag} ${styles.winTc}`}>TeamCity Wins</span>}
                       </td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
+          </div>
+          <div className={styles.legend}>
+            <span><Check size={14} className={styles.icWin} style={{ verticalAlign: 'middle' }} /> Winner</span>
+            <span><X size={14} className={styles.icLose} style={{ verticalAlign: 'middle' }} /> Not best</span>
+            <span><span className={`${styles.winTag} ${styles.winBn}`}>BN Wins</span> BuildNinja advantage</span>
+            <span><span className={`${styles.winTag} ${styles.winTc}`}>TeamCity Wins</span> TeamCity advantage</span>
           </div>
         </motion.div>
       </div>

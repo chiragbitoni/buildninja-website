@@ -283,6 +283,8 @@
   padding: 2px 8px;
   border-radius: 10px;
   text-transform: uppercase;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 .winBn {
@@ -299,4 +301,41 @@
   background: var(--color-bg-panel);
   color: var(--color-text-muted);
   border: 1px solid var(--color-border);
+}
+
+.icWin {
+  color: var(--color-success);
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.icLose {
+  color: var(--color-error);
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.icTie {
+  color: var(--color-text-muted);
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
