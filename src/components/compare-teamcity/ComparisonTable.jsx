@@ -155,7 +155,7 @@ export default function ComparisonTable() {
               <tbody>
                 <tr><td className={styles.featName}>License / subscription</td><td className={styles.tdBn}>$0</td><td className={styles.cross}>~$360/mo ($15 × 24 users)</td><td className={styles.cross}>~$200/mo (Enterprise license)</td></tr>
                 <tr><td className={styles.featName}>Build agent fees</td><td className={styles.tdBn}>$0</td><td>Included in credits</td><td className={styles.cross}>~$209/mo (7 additional × $359 ÷ 12)</td></tr>
-                <tr><td className={styles.featName}>Infrastructure (VPS)</td><td className={styles.tdBn}>~$60–120/mo</td><td>Included</td><td>~$60–120/mo</td></tr>
+                <tr><td className={styles.featName}>Server infrastructure</td><td className={styles.tdBn}>~$60–120/mo</td><td>Included</td><td>~$60–120/mo</td></tr>
                 <tr className={styles.total}><td className={styles.featName}>Total monthly cost</td><td className={`${styles.tdBn} ${styles.totalBn}`}>~$60–120</td><td className={styles.totalTc}>~$360</td><td className={styles.totalTc}>~$469–529</td></tr>
               </tbody>
             </table>
