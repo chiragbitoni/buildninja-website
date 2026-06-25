@@ -7,6 +7,20 @@ export default function ChoiceCards() {
     <section className={styles.section}>
       <div className={styles.container}>
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="badge-alt" style={{ marginBottom: "10px", display: "inline-flex" }}>
+            Decision guide
+          </span>
+          <h2 className={styles.sectionTitle}>Which tool is right for your team?</h2>
+          <p className={styles.sectionSub}>
+            Be honest about your team&apos;s situation. Both tools can run CI/CD pipelines — the question is which fits your constraints.
+          </p>
+        </motion.div>
+        <motion.div
           className={styles.choiceCols}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
