@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { DollarSign, Zap, Shield } from "lucide-react";
 import styles from "./VerdictCards.module.css";
 
 const containerVariants = {
@@ -34,38 +33,76 @@ export default function VerdictCards() {
         </motion.div>
 
         <motion.div
-          className={styles.verdictGrid}
+          className={styles.dual}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div className={`${styles.verdictCard} ${styles.cardGreen}`} variants={cardVariants}>
-            <div className={`${styles.verdictIcon} ${styles.iconGreen}`}>
-              <DollarSign size={20} />
+          <motion.div className={`${styles.vcard} ${styles.winner}`} variants={cardVariants}>
+            <div className={styles.vcardHead}>
+              <span className={styles.vcardName}>BuildNinja</span>
+              <span className={styles.badgeWin}>✓ Recommended</span>
             </div>
-            <h3>Permanently Free — No Caps</h3>
-            <p>BuildNinja Growth Edition costs $0 forever with unlimited agents, unlimited users, and unlimited build configurations. TeamCity traps you at 3 agents and 100 configs on the free tier — upgrade costs $2,351/yr.</p>
+            <div className={styles.vstatGrid}>
+              <div className={styles.vstat}>
+                <div className={`${styles.vstatVal} ${styles.tg}`}>$0</div>
+                <div className={styles.vstatKey}>License cost forever</div>
+              </div>
+              <div className={styles.vstat}>
+                <div className={styles.vstatVal}>&lt; 5 min</div>
+                <div className={styles.vstatKey}>Setup time</div>
+              </div>
+              <div className={styles.vstat}>
+                <div className={styles.vstatVal}>Unlimited</div>
+                <div className={styles.vstatKey}>Users &amp; agents</div>
+              </div>
+              <div className={styles.vstat}>
+                <div className={styles.vstatVal}>5</div>
+                <div className={styles.vstatKey}>SSO providers free</div>
+              </div>
+            </div>
+            <ul className={styles.vlist}>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Permanently free — no seat limits, no expiry, no credit card</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>One Docker command to full deployment — no JVM, no RAM overhead</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Native MSBuild + VSTest — zero plugin configuration needed</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>All 5 SSO providers: GitHub, GitLab, Bitbucket, Google, Azure AD</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>AI-powered pipeline features in v1.2.0 at no extra cost</li>
+            </ul>
           </motion.div>
 
-          <motion.div className={`${styles.verdictCard} ${styles.cardOrange}`} variants={cardVariants}>
-            <div className={`${styles.verdictIcon} ${styles.iconOrange}`}>
-              <Zap size={20} />
+          <motion.div className={styles.vcard} variants={cardVariants}>
+            <div className={styles.vcardHead}>
+              <span className={styles.vcardName}>TeamCity</span>
+              <span className={styles.badgeNeutral}>JetBrains</span>
             </div>
-            <h3>5-Minute Setup, No JVM</h3>
-            <p>One Docker command to full deployment. No Java Virtual Machine, no RAM-heavy overhead, no plugin management. TeamCity requires hours of configuration, JVM tuning, and ongoing maintenance.</p>
-          </motion.div>
-
-          <motion.div className={`${styles.verdictCard} ${styles.cardBlue}`} variants={cardVariants}>
-            <div className={`${styles.verdictIcon} ${styles.iconBlue}`}>
-              <Shield size={20} />
+            <div className={styles.vstatGrid}>
+              <div className={styles.vstat}>
+                <div className={`${styles.vstatVal} ${styles.tr2}`}>$2,351/yr</div>
+                <div className={styles.vstatKey}>Enterprise on-prem</div>
+              </div>
+              <div className={styles.vstat}>
+                <div className={styles.vstatVal}>Hours–days</div>
+                <div className={styles.vstatKey}>Setup time</div>
+              </div>
+              <div className={styles.vstat}>
+                <div className={`${styles.vstatVal} ${styles.tr2}`}>$15/mo</div>
+                <div className={styles.vstatKey}>Per committer (Cloud)</div>
+              </div>
+              <div className={styles.vstat}>
+                <div className={`${styles.vstatVal} ${styles.tr2}`}>3 free</div>
+                <div className={styles.vstatKey}>Build agents</div>
+              </div>
             </div>
-            <h3>Native .NET + SSO Included</h3>
-            <p>MSBuild and VSTest run natively with zero plugin configuration. All 5 SSO providers (GitHub, GitLab, Bitbucket, Google, Azure AD) are built into the free tier. TeamCity restricts SSO behind paid enterprise licenses.</p>
+            <ul className={styles.vlist}>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Mature platform — 15+ years of CI/CD development history</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Powerful build chains and DAG pipelines for complex workflows</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotA}`}></span>Professional free tier: hard cap at 3 agents, 100 configurations</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>Enterprise: $2,351/yr + $359/yr per additional build agent</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>JVM dependency — high RAM requirement on-premises</li>
+            </ul>
           </motion.div>
         </motion.div>
-
-
       </div>
     </section>
   );
