@@ -16,7 +16,7 @@ export default function FAQ() {
     },
     {
       q: 'Why is GitHub Actions charging for self-hosted runners?',
-      a: 'Self-hosted runners on GitHub Actions are free for both public and private repositories. However, you still need a GitHub plan ($4/user/mo for Team, $21/user/mo for Enterprise) and are limited to GitHub repositories only. BuildNinja has no per-seat fees, no per-minute charges, and works with any Git provider — GitHub, GitLab, Bitbucket, and more.'
+      a: 'Self-hosted runners on GitHub Actions are free for both public and private repositories. However, you still need a GitHub plan ($4/user/mo for Team, $21/user/mo for Enterprise) and are limited to GitHub repositories only. BuildNinja has no per-seat fees, no per-minute charges, and works with any Git provider - GitHub, GitLab, Bitbucket, and more.'
     },
     {
       q: 'Can I still use GitHub as my repository with BuildNinja?',
@@ -51,9 +51,9 @@ export default function FAQ() {
         <div className={s.faqCol}>
           {faqs.map((faq, idx) => (
             <div key={idx} className={`${s.faqItem} ${openIndex === idx ? s.open : ''}`}>
-              <button 
-                className={s.faqQ} 
-                onClick={() => toggleFaq(idx)} 
+              <button
+                className={s.faqQ}
+                onClick={() => toggleFaq(idx)}
                 aria-expanded={openIndex === idx}
               >
                 {faq.q}

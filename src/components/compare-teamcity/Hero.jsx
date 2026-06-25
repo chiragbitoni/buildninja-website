@@ -67,6 +67,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
+            <span className={styles.metaBadge}>Updated June 2026</span>
           </motion.div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import styles from "./ComparisonTable.module.css";
 
 const pricingData = [
   {
-    plan: "BuildNinja — Growth Edition",
+    plan: "BuildNinja - Growth Edition",
     amount: "$0",
     period: "No credit card required",
     sup: "",
@@ -23,7 +23,7 @@ const pricingData = [
     ],
   },
   {
-    plan: "TeamCity — Professional",
+    plan: "TeamCity - Professional",
     amount: "$0",
     period: "on-premises · hard limits apply",
     sup: "",
@@ -38,7 +38,7 @@ const pricingData = [
     ],
   },
   {
-    plan: "TeamCity — Enterprise",
+    plan: "TeamCity - Enterprise",
     amount: "$2,399",
     period: "on-premises server license /yr",
     sup: "/yr",
@@ -61,7 +61,7 @@ const featureRows = [
   { feat: "Agent fees", bn: "None", tc: "$359/yr each", win: "bn" },
   { cat: "Setup & operations" },
   { feat: "Setup time", bn: "< 5 minutes", tc: "Hours to days", win: "bn" },
-  { feat: "RAM requirements", bn: "Low (no JVM)", tc: "High — JVM overhead", win: "bn" },
+  { feat: "RAM requirements", bn: "Low (no JVM)", tc: "High - JVM overhead", win: "bn" },
   { feat: "Plugin management", bn: "Not needed", tc: "400+ plugins", win: "tie" },
   { cat: "Platform & build support" },
   { feat: "Windows / MSBuild", bn: "Native, built-in", tc: "Native, built-in", win: "tie" },
@@ -77,7 +77,7 @@ const featureRows = [
   { cat: "Developer experience" },
   { feat: "Pipeline config language", bn: "UI + YAML (simple)", tc: "Kotlin DSL + XML", win: "bn" },
   { feat: "Real-time log streaming", bn: "<30ms", tc: "Available", win: "tie" },
-  { feat: "Interactive demo sandbox", bn: "Dojo — live", tc: "Not available", win: "bn" },
+  { feat: "Interactive demo sandbox", bn: "Dojo - live", tc: "Not available", win: "bn" },
   { feat: "AI-assisted features", bn: "v1.2.0 roadmap", tc: "Limited", win: "bn" },
 ];
 
@@ -97,7 +97,7 @@ export default function ComparisonTable() {
           <h2 className={styles.sectionTitle}>What you actually pay</h2>
           <p className={styles.sectionSub}>
             TeamCity has three pricing tiers with meaningful hard limits at every level.
-            BuildNinja has one tier — free — with no caps anywhere.
+            BuildNinja has one tier - free - with no caps anywhere.
           </p>
         </motion.div>
 
@@ -110,8 +110,10 @@ export default function ComparisonTable() {
         >
           {pricingData.map((p, i) => (
             <div key={i} className={`${styles.pc} ${p.featured ? styles.pcFeatured : ""}`}>
-              {p.featured && <span className={styles.pcEyebrow}>Best value</span>}
-              <div className={styles.pcPlan}>{p.plan}</div>
+              <div className={styles.pcHead}>
+                <div className={styles.pcPlan}>{p.plan}</div>
+                {p.featured && <span className={styles.pcEyebrow}>Best value</span>}
+              </div>
               <div className={styles.pcAmount}>{p.amount}{p.sup && <span className={styles.pcSup}>{p.sup}</span>}</div>
               <div className={styles.pcPeriod}>{p.period}</div>
               <p className={styles.pcDesc}>{p.desc}</p>
@@ -141,7 +143,7 @@ export default function ComparisonTable() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h3 className={styles.costTitle}>Real monthly cost — 25 developers, 10 build agents</h3>
+          <h3 className={styles.costTitle}>Real monthly cost - 25 developers, 10 build agents</h3>
           <div className={styles.tableWrap}>
             <table className={styles.table}>
               <thead>
@@ -160,7 +162,7 @@ export default function ComparisonTable() {
               </tbody>
             </table>
           </div>
-          <p className={styles.costNote}>BuildNinja costs about 4×–8× less than TeamCity Enterprise for a mid-size team — and that gap widens as team size grows.</p>
+          <p className={styles.costNote}>BuildNinja costs about 4×–8× less than TeamCity Enterprise for a mid-size team - and that gap widens as team size grows.</p>
         </motion.div>
 
         <motion.div
@@ -184,7 +186,7 @@ export default function ComparisonTable() {
                 </tr>
               </thead>
               <tbody>
-                  {featureRows.map((r, i) => {
+                {featureRows.map((r, i) => {
                   if (r.cat) {
                     return (
                       <tr key={i} className={styles.catRow}>

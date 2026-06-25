@@ -25,7 +25,7 @@ export default function VerdictCards() {
           <span className="badge-alt" style={{ marginBottom: "10px", display: "inline-flex" }}>
             Quick verdict
           </span>
-          
+
         </motion.div>
 
         <motion.div
@@ -59,9 +59,9 @@ export default function VerdictCards() {
               </div>
             </div>
             <ul className={styles.vlist}>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Free — no seat limits, no expiry, no credit card</li>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>One Docker command to full deployment — no JVM, no RAM overhead</li>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Native MSBuild + VSTest — zero plugin configuration needed</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Free - no seat limits, no expiry, no credit card</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>One Docker command to full deployment - no JVM, no RAM overhead</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Native MSBuild + VSTest - zero plugin configuration needed</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>All 5 SSO providers: GitHub, GitLab, Bitbucket, Google, Azure AD</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>AI-powered pipeline features in v1.2.0 at no extra cost</li>
             </ul>
@@ -91,12 +91,12 @@ export default function VerdictCards() {
               </div>
             </div>
             <ul className={styles.vlist}>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Mature platform — 15+ years of CI/CD development history</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Mature platform - 15+ years of CI/CD development history</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Powerful build chains and DAG pipelines for complex workflows</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotA}`}></span>Professional free tier: hard cap at 3 agents, 100 configurations</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>Enterprise starts at $2,399/yr (includes 3 build agents)
-Additional build agents: $359/yr each</li>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>JVM dependency — high RAM requirement on-premises</li>
+                Additional build agents: $359/yr each</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotR}`}></span>JVM dependency - high RAM requirement on-premises</li>
             </ul>
           </motion.div>
         </motion.div>

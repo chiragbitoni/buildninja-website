@@ -30,10 +30,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "TeamCity Professional is also free — why choose BuildNinja?",
+      "name": "TeamCity Professional is also free - why choose BuildNinja?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition has no caps — unlimited agents, configurations, and users — Free."
+        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition has no caps - unlimited agents, configurations, and users - Free."
       }
     },
     {

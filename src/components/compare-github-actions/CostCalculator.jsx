@@ -45,7 +45,7 @@ export default function CostCalculator() {
               <div className={s.costHead}><span className={s.costTool}><img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.calcLogoGh} /></span></div>
               <div className={s.costLine}><span className={s.clLabel}>Free minutes (2,000/mo)</span><span className={s.clVal}>Included</span></div>
               <div className={s.costLine}>
-                <span className={s.clLabel}>Build usage: ~8,000 min/mo<br/><small>40 builds/day × 8 min × 25 days</small></span>
+                <span className={s.clLabel}>Build usage: ~8,000 min/mo<br /><small>40 builds/day × 8 min × 25 days</small></span>
                 <span className={`${s.clVal} ${s.r}`}>6,000 billable min</span>
               </div>
               <div className={s.costLine}><span className={s.clLabel}>Linux @ $0.006/min</span><span className={`${s.clVal} ${s.r}`}>$36/mo</span></div>
@@ -83,7 +83,7 @@ export default function CostCalculator() {
               <div className={s.costHead}><span className={s.costTool}><img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.calcLogoGh} /></span></div>
               <div className={s.costLine}><span className={s.clLabel}>Free minutes (2,000/mo)</span><span className={s.clVal}>Included</span></div>
               <div className={s.costLine}>
-                <span className={s.clLabel}>Build usage: ~24,000 min/mo<br/><small>100 builds/day × 8 min × 25 days</small></span>
+                <span className={s.clLabel}>Build usage: ~24,000 min/mo<br /><small>100 builds/day × 8 min × 25 days</small></span>
                 <span className={`${s.clVal} ${s.r}`}>22,000 billable min</span>
               </div>
               <div className={s.costLine}><span className={s.clLabel}>Linux hosted @ $0.006/min</span><span className={`${s.clVal} ${s.r}`}>$132/mo</span></div>
@@ -96,7 +96,7 @@ export default function CostCalculator() {
           </div>
           <div className={s.calloutGood}>
             <span className={s.calloutIco}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span>
-            <p><strong>Savings with BuildNinja: up to $202/month ($2,424/year)</strong> for a 20-person team. No per-seat or per-minute fees — just your own infrastructure.</p>
+            <p><strong>Savings with BuildNinja: up to $202/month ($2,424/year)</strong> for a 20-person team. No per-seat or per-minute fees - just your own infrastructure.</p>
           </div>
         </div>
 

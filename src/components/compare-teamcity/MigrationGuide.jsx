@@ -60,7 +60,7 @@ export default function MigrationGuide() {
             <div className={styles.stepNum}>01</div>
             <h4>Deploy BuildNinja</h4>
             <p>
-              Pull the BuildNinja Docker image and run it on your server alongside TeamCity. Both operate in parallel — zero disruption to existing builds.
+              Pull the BuildNinja Docker image and run it on your server alongside TeamCity. Both operate in parallel - zero disruption to existing builds.
             </p>
             <span className={styles.stepTime}><Clock size={14} /> 5 min</span>
           </motion.div>

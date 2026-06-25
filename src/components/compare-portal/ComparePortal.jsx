@@ -55,7 +55,7 @@ export default function ComparePortal() {
       icon: <img src="/resources/teamcity.svg" alt="TeamCity" className={s.logoImg} />,
       logoHover: "/resources/teamcity-logo.svg",
       points: [
-        "No JVM overhead — lightweight Docker deployment",
+        "No JVM overhead - lightweight Docker deployment",
         "Unlimited agents at $0 vs $359/yr each",
         "Native MSBuild + VSTest with zero plugins",
         "5 SSO providers included in the free tier"
@@ -87,10 +87,10 @@ export default function ComparePortal() {
                   </div>
                   <span className={s.badge}>{c.badge}</span>
                 </div>
-                
+
                 <h2 className={s.cardTitle}>{c.title}</h2>
                 <p className={s.cardDesc}>{c.desc}</p>
-                
+
                 <ul className={s.featureList}>
                   {c.points.map((pt, pIdx) => (
                     <li key={pIdx} className={s.featureItem}>
@@ -99,7 +99,7 @@ export default function ComparePortal() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <span className={s.cardLink}>
                   <span className={s.cardLinkText}>View Full Comparison</span>
                   <ArrowRight size={16} className={s.arrow} />

@@ -7,7 +7,7 @@ import styles from "./FAQ.module.css";
 const faqs = [
   {
     q: "Can BuildNinja replace TeamCity for .NET and Windows builds?",
-    a: "Yes. BuildNinja has native MSBuild compilation and VSTest execution built in — no plugin installation or configuration required. Windows agents install via the Unified Installer and run natively on Windows Server and Windows desktop environments. Teams migrating from TeamCity's .NET workflows typically complete the transition in a few hours.",
+    a: "Yes. BuildNinja has native MSBuild compilation and VSTest execution built in - no plugin installation or configuration required. Windows agents install via the Unified Installer and run natively on Windows Server and Windows desktop environments. Teams migrating from TeamCity's .NET workflows typically complete the transition in a few hours.",
   },
   {
     q: "Does BuildNinja support build chains like TeamCity?",
@@ -18,8 +18,8 @@ const faqs = [
     a: "Both platforms offer full RBAC with project-level and system-level permissions. BuildNinja includes AES-256 encryption for all secrets and all five major SSO providers in the free Growth Edition. TeamCity requires additional configuration or paid tiers for equivalent SSO coverage.",
   },
   {
-    q: "TeamCity Professional is also free — why choose BuildNinja over it?",
-    a: "TeamCity Professional caps you at 3 build agents and 100 build configurations. Most teams outgrow this quickly and face a significant jump to the $2,399/yr Enterprise license (includes 3 agents) plus $359/yr per additional agent. BuildNinja Growth Edition has no such caps — unlimited agents, unlimited configurations, unlimited users — all free.",
+    q: "TeamCity Professional is also free - why choose BuildNinja over it?",
+    a: "TeamCity Professional caps you at 3 build agents and 100 build configurations. Most teams outgrow this quickly and face a significant jump to the $2,399/yr Enterprise license (includes 3 agents) plus $359/yr per additional agent. BuildNinja Growth Edition has no such caps - unlimited agents, unlimited configurations, unlimited users - all free.",
   },
   {
     q: "How long does it take to set up BuildNinja compared to TeamCity?",
@@ -50,7 +50,7 @@ export default function FAQ() {
           <span className="badge-alt" style={{ marginBottom: "10px", display: "inline-flex" }}>
             Common questions
           </span>
-          <h2 className={styles.sectionTitle}>BuildNinja vs TeamCity — common questions</h2>
+          <h2 className={styles.sectionTitle}>BuildNinja vs TeamCity - common questions</h2>
         </motion.div>
 
         <div className={styles.faqCol}>

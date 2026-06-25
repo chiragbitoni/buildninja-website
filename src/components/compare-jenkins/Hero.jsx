@@ -45,6 +45,7 @@ export default function Hero() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.45 }}
       >
+        <span className={s.metaBadge}>Updated June 2026</span>
         <span className={s.metaBadge}>Feature-by-feature comparison</span>
         <span className={s.metaBadge}>Real setup benchmarks</span>
         <span className={s.metaBadge}>Migration guide included</span>

@@ -17,7 +17,7 @@ export default function ChoiceCards() {
           </span>
           <h2 className={styles.sectionTitle}>Which tool is right for your team?</h2>
           <p className={styles.sectionSub}>
-            Be honest about your team&apos;s situation. Both tools can run CI/CD pipelines — the question is which fits your constraints.
+            Be honest about your team&apos;s situation. Both tools can run CI/CD pipelines - the question is which fits your constraints.
           </p>
         </motion.div>
         <motion.div
@@ -32,7 +32,7 @@ export default function ChoiceCards() {
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Want self-hosted CI/CD with zero licensing cost, ever</div>
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Need unlimited agents without costly add-ons</div>
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Want your first build running in minutes, not days</div>
-            <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Need MSBuild, VSTest, Docker, Kubernetes — all without plugins</div>
+            <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Need MSBuild, VSTest, Docker, Kubernetes - all without plugins</div>
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Current CI/CD cost is growing and needs to stop</div>
           </div>
           <div className={`${styles.choiceCard} ${styles.choiceMaybe}`}>

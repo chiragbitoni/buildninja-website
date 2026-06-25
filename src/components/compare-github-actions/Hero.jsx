@@ -44,6 +44,16 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
+          className={s.heroMeta}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+        >
+          Updated June 2026
+        </motion.div>
+
+        <motion.div
           className={`${s.heroBadges} ${s.fadeUp}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
