@@ -55,7 +55,7 @@
 .painTitle {
   font-size: 15px;
   font-weight: 700;
-  color: #F5BCBC;
+  color: var(--color-error);
   margin-bottom: 7px;
 }
 
