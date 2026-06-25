@@ -39,15 +39,7 @@ export default function CTABanner() {
             Try Dojo sandbox
           </a>
         </motion.div>
-        <motion.p
-          className={styles.ctaNote}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          Self-hosted in 5 minutes · Unlimited builds · No agent fees · No seat pricing
-        </motion.p>
+
       </div>
     </section>
   );
