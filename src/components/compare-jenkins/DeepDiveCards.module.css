@@ -52,12 +52,19 @@
   margin-bottom: 1rem;
 }
 
-.iconPrimary {
-  color: var(--color-primary);
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
 }
 
-.iconDefault {
-  color: var(--color-text-muted);
+.iconAccent {
+  color: var(--color-primary);
 }
 
 .diveCard h3 {

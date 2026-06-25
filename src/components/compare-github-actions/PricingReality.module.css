@@ -69,18 +69,16 @@
   gap: 8px;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.logoBn {
+  height: 26px;
+  width: auto;
+  filter: var(--logo-filter);
 }
 
-.dotBn {
-  background: var(--color-primary);
-}
-
-.dotGh {
-  background: var(--color-text);
+.logoGh {
+  height: 22px;
+  width: auto;
+  filter: var(--logo-filter);
 }
 
 .costRow {

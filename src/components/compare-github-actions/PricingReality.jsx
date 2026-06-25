@@ -18,7 +18,7 @@ export default function PricingReality() {
           {/* BuildNinja */}
           <div className={`${s.prCard} ${s.prCardBn}`}>
             <div className={s.prCardLogo}>
-              <span className={`${s.dot} ${s.dotBn}`}></span> BuildNinja
+              <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.logoBn} />
             </div>
             <div className={s.costRow}>
               <span className={s.costLabel}>Per build fee</span>
@@ -49,7 +49,7 @@ export default function PricingReality() {
           {/* GitHub Actions */}
           <div className={`${s.prCard} ${s.prCardGh}`}>
             <div className={s.prCardLogo}>
-              <span className={`${s.dot} ${s.dotGh}`}></span> GitHub Actions
+              <img src="/resources/github-actions-logo.svg" alt="GitHub Actions" className={s.logoGh} />
             </div>
             <div className={s.costRow}>
               <span className={s.costLabel}>Free Linux minutes/mo (private)</span>
