@@ -144,12 +144,17 @@ export default function ComparisonTable() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h3 className={styles.costTitle}>Real monthly cost - 25 developers, 10 build agents</h3>
-          <div className={styles.tableWrap}>
+            <div className={styles.tableWrap}>
             <table className={styles.table}>
               <thead>
                 <tr>
                   <th>Cost item</th>
-                  <th className={styles.thBn}>BuildNinja</th>
+                  <th className={styles.thBn}>
+                    <span className={styles.thHeaderInner}>
+                      <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={styles.logoBn} />
+                      <span className={styles.recBadge}>★ RECOMMENDED</span>
+                    </span>
+                  </th>
                   <th>TeamCity Cloud</th>
                   <th>TeamCity Enterprise</th>
                 </tr>
@@ -181,8 +186,13 @@ export default function ComparisonTable() {
               <thead>
                 <tr>
                   <th style={{ width: "38%" }}>Feature</th>
-                  <th style={{ width: "31%" }} className={styles.thBn}>BuildNinja</th>
-                  <th style={{ width: "31%" }}>TeamCity</th>
+                  <th style={{ width: "31%" }} className={styles.thBn}>
+                    <span className={styles.thHeaderInner}>
+                      <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={styles.logoBn} />
+                      <span className={styles.recBadge}>★ RECOMMENDED</span>
+                    </span>
+                  </th>
+                  <th style={{ width: "31%" }}><img src="/resources/teamcity-logo.svg" alt="TeamCity" className={styles.logoTc} /></th>
                 </tr>
               </thead>
               <tbody>

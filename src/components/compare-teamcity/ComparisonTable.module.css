@@ -197,19 +197,48 @@
 
 .table thead th {
   padding: 20px 20px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   text-align: left;
   color: var(--color-text);
   white-space: nowrap;
-  border-bottom: 2px solid var(--color-primary-border);
+  border-bottom: 2px solid var(--color-primary-border, var(--color-primary));
 }
 
 .table thead th:first-child {
   color: var(--color-text-secondary);
   font-weight: 600;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.03em;
+}
+
+.thHeaderInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoBn {
+  height: 26px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.logoTc {
+  height: 20px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.recBadge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
 }
 
 .thBn {
