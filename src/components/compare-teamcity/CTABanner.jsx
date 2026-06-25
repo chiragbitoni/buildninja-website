@@ -21,7 +21,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Stop paying per agent. Start owning your <em>CI/CD.</em>
+          Ready to move off <em>TeamCity?</em>
         </motion.h2>
         <motion.p
           className={styles.ctaSub}
@@ -30,7 +30,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Deploy in 5 minutes. Run unlimited builds on unlimited agents. Pay nothing.
+          BuildNinja Growth Edition is free forever — unlimited users, unlimited agents, unlimited builds. Deploy in under 5 minutes with one Docker command.
         </motion.p>
         <motion.div
           className={styles.ctaBtns}
@@ -40,21 +40,24 @@ export default function CTABanner() {
           transition={{ duration: 0.5, delay: 0.35 }}
         >
           <Link href="/install" className={styles.btnPrimary}>
-            Deploy BuildNinja free
+            Get your free BuildNinja key <ArrowRight size={16} />
           </Link>
           <Link href="/dojo" className={styles.btnSecondary}>
-            Try Dojo sandbox <ArrowRight size={16} />
+            Try the live Dojo sandbox <ArrowRight size={16} />
           </Link>
         </motion.div>
-        <motion.p
+        <motion.div
           className={styles.ctaNote}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Self-hosted in 5 minutes · Unlimited builds · No seat pricing · Cancel anytime
-        </motion.p>
+          <span className={styles.ctaBadge}>No credit card</span>
+          <span className={styles.ctaBadge}>No seat limits</span>
+          <span className={styles.ctaBadge}>No expiry</span>
+          <span className={styles.ctaBadge}>Self-hosted on your own infrastructure</span>
+        </motion.div>
       </motion.div>
     </section>
   );
