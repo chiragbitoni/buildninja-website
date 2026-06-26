@@ -38,7 +38,7 @@ export default function TempHero() {
         >
           <div className={styles.badge}>
             <span className={styles.badgeDot} />
-            v1.1.0 live — AI features coming in v1.2.0
+            v1.1.0 live - AI features coming in v1.2.0
           </div>
         </motion.div>
 
@@ -58,7 +58,7 @@ export default function TempHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes — and run as many builds as your team needs, forever free.
+          BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, forever free.
         </motion.p>
 
         <motion.div
@@ -71,7 +71,7 @@ export default function TempHero() {
             Deploy free in 5 minutes
           </a>
           <a href="/dojo" className={styles.btnSecondary}>
-            Try live sandbox — no install
+            Try live sandbox - no install
           </a>
         </motion.div>
 
