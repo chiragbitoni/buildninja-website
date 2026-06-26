@@ -100,7 +100,7 @@
   --font-size-xl: 20px;
 
   /* Hero Section Top Margins (To align perfectly below persistent Navbar) */
-  --hero-pt-desktop: 120px;
+  --hero-pt-desktop: 80px;
   --hero-pt-tablet: 80px;
   --hero-pt-mobile: 70px;
 
@@ -222,9 +222,9 @@
     background: var(--color-primary-subtle);
     border: 1px solid var(--color-primary-border);
     color: var(--color-primary);
-    font-family: var(--font-accent);
+    font-family: var(--font-body);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     margin-bottom: 24px;
@@ -252,7 +252,7 @@
     background: var(--color-demo-accent-bg);
     border: 1px solid var(--color-demo-accent-border);
     color: var(--color-demo-accent);
-    font-family: var(--font-accent);
+    font-family: var(--font-body);
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
