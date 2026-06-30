@@ -10,11 +10,13 @@ import WorksWith from "@/components/Home/WorksWith";
 import PricingTeaser from "@/components/Home/PricingTeaser";
 import AIRoadmap from "@/components/Home/AIRoadmap";
 import FAQSection from "@/components/Home/FAQSection";
+import WhatIsNinja from "@/components/Home/WhatIsNinja";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <WhatIsNinja />
       <WorksWith />
       {/* <FeaturesGrid /> */}
       <HowItWorks />

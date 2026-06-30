@@ -50,7 +50,7 @@ export const thirdSectionText = {
   title: "The Simple Self-Hosted Plan",
   card1Title: "Pull and Run",
   card1Step: "STEP 1",
-  card1command: "docker pull buildninja/buildninja ",
+  card1command: "docker pull grapehub/buildninja-server ",
   card1Requirements: "Requirements: MongoDB",
   card1Text: "Deploy in minutes, not weeks of complex setup.",
   card2Title: "Connect Your Code",

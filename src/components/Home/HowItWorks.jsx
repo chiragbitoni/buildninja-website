@@ -11,7 +11,7 @@ const steps = [
       </svg>
     ),
     title: "Pull and Run",
-    code: "docker pull buildninja/buildninja",
+    code: "docker pull grapehub/buildninja-server",
     desc: "Deploy in minutes, not weeks. Just a single command to spin up your private build farm.",
   },
   {
