@@ -14,6 +14,7 @@ import WhatIsNinja from "@/components/Home/WhatIsNinja";
 import WhySelfHosted from "@/components/Home/WhySelfHosted";
 import WhoUsesNinja from "@/components/Home/WhoUsesNinja";
 import CoreCapabilities from "@/components/Home/CoreCapabilities";
+import HowNinjaCompares from "@/components/Home/HowNinjaCompares";
 
 export default function HomePage() {
   return (
@@ -23,6 +24,7 @@ export default function HomePage() {
       <WhySelfHosted />
       <WhoUsesNinja />
       <CoreCapabilities />
+      <HowNinjaCompares />
       <WorksWith />
       {/* <FeaturesGrid /> */}
       <HowItWorks />
