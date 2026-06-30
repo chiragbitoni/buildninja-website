@@ -226,8 +226,6 @@
   align-self: flex-start;
   position: sticky;
   top: calc(50vh - 110px);
-  max-height: 90vh;
-  overflow-y: auto;
 }
 
 .stickyCard {

@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
 import { Copy, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
 const Typewriter = ({ texts }) => {
@@ -185,15 +186,21 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Docker quick-start command */}
-      <div className={styles.dockerStrip}>
-        <span className={styles.dockerLabel}>Quick start</span>
-        <code className={styles.dockerCode}>{DOCKER_CMD}</code>
-        <button className={styles.dockerCopyBtn} onClick={handleDockerCopy} aria-label="Copy to clipboard">
-          {dockerCopied ? <Check size={14} /> : <Copy size={14} />}
-          {dockerCopied ? "Copied" : "Copy"}
-        </button>
-      </div>
+        {/* Docker quick-start command */}
+        <motion.div
+          className={styles.dockerStrip}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <span className={styles.dockerLabel}>Quick start</span>
+          <code className={styles.dockerCode}>{DOCKER_CMD}</code>
+          <button className={styles.dockerCopyBtn} onClick={handleDockerCopy} aria-label="Copy to clipboard">
+            {dockerCopied ? <Check size={14} /> : <Copy size={14} />}
+            {dockerCopied ? "Copied" : "Copy"}
+          </button>
+        </motion.div>
 
     </section>
   );
