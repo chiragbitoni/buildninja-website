@@ -12,6 +12,8 @@ import AIRoadmap from "@/components/Home/AIRoadmap";
 import FAQSection from "@/components/Home/FAQSection";
 import WhatIsNinja from "@/components/Home/WhatIsNinja";
 import WhySelfHosted from "@/components/Home/WhySelfHosted";
+import WhoUsesNinja from "@/components/Home/WhoUsesNinja";
+import CoreCapabilities from "@/components/Home/CoreCapabilities";
 
 export default function HomePage() {
   return (
@@ -19,6 +21,8 @@ export default function HomePage() {
       <HeroSection />
       <WhatIsNinja />
       <WhySelfHosted />
+      <WhoUsesNinja />
+      <CoreCapabilities />
       <WorksWith />
       {/* <FeaturesGrid /> */}
       <HowItWorks />
