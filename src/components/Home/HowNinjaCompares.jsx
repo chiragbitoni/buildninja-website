@@ -4,7 +4,7 @@ import { Check, X } from "lucide-react";
 import styles from "./HowNinjaCompares.module.css";
 
 const rows = [
-  { feature: "Monthly cost (200 builds/day)", bn: { tag: "free", text: "$0 - always" }, cc: { tag: "cost", text: "~$450\u2013600/mo" }, ga: { tag: "cost", text: "~$300\u2013450/mo" }, jen: { tag: "warn", text: "Server cost only" } },
+  { feature: "Monthly cost (200 builds/day)", bn: { icon: true, text: "Server infra only" }, cc: { tag: "cost", text: "~$800\u20131,200/mo" }, ga: { tag: "cost", text: "~$300\u2013450/mo" }, jen: { icon: true, text: "Server infra only" } },
   { feature: "Build pricing model", bn: { icon: true, text: "No credits - unlimited" }, cc: { icon: false, text: "Per credit consumed" }, ga: { icon: false, text: "Per compute minute" }, jen: { icon: true, text: "Free (self-hosted)" } },
   { feature: "Per-seat fees", bn: { icon: true, text: "None" }, cc: { icon: false, text: "Scales with team" }, ga: { icon: false, text: "Scales with team" }, jen: { icon: true, text: "None" } },
   { feature: "Self-hosted setup", bn: { icon: true, text: "1 Docker command" }, cc: { icon: false, text: "K8s + enterprise plan" }, ga: { icon: false, text: "Runner required" }, jen: { text: "Complex - war file + plugins", neutral: true } },
@@ -84,7 +84,7 @@ export default function HowNinjaCompares() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          * Cost estimates based on publicly listed pricing for a 50-person team running 200 builds/day at 6 minutes average duration. CircleCI medium resource class at 10 credits/min on Performance plan. GitHub Actions Linux runners at $0.008/min. BuildNinja: $0 platform cost - server cost at your discretion.
+          * Cost estimates based on publicly listed pricing for a 50-person team running 200 builds/day at 6 minutes average duration. CircleCI Performance plan at $15/user/mo + credit overages. GitHub Actions Team plan at $4/user/mo + compute overage. BuildNinja and Jenkins are self-hosted — server infrastructure cost only.
         </motion.p>
       </div>
     </section>

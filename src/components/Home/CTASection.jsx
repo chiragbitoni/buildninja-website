@@ -55,8 +55,8 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Stop Fighting Your CI/CD.
-            <span className={styles.titleGradient}>Automate Your Intelligence.</span>
+            Stop paying per build.
+            <span className={styles.titleGradient}>Start owning your CI/CD.</span>
           </motion.h2>
           
           <motion.p 
@@ -66,7 +66,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Deploy elite build pipelines that think, optimize, and scale. Join the high-velocity teams moving to BuildNinja.
+            Deploy in 5 minutes. Run unlimited builds. Pay nothing.
           </motion.p>
 
           <motion.div 
