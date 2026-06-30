@@ -1,13 +1,10 @@
 "use client";
-import { openVideo } from "@/redux/slice/videoPopupSlice";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import styles from "./CTASection.module.css";
 
 export default function CTASection() {
-  const dispatch = useDispatch();
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -82,22 +79,7 @@ export default function CTASection() {
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
               </svg>
             </Link>
-            <button 
-              className={styles.btnSecondary}
-              onClick={() => {
-                dispatch(openVideo({ 
-                  videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, 
-                  title: "BuildNinja", 
-                  ctaText: "Self Hosted CI/CD That Just Works",
-                  link: "/docs/overview"
-                }));
-              }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-              See the 3-Minute Demo
-            </button>
+
           </motion.div>
 
           {/* Guarantee Grid */}

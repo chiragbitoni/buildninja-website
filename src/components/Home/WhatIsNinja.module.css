@@ -3,6 +3,7 @@
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
+  border-top: 1px solid var(--color-border);
 }
 
 .ambientGlow {
@@ -40,7 +41,7 @@
 
 /* ── Header ── */
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 80px;
   position: relative;
 }
@@ -49,11 +50,10 @@
   content: '';
   position: absolute;
   bottom: -32px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 80px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  background: linear-gradient(90deg, var(--color-primary), transparent);
   border-radius: 2px;
 }
 
@@ -69,81 +69,197 @@
   line-height: 1.15;
   letter-spacing: -0.04em;
   color: var(--color-text);
-  margin: 0 auto;
-  max-width: 700px;
+  margin: 0;
 }
 
-/* ── Grid ── */
-.grid {
+/* ── Top Row layout (split text and video mockup) ── */
+.topRow {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 60px;
-  align-items: start;
-  position: relative;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 48px;
 }
 
-/* Accent line on text column */
+.extendedContent {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 80px;
+  max-width: 100%;
+}
+
 .contentCol {
-  position: relative;
-  padding-left: 24px;
-}
-
-.contentCol::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-alt), transparent);
-  border-radius: 2px;
-  opacity: 0.4;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .prose {
   color: var(--color-text-secondary);
-  line-height: 1.85;
-  margin-bottom: 22px;
+  line-height: 1.8;
   font-size: 16px;
+  margin: 0;
+  text-align: justify;
 }
 
-.prose:last-child {
-  margin-bottom: 0;
+.prose strong {
+  color: var(--color-text);
+  font-weight: 600;
 }
 
-/* ── Cards ── */
-.aside {
+/* ── Browser Mockup Video Player ── */
+.videoCol {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-top: 0;
+  gap: 16px;
+}
+
+.browserMockup {
+  border: 1px solid var(--color-border-medium);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.browserMockup:hover {
+  border-color: var(--color-primary-border);
+}
+
+.videoAspect {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.videoAspect iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  width: max-content;
+  margin: 0 auto;
+}
+
+.videoLabel svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ── Bottom Grid (Cards) ── */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .card {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  position: relative;
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--color-border-medium);
-  border-radius: 20px;
-  padding: 20px 24px;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  border-radius: 24px;
+  padding: 32px 28px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-6px) scale(1.02);
   border-color: var(--color-primary-border);
   background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Card top glow on hover */
-.card::after {
-  content: '';
+/* Card layout wrapper */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cardIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--color-bg-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--card-accent, var(--color-primary));
+  border: 1px solid var(--color-border-subtle);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex-shrink: 0;
+}
+
+.card:hover .cardIconWrap {
+  transform: scale(1.1);
+  background: var(--card-accent, var(--color-primary));
+  color: var(--color-bg);
+  border-color: transparent;
+  box-shadow: 0 8px 16px -4px var(--card-accent, var(--color-primary));
+}
+
+.cardLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--card-accent, var(--color-text-secondary));
+  font-family: var(--font-accent);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.cardValue {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.cardSub {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Radial Glow */
+.cardGlow {
   position: absolute;
   top: 0;
   right: 0;
@@ -151,96 +267,79 @@
   height: 120px;
   background: radial-gradient(circle at 100% 0%, var(--card-accent, var(--color-primary)) 0%, transparent 70%);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: all 0.6s ease;
   pointer-events: none;
 }
 
-.card:hover::after {
+.card:hover .cardGlow {
   opacity: 0.2;
+  width: 200px;
+  height: 200px;
 }
 
-.cardIconWrap {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: var(--color-bg-panel);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: var(--card-accent, var(--color-primary));
-  border: 1px solid var(--color-border-subtle);
-  flex-shrink: 0;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* Noise overlay */
+.cardNoise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
-.card:hover .cardIconWrap {
-  transform: scale(1.1);
-  background: var(--card-accent, var(--color-primary));
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 8px 20px -4px var(--card-accent, var(--color-primary-glow));
-}
-
-.cardBody {
-  flex: 1;
-  min-width: 0;
-}
-
-.cardLabel {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--card-accent, var(--color-text-muted));
-  margin-bottom: 6px;
-  font-family: var(--font-accent);
-}
-
-.cardValue {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.4;
-  margin-bottom: 4px;
-}
-
-.cardSub {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  line-height: 1.5;
+/* ── Responsive breakpoints ── */
+@media (max-width: 1200px) {
+  .topRow {
+    gap: 40px;
+  }
+  
+  .bottomGrid {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 1024px) {
-  .grid {
+  .topRow {
+    grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .bottomGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 60px 0;
-  }
-
-  .header::after {
-    width: 60px;
-    bottom: -24px;
+    padding: 80px 0;
   }
 
   .header {
     margin-bottom: 56px;
   }
 
-  .grid {
+  .header::after {
+    width: 60px;
+    bottom: -24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .bottomGrid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 16px;
   }
 
-  .contentCol {
-    padding-left: 16px;
+  .card {
+    padding: 24px;
+    border-radius: 20px;
   }
 
-  .aside {
-    margin-top: 0;
+  .videoLabel {
+    font-size: 12px;
   }
 }
