@@ -79,7 +79,7 @@
 .lead {
   font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
-  max-width: 750px;
+  max-width: 850px;
   margin: 0 auto;
   line-height: 1.65;
 }
