@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import styles from "./FAQSection.module.css";
 import { homeFaqs } from "../../../public/static/homePageText";
 
@@ -8,7 +9,11 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (i) => {
-    setOpenIndex(openIndex === i ? null : i);
+    const isOpening = openIndex !== i;
+    setOpenIndex(isOpening ? i : null);
+    if (isOpening) {
+      posthog.capture("faq_question_opened", { question: homeFaqs[i].q });
+    }
   };
 
   return (

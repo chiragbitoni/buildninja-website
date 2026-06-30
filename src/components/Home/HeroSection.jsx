@@ -9,6 +9,7 @@ import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
 import { Copy, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 
 const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
 const Typewriter = ({ texts }) => {
@@ -58,6 +59,7 @@ export default function HeroSection() {
   const dispatch = useDispatch();
 
   const handleDockerCopy = async () => {
+    posthog.capture("docker_command_copied");
     try {
       await navigator.clipboard.writeText(DOCKER_CMD);
       setDockerCopied(true);
@@ -116,7 +118,7 @@ export default function HeroSection() {
           BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, forever free.
         </p>
         <div className={styles.ctas}>
-          <a href="/install" className={styles.ctaPrimary} onClick={() => { router.push("/install") }} data-cursor-grow>
+          <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -124,7 +126,7 @@ export default function HeroSection() {
             </svg>
             Deploy free in 5 minutes
           </a>
-          <a href="/dojo" className={styles.ctaSecondary} onClick={() => { router.push("/dojo") }} data-cursor-grow>
+          <a href="/dojo" className={styles.ctaSecondary} onClick={() => { posthog.capture("hero_sandbox_clicked"); router.push("/dojo") }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>

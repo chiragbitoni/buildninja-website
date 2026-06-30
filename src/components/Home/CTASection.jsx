@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import posthog from "posthog-js";
 import styles from "./CTASection.module.css";
 
 export default function CTASection() {
@@ -73,7 +74,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Link href="/install" className={styles.btnPrimary}>
+            <Link href="/install" className={styles.btnPrimary} onClick={() => posthog.capture("cta_get_started_clicked")}>
               Get Started
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
