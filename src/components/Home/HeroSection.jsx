@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
+import { Copy, Check } from "lucide-react";
 
 const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
 const Typewriter = ({ texts }) => {
@@ -46,11 +47,31 @@ const Typewriter = ({ texts }) => {
   );
 };
 
+const DOCKER_CMD = "docker pull grapehub/buildninja-server";
+
 export default function HeroSection() {
+  const [dockerCopied, setDockerCopied] = useState(false);
   const orb1 = useRef(null);
   const orb2 = useRef(null);
   const router = useRouter();
   const dispatch = useDispatch();
+
+  const handleDockerCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(DOCKER_CMD);
+      setDockerCopied(true);
+      setTimeout(() => setDockerCopied(false), 2000);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = DOCKER_CMD;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      setDockerCopied(true);
+      setTimeout(() => setDockerCopied(false), 2000);
+    }
+  };
   useEffect(() => {
     let t = 0;
     const tick = () => {
@@ -94,7 +115,7 @@ export default function HeroSection() {
           BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, forever free.
         </p>
         <div className={styles.ctas}>
-          <a className={styles.ctaPrimary} onClick={() => { router.push("/install") }} data-cursor-grow>
+          <a href="/install" className={styles.ctaPrimary} onClick={() => { router.push("/install") }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -102,7 +123,7 @@ export default function HeroSection() {
             </svg>
             Deploy free in 5 minutes
           </a>
-          <a className={styles.ctaSecondary} onClick={() => { router.push("/dojo") }} data-cursor-grow>
+          <a href="/dojo" className={styles.ctaSecondary} onClick={() => { router.push("/dojo") }} data-cursor-grow>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
@@ -162,6 +183,16 @@ export default function HeroSection() {
             <BuildNinjaDemo />
           </div>
         </div>
+      </div>
+
+      {/* Docker quick-start command */}
+      <div className={styles.dockerStrip}>
+        <span className={styles.dockerLabel}>Quick start</span>
+        <code className={styles.dockerCode}>{DOCKER_CMD}</code>
+        <button className={styles.dockerCopyBtn} onClick={handleDockerCopy} aria-label="Copy to clipboard">
+          {dockerCopied ? <Check size={14} /> : <Copy size={14} />}
+          {dockerCopied ? "Copied" : "Copy"}
+        </button>
       </div>
     </section>
   );
