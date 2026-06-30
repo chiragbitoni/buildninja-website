@@ -11,12 +11,14 @@ import PricingTeaser from "@/components/Home/PricingTeaser";
 import AIRoadmap from "@/components/Home/AIRoadmap";
 import FAQSection from "@/components/Home/FAQSection";
 import WhatIsNinja from "@/components/Home/WhatIsNinja";
+import WhySelfHosted from "@/components/Home/WhySelfHosted";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <WhatIsNinja />
+      <WhySelfHosted />
       <WorksWith />
       {/* <FeaturesGrid /> */}
       <HowItWorks />
