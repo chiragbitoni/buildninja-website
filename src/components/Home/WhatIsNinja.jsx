@@ -30,14 +30,16 @@ const cards = [
   { label: "Operating systems", value: "Linux, Windows, macOS, Docker, Kubernetes", sub: "Build agents run on any platform your team uses", icon: faMicrochip },
 ];
 
+const ease = [0.25, 0.1, 0.25, 1];
+
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.06 } },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 };
 
 export default function WhatIsNinja() {
@@ -49,10 +51,10 @@ export default function WhatIsNinja() {
       <div className={styles.container}>
         <motion.div
           className={styles.header}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease }}
         >
           <span className={styles.eyebrow}>What is BuildNinja?</span>
           <h2 className={styles.title}>
@@ -60,29 +62,23 @@ export default function WhatIsNinja() {
           </h2>
         </motion.div>
 
-        <div className={styles.topRow}>
-          <motion.div
-            className={styles.contentCol}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+        <motion.div
+          className={styles.topRow}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, ease, delay: 0.1 }}
+        >
+          <div className={styles.contentCol}>
             <p className={styles.prose}>
               BuildNinja is a continuous integration and continuous deployment (CI/CD) platform that engineering teams install on their own servers. Unlike cloud-based CI/CD tools such as CircleCI or GitHub Actions - which charge per build credit, per seat, or per compute minute - BuildNinja has no usage fees. You run it on infrastructure you already control, and it costs nothing beyond the server itself.
             </p>
             <p className={styles.prose} style={{ marginBottom: 0 }}>
               The platform is built by GrapeCity, a software company with over 25 years of experience in developer tooling. BuildNinja was designed to solve a specific problem: most self-hosted CI/CD tools either require deep DevOps expertise to configure (Jenkins), or lock you into expensive enterprise contracts (CircleCI Server). BuildNinja deploys with a single Docker command, runs on any Linux, Windows, or macOS server, and works in isolated environments with no internet requirement.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className={styles.videoCol}
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+          <div className={styles.videoCol}>
             <div className={styles.browserMockup}>
               <div className={styles.videoAspect}>
                 <iframe
@@ -98,15 +94,15 @@ export default function WhatIsNinja() {
               <Play size={12} />
               See BuildNinja in action (3 min overview)
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         <motion.div
           className={styles.extendedContent}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          transition={{ duration: 0.5, ease, delay: 0.2 }}
         >
           <p className={styles.prose}>
             For teams in regulated industries - healthcare, finance, defence, government - BuildNinja&apos;s self-hosted architecture means source code and build artefacts never leave your infrastructure. There is no third-party cloud processing your builds. This makes BuildNinja one of the few CI/CD solutions that satisfies data sovereignty, air-gap, and on-premise compliance requirements without a six-figure enterprise contract.
@@ -121,24 +117,17 @@ export default function WhatIsNinja() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
           {cards.map((card, i) => (
-            <motion.div key={i} className={styles.card} variants={itemVariants}>
-              <div className={styles.cardGlow} style={{ "--card-accent": cardAccents[i % cardAccents.length] }} />
-              <div className={styles.cardNoise} />
-              <div className={styles.cardHeader}>
-                <div className={styles.cardIconWrap} style={{ "--card-accent": cardAccents[i % cardAccents.length] }}>
-                  <FontAwesomeIcon icon={card.icon} className={styles.cardIcon} />
+            <motion.div key={i} className={styles.stat} variants={itemVariants}>
+              <div className={styles.statRow}>
+                <div className={styles.statIcon} style={{ "--stat-accent": cardAccents[i] }}>
+                  <FontAwesomeIcon icon={card.icon} />
                 </div>
-                <div className={styles.cardLabel} style={{ "--card-accent": cardAccents[i % cardAccents.length] }}>
-                  {card.label}
-                </div>
+                <span className={styles.statValue} style={{ "--stat-accent": cardAccents[i] }}>{card.value}</span>
               </div>
-              <div className={styles.cardBody}>
-                <div className={styles.cardValue}>{card.value}</div>
-                <div className={styles.cardSub}>{card.sub}</div>
-              </div>
+              <p className={styles.statLabel}>{card.sub}</p>
             </motion.div>
           ))}
         </motion.div>

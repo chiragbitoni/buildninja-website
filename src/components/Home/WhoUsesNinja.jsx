@@ -63,11 +63,13 @@ export default function WhoUsesNinja() {
         >
           {personas.map((p, i) => (
             <motion.div key={i} className={styles.card} variants={cardVariants}>
-              <div className={styles.cardIconWrap} style={{ "--card-accent": cardAccents[i] }}>
-                <FontAwesomeIcon icon={p.icon} />
-              </div>
               <span className={styles.tag} style={{ "--card-accent": cardAccents[i] }}>{p.tag}</span>
-              <h3 className={styles.cardTitle}>{p.title}</h3>
+              <div className={styles.cardHeaderRow}>
+                <div className={styles.cardIconWrap} style={{ "--card-accent": cardAccents[i] }}>
+                  <FontAwesomeIcon icon={p.icon} />
+                </div>
+                <h3 className={styles.cardTitle}>{p.title}</h3>
+              </div>
               <p className={styles.cardText}>{p.text}</p>
               <div className={styles.cardGlow} style={{ "--card-accent": cardAccents[i] }} />
               <div className={styles.cardNoise} />

@@ -69,13 +69,13 @@ export default function CoreCapabilities() {
         >
           {features.map((f, i) => (
             <motion.div key={i} className={styles.card} variants={itemVariants}>
-              <div className={styles.cardIconWrap} style={{ "--card-accent": cardAccents[i] }}>
-                <FontAwesomeIcon icon={f.icon} />
+              <div className={styles.cardHeaderRow}>
+                <div className={styles.cardIconWrap} style={{ "--card-accent": cardAccents[i] }}>
+                  <FontAwesomeIcon icon={f.icon} />
+                </div>
+                <h3 className={styles.cardTitle}>{f.title}</h3>
               </div>
-              <h3 className={styles.cardTitle}>{f.title}</h3>
               <p className={styles.cardText}>{f.text}</p>
-              <div className={styles.cardGlow} style={{ "--card-accent": cardAccents[i] }} />
-              <div className={styles.cardNoise} />
             </motion.div>
           ))}
         </motion.div>
