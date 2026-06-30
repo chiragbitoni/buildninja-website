@@ -548,3 +548,58 @@
     justify-content: center;
   }
 }
+
+/* ── Stats ── */
+.stats {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 40px auto 0;
+  width: 100%;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+  color: var(--color-text);
+}
+
+.statAccent {
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.statDivider {
+  width: 1px;
+  height: 36px;
+  background: var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .stats {
+    gap: 24px;
+  }
+}

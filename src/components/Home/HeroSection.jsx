@@ -194,6 +194,34 @@ export default function HeroSection() {
           {dockerCopied ? "Copied" : "Copy"}
         </button>
       </div>
+
+      {/* Stats */}
+      <div className={styles.stats}>
+        <div className={styles.statItem}>
+          <div className={`${styles.statValue} ${styles.statAccent}`}>$0</div>
+          <div className={styles.statLabel}>Platform cost, forever</div>
+        </div>
+        <div className={styles.statDivider} />
+        <div className={styles.statItem}>
+          <div className={styles.statValue}>Unlimited</div>
+          <div className={styles.statLabel}>Builds per day</div>
+        </div>
+        <div className={styles.statDivider} />
+        <div className={styles.statItem}>
+          <div className={styles.statValue}>Unlimited</div>
+          <div className={styles.statLabel}>Users & projects</div>
+        </div>
+        <div className={styles.statDivider} />
+        <div className={styles.statItem}>
+          <div className={styles.statValue}>&lt; 5 min</div>
+          <div className={styles.statLabel}>Setup time</div>
+        </div>
+        <div className={styles.statDivider} />
+        <div className={styles.statItem}>
+          <div className={styles.statValue}>25+</div>
+          <div className={styles.statLabel}>Years delivery expertise</div>
+        </div>
+      </div>
     </section>
   );
 }
