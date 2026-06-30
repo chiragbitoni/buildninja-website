@@ -309,6 +309,7 @@
 .dashBorderBox {
   position: relative;
   border-radius: var(--radius-xl);
+  aspect-ratio: 1160 / 600;
 }
 
 /* ── Interactive Hint ── */

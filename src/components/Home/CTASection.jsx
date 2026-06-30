@@ -63,7 +63,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Deploy in 5 minutes. Run unlimited builds. Pay nothing.
+            Deploy in 5 minutes. Run unlimited builds. Pay nothing. Join the high-velocity teams moving to BuildNinja.
           </motion.p>
 
           <motion.div 

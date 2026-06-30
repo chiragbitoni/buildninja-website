@@ -107,7 +107,7 @@
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.01);
+  transform: translateY(0px) scale(1.01);
   border-color: var(--color-primary-border);
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
@@ -131,7 +131,7 @@
 }
 
 .card:hover .cardIconWrap {
-  transform: scale(1.1) rotate(-4deg);
+  transform: scale(1.1);
   background: var(--card-accent, var(--color-primary));
   color: #fff;
   border-color: transparent;

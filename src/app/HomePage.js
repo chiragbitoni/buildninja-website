@@ -1,15 +1,12 @@
 "use client";
 
 import HeroSection from "@/components/Home/HeroSection";
-import TrustBanner from "@/components/Home/TrustBanner";
 import CTASection from "@/components/Home/CTASection";
-import FeaturesGrid from "@/components/Home/FeaturesGrid";
-import HowItWorks from "@/components/Home/HowItWorks";
-import SocialProof from "@/components/Home/SocialProof";
-import WorksWith from "@/components/Home/WorksWith";
-import PricingTeaser from "@/components/Home/PricingTeaser";
 import AIRoadmap from "@/components/Home/AIRoadmap";
 import FAQSection from "@/components/Home/FAQSection";
+import WorksWith from "@/components/Home/WorksWith";
+// import SocialProof from "@/components/Home/SocialProof";
+// import HowItWorks from "@/components/Home/HowItWorks";
 import WhatIsNinja from "@/components/Home/WhatIsNinja";
 import WhySelfHosted from "@/components/Home/WhySelfHosted";
 import WhoUsesNinja from "@/components/Home/WhoUsesNinja";
@@ -21,14 +18,15 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WhatIsNinja />
-      <WhySelfHosted />
+      {/* <HowItWorks /> */}
+      {/* <SocialProof /> */}
       <WhoUsesNinja />
+      <WhySelfHosted />
       <CoreCapabilities />
-      <HowNinjaCompares />
       <WorksWith />
+      <HowNinjaCompares />
       {/* <FeaturesGrid /> */}
-      <HowItWorks />
-      <SocialProof />
+
       {/* <PricingTeaser /> */}
       <AIRoadmap />
       <FAQSection />
