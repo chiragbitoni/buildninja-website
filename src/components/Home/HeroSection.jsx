@@ -7,8 +7,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
-import { Copy, Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { Play } from "lucide-react";
 import posthog from "posthog-js";
 
 const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
@@ -49,32 +48,12 @@ const Typewriter = ({ texts }) => {
   );
 };
 
-const DOCKER_CMD = "docker pull grapehub/buildninja-server";
-
 export default function HeroSection() {
-  const [dockerCopied, setDockerCopied] = useState(false);
   const orb1 = useRef(null);
   const orb2 = useRef(null);
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const handleDockerCopy = async () => {
-    posthog.capture("docker_command_copied");
-    try {
-      await navigator.clipboard.writeText(DOCKER_CMD);
-      setDockerCopied(true);
-      setTimeout(() => setDockerCopied(false), 2000);
-    } catch {
-      const ta = document.createElement("textarea");
-      ta.value = DOCKER_CMD;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      document.body.removeChild(ta);
-      setDockerCopied(true);
-      setTimeout(() => setDockerCopied(false), 2000);
-    }
-  };
   useEffect(() => {
     let t = 0;
     const tick = () => {
@@ -101,38 +80,56 @@ export default function HeroSection() {
       {/* Bottom fade */}
       <div className={styles.bottomFade} />
 
-      {/* Hero copy - each child has its own animation class */}
-      <div className={styles.copy}>
-        <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
-          <span className={styles.badgeDot} />
-          {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+      {/* Hero content: text left, video right */}
+      <div className={styles.heroContent}>
+        <div className={styles.copy}>
+          <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
+            <span className={styles.badgeDot} />
+            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+          </div>
+
+          <h1 className={styles.heading}>
+            Free Self-Hosted CI/CD. <span className={styles.headingGradient}>
+              Unlimited builds. No credits.
+            </span>
+          </h1>
+          <p className={styles.subtext}>
+            BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, forever free.
+          </p>
+          <div className={styles.ctas}>
+            <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Deploy free in 5 minutes
+            </a>
+            <a href="/dojo" className={styles.ctaSecondary} onClick={() => { posthog.capture("hero_sandbox_clicked"); router.push("/dojo") }} data-cursor-grow>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Try live sandbox - no install
+            </a>
+          </div>
         </div>
 
-        <h1 className={styles.heading}>
-          Free Self-Hosted CI/CD.<br />
-          <span className={styles.headingGradient}>
-            Unlimited builds. No credits.
-          </span>
-        </h1>
-        <p className={styles.subtext}>
-          BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, forever free.
-        </p>
-        <div className={styles.ctas}>
-          <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Deploy free in 5 minutes
-          </a>
-          <a href="/dojo" className={styles.ctaSecondary} onClick={() => { posthog.capture("hero_sandbox_clicked"); router.push("/dojo") }} data-cursor-grow>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            Try live sandbox - no install
-          </a>
-
+        <div className={styles.heroVideo}>
+          <div className={styles.browserMockup}>
+            <div className={styles.videoAspect}>
+              <iframe
+                src="https://www.youtube.com/embed/jpKKjmirbkA?autoplay=1&mute=1&rel=0&modestbranding=1"
+                title="BuildNinja - Self Hosted CI/CD"
+                frameBorder="0"
+                allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+          <div className={styles.videoLabel}>
+            <Play size={12} />
+            See BuildNinja in action (3 min overview)
+          </div>
         </div>
       </div>
 
@@ -187,22 +184,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-
-        {/* Docker quick-start command */}
-        <motion.div
-          className={styles.dockerStrip}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          <span className={styles.dockerLabel}>Quick start</span>
-          <code className={styles.dockerCode}>{DOCKER_CMD}</code>
-          <button className={styles.dockerCopyBtn} onClick={handleDockerCopy} aria-label="Copy to clipboard">
-            {dockerCopied ? <Check size={14} /> : <Copy size={14} />}
-            {dockerCopied ? "Copied" : "Copy"}
-          </button>
-        </motion.div>
 
     </section>
   );

@@ -70,30 +70,36 @@
   pointer-events: none;
 }
 
-/* ── Copy Block ── */
-.copy {
+/* ── Hero Content (text + video) ── */
+.heroContent {
+  display: flex;
+  align-items: center;
+  gap: 64px;
   position: relative;
   z-index: 2;
-  text-align: center;
+  width: 100%;
   max-width: var(--container-width);
   padding: 0 var(--container-padding);
   margin-bottom: 52px;
+}
+
+/* ── Copy Block ── */
+.copy {
+  flex: 0 0 50%;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 @media (max-width: 768px) {
   .copy {
-    margin-bottom: 48px;
-    padding: 0 20px;
+    padding: 0;
   }
 }
 
 @media (max-width: 480px) {
   .copy {
-    margin-bottom: 56px;
-    padding: 0 16px;
+    padding: 0;
   }
 }
 
@@ -163,10 +169,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  display: inline-block;
-  padding-bottom: 0.15em;
-  margin-bottom: -0.15em;
-  vertical-align: top;
+  display: inline;
 }
 
 .typewriter {
@@ -191,8 +194,7 @@
   font-size: clamp(16px, 1.8vw, 20px);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto 40px;
+  margin: 0 0 36px;
   opacity: 0;
   animation: var(--anim-fadeSlideDown, fadeSlideDown) 0.65s 0.44s ease forwards;
 }
@@ -200,7 +202,7 @@
 .ctas {
   display: flex;
   gap: 12px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   opacity: 0;
   animation: var(--anim-fadeSlideDown, fadeSlideDown) 0.65s 0.58s ease forwards;
@@ -281,6 +283,68 @@
 .ctaTertiary:hover {
   background: var(--color-primary-subtle);
   border-color: var(--color-primary);
+}
+
+/* ── Hero Video ── */
+.heroVideo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  animation: var(--anim-fadeSlideDown, fadeSlideDown) 0.65s 0.36s ease forwards;
+}
+
+.browserMockup {
+  border: 1px solid var(--color-border-medium);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.browserMockup:hover {
+  border-color: var(--color-primary-border);
+}
+
+.videoAspect {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.videoAspect iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  width: max-content;
+  margin: 0 auto;
+}
+
+.videoLabel svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
 }
 
 /* ── Dashboard Preview ── */
@@ -547,6 +611,51 @@
   .dockerCopyBtn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* ── Responsive: hero content ── */
+@media (max-width: 1024px) {
+  .heroContent {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .copy {
+    flex: none;
+    max-width: 700px;
+  }
+
+  .heroVideo {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .videoLabel {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .copy {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+
+  .browserMockup {
+    border-radius: 14px;
   }
 }
 
