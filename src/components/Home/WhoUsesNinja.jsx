@@ -9,13 +9,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./WhoUsesNinja.module.css";
 
-const cardAccents = [
-  "var(--color-primary)",
-  "var(--color-info)",
-  "var(--color-warning)",
-  "var(--color-success)",
-];
-
 const personas = [
   { tag: "Startups", title: "Move fast without a mounting SaaS bill", text: "Startups run high build volumes as they iterate quickly. CircleCI and GitHub Actions credits add up fast. BuildNinja gives early-stage teams the same CI/CD quality as enterprise tooling - at $0 platform cost. Spend the engineering budget on product, not build pipelines.", icon: faRocket },
   { tag: "Regulated industries", title: "Healthcare, finance, and defence teams", text: "When your compliance framework prohibits sending source code to external cloud providers, your CI/CD choices narrow quickly. BuildNinja runs entirely within your perimeter. Pair it with your existing access controls and secrets management infrastructure.", icon: faShieldHalved },
@@ -63,15 +56,15 @@ export default function WhoUsesNinja() {
         >
           {personas.map((p, i) => (
             <motion.div key={i} className={styles.card} variants={cardVariants}>
-              <span className={styles.tag} style={{ "--card-accent": cardAccents[i] }}>{p.tag}</span>
+              <span className={styles.tag}>{p.tag}</span>
               <div className={styles.cardHeaderRow}>
-                <div className={styles.cardIconWrap} style={{ "--card-accent": cardAccents[i] }}>
+                <div className={styles.cardIconWrap}>
                   <FontAwesomeIcon icon={p.icon} />
                 </div>
                 <h3 className={styles.cardTitle}>{p.title}</h3>
               </div>
               <p className={styles.cardText}>{p.text}</p>
-              <div className={styles.cardGlow} style={{ "--card-accent": cardAccents[i] }} />
+              <div className={styles.cardGlow} />
               <div className={styles.cardNoise} />
             </motion.div>
           ))}

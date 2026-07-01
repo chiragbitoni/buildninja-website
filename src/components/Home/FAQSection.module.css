@@ -32,7 +32,7 @@
 }
 
 .container {
-  max-width: 800px;
+  max-width: var(--container-width);
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -71,10 +71,10 @@
   margin: 0;
 }
 
-.faqList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
 .faqItem {
@@ -89,13 +89,6 @@
 }
 
 .faqItem:hover {
-  border-color: var(--color-border-strong);
-  background: rgba(255, 255, 255, 0.04);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.15);
-}
-
-.faqItem.open {
   border-color: var(--color-primary-border);
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2);
@@ -106,26 +99,52 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
+  padding: 20px 24px;
   background: transparent;
   border: none;
-  font-family: var(--font-display);
-  cursor: pointer;
+  cursor: default;
   text-align: left;
-  gap: 16px;
+  gap: 12px;
+  pointer-events: none;
 }
 
 .question h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-text);
   margin: 0;
-  line-height: 1.45;
+  line-height: 1.4;
   transition: color 0.3s ease;
 }
 
-.faqItem.open .question h3 {
+.faqItem:hover .question h3 {
   color: var(--color-primary);
+}
+
+.answerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  overflow: hidden;
+}
+
+.faqItem:hover .answerWrap {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.answer {
+  padding: 0 24px 20px;
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  font-size: 0.95rem;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 18px;
 }
 
 .icon {
@@ -138,28 +157,18 @@
   height: 24px;
 }
 
-.iconOpen {
+.faqItem:hover .icon {
   transform: rotate(45deg);
   color: var(--color-primary);
 }
 
-.answerWrap {
-  overflow: hidden;
-}
-
-.answer {
-  padding: 0 24px 24px;
-  margin: 0;
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-  font-size: 0.95rem;
-  border-top: 1px solid var(--color-border-subtle);
-  padding-top: 20px;
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .section {
     padding: 60px 16px;
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr;
   }
 
   .question {
@@ -171,8 +180,6 @@
   }
 
   .answer {
-    padding: 0 18px 18px;
-    padding-top: 16px;
     font-size: 0.9rem;
   }
 }

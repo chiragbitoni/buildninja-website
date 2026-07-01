@@ -11,15 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./CoreCapabilities.module.css";
 
-const cardAccents = [
-  "var(--color-primary)",
-  "var(--color-info)",
-  "var(--color-success)",
-  "var(--color-warning)",
-  "var(--color-primary-alt)",
-  "var(--color-info-alt)",
-];
-
 const features = [
   { title: "Build automation and pipeline scheduling", text: "BuildNinja supports full pipeline automation with cron-based scheduling, multi-stage pipeline definitions, and intelligent dependency resolution between build steps. Configure triggers per branch, tag, or pull request event. Run parallel stages across multiple build agents to reduce end-to-end build time.", icon: faGears },
   { title: "Native Git and version control integration", text: "Connect BuildNinja to GitHub, GitLab, Bitbucket, or any self-hosted Git server with full OAuth 2.0 and OIDC authentication. BuildNinja's intelligent Git caching reduces repository clone times dramatically on repeated builds by persisting the Git object store between pipeline runs.", icon: faCodeBranch },
@@ -70,7 +61,7 @@ export default function CoreCapabilities() {
           {features.map((f, i) => (
             <motion.div key={i} className={styles.card} variants={itemVariants}>
               <div className={styles.cardHeaderRow}>
-                <div className={styles.cardIconWrap} style={{ "--card-accent": cardAccents[i] }}>
+                <div className={styles.cardIconWrap}>
                   <FontAwesomeIcon icon={f.icon} />
                 </div>
                 <h3 className={styles.cardTitle}>{f.title}</h3>
