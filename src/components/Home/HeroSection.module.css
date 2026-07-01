@@ -85,7 +85,7 @@
 
 /* ── Copy Block ── */
 .copy {
-  flex: 0 0 50%;
+  flex: 0 0 45%;
   text-align: left;
   display: flex;
   flex-direction: column;
