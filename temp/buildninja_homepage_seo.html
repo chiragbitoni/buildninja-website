@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuildNinja - Free Self-Hosted CI/CD | Unlimited Builds, No Credits</title>
+<meta name="description" content="Self-hosted CI/CD that's free forever. Unlimited builds, unlimited users, deploy in 5 minutes with Docker. The best Jenkins, CircleCI, and GitHub Actions alternative for teams who own their infrastructure.">
+<meta name="keywords" content="self-hosted CI/CD, free CI/CD, Jenkins alternative, CircleCI alternative, GitHub Actions alternative, on-premise CI/CD, DevOps pipeline">
+<link rel="canonical" href="https://buildninja.grapehub.io/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="BuildNinja - Free Self-Hosted CI/CD | Unlimited Builds">
+<meta property="og:description" content="Self-hosted CI/CD that's free forever. Unlimited builds, unlimited users, deploy in 5 minutes with Docker.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buildninja.grapehub.io/">
+<meta property="og:image" content="https://buildninja.grapehub.io/resources/BuildNinja.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@buildninja_io">
+<meta name="twitter:title" content="BuildNinja - Free Self-Hosted CI/CD | Unlimited Builds">
+<meta name="twitter:description" content="Self-hosted CI/CD that's free forever. Unlimited builds, unlimited users, deploy in 5 minutes with Docker.">
+<meta name="twitter:image" content="https://buildninja.grapehub.io/resources/BuildNinja.png">
+
+<!-- Schema: SoftwareApplication + Organization + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "BuildNinja",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows, Linux, macOS, Docker",
+      "description": "BuildNinja is a free, self-hosted CI/CD platform that gives engineering teams unlimited builds, unlimited users, and full control over their build infrastructure. Deploy with a single Docker command in under 5 minutes.",
+      "url": "https://buildninja.grapehub.io/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Unlimited builds with no credit limits",
+        "Unlimited users and projects",
+        "Self-hosted on your own infrastructure",
+        "Docker and Kubernetes deployment",
+        "GitHub, GitLab, and Bitbucket integration",
+        "Role-based access control (RBAC)",
+        "AES-256 encryption for secrets",
+        "Real-time build logs and dashboards",
+        "AI-powered build prediction (coming soon)"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "BuildNinja",
+      "url": "https://buildninja.grapehub.io/",
+      "logo": "https://buildninja.grapehub.io/resources/logo_buildninja.svg",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "GrapeCity"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is BuildNinja really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. BuildNinja is free with no usage fees, no per-build credits, and no per-seat charges. You self-host it on your own server or cloud infrastructure. The only cost is the server you choose to run it on, which you already control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is BuildNinja different from CircleCI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CircleCI is a SaaS platform that charges per build credit and per seat. BuildNinja is self-hosted and free - you run it on your own infrastructure with no credit system, no seat limits, and no vendor dependency. CircleCI's self-hosted option requires Kubernetes and an enterprise contract; BuildNinja deploys with a single Docker command."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is BuildNinja different from Jenkins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jenkins is a powerful but complex open-source CI/CD tool that typically requires significant DevOps expertise to install, configure, and maintain. BuildNinja deploys in under 5 minutes with a single Docker command and includes a modern web UI, real-time dashboards, and built-in integrations out of the box - without the plugin ecosystem management that Jenkins requires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run BuildNinja on my own server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. BuildNinja is designed to run on any server you control - a cloud VM, bare metal, or your own data center. It supports Docker, Kubernetes, Windows, Linux, and macOS. Your code and build data never leave your infrastructure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does BuildNinja work with GitHub, GitLab, and Bitbucket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. BuildNinja has native integrations with GitHub, GitLab, Bitbucket, and any Git host. It supports OAuth 2.0 and OIDC for single sign-on, and connects securely via SSH tunnels with zero-trust architecture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is BuildNinja suitable for HIPAA or financial compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuildNinja's self-hosted architecture means your build data and source code never touch a third-party cloud. This makes it well-suited for teams in regulated industries - healthcare, finance, defence - where data sovereignty and on-premise requirements are non-negotiable. Combined with AES-256 encryption for secrets and role-based access control, BuildNinja provides the security infrastructure compliance-sensitive teams need."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+  --off-white: #F6F5F2;
+  --gray-100: #EFEFED;
+  --gray-300: #C8C7C2;
+  --gray-500: #888780;
+  --gray-700: #444441;
+  --green: #1D9E75;
+  --green-light: #E1F5EE;
+  --green-dark: #0F6E56;
+  --red: #E24B4A;
+  --red-light: #FCEBEB;
+  --amber-light: #FAEEDA;
+  --amber: #854F0B;
+  --blue-light: #E6F1FB;
+  --blue: #185FA5;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --font: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── Layout ── */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.section-sm { padding: 56px 0; }
+
+/* ── Typography ── */
+h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; }
+h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 500; line-height: 1.25; letter-spacing: -0.015em; }
+h3 { font-size: 20px; font-weight: 500; line-height: 1.35; }
+h4 { font-size: 15px; font-weight: 500; }
+p { color: var(--gray-700); }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 12px;
+}
+
+.lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--gray-700);
+  max-width: 640px;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-100);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.nav-logo {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--black);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--mono);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  font-size: 14px;
+  color: var(--gray-700);
+}
+.nav-links a:hover { color: var(--black); }
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+}
+.btn-primary {
+  background: var(--black);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--gray-700); }
+.btn-ghost {
+  background: transparent;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+}
+.btn-ghost:hover { border-color: var(--gray-700); color: var(--black); }
+.btn-green {
+  background: var(--green);
+  color: white;
+}
+.btn-green:hover { background: var(--green-dark); }
+.btn-lg { padding: 12px 24px; font-size: 15px; border-radius: 10px; }
+
+/* ── Hero ── */
+.hero {
+  padding: 96px 0 80px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.hero h1 { margin-bottom: 20px; max-width: 740px; }
+.hero h1 em { font-style: normal; color: var(--green); }
+.hero-desc {
+  font-size: 18px;
+  color: var(--gray-700);
+  max-width: 580px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+.hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
+.hero-install {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--off-white);
+  border: 1px solid var(--gray-100);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.install-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-500);
+  padding: 0 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.install-code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 6px;
+}
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.hero-stat-val {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-val.green { color: var(--green); }
+.hero-stat-label { font-size: 12px; color: var(--gray-500); }
+.hero-stat-divider { width: 1px; height: 32px; background: var(--gray-100); }
+
+/* ── What is section ── */
+.what-is { background: var(--off-white); }
+.what-is-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.what-is-prose h2 { margin-bottom: 20px; }
+.what-is-prose p { margin-bottom: 16px; }
+.what-is-prose p:last-child { margin-bottom: 0; }
+.what-is-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.aside-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.aside-card-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-500); margin-bottom: 6px; }
+.aside-card-val { font-size: 15px; font-weight: 500; color: var(--black); }
+.aside-card-sub { font-size: 13px; color: var(--gray-500); margin-top: 2px; }
+
+/* ── Comparison Table ── */
+.compare-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  margin-top: 40px;
+}
+table.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.compare thead th {
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 13px;
+  border-bottom: 1px solid var(--gray-100);
+  background: var(--off-white);
+  white-space: nowrap;
+}
+.compare thead th.col-bn {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+.compare tbody td {
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-700);
+  vertical-align: middle;
+}
+.compare tbody tr:last-child td { border-bottom: none; }
+.compare tbody td:first-child { font-weight: 500; color: var(--black); }
+.compare tbody td.col-bn { background: rgba(29,158,117,0.04); }
+.check { color: var(--green); font-size: 16px; font-weight: 500; }
+.cross { color: var(--red); font-size: 16px; }
+.neutral { color: var(--gray-500); font-size: 13px; }
+.tag-free {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.tag-cost {
+  display: inline-block;
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.tag-warn {
+  display: inline-block;
+  background: var(--amber-light);
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* ── Why self-hosted section ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.why-card {
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  background: var(--white);
+}
+.why-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+.why-card h3 { font-size: 16px; margin-bottom: 10px; }
+.why-card p { font-size: 14px; line-height: 1.65; }
+
+/* ── Features prose ── */
+.features-prose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 40px;
+}
+.feature-item { border-top: 2px solid var(--gray-100); padding-top: 24px; }
+.feature-item.accent { border-top-color: var(--green); }
+.feature-item h3 { margin-bottom: 10px; font-size: 17px; }
+.feature-item p { font-size: 14px; line-height: 1.7; }
+
+/* ── FAQ ── */
+.faq { background: var(--off-white); }
+.faq-list { max-width: 720px; margin: 40px auto 0; }
+.faq-item {
+  border-bottom: 1px solid var(--gray-100);
+  padding: 20px 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--gray-100); }
+.faq-q {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  list-style: none;
+}
+.faq-q::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gray-500);
+  flex-shrink: 0;
+  margin-top: -2px;
+  transition: transform 0.2s;
+}
+details[open] .faq-q::after { content: '−'; }
+.faq-a {
+  font-size: 15px;
+  color: var(--gray-700);
+  line-height: 1.7;
+  padding-top: 12px;
+  max-width: 620px;
+}
+
+/* ── Who it's for ── */
+.personas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.persona-card {
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  background: var(--white);
+}
+.persona-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.persona-card h3 { font-size: 16px; margin-bottom: 8px; }
+.persona-card p { font-size: 14px; line-height: 1.65; }
+
+/* ── CTA Banner ── */
+.cta-banner {
+  background: var(--black);
+  color: var(--white);
+  padding: 72px 0;
+  text-align: center;
+}
+.cta-banner h2 { color: var(--white); margin-bottom: 12px; }
+.cta-banner p { color: var(--gray-300); font-size: 17px; margin-bottom: 32px; }
+.cta-banner .btn-green { font-size: 15px; padding: 13px 28px; }
+.cta-note { font-size: 13px; color: var(--gray-500); margin-top: 16px; }
+
+/* ── Footer ── */
+footer {
+  background: var(--off-white);
+  border-top: 1px solid var(--gray-100);
+  padding: 48px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand p { font-size: 14px; color: var(--gray-500); margin-top: 10px; max-width: 220px; line-height: 1.6; }
+.footer-col h4 { font-size: 13px; margin-bottom: 14px; color: var(--black); }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col ul li a { font-size: 14px; color: var(--gray-500); transition: color 0.15s; }
+.footer-col ul li a:hover { color: var(--black); }
+.footer-bottom {
+  border-top: 1px solid var(--gray-100);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .what-is-grid, .features-prose-grid, .personas-grid, .why-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .hero { padding: 56px 0 48px; }
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero h1, .hero-desc, .hero-actions, .hero-stats {
+  animation: fadeUp 0.5s ease both;
+}
+.hero-desc { animation-delay: 0.08s; }
+.hero-actions { animation-delay: 0.16s; }
+.hero-stats { animation-delay: 0.24s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="BuildNinja home">
+      <span class="logo-mark" aria-hidden="true">BN</span>
+      BuildNinja
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/features">Features</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/dojo">Live Sandbox</a></li>
+      <li><a href="/docs/overview">Docs</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/install">Install</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="/install" class="btn btn-primary">Get started free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-badge" role="note">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      v1.1.0 live - AI features coming in v1.2.0
+    </div>
+
+    <h1>Free Self-Hosted CI/CD.<br><em>Unlimited builds.</em> No credits.</h1>
+
+    <p class="hero-desc">
+      BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, forever free.
+    </p>
+
+    <div class="hero-actions">
+      <a href="/install" class="btn btn-green btn-lg">Deploy free in 5 minutes</a>
+      <a href="/dojo" class="btn btn-ghost btn-lg">Try live sandbox - no install</a>
+    </div>
+
+    <div class="hero-install" aria-label="Quick install command">
+      <span class="install-label">Quick start</span>
+      <code class="install-code">docker pull buildninja/buildninja && docker run -p 8080:8080 buildninja/buildninja</code>
+    </div>
+
+    <div class="hero-stats" style="margin-top: 40px;">
+      <div>
+        <div class="hero-stat-val green">$0</div>
+        <div class="hero-stat-label">Platform cost, forever</div>
+      </div>
+      <div class="hero-stat-divider" aria-hidden="true"></div>
+      <div>
+        <div class="hero-stat-val">Unlimited</div>
+        <div class="hero-stat-label">Builds per day</div>
+      </div>
+      <div class="hero-stat-divider" aria-hidden="true"></div>
+      <div>
+        <div class="hero-stat-val">Unlimited</div>
+        <div class="hero-stat-label">Users & projects</div>
+      </div>
+      <div class="hero-stat-divider" aria-hidden="true"></div>
+      <div>
+        <div class="hero-stat-val">&lt; 5 min</div>
+        <div class="hero-stat-label">Setup time</div>
+      </div>
+      <div class="hero-stat-divider" aria-hidden="true"></div>
+      <div>
+        <div class="hero-stat-val">25+</div>
+        <div class="hero-stat-label">Years delivery expertise</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════
+     WHAT IS BUILDNINJA
+     (Primary indexable prose block)
+════════════════════════════════════ -->
+<section class="section what-is" aria-labelledby="what-is-heading">
+  <div class="container">
+    <div class="what-is-grid">
+      <div class="what-is-prose">
+        <span class="eyebrow">What is BuildNinja?</span>
+        <h2 id="what-is-heading">Self-hosted CI/CD built for teams who own their infrastructure</h2>
+
+        <p style="margin-top: 20px;">
+          BuildNinja is a continuous integration and continuous deployment (CI/CD) platform that engineering teams install on their own servers. Unlike cloud-based CI/CD tools such as CircleCI or GitHub Actions - which charge per build credit, per seat, or per compute minute - BuildNinja has no usage fees. You run it on infrastructure you already control, and it costs nothing beyond the server itself.
+        </p>
+        <p>
+          The platform is built by GrapeCity, a software company with over 25 years of experience in developer tooling. BuildNinja was designed to solve a specific problem: most self-hosted CI/CD tools either require deep DevOps expertise to configure (Jenkins), or lock you into expensive enterprise contracts (CircleCI Server). BuildNinja deploys with a single Docker command, runs on any Linux, Windows, or macOS server, and works in isolated environments with no internet requirement.
+        </p>
+        <p>
+          For teams in regulated industries - healthcare, finance, defence, government - BuildNinja's self-hosted architecture means source code and build artefacts never leave your infrastructure. There is no third-party cloud processing your builds. This makes BuildNinja one of the few CI/CD solutions that satisfies data sovereignty, air-gap, and on-premise compliance requirements without a six-figure enterprise contract.
+        </p>
+        <p>
+          BuildNinja integrates natively with GitHub, GitLab, and Bitbucket for version control, supports Docker and Kubernetes for deployment, and includes role-based access control, AES-256 secret encryption, and SSO via OAuth 2.0 and OIDC out of the box. An upcoming suite of AI features - including build failure prediction and intelligent configuration analysis - is in active development as part of the BuildNinja Intelligence roadmap.
+        </p>
+      </div>
+
+      <div class="what-is-aside" role="complementary" aria-label="Key facts">
+        <div class="aside-card">
+          <div class="aside-card-label">Platform cost</div>
+          <div class="aside-card-val">$0 - no credits, no seats, no tiers</div>
+          <div class="aside-card-sub">You pay only for the server you choose to run it on</div>
+        </div>
+        <div class="aside-card">
+          <div class="aside-card-label">Setup time</div>
+          <div class="aside-card-val">Under 5 minutes</div>
+          <div class="aside-card-sub">Single Docker command. No Kubernetes required.</div>
+        </div>
+        <div class="aside-card">
+          <div class="aside-card-label">Build limits</div>
+          <div class="aside-card-val">Unlimited builds, unlimited parallelism</div>
+          <div class="aside-card-sub">Run 10 or 10,000 builds a day - no throttling</div>
+        </div>
+        <div class="aside-card">
+          <div class="aside-card-label">Data location</div>
+          <div class="aside-card-val">Your servers, your data</div>
+          <div class="aside-card-sub">No third-party cloud processes your builds or source code</div>
+        </div>
+        <div class="aside-card">
+          <div class="aside-card-label">VCS integrations</div>
+          <div class="aside-card-val">GitHub, GitLab, Bitbucket + any Git host</div>
+          <div class="aside-card-sub">Native OAuth 2.0, OIDC, and SSH tunnel support</div>
+        </div>
+        <div class="aside-card">
+          <div class="aside-card-label">Operating systems</div>
+          <div class="aside-card-val">Linux, Windows, macOS, Docker, Kubernetes</div>
+          <div class="aside-card-sub">Build agents run on any platform your team uses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     COMPARISON TABLE
+════════════════════════════════════ -->
+<section class="section" aria-labelledby="compare-heading">
+  <div class="container">
+    <span class="eyebrow">How BuildNinja compares</span>
+    <h2 id="compare-heading">BuildNinja vs CircleCI, Jenkins, and GitHub Actions</h2>
+    <p class="lead" style="margin-top: 12px;">
+      Every major CI/CD tool charges more as your team or build volume grows. BuildNinja doesn't. Here's how the pricing models compare for a team running 200 builds per day.
+    </p>
+
+    <div class="compare-table-wrap" role="region" aria-label="CI/CD platform comparison table">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col" class="col-bn">BuildNinja</th>
+            <th scope="col">CircleCI</th>
+            <th scope="col">GitHub Actions</th>
+            <th scope="col">Jenkins</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly cost (200 builds/day)</td>
+            <td class="col-bn"><span class="tag-free">$0 - always</span></td>
+            <td><span class="tag-cost">~$450–600/mo</span></td>
+            <td><span class="tag-cost">~$300–450/mo</span></td>
+            <td><span class="tag-warn">Server cost only</span></td>
+          </tr>
+          <tr>
+            <td>Build pricing model</td>
+            <td class="col-bn"><span class="check">✓</span> No credits - unlimited</td>
+            <td><span class="cross">✗</span> Per credit consumed</td>
+            <td><span class="cross">✗</span> Per compute minute</td>
+            <td><span class="check">✓</span> Free (self-hosted)</td>
+          </tr>
+          <tr>
+            <td>Per-seat fees</td>
+            <td class="col-bn"><span class="check">✓</span> None</td>
+            <td><span class="cross">✗</span> Scales with team</td>
+            <td><span class="cross">✗</span> Scales with team</td>
+            <td><span class="check">✓</span> None</td>
+          </tr>
+          <tr>
+            <td>Self-hosted setup</td>
+            <td class="col-bn"><span class="check">✓</span> 1 Docker command</td>
+            <td><span class="cross">✗</span> K8s + enterprise plan</td>
+            <td><span class="cross">✗</span> Runner required</td>
+            <td><span class="neutral">Complex - war file + plugins</span></td>
+          </tr>
+          <tr>
+            <td>Setup time</td>
+            <td class="col-bn"><span class="check">✓</span> Under 5 minutes</td>
+            <td><span class="neutral">Minutes (SaaS sign-up)</span></td>
+            <td><span class="neutral">Minutes (SaaS sign-up)</span></td>
+            <td><span class="cross">✗</span> Hours to days</td>
+          </tr>
+          <tr>
+            <td>Data sovereignty / on-premise</td>
+            <td class="col-bn"><span class="check">✓</span> Full - your servers</td>
+            <td><span class="cross">✗</span> SaaS cloud only</td>
+            <td><span class="cross">✗</span> GitHub cloud</td>
+            <td><span class="check">✓</span> Full (self-managed)</td>
+          </tr>
+          <tr>
+            <td>Air-gapped / no internet</td>
+            <td class="col-bn"><span class="check">✓</span> Supported</td>
+            <td><span class="cross">✗</span> Not possible</td>
+            <td><span class="cross">✗</span> Not possible</td>
+            <td><span class="check">✓</span> Supported</td>
+          </tr>
+          <tr>
+            <td>Modern UI + dashboards</td>
+            <td class="col-bn"><span class="check">✓</span> Built-in, no plugins</td>
+            <td><span class="check">✓</span> Built-in</td>
+            <td><span class="check">✓</span> Built-in</td>
+            <td><span class="cross">✗</span> Plugin-dependent</td>
+          </tr>
+          <tr>
+            <td>AI build intelligence</td>
+            <td class="col-bn"><span class="tag-warn">Coming v1.2.0</span></td>
+            <td><span class="neutral">Limited</span></td>
+            <td><span class="neutral">Limited</span></td>
+            <td><span class="cross">✗</span> Not available</td>
+          </tr>
+          <tr>
+            <td>Interactive sandbox (no install)</td>
+            <td class="col-bn"><span class="check">✓</span> Live Dojo</td>
+            <td><span class="cross">✗</span> Not available</td>
+            <td><span class="cross">✗</span> Not available</td>
+            <td><span class="cross">✗</span> Not available</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size: 13px; color: var(--gray-500); margin-top: 14px;">
+      * Cost estimates based on publicly listed pricing for a 50-person team running 200 builds/day at 6 minutes average duration. CircleCI medium resource class at 10 credits/min on Performance plan. GitHub Actions Linux runners at $0.008/min. BuildNinja: $0 platform cost - server cost at your discretion.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     WHY SELF-HOSTED
+════════════════════════════════════ -->
+<section class="section" style="background: var(--off-white);" aria-labelledby="why-heading">
+  <div class="container">
+    <span class="eyebrow">Why self-hosted CI/CD?</span>
+    <h2 id="why-heading">Five reasons engineering teams choose self-hosted over SaaS CI/CD</h2>
+    <p class="lead" style="margin-top: 12px;">
+      Cloud-based CI/CD tools are convenient until they're not. Growing teams consistently run into the same four walls: cost, compliance, control, and credit limits. Self-hosted CI/CD eliminates all four.
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">💰</div>
+        <h3>Cost that doesn't scale with usage</h3>
+        <p>SaaS CI/CD tools charge per build minute or per credit. As your team ships faster, your CI/CD bill grows in lockstep. With a self-hosted platform like BuildNinja, the server cost is fixed. Run 100 builds or 10,000 - the price stays the same. For teams running more than 50 builds per day, self-hosted typically costs 80–90% less than a comparable SaaS plan.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">🔒</div>
+        <h3>Data sovereignty for regulated industries</h3>
+        <p>Healthcare, financial services, defence, and government teams often cannot send source code or build artefacts to third-party cloud infrastructure. HIPAA, SOC 2, FedRAMP, and similar frameworks require demonstrable control over where data is processed. Self-hosted CI/CD is not an option for these teams - it is a compliance requirement. BuildNinja's architecture keeps everything on infrastructure the organisation controls.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">🛠️</div>
+        <h3>No vendor lock-in or credit exhaustion</h3>
+        <p>Cloud CI/CD platforms can change pricing, discontinue features, or experience outages that halt your entire deployment pipeline. When CircleCI changed its credit model in 2023, thousands of teams scrambled to reconfigure pipelines mid-sprint. With BuildNinja running on infrastructure you control, your CI/CD is independent of any vendor's business decisions, pricing changes, or service interruptions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">🌐</div>
+        <h3>Air-gapped and offline environments</h3>
+        <p>Some engineering environments have no internet access by design - classified government systems, industrial control networks, highly secure financial infrastructure. SaaS CI/CD tools fundamentally cannot operate in these environments. BuildNinja is designed to run fully offline once deployed, making it one of the few CI/CD platforms suitable for true air-gapped operations.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">⚡</div>
+        <h3>Faster builds on hardware you spec</h3>
+        <p>Cloud CI/CD tools run builds on shared compute that you cannot directly optimise. If you need more CPU or memory, you pay more per build. With BuildNinja, you choose your build hardware. Teams with memory-intensive test suites or CPU-heavy compilation can provision exactly the hardware they need and see build times drop significantly compared to shared cloud runners.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">🔧</div>
+        <h3>Full control without DevOps overhead</h3>
+        <p>Jenkins offered self-hosted CI/CD but required extensive plugin management, manual upgrades, and deep Groovy scripting knowledge. BuildNinja offers the same infrastructure control with a fraction of the operational overhead. One Docker command replaces weeks of Jenkins configuration. A modern web UI replaces plugin-dependent dashboards. Your team gets self-hosted control without a dedicated Jenkins administrator.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     WHO IT'S FOR
+════════════════════════════════════ -->
+<section class="section" aria-labelledby="personas-heading">
+  <div class="container">
+    <span class="eyebrow">Who uses BuildNinja?</span>
+    <h2 id="personas-heading">Built for teams who care about control</h2>
+    <p class="lead" style="margin-top: 12px;">
+      BuildNinja is used across company sizes and industries - anywhere teams need fast, reliable CI/CD without handing their build infrastructure to a third-party cloud.
+    </p>
+
+    <div class="personas-grid">
+      <div class="persona-card">
+        <span class="persona-tag">Startups</span>
+        <h3>Move fast without a mounting SaaS bill</h3>
+        <p>Startups run high build volumes as they iterate quickly. CircleCI and GitHub Actions credits add up fast. BuildNinja gives early-stage teams the same CI/CD quality as enterprise tooling - at $0 platform cost. Spend the engineering budget on product, not build pipelines.</p>
+      </div>
+      <div class="persona-card">
+        <span class="persona-tag">Regulated industries</span>
+        <h3>Healthcare, finance, and defence teams</h3>
+        <p>When your compliance framework prohibits sending source code to external cloud providers, your CI/CD choices narrow quickly. BuildNinja runs entirely within your perimeter. Pair it with your existing access controls and secrets management infrastructure. HIPAA, FedRAMP, and SOC 2 teams use BuildNinja specifically because it never touches third-party cloud.</p>
+      </div>
+      <div class="persona-card">
+        <span class="persona-tag">Jenkins migrators</span>
+        <h3>Teams escaping Jenkins complexity</h3>
+        <p>Jenkins is powerful but operationally expensive - plugin conflicts, manual upgrades, Groovy expertise requirements, and an aging UI create ongoing maintenance burden. BuildNinja offers the same self-hosted, infrastructure-level control with a setup time measured in minutes, not days. No plugin ecosystem to manage. No Groovy scripts to debug.</p>
+      </div>
+      <div class="persona-card">
+        <span class="persona-tag">Growing engineering teams</span>
+        <h3>50–500 engineer orgs hitting seat limits</h3>
+        <p>Per-seat CI/CD pricing is a growth tax. As your team expands from 10 to 50 to 200 engineers, your CI/CD costs scale linearly regardless of whether your build volume warrants it. BuildNinja's unlimited-user model means adding developers costs nothing. Your CI/CD infrastructure scales with headcount at zero marginal cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FEATURES PROSE
+════════════════════════════════════ -->
+<section class="section" style="background: var(--off-white);" aria-labelledby="features-heading">
+  <div class="container">
+    <span class="eyebrow">Core capabilities</span>
+    <h2 id="features-heading">Everything a modern CI/CD platform needs - built in, not bolted on</h2>
+    <p class="lead" style="margin-top: 12px;">
+      BuildNinja ships with the features engineering teams actually need, without requiring a plugin ecosystem to reach production-grade functionality.
+    </p>
+
+    <div class="features-prose-grid">
+      <div class="feature-item accent">
+        <h3>Build automation and pipeline scheduling</h3>
+        <p>BuildNinja supports full pipeline automation with cron-based scheduling, multi-stage pipeline definitions, and intelligent dependency resolution between build steps. Configure triggers per branch, tag, or pull request event. Run parallel stages across multiple build agents to reduce end-to-end build time. Environment scoping lets you define separate pipeline behaviour for development, staging, and production without duplicating configuration.</p>
+      </div>
+      <div class="feature-item accent">
+        <h3>Native Git and version control integration</h3>
+        <p>Connect BuildNinja to GitHub, GitLab, Bitbucket, or any self-hosted Git server with full OAuth 2.0 and OIDC authentication. BuildNinja's intelligent Git caching reduces repository clone times dramatically on repeated builds by persisting the Git object store between pipeline runs. Webhook-driven builds trigger within seconds of a code push.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Multi-platform build agents</h3>
+        <p>BuildNinja's distributed agent architecture lets you run build agents on Windows, Linux, and macOS - simultaneously. Agents register with the server and advertise their capabilities. The pipeline scheduler automatically routes builds to the right agent based on platform requirements. This makes BuildNinja one of the few self-hosted CI/CD platforms with native cross-platform build support out of the box.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Enterprise security and RBAC</h3>
+        <p>Role-based access control (RBAC) operates at both the system level and individual project level. All secrets are encrypted with AES-256 before storage. Single sign-on works via GitHub, GitLab, Google, Microsoft, Bitbucket, and custom OIDC providers. There are no secrets stored in plain text, no build logs exposed to unauthenticated users, and no shared credentials between projects.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Real-time build dashboards</h3>
+        <p>BuildNinja's dashboard updates every 10 seconds without page refresh. Filter build logs by agent, pipeline step, or time range. View historical build performance trends across projects. The high-density dashboard design is optimised for engineering leads who need to monitor build health across multiple teams simultaneously.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Docker and Kubernetes deployment</h3>
+        <p>Deploy build artefacts directly to Docker or Kubernetes environments from within the pipeline. BuildNinja supports canary deployment strategies for zero-downtime releases. Environment-specific secrets are injected at deploy time. For teams running microservices on Kubernetes, BuildNinja's native Kubernetes support eliminates the need for separate deployment tooling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FAQ (Schema-backed)
+════════════════════════════════════ -->
+<section class="section faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <span class="eyebrow" style="display: block; text-align: center;">Frequently asked questions</span>
+    <h2 id="faq-heading" style="text-align: center;">Common questions about BuildNinja</h2>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-q">Is BuildNinja really free?</summary>
+        <p class="faq-a">Yes. BuildNinja is free with no usage fees, no per-build credits, and no per-seat charges. You self-host it on your own server or cloud infrastructure - a VPS, bare-metal server, or cloud VM you already manage. The platform itself has no cost. The only expense is the server you choose to run it on, which you control completely.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How is BuildNinja different from CircleCI?</summary>
+        <p class="faq-a">CircleCI is a SaaS platform that charges per build credit and per seat. As your team grows and builds more frequently, your CircleCI bill grows proportionally. BuildNinja is self-hosted and has no platform fees - you run it on infrastructure you control. CircleCI's self-hosted "server" option requires Kubernetes and an enterprise contract; BuildNinja deploys with a single Docker command and requires no Kubernetes expertise. For teams hitting CircleCI credit limits or growing past its free tier, BuildNinja is the most direct alternative.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How is BuildNinja different from Jenkins?</summary>
+        <p class="faq-a">Jenkins is a powerful but operationally complex open-source CI/CD tool. It requires significant DevOps expertise to install, configure, and maintain - including managing a plugin ecosystem, resolving conflicts, and writing Groovy pipeline scripts. BuildNinja offers the same self-hosted control and infrastructure independence as Jenkins but deploys in under 5 minutes with a single Docker command, includes a modern web UI without plugins, and requires no Groovy knowledge. It's designed to be the self-hosted CI/CD tool that teams actually want to run, not just tolerate.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can I run BuildNinja in an air-gapped or offline environment?</summary>
+        <p class="faq-a">Yes. BuildNinja is designed to operate fully offline once deployed. There is no phone-home requirement, no cloud dependency, and no external service calls required for normal operation. This makes BuildNinja suitable for air-gapped networks in classified, industrial, or highly secure financial environments where no internet connectivity is available or permitted.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does BuildNinja work with GitHub, GitLab, and Bitbucket?</summary>
+        <p class="faq-a">Yes. BuildNinja has native integrations with GitHub, GitLab, Bitbucket, and any self-hosted Git server. It supports OAuth 2.0 and OIDC for single sign-on authentication, and connects to version control systems via SSH tunnels with zero-trust architecture. Webhook-driven build triggers fire within seconds of a code push to any connected repository.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Is BuildNinja suitable for HIPAA or financial compliance requirements?</summary>
+        <p class="faq-a">BuildNinja's self-hosted architecture means your build data and source code never touch a third-party cloud. This makes it well-suited for teams in regulated industries - healthcare, finance, defence, government - where data sovereignty and on-premise processing requirements are mandated. Combined with AES-256 encryption for secrets, role-based access control, and SSO support, BuildNinja provides the security infrastructure that compliance-sensitive teams require. We recommend consulting your compliance officer to validate against your specific regulatory framework.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What are the minimum server requirements to run BuildNinja?</summary>
+        <p class="faq-a">BuildNinja runs on any modern Linux, Windows, or macOS server with Docker installed. For small teams running up to 50 builds per day, a 2 vCPU / 4 GB RAM server is sufficient. For teams running 200+ builds per day with parallel execution, an 8 vCPU / 16 GB RAM server is recommended. BuildNinja's agent architecture lets you distribute build load across multiple machines as your team grows, without any platform configuration changes.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════ -->
+<section class="cta-banner" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">Stop paying per build. Start owning your CI/CD.</h2>
+    <p>Deploy in 5 minutes. Run unlimited builds. Pay nothing.</p>
+    <a href="/install" class="btn btn-green btn-lg">Deploy BuildNinja free</a>
+    <p class="cta-note">No credit card. No account required. Just Docker.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="logo-mark" aria-hidden="true">BN</span>
+          BuildNinja
+        </div>
+        <p>Self-hosted CI/CD that's free forever. Deploy in 5 minutes, run unlimited builds, own your infrastructure.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/install">Install</a></li>
+          <li><a href="/dojo">Live Sandbox</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="/compare/buildninja-vs-circleci">vs CircleCI</a></li>
+          <li><a href="/compare/buildninja-vs-jenkins">vs Jenkins</a></li>
+          <li><a href="/compare/buildninja-vs-github-actions">vs GitHub Actions</a></li>
+          <li><a href="/compare/buildninja-vs-teamcity">vs TeamCity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Documentation</h4>
+        <ul>
+          <li><a href="/docs/overview">Overview</a></li>
+          <li><a href="/docs/category/getting-started">Getting started</a></li>
+          <li><a href="/docs/category/quick-setup-guide">Tutorials</a></li>
+          <li><a href="/docs/category/release-notes">Release notes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/support">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BuildNinja. A GrapeCity product.</span>
+      <span><a href="/privacy-policy" style="color: var(--gray-500);">Privacy</a> · <a href="/terms-of-service" style="color: var(--gray-500);">Terms</a> · <a href="/eula" style="color: var(--gray-500);">EULA</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

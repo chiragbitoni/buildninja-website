@@ -18,7 +18,10 @@ import {
   faArrowTrendUp,
   faMicrochip,
   faInfinity,
-  faServer
+  faServer,
+  faDollarSign,
+  faUsers,
+  faAward
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./SocialProof.module.css";
 
@@ -56,10 +59,11 @@ const whys = [
 ];
 
 const stats = [
-  { value: "Free", label: "Unlimited Builds", icon: faInfinity },
-  { value: "Included", label: "Email Support", icon: faHeadset },
-  { value: "Unlimited", label: "Users & Projects", icon: faArrowTrendUp },
-  { value: "Self-Hosted", label: "Full Control", icon: faServer }
+  { value: "$0", label: "Platform cost, forever", icon: faDollarSign },
+  { value: "Unlimited", label: "Builds per day", icon: faInfinity },
+  { value: "Unlimited", label: "Users & projects", icon: faUsers },
+  { value: "< 5 min", label: "Setup time", icon: faClock },
+  { value: "25+", label: "Years delivery expertise", icon: faAward }
 ];
 
 export default function SocialProof() {

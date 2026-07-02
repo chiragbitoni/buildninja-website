@@ -1,0 +1,339 @@
+.section {
+  padding: 80px 0;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--color-border);
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  opacity: 0.06;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at 30% 50%, black, transparent 70%);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.header {
+  text-align: left;
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  border-radius: 2px;
+}
+
+.eyebrow {
+  composes: badge-alt from global;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ── 2-Column Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Prose Column (Left) ── */
+.proseCol {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.proseCol p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: 16px;
+  margin: 0;
+   text-align: justify;
+}
+
+/* ── Aside Column (Right) ── */
+.asideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.asideCard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  transition: border-color 0.3s;
+}
+
+.asideCard:hover {
+  border-color: var(--color-primary-alt);
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 100% 0%, var(--color-primary) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.asideCard:hover .cardGlow {
+  opacity: 0.2;
+  width: 200px;
+  height: 200px;
+}
+
+.asideCardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--color-bg-shell);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-subtle);
+  flex-shrink: 0;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.asideCard:hover .asideCardIcon {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.asideCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.asideCardLabel {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+}
+
+.asideCardVal {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.asideCardSub {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Docker Strip ── */
+.dockerStrip {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 64px auto 0;
+  width: 100%;
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.dockerLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  padding: 0 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: var(--font-ui);
+  flex-shrink: 0;
+}
+
+.dockerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  padding: 0 4px 0 0;
+}
+
+.dockerCode {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  margin: 6px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.dockerCopyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  margin: 6px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.dockerCopyBtn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .dockerStrip {
+    flex-wrap: wrap;
+  }
+
+  .dockerLabel {
+    width: auto;
+    padding: 10px 0 0 16px;
+  }
+
+  .dockerIcon {
+    padding: 10px 8px 0 4px;
+  }
+
+  .dockerCode {
+    width: 100%;
+    flex: none;
+    margin: 6px 6px 0;
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+
+  .dockerCopyBtn {
+    width: 100%;
+    justify-content: center;
+    margin: 6px;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    margin-bottom: 0;
+  }
+
+  .header::after {
+    width: 60px;
+    bottom: -24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .grid {
+    gap: 36px;
+  }
+
+  .proseCol p {
+    font-size: 16px;
+  }
+
+  .asideCard {
+    padding: 14px 16px;
+  }
+
+  .asideCardVal {
+    font-size: 14px;
+  }
+}

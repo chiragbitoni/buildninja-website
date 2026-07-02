@@ -40,21 +40,21 @@ export async function generateMetadata({ params }) {
       authors: post.author ? [post.author] : ["BuildNinja Team"],
       images: post.coverImage
         ? [
-            {
-              url: post.coverImage,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
+          {
+            url: post.coverImage,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ]
         : [
-            {
-              url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
-              width: 1200,
-              height: 630,
-              alt: "BuildNinja Blog",
-            },
-          ],
+          {
+            url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+            width: 1200,
+            height: 630,
+            alt: "BuildNinja Blog",
+          },
+        ],
     },
     twitter: {
       card: "summary_large_image",
@@ -71,11 +71,11 @@ export async function generateMetadata({ params }) {
 function AuthorAvatar({ author, avatarUrl }) {
   const initials = author
     ? author
-        .split(" ")
-        .map((w) => w[0])
-        .slice(0, 2)
-        .join("")
-        .toUpperCase()
+      .split(" ")
+      .map((w) => w[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase()
     : "BN";
 
   if (avatarUrl) {
