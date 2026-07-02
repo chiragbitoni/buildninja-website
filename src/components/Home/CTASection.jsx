@@ -53,7 +53,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Stop paying per build.
+            Stop paying per build.<br/>
             <span className={styles.titleGradient}>Start owning your CI/CD.</span>
           </motion.h2>
           
