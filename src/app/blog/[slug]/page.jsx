@@ -153,6 +153,22 @@ export default async function BlogPostPage({ params }) {
     },
   };
 
+  // Build JSON-LD FAQPage schema if the post contains FAQ data
+  const faqSchema = post.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map(({ question, answer }) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <div className={styles.pageWrapper}>
       {/* JSON-LD Article Schema */}
@@ -160,6 +176,12 @@ export default async function BlogPostPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Back navigation */}
       <div className={styles.backBar}>
