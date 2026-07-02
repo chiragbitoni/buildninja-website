@@ -1,9 +1,16 @@
 .section {
-  padding: 80px 0;
-  background: var(--color-bg);
   position: relative;
-  overflow: hidden;
   border-top: 1px solid var(--color-border);
+}
+
+.stickyInner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: var(--color-bg);
 }
 
 .ambientGlow {
@@ -36,11 +43,15 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 /* ── Header ── */
 .header {
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
   margin-bottom: 56px;
   position: relative;
 }
@@ -54,6 +65,50 @@
   height: 2px;
   background: linear-gradient(90deg, var(--color-primary), transparent);
   border-radius: 2px;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.scrollBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border-medium);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  font-size: 16px;
+  padding: 0;
+}
+
+.scrollBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary-border);
+  color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 8px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.scrollBtn:active:not(:disabled) {
+  transform: translateY(0) scale(0.96);
+}
+
+.scrollBtn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
 }
 
 .eyebrow {
@@ -81,11 +136,7 @@
 
 /* ── Carousel ── */
 .carouselOuter {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  overflow: hidden;
   padding-bottom: 16px;
 }
 
@@ -102,7 +153,6 @@
   overflow: hidden;
   width: 380px;
   flex-shrink: 0;
-  scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -169,13 +219,43 @@
   margin: 0;
 }
 
+.spacer {
+  pointer-events: none;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .controls {
+    display: none;
+  }
+
   .section {
     padding: 60px 0;
   }
 
+  .stickyInner {
+    position: static;
+    height: auto;
+    display: block;
+    background: none;
+  }
+
+  .carouselOuter {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
   .card {
+    scroll-snap-align: start;
     width: 300px;
     padding: 24px 20px;
   }
@@ -186,5 +266,9 @@
 
   .cardText {
     font-size: 14px;
+  }
+
+  .spacer {
+    display: none;
   }
 }
