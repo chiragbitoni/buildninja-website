@@ -118,7 +118,7 @@ export default function HeroSection() {
           <div className={styles.browserMockup}>
             <div className={styles.videoAspect}>
               <iframe
-                src="https://www.youtube.com/embed/jpKKjmirbkA?autoplay=1&mute=1&rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/jpKKjmirbkA?autoplay=1&mute=1&loop=1&playlist=jpKKjmirbkA&rel=0&modestbranding=1"
                 title="BuildNinja - Self Hosted CI/CD"
                 frameBorder="0"
                 allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
