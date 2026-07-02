@@ -158,14 +158,14 @@
 .tagCost {
   display: inline-block;
   font-size: 13px;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: var(--color-text-secondary);
 }
 
 .tagWarn {
   display: inline-block;
   font-size: 13px;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: var(--color-text-secondary);
 }
 
@@ -192,7 +192,7 @@
 }
 
 .neutral {
-  color: var(--color-text-muted);
+  /* color: var(--color-text-muted); */
   font-size: 13px;
 }
 
