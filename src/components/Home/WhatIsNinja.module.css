@@ -222,13 +222,26 @@
   }
 
   .dockerLabel {
+    width: auto;
+    padding: 10px 0 0 16px;
+  }
+
+  .dockerIcon {
+    padding: 10px 8px 0 4px;
+  }
+
+  .dockerCode {
     width: 100%;
-    padding: 10px 16px 0;
+    flex: none;
+    margin: 6px 6px 0;
+    font-size: 12px;
+    padding: 10px 14px;
   }
 
   .dockerCopyBtn {
     width: 100%;
     justify-content: center;
+    margin: 6px;
   }
 }
 
