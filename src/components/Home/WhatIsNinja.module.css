@@ -42,14 +42,14 @@
 /* ── Header ── */
 .header {
   text-align: left;
-  margin-bottom: 80px;
+  margin-bottom: 64px;
   position: relative;
 }
 
 .header::after {
   content: '';
   position: absolute;
-  bottom: -32px;
+  bottom: -28px;
   left: 0;
   width: 80px;
   height: 2px;
@@ -72,72 +72,119 @@
   margin: 0;
 }
 
-.prose {
+/* ── 2-Column Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Prose Column (Left) ── */
+.proseCol {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  margin-bottom: 64px;
-  max-width: 100%;
 }
 
-.prose p {
+.proseCol p {
   color: var(--color-text-secondary);
   line-height: 1.8;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
 }
 
-/* ── Bottom Grid (Stat Summary) ── */
-.bottomGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px 40px;
-  margin-top: 64px;
-  padding-top: 48px;
-  border-top: 1px solid var(--color-border-subtle);
-}
-
-/* ── Stat Item ── */
-.stat {
+/* ── Aside Column (Right) ── */
+.asideCol {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
-.statRow {
+.asideCard {
+  position: relative;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  transition: border-color 0.3s;
 }
 
-.statIcon {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
+.asideCard:hover {
+  border-color: var(--color-primary-alt);
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 100% 0%, var(--color-primary) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.asideCard:hover .cardGlow {
+  opacity: 0.2;
+  width: 200px;
+  height: 200px;
+}
+
+.asideCardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--color-bg-shell);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-primary);
   border: 1px solid var(--color-border-subtle);
   flex-shrink: 0;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.statValue {
+.asideCard:hover .asideCardIcon {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.asideCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.asideCardLabel {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+}
+
+.asideCardVal {
   font-size: 18px;
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.3;
-  letter-spacing: -0.01em;
 }
 
-.statLabel {
-  font-size: 16px;
+.asideCardSub {
+  font-size: 15px;
   color: var(--color-text-muted);
   line-height: 1.5;
   margin: 0;
-  padding-left: 40px;
 }
 
 /* ── Docker Strip ── */
@@ -247,9 +294,9 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .bottomGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 32px;
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 }
 
@@ -259,7 +306,7 @@
   }
 
   .header {
-    margin-bottom: 56px;
+    margin-bottom: 0;
   }
 
   .header::after {
@@ -273,14 +320,19 @@
     padding: 60px 0;
   }
 
-  .bottomGrid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 48px;
-    padding-top: 36px;
+  .grid {
+    gap: 36px;
   }
 
-  .statLabel {
-    padding-left: 0;
+  .proseCol p {
+    font-size: 16px;
+  }
+
+  .asideCard {
+    padding: 14px 16px;
+  }
+
+  .asideCardVal {
+    font-size: 14px;
   }
 }

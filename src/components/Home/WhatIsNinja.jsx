@@ -28,11 +28,6 @@ const DOCKER_CMD = "docker pull grapehub/buildninja-server";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06 } },
-};
-
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
@@ -79,44 +74,49 @@ export default function WhatIsNinja() {
         </motion.div>
 
         <motion.div
-          className={styles.prose}
+          className={styles.grid}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, ease, delay: 0.1 }}
         >
-          <p>
-            BuildNinja is a continuous integration and continuous deployment (CI/CD) platform that engineering teams install on their own servers. Unlike cloud-based CI/CD tools such as CircleCI or GitHub Actions - which charge per build credit, per seat, or per compute minute - BuildNinja has no usage fees. You run it on infrastructure you already control, and it costs nothing beyond the server itself.
-          </p>
-          <p>
-            The platform is built by GrapeCity, a software company with over 25 years of experience in developer tooling. BuildNinja was designed to solve a specific problem: most self-hosted CI/CD tools either require deep DevOps expertise to configure (Jenkins), or lock you into expensive enterprise contracts (CircleCI Server). BuildNinja deploys with a single Docker command, runs on any Linux, Windows, or macOS server, and works in isolated environments with no internet requirement.
-          </p>
-          <p>
-            For teams in regulated industries - healthcare, finance, defence, government - BuildNinja&apos;s self-hosted architecture means source code and build artefacts never leave your infrastructure. There is no third-party cloud processing your builds. This makes BuildNinja one of the few CI/CD solutions that satisfies data sovereignty, air-gap, and on-premise compliance requirements without a six-figure enterprise contract.
-          </p>
-          <p style={{ marginBottom: 0 }}>
-            BuildNinja integrates natively with GitHub, GitLab, and Bitbucket for version control, supports Docker and Kubernetes for deployment, and includes role-based access control, AES-256 secret encryption, and SSO via OAuth 2.0 and OIDC out of the box. An upcoming suite of AI features - including build failure prediction and intelligent configuration analysis - is in active development as part of the BuildNinja Intelligence roadmap.
-          </p>
-        </motion.div>
+          <div className={styles.proseCol}>
+            <p>
+              BuildNinja is a continuous integration and continuous deployment (CI/CD) platform that engineering teams install on their own servers. Unlike cloud-based CI/CD tools such as CircleCI or GitHub Actions - which charge per build credit, per seat, or per compute minute - BuildNinja has no usage fees. You run it on infrastructure you already control, and it costs nothing beyond the server itself.
+            </p>
+            <p>
+              The platform is built by GrapeCity, a software company with over 25 years of experience in developer tooling. BuildNinja was designed to solve a specific problem: most self-hosted CI/CD tools either require deep DevOps expertise to configure (Jenkins), or lock you into expensive enterprise contracts (CircleCI Server). BuildNinja deploys with a single Docker command, runs on any Linux, Windows, or macOS server, and works in isolated environments with no internet requirement.
+            </p>
+            <p>
+              For teams in regulated industries - healthcare, finance, defence, government - BuildNinja&apos;s self-hosted architecture means source code and build artefacts never leave your infrastructure. There is no third-party cloud processing your builds. This makes BuildNinja one of the few CI/CD solutions that satisfies data sovereignty, air-gap, and on-premise compliance requirements without a six-figure enterprise contract.
+            </p>
+            <p style={{ marginBottom: 0 }}>
+              BuildNinja integrates natively with GitHub, GitLab, and Bitbucket for version control, supports Docker and Kubernetes for deployment, and includes role-based access control, AES-256 secret encryption, and SSO via OAuth 2.0 and OIDC out of the box. An upcoming suite of AI features - including build failure prediction and intelligent configuration analysis - is in active development as part of the BuildNinja Intelligence roadmap.
+            </p>
+          </div>
 
-        <motion.div
-          className={styles.bottomGrid}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-        >
-          {cards.map((card, i) => (
-            <motion.div key={i} className={styles.stat} variants={itemVariants}>
-              <div className={styles.statRow}>
-                <div className={styles.statIcon}>
+          <div className={styles.asideCol}>
+            {cards.map((card, i) => (
+              <motion.div
+                key={i}
+                className={styles.asideCard}
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+              >
+                <div className={styles.asideCardIcon}>
                   <FontAwesomeIcon icon={card.icon} />
                 </div>
-                <span className={styles.statValue}>{card.value}</span>
-              </div>
-              <p className={styles.statLabel}>{card.sub}</p>
-            </motion.div>
-          ))}
+                <div className={styles.asideCardBody}>
+                  <span className={styles.asideCardLabel}>{card.label}</span>
+                  <span className={styles.asideCardVal}>{card.value}</span>
+                  <p className={styles.asideCardSub}>{card.sub}</p>
+                </div>
+                <div className={styles.cardGlow} />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div

@@ -56,13 +56,13 @@ export default function WhoUsesNinja() {
         >
           {personas.map((p, i) => (
             <motion.div key={i} className={styles.card} variants={cardVariants}>
-              <span className={styles.tag}>{p.tag}</span>
               <div className={styles.cardHeaderRow}>
                 <div className={styles.cardIconWrap}>
                   <FontAwesomeIcon icon={p.icon} />
                 </div>
-                <h3 className={styles.cardTitle}>{p.title}</h3>
+                <span className={styles.tag}>{p.tag}</span>
               </div>
+              <h3 className={styles.cardTitle}>{p.title}</h3>
               <p className={styles.cardText}>{p.text}</p>
               <div className={styles.cardGlow} />
               <div className={styles.cardNoise} />
