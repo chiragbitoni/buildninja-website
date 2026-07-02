@@ -18,7 +18,6 @@ export const metadata = {
 
 export default async function PrivacyPolicyPage() {
   const content = await fetchGrapeHubPage("privacy-policy");
-  
   return (
     <LegalContent 
       title="Privacy Policy"

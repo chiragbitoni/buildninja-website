@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { fetchGrapeHubBlogPosts, fetchGrapeHubBlogPost } from "@/services/grapehub/fetchPage";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import styles from "./BlogPost.module.css";
 // ── Pre-render all known post slugs at build time ──────────────────────────
 export async function generateStaticParams() {
@@ -126,31 +127,33 @@ export default async function BlogPostPage({ params }) {
     console.error("Error retrieving author avatar from feed:", e);
   }
 
-  // Build JSON-LD Article schema
-  const articleSchema = {
+  // Build JSON-LD schema
+  const blogPostSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt || post.title,
-    image: post.coverImage || "https://buildninja.grapehub.io/resources/BuildNinja.png",
-    author: {
-      "@type": "Person",
-      name: post.author || "BuildNinja Team",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "BuildNinja",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+    "@graph": [
+      generateBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: post.title, url: `/blog/${slug}` },
+      ]),
+      {
+        "@type": "Article",
+        headline: post.title,
+        description: post.excerpt || post.title,
+        image: post.coverImage || "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        author: {
+          "@type": "Person",
+          name: post.author || "BuildNinja Team",
+        },
+        publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
+        datePublished: post.firstPublishedDate,
+        dateModified: post.lastPublishedDate || post.firstPublishedDate,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://buildninja.grapehub.io/blog/${slug}`,
+        },
       },
-    },
-    datePublished: post.firstPublishedDate,
-    dateModified: post.lastPublishedDate || post.firstPublishedDate,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://buildninja.grapehub.io/blog/${slug}`,
-    },
+    ],
   };
 
   // Build JSON-LD FAQPage schema if the post contains FAQ data
@@ -174,7 +177,7 @@ export default async function BlogPostPage({ params }) {
       {/* JSON-LD Article Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
       />
       {faqSchema && (
         <script

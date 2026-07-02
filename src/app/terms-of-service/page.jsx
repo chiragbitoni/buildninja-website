@@ -18,7 +18,6 @@ export const metadata = {
 
 export default async function TermsOfServicePage() {
   const content = await fetchGrapeHubPage("terms-of-service");
-  
   return (
     <LegalContent 
       title="Terms of Service"

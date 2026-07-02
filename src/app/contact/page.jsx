@@ -18,6 +18,5 @@ export const metadata = {
 
 export default async function ContactPage() {
   const grapehubContactHtml = await fetchGrapeHubPage("contact");
-  
   return <ContactPageClient grapehubContactHtml={grapehubContactHtml} />;
 }

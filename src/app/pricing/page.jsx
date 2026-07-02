@@ -26,16 +26,16 @@ export const metadata = {
 };
 
 export default function Pricing() {
-  // Generate Pricing Page FAQ Schema dynamically
-  const faqSchema = {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://buildninja.grapehub.io/pricing#faqpage",
     "mainEntity": pricingSeventhText.faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer.replace(/<[^>]*>/g, "") // strip HTML tags
+        "text": faq.answer.replace(/<[^>]*>/g, "")
       }
     }))
   };
@@ -44,7 +44,7 @@ export default function Pricing() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <PricingPage />
     </>

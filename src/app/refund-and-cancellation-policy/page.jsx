@@ -18,7 +18,6 @@ export const metadata = {
 
 export default async function RefundPolicyPage() {
   const content = await fetchGrapeHubPage("refund-and-cancellation-policy");
-  
   return (
     <LegalContent 
       title="Refund & Cancellation"
