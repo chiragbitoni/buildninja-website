@@ -47,6 +47,7 @@ export default function WhySelfHosted() {
                 </div>
                 <h3 className={styles.cardTitle}>{r.title}</h3>
                 <p className={styles.cardText}>{r.text}</p>
+                <div className={styles.cardGlow} />
               </div>
             ))}
           </div>
