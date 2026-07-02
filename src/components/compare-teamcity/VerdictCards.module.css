@@ -1,0 +1,212 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.sectionSub {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .dual {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vcard {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.winner {
+  border-color: var(--color-primary-border);
+  background: var(--color-primary-subtle);
+}
+
+.vcardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.vcardName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.badgeWin {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-border);
+}
+
+.badgeNeutral {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.vstatGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.vstat {
+  background: rgba(0,0,0,0.22);
+  border-radius: var(--radius-sm);
+  padding: 11px;
+}
+
+[data-theme='light'] .vstat {
+  background: rgba(0,0,0,0.04);
+}
+
+.vstatVal {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.vstatKey {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.tg { color: var(--color-success); }
+.tr2 { color: var(--color-error); }
+
+.vlist {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.vitem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.dotG { background: var(--color-success); }
+.dotA { background: var(--color-warning); }
+.dotR { background: var(--color-error); }
+
+/* Choice cards (used by ChoiceCards) */
+.choiceCols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .choiceCols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.choiceCard {
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.choiceYes {
+  background: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+}
+
+.choiceMaybe {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+}
+
+.choiceTitle {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.choiceYes .choiceTitle { color: var(--color-success); }
+.choiceMaybe .choiceTitle { color: var(--color-text-secondary); }
+
+.choiceItem {
+  display: flex;
+  gap: 9px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.choiceYes .choiceItem { color: var(--color-success); }
+.choiceMaybe .choiceItem { color: var(--color-text-secondary); }
+
+.choiceCheck {
+  color: var(--color-success);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.choiceArrow {
+  color: var(--color-warning);
+  flex-shrink: 0;
+  font-weight: 700;
+}

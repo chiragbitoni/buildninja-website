@@ -1,0 +1,67 @@
+.snapshot {
+  background: var(--color-bg);
+  padding: 52px 2rem;
+}
+
+.snapshotInner {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+}
+
+.snapshotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2px;
+  background: var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.snapCard {
+  background: var(--color-bg-panel);
+  padding: 28px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.snapCard::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 1px;
+  height: 60%;
+  background: var(--color-border);
+}
+
+.snapCard:last-child::after {
+  display: none;
+}
+
+.snapVal {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.snapValBn {
+  color: var(--color-primary);
+}
+
+.snapValCi {
+  color: var(--color-info);
+}
+
+.snapLbl {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.snapCard small {
+  display: block;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}

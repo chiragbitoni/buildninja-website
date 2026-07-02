@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "../components/Nav/NavBar";
+import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import Footer from "../components/Footer/Footer";
@@ -97,7 +98,15 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let blogPosts = [];
+  try {
+    const posts = await fetchGrapeHubBlogPosts();
+    blogPosts = [...posts].sort(
+      (a, b) => new Date(b.firstPublishedDate) - new Date(a.firstPublishedDate)
+    );
+  } catch (e) {}
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -118,7 +127,7 @@ export default function RootLayout({ children }) {
             <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
               <DynamicFavicon />
               <ClientAuthProvider>
-                <Navbar />
+                <Navbar blogPosts={blogPosts} />
                 <TrackingInitializer />
                 <main>
                   <YouTubePopup />

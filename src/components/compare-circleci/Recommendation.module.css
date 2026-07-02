@@ -1,0 +1,133 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+  text-align: center;
+}
+
+.recGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .recGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recCard {
+  border-radius: var(--radius-xl);
+  padding: 32px;
+}
+
+.recCardBn {
+  background: var(--color-bg-panel);
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.recCardAlt {
+  background: var(--color-bg-panel);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.recIcon {
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: var(--color-text-secondary);
+}
+
+.recTitle {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.recList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 0;
+  margin: 0;
+}
+
+.recListItem {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  align-items: flex-start;
+}
+
+.recListItemBn {
+  color: var(--color-text-secondary);
+}
+
+.recListIconBn {
+  color: var(--color-success);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.recListItemAlt {
+  color: var(--color-text-muted);
+}
+
+.recListIconAlt {
+  color: var(--color-border-strong);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.recLogoBn {
+  height: 30px;
+  width: auto;
+  display: block;
+  filter: var(--logo-filter);
+}
+
+.recLogoCi {
+  height: 22px;
+  width: auto;
+  display: block;
+  filter: var(--logo-filter);
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  margin-top: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow-cta, 0 4px 16px rgba(232, 85, 42, 0.3));
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(232, 85, 42, 0.38);
+  background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
+}
