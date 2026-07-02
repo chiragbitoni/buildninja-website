@@ -259,13 +259,40 @@ export async function fetchGrapeHubBlogPost(slug) {
     const postLinkRegex = new RegExp(`href="https:\\/\\/(www\\.)?grapehub\\.io\\/post\\/([^"]+)"`, 'gi');
     postBody = postBody.replace(postLinkRegex, 'href="/blog/$2"');
 
+    // Extract FAQ data for JSON-LD schema and convert Wix collapsible-list to native accordion
+    const faqData = [];
+    postBody = postBody.replace(
+      /<div[^>]*data-hook="collapsible-list-component"[^>]*>[\s\S]*?<div[^>]*type="collapsible_list"[^>]*><\/div>/g,
+      (section) => {
+        const items = [...section.matchAll(
+          /<div[^>]*data-hook="collapsible-list-item[^"]*"[^>]*>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/g
+        )];
+        if (!items.length) return section;
+        const faqItems = items.map(([itemHtml]) => {
+          const titleMatch = itemHtml.match(
+            /data-hook="collapsible-list-item-title"[^>]*>[\s\S]*?<strong[^>]*>[\s\S]*?<span[^>]*>([\s\S]*?)<\/span>/i
+          );
+          const bodyMatch = itemHtml.match(
+            /data-hook="collapsible-list-item-body"[^>]*>[\s\S]*?<p[^>]*>[\s\S]*?<span[^>]*>[\s\S]*?<span[^>]*>([\s\S]*?)<\/span>/i
+          );
+          const question = titleMatch ? titleMatch[1].trim() : '';
+          const answer = bodyMatch ? bodyMatch[1].trim() : '';
+          if (!question) return '';
+          faqData.push({ question, answer });
+          return `<details class="blog-faq-item"><summary>${question}</summary><div class="blog-faq-answer">${answer}</div></details>`;
+        }).filter(Boolean).join('\n');
+        return `<div class="blog-faq-section">${faqItems}</div>`;
+      }
+    );
+
     return {
       title,
       author,
       date,
       readTime,
       coverImage,
-      content: postBody.trim()
+      content: postBody.trim(),
+      faq: faqData.length > 0 ? faqData : null
     };
   } catch (error) {
     console.error(`Error in fetchGrapeHubBlogPost for ${slug}:`, error);
