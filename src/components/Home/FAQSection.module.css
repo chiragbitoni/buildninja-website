@@ -71,9 +71,15 @@
   margin: 0;
 }
 
-.faqGrid {
+.faqSplit {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.faqCol {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -167,7 +173,7 @@
     padding: 60px 16px;
   }
 
-  .faqGrid {
+  .faqSplit {
     grid-template-columns: 1fr;
   }
 
