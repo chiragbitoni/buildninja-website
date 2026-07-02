@@ -90,7 +90,10 @@ export default function HeroSection() {
 
           <h1 className={styles.heading}>
             Free Self-Hosted CI/CD.<br /><span className={styles.headingGradient}>
-              Unlimited builds. No credits.
+              Unlimited builds
+            </span><br />
+            <span className={styles.headingGradient}>
+              No credits.
             </span>
           </h1>
           <p className={styles.subtext}>
