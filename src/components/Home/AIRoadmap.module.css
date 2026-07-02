@@ -183,7 +183,7 @@
 .cardTitle {
   font-family: var(--font-display);
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-text);
   margin-bottom: 16px;
   letter-spacing: -0.02em;
