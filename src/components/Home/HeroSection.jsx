@@ -125,6 +125,7 @@ export default function HeroSection() {
                 title="BuildNinja - Self Hosted CI/CD"
                 frameBorder="0"
                 allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
             </div>
