@@ -153,7 +153,8 @@ export async function fetchGrapeHubBlogPost(slug) {
     
     // Extract metadata
     const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/);
-    const title = titleMatch ? titleMatch[1].replace(' | GrapeHub', '').trim() : '';
+    const rawTitle = titleMatch ? titleMatch[1].replace(' | GrapeHub', '').trim() : '';
+    const title = rawTitle.replace(/&amp;/g, '&');
 
     const authorMatch = html.match(/<span data-hook="user-name">([\s\S]*?)<\/span>/);
     const author = authorMatch ? authorMatch[1].trim() : 'BuildNinja Team';

@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }) {
             temporarily unavailable.
           </p>
           <Link href="/blog" className={styles.notFoundLink}>
-            <ArrowLeft size={16} /> Back to Blog
+            <ArrowLeft size={16} /> Back to Blogs
           </Link>
         </div>
       </div>
@@ -189,7 +189,7 @@ export default async function BlogPostPage({ params }) {
       {/* Back navigation */}
       <div className={styles.backBar}>
         <Link href="/blog" className={styles.backLink}>
-          <ArrowLeft size={16} /> Back to Blog
+          <ArrowLeft size={16} /> Back to Blogs
         </Link>
       </div>
 
