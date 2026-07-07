@@ -106,12 +106,12 @@
 }
 
 .title {
-  font-size: clamp(28px, 8vw, 68px);
+  font-size: clamp(26px, 6vw, 52px);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.04em;
   margin: 0 0 16px;
-  line-height: 1.1;
+  line-height: 1.2;
   padding: 10px 0;
   position: relative;
   z-index: 2;
@@ -127,7 +127,7 @@
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--color-text-secondary);
   max-width: 850px;
   margin: 0 auto 48px;
@@ -151,11 +151,11 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 18px 40px;
+  padding: 16px 36px;
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   box-shadow: 0 0 20px var(--color-primary-subtle);
@@ -176,7 +176,7 @@
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border-strong);
   color: var(--color-text);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -197,7 +197,7 @@
   background: transparent;
   border: 1px solid var(--color-primary-border);
   color: var(--color-primary);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -245,7 +245,7 @@
   color: var(--color-text-faint);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-family: var(--font-accent);
+  font-family: var(--font-ui);
 }
 
 .guaranteeItem {
@@ -261,7 +261,7 @@
 }
 
 .guaranteeItem span {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-secondary);
   line-height: 1.5;
   font-weight: 450;
@@ -303,7 +303,7 @@
   }
 
   .subtitle {
-    font-size: 17px;
+    font-size: 16px;
     margin-bottom: 32px;
     padding: 0 10px;
   }
@@ -317,7 +317,7 @@
   .btnPrimary, .btnSecondary, .btnTertiary {
     width: 100%;
     justify-content: center;
-    padding: 16px 24px;
+    padding: 14px 24px;
   }
 
   .guarantee {

@@ -19,6 +19,7 @@ const footerText = {
             links: [
                 { label: "Features", link: "/features" },
                 { label: "Pricing", link: "/pricing" },
+                { label: "Compare", link: "/compare" },
                 { label: "Install", link: "/install" },
                 { label: "Dojo", link: "/dojo" },
                 { label: "FAQ", link: "/faq" },
@@ -53,7 +54,7 @@ const footerText = {
                 { label: "EULA", link: `/eula` },
                 { label: "Refund & Cancellation", link: "/refund-and-cancellation-policy" },
             ],
-        },
+        }
     ],
 };
 

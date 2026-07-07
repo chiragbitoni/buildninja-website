@@ -74,7 +74,13 @@ async function generateSitemaps() {
     "/refund-and-cancellation-policy",
     "/support",
     "/terms-of-service",
-    "/blog"
+    "/blog",
+    "/compare",
+    "/compare/buildninja-vs-github-actions",
+    "/compare/buildninja-vs-circleci",
+    "/compare/buildninja-vs-jenkins",
+    "/compare/buildninja-vs-teamcity",
+    "/install"
   ];
 
   const items = staticRoutes.map((route) => ({

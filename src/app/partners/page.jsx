@@ -1,6 +1,5 @@
 import PartnerPage from "./PartnerPage";
 
-
 export const metadata = {
   title: "BuildNinja Partner Program | Partners",
   description: "Join the BuildNinja ecosystem. Collaborate with us to build better CI/CD experiences and empower engineering teams worldwide.",

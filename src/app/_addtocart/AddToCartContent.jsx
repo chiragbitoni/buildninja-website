@@ -476,7 +476,7 @@ export default function AddToCartContent() {
                 {currentPlan?.name !== "Solo" && (
                   <div className={s.highlightBox} style={{ marginTop: 0, marginBottom: "2rem" }}>
                     Best suited for teams scaling beyond the limits of
-                    Growth plans—no restrictions, no bottlenecks, no concurrency
+                    Growth plans-no restrictions, no bottlenecks, no concurrency
                     limits.
                   </div>
                 )}

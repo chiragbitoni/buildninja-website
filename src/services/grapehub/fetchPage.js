@@ -153,7 +153,8 @@ export async function fetchGrapeHubBlogPost(slug) {
     
     // Extract metadata
     const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/);
-    const title = titleMatch ? titleMatch[1].replace(' | GrapeHub', '').trim() : '';
+    const rawTitle = titleMatch ? titleMatch[1].replace(' | GrapeHub', '').trim() : '';
+    const title = rawTitle.replace(/&amp;/g, '&');
 
     const authorMatch = html.match(/<span data-hook="user-name">([\s\S]*?)<\/span>/);
     const author = authorMatch ? authorMatch[1].trim() : 'BuildNinja Team';
@@ -197,8 +198,38 @@ export async function fetchGrapeHubBlogPost(slug) {
       }
     }
 
-    // Clean wixGuards
-    postBody = postBody.replace(/<span class="wixGuard wixui-rich-text__text">.*?<\/span>/g, '');
+    // Remove wixGuard spacer spans
+    postBody = postBody.replace(/<span[^>]*class="[^"]*wixGuard[^"]*"[^>]*>.*?<\/span>/gi, '');
+
+    // Remove empty paragraphs Wix uses as visual spacers
+    postBody = postBody.replace(/<p[^>]*>\s*(?:&nbsp;|<br\s*\/?>\s*)+\s*<\/p>/gi, '');
+
+    // Remove empty divs Wix uses as spacers
+    postBody = postBody.replace(/<div[^>]*>\s*(?:&nbsp;|<br\s*\/?>\s*)+\s*<\/div>/gi, '');
+
+    // Strip the massive Ricos inline style attribute from the editor wrapper div
+    postBody = postBody.replace(/(<div class="_4lcfU")[^>]*>/g, '$1>');
+
+    // Remove empty-line blocks (<br> inside breakout wrapper, type marker optional)
+    postBody = postBody.replace(
+      /<div\s+data-breakout="normal">\s*<div[^>]*>\s*<span[^>]*>\s*<br\s+role="presentation"\s*\/?>\s*<\/span>\s*<\/div>\s*<\/div>\s*(?:<div\s+type="[^"]*"[^>]*><\/div>)?\s*/g,
+      ''
+    );
+
+    // Remove any remaining Wix spacer <br> elements
+    postBody = postBody.replace(/<br\s+role="presentation"\s*\/?>/g, '');
+
+    // Strip inline styles (padding, line-height) from p / h1-h6 elements
+    postBody = postBody.replace(/(<(?:p|h[1-6])\b[^>]*?)\s+style="[^"]*"/gi, '$1');
+
+    // Strip fixed width from figure wrappers so images stay responsive
+    postBody = postBody.replace(/(<(?:figure|div)\b[^>]*?)\s+style="[^"]*width:\s*\d+px[^"]*"/gi, '$1');
+
+    // Strip Wix inline styles from img tags so our own CSS controls display
+    postBody = postBody.replace(/(<img\b[^>]*?)\s+style="[^"]*"/gi, '$1');
+
+    // Collapse excessive whitespace lines into at most one
+    postBody = postBody.replace(/\n\s*\n\s*\n+/g, '\n\n');
 
     // Rewrite low-res image sources to high-res data-pin-media sources
     postBody = postBody.replace(/<img([^>]*)\bdata-pin-media="([^"]+)"([^>]*)>/gi, (match, p1, p2, p3) => {
@@ -215,9 +246,45 @@ export async function fetchGrapeHubBlogPost(slug) {
       return tag;
     });
 
+    // Merge adjacent <a> tags with the same href (Wix sometimes splits them)
+    const mergeLinkRegex = /(<a\b[^>]*?\bhref="([^"]+)"[^>]*>[\s\S]*?<\/a>)\s*<a\b[^>]*?\bhref="\2"[^>]*>([\s\S]*?)<\/a>/g;
+    while (mergeLinkRegex.test(postBody)) {
+      postBody = postBody.replace(mergeLinkRegex, (match, link1, href, inner2) => {
+        const clean1 = link1.replace(/<span\s+style="color:[^"]*"[^>]*>/g, '<span>');
+        const cleanInner2 = inner2.replace(/<span\s+style="[^"]*">/g, '<span>');
+        return clean1.replace(/<\/a>$/, '') + cleanInner2 + '</a>';
+      });
+    }
+
     // Rewrite any links referencing GrapeHub posts to local /blog/ dynamic routes
     const postLinkRegex = new RegExp(`href="https:\\/\\/(www\\.)?grapehub\\.io\\/post\\/([^"]+)"`, 'gi');
     postBody = postBody.replace(postLinkRegex, 'href="/blog/$2"');
+
+    // Extract FAQ data for JSON-LD schema and convert Wix collapsible-list to native accordion
+    const faqData = [];
+    postBody = postBody.replace(
+      /<div[^>]*data-hook="collapsible-list-component"[^>]*>[\s\S]*?<div[^>]*type="collapsible_list"[^>]*><\/div>/g,
+      (section) => {
+        const items = [...section.matchAll(
+          /<div[^>]*data-hook="collapsible-list-item[^"]*"[^>]*>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/g
+        )];
+        if (!items.length) return section;
+        const faqItems = items.map(([itemHtml]) => {
+          const titleMatch = itemHtml.match(
+            /data-hook="collapsible-list-item-title"[^>]*>[\s\S]*?<strong[^>]*>[\s\S]*?<span[^>]*>([\s\S]*?)<\/span>/i
+          );
+          const bodyMatch = itemHtml.match(
+            /data-hook="collapsible-list-item-body"[^>]*>[\s\S]*?<p[^>]*>[\s\S]*?<span[^>]*>[\s\S]*?<span[^>]*>([\s\S]*?)<\/span>/i
+          );
+          const question = titleMatch ? titleMatch[1].trim() : '';
+          const answer = bodyMatch ? bodyMatch[1].trim() : '';
+          if (!question) return '';
+          faqData.push({ question, answer });
+          return `<details class="blog-faq-item"><summary>${question}</summary><div class="blog-faq-answer">${answer}</div></details>`;
+        }).filter(Boolean).join('\n');
+        return `<div class="blog-faq-section">${faqItems}</div>`;
+      }
+    );
 
     return {
       title,
@@ -225,7 +292,8 @@ export async function fetchGrapeHubBlogPost(slug) {
       date,
       readTime,
       coverImage,
-      content: postBody.trim()
+      content: postBody.trim(),
+      faq: faqData.length > 0 ? faqData : null
     };
   } catch (error) {
     console.error(`Error in fetchGrapeHubBlogPost for ${slug}:`, error);
