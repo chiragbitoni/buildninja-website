@@ -78,7 +78,9 @@ async function generateSitemaps() {
     "/compare",
     "/compare/buildninja-vs-github-actions",
     "/compare/buildninja-vs-circleci",
-    "/compare/buildninja-vs-jenkins"
+    "/compare/buildninja-vs-jenkins",
+    "/compare/buildninja-vs-teamcity",
+    "/install"
   ];
 
   const items = staticRoutes.map((route) => ({

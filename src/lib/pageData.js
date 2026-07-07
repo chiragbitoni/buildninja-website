@@ -92,6 +92,42 @@ export const pageDataMap = {
     name: "Terms of Service | BuildNinja",
     description: "Read BuildNinja's Terms and Conditions outlining the rules, responsibilities, and policies governing the use of our website, products, and services.",
   },
+  "/blog": {
+    breadcrumb: "Blog",
+    schemaType: "Blog",
+    name: "BuildNinja Blog",
+    description: "Explore CI/CD guides, DevOps insights, tutorials, and product updates on the BuildNinja blog.",
+  },
+  "/compare": {
+    breadcrumb: "Compare",
+    schemaType: "WebPage",
+    name: "BuildNinja vs Alternatives",
+    description: "See how BuildNinja compares to other CI/CD tools including Jenkins, GitHub Actions, CircleCI, and TeamCity.",
+  },
+  "/compare/buildninja-vs-circleci": {
+    breadcrumb: "BuildNinja vs CircleCI",
+    schemaType: "WebPage",
+    name: "BuildNinja vs CircleCI — CI/CD Comparison",
+    description: "Compare BuildNinja and CircleCI across features, pricing, self-hosting, security, and performance for your CI/CD pipeline.",
+  },
+  "/compare/buildninja-vs-github-actions": {
+    breadcrumb: "BuildNinja vs GitHub Actions",
+    schemaType: "WebPage",
+    name: "BuildNinja vs GitHub Actions — CI/CD Comparison",
+    description: "Compare BuildNinja and GitHub Actions across self-hosting, performance, security, and pricing for your CI/CD needs.",
+  },
+  "/compare/buildninja-vs-jenkins": {
+    breadcrumb: "BuildNinja vs Jenkins",
+    schemaType: "WebPage",
+    name: "BuildNinja vs Jenkins — CI/CD Comparison",
+    description: "Compare BuildNinja and Jenkins across setup, scalability, security, plugins, and total cost of ownership.",
+  },
+  "/compare/buildninja-vs-teamcity": {
+    breadcrumb: "BuildNinja vs TeamCity",
+    schemaType: "WebPage",
+    name: "BuildNinja vs TeamCity — CI/CD Comparison",
+    description: "Evaluate BuildNinja and TeamCity on architecture, build performance, licensing, and enterprise features.",
+  },
 };
 
 export function resolveBreadcrumb(pathname) {
