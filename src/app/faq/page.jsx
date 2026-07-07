@@ -26,17 +26,17 @@ export const metadata = {
 };
 
 export default function Faq() {
-    // Generate dynamic, search-compliant FAQPage JSON-LD schema
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://buildninja.grapehub.io/faq#faqpage",
         "mainEntity": thirdSectionText.faqs.flatMap(category =>
             category.faqs.map(faq => ({
                 "@type": "Question",
                 "name": faq.question,
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": faq.answer.replace(/<[^>]*>/g, "") // Clean HTML tags for compliant schema formatting
+                    "text": faq.answer.replace(/<[^>]*>/g, "")
                 }
             }))
         )

@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "../components/Nav/NavBar";
+import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
 import Footer from "../components/Footer/Footer";
@@ -11,10 +12,10 @@ import PosthogWrapper from "../components/Analytics/PostHogWrapper";
 import Script from "next/script";
 import "./globals.css";
 import "./animations.css";
-import Cursor from "@/components/ui/Cursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import DynamicFavicon from "@/components/DynamicFavicon";
 import TrackingInitializer from "@/components/TrackingInitializer";
+import SchemaScript from "@/components/SchemaScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -98,11 +99,20 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let blogPosts = [];
+  try {
+    const posts = await fetchGrapeHubBlogPosts();
+    blogPosts = [...posts].sort(
+      (a, b) => new Date(b.firstPublishedDate) - new Date(a.firstPublishedDate)
+    );
+  } catch (e) {}
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="sitemap" type="application/xml" title="Sitemap" href="https://buildninja.grapehub.io/sitemap.xml" />
+        <SchemaScript />
         <script
           id="schema-org"
           type="application/ld+json"
@@ -113,14 +123,13 @@ export default function RootLayout({ children }) {
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
-        <Cursor />
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>
             <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
               <DynamicFavicon />
               <ClientAuthProvider>
-                <Navbar />
+                <Navbar blogPosts={blogPosts} />
                 <TrackingInitializer />
                 <main>
                   <YouTubePopup />

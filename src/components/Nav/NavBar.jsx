@@ -6,13 +6,15 @@ import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import AvatarMenu from "./AvatarMenu";
 import ThemeToggle from "./ThemeToggle";
-import { fetchPlansFromAPI } from "../../services/plans/plans";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
 import { motion, AnimatePresence } from "framer-motion";
 import DojoBanner from "../Dojo/DojoBanner";
+import NavDropdown from "./NavDropdown";
 
-export default function Navbar() {
+const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
+
+export default function Navbar({ blogPosts = [] }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHover, setHover] = useState(false);
   const router = useRouter();
@@ -22,10 +24,9 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
+    { name: "Install", path: "/install" },
     { name: "Pricing", path: "/pricing" },
     { name: "Dojo", path: "/dojo" },
-    { name: "Docs", path: "/docs/overview" },
-    { name: "Install", path: "/install" },
     // { name: "Partners", path: "/partners" },
     { name: "Support", path: "/support" },
   ];
@@ -64,6 +65,37 @@ export default function Navbar() {
 
   const isActive = (path) =>
     path === "/" ? pathname === "/" : pathname.startsWith(path);
+
+  const resourcesItems = [
+    {
+      name: "Documentation",
+      path: `${DOCS_URL}/docs/overview`,
+      children: [
+        { name: "Getting Started", path: `${DOCS_URL}/docs/category/getting-started` },
+        { name: "Tutorials", path: `${DOCS_URL}/docs/category/quick-setup-guide` },
+        { name: "Licensing", path: `${DOCS_URL}/docs/category/licensing` },
+        { name: "Release Notes", path: `${DOCS_URL}/docs/category/release-notes` },
+      ],
+    },
+    {
+      name: "Blog",
+      path: "/blog",
+      children: blogPosts.slice(0, 5).map((post) => ({
+        name: post.title,
+        path: `/blog/${post.slug}`,
+      })),
+    },
+    {
+      name: "Compare",
+      path: "/compare",
+      children: [
+        { name: "BuildNinja vs GitHub Actions", path: "/compare/buildninja-vs-github-actions" },
+        { name: "BuildNinja vs CircleCI", path: "/compare/buildninja-vs-circleci" },
+        { name: "BuildNinja vs Jenkins", path: "/compare/buildninja-vs-jenkins" },
+        { name: "BuildNinja vs TeamCity", path: "/compare/buildninja-vs-teamcity" },
+      ],
+    },
+  ];
 
   return (
     <nav className={styles.navbar}>
@@ -106,7 +138,32 @@ export default function Navbar() {
         {/* Desktop Menu Group */}
         <div className={styles.navbarRightGroup}>
           <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
-            {navItems.map((item) => (
+            {navItems.slice(0, 4).map((item) => (
+              <li
+                key={item.name}
+                className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
+              >
+                <a
+                  href={item.path}
+                  className={styles.navbarAnchor}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                    dispatch(closeVideo());
+                  }}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+            <NavDropdown
+              label="Resources"
+              items={resourcesItems}
+              activePaths={["/docs/overview", "/blog", "/compare"]}
+              handleNavigation={handleNavigation}
+              isActive={isActive}
+            />
+            {navItems.slice(4).map((item) => (
               <li
                 key={item.name}
                 className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
@@ -156,13 +213,42 @@ export default function Navbar() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              {navItems.map((item, idx) => (
+              {navItems.slice(0, 4).map((item, idx) => (
                 <motion.li
                   key={item.name}
                   className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
+                >
+                  <a
+                    href={item.path}
+                    className={styles.navbarAnchor}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(item.path);
+                      dispatch(closeVideo());
+                    }}
+                  >
+                    {item.name}
+                  </a>
+                </motion.li>
+              ))}
+              <NavDropdown
+                label="Resources"
+                items={resourcesItems}
+                activePaths={["/docs/overview", "/blog", "/compare"]}
+                handleNavigation={handleNavigation}
+                isActive={isActive}
+                variant="mobile"
+              />
+              {navItems.slice(4).map((item, idx) => (
+                <motion.li
+                  key={item.name}
+                  className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (idx + 4) * 0.05 }}
                 >
                   <a
                     href={item.path}

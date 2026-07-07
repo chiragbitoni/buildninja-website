@@ -7,14 +7,14 @@ import { Calendar, Clock } from "lucide-react";
 export const metadata = {
   title: "Blog | BuildNinja – CI/CD Insights & DevOps Tutorials",
   description:
-    "Explore the latest articles, tutorials, and insights from the BuildNinja team — covering CI/CD pipelines, self-hosted DevOps, and software delivery best practices.",
+    "Explore the latest articles, tutorials, and insights from the BuildNinja team - covering CI/CD pipelines, self-hosted DevOps, and software delivery best practices.",
   alternates: {
     canonical: "https://buildninja.grapehub.io/blog",
   },
   openGraph: {
     title: "Blog | BuildNinja – CI/CD Insights & DevOps Tutorials",
     description:
-      "Explore the latest articles, tutorials, and insights from the BuildNinja team — covering CI/CD pipelines, self-hosted DevOps, and software delivery best practices.",
+      "Explore the latest articles, tutorials, and insights from the BuildNinja team - covering CI/CD pipelines, self-hosted DevOps, and software delivery best practices.",
     url: "https://buildninja.grapehub.io/blog",
     siteName: "BuildNinja",
     type: "website",

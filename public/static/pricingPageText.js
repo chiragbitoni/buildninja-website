@@ -242,7 +242,7 @@ export const pricingSixthText = {
   ],
   spotsRemaining: "Spots remaining",
   footer:
-    "Lock in today's pricing forever. Join engineering teams building with BuildNinja from day one.",
+    "Join engineering teams building with BuildNinja from day one.",
 };
 
 export const pricingSeventhText = {

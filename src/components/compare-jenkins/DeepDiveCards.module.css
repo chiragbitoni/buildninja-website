@@ -1,0 +1,134 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.diveGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 40px;
+}
+
+.diveCard {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.03), 0 4px 14px rgba(16, 24, 40, 0.03);
+}
+
+.diveCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-strong);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+}
+
+.featured {
+  border-color: var(--color-primary-border);
+  background: linear-gradient(135deg, var(--color-primary-subtle) 0%, var(--color-bg-panel) 100%);
+}
+
+.featured:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.1), 0 0 0 1px var(--color-primary);
+}
+
+.diveIcon {
+  margin-bottom: 1rem;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+}
+
+.iconAccent {
+  color: var(--color-primary);
+}
+
+.diveCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.diveCard p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.diveVersus {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.diveVsRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.diveVsNinja {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: left;
+  line-height: 1;
+}
+
+.diveVsJenkins {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: right;
+  line-height: 1;
+}
+
+.diveVsLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  text-align: center;
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border);
+  padding: 3px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
