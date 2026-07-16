@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import posthog from "posthog-js";
 
 import HeroSection from "@/components/Home/HeroSection";
+import PipelineHeroSection from "@/components/Home/PipelineHeroSection";
 import CTASection from "@/components/Home/CTASection";
 import AIRoadmap from "@/components/Home/AIRoadmap";
 import FAQSection from "@/components/Home/FAQSection";
@@ -36,6 +37,7 @@ export default function HomePage() {
   return (
     <>
       <SectionTracker name="hero"><HeroSection /></SectionTracker>
+      <SectionTracker name="pipeline_hero"><PipelineHeroSection /></SectionTracker>
       <SectionTracker name="what_is_ninja"><WhatIsNinja /></SectionTracker>
       {/* <HowItWorks /> */}
       {/* <SocialProof /> */}

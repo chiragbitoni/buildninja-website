@@ -4,13 +4,18 @@ import dynamic from "next/dynamic";
 import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./HeroSection.module.css";
 import { useRouter } from "next/navigation";
-import { useDispatch } from "react-redux";
-import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
-import { Play } from "lucide-react";
+import { Clock3, DollarSign, Infinity, Server } from "lucide-react";
 import posthog from "posthog-js";
 
 const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
+const demoBorderCards = [
+  { label: "Platform cost", value: "$0", icon: DollarSign, accent: styles.accentRose },
+  { label: "Setup time", value: "Under 5 min", icon: Clock3, accent: styles.accentAmber },
+  { label: "Build limits", value: "Unlimited", icon: Infinity, accent: styles.accentViolet },
+  { label: "Data location", value: "Your servers", icon: Server, accent: styles.accentCyan },
+];
+
 const Typewriter = ({ texts }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -52,7 +57,6 @@ export default function HeroSection() {
   const orb1 = useRef(null);
   const orb2 = useRef(null);
   const router = useRouter();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     let t = 0;
@@ -80,7 +84,7 @@ export default function HeroSection() {
       {/* Bottom fade */}
       <div className={styles.bottomFade} />
 
-      {/* Hero content: text left, video right */}
+      {/* Hero content: text left, interactive demo right */}
       <div className={styles.heroContent}>
         <div className={styles.copy}>
           <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
@@ -118,74 +122,32 @@ export default function HeroSection() {
         </div>
 
         <div className={styles.heroVideo}>
-          <div className={styles.browserMockup}>
-            <div className={styles.videoAspect}>
-              <iframe
-                src="https://www.youtube.com/embed/jpKKjmirbkA?autoplay=1&mute=1&loop=1&playlist=jpKKjmirbkA&rel=0&modestbranding=1"
-                title="BuildNinja - Self Hosted CI/CD"
-                frameBorder="0"
-                allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
+          <div className={styles.demoWrap}>
+            <div className={styles.demoHint}>
+              <svg className={styles.demoHintIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M5 3l14 9-7 1-4 7-3-17z" />
+              </svg>
+              <span className={styles.demoHintFull}>Interactive Demo - <span className={styles.demoHintStrong}>Click Around to Explore</span></span>
+              <span className={styles.demoHintMobile}>Interactive Demo - <span className={styles.demoHintStrong}>Tap to Explore</span></span>
+            </div>
+            <div className={styles.demoBorderCards} aria-hidden="true">
+              {demoBorderCards.map((card) => (
+                <div key={card.label} className={styles.demoBorderCard}>
+                  <div className={styles.demoBorderCardTop}>
+                    <span className={`${styles.demoBorderCardIcon} ${card.accent}`}>
+                      <card.icon size={12} strokeWidth={2.2} />
+                    </span>
+                    <span className={styles.demoBorderCardLabel}>{card.label}</span>
+                  </div>
+                  <span className={styles.demoBorderCardValue}>{card.value}</span>
+                </div>
+              ))}
+            </div>
+            <div className={styles.demoSurface} data-nosnippet>
+              <BuildNinjaDemo />
             </div>
           </div>
-          <div className={styles.videoLabel}>
-            <Play size={12} />
-            See BuildNinja in action (3 min overview)
-          </div>
-        </div>
-      </div>
-
-      {/* Dashboard with border-draw reveal */}
-      <div className={styles.dashWrap}>
-        <div className={styles.dashBorderBox}>
-          {/* Interactive Demo Hint */}
-          <div className={styles.interactiveHint}>
-            {/* <span className={styles.hintDot} /> */}
-            <svg className={styles.hintCursor} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 3l14 9-7 1-4 7-3-17z" />
-            </svg>
-            <span className={styles.hintTextFull}>Interactive Demo - <span className={styles.hintTextBlack}>Click Around to Explore</span></span>
-            <span className={styles.hintTextMobile}>Interactive Demo - <span className={styles.hintTextBlack}>Click to Explore</span></span>
-          </div>
-
-          {/* SVG border that draws itself */}
-          <svg className={styles.borderSvg} viewBox="0 0 1160 600" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="borderGradH" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="var(--color-text)" stopOpacity="0.55" />
-                <stop offset="100%" stopColor="var(--color-text)" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient id="borderGradV" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="var(--color-text)" stopOpacity="0.55" />
-                <stop offset="100%" stopColor="var(--color-text)" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-
-            {/* Top edge - draws rightward from top-left, fades to transparent halfway */}
-            <line
-              className={styles.borderTop}
-              x1="1" y1="1"
-              x2="580" y2="1"
-            />
-
-            {/* Left edge - draws downward from top-left, fades to transparent halfway */}
-            <line
-              className={styles.borderLeft}
-              x1="1" y1="1"
-              x2="1" y2="300"
-            />
-          </svg>
-
-
-          {/* Glow behind border */}
-          <div className={styles.dashGlow} />
-
-          {/* Actual dashboard */}
-          <div className={styles.dashInner} data-nosnippet>
-            <BuildNinjaDemo />
-          </div>
+          
         </div>
       </div>
 
