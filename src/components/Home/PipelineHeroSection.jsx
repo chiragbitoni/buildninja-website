@@ -56,16 +56,14 @@ export default function PipelineHeroSection() {
           </div>
         </div>
 
-        <div className={styles.visualCard}>
-          <Image
-            src="/resources/Home/Motion/Pipeline.svg"
-            alt="BuildNinja pipeline visualization"
-            width={1200}
-            height={900}
-            className={styles.visual}
-            priority={false}
-          />
-        </div>
+        <Image
+          src="/resources/Home/Motion/Pipeline.svg"
+          alt="BuildNinja pipeline visualization"
+          width={1200}
+          height={900}
+          className={styles.visual}
+          priority={false}
+        />
       </div>
     </section>
   );
