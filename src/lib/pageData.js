@@ -107,25 +107,25 @@ export const pageDataMap = {
   "/compare/buildninja-vs-circleci": {
     breadcrumb: "BuildNinja vs CircleCI",
     schemaType: "WebPage",
-    name: "BuildNinja vs CircleCI — CI/CD Comparison",
+    name: "BuildNinja vs CircleCI - CI/CD Comparison",
     description: "Compare BuildNinja and CircleCI across features, pricing, self-hosting, security, and performance for your CI/CD pipeline.",
   },
   "/compare/buildninja-vs-github-actions": {
     breadcrumb: "BuildNinja vs GitHub Actions",
     schemaType: "WebPage",
-    name: "BuildNinja vs GitHub Actions — CI/CD Comparison",
+    name: "BuildNinja vs GitHub Actions - CI/CD Comparison",
     description: "Compare BuildNinja and GitHub Actions across self-hosting, performance, security, and pricing for your CI/CD needs.",
   },
   "/compare/buildninja-vs-jenkins": {
     breadcrumb: "BuildNinja vs Jenkins",
     schemaType: "WebPage",
-    name: "BuildNinja vs Jenkins — CI/CD Comparison",
+    name: "BuildNinja vs Jenkins - CI/CD Comparison",
     description: "Compare BuildNinja and Jenkins across setup, scalability, security, plugins, and total cost of ownership.",
   },
   "/compare/buildninja-vs-teamcity": {
     breadcrumb: "BuildNinja vs TeamCity",
     schemaType: "WebPage",
-    name: "BuildNinja vs TeamCity — CI/CD Comparison",
+    name: "BuildNinja vs TeamCity - CI/CD Comparison",
     description: "Evaluate BuildNinja and TeamCity on architecture, build performance, licensing, and enterprise features.",
   },
 };

@@ -1,5 +1,15 @@
 import { getCookie, setCookie } from "./cookies";
 
+function uuid() {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
+
 export const initTracking = () => {
   if (typeof window === "undefined") return;
 
@@ -10,7 +20,7 @@ export const initTracking = () => {
 
   // Session (create if missing)
   if (!existingSession) {
-    setCookie("gh_session_id", crypto.randomUUID());
+    setCookie("gh_session_id", uuid());
   }
 
   // UTM (first-touch only)
