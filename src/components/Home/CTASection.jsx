@@ -81,6 +81,13 @@ export default function CTASection() {
               </svg>
             </Link>
 
+            <Link href="/install" className={styles.btnDoc} onClick={() => posthog.capture("cta_read_docs_clicked")}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+              </svg>
+              Read the Documentation
+            </Link>
+
           </motion.div>
 
           {/* Guarantee Grid */}

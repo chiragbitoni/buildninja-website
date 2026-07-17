@@ -1,8 +1,39 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import styles from "./WhySelfHosted.module.css";
 
 const ease = [0.25, 0.1, 0.25, 1];
+
+function AnimatedPrice({ raw, isInView }) {
+  const match = raw.match(/^([$£€¥]?)([\d,]+)$/);
+  const prefix = match?.[1] || "";
+  const target = match ? parseInt(match[2].replace(/,/g, ""), 10) : 0;
+  const [displayed, setDisplayed] = useState("0");
+  const raf = useRef(null);
+  const startTime = useRef(null);
+
+  useEffect(() => {
+    if (!isInView) {
+      setDisplayed("0");
+      startTime.current = null;
+      return;
+    }
+    const duration = 2500;
+    const step = (ts) => {
+      if (!startTime.current) startTime.current = ts;
+      const p = Math.min((ts - startTime.current) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const cur = Math.floor(target * eased);
+      setDisplayed(prefix + cur.toLocaleString());
+      if (p < 1) raf.current = requestAnimationFrame(step);
+    };
+    raf.current = requestAnimationFrame(step);
+    return () => { if (raf.current) cancelAnimationFrame(raf.current); };
+  }, [isInView, prefix, target]);
+
+  return <>{displayed}</>;
+}
 
 const reasons = [
   {
@@ -65,7 +96,7 @@ const reasons = [
   {
     icon: null,
     title: "Want a fully managed option?",
-    text: "Get all the benefits of self-hosted with none of the operational burden. Our team manages the infrastructure while you keep full data control.",
+    text: "Prefer to skip the setup? Our team runs BuildNinja on infrastructure inside your cloud account - you get the same self-hosted benefits with zero operational burden and full data control.",
     size: "full",
     theme: "gradient",
     cta: "Talk to Sales",
@@ -73,8 +104,11 @@ const reasons = [
 ];
 
 export default function WhySelfHosted() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+
   return (
-    <section className={styles.section}>
+    <section className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <motion.div
           className={styles.header}
@@ -108,12 +142,22 @@ export default function WhySelfHosted() {
                     <h3 className={styles.ctaTitle}>{r.title}</h3>
                     <p className={styles.ctaText}>{r.text}</p>
                   </div>
-                  <a href="/contact" className={styles.ctaBtn}>
-                    {r.cta}
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </a>
+                  <div className={styles.ctaActions}>
+                    <a href="/contact" className={styles.ctaBtn}>
+                      {r.cta}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </a>
+                    {r.docLink && (
+                      <a href={r.docLink.href} className={styles.ctaDocLink}>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                        </svg>
+                        {r.docLink.label}
+                      </a>
+                    )}
+                  </div>
                 </div>
               ) : (
                 <>
@@ -124,14 +168,16 @@ export default function WhySelfHosted() {
                     <div className={styles.comparison}>
                       <div className={styles.comparisonCard}>
                         <span className={styles.comparisonLabel}>Typical SaaS monthly</span>
-                        <span className={styles.comparisonValue}>{r.comparison.saas}</span>
+                        <span className={styles.comparisonValue}>
+                          <AnimatedPrice raw={r.comparison.saas} isInView={isInView} />
+                        </span>
                       </div>
                       <svg className={styles.comparisonArrow} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                       </svg>
                       <div className={`${styles.comparisonCard} ${styles.comparisonHighlight}`}>
                         <span className={styles.comparisonLabel}>BuildNinja monthly</span>
-                        <span className={styles.comparisonValueWhite}>{r.comparison.self}<span className={styles.comparisonSuffix}>, plus your infra</span></span>
+                        <span className={styles.comparisonValueWhite}>{r.comparison.self}<span className={styles.comparisonSuffix}> & the infrastructure you already own</span></span>
                       </div>
                     </div>
                   )}
