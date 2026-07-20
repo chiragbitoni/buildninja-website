@@ -6,33 +6,36 @@ import styles from "./WhySelfHosted.module.css";
 const ease = [0.25, 0.1, 0.25, 1];
 
 function AnimatedPrice({ raw, isInView }) {
-  const match = raw.match(/^([$£€¥]?)([\d,]+)$/);
+  const match = raw.match(/^([$£€¥]?)([\d,.]+)([xX%a-zA-Z+]*)$/);
   const prefix = match?.[1] || "";
-  const target = match ? parseInt(match[2].replace(/,/g, ""), 10) : 0;
-  const [displayed, setDisplayed] = useState("0");
+  const suffix = match?.[3] || "";
+  const isDecimal = match?.[2]?.includes(".");
+  const target = match ? parseFloat(match[2].replace(/,/g, "")) : 0;
+  const [displayed, setDisplayed] = useState(isDecimal ? "0.00" : "0");
   const raf = useRef(null);
   const startTime = useRef(null);
 
   useEffect(() => {
     if (!isInView) {
-      setDisplayed("0");
+      setDisplayed(isDecimal ? "0.00" : "0");
       startTime.current = null;
       return;
     }
-    const duration = 2500;
+    const duration = 3000;
     const step = (ts) => {
       if (!startTime.current) startTime.current = ts;
       const p = Math.min((ts - startTime.current) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      const cur = Math.floor(target * eased);
-      setDisplayed(prefix + cur.toLocaleString());
+      const cur = target * eased;
+      const formatted = isDecimal ? cur.toFixed(2) : Math.floor(cur).toLocaleString();
+      setDisplayed(prefix + formatted);
       if (p < 1) raf.current = requestAnimationFrame(step);
     };
     raf.current = requestAnimationFrame(step);
     return () => { if (raf.current) cancelAnimationFrame(raf.current); };
-  }, [isInView, prefix, target]);
+  }, [isInView, prefix, suffix, target, isDecimal]);
 
-  return <>{displayed}</>;
+  return <>{displayed}{suffix}</>;
 }
 
 const reasons = [
@@ -46,7 +49,7 @@ const reasons = [
     text: "Most CI/CD tools charge per minute, per concurrent build, and per user. At scale, those pennies become a budget line item. BuildNinja runs entirely on your infrastructure - no usage limits, no surprise bills.",
     size: "large",
     theme: "coral",
-    comparison: { saas: "$2,847", self: "$0" },
+    comparison: { saas: "$2,847+", self: "$0" },
   },
   {
     icon: (
@@ -92,14 +95,6 @@ const reasons = [
     text: "Connect to GitHub, GitLab, Bitbucket, or Gitea. Deploy to Kubernetes, ECS, bare metal, or edge locations. Use your existing Docker registries and secrets managers.",
     size: "small",
     theme: "white",
-  },
-  {
-    icon: null,
-    title: "Want a fully managed option?",
-    text: "Prefer to skip the setup? Our team runs BuildNinja on infrastructure inside your cloud account - you get the same self-hosted benefits with zero operational burden and full data control.",
-    size: "full",
-    theme: "gradient",
-    cta: "Talk to Sales",
   },
 ];
 
@@ -177,7 +172,7 @@ export default function WhySelfHosted() {
                       </svg>
                       <div className={`${styles.comparisonCard} ${styles.comparisonHighlight}`}>
                         <span className={styles.comparisonLabel}>BuildNinja monthly</span>
-                        <span className={styles.comparisonValueWhite}>{r.comparison.self}<span className={styles.comparisonSuffix}> & the infrastructure you already own</span></span>
+                        <span className={styles.comparisonValueWhite}>{r.comparison.self}<span className={styles.comparisonSuffix}>on your own infrastructure</span></span>
                       </div>
                     </div>
                   )}
