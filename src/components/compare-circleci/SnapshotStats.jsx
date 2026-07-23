@@ -12,24 +12,24 @@ export default function SnapshotStats() {
             <small>No credit system</small>
           </div>
           <div className={s.snapCard}>
-            <div className={`${s.snapVal} ${s.snapValCi}`}>~300 min</div>
-            <div className={s.snapLbl}>CircleCI free builds/mo</div>
-            <small>6,000 credits @ ~20 cr/min</small>
-          </div>
-          <div className={s.snapCard}>
             <div className={`${s.snapVal} ${s.snapValBn}`}>$0</div>
             <div className={s.snapLbl}>BuildNinja per-seat cost</div>
             <small>Flat infra cost only</small>
           </div>
           <div className={s.snapCard}>
-            <div className={`${s.snapVal} ${s.snapValCi}`}>$15+/user</div>
-            <div className={s.snapLbl}>CircleCI at scale</div>
-            <small>Credit usage + seat tiers</small>
-          </div>
-          <div className={s.snapCard}>
             <div className={`${s.snapVal} ${s.snapValBn}`}>5 min</div>
             <div className={s.snapLbl}>BuildNinja setup time</div>
             <small>1 Docker command</small>
+          </div>
+          <div className={s.snapCard}>
+            <div className={`${s.snapVal} ${s.snapValCi}`}>Up to ~6,000 min</div>
+            <div className={s.snapLbl}>CircleCI free builds/mo</div>
+            <small>30,000 credits included</small>
+          </div>
+          <div className={s.snapCard}>
+            <div className={`${s.snapVal} ${s.snapValCi}`}>$15+/user</div>
+            <div className={s.snapLbl}>CircleCI at scale</div>
+            <small>Credit usage + seat tiers</small>
           </div>
           <div className={s.snapCard}>
             <div className={`${s.snapVal} ${s.snapValCi}`}>15–30 min</div>

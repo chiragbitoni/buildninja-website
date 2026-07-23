@@ -8,60 +8,86 @@
   max-width: var(--container-width, 1400px);
   margin: 0 auto;
   padding: 0 var(--container-padding, 32px);
+  text-align: center;
 }
 
-.winGrid {
+
+.verdictGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 40px;
+  text-align: left;
 }
 
-@media (max-width: 780px) {
-  .winGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.winCard {
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-xl, 24px);
-  padding: 26px 24px;
+.verdictCard {
   background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
   box-shadow: var(--shadow-sm);
-  transition: all 0.25s;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
 }
 
-.winCard:hover {
+.verdictCard:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-3px);
-  border-color: var(--color-primary);
 }
 
-.winIcon {
-  width: 46px;
-  height: 46px;
-  border-radius: 11px;
+.verdictCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.verdictCardGreen::before {
+  background: var(--color-success);
+}
+
+.verdictCardOrange::before {
+  background: var(--color-primary);
+}
+
+.verdictCardBlue::before {
+  background: var(--color-info);
+}
+
+.verdictIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 21px;
-  margin-bottom: 16px;
+  font-size: 20px;
+  margin-bottom: 14px;
 }
 
-.winCard h3 {
-  font-family: var(--font-display);
-  font-size: 15.5px;
+.verdictIconGreen {
+  background: var(--color-success-bg);
+}
+
+.verdictIconOrange {
+  background: var(--color-primary-subtle);
+}
+
+.verdictIconBlue {
+  background: var(--color-info-bg);
+}
+
+.verdictCard h3 {
+  font-size: 16px;
   font-weight: 700;
-  color: var(--color-text);
   margin-bottom: 8px;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  color: var(--color-text);
 }
 
-.winCard p {
+.verdictCard p {
   font-size: 13.5px;
   color: var(--color-text-secondary);
   line-height: 1.65;

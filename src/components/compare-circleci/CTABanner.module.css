@@ -6,7 +6,7 @@
 }
 
 .ctaInner {
-  max-width: 620px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -48,7 +48,8 @@
   color: var(--color-text-muted);
 }
 
-.btnPrimary {background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+.btnPrimary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -62,7 +63,8 @@
   gap: 8px;
 }
 
-.btnPrimary:hover {background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
+.btnPrimary:hover {
+  background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
   transform: translateY(-2px);
 }
 

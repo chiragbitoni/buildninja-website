@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Check, AlertTriangle, Zap, X, DollarSign, Wrench, Link, Lock, TrendingUp, Code, Handshake } from 'lucide-react';
 import s from './ComparisonTable.module.css';
 
@@ -7,21 +9,55 @@ export default function ComparisonTable() {
   return (
     <section id="comparison-table" className={s.section}>
       <div className={s.container}>
-        <span className={s.sectionLabel}>Full Feature Comparison</span>
-        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}>
-          BuildNinja vs CircleCI — Every Feature, Honestly Scored
-        </h2>
-        <p className="section-subtitle">
+        <motion.span
+          className="badge-alt"
+          style={{ marginBottom: '10px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Full Feature Comparison
+        </motion.span>
+        <motion.h2
+          className="section-title"
+          style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '14px' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          BuildNinja vs CircleCI - Every Feature, Honestly Scored
+        </motion.h2>
+        <motion.p
+          className="section-subtitle"
+          style={{ margin: '0 auto' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           We've covered 40+ criteria across pricing, setup, CI/CD features, integrations, security, and scalability. No spin, no cherry-picking.
-        </p>
+        </motion.p>
 
-        <div className={s.tableWrap}>
+        <motion.div
+          className={s.tableWrap}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <table className={s.table} aria-label="BuildNinja vs CircleCI feature comparison table">
             <thead>
               <tr>
                 <th style={{ width: '34%' }}>Feature / Criterion</th>
-                <th className={s.thBn} style={{ width: '33%' }}>BuildNinja</th>
-                <th style={{ width: '33%' }}>CircleCI</th>
+                <th className={s.thBn} style={{ width: '33%' }}>
+                  <span className={s.thHeaderInner}>
+                    <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.logoBn} />
+                    <span className={s.recBadge}>★ RECOMMENDED</span>
+                  </span>
+                </th>
+                <th style={{ width: '33%' }}><img src="/resources/circleci-logo.svg" alt="CircleCI" className={s.logoCi} /></th>
               </tr>
             </thead>
             <tbody>
@@ -29,12 +65,12 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Pricing &amp; Cost Model</td></tr>
               <tr>
                 <td>Free tier build minutes</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Unlimited</strong> — no credit system</td>
-                <td>~300 build-minutes/mo (6,000 credits)</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Unlimited</strong> - no credit system</td>
+                <td>Up to ~6,000 build-minutes/mo (30,000 credits)</td>
               </tr>
               <tr>
                 <td>Per-seat cost</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0</strong> — no per-user pricing ever</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>$0</strong> - no per-user pricing ever</td>
                 <td>Scales with usage; credit-based tiers</td>
               </tr>
               <tr>
@@ -44,25 +80,20 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Predictable monthly bill</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Yes — server cost is fixed</td>
-                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Variable — spikes with build activity</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Yes - server cost is fixed</td>
+                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Variable - spikes with build activity</td>
               </tr>
               <tr>
                 <td>No credit card to start</td>
                 <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self-host, no card required</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Account required for full access</td>
               </tr>
-              <tr>
-                <td>Free for open source</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> All plans include OSS support</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> OSS plan available</td>
-              </tr>
 
               {/* SETUP & DEPLOYMENT */}
               <tr className={s.catRow}><td colSpan="3"><Zap aria-label="Lightning bolt" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Setup &amp; Deployment</td></tr>
               <tr>
                 <td>Self-hosted deployment</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>1 Docker command</strong> on any Linux server <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Docker, Kubernetes, or Installer</strong> on Windows, macOS, and Linux <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Requires Kubernetes + enterprise contract</td>
               </tr>
               <tr>
@@ -72,7 +103,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Minimum server requirements</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 2 vCPU / 4GB RAM / $30/mo VPS</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 2 vCPU / 4GB RAM</td>
                 <td>Kubernetes cluster (significant overhead)</td>
               </tr>
               <tr>
@@ -87,8 +118,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Cloud SaaS option</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> In roadmap</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully managed SaaS <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self Hosted - Your infrastructure  your Rules </td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully managed SaaS</td>
               </tr>
 
               {/* CI/CD PIPELINE FEATURES */}
@@ -100,8 +131,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Pipeline as code (YAML)</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <code style={{fontSize:'12px'}}>.buildninja.yml</code> — clean, minimal syntax</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <code style={{fontSize:'12px'}}>.circleci/config.yml</code> + orbs</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Supports YAML configuration - clean, minimal syntax</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <code style={{ fontSize: '12px' }}>.circleci/config.yml</code> + orbs</td>
               </tr>
               <tr>
                 <td>Build caching</td>
@@ -120,27 +151,17 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Artifact storage</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> On your own storage — no limits</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> On your own storage - no limits</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Subject to plan storage limits</td>
               </tr>
               <tr>
-                <td>Scheduled pipelines (cron)</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Flexible cron scheduling</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Scheduled workflows</td>
-              </tr>
-              <tr>
-                <td>Matrix builds</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Multi-dimension matrix support</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Supported via parameters</td>
-              </tr>
-              <tr>
                 <td>Pipeline orbs / reusable configs</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Template library in development</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Large orbs registry (1,000+ orbs) <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Export & reuse YAML configs via Config Runner</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Large orbs registry (1,000+ orbs)</td>
               </tr>
               <tr>
                 <td>AI-powered pipeline intelligence</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence (coming Q3 2026) <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> "Autonomous validation" in beta</td>
               </tr>
 
@@ -148,17 +169,17 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><Link aria-label="Integrations" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Integrations &amp; Ecosystem</td></tr>
               <tr>
                 <td>GitHub integration</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Full webhook + PR status checks</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> VCS repository connection</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Deep GitHub integration</td>
               </tr>
               <tr>
                 <td>GitLab integration</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self-hosted + cloud GitLab</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> VCS repository connection</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> GitLab integration supported</td>
               </tr>
               <tr>
                 <td>Bitbucket integration</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Full support</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> VCS repository connection</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Bitbucket Cloud + Server</td>
               </tr>
               <tr>
@@ -178,13 +199,13 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Slack / notification integrations</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Webhook-based notifications</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Email notifications</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Slack orb, email, PagerDuty</td>
               </tr>
               <tr>
                 <td>Third-party plugin ecosystem</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Smaller ecosystem, growing</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 1,000+ orbs from community <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> No plugin chaos</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 1,000+ orbs from community</td>
               </tr>
 
               {/* SECURITY & COMPLIANCE */}
@@ -206,7 +227,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>SSO (SAML / OAuth)</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> SSO via GitHub, GitLab, Google</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> SSO via GitHub, GitLab, Google, Microsoft and Bitbucket</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> SAML SSO on paid plans</td>
               </tr>
               <tr>
@@ -216,12 +237,12 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Secret encryption (AES-256)</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> AES-256 encrypted secret vault</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> AES-256 encrypted</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Encrypted context variables</td>
               </tr>
               <tr>
                 <td>VPN / private network support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully compatible — your network, your rules</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully compatible - your network, your rules</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Requires runner config for private nets</td>
               </tr>
 
@@ -234,8 +255,8 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Horizontal agent scaling</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents without cost increase</td>
-                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more credit consumption</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents freely</td>
+                <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more resource consumption</td>
               </tr>
               <tr>
                 <td>Build queue management</td>
@@ -244,16 +265,16 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Multi-project support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects, no per-project cost</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects on paid plans</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects, no per-project limits</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects on enterprise plans</td>
               </tr>
 
               {/* DEVELOPER EXPERIENCE */}
               <tr className={s.catRow}><td colSpan="3"><Code aria-label="Developer Experience" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Developer Experience</td></tr>
               <tr>
                 <td>Interactive sandbox / demo</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Dojo — live CI/CD sandbox (unique) <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
-                <td><span className={s.cross}><X aria-label="No" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> No live sandbox — sign-up flow only</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Dojo - live CI/CD sandbox (unique) <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
+                <td><span className={s.cross}><X aria-label="No" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> No live sandbox - sign-up flow only</td>
               </tr>
               <tr>
                 <td>CLI tooling</td>
@@ -267,12 +288,12 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Documentation quality</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Growing — core docs complete</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Extensive docs + community guides <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Complete docs available</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Extensive docs + community guides</td>
               </tr>
               <tr>
                 <td>Community &amp; ecosystem</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Early stage — GrapeCity developer network</td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Early stage - GrapeCity developer network</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Large community, Discuss forum, podcast <span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span></td>
               </tr>
 
@@ -280,7 +301,7 @@ export default function ComparisonTable() {
               <tr className={s.catRow}><td colSpan="3"><Handshake aria-label="Support" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Support</td></tr>
               <tr>
                 <td>Email / ticket support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Included in all plans</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Included</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Available on paid plans</td>
               </tr>
               <tr>
@@ -290,20 +311,26 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>SLA guarantees</td>
-                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Enterprise SLA in roadmap</td>
-                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> SLAs on Scale/Enterprise plans</td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Email Support within 48 hours</td>
+                <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Enterprise SLAs</td>
               </tr>
             </tbody>
           </table>
-        </div>
+        </motion.div>
 
-        <div className={s.legend}>
+        <motion.div
+          className={s.legend}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           <span><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Fully supported</span>
           <span><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Partial / plan-dependent</span>
           <span><span className={s.cross}><X aria-label="No" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Not supported</span>
           <span><span className={`${s.winTag} ${s.winBn}`}>BN Wins</span> BuildNinja structural advantage</span>
           <span><span className={`${s.winTag} ${s.winCi}`}>CircleCI Wins</span> CircleCI ahead</span>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

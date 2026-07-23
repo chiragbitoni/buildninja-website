@@ -23,7 +23,7 @@ export default function RelatedPages() {
           <Link href="/compare/jenkins-alternative" className={s.relCard}>
             <div className={s.relIcon} style={{ background: 'var(--color-info-subtle)' }}><Wrench aria-label="Configuration" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <div>
-              <div className={s.relTitle}>Best Jenkins Alternatives 2026</div>
+              <div className={s.relTitle}>Best Jenkins Alternatives</div>
               <div className={s.relSub}>Migrating from Jenkins? Compare all options including BuildNinja.</div>
             </div>
           </Link>
@@ -31,7 +31,7 @@ export default function RelatedPages() {
             <div className={s.relIcon} style={{ background: 'var(--color-success-bg)' }}><Monitor aria-label="Self-hosted" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <div>
               <div className={s.relTitle}>Complete Guide to Self-Hosted CI/CD</div>
-              <div className={s.relSub}>Self-hosted vs cloud, cost breakdown, compliance guide for 2026.</div>
+              <div className={s.relSub}>Self-hosted vs cloud, cost breakdown, compliance guide.</div>
             </div>
           </Link>
           <Link href="/integrations/github" className={s.relCard}>
@@ -52,7 +52,7 @@ export default function RelatedPages() {
             <div className={s.relIcon} style={{ background: 'var(--color-success-bg)' }}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <div>
               <div className={s.relTitle}>BuildNinja Pricing</div>
-              <div className={s.relSub}>Free tier vs Growth Edition — full feature breakdown.</div>
+              <div className={s.relSub}>Free tier vs Growth Edition - full feature breakdown.</div>
             </div>
           </Link>
         </div>

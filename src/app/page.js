@@ -38,7 +38,6 @@ export const metadata = {
 };
 
 export default function Home() {
-  // Generate Home Page FAQ Schema dynamically
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -52,7 +51,6 @@ export default function Home() {
     }))
   };
 
-  // Generate SoftwareApplication Schema
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",

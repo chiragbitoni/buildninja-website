@@ -8,23 +8,16 @@
   max-width: var(--container-width, 1400px);
   margin: 0 auto;
   padding: 0 var(--container-padding, 32px);
+  text-align: center;
 }
 
-.sectionLabel {
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 10px;
-  display: block;
-}
 
 .verdictGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 40px;
+  text-align: left;
 }
 
 .verdictCard {
@@ -52,9 +45,17 @@
   height: 3px;
 }
 
-.verdictCardGreen::before { background: var(--color-success); }
-.verdictCardOrange::before { background: var(--color-primary); }
-.verdictCardBlue::before { background: var(--color-info); }
+.verdictCardGreen::before {
+  background: var(--color-success);
+}
+
+.verdictCardOrange::before {
+  background: var(--color-primary);
+}
+
+.verdictCardBlue::before {
+  background: var(--color-info);
+}
 
 .verdictIcon {
   width: 44px;
@@ -67,9 +68,17 @@
   margin-bottom: 14px;
 }
 
-.verdictIconGreen { background: var(--color-success-bg); }
-.verdictIconOrange { background: var(--color-primary-subtle); }
-.verdictIconBlue { background: var(--color-info-bg); }
+.verdictIconGreen {
+  background: var(--color-success-bg);
+}
+
+.verdictIconOrange {
+  background: var(--color-primary-subtle);
+}
+
+.verdictIconBlue {
+  background: var(--color-info-bg);
+}
 
 .verdictCard h3 {
   font-size: 16px;

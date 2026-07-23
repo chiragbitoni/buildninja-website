@@ -1,0 +1,93 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.decisionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 2rem;
+}
+
+.migrationBox {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.migrationBoxAlt {
+  border-color: var(--color-border-strong);
+}
+
+.chooseNinja {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.chooseJenkins {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+.featureList, .featureListAlt {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.featureList li {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.featureListAlt li {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.iconWin {
+  color: var(--color-success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.iconMuted {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .decisionGrid {
+    grid-template-columns: 1fr;
+  }
+}

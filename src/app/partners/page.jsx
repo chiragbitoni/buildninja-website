@@ -1,6 +1,5 @@
 import PartnerPage from "./PartnerPage";
 
-
 export const metadata = {
 <<<<<<< HEAD
 <<<<<<< HEAD

@@ -37,9 +37,10 @@ export const metadata = {
 };
 
 export default function Features() {
-  const softwareSchema = {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://buildninja.grapehub.io/features#softwareapplication",
     "name": "BuildNinja",
     "operatingSystem": "Windows, Linux, macOS, Docker, Kubernetes",
     "applicationCategory": "DeveloperApplication",
@@ -55,7 +56,7 @@ export default function Features() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div>
         <FeaturesPage />

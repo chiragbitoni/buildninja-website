@@ -44,7 +44,7 @@
 
 .ctab:hover {
   color: var(--color-text);
-  background: var(--color-bg-surface-hover, rgba(0,0,0,0.04));
+  background: var(--color-bg-surface-hover, rgba(0, 0, 0, 0.04));
 }
 
 .ctab.active {
@@ -63,8 +63,15 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .costGrid {
@@ -107,6 +114,9 @@
   font-size: 20px;
   font-weight: 800;
   color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .costBadgeRec {
@@ -146,8 +156,13 @@
   flex-shrink: 0;
 }
 
-.clVal.g { color: var(--color-success); }
-.clVal.r { color: var(--color-error); }
+.clVal.g {
+  color: var(--color-success);
+}
+
+.clVal.r {
+  color: var(--color-error);
+}
 
 .costBox {
   margin-top: 24px;
@@ -157,8 +172,13 @@
   border: 1px solid var(--color-border);
 }
 
-.bnBox { background: var(--color-primary-subtle); }
-.ghBox { background: var(--color-error-bg); }
+.bnBox {
+  background: var(--color-primary-subtle);
+}
+
+.ghBox {
+  background: var(--color-error-bg);
+}
 
 .costBoxNum {
   font-family: var(--font-display);
@@ -167,12 +187,29 @@
   margin-bottom: 6px;
 }
 
-.costBoxNum.or { color: var(--color-primary); }
-.costBoxNum.rd { color: var(--color-error); }
+.costBoxNum.or {
+  color: var(--color-primary);
+}
+
+.costBoxNum.rd {
+  color: var(--color-error);
+}
 
 .costBoxSub {
   font-size: 13px;
   color: var(--color-text-secondary);
+}
+
+.calcLogoBn {
+  height: 36px;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.calcLogoGh {
+  height: 32px;
+  width: auto;
+  filter: var(--logo-filter);
 }
 
 .calloutGood {

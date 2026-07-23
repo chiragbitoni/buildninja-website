@@ -25,7 +25,7 @@ export default function ExploreLinks() {
             <div className={s.linkIcon} style={{ background: 'var(--color-success-bg)' }}><DollarSign aria-label="Pricing" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <div>
               <div className={s.linkCardTitle}>Pricing Plans</div>
-              <div className={s.linkCardSub}>See the full pricing comparison — free vs Growth Edition</div>
+              <div className={s.linkCardSub}>See the full pricing comparison - free vs Growth Edition</div>
             </div>
           </Link>
           <Link href="/install" className={s.linkCard}>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { fetchGrapeHubBlogPosts, fetchGrapeHubBlogPost } from "@/services/grapehub/fetchPage";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import styles from "./BlogPost.module.css";
 // ── Pre-render all known post slugs at build time ──────────────────────────
 export async function generateStaticParams() {
@@ -39,21 +40,21 @@ export async function generateMetadata({ params }) {
       authors: post.author ? [post.author] : ["BuildNinja Team"],
       images: post.coverImage
         ? [
-            {
-              url: post.coverImage,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
+          {
+            url: post.coverImage,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ]
         : [
-            {
-              url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
-              width: 1200,
-              height: 630,
-              alt: "BuildNinja Blog",
-            },
-          ],
+          {
+            url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+            width: 1200,
+            height: 630,
+            alt: "BuildNinja Blog",
+          },
+        ],
     },
     twitter: {
       card: "summary_large_image",
@@ -70,11 +71,11 @@ export async function generateMetadata({ params }) {
 function AuthorAvatar({ author, avatarUrl }) {
   const initials = author
     ? author
-        .split(" ")
-        .map((w) => w[0])
-        .slice(0, 2)
-        .join("")
-        .toUpperCase()
+      .split(" ")
+      .map((w) => w[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase()
     : "BN";
 
   if (avatarUrl) {
@@ -107,7 +108,7 @@ export default async function BlogPostPage({ params }) {
             temporarily unavailable.
           </p>
           <Link href="/blog" className={styles.notFoundLink}>
-            <ArrowLeft size={16} /> Back to Blog
+            <ArrowLeft size={16} /> Back to Blogs
           </Link>
         </div>
       </div>
@@ -126,45 +127,69 @@ export default async function BlogPostPage({ params }) {
     console.error("Error retrieving author avatar from feed:", e);
   }
 
-  // Build JSON-LD Article schema
-  const articleSchema = {
+  // Build JSON-LD schema
+  const blogPostSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt || post.title,
-    image: post.coverImage || "https://buildninja.grapehub.io/resources/BuildNinja.png",
-    author: {
-      "@type": "Person",
-      name: post.author || "BuildNinja Team",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "BuildNinja",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+    "@graph": [
+      generateBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: post.title, url: `/blog/${slug}` },
+      ]),
+      {
+        "@type": "Article",
+        headline: post.title,
+        description: post.excerpt || post.title,
+        image: post.coverImage || "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        author: {
+          "@type": "Person",
+          name: post.author || "BuildNinja Team",
+        },
+        publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
+        datePublished: post.firstPublishedDate,
+        dateModified: post.lastPublishedDate || post.firstPublishedDate,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://buildninja.grapehub.io/blog/${slug}`,
+        },
       },
-    },
-    datePublished: post.firstPublishedDate,
-    dateModified: post.lastPublishedDate || post.firstPublishedDate,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://buildninja.grapehub.io/blog/${slug}`,
-    },
+    ],
   };
+
+  // Build JSON-LD FAQPage schema if the post contains FAQ data
+  const faqSchema = post.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map(({ question, answer }) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <div className={styles.pageWrapper}>
       {/* JSON-LD Article Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Back navigation */}
       <div className={styles.backBar}>
         <Link href="/blog" className={styles.backLink}>
-          <ArrowLeft size={16} /> Back to Blog
+          <ArrowLeft size={16} /> Back to Blogs
         </Link>
       </div>
 
@@ -202,7 +227,7 @@ export default async function BlogPostPage({ params }) {
           </div>
         </header>
 
-        {/* Body — Wix-scraped HTML rendered safely */}
+        {/* Body - Wix-scraped HTML rendered safely */}
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{ __html: post.content }}

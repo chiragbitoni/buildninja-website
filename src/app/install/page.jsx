@@ -37,9 +37,10 @@ export const metadata = {
 };
 
 export default function Download() {
-  const howToSchema = {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
+    "@id": "https://buildninja.grapehub.io/install#howto",
     "name": "How to Install BuildNinja",
     "description": "Learn how to deploy and configure the BuildNinja self-hosted CI/CD platform on your own infrastructure using the Windows Installer or Docker.",
     "step": [
@@ -56,7 +57,7 @@ export default function Download() {
       {
         "@type": "HowToStep",
         "name": "Run the Installer or Docker Command",
-        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull buildninja/buildninja'."
+        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull grapehub/buildninja'."
       },
       {
         "@type": "HowToStep",
@@ -70,7 +71,7 @@ export default function Download() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <DownloadPage />
     </>

@@ -47,7 +47,8 @@
   margin-bottom: 32px;
 }
 
-.btnPrimary {display: inline-flex;
+.btnPrimary {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
@@ -61,7 +62,8 @@
   box-shadow: var(--shadow-sm);
 }
 
-.btnPrimary:hover {transform: translateY(-2px);
+.btnPrimary:hover {
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
@@ -88,7 +90,22 @@
 }
 
 .ctaNote {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--color-text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.ctaBadge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-bg-shell);
+  border: 1px solid var(--color-border-medium);
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
 }

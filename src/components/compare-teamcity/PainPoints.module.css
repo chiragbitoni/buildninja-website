@@ -1,0 +1,104 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 32px);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.sectionSub {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.painGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.painCard {
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.painIcon {
+  margin-bottom: 11px;
+}
+
+.painIconImg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.painTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-error);
+  margin-bottom: 7px;
+}
+
+.painBody {
+  font-size: 12.5px;
+  color: #B07878;
+  line-height: 1.65;
+}
+
+.resolve {
+  background: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  text-align: left;
+}
+
+.resolveTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-success);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resolveList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resolveItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--color-success);
+  line-height: 1.65;
+}
+
+.resolveCheck {
+  flex-shrink: 0;
+  margin-top: 3px;
+}

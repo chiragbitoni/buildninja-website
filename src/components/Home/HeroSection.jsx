@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { openVideo } from "@/redux/slice/videoPopupSlice";
 import { siteConfig } from "@/config/site";
+import { Play } from "lucide-react";
+import posthog from "posthog-js";
 
 const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
 const Typewriter = ({ texts }) => {
@@ -51,6 +53,7 @@ export default function HeroSection() {
   const orb2 = useRef(null);
   const router = useRouter();
   const dispatch = useDispatch();
+
   useEffect(() => {
     let t = 0;
     const tick = () => {
@@ -65,7 +68,7 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero}>
-      <NetworkBackground />
+      {/* <NetworkBackground /> */}
 
       {/* Gradient orbs */}
       <div ref={orb1} className={styles.orb1} />
@@ -77,46 +80,60 @@ export default function HeroSection() {
       {/* Bottom fade */}
       <div className={styles.bottomFade} />
 
-      {/* Hero copy - each child has its own animation class */}
-      <div className={styles.copy}>
-        <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
-          <span className={styles.badgeDot} />
-          {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+      {/* Hero content: text left, video right */}
+      <div className={styles.heroContent}>
+        <div className={styles.copy}>
+          <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
+            <span className={styles.badgeDot} />
+            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+          </div>
+
+          <h1 className={styles.heading}>
+            Free Self-Hosted CI/CD.<br /><span className={styles.headingGradient}>
+              Unlimited builds
+            </span><br />
+            <span className={styles.headingGradient}>
+              No credits.
+            </span>
+          </h1>
+          <p className={styles.subtext}>
+            BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, forever free.
+          </p>
+          <div className={styles.ctas}>
+            <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Deploy free in 5 minutes
+            </a>
+            <a href="/dojo" className={styles.ctaSecondary} onClick={() => { posthog.capture("hero_sandbox_clicked"); router.push("/dojo") }} data-cursor-grow>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Try live sandbox - no install
+            </a>
+          </div>
         </div>
 
-        <h1 className={styles.heading}>
-          Your Self Hosted CI/CD Tool<br />
-          <span className={styles.headingGradient}>
-            <Typewriter texts={[
-              "No Plugin Chaos",
-              "Low Maintenance",
-              "Real-Time Build Updates",
-              "Zero Complexity",
-              "Quick & Easy Setup"
-            ]} />
-          </span>
-        </h1>
-
-        <p className={styles.subtext}>
-          Deploy in minutes, build on your own servers, and scale with your team. No seat limits, no vendor lock-in, no cloud dependency.
-        </p>
-
-        <div className={styles.ctas}>
-          <a className={styles.ctaPrimary} onClick={() => { router.push("/install") }} data-cursor-grow>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Get Started
-          </a>
-          <a className={styles.ctaSecondary} onClick={() => { dispatch(openVideo({ videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, title: "BuildNinja", ctaText: "Self Hosted CI/CD That Just Works", link: "https://buildninja.grapehub.io/docs/category/getting-started" })) }} data-cursor-grow>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            See the 3-Minute Demo
-          </a>
-
+        <div className={styles.heroVideo}>
+          <div className={styles.browserMockup}>
+            <div className={styles.videoAspect}>
+              <iframe
+                src="https://www.youtube.com/embed/jpKKjmirbkA?autoplay=1&mute=1&loop=1&playlist=jpKKjmirbkA&rel=0&modestbranding=1"
+                title="BuildNinja - Self Hosted CI/CD"
+                frameBorder="0"
+                allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+          <div className={styles.videoLabel}>
+            <Play size={12} />
+            See BuildNinja in action (3 min overview)
+          </div>
         </div>
       </div>
 
@@ -129,8 +146,8 @@ export default function HeroSection() {
             <svg className={styles.hintCursor} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 3l14 9-7 1-4 7-3-17z" />
             </svg>
-            <span className={styles.hintTextFull}>Interactive Demo - Click Around to Explore</span>
-            <span className={styles.hintTextMobile}>Interactive Demo - Click to Explore</span>
+            <span className={styles.hintTextFull}>Interactive Demo - <span className={styles.hintTextBlack}>Click Around to Explore</span></span>
+            <span className={styles.hintTextMobile}>Interactive Demo - <span className={styles.hintTextBlack}>Click to Explore</span></span>
           </div>
 
           {/* SVG border that draws itself */}
@@ -171,6 +188,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }
