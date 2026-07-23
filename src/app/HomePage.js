@@ -4,10 +4,6 @@ import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 import posthog from "posthog-js";
 
-import { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
-import posthog from "posthog-js";
-
 import CenteredHeroSection from "@/components/Home/CenteredHeroSection";
 import WorksWith from "@/components/Home/WorksWith";
 import WhySelfHosted from "@/components/Home/WhySelfHosted";

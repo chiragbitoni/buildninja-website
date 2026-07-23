@@ -45,7 +45,7 @@
 }
 
 .faqQ:hover {
-  background: var(--color-bg-surface-hover, rgba(0,0,0,0.02));
+  background: var(--color-bg-surface-hover, rgba(0, 0, 0, 0.02));
 }
 
 .faqIcon {
