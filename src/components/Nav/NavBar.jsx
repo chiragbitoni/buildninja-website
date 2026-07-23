@@ -1,6 +1,6 @@
 "use client";
 import styles from "./NavBar.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -16,7 +16,9 @@ const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 
 export default function Navbar({ blogPosts = [] }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const [isHover, setHover] = useState(false);
+  const resourcesCloseTimer = useRef(null);
   const router = useRouter();
   const pathname = usePathname();
   const dispatch = useDispatch();
@@ -70,6 +72,8 @@ export default function Navbar({ blogPosts = [] }) {
     {
       name: "Documentation",
       path: `${DOCS_URL}/docs/overview`,
+      icon: "docs",
+      desc: "Explore our comprehensive guides, tutorials, and references to get the most out of BuildNinja.",
       children: [
         { name: "Getting Started", path: `${DOCS_URL}/docs/category/getting-started` },
         { name: "Tutorials", path: `${DOCS_URL}/docs/category/quick-setup-guide` },
@@ -78,22 +82,26 @@ export default function Navbar({ blogPosts = [] }) {
       ],
     },
     {
-      name: "Blog",
-      path: "/blog",
-      children: blogPosts.slice(0, 5).map((post) => ({
-        name: post.title,
-        path: `/blog/${post.slug}`,
-      })),
-    },
-    {
       name: "Compare",
       path: "/compare",
+      icon: "compare",
+      desc: "See how BuildNinja compares to other CI/CD platforms and why teams make the switch.",
       children: [
         { name: "BuildNinja vs GitHub Actions", path: "/compare/buildninja-vs-github-actions" },
         { name: "BuildNinja vs CircleCI", path: "/compare/buildninja-vs-circleci" },
         { name: "BuildNinja vs Jenkins", path: "/compare/buildninja-vs-jenkins" },
         { name: "BuildNinja vs TeamCity", path: "/compare/buildninja-vs-teamcity" },
       ],
+    },
+    {
+      name: "Blog",
+      path: "/blog",
+      icon: "blog",
+      desc: "Stay up to date with product updates, engineering deep-dives, and community stories.",
+      children: blogPosts.slice(0, 5).map((post) => ({
+        name: post.title,
+        path: `/blog/${post.slug}`,
+      })),
     },
   ];
 
@@ -137,51 +145,57 @@ export default function Navbar({ blogPosts = [] }) {
 
         {/* Desktop Menu Group */}
         <div className={styles.navbarRightGroup}>
-          <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
-            {navItems.slice(0, 4).map((item) => (
-              <li
-                key={item.name}
-                className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
-              >
-                <a
-                  href={item.path}
-                  className={styles.navbarAnchor}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation(item.path);
-                    dispatch(closeVideo());
-                  }}
+          <div className={styles.navLinksWrapper}>
+            <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
+              {navItems.slice(0, 4).map((item) => (
+                <li
+                  key={item.name}
+                  className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
                 >
-                  {item.name}
-                </a>
-              </li>
-            ))}
-            <NavDropdown
-              label="Resources"
-              items={resourcesItems}
-              activePaths={["/docs/overview", "/blog", "/compare"]}
-              handleNavigation={handleNavigation}
-              isActive={isActive}
-            />
-            {navItems.slice(4).map((item) => (
-              <li
-                key={item.name}
-                className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
-              >
-                <a
-                  href={item.path}
-                  className={styles.navbarAnchor}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation(item.path);
-                    dispatch(closeVideo());
-                  }}
+                  <a
+                    href={item.path}
+                    className={styles.navbarAnchor}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(item.path);
+                      dispatch(closeVideo());
+                    }}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+              <NavDropdown
+                label="Resources"
+                items={resourcesItems}
+                activePaths={["/docs/overview", "/blog", "/compare"]}
+                handleNavigation={handleNavigation}
+                isActive={isActive}
+                isOpen={resourcesOpen}
+                onOpenChange={setResourcesOpen}
+                closeTimerRef={resourcesCloseTimer}
+                controlledHover={true}
+              />
+              {navItems.slice(4).map((item) => (
+                <li
+                  key={item.name}
+                  className={`${styles.navbarLink} ${isActive(item.path) ? styles.activeLink : ""}`}
                 >
-                  {item.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <a
+                    href={item.path}
+                    className={styles.navbarAnchor}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(item.path);
+                      dispatch(closeVideo());
+                    }}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className={styles.navbarActionGroup}>
             <Image

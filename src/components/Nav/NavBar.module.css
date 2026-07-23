@@ -20,6 +20,7 @@
 .navbarHide  { transform: translateY(-100%); } */
 
 .navbarContainer {
+  position: relative;
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 14px var(--container-padding);
@@ -65,6 +66,8 @@
   align-items: center;
   gap: 32px;
 }
+
+
 
 .navbarActionGroup {
   display: flex;

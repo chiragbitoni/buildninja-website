@@ -167,6 +167,27 @@
   box-shadow: 0 15px 40px var(--color-primary-glow);
 }
 
+.btnDoc {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border-medium);
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btnDoc:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary-border);
+}
+
 .btnSecondary {
   display: inline-flex;
   align-items: center;

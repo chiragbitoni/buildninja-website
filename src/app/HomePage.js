@@ -4,18 +4,15 @@ import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 import posthog from "posthog-js";
 
-import HeroSection from "@/components/Home/HeroSection";
-import CTASection from "@/components/Home/CTASection";
+import CenteredHeroSection from "@/components/Home/CenteredHeroSection";
+import WorksWith from "@/components/Home/WorksWith";
+import WhySelfHosted from "@/components/Home/WhySelfHosted";
+
+import HowNinjaCompares from "@/components/Home/HowNinjaCompares";
+import SocialProof from "@/components/Home/SocialProof";
 import AIRoadmap from "@/components/Home/AIRoadmap";
 import FAQSection from "@/components/Home/FAQSection";
-import WorksWith from "@/components/Home/WorksWith";
-// import SocialProof from "@/components/Home/SocialProof";
-// import HowItWorks from "@/components/Home/HowItWorks";
-import WhatIsNinja from "@/components/Home/WhatIsNinja";
-import WhySelfHosted from "@/components/Home/WhySelfHosted";
-import WhoUsesNinja from "@/components/Home/WhoUsesNinja";
-import CoreCapabilities from "@/components/Home/CoreCapabilities";
-import HowNinjaCompares from "@/components/Home/HowNinjaCompares";
+import CTASection from "@/components/Home/CTASection";
 
 function SectionTracker({ name, children }) {
   const ref = useRef(null);
@@ -35,18 +32,12 @@ function SectionTracker({ name, children }) {
 export default function HomePage() {
   return (
     <>
-      <SectionTracker name="hero"><HeroSection /></SectionTracker>
-      <SectionTracker name="what_is_ninja"><WhatIsNinja /></SectionTracker>
-      {/* <HowItWorks /> */}
-      {/* <SocialProof /> */}
-      <SectionTracker name="who_uses_ninja"><WhoUsesNinja /></SectionTracker>
-      <SectionTracker name="why_self_hosted"><WhySelfHosted /></SectionTracker>
-      <SectionTracker name="core_capabilities"><CoreCapabilities /></SectionTracker>
+      <SectionTracker name="centered_hero"><CenteredHeroSection /></SectionTracker>
       <SectionTracker name="works_with"><WorksWith /></SectionTracker>
-      <SectionTracker name="how_ninja_compares"><HowNinjaCompares /></SectionTracker>
-      {/* <FeaturesGrid /> */}
+      <SectionTracker name="why_self_hosted"><WhySelfHosted /></SectionTracker>
 
-      {/* <PricingTeaser /> */}
+      <SectionTracker name="how_ninja_compares"><HowNinjaCompares /></SectionTracker>
+      <SectionTracker name="social_proof"><SocialProof /></SectionTracker>
       <SectionTracker name="ai_roadmap"><AIRoadmap /></SectionTracker>
       <SectionTracker name="faq"><FAQSection /></SectionTracker>
       <SectionTracker name="cta"><CTASection /></SectionTracker>
