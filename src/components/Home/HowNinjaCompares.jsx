@@ -84,7 +84,7 @@ export default function HowNinjaCompares() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          * Cost estimates based on publicly listed pricing for a 50-person team running 200 builds/day at 6 minutes average duration. CircleCI Performance plan at $15/user/mo + credit overages. GitHub Actions Team plan at $4/user/mo + compute overage. BuildNinja and Jenkins are self-hosted — server infrastructure cost only.
+          * Cost estimates based on publicly listed pricing for a 50-person team running 200 builds/day at 6 minutes average duration. CircleCI Performance plan at $15/user/mo + credit overages. GitHub Actions Team plan at $4/user/mo + compute overage. BuildNinja and Jenkins are self-hosted - server infrastructure cost only.
         </motion.p>
       </div>
     </section>
