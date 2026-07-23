@@ -46,6 +46,7 @@ export default function NavDropdown({
   isOpen: externalOpen,
   onOpenChange,
   closeTimerRef,
+  controlledHover,
 }) {
   const [internalOpen, setInternalOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
@@ -165,7 +166,19 @@ export default function NavDropdown({
     );
   }
 
-  const hoverHandlers = externalOpen === undefined
+  const hoverHandlers = controlledHover
+    ? {
+        onMouseEnter: () => {
+          if (closeTimerRef?.current) clearTimeout(closeTimerRef.current);
+          setIsOpen(true);
+        },
+        onMouseLeave: () => {
+          if (closeTimerRef) {
+            closeTimerRef.current = setTimeout(() => setIsOpen(false), 300);
+          }
+        },
+      }
+    : externalOpen === undefined
     ? {
         onMouseEnter: () => setIsOpen(true),
         onMouseLeave: () => { setIsOpen(false); setActiveItem(null); },

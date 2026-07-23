@@ -145,16 +145,7 @@ export default function Navbar({ blogPosts = [] }) {
 
         {/* Desktop Menu Group */}
         <div className={styles.navbarRightGroup}>
-          <div
-            className={styles.navLinksWrapper}
-            onMouseEnter={() => {
-              if (resourcesCloseTimer.current) clearTimeout(resourcesCloseTimer.current);
-              setResourcesOpen(true);
-            }}
-            onMouseLeave={() => {
-              resourcesCloseTimer.current = setTimeout(() => setResourcesOpen(false), 300);
-            }}
-          >
+          <div className={styles.navLinksWrapper}>
             <ul className={`${styles.navbarLinks} ${styles.desktopMenu}`}>
               {navItems.slice(0, 4).map((item) => (
                 <li
@@ -183,6 +174,7 @@ export default function Navbar({ blogPosts = [] }) {
                 isOpen={resourcesOpen}
                 onOpenChange={setResourcesOpen}
                 closeTimerRef={resourcesCloseTimer}
+                controlledHover={true}
               />
               {navItems.slice(4).map((item) => (
                 <li
