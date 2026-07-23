@@ -45,9 +45,17 @@
   height: 3px;
 }
 
-.verdictCardGreen::before { background: var(--color-success); }
-.verdictCardOrange::before { background: var(--color-primary); }
-.verdictCardBlue::before { background: var(--color-info); }
+.verdictCardGreen::before {
+  background: var(--color-success);
+}
+
+.verdictCardOrange::before {
+  background: var(--color-primary);
+}
+
+.verdictCardBlue::before {
+  background: var(--color-info);
+}
 
 .verdictIcon {
   width: 44px;
@@ -60,9 +68,17 @@
   margin-bottom: 14px;
 }
 
-.verdictIconGreen { background: var(--color-success-bg); }
-.verdictIconOrange { background: var(--color-primary-subtle); }
-.verdictIconBlue { background: var(--color-info-bg); }
+.verdictIconGreen {
+  background: var(--color-success-bg);
+}
+
+.verdictIconOrange {
+  background: var(--color-primary-subtle);
+}
+
+.verdictIconBlue {
+  background: var(--color-info-bg);
+}
 
 .verdictCard h3 {
   font-size: 16px;
