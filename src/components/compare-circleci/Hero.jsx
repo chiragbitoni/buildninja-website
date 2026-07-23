@@ -29,8 +29,8 @@ export default function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-<span style={{ fontStyle: 'normal', background: 'linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent', display: 'inline-block', paddingBottom: '0.15em', marginBottom: '-0.15em', verticalAlign: 'top' }}>BuildNinja</span> vs CircleCI<br />
-          Which CI/CD Tool Wins?
+            <span style={{ fontStyle: 'normal', background: 'linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-alt))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent', display: 'inline-block', paddingBottom: '0.15em', marginBottom: '-0.15em', verticalAlign: 'top' }}>BuildNinja</span> vs CircleCI<br />
+            Which CI/CD Tool Wins?
 
           </motion.h1>
 
