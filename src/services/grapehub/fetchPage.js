@@ -222,8 +222,23 @@ export async function fetchGrapeHubBlogPost(slug) {
     // Strip inline styles (padding, line-height) from p / h1-h6 elements
     postBody = postBody.replace(/(<(?:p|h[1-6])\b[^>]*?)\s+style="[^"]*"/gi, '$1');
 
-    // Strip fixed width from figure wrappers so images stay responsive
-    postBody = postBody.replace(/(<(?:figure|div)\b[^>]*?)\s+style="[^"]*width:\s*\d+px[^"]*"/gi, '$1');
+    // Strip position and float from ALL inline styles so no element
+    // gets pulled out of document flow (images appearing at top of page)
+    postBody = postBody.replace(/style="([^"]*)"/gi, (match, styleContent) => {
+      const cleaned = styleContent
+        .split(';')
+        .map(s => s.trim())
+        .filter(s => {
+          const prop = s.split(':')[0]?.trim().toLowerCase();
+          return prop !== 'position' && prop !== 'float';
+        })
+        .join('; ')
+        .trim();
+      return cleaned ? `style="${cleaned}"` : '';
+    });
+
+    // Strip fixed width from div wrappers so images stay responsive
+    postBody = postBody.replace(/(<(?:div)\b[^>]*?)\s+style="[^"]*width:\s*\d+px[^"]*"/gi, '$1');
 
     // Strip Wix inline styles from img tags so our own CSS controls display
     postBody = postBody.replace(/(<img\b[^>]*?)\s+style="[^"]*"/gi, '$1');

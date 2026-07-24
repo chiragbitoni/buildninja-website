@@ -117,10 +117,11 @@
   text-decoration: none;
   margin-top: 24px;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: var(--shadow-cta, 0 4px 16px rgba(232,85,42,0.3));
+  box-shadow: var(--shadow-cta, 0 4px 16px rgba(232, 85, 42, 0.3));
 }
 
-.btnPrimary:hover {transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(232,85,42,0.38);
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(232, 85, 42, 0.38);
   background: linear-gradient(135deg, var(--color-primary-alt), var(--color-primary));
 }
