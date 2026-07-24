@@ -147,6 +147,7 @@
 
 /* ── Article Body ──────────────────────────────────────── */
 .content {
+  position: relative;
   font-family: var(--font-body, var(--font-accent));
   font-size: 1.05rem;
   line-height: 1.85;
