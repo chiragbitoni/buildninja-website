@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import AvatarMenu from "./AvatarMenu";
+/* import AvatarMenu from "./AvatarMenu"; */
 import ThemeToggle from "./ThemeToggle";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
@@ -129,7 +129,7 @@ export default function Navbar({ blogPosts = [] }) {
         {/* Mobile Controls Group */}
         <div className={styles.mobileControls}>
           <div className={styles.mobileOnlyActions}>
-            <AvatarMenu />
+            {/* <AvatarMenu /> */}
             <ThemeToggle />
           </div>
 
@@ -215,7 +215,7 @@ export default function Navbar({ blogPosts = [] }) {
             >
               Get Started
             </button>
-            <AvatarMenu />
+            {/* <AvatarMenu /> */}
             <ThemeToggle />
           </div>
         </div>

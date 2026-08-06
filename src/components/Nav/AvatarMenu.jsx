@@ -26,6 +26,11 @@ export default function AvatarMenu() {
   }, []);
 
   if (!isLoggedIn) {
+    return null;
+  }
+
+  /* ===== LOGIN BUTTON REMOVED (keep commented to restore later) =====
+  if (!isLoggedIn) {
     return (
       <motion.button
         className={styles.amLoginBtn}
@@ -39,6 +44,7 @@ export default function AvatarMenu() {
       </motion.button>
     );
   }
+  ===== */
 
   async function handleLogout() {
     try {
