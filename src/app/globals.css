@@ -48,6 +48,7 @@
   --color-info-bg: rgba(64, 169, 255, 0.12);
   --color-info-border: rgba(64, 169, 255, 0.5);
   --color-info-subtle: rgba(64, 169, 255, 0.04);
+  --color-info-gradient: linear-gradient(145deg, rgba(64, 169, 255, 0.32), rgba(64, 169, 255, 0.1) 45%, rgba(var(--bg-rgb), 0.5));
   --color-warning: #fa54aa;
   --color-warning-bg: rgba(250, 84, 170, 0.12);
 
@@ -158,6 +159,7 @@
   --color-info-bg: rgba(37, 99, 235, 0.1);
   --color-info-border: rgba(37, 99, 235, 0.2);
   --color-info-subtle: rgba(37, 99, 235, 0.04);
+  --color-info-gradient: linear-gradient(145deg, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0.05) 45%, rgba(var(--bg-rgb), 0.45));
   --color-warning: #d97706;
   --color-warning-bg: rgba(217, 119, 6, 0.1);
 
