@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import s from "./PricingPlans.module.css";
 import { paths } from "../../../../../public/static/paths";
-import { ShogunIcon, EnterpriseIcon } from "../PricingHero/PricingIcons";
+import { ShogunIcon, EnterpriseIcon, KenzoAIIcon } from "../PricingHero/PricingIcons";
 import { fetchActivePlansByProduct, PlanProduct } from "@/services/plans/plans";
 import { env } from "@/lib/config/env";
 
@@ -70,8 +70,29 @@ const isUnlimited = (v) => String(v) === "999999";
 const formatValue = (v) =>
   isUnlimited(v) ? "Unlimited" : Number(v).toLocaleString("en-US");
 
+const KENZO_MODELS = ["Economy", "Optimised", "Best"];
+
+const MODEL_TIER_LABELS = {
+  1: "Economy",
+  2: "Optimised",
+  3: "Economy + Optimised",
+  4: "Best",
+  5: "Economy + Best",
+  6: "Optimised + Best",
+  7: "All",
+};
+
+const modelTiersIncluded = (value) => {
+  const n = Number(value) || 0;
+  return KENZO_MODELS.filter((_, i) => n & (1 << i));
+};
+
 const featureValueText = (f) => {
   const name = String(f.featureName || "").toLowerCase();
+  if (name.includes("model tier")) {
+    const tier = MODEL_TIER_LABELS[Number(f.value)];
+    return tier || (Number(f.value) >= 7 ? "All" : formatValue(f.value));
+  }
   if (name.includes("duration") || name.includes("audit")) {
     return `${formatValue(f.value)} days`;
   }
@@ -150,7 +171,49 @@ const FeatureList = ({ plan, showUsers, minRows = 0 }) => {
   );
 };
 
-const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
+const KenzoStrip = ({ freePlan, color = "var(--color-primary)" }) => {
+  if (!freePlan) return null;
+  const credits = (freePlan.features || []).find(
+    (f) => String(f.featureName || "").toLowerCase() === "credits"
+  );
+  return (
+    <div className={s.kenzoStrip}>
+      <div className={s.kenzoStripRow}>
+        <div className={s.kenzoStripIcon}>
+          <KenzoAIIcon color={color} />
+        </div>
+        <div className={s.kenzoStripText}>
+          <span className={s.kenzoStripTitle}>KenzoAI Credits</span>
+          <span className={s.kenzoStripDesc}>
+            {credits
+              ? `${formatValue(credits.value)} AI credits included - free`
+              : "AI credits included - free"}
+          </span>
+        </div>
+        <a
+          className={s.kenzoStripBtn}
+          href={`${env.MY_ACCOUNT}/order?planId=${freePlan.id}`}
+        >
+          Claim Free Credits
+          <Image width={14} height={14} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+        </a>
+      </div>
+      <button
+        type="button"
+        className={s.kenzoStripMore}
+        onClick={() =>
+          document
+            .getElementById("kenzo-slider")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+      >
+        See more KenzoAI plans
+      </button>
+    </div>
+  );
+};
+
+const BuildNinjaCard = ({ group, cycle, onCycleChange, kenzoFreePlan }) => {
   if (group.isFree) {
     const plan = group.plans[0];
     return (
@@ -172,6 +235,7 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
           <p className={s.cardPerMonth}>License valid for 6 months</p>
         </div>
         <FeatureList plan={plan} showUsers />
+        <KenzoStrip freePlan={kenzoFreePlan} color="var(--color-info)" />
         <div className={s.cardFooter}>
           <a
             className={s.btnPrimary}
@@ -274,6 +338,7 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
         )}
       </div>
       <FeatureList plan={plan} showUsers minRows={maxRows} />
+      <KenzoStrip freePlan={kenzoFreePlan} />
       <div className={s.cardFooter}>
         <a
           className={s.btnPrimary}
@@ -299,6 +364,212 @@ const Skeleton = () => (
     ))}
   </div>
 );
+
+const KenzoSliderSelector = ({ kenzoCards }) => {
+  if (!kenzoCards.length) return null;
+  const [packIndex, setPackIndex] = useState(0);
+  const packFeatures = (p) =>
+    (p.features || []).filter(
+      (f) =>
+        isUsableFeature(f) &&
+        String(f.featureName || "").toLowerCase() !== "credits"
+    );
+  const sliderPct =
+    kenzoCards.length > 1
+      ? (packIndex / (kenzoCards.length - 1)) * 100
+      : 0;
+
+  const card = kenzoCards[packIndex] || kenzoCards[0];
+  const { plan, credits } = card;
+  const isFree = Number(plan.price) === 0;
+  const features = packFeatures(plan);
+  const modelTierFeature = features.find((f) =>
+    String(f.featureName || "").toLowerCase().includes("model tier")
+  );
+  const modelBits = Number(modelTierFeature?.value) || 0;
+
+  return (
+    <motion.section
+      id="kenzo-slider"
+      className={s.selectorSection}
+      variants={itemVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className={s.packsHeader}>
+        <span className={s.packsBadge}>
+          <span className={s.blinkDot} />
+          KENZOAI
+        </span>
+        <h2 className={s.packsTitle}>Pick Your AI Credit Pack</h2>
+        <p className={s.packsSubtitle}>
+          Slide to compare KenzoAI credit packs - AI code analysis credits that
+          work inside your BuildNinja pipelines.
+        </p>
+      </div>
+
+      {kenzoCards.length > 1 && (
+        <div className={s.packsSliderWrap}>
+          <p className={s.selectorSliderHint}>Slide to pick your AI credits</p>
+          <div className={s.packsSliderLabels}>
+                {kenzoCards.map((c, idx) => {
+                  const creditsValue =
+                    c.credits &&
+                    c.credits.value != null &&
+                    String(c.credits.value) !== ""
+                      ? Number(c.credits.value)
+                      : null;
+                  const label =
+                    creditsValue !== null && Number.isFinite(creditsValue)
+                      ? creditsValue.toLocaleString("en-US")
+                      : Number(c.plan.price) === 0
+                      ? "Free"
+                      : c.plan.name || "Credits";
+                  return (
+                    <button
+                      key={c.key}
+                      type="button"
+                      title={c.plan.name}
+                      className={`${s.packsSliderLabel} ${
+                        idx === packIndex ? s.packsSliderLabelActive : ""
+                      }`}
+                      onClick={() => setPackIndex(idx)}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+              <input
+                type="range"
+                className={s.packsSlider}
+                style={{ "--pct": `${sliderPct}%` }}
+                min={0}
+                max={kenzoCards.length - 1}
+                step={1}
+                value={packIndex}
+                onChange={(e) => setPackIndex(Number(e.target.value))}
+                aria-label="Select KenzoAI credit pack"
+              />
+              <div className={s.packsSliderValue}>
+                <span className={s.packsSliderName}>
+                  {`${plan.name} Plan`}
+                </span>
+                <span className={s.packsSliderPrice}>
+                  {isFree
+                    ? "Free"
+                    : formatMoney(plan.price, plan.currency)}
+                </span>
+              </div>
+        </div>
+      )}
+
+      <div
+        className={`${s.selectorSummary} ${
+          isFree ? s.selectorSummaryFree : ""
+        }`}
+      >
+        {features.length > 0 && (
+          <ul className={s.selectorFeatures}>
+            <li className={s.selectorFeatureBadge}>
+              <KenzoAIIcon
+                color={isFree ? "var(--color-info)" : "var(--color-primary)"}
+              />
+              <span
+                className={`${s.cardHighlight} ${
+                  isFree ? s.cardHighlightFree : s.cardHighlightKenzo
+                }`}
+              >
+                <span className={s.blinkDot} />
+                {isFree ? "ONE-TIME ONLY" : "CREDITS ADD-ON"}
+              </span>
+            </li>
+            {features.map((f) => (
+              <li key={f.featureId || f.featureName}>
+                <span className={s.selectorFeatureCheck} aria-hidden="true">
+                  ✓
+                </span>
+                {f.featureName}
+                {f.value != null && String(f.value) !== "" && (
+                  <span className={s.selectorFeatureCount}>
+                    {featureValueText(f)}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <div className={s.selectorSummaryRow}>
+          <div className={s.selectorInfoCol}>
+            <h3 className={s.selectorPlanName}>
+              {`${plan.name} Plan`}
+            </h3>
+            <p className={s.selectorPrice}>
+              {isFree ? "Free" : formatMoney(plan.price, plan.currency)}
+            </p>
+            {credits &&
+              credits.value != null &&
+              String(credits.value) !== "" && (
+                <div className={s.selectorCreditsBlock}>
+                  <p className={s.selectorCredits}>
+                    {formatValue(credits.value)}
+                  </p>
+                  <p className={s.selectorCreditsLabel}>AI credits included</p>
+                </div>
+              )}
+            <p className={s.selectorValidity}>
+              {isFree ? "Free" : formatMoney(plan.price, plan.currency)}
+              <span className={s.selectorPerMonth}>
+                {" "}· Validity:{" "}
+                {VALIDITY_LABELS[plan.billingCycle] || plan.billingCycle}
+              </span>
+            </p>
+          </div>
+
+          <div className={s.selectorActionCol}>
+            {modelTierFeature && (
+              <div className={s.selectorModels}>
+                <span className={s.selectorModelsLabel}>Models included</span>
+                <div className={s.selectorModelsChips}>
+                  {KENZO_MODELS.map((model, i) => (
+                    <span
+                      key={model}
+                      className={`${s.selectorModelsChip} ${
+                        modelBits & (1 << i) ? s.selectorModelsChipActive : ""
+                      }`}
+                    >
+                      {model}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <a
+              className={s.btnPrimary}
+              href={`${env.MY_ACCOUNT}/order?planId=${plan.id}`}
+            >
+              {isFree ? "Claim Free Credits" : "Buy credits"}
+              <Image
+                width={16}
+                height={16}
+                className={s.btnIcon}
+                src={paths.icons.navigation}
+                alt="→"
+              />
+            </a>
+            <p className={s.cardCtaNote}>
+              {isFree
+                ? "No credit card required"
+                : "Credits added instantly - use them in your BuildNinja pipelines"}
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
 
 export default function PricingPlans({ plansData }) {
   const hasInitialData = Boolean(plansData?.byProduct);
@@ -337,6 +608,7 @@ export default function PricingPlans({ plansData }) {
   }, [hasInitialData, plansData, load]);
 
   const buildNinjaPlans = byProduct?.[PlanProduct.BuildNinja] || [];
+  const kenzoPlans = byProduct?.[PlanProduct.KenzoAI] || [];
 
   const bnGroups = useMemo(() => {
     const map = new Map();
@@ -355,6 +627,21 @@ export default function PricingPlans({ plansData }) {
   const freeGroup = bnGroups.find((g) => g.isFree);
   const paidGroups = bnGroups.filter((g) => !g.isFree);
 
+  const kenzoFreePlan = kenzoPlans.find((p) => Number(p.price) === 0);
+
+  const kenzoCards = useMemo(
+    () =>
+      [...kenzoPlans]
+        .sort((a, b) => Number(a.price) - Number(b.price))
+        .map((plan) => {
+          const credits = (plan.features || []).find(
+            (f) => String(f.featureName || "").toLowerCase() === "credits"
+          );
+          return { key: plan.id, plan, credits };
+        }),
+    [kenzoPlans]
+  );
+
   const cardList = [freeGroup, ...paidGroups]
     .filter(Boolean)
     .map((group) => ({
@@ -364,6 +651,7 @@ export default function PricingPlans({ plansData }) {
           group={group}
           cycle={cycle}
           onCycleChange={setCycle}
+          kenzoFreePlan={kenzoFreePlan}
         />
       ),
     }));
@@ -386,7 +674,8 @@ export default function PricingPlans({ plansData }) {
         </motion.h1>
 
         <motion.p className={s.subtitle} variants={itemVariants}>
-          BuildNinja bills by billing cycle with multi-year discounts.
+          BuildNinja bills by billing cycle with multi-year discounts. Add
+          KenzoAI credits to run AI code analysis inside your pipelines.
         </motion.p>
 
         {/* Cards */}
@@ -418,6 +707,10 @@ export default function PricingPlans({ plansData }) {
           <motion.p className={s.emptyText} variants={itemVariants}>
             No active plans available right now. Please check back soon.
           </motion.p>
+        )}
+
+        {!loading && !error && (
+          <KenzoSliderSelector kenzoCards={kenzoCards} />
         )}
       </motion.div>
     </section>
