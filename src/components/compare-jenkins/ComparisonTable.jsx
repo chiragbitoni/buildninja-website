@@ -115,7 +115,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-Powered Features</td>
-                <td className={s.ninjaTd}>Coming soon - log analysis, build prediction <span className={`${s.tag} ${s.tagBlue}`}>v1.2</span></td>
+                <td className={s.ninjaTd}>Coming soon - log analysis, build prediction <span className={`${s.tag} ${s.tagBlue}`}>v1.3</span></td>
                 <td className={s.jenkinsTd}>No built-in AI capabilities</td>
               </tr>
 

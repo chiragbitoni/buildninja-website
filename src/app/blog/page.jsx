@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import styles from "./BlogPage.module.css";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import { Calendar, Clock } from "lucide-react";
 export const metadata = {
   title: "Blog | BuildNinja – CI/CD Insights & DevOps Tutorials",
@@ -74,7 +73,6 @@ export default async function BlogPage() {
     <div className={styles.pageWrapper}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <NetworkBackground />
         <div className={styles.orb1} />
         <div className={styles.orb2} />
         <div className={styles.grid} />

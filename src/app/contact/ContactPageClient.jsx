@@ -5,7 +5,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import { sendContactEmail } from "@/services/email/sendEmail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -80,7 +79,6 @@ export default function ContactPageClient({ grapehubContactHtml }) {
 
     return (
         <section className={styles.contactSection}>
-            <NetworkBackground />
             <div className={styles.bottomFade} />
 
             {/* Header Content */}

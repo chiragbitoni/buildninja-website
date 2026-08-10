@@ -130,7 +130,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-powered pipeline intelligence</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence - failure prediction, log AI <span className={`${s.tagWin} ${s.tagBn}`}>BN Unique</span></td>
+                <td className={s.tdBn}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence - failure prediction, log AI (coming in v1.3.0)</td>
                 <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Copilot integrations, no native pipeline AI</td>
               </tr>
 

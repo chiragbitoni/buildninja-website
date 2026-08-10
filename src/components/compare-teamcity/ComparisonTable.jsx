@@ -68,7 +68,7 @@ const featureRows = [
   { feat: "VSTest / NUnit / xUnit", bn: "Built-in", tc: "Built-in", win: "tie" },
   { feat: "Apple Silicon (M-series)", bn: "Native", tc: "Supported on macOS build agents", win: "tie" },
   { feat: "Docker / Kubernetes", bn: "Built-in, canary", tc: "Plugin-based", win: "tie" },
-  { feat: "Build chains / DAG", bn: "Coming v1.2.0", tc: "Advanced chains", win: "tc" },
+  { feat: "Build chains / DAG", bn: "Coming v1.3.0", tc: "Advanced chains", win: "tc" },
   { cat: "Security & access" },
   { feat: "SSO providers (free)", bn: "Native OAuth login: GitHub, GitLab, Bitbucket, Microsoft", tc: "Enterprise SSO via SAML 2.0, LDAP, Microsoft Entra ID", win: "tie" },
   { feat: "RBAC", bn: "System + project", tc: "Granular", win: "tie" },
@@ -78,7 +78,7 @@ const featureRows = [
   { feat: "Pipeline config language", bn: "UI + YAML (simple)", tc: "Kotlin DSL + XML", win: "tie" },
   { feat: "Real-time log streaming", bn: "<30ms", tc: "Available", win: "tie" },
   { feat: "Interactive demo sandbox", bn: "Dojo - live", tc: "Not available", win: "bn" },
-  { feat: "AI-assisted features", bn: "v1.2.0 roadmap", tc: "Limited", win: "tie" },
+  { feat: "AI-assisted features", bn: "v1.3.0 roadmap", tc: "Limited", win: "tie" },
 ];
 
 export default function ComparisonTable() {

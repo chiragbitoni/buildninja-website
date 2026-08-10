@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Dojo.module.css";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import Link from "next/link";
 import posthog from "posthog-js";
 import { getCookie } from "@/lib/tracking/cookies";
@@ -41,7 +40,6 @@ export default function DojoHero() {
 
   return (
     <section className={`${styles.section} ${styles.hero}`}>
-      <NetworkBackground />
       <div className={styles.bottomFade} />
       
       <div className={styles.contentWrap}>

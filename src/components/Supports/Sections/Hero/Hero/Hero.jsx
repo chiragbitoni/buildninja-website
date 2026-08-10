@@ -7,7 +7,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { sendSupportEmail } from "@/services/email/sendEmail";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faEnvelope,
@@ -84,7 +83,6 @@ export default function SupportHero() {
 
     return (
         <section className={styles.supportSection}>
-            <NetworkBackground />
             <div className={styles.bottomFade} />
 
             {/* Header Content */}

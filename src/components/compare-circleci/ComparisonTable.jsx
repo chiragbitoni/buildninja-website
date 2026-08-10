@@ -161,7 +161,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-powered pipeline intelligence</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence (coming in v1.3.0)</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> "Autonomous validation" in beta</td>
               </tr>
 

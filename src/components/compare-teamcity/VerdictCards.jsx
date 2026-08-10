@@ -63,7 +63,7 @@ export default function VerdictCards() {
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>One Docker command to full deployment - no JVM, no RAM overhead</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Native MSBuild + VSTest - zero plugin configuration needed</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>All 5 SSO providers: GitHub, GitLab, Bitbucket, Google, Azure AD</li>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>AI-powered pipeline features in v1.2.0 at no extra cost</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>AI-powered pipeline features in v1.3.0 at no extra cost</li>
             </ul>
           </motion.div>
 

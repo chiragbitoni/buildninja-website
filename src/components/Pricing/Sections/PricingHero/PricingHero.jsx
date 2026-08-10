@@ -12,7 +12,6 @@ import { paths } from "../../../../../public/static/paths";
 import { useEffect, useState, useRef } from "react";
 import { fetchPlansFromAPI } from "@/services/plans/plans";
 import Image from "next/image";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import { FreeIcon, ShogunIcon, EnterpriseIcon } from "./PricingIcons";
 import { motion } from "framer-motion";
 
@@ -212,7 +211,6 @@ export default function PricingHero() {
 
   return (
     <section className={s.section}>
-      <NetworkBackground />
 
       {/* Animated Background Elements */}
       <div ref={orb1} className={s.orb1} />

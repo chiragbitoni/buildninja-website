@@ -12,7 +12,6 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faDownload, faCheckCircle, faRocket, faShieldAlt, faServer } from "@fortawesome/free-solid-svg-icons";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 
 const benefitIcons = [faRocket, faShieldAlt, faServer];
 
@@ -83,7 +82,6 @@ export default function InstallSection({ onAuthSuccess }) {
     return (
         <section className={styles.installHero}>
             <div className={styles.grid} />
-            <NetworkBackground />
             <div className={styles.orb} />
             <div className={styles.bottomFade} />
             

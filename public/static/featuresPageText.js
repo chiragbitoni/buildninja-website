@@ -13,9 +13,9 @@ export const secondSectionText = {
       iconHover: paths.icons.thunderPink,
       title: "Automated Builds",
       description:
-        "Automatically triggers builds based on scheduled time and date.",
+        "Automatically triggers builds on a schedule or Git events - pushes, merges, branch patterns - with Git Trigger.",
       videoId: "5wFDALkVM0Y",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/schedule-build-triggers",
+      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-triggers",
     },
     {
       icon: paths.icons.versioningWhite,

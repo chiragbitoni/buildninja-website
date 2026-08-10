@@ -45,7 +45,7 @@ export default function Download() {
       {
         "@type": "HowToStep",
         "name": "Run the Installer or Docker Command",
-        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull grapehub/buildninja'."
+        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull grapehub/buildninja-server'."
       },
       {
         "@type": "HowToStep",

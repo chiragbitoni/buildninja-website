@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./HeroSection.module.css";
 import { useRouter } from "next/navigation";
 import { siteConfig } from "@/config/site";
@@ -72,8 +71,6 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero}>
-      {/* <NetworkBackground /> */}
-
       {/* Gradient orbs */}
       <div ref={orb1} className={styles.orb1} />
       <div ref={orb2} className={styles.orb2} />

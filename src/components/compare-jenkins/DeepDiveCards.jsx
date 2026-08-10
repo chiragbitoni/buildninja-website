@@ -104,10 +104,10 @@ export default function DeepDiveCards() {
           <div className={s.diveCard}>
             <div className={s.diveIcon}><span className={s.iconWrap}><Bot size={24} className={s.iconAccent} /></span></div>
             <h3>The AI Advantage (Coming)</h3>
-            <p>BuildNinja v1.2.0 is bringing AI-powered log analysis, configuration review, and build outcome prediction - features Jenkins has no roadmap for. If your team wants CI/CD that actively helps you improve, BuildNinja is the forward-looking choice.</p>
+            <p>BuildNinja v1.3.0 is bringing AI-powered log analysis, configuration review, and build outcome prediction - features Jenkins has no roadmap for. If your team wants CI/CD that actively helps you improve, BuildNinja is the forward-looking choice.</p>
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>AI-native (v1.2)</div>
+                <div className={s.diveVsNinja}>AI-native (v1.3)</div>
                 <div className={s.diveVsLabel}>AI support</div>
                 <div className={s.diveVsJenkins}>No AI roadmap</div>
               </div>

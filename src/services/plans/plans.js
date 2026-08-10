@@ -1,6 +1,5 @@
 export const PlanProduct = {
   BuildNinja: "BuildNinja",
-  KenzoAI: "KenzoAI",
 };
 
 export async function fetchPlansFromAPI() {
@@ -33,11 +32,11 @@ export function filterActivePlans(plans) {
   );
 }
 
-// Group active plans by product name (BuildNinja / KenzoAI)
+// Group active plans by product name (BuildNinja)
 export function groupPlansByProduct(plans) {
   return (Array.isArray(plans) ? plans : []).reduce((acc, plan) => {
     (plan.products || []).forEach((product) => {
-      if (product.name === PlanProduct.BuildNinja || product.name === PlanProduct.KenzoAI) {
+      if (product.name === PlanProduct.BuildNinja) {
         (acc[product.name] = acc[product.name] || []).push(plan);
       }
     });
@@ -104,8 +103,8 @@ export async function fetchActivePlansForBuild() {
   const activePlans = filterActivePlans(plans);
   const byProduct = groupPlansByProduct(activePlans);
 
-  if (!byProduct.BuildNinja?.length && !byProduct.KenzoAI?.length) {
-    const message = `[Pricing Build] Plans not fetched - build aborted. No active BuildNinja/KenzoAI plans found in ${url} (got ${plans.length} raw plans, 0 active).`;
+  if (!byProduct.BuildNinja?.length) {
+    const message = `[Pricing Build] Plans not fetched - build aborted. No active BuildNinja plans found in ${url} (got ${plans.length} raw plans, 0 active).`;
     console.error(message);
     throw new Error(message);
   }

@@ -189,6 +189,24 @@ See complete system requirements for network, browser compatibility, and additio
             "BuildNinja supports all Git-based version control systems including GitHub, GitLab, Bitbucket",
         },
         {
+          id: "git-trigger",
+          question: "Does BuildNinja support Git triggers?",
+          answer:
+            "Yes. BuildNinja 1.2.0 introduces Git Trigger, which automatically starts builds on Git events such as pushes and merges. You can filter by branch patterns, commit types, commit message patterns, polling intervals, and allowed authors, with support for custom VCS configurations across multiple repositories.",
+        },
+        {
+          id: "git-changes-visualization",
+          question: "Can I see the commits included in a build?",
+          answer:
+            "Yes. The Git Changes tab in Build Details shows a visual commit graph of every commit between builds, with commit metadata, author tooltips, and copyable commit IDs. Build History also previews commit counts, recent commits, and associated branches for each build.",
+        },
+        {
+          id: "run-build-branch-commit",
+          question: "Can I run a build against a specific branch or commit?",
+          answer:
+            "Yes. The Run Build modal supports selecting VCS branches or running builds against a specific commit ID. Commit IDs override branch selection, enabling precise, reproducible builds across multiple repositories.",
+        },
+        {
           id: "agent-management",
           question: "How does agent management work?",
           answer: `<p>BuildNinja provides a centralized management interface for all your build agents. When a new agent registers with the server, it appears in an unauthorized state - you must explicitly authorize it before it can execute builds.</p>
@@ -216,7 +234,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "real-time-logs",
           question: "Can I see real-time build logs?",
           answer: `<p>Yes! BuildNinja provides detailed execution logs with timestamped, step-by-step records of your build process. You can search logs using keywords, filter by category (VCS, Runner, or System), and export complete logs as CSV files for offline analysis.</p>
-<p>Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, and an Artifacts tab for generated files.</p>
+<p>Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, a Git Changes tab with commit graphs between builds, and an Artifacts tab for generated files.</p>
 <p>Note: Logs are limited to 16 MiB per build.</p>`,
         },
         {

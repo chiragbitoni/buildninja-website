@@ -26,7 +26,7 @@ export default function VerdictBanner() {
           <div className={`${s.toolLogo} ${s.ninja}`}>
             <img src="/resources/logo-buildninja.svg" alt="BuildNinja" className={s.vbLogoBn} />
           </div>
-          <div className={s.toolTagline}>Modern self-hosted CI/CD, v1.1.0</div>
+          <div className={s.toolTagline}>Modern self-hosted CI/CD, v1.2.0</div>
           <div className={`${s.verdictScore} ${s.ninja}`}>
             91<span className={s.scoreMax}>/100</span>
           </div>

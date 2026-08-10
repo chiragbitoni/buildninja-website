@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "Does BuildNinja support build chains like TeamCity?",
-    a: "Full build chain support with DAG-based pipeline dependencies is on the BuildNinja roadmap for v1.2.0. Currently, multi-stage pipelines with sequential and parallel steps are fully supported. Teams with complex multi-project build chains should evaluate their specific dependency requirements before switching.",
+    a: "Full build chain support with DAG-based pipeline dependencies is on the BuildNinja roadmap for v1.3.0. Currently, multi-stage pipelines with sequential and parallel steps are fully supported. Teams with complex multi-project build chains should evaluate their specific dependency requirements before switching.",
   },
   {
     q: "How does BuildNinja compare to TeamCity on security and RBAC?",
