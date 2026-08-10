@@ -40,6 +40,7 @@ export default function DojoHero() {
 
   return (
     <section className={`${styles.section} ${styles.hero}`}>
+      <div className={styles.grid} />
       <div className={styles.bottomFade} />
       
       <div className={styles.contentWrap}>

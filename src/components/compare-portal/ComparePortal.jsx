@@ -66,6 +66,7 @@ export default function ComparePortal() {
 
   return (
     <section className={s.section}>
+      <div className={s.gridLines} />
       <div className={s.container}>
         <div className={s.hero}>
           <span className="badge-alt" style={{ marginBottom: '16px' }}>CI/CD Alternatives</span>

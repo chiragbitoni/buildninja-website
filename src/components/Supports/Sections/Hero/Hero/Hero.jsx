@@ -83,6 +83,7 @@ export default function SupportHero() {
 
     return (
         <section className={styles.supportSection}>
+            <div className={styles.grid} />
             <div className={styles.bottomFade} />
 
             {/* Header Content */}

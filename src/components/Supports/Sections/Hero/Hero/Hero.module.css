@@ -29,6 +29,18 @@
   box-sizing: border-box;
 }
 
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--color-border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border-subtle) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .bottomFade {
   position: absolute;
   bottom: 0;
