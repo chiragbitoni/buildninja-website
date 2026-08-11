@@ -48,8 +48,6 @@ export default function TrustBanner() {
   return (
     <section className={styles.section} ref={sectionRef}>
       <div className={styles.gridOverlay} />
-      <div className={styles.orb1} />
-      <div className={styles.orb2} />
 
       <div className={styles.container}>
         <motion.div
