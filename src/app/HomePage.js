@@ -10,6 +10,7 @@ import WhySelfHosted from "@/components/Home/WhySelfHosted";
 
 import HowNinjaCompares from "@/components/Home/HowNinjaCompares";
 import SocialProof from "@/components/Home/SocialProof";
+import TrustBanner from "@/components/Home/TrustBanner";
 import AIRoadmap from "@/components/Home/AIRoadmap";
 import FAQSection from "@/components/Home/FAQSection";
 import CTASection from "@/components/Home/CTASection";
@@ -38,6 +39,7 @@ export default function HomePage() {
 
       <SectionTracker name="how_ninja_compares"><HowNinjaCompares /></SectionTracker>
       <SectionTracker name="social_proof"><SocialProof /></SectionTracker>
+      <SectionTracker name="trust_banner"><TrustBanner /></SectionTracker>
       <SectionTracker name="ai_roadmap"><AIRoadmap /></SectionTracker>
       <SectionTracker name="faq"><FAQSection /></SectionTracker>
       <SectionTracker name="cta"><CTASection /></SectionTracker>
