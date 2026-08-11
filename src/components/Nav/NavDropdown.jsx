@@ -252,6 +252,18 @@ export default function NavDropdown({
                         <span className={styles.colLinkText}>{child.name}</span>
                       </a>
                     ))}
+                    {item.viewAll && (
+                      <a
+                        href={item.viewAll.path}
+                        className={styles.colViewAll}
+                        onClick={(e) => handleLinkClick(e, item.viewAll.path)}
+                      >
+                        <span className={styles.colViewAllText}>{item.viewAll.name}</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -300,6 +312,15 @@ function MobileSubItem({ item, handleLinkClick }) {
                 {child.name}
               </a>
             ))}
+            {item.viewAll && (
+              <a
+                href={item.viewAll.path}
+                className={styles.mobileSubViewAll}
+                onClick={(e) => handleLinkClick(e, item.viewAll.path)}
+              >
+                {item.viewAll.name}
+              </a>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

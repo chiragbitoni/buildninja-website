@@ -168,6 +168,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
 }
 
 .colLink {
@@ -199,6 +200,37 @@
 }
 
 .colLinkText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.colViewAll {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: auto;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.25);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.colViewAll:hover {
+  background: rgba(var(--color-primary-rgb), 0.15);
+  color: var(--color-primary);
+  transform: translateX(2px);
+}
+
+.colViewAllText {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -281,4 +313,21 @@
 .mobileSubLink:hover {
   background: rgba(var(--color-primary-rgb), 0.05);
   color: var(--color-text);
+}
+
+.mobileSubViewAll {
+  display: block;
+  padding: 10px 24px 10px 52px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.mobileSubViewAll:hover {
+  background: rgba(var(--color-primary-rgb), 0.05);
+  color: var(--color-primary);
 }

@@ -92,7 +92,7 @@ export default function TrustBanner() {
               <p className={styles.desc}>
                 Backed by Grapecity&apos;s 25+ years of global developer tools
                 expertise. Support means direct access to actual engineers during
-                business hours &mdash; not chatbots.
+                business hours - not chatbots.
               </p>
               <div className={styles.chipRow}>
                 <span className={styles.chip}>

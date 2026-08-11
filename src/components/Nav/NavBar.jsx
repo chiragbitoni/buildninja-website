@@ -80,6 +80,7 @@ export default function Navbar({ blogPosts = [] }) {
         { name: "Licensing", path: `${DOCS_URL}/docs/category/licensing` },
         { name: "Release Notes", path: `${DOCS_URL}/docs/category/release-notes` },
       ],
+      viewAll: { name: "View Documentation", path: `${DOCS_URL}/docs/overview` },
     },
     {
       name: "Compare",
@@ -92,6 +93,7 @@ export default function Navbar({ blogPosts = [] }) {
         { name: "BuildNinja vs Jenkins", path: "/compare/buildninja-vs-jenkins" },
         { name: "BuildNinja vs TeamCity", path: "/compare/buildninja-vs-teamcity" },
       ],
+      viewAll: { name: "View All Comparisons", path: "/compare" },
     },
     {
       name: "Blog",
@@ -102,6 +104,7 @@ export default function Navbar({ blogPosts = [] }) {
         name: post.title,
         path: `/blog/${post.slug}`,
       })),
+      viewAll: { name: "View All Blogs", path: "/blog" },
     },
   ];
 
