@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./Footer.module.css";
+import FooterAskAI from "./FooterAskAI";
 import { useRouter } from "next/navigation";
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
 const GRAPEHUB_URL = process.env.NEXT_PUBLIC_GRAPEHUB_URL || "";
@@ -74,6 +75,7 @@ export default function Footer() {
     return (
         <footer className={styles.footerContainer}>
             <div className={styles.footerWrapper}>
+                <FooterAskAI />
                 <div className={styles.footerContent}>
                     {/* Left Section */}
                     <div className={styles.footerBrand}>
