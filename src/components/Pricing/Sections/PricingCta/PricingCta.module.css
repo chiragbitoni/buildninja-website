@@ -131,6 +131,16 @@
   box-shadow: 0 20px 50px -20px var(--color-enterprise-glow);
 }
 
+.cardShogun {
+  border-color: var(--color-primary-border);
+  background: linear-gradient(145deg, var(--color-primary-subtle), rgba(var(--bg-rgb), 0.5));
+}
+
+.cardShogun:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 50px -20px var(--color-primary-border);
+}
+
 .cardTitle {
   font-family: var(--font-display);
   font-size: 1.4rem;
@@ -144,6 +154,81 @@
   color: var(--color-text-secondary);
   margin-bottom: 24px;
   line-height: 1.5;
+}
+
+.cardPrice {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-text);
+  margin: 0 0 24px;
+}
+
+.cardPer {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-left: 6px;
+}
+
+/* Billing cycle selector - compact segmented pills */
+.cycleBar {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  margin: 0 0 14px;
+  padding: 3px;
+  width: 100%;
+  max-width: 340px;
+  background: rgba(var(--bg-rgb), 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-pill);
+}
+
+.cycleBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 7px 6px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.cycleBtn:not(:disabled):not(.cycleBtnActive):hover {
+  background: rgba(var(--bg-rgb), 0.6);
+  color: var(--color-text);
+}
+
+.cycleBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cycleBtnName {
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cycleBtnActive {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  box-shadow: 0 4px 14px -4px var(--color-primary-glow, var(--color-primary));
+  color: #fff;
+}
+
+.cycleBtnActive:hover {
+  color: #fff;
 }
 
 .btnEnterprise {
@@ -162,6 +247,7 @@
   box-shadow: 0 8px 24px -8px var(--color-enterprise-border);
   font-family: var(--font-display);
   margin-top: auto;
+  text-decoration: none;
   /* Align to bottom */
 }
 
@@ -187,12 +273,39 @@
   box-shadow: 0 8px 24px -8px var(--color-info-border);
   font-family: var(--font-display);
   margin-top: auto;
+  text-decoration: none;
   /* Align to bottom */
 }
 
 .btnInfo:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 30px -8px var(--color-info-border);
+  filter: brightness(1.08);
+}
+
+.btnShogun {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--color-primary), #ff9a3c);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px -8px var(--color-primary-border);
+  font-family: var(--font-display);
+  margin-top: auto;
+  text-decoration: none;
+  /* Align to bottom */
+}
+
+.btnShogun:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -8px var(--color-primary-border);
   filter: brightness(1.08);
 }
 
@@ -223,7 +336,7 @@
   height: 16px;
 }
 
-/* Feature pills */
+/* Feature pills (badges) */
 .featureRow {
   display: flex;
   flex-wrap: wrap;
@@ -234,14 +347,14 @@
 .featurePill {
   display: flex;
   align-items: center;
-  gap: 7px;
-  background: rgba(var(--bg-rgb), 0.5);
-  border: 1px solid var(--color-border-medium);
+  gap: 8px;
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
   border-radius: var(--radius-pill);
-  padding: 7px 14px;
+  padding: 8px 16px;
   font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-weight: 600;
+  color: var(--color-primary);
 }
 
 .featureTick {
@@ -251,7 +364,7 @@
 
 @media (min-width: 700px) {
   .cardsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
@@ -272,7 +385,7 @@
     padding: 32px 24px;
     border-radius: 16px;
   }
-  .btnEnterprise, .btnInfo {
+  .btnEnterprise, .btnInfo, .btnShogun {
     width: 100%;
     justify-content: center;
   }

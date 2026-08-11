@@ -285,6 +285,11 @@ export const pricingEighthText = {
     description: "Deploy your own CI/CD in minutes. No credit card, no seat limits, no expiry - free.",
     buttonText: "Get Your Free Key",
   },
+  shogun: {
+    title: "Shogun Edition",
+    description: "Unlimited users, builds, and agents with dedicated 24/7 support and custom deployments.",
+    buttonText: "Get Shogun",
+  },
   features: [
     "Growth Edition",
     "Full Platform Access",

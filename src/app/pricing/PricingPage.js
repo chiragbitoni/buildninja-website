@@ -15,7 +15,7 @@ export default function PricingPage({ plansData }) {
       <PricingCoreFeatures />
       {/* <PricingDetailedSpecs /> */}
       <PricingFaq />
-      <PricingCta />
+      <PricingCta plansData={plansData} />
     </div>
   );
 }

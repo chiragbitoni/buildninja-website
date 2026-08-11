@@ -1,12 +1,20 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import s from "./PricingCta.module.css";
 import { pricingEighthText } from "../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../public/static/paths";
-import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import { env } from "@/lib/config/env";
+
+const CYCLE_ORDER = ["Monthly", "Yearly", "2-Years", "3-Years"];
+const CYCLE_SHORT = {
+  Monthly: "Monthly",
+  Yearly: "Yearly",
+  "2-Years": "2 Years",
+  "3-Years": "3 Years",
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,12 +37,82 @@ const itemVariants = {
   },
 };
 
-export default function PricingCta() {
+export default function PricingCta({ plansData }) {
   const text = pricingEighthText;
-  const router = useRouter();
   const { region } = useSelector((state) => state.pricing);
+  const [cycle, setCycle] = useState("Monthly");
 
   const features = text.features;
+
+  const formatMoney = (value, currency) => {
+    const num = Number(value) || 0;
+    try {
+      return new Intl.NumberFormat(currency === "INR" ? "en-IN" : "en-US", {
+        style: "currency",
+        currency: ["USD", "INR"].includes(currency) ? currency : "USD",
+        maximumFractionDigits: 2,
+      }).format(num);
+    } catch {
+      return `$${num.toFixed(2)}`;
+    }
+  };
+
+  const cycleLabel = (cycle) =>
+    ({
+      Monthly: "month",
+      Yearly: "year",
+      "2-Years": "2 years",
+      "3-Years": "3 years",
+      Semiannual: "6 months",
+    }[cycle] ?? cycle);
+
+  const bnPlans = plansData?.byProduct?.BuildNinja || [];
+  const freePlan = bnPlans.find((p) => Number(p.price) === 0);
+  const paidPlans = bnPlans.filter((p) => Number(p.price) > 0);
+
+  const paidGroups = [];
+  const byName = new Map();
+  paidPlans.forEach((p) => {
+    const key = p.name.trim();
+    if (!byName.has(key)) byName.set(key, []);
+    byName.get(key).push(p);
+  });
+  byName.forEach((plans, name) => paidGroups.push({ name, plans }));
+
+  const shogunGroup =
+    paidGroups.find((g) => g.name.toLowerCase().includes("shogun")) || null;
+  const otherPaidGroups = paidGroups.filter((g) => g !== shogunGroup);
+  const enterpriseGroup =
+    otherPaidGroups.find((g) => g.name.toLowerCase().includes("enterprise")) ||
+    otherPaidGroups.reduce(
+      (max, g) =>
+        max && Number(max.plans[0].price) >= Number(g.plans[0].price) ? max : g,
+      null
+    );
+
+  const monthlyOrFirst = (group) =>
+    group?.plans.find((p) => p.billingCycle === "Monthly") || group?.plans[0];
+
+  const shogunPlan =
+    shogunGroup?.plans.find((p) => p.billingCycle === cycle) ||
+    shogunGroup?.plans.find((p) => p.billingCycle === "Monthly") ||
+    shogunGroup?.plans[0];
+  const enterprisePlan = monthlyOrFirst(enterpriseGroup);
+
+  const envFreePlanId = process.env.NEXT_PUBLIC_BUILDNINJA_FREE_PLAN_ID;
+  const freeHref = freePlan
+    ? `${env.MY_ACCOUNT}/order?planId=${freePlan.id}`
+    : envFreePlanId
+      ? `${env.MY_ACCOUNT}/order?planId=${envFreePlanId}`
+      : `${env.MY_ACCOUNT}/order`;
+
+  const shogunHref = shogunPlan
+    ? `${env.MY_ACCOUNT}/order?planId=${shogunPlan.id}`
+    : "/support";
+
+  const enterpriseHref = enterprisePlan
+    ? `${env.MY_ACCOUNT}/order?planId=${enterprisePlan.id}`
+    : "/support";
 
   return (
     <section className={s.section}>
@@ -61,30 +139,72 @@ export default function PricingCta() {
           <motion.div className={`${s.card} ${s.cardSolo}`} variants={itemVariants}>
             <h3 className={s.cardTitle}>{text.free.title}</h3>
             <p className={s.cardDesc}>{text.free.description}</p>
-            <button
+            <a
               id="pricing-cta-free"
               className={s.btnInfo}
-              onClick={() => {
-                window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=${process.env.NEXT_PUBLIC_GROWTH_EDITION_GUID}`;
-              }}
+              href={freeHref}
             >
               {text.free.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-            </button>
+            </a>
+          </motion.div>
+
+          {/* Shogun */}
+          <motion.div className={`${s.card} ${s.cardShogun}`} variants={itemVariants}>
+            <h3 className={s.cardTitle}>{text.shogun.title}</h3>
+            <p className={s.cardDesc}>{text.shogun.description}</p>
+            {shogunGroup && shogunGroup.plans.length > 1 && (
+              <div className={s.cycleBar}>
+                {CYCLE_ORDER.map((c) => {
+                  const available = shogunGroup.plans.some(
+                    (p) => p.billingCycle === c
+                  );
+                  return (
+                    <button
+                      key={c}
+                      disabled={!available}
+                      className={`${s.cycleBtn} ${
+                        cycle === c ? s.cycleBtnActive : ""
+                      }`}
+                      onClick={() => setCycle(c)}
+                      title={available ? c : "Coming soon"}
+                    >
+                      <span className={s.cycleBtnName}>
+                        {CYCLE_SHORT[c] || c}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            {shogunPlan && (
+              <p className={s.cardPrice}>
+                {formatMoney(shogunPlan.price, shogunPlan.currency)}
+                <span className={s.cardPer}>/ {cycleLabel(shogunPlan.billingCycle)}</span>
+              </p>
+            )}
+              <a
+                id="pricing-cta-shogun"
+              className={s.btnShogun}
+              href={shogunHref}
+            >
+              {text.shogun.buttonText}
+              <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
+            </a>
           </motion.div>
 
           {/* Enterprise */}
           <motion.div className={`${s.card} ${s.cardEnterprise}`} variants={itemVariants}>
             <h3 className={s.cardTitle}>{text.enterprise.title}</h3>
             <p className={s.cardDesc}>{text.enterprise.description}</p>
-            <button
+            <a
               id="pricing-cta-enterprise"
               className={s.btnEnterprise}
-              onClick={() => router.push("/support")}
+              href={enterpriseHref}
             >
               {text.enterprise.buttonText}
               <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-            </button>
+            </a>
           </motion.div>
         </motion.div>
 
