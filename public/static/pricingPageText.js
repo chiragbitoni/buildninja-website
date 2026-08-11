@@ -291,11 +291,11 @@ export const pricingEighthText = {
     buttonText: "Get Shogun",
   },
   features: [
-    "Growth Edition",
-    "Full Platform Access",
-    "5-minute setup",
-    "Self-hosted control",
-    "Direct support",
+    "No Per-Seat Pricing",
+    "Unlimited Users & Builds",
+    "5-Minute Setup",
+    "Self-Hosted Control",
+    "Direct Engineer Support",
   ],
 };
 
