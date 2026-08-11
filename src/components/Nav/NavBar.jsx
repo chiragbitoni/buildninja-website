@@ -58,7 +58,7 @@ export default function Navbar({ blogPosts = [] }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getLogoSrc = () => "/resources/logo_buildninja.svg";
+  const getLogoSrc = () => "/resources/logo_BN_by_GC.svg";
 
   const handleNavigation = (path) => {
     router.push(path);
@@ -115,7 +115,7 @@ export default function Navbar({ blogPosts = [] }) {
           <Image
             src={getLogoSrc()}
             alt="BuildNinja Logo"
-            width={178}
+            width={149}
             height={48.5}
             className={styles.logoImage}
             onMouseEnter={() => setHover(true)}

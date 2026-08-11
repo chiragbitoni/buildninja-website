@@ -115,6 +115,10 @@
   align-items: center;
 }
 
+.panelInner > * {
+  min-width: 0;
+}
+
 /* ── Left col ── */
 .leftCol {
   display: flex;
@@ -160,17 +164,19 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   margin: 0 0 20px;
+  overflow-wrap: break-word;
 }
 
-.highlight {
-  background: linear-gradient(135deg, #ff4172 20%, #ff6a4a 60%, #ff9a3c);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  font-style: italic;
+.logo {
   display: inline-block;
-  padding-right: 0.15em;
+  height: 0.9em;
+  width: auto;
+  vertical-align: -0.12em;
+  color: var(--text-main);
+}
+
+.logo path {
+  fill: currentColor;
 }
 
 .desc {
@@ -295,6 +301,26 @@
 }
 
 /* ── Responsive ── */
+
+/* Mid desktop: keep two columns, tighten spacing */
+@media (max-width: 1160px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .panel {
+    padding: 44px 40px;
+  }
+
+  .panelInner {
+    gap: 40px;
+  }
+
+  .statCard {
+    padding: 18px 14px;
+  }
+}
+
 @media (max-width: 900px) {
   .panelInner {
     grid-template-columns: 1fr;
@@ -318,6 +344,10 @@
   .chipRow {
     justify-content: center;
   }
+
+  .statCard {
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -339,6 +369,20 @@
 
   .statCard {
     padding: 16px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel {
+    padding: 28px 18px;
+  }
+
+  .panelInner {
+    gap: 32px;
+  }
+
+  .desc {
+    font-size: 15px;
   }
 }
 
@@ -404,5 +448,82 @@
 
   .statDesc {
     font-size: 11px;
+  }
+}
+
+/* Small phones: keep everything inside the panel, no overflow */
+@media (max-width: 380px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .panel {
+    padding: 22px 12px;
+    border-radius: var(--radius-xl, 16px);
+  }
+
+  .panelInner {
+    gap: 24px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    gap: 6px;
+  }
+
+  .title {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .logo {
+    height: 0.78em;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .chipRow {
+    gap: 6px;
+  }
+
+  .chip {
+    font-size: 10px;
+    padding: 5px 9px;
+  }
+
+  .statGrid {
+    gap: 8px;
+  }
+
+  .statCard {
+    padding: 12px 8px;
+  }
+
+  .statIcon {
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    margin-bottom: 6px;
+  }
+
+  .statIcon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .statNumber {
+    font-size: 20px;
+  }
+
+  .statLabel {
+    font-size: 11px;
+  }
+
+  .statDesc {
+    font-size: 10px;
   }
 }
