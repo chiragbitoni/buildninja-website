@@ -14,6 +14,13 @@ export const getCurrency = (currency, price) => {
     .replace(/(\D)(\d)/, " $1$2");
 };
 
+export const formatUsd = (value) =>
+  new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+  }).format(Number(value) || 0);
+
 export function sortBy(arr, keySelector, order = "asc") {
   return [...arr].sort((a, b) => {
     const valA = keySelector(a);

@@ -1,3 +1,5 @@
+import { formatUsd } from "@/lib/utils";
+
 export const PlanProduct = {
   BuildNinja: "BuildNinja",
 };
@@ -25,10 +27,15 @@ export async function fetchPlansFromAPI() {
   }
 }
 
-// Only plans that are purchasable right now
+// Only plans that are purchasable right now. Pricing is USD-only -
+// INR (and any other currency) plans are never shown.
 export function filterActivePlans(plans) {
   return (Array.isArray(plans) ? plans : []).filter(
-    (plan) => plan.isActive === true && Array.isArray(plan.products) && plan.products.length > 0
+    (plan) =>
+      plan.isActive === true &&
+      plan.currency === "USD" &&
+      Array.isArray(plan.products) &&
+      plan.products.length > 0
   );
 }
 
@@ -55,6 +62,120 @@ export async function fetchActivePlansByProduct() {
     byProduct: groupPlansByProduct(activePlans),
   };
 }
+
+// Cheapest active USD monthly paid plan (e.g. Shogun) - used for live pricing copy
+export const findPaidMonthlyPlan = (plans) => {
+  if (!Array.isArray(plans)) return null;
+  return (
+    plans
+      .filter(
+        (p) =>
+          p.isActive === true &&
+          p.currency === "USD" &&
+          p.billingCycle === "Monthly" &&
+          Number(p.price) > 0
+      )
+      .sort((a, b) => Number(a.price) - Number(b.price))[0] ?? null
+  );
+};
+
+// Active USD free plan (Growth/Solo) - used for live free-tier copy
+export const findFreePlan = (plans) => {
+  if (!Array.isArray(plans)) return null;
+  const free = plans.filter(
+    (p) => p.isActive === true && p.currency === "USD" && Number(p.price) === 0
+  );
+  return (
+    free.find((p) => String(p.name || "").toLowerCase().includes("growth")) ||
+    free[0] ||
+    null
+  );
+};
+
+const FREE_FEATURE_DEFS = [
+  {
+    match: "concurrent builds",
+    make: (v) => `up to ${v} concurrent builds`,
+  },
+  { match: "projects", make: (v) => `up to ${v} projects` },
+  { match: "configurations", make: (v) => `up to ${v} build configurations` },
+  {
+    match: "build history retention",
+    make: (v) => `${v}-day build history retention`,
+  },
+  {
+    match: "sso integrations",
+    make: (v) => `${v} SSO integration${v === 1 ? "" : "s"}`,
+  },
+];
+
+// Human-readable summary of a free plan's limits, e.g.
+// "up to 10 users, up to 10 concurrent builds, up to 10 projects, ..."
+export const describeFreePlanFeatures = (plan) => {
+  if (!plan) return null;
+  const parts = [];
+  const users = Number(plan.allowedUsers);
+  if (Number.isFinite(users) && users > 0) {
+    parts.push(`up to ${users.toLocaleString("en-US")} users`);
+  }
+  const features = Array.isArray(plan.features) ? plan.features : [];
+  FREE_FEATURE_DEFS.forEach(({ match, make }) => {
+    const f = features.find((feat) =>
+      String(feat.featureName || "")
+        .toLowerCase()
+        .includes(match)
+    );
+    if (!f || f.featureType === 5) return;
+    const v = Number(f.value);
+    if (!Number.isFinite(v) || v <= 0 || v >= 999999) return;
+    parts.push(make(v));
+  });
+  return parts.length ? parts.join(", ") : null;
+};
+
+// Active USD paid plan for a specific billing cycle (e.g. "Yearly")
+export const findPlanForCycle = (plans, cycle) => {
+  if (!Array.isArray(plans)) return null;
+  return (
+    plans.find(
+      (p) =>
+        p.isActive === true &&
+        p.currency === "USD" &&
+        Number(p.price) > 0 &&
+        p.billingCycle === cycle
+    ) ?? null
+  );
+};
+
+// Discount comparison sentence for the paid (Shogun) plan across billing
+// cycles, computed from live plan prices, e.g.
+// "Yearly billing saves you 33% vs monthly - $15.99/year (just $1.33/month)
+// instead of $1.99/month ($23.88/year). ..."
+export const describeShogunBilling = (plans) => {
+  const monthly = findPaidMonthlyPlan(plans);
+  const yearly = findPlanForCycle(plans, "Yearly");
+  const twoYear = findPlanForCycle(plans, "2-Years");
+  const threeYear = findPlanForCycle(plans, "3-Years");
+  if (!monthly || !yearly || !twoYear || !threeYear) return null;
+
+  const effMonthly = (plan, months) =>
+    `${formatUsd(Number(plan.price) / months)}/month`;
+  const savingsPct = (plan, months) => {
+    const annualized = Number(monthly.price) * months;
+    const saved = 1 - Number(plan.price) / annualized;
+    return `${Math.round(saved * 100)}%`;
+  };
+
+  return (
+    `Yearly billing saves you ${savingsPct(yearly, 12)} vs monthly - ` +
+    `${formatUsd(yearly.price)}/year (just ${effMonthly(yearly, 12)}) instead of ` +
+    `${formatUsd(monthly.price)}/month (${formatUsd(Number(monthly.price) * 12)}/year). ` +
+    `Multi-year plans save even more: 2-year ${formatUsd(twoYear.price)} upfront ` +
+    `(${effMonthly(twoYear, 24)} - save ${savingsPct(twoYear, 24)}); ` +
+    `3-year ${formatUsd(threeYear.price)} upfront (${effMonthly(threeYear, 36)} - ` +
+    `save ${savingsPct(threeYear, 36)}).`
+  );
+};
 
 const PLANS_URL = () =>
   `${process.env.NEXT_PUBLIC_USR_SVC_URL.trimEnd('/')}/api/Subscription/plans?source=1`;

@@ -31,7 +31,7 @@ const faqSchema = {
       "name": "Is BuildNinja a free GitHub Actions alternative?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. BuildNinja is self-hosted and free with unlimited builds. GitHub Actions gives 2,000 free minutes/month for private repos, then charges $0.006-$0.048/min depending on runner type. For active teams exceeding that threshold, BuildNinja eliminates per-minute billing entirely - you pay only for your server infrastructure (typically $6-50/month depending on team size)."
+        "text": "Yes. BuildNinja is self-hosted and free to start - the Growth Edition includes 10 concurrent builds. Shogun Edition adds unlimited concurrent builds. GitHub Actions gives 2,000 free minutes/month for private repos, then charges $0.006-$0.048/min depending on runner type. For active teams exceeding that threshold, BuildNinja eliminates per-minute billing entirely - you pay only for your server infrastructure (typically $6-50/month depending on team size)."
       }
     },
     {
@@ -39,7 +39,7 @@ const faqSchema = {
       "name": "Is GitHub Actions free for self-hosted runners?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. GitHub Actions self-hosted runner usage is free for both public and private repositories. However, you still need a paid GitHub plan for private repos (Team at $4/user/mo or Enterprise at $21/user/mo) and workflows are tied to GitHub repositories only. BuildNinja has no per-seat fees, works with any Git provider, and is free to self-host with unlimited builds."
+        "text": "Yes. GitHub Actions self-hosted runner usage is free for both public and private repositories. However, you still need a paid GitHub plan for private repos (Team at $4/user/mo or Enterprise at $21/user/mo) and workflows are tied to GitHub repositories only. BuildNinja has no per-seat fees, works with any Git provider, and is free to self-host - Growth Edition includes 10 concurrent builds, unlimited with Shogun."
       }
     },
     {

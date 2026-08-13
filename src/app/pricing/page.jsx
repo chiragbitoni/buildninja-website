@@ -1,7 +1,16 @@
 import PricingPage from "./PricingPage";
 import { pricingSeventhText } from "../../../public/static/pricingPageText";
-import { fetchActivePlansForBuild } from "@/services/plans/plans";
+import {
+  fetchActivePlansForBuild,
+  findPaidMonthlyPlan,
+  findFreePlan,
+  describeFreePlanFeatures,
+} from "@/services/plans/plans";
 import { env } from "@/lib/config/env";
+import { formatUsd } from "@/lib/utils";
+
+const PAID_PRICE_TOKEN = "{{paidPlanMonthlyPrice}}";
+const FREE_FEATURES_TOKEN = "{{freePlanFeatures}}";
 
 export const metadata = {
   title: "BuildNinja - Self-Hosted CI/CD, Free to Start",
@@ -43,6 +52,11 @@ export default async function Pricing() {
   // fails at the pipeline instead of shipping a pricing page without plans.
   const plansData = await fetchActivePlansForBuild();
 
+  const bnPlans = plansData?.byProduct?.BuildNinja || [];
+  const paidMonthly = findPaidMonthlyPlan(bnPlans);
+  const paidPriceText = paidMonthly ? `${formatUsd(paidMonthly.price)}/month` : "no per-seat costs";
+  const freePlanText = describeFreePlanFeatures(findFreePlan(bnPlans)) ?? "all the core features";
+
   const faqSchema = {
     "@type": "FAQPage",
     "@id": "https://buildninja.grapehub.io/pricing#faqpage",
@@ -51,12 +65,14 @@ export default async function Pricing() {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer.replace(/<[^>]*>/g, "")
+        "text": faq.answer
+          .replace(PAID_PRICE_TOKEN, paidPriceText)
+          .replace(FREE_FEATURES_TOKEN, freePlanText)
+          .replace(/<[^>]*>/g, "")
       }
     }))
   };
 
-  const bnPlans = plansData?.byProduct?.BuildNinja || [];
   const byName = {};
   bnPlans.forEach((plan) => {
     const key = plan.name.trim();
@@ -68,7 +84,7 @@ export default async function Pricing() {
     "@id": `https://buildninja.grapehub.io/pricing#product-${name.toLowerCase().replace(/\s+/g, "-")}`,
     "name": `${name} Edition`,
     "image": "https://buildninja.grapehub.io/resources/BuildNinja.png",
-    "description": `${name} Edition - self-hosted CI/CD by BuildNinja. No per-seat pricing, unlimited builds on your own infrastructure.`,
+    "description": `${name} Edition - self-hosted CI/CD by BuildNinja. No per-seat pricing${name === "Growth" ? " - 10 concurrent builds" : " - unlimited concurrent builds"} on your own infrastructure.`,
     "brand": { "@type": "Brand", "name": "BuildNinja" },
     "offers": plans.map((plan) => ({
       "@type": "Offer",

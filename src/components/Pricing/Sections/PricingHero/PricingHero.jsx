@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import s from "./PricingHero.module.css";
 import { useRouter } from "next/navigation";
 import {
-  secondSectionTextIndia,
   secondSectionTextGlobal,
   secondSectionEnterpriseCardText,
 } from "../../../../../public/static/pricingPageText";

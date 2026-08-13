@@ -98,7 +98,7 @@ export default function HeroSection() {
             </span>
           </h1>
           <p className={styles.subtext}>
-            BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, for free.
+            BuildNinja is a self-hosted CI/CD platform designed for teams that want complete control over their development infrastructure. Run unlimited pipelines on your own servers, eliminate vendor lock-in, and deploy in minutes with a single Docker command.
           </p>
           <div className={styles.ctas}>
             <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>
@@ -144,7 +144,7 @@ export default function HeroSection() {
               <BuildNinjaDemo />
             </div>
           </div>
-          
+
         </div>
       </div>
 

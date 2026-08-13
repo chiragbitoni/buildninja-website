@@ -13,6 +13,7 @@ import DojoBanner from "../Dojo/DojoBanner";
 import NavDropdown from "./NavDropdown";
 
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
+const MY_ACCOUNT_URL = process.env.NEXT_PUBLIC_MYACCOUNT_URL || "";
 
 export default function Navbar({ blogPosts = [] }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -209,12 +210,22 @@ export default function Navbar({ blogPosts = [] }) {
               className={styles.navbarGithubIcon}
               onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
             />
-            <button
+            <a
+              href="/install"
               className={styles.navbarGetStartedButton}
-              onClick={() => handleNavigation("/install")}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/install");
+              }}
             >
               Get Started
-            </button>
+            </a>
+            <a
+              href={MY_ACCOUNT_URL}
+              className={styles.navbarGetStartedButton}
+            >
+              My Account
+            </a>
             {/* <AvatarMenu /> */}
             <ThemeToggle />
           </div>
@@ -295,12 +306,22 @@ export default function Navbar({ blogPosts = [] }) {
                   className={styles.navbarGithubIcon}
                   onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
                 />
-                <button
+                <a
+                  href="/install"
                   className={styles.navbarGetStartedButton}
-                  onClick={() => handleNavigation("/install")}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("/install");
+                  }}
                 >
                   Get Started
-                </button>
+                </a>
+                <a
+                  href={MY_ACCOUNT_URL}
+                  className={styles.navbarGetStartedButton}
+                >
+                  My Account
+                </a>
               </motion.div>
             </motion.ul>
           )}

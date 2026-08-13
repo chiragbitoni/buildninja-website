@@ -214,9 +214,10 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
       </h3>
 
       {/* Billing cycle selector - inside the paid card */}
-      {CYCLE_ORDER.some(
-        (c) => c !== "Monthly" && group.plans.some((p) => p.billingCycle === c)
-      ) && (
+      {!/shogun/i.test(group.name) &&
+        CYCLE_ORDER.some(
+          (c) => c !== "Monthly" && group.plans.some((p) => p.billingCycle === c)
+        ) && (
         <p className={s.cycleNote}>
           Multi-year plans are billed once up front. The more years you
           commit, the more you save.
@@ -268,7 +269,7 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
           </p>
         ) : (
           <p className={s.cardPerMonth}>
-            Billed monthly · Cancel anytime
+            Billed monthly
             <span className={s.savingsBadge}>FLEXIBLE</span>
           </p>
         )}
@@ -284,7 +285,7 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
         </a>
         <p className={s.cardCtaNote}>
           {plan.billingCycle === "Monthly"
-            ? "Upgrade or cancel anytime"
+            ? "Upgrade anytime"
             : `One-time payment for ${CYCLE_LABELS[plan.billingCycle]}`}
         </p>
       </div>
@@ -386,7 +387,7 @@ export default function PricingPlans({ plansData }) {
         </motion.h1>
 
         <motion.p className={s.subtitle} variants={itemVariants}>
-          BuildNinja bills by billing cycle with multi-year discounts.
+          Choose your billing period and save more with longer-term plans.
         </motion.p>
 
         {/* Cards */}

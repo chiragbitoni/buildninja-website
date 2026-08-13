@@ -249,15 +249,15 @@ export default function SupportHero() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        onClick={() => window.location.href = "mailto:hello@grapehub.io"}
+                        onClick={() => window.location.href = "mailto:buildninja@grapecity.global"}
                         style={{ cursor: 'pointer' }}
                     >
                         <div className={styles.iconBox}>
                             <FontAwesomeIcon icon={faEnvelope} />
                         </div>
                         <span className={styles.cardLabel}>Direct Access</span>
-                        <h4 className={styles.cardValue}>hello@grapehub.io</h4>
-                        <a href="mailto:hello@grapehub.io" className={styles.cardAction} onClick={(e) => e.stopPropagation()}>
+                        <h4 className={styles.cardValue}>buildninja@grapecity.global</h4>
+                        <a href="mailto:buildninja@grapecity.global" className={styles.cardAction} onClick={(e) => e.stopPropagation()}>
                             Send an email <FontAwesomeIcon icon={faArrowRight} />
                         </a>
                     </motion.div>

@@ -26,7 +26,7 @@ export default function FeatureCta() {
           </h2>
 
           <p className={styles.subtitle}>
-            Get BuildNinja running in your environment in under 5 minutes.
+            Get BuildNinja running in your environment in under 15 minutes.
             Self-hosted, fully private, no vendor lock-in.
           </p>
 

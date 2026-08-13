@@ -21,7 +21,7 @@ const pains = [
 ];
 
 const resolutions = [
-  "No agent fees - unlimited build agents included in Growth Edition at zero cost.",
+  "No agent fees - 10 concurrent builds included in Growth Edition at zero cost; unlimited with Shogun.",
   "No JVM dependency - lightweight footprint on a 4-core, 8 GB VPS.",
   "UI-first configuration - most pipelines set up through the dashboard without touching YAML.",
   "No renewal risk - Growth Edition has no annual license, no renewal window.",

@@ -38,7 +38,7 @@ export default function HomePage() {
       <SectionTracker name="why_self_hosted"><WhySelfHosted /></SectionTracker>
 
       <SectionTracker name="how_ninja_compares"><HowNinjaCompares /></SectionTracker>
-      <SectionTracker name="social_proof"><SocialProof /></SectionTracker>
+      {/* <SectionTracker name="social_proof"><SocialProof /></SectionTracker> */}
       <SectionTracker name="ai_roadmap"><AIRoadmap /></SectionTracker>
       <SectionTracker name="faq"><FAQSection /></SectionTracker>
       <SectionTracker name="trust_banner"><TrustBanner /></SectionTracker>

@@ -1,9 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import s from "./PricingFaq.module.css";
 import { pricingSeventhText } from "../../../../../public/static/pricingPageText";
 import { useRouter } from "next/navigation";
+import {
+  fetchPlansFromAPI,
+  findPaidMonthlyPlan,
+  findFreePlan,
+  describeFreePlanFeatures,
+} from "@/services/plans/plans";
+import { formatUsd } from "@/lib/utils";
+
+const PAID_PRICE_TOKEN = "{{paidPlanMonthlyPrice}}";
+const FREE_FEATURES_TOKEN = "{{freePlanFeatures}}";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,8 +40,60 @@ export default function PricingFaq() {
   const text = pricingSeventhText;
   const router = useRouter();
   const [openIndex, setOpenIndex] = useState(null);
+  const [plans, setPlans] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const apply = (list) => {
+      if (!cancelled && Array.isArray(list) && list.length > 0) {
+        setPlans(list);
+        return true;
+      }
+      return false;
+    };
+
+    let stored = null;
+    try {
+      stored = window.localStorage.getItem("plans");
+    } catch {
+      stored = null;
+    }
+    if (stored) {
+      try {
+        if (apply(JSON.parse(stored))) return;
+      } catch {
+        // ignore malformed cache
+      }
+    }
+
+    fetchPlansFromAPI().then((fetched) => {
+      if (!apply(fetched)) {
+        setPlans([]);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const paidPriceText = useMemo(() => {
+    const plan = findPaidMonthlyPlan(plans);
+    return plan ? `${formatUsd(plan.price)}/month` : null;
+  }, [plans]);
+
+  const freePlanText = useMemo(() => {
+    const plan = findFreePlan(plans);
+    return describeFreePlanFeatures(plan);
+  }, [plans]);
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+
+  const renderAnswer = (answer) =>
+    answer
+      .replace(PAID_PRICE_TOKEN, paidPriceText ?? "no per-seat costs")
+      .replace(FREE_FEATURES_TOKEN, freePlanText ?? "all the core features");
 
   return (
     <section className={s.section}>
@@ -80,7 +142,7 @@ export default function PricingFaq() {
                   visibility: openIndex === index ? "visible" : "hidden"
                 }}
               >
-                {faq.answer}
+                {renderAnswer(faq.answer)}
               </motion.p>
             </motion.div>
           ))}

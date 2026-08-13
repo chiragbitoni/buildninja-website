@@ -98,7 +98,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Setup time</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Under 5 minutes</strong></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Under 15 minutes</strong></td>
                 <td>15–30 minutes (OAuth + orbs config)</td>
               </tr>
               <tr>
@@ -141,7 +141,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Build agents / runners</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited self-hosted build agents <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 10 build agents in Growth, unlimited with Shogun <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self-hosted runners limited on free tier</td>
               </tr>
               <tr>
@@ -255,7 +255,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Horizontal agent scaling</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents freely</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents - 10 in Growth, unlimited with Shogun</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more resource consumption</td>
               </tr>
               <tr>
@@ -305,8 +305,8 @@ export default function ComparisonTable() {
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Available on paid plans</td>
               </tr>
               <tr>
-                <td>Engineer-to-engineer support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Direct technical team access <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
+                <td>Email support</td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Email support (business hours)</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Ticket-based support routing</td>
               </tr>
               <tr>

@@ -92,7 +92,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Time to first build</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Under 10 minutes</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Under 15 minutes</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Under 10 minutes (if already on GitHub)</td>
               </tr>
 
@@ -234,7 +234,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Horizontal agent scaling</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents - cost stays flat</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents - cost stays flat · 10 in Growth, unlimited with Shogun</td>
                 <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more orchestration charges</td>
               </tr>
               <tr>

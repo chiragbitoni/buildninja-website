@@ -62,7 +62,7 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="3"><Cog size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Setup & Installation</td></tr>
               <tr>
                 <td>Initial Setup Time</td>
-                <td className={s.ninjaTd}>Under 5 minutes via Docker <span className={`${s.tag} ${s.tagGreen}`}>Fast</span></td>
+                <td className={s.ninjaTd}>Under 15 minutes via Docker <span className={`${s.tag} ${s.tagGreen}`}>Fast</span></td>
                 <td className={s.jenkinsTd}>2–4+ hours including Java, WAR, config</td>
               </tr>
               <tr>
@@ -230,7 +230,7 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="3"><LifeBuoy size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Support & Community</td></tr>
               <tr>
                 <td>Official Support</td>
-                <td className={s.ninjaTd}>Engineer-to-engineer direct support</td>
+                <td className={s.ninjaTd}>Email support (business hours)</td>
                 <td className={s.jenkinsTd}>Community forums; CloudBees for paid support</td>
               </tr>
               <tr>

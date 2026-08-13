@@ -11,38 +11,6 @@ export const heroSectionText = {
   },
 };
 
-// ===========================
-// 🇮🇳 INDIA PRICING STRUCTURE
-// ===========================
-export const secondSectionTextIndia = {
-  monthCards: {
-    soloEditionCard: {
-      highlight: "FREE",
-      edition: "Growth Edition",
-      price: "",
-      priceDescription: "No credit card required",
-      ideal:
-        "Ideal for: Teams of all sizes, from startups to enterprises",
-      list1: [
-        "Unlimited users - No per-seat costs as you grow",
-        "Unlimited projects - No artificial limits",
-        "Unlimited configurations - Scale without restrictions",
-      ],
-      list2: [
-        "Unlimited concurrent builds - Run as many as your infra supports",
-        "Unlimited build agents - Connect as many machines as you want",
-        "Perpetual build history - Complete audit trail forever",
-        "Microsoft, GitHub, GitLab, Bitbucket, and Google",
-        "Email support - Direct engineering team access",
-      ],
-      buttonText: "Get Started",
-      buttonText2: "Schedule a Demo",
-      ctaText: "No strings attached. BuildNinja Growth Edition.",
-    },
-  },
-};
-
-
 export const secondSectionEnterpriseCardText = {
   highlight: "ENTERPRISE",
   title: "Enterprise Customers with Special Needs?",
@@ -76,16 +44,16 @@ export const secondSectionTextGlobal = {
       ideal:
         "Ideal for: Teams of all sizes, from startups to enterprises",
       list1: [
-        "Unlimited users - No per-seat costs as you grow",
-        "Unlimited projects - No artificial limits",
-        "Unlimited configurations - Scale without restrictions",
+        "Up to 10 users - No per-seat costs",
+        "Up to 10 projects",
+        "Up to 10 build configurations",
       ],
       list2: [
-        "Unlimited concurrent builds - Run as many as your infra supports",
-        "Unlimited build agents - Connect as many machines as you want",
-        "Perpetual build history - Complete audit trail forever",
-        "All 5 SSO providers - Microsoft, GitHub, GitLab, Bitbucket, and Google",
-        "Email support - Direct engineering team access",
+        "10 concurrent builds",
+        "10 build agents",
+        "30-day build history",
+        "1 SSO provider",
+        "Email support",
       ],
       buttonText: "Get Your Free Key",
       buttonText2: "Schedule a Demo",
@@ -199,7 +167,7 @@ export const pricingFifthText = {
       ],
     },
     {
-      title: "Enterprise Security Features",
+      title: "Enterprise Grade Features",
       sections: [
         {
           heading: "User Administration",
@@ -249,24 +217,24 @@ export const pricingSeventhText = {
   title: "Frequently Asked Questions",
   faqs: [
     {
-      question: "How do I scale my build capacity?",
+      question: "What happens when my team grows?",
       answer:
-        "The Growth Edition has no artificial limits on concurrent builds. You can run as many builds simultaneously as your infrastructure supports. We don't throttle your scale.",
+        "Nothing to your BuildNinja price. Add 10 or 100 developers, still {{paidPlanMonthlyPrice}} for unlimited users.",
     },
     {
-      question: "Is the Growth Edition really free?",
+      question: "Is the free Growth Edition really free forever?",
       answer:
-        "Yes. No credit card, no time limit, no surprise bills. BuildNinja Growth Edition gives you unlimited access to the core platform.",
+        "Yes! The Growth Edition is completely free - no credit card, no surprise bills. Your free license key is valid for the license term; when it expires, simply generate a new free key. The Growth Edition includes {{freePlanFeatures}} - free, forever.",
     },
     {
       question: "What's the difference between build agents and concurrent builds?",
       answer:
-        "Build agents are the machines you connect. Concurrent builds are the number of builds running at the exact same time. Both are unlimited in the BuildNinja Growth Edition.",
+        "Build agents are the machines you connect. Concurrent builds are the number of builds running at the exact same time. Growth Edition includes 10 concurrent builds; Shogun Edition is unlimited.",
     },
     {
       question: "Can I try before committing to Enterprise?",
       answer:
-        "Yes! The Growth Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our team for a personalized demonstration.",
+        "Yes! The Growth Edition includes all core functionality so you can start immediately. For specialized enterprise requirements, contact our sales team at sales@grapecity.global for a personalized demonstration.",
     },
   ],
   button: "View Complete FAQ →",
@@ -274,28 +242,29 @@ export const pricingSeventhText = {
 export const pricingEighthText = {
   title: "DevOps Made Simple. Get Started.",
   subtitle:
-    "Join engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. <br/>Get your CI/CD build process running in under 5 minutes.",
+    "Join engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. <br/>Get your CI/CD build process running in under 15 minutes.",
   enterprise: {
     title: "Enterprise Edition",
-    description: "Built for teams requiring high availability, custom SLAs, and dedicated priority support.",
+    description: "Built for teams requiring high availability, custom SLAs, and dedicated deployments.",
     buttonText: "Contact Us",
   },
   free: {
     title: "Growth Edition",
-    description: "Deploy your own CI/CD in minutes. No credit card, no seat limits, no expiry - free.",
+    description: "No strings attached. Growth Edition stays free forever.",
     buttonText: "Get Your Free Key",
   },
   shogun: {
     title: "Shogun Edition",
-    description: "Unlimited users, builds, and agents with dedicated 24/7 support and custom deployments.",
-    buttonText: "Get Shogun",
+    description: "No credit card. No commitment.",
+    buttonText: "Start with Trial License",
   },
   features: [
-    "No Per-Seat Pricing",
-    "Unlimited Users & Builds",
-    "5-Minute Setup",
-    "Self-Hosted Control",
-    "Direct Engineer Support",
+    "Free forever - Growth Edition",
+    "{{paidPlanMonthlyPrice}} unlimited",
+    "30-day trial license",
+    "15-minute setup",
+    "Self-hosted control",
+    "Email support",
   ],
 };
 

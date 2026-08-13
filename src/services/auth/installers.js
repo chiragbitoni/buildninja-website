@@ -1,5 +1,3 @@
-import { getAuthCookie } from "@/lib/cookieAuth";
-
 export async function fetchInstallers() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/list`, {
     method: "GET",
@@ -13,12 +11,9 @@ export async function fetchInstallers() {
 }
 
 // Download file endpoint
-export async function downloadInstaller(fileName) {
+// @param {{ userId?: string | null, email?: string }} user - user from the in-memory email cache
+export async function downloadInstaller(fileName, user = {}) {
   try {
-    // Read user data from cookie
-    const user = getAuthCookie();
-    if (!user) throw new Error("User not found in cookie");
-
     // Build full URL using env variable
     const url = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/download/${fileName}`;
 
@@ -29,8 +24,8 @@ export async function downloadInstaller(fileName) {
       },
       credentials: "include",
       body: JSON.stringify({
-        userId: user.userId,
-        email: user.email,
+        userId: user?.userId || null,
+        email: user?.email || null,
       }),
     });
 

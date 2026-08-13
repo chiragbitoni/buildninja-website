@@ -19,10 +19,10 @@ export default function CTABanner() {
           </Link>
         </div>
         <p className={s.ctaNote}>
-          <span className={s.ctaBadge}>5-minute setup</span>
+          <span className={s.ctaBadge}>15-minute setup</span>
           <span className={s.ctaBadge}>No card required</span>
           <span className={s.ctaBadge}>No orchestration tax</span>
-          <span className={s.ctaBadge}>Cancel anytime</span>
+          <span className={s.ctaBadge}>No seat pricing</span>
         </p>
       </div>
     </section>

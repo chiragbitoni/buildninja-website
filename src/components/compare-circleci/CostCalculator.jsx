@@ -27,7 +27,7 @@ export default function CostCalculator() {
             <div className={s.costLine}><span>BuildNinja license</span><span>$0 /mo (free tier)</span></div>
             <div className={s.costTotal}>
               <div className={`${s.costTotalVal} ${s.costTotalValOrange}`}>$10–50/mo</div>
-              <div className={s.costTotalLbl}>Total · Supports <strong>unlimited builds + unlimited users</strong></div>
+              <div className={s.costTotalLbl}>Total · Supports <strong>unlimited builds + no seat pricing</strong></div>
             </div>
           </div>
 

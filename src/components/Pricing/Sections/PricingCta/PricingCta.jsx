@@ -7,6 +7,10 @@ import { paths } from "../../../../../public/static/paths";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import { env } from "@/lib/config/env";
+import { findPaidMonthlyPlan } from "@/services/plans/plans";
+import { formatUsd } from "@/lib/utils";
+
+const PAID_PRICE_TOKEN = "{{paidPlanMonthlyPrice}}";
 
 const CYCLE_ORDER = ["Monthly", "Yearly", "2-Years", "3-Years"];
 const CYCLE_SHORT = {
@@ -42,8 +46,6 @@ export default function PricingCta({ plansData }) {
   const { region } = useSelector((state) => state.pricing);
   const [cycle, setCycle] = useState("Monthly");
 
-  const features = text.features;
-
   const formatMoney = (value, currency) => {
     const num = Number(value) || 0;
     try {
@@ -70,6 +72,19 @@ export default function PricingCta({ plansData }) {
   const freePlan = bnPlans.find((p) => Number(p.price) === 0);
   const paidPlans = bnPlans.filter((p) => Number(p.price) > 0);
 
+  const paidMonthlyPlan = findPaidMonthlyPlan(bnPlans);
+  const paidMonthlyPrice = paidMonthlyPlan
+    ? formatUsd(paidMonthlyPlan.price)
+    : null;
+
+  const features = text.features.map((f) =>
+    f.includes(PAID_PRICE_TOKEN)
+      ? paidMonthlyPrice
+        ? f.replace(PAID_PRICE_TOKEN, paidMonthlyPrice)
+        : "Unlimited Builds"
+      : f
+  );
+
   const paidGroups = [];
   const byName = new Map();
   paidPlans.forEach((p) => {
@@ -81,23 +96,11 @@ export default function PricingCta({ plansData }) {
 
   const shogunGroup =
     paidGroups.find((g) => g.name.toLowerCase().includes("shogun")) || null;
-  const otherPaidGroups = paidGroups.filter((g) => g !== shogunGroup);
-  const enterpriseGroup =
-    otherPaidGroups.find((g) => g.name.toLowerCase().includes("enterprise")) ||
-    otherPaidGroups.reduce(
-      (max, g) =>
-        max && Number(max.plans[0].price) >= Number(g.plans[0].price) ? max : g,
-      null
-    );
-
-  const monthlyOrFirst = (group) =>
-    group?.plans.find((p) => p.billingCycle === "Monthly") || group?.plans[0];
 
   const shogunPlan =
     shogunGroup?.plans.find((p) => p.billingCycle === cycle) ||
     shogunGroup?.plans.find((p) => p.billingCycle === "Monthly") ||
     shogunGroup?.plans[0];
-  const enterprisePlan = monthlyOrFirst(enterpriseGroup);
 
   const envFreePlanId = process.env.NEXT_PUBLIC_BUILDNINJA_FREE_PLAN_ID;
   const freeHref = freePlan
@@ -110,9 +113,7 @@ export default function PricingCta({ plansData }) {
     ? `${env.MY_ACCOUNT}/order?planId=${shogunPlan.id}`
     : "/support";
 
-  const enterpriseHref = enterprisePlan
-    ? `${env.MY_ACCOUNT}/order?planId=${enterprisePlan.id}`
-    : "/support";
+  const enterpriseHref = "mailto:sales@grapecity.global";
 
   return (
     <section className={s.section}>

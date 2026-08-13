@@ -3,6 +3,17 @@ import { useState, useRef, useEffect } from "react";
 import s from "./FaqQuestions.module.css";
 import { thirdSectionText } from "../../../../../public/static/faqPageText";
 import { motion } from "framer-motion";
+import {
+  fetchPlansFromAPI,
+  findFreePlan,
+  describeFreePlanFeatures,
+  describeShogunBilling,
+} from "@/services/plans/plans";
+
+const FREE_FEATURES_TOKEN = "{{freePlanFeatures}}";
+const ANNUAL_BILLING_TOKEN = "{{annualBilling}}";
+const ANNUAL_BILLING_FALLBACK =
+  "Annual and multi-year Shogun plans are available at a discount compared to monthly billing - see the pricing page for current rates.";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,8 +38,58 @@ const itemVariants = {
 export default function FaqQuestions() {
   const [activeIndex, setActiveIndex] = useState({ category: null, index: null });
   const [searchTerm, setSearchTerm] = useState("");
+  const [freePlanText, setFreePlanText] = useState(null);
+  const [annualBillingText, setAnnualBillingText] = useState(null);
   const faqRefs = useRef({});
   const [hasAutoScrolled, setHasAutoScrolled] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const apply = (list) => {
+      if (!cancelled && Array.isArray(list) && list.length > 0) {
+        setFreePlanText(
+          describeFreePlanFeatures(findFreePlan(list)) ?? null
+        );
+        setAnnualBillingText(describeShogunBilling(list));
+        return true;
+      }
+      return false;
+    };
+
+    let stored = null;
+    try {
+      stored = window.localStorage.getItem("plans");
+    } catch {
+      stored = null;
+    }
+    if (stored) {
+      try {
+        if (apply(JSON.parse(stored))) return;
+      } catch {
+        // ignore malformed cache
+      }
+    }
+
+    fetchPlansFromAPI().then((fetched) => {
+      apply(fetched);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const renderAnswer = (html) =>
+    html
+      .replace(
+        FREE_FEATURES_TOKEN,
+        freePlanText ?? "all the core features"
+      )
+      .replace(
+        ANNUAL_BILLING_TOKEN,
+        annualBillingText ?? ANNUAL_BILLING_FALLBACK
+      );
 
   // Filter FAQs by question or answer, keeping only categories that have matches
   const filteredFaqs = thirdSectionText.faqs
@@ -186,7 +247,7 @@ export default function FaqQuestions() {
                           visibility: isOpen ? "visible" : "hidden"
                         }}
                       >
-                        <div dangerouslySetInnerHTML={{ __html: highlightHTML(faq.answer, searchTerm) }} />
+                        <div dangerouslySetInnerHTML={{ __html: highlightHTML(renderAnswer(faq.answer), searchTerm) }} />
                       </motion.div>
                     </motion.div>
                   );

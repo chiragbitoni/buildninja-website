@@ -42,7 +42,7 @@ const steps = [
       </svg>
     ),
     title: "Scale Instantly",
-    desc: "Ship confidently with unlimited users and parallel builds on your own hardware.",
+    desc: "Ship confidently with parallel builds on your own hardware - free to start, unlimited with Shogun.",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function HowItWorks() {
             The Simple <span>Self-Hosted</span> Solution
           </motion.h2>
           <motion.p className={styles.subtitle}>
-            From zero to running builds in under 5 minutes. No specialized DevOps knowledge required.
+            From zero to running builds in under 15 minutes. No specialized DevOps knowledge required.
           </motion.p>
         </motion.div>
 

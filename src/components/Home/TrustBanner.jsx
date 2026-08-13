@@ -37,7 +37,7 @@ function AnimatedNumber({ value, isInView }) {
 const trustPoints = [
   { num: 25, suffix: "+", label: "Years of Innovation", icon: Building2, tone: "rose", desc: "of engineering pedigree" },
   { num: 500, suffix: "+", label: "Global Enterprises", icon: Globe2, tone: "amber", desc: "trust the platform" },
-  { num: 99, suffix: "%", label: "Uptime Achieved", icon: Shield, tone: "violet", desc: "on your infra" },
+  // { num: 99, suffix: "%", label: "Uptime Achieved", icon: Shield, tone: "violet", desc: "on your infra" },
   { num: 10, suffix: "K+", label: "Engineers Empowered", icon: Users, tone: "cyan", desc: "across the globe" },
 ];
 
@@ -91,13 +91,13 @@ export default function TrustBanner() {
               </h2>
               <p className={styles.desc}>
                 Backed by Grapecity&apos;s 25+ years of global developer tools
-                expertise. Support means direct access to actual engineers during
-                business hours - not chatbots.
+                expertise. Support means email responses from our team during
+                business hours - no chatbots.
               </p>
               <div className={styles.chipRow}>
                 <span className={styles.chip}>
                   <CheckCircle2 size={14} className={styles.chipCheck} />
-                  Direct engineer support
+                  Email support
                 </span>
                 <span className={styles.chip}>
                   <Users size={14} className={styles.chipUsers} />

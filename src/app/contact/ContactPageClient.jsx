@@ -200,7 +200,7 @@ export default function ContactPageClient({ grapehubContactHtml }) {
                                                     type="text"
                                                     value={form.subject}
                                                     onChange={handleChange}
-                                                    placeholder="e.g. Sales, Enterprise Licensing, Custom Integration"
+                                                    placeholder="e.g. Sales (sales@grapecity.global), Enterprise Licensing, Custom Integration"
                                                     required
                                                 />
                                                 <FontAwesomeIcon icon={faTag} className={styles.inputIcon} />

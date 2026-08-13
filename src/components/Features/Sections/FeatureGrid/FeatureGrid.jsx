@@ -158,7 +158,7 @@ const features = [
     ),
     title: 'Unified Installer & Quick Setup',
     description:
-      'Install Server, Agent, and MongoDB in minutes with a single installer. Native support for Windows, Linux, and macOS. Get running from zero in under 5 minutes.',
+      'Install Server, Agent, and MongoDB in minutes with a single installer. Native support for Windows, Linux, and macOS. Get running from zero in under 15 minutes.',
     tags: ['One-click Install', 'Cross-platform', 'Docker & K8s'],
     videoId: 'zOW9BCYQkxk',
     videoLink: 'https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows',

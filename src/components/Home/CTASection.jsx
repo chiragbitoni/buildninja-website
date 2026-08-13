@@ -64,7 +64,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Deploy in 5 minutes. Run unlimited builds. Pay nothing. Join the high-velocity teams moving to BuildNinja.
+            Deploy in 5 minutes. Start free - 10 concurrent builds. Scale without limits. Join the high-velocity teams moving to BuildNinja.
           </motion.p>
 
           <motion.div 
@@ -116,7 +116,7 @@ export default function CTASection() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>Cancel anytime, keep control of your self-hosted setup</span>
+              <span>Keep full control of your self-hosted setup</span>
             </div>
 
             <div className={styles.guaranteeItem}>
@@ -130,7 +130,7 @@ export default function CTASection() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>Direct engineer-to-engineer technical support</span>
+              <span>Email support and comprehensive documentation</span>
             </div>
           </motion.div>
         </motion.div>

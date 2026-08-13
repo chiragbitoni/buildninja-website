@@ -9,20 +9,28 @@ export const supportHeroText = {
   options: [
     {
       icon: paths.icons.emailBlue,
-      alt:"blue email icon",
+      alt: "blue email icon",
       title: "Email Support",
-      // desc: "hello@grapehub.io",
-      linkText: "hello@grapehub.io",
+      // desc: "buildninja@grapecity.global",
+      linkText: "buildninja@grapecity.global",
       mail: true,
     },
     {
       icon: paths.icons.documentpurple,
-      alt:"purple document icon",
+      alt: "purple document icon",
       title: "Documentation",
       desc: "Browse guides and tutorials",
       linkText: "View Documentation →",
       mail: false,
       link: `${process.env.NEXT_PUBLIC_DOCUMENTATION_URL}/docs/overview`,
+    },
+    {
+      icon: paths.icons.emailBlue,
+      alt: "blue email icon",
+      title: "Enterprise Sales",
+      desc: "For Enterprise plans and licensing",
+      linkText: "sales@grapecity.global",
+      mail: true,
     },
   ],
   form: {

@@ -46,7 +46,7 @@ export default function DecisionGuide() {
           <div className={s.migrationBox}>
             <h3 className={s.chooseNinja}>Choose BuildNinja if…</h3>
             <ul className={s.featureList}>
-              <li><Check size={16} className={s.iconWin} /> You want to be running builds in under 10 minutes</li>
+              <li><Check size={16} className={s.iconWin} /> You want to be running builds in under 15 minutes</li>
               <li><Check size={16} className={s.iconWin} /> You don't have a dedicated DevOps engineer</li>
               <li><Check size={16} className={s.iconWin} /> You want unlimited users without per-seat costs</li>
               <li><Check size={16} className={s.iconWin} /> You're a growing startup or mid-size dev team</li>

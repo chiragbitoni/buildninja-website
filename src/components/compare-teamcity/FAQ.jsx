@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "TeamCity Professional is also free - why choose BuildNinja over it?",
-    a: "TeamCity Professional caps you at 3 build agents and 100 build configurations. Most teams outgrow this quickly and face a significant jump to the $2,399/yr Enterprise license (includes 3 agents) plus $359/yr per additional agent. BuildNinja Growth Edition has no such caps - unlimited agents, unlimited configurations, unlimited users - all free.",
+    a: "TeamCity Professional caps you at 3 build agents and 100 build configurations. Most teams outgrow this quickly and face a significant jump to the $2,399/yr Enterprise license (includes 3 agents) plus $359/yr per additional agent. BuildNinja Growth Edition is free with 10 users, 10 concurrent builds, and 10 build configurations. Shogun Edition removes all caps - unlimited users, agents, and configurations.",
   },
   {
     q: "How long does it take to set up BuildNinja compared to TeamCity?",

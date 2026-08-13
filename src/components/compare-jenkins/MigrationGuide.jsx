@@ -61,7 +61,7 @@ export default function MigrationGuide() {
             <div className={s.stepNum}>01</div>
             <h4>Deploy BuildNinja</h4>
             <p>
-              Run <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep Jenkins running - no cutover yet.
+              Run <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>docker pull grapehub/buildninja-server</code> on any server. Takes 5 minutes. Keep Jenkins running - no cutover yet.
             </p>
             <div className={s.stepFooter}>
               <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 5 min</span>

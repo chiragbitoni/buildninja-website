@@ -30,7 +30,7 @@ export default function ChoiceCards() {
           <div className={`${styles.choiceCard} ${styles.choiceYes}`}>
             <h3 className={styles.choiceTitle}>Choose BuildNinja if you…</h3>
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Want self-hosted CI/CD with zero licensing cost, ever</div>
-            <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Need unlimited agents without costly add-ons</div>
+            <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Need build agents without costly add-ons - 10 in Growth, unlimited with Shogun</div>
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Want your first build running in minutes, not days</div>
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Need MSBuild, VSTest, Docker, Kubernetes - all without plugins</div>
             <div className={styles.choiceItem}><span className={styles.choiceCheck}>✓</span>Current CI/CD cost is growing and needs to stop</div>

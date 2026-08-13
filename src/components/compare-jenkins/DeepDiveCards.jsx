@@ -46,10 +46,10 @@ export default function DeepDiveCards() {
           <div className={`${s.diveCard} ${s.featured}`}>
             <div className={s.diveIcon}><span className={s.iconWrap}><Timer size={24} className={s.iconAccent} /></span></div>
             <h3>Time to First Build</h3>
-            <p>This is the single biggest practical difference. BuildNinja is designed to get your first pipeline running in under 5 minutes. Jenkins requires JDK installation, downloading the WAR file, running the setup wizard, installing suggested plugins, and then configuring your first job - a process that regularly takes new users 2–4 hours.</p>
+            <p>This is the single biggest practical difference. BuildNinja is designed to get your first pipeline running in under 15 minutes. Jenkins requires JDK installation, downloading the WAR file, running the setup wizard, installing suggested plugins, and then configuring your first job - a process that regularly takes new users 2–4 hours.</p>
             <div className={s.diveVersus}>
               <div className={s.diveVsRow}>
-                <div className={s.diveVsNinja}>5 minutes</div>
+                <div className={s.diveVsNinja}>15 minutes</div>
                 <div className={s.diveVsLabel}>setup time</div>
                 <div className={s.diveVsJenkins}>2–4 hours</div>
               </div>
