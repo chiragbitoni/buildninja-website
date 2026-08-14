@@ -71,17 +71,24 @@ const formatValue = (v) =>
   isUnlimited(v) ? "Unlimited" : Number(v).toLocaleString("en-US");
 
 const featureValueText = (f) => {
+  const v = formatValue(f.value);
+  if (isUnlimited(f.value)) return v;
   const name = String(f.featureName || "").toLowerCase();
-  if (name.includes("duration") || name.includes("audit")) {
-    return `${formatValue(f.value)} days`;
+  if (
+    name.includes("duration") ||
+    name.includes("audit") ||
+    name.includes("history") ||
+    name.includes("retention")
+  ) {
+    return `${v} days`;
   }
-  return formatValue(f.value);
+  return v;
 };
 
 const featureText = (f) => {
   const desc = f.featureDescription || "";
   if (desc.includes("${val}") && f.value != null) {
-    return desc.replace("${val}", formatValue(f.value));
+    return desc.replace("${val}", featureValueText(f));
   }
   if (desc) {
     if (f.value != null && String(f.value) !== "" && f.featureType === 2) {
