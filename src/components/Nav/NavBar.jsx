@@ -122,6 +122,7 @@ export default function Navbar({ blogPosts = [] }) {
             width={149}
             height={48.5}
             className={styles.logoImage}
+            loading="eager"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           />

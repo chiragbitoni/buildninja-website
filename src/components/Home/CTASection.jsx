@@ -64,7 +64,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Deploy in 5 minutes. Start free - 10 concurrent builds. Scale without limits. Join the high-velocity teams moving to BuildNinja.
+            Deploy in 5 minutes. Start free with the Growth Edition, and go unlimited with Shogun when you're ready. Join the high-velocity teams moving to BuildNinja.
           </motion.p>
 
           <motion.div 

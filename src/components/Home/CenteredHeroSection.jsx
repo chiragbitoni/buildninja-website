@@ -41,7 +41,7 @@ export default function CenteredHeroSection() {
           </div>
 
           <h1 className={styles.heading}>
-            Free Self-Hosted CI/CD.<br /><span className={styles.headingGradient}>
+            Self-Hosted CI/CD.<br /><span className={styles.headingGradient}>
               Start free. Scale without limits.
             </span>
           </h1>

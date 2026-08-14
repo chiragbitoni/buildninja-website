@@ -107,7 +107,7 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(40px, 6.5vw, 84px);
+  font-size: clamp(24px, 7vw, 56px);
   font-weight: 800;
   line-height: 1.1;
   color: var(--color-text);

@@ -20,7 +20,7 @@
 }
 
 .sectionTitle {
-  font-size: clamp(28px, 6vw, 60px);
+  font-size: clamp(26px, 5vw, 44px);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -1.5px;

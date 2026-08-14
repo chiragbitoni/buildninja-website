@@ -1,44 +1,13 @@
 ﻿"use client";
-import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import { Building2, Globe2, Shield, Users, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { Globe2, Package, Tag, Server, Users, CheckCircle2 } from "lucide-react";
 import styles from "./TrustBanner.module.css";
 
-function AnimatedNumber({ value, isInView }) {
-  const [displayed, setDisplayed] = useState(0);
-  const raf = useRef(null);
-  const startTime = useRef(null);
-
-  useEffect(() => {
-    if (!isInView) {
-      setDisplayed(0);
-      startTime.current = null;
-      return;
-    }
-    const duration = 3000;
-    const start = 0;
-
-    const step = (timestamp) => {
-      if (!startTime.current) startTime.current = timestamp;
-      const elapsed = timestamp - startTime.current;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplayed(Math.floor(start + (value - start) * eased));
-      if (progress < 1) raf.current = requestAnimationFrame(step);
-    };
-
-    raf.current = requestAnimationFrame(step);
-    return () => { if (raf.current) cancelAnimationFrame(raf.current); };
-  }, [isInView, value]);
-
-  return <span>{displayed}</span>;
-}
-
 const trustPoints = [
-  { num: 25, suffix: "+", label: "Years of Innovation", icon: Building2, tone: "rose", desc: "of engineering pedigree" },
-  { num: 500, suffix: "+", label: "Global Enterprises", icon: Globe2, tone: "amber", desc: "trust the platform" },
-  // { num: 99, suffix: "%", label: "Uptime Achieved", icon: Shield, tone: "violet", desc: "on your infra" },
-  { num: 10, suffix: "K+", label: "Engineers Empowered", icon: Users, tone: "cyan", desc: "across the globe" },
+  { label: "Trusted partner to global enterprises", desc: "Delivering software excellence worldwide", icon: Globe2, tone: "amber" },
+  { label: "Self-contained deployment", desc: "No plugin dependency chaos", icon: Package, tone: "violet" },
+  { label: "Predictable pricing", desc: "Flat monthly, not per-seat", icon: Tag, tone: "cyan" },
+  { label: "Your infrastructure", desc: "Complete control without vendor lock-in", icon: Server, tone: "rose" },
 ];
 
 function GrapecityLogo() {
@@ -65,11 +34,8 @@ function GrapecityLogo() {
 }
 
 export default function TrustBanner() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section className={styles.section}>
       <div className={styles.gridOverlay} />
 
       <div className={styles.container}>
@@ -92,7 +58,7 @@ export default function TrustBanner() {
               <p className={styles.desc}>
                 Backed by Grapecity&apos;s 25+ years of global developer tools
                 expertise. Support means email responses from our team during
-                business hours - no chatbots.
+                business hours.
               </p>
               <div className={styles.chipRow}>
                 <span className={styles.chip}>
@@ -121,12 +87,12 @@ export default function TrustBanner() {
                     <div className={`${styles.statIcon} ${styles[point.tone]}`}>
                       <Icon size={18} />
                     </div>
-                    <span className={styles.statNumber}>
-                      <AnimatedNumber value={point.num} isInView={isInView} />
-                      {point.suffix}
-                    </span>
-                    <span className={styles.statLabel}>{point.label}</span>
-                    <span className={styles.statDesc}>{point.desc}</span>
+                    <div className={styles.statBody}>
+                      <span className={`${styles.statLabel} ${styles.statLabelLead}`}>
+                        {point.label}
+                      </span>
+                      <span className={styles.statDesc}>{point.desc}</span>
+                    </div>
                   </motion.div>
                 );
               })}

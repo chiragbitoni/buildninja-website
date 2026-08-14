@@ -1,24 +1,22 @@
-﻿/* PRICING PLANS - API-driven plans section */
+/* PRICING PLANS - API-driven plans section */
 
 .section {
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
-  padding: 64px 24px 80px;
+  padding: var(--hero-pt-desktop) var(--container-padding) 80px;
   font-family: var(--font-body);
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 48px;
+    padding-top: var(--hero-pt-tablet);
   }
 }
 
 @media (max-width: 480px) {
   .section {
-    padding-top: 40px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-top: var(--hero-pt-mobile);
   }
 }
 
@@ -26,15 +24,8 @@
   position: relative;
   z-index: 2;
   max-width: var(--container-width);
-  padding: 0 16px;
   margin: 0 auto;
   text-align: center;
-}
-
-@media (max-width: 480px) {
-  .inner {
-    padding: 0;
-  }
 }
 
 /* Badge */
@@ -61,7 +52,7 @@
 /* Title */
 .title {
   font-family: var(--font-display);
-  font-size: clamp(36px, 5.5vw, 72px);
+  font-size: clamp(24px, 7vw, 56px);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.04em;
@@ -94,7 +85,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 2px;
-  margin: 0 0 14px;
+  margin: 14px 0 14px;
   padding: 3px;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);

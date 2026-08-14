@@ -70,7 +70,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 56px 60px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 48px -20px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   overflow: hidden;
 }
 
@@ -83,27 +83,6 @@
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-primary) 50%, transparent);
   z-index: 1;
-}
-
-.panel::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.05) 50%,
-    transparent 70%
-  );
-  transform: translateX(-120%);
-  animation: shimmerSweep 4s ease-in-out infinite;
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-@keyframes shimmerSweep {
-  0%   { transform: translateX(-120%); }
-  100% { transform: translateX(120%); }
 }
 
 .panelInner {
@@ -223,8 +202,8 @@
 
 .statCard {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 14px;
   padding: 20px 18px;
   border-radius: var(--radius-xl, 16px);
   border: 1px solid var(--card-border);
@@ -240,6 +219,13 @@
   box-shadow: 0 10px 28px -8px rgba(255, 65, 114, 0.18);
 }
 
+.statBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .statIcon {
   width: 34px;
   height: 34px;
@@ -247,7 +233,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .rose {
@@ -292,6 +278,10 @@
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.3;
+}
+
+.statLabelLead {
+  font-size: 15px;
 }
 
 .statDesc {
@@ -345,8 +335,8 @@
     justify-content: center;
   }
 
-  .statCard {
-    align-items: center;
+  .statBody {
+    text-align: left;
   }
 }
 
@@ -369,6 +359,12 @@
 
   .statCard {
     padding: 16px 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .statGrid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -435,7 +431,6 @@
     width: 28px;
     height: 28px;
     border-radius: 8px;
-    margin-bottom: 8px;
   }
 
   .statNumber {
@@ -507,7 +502,6 @@
     width: 24px;
     height: 24px;
     border-radius: 7px;
-    margin-bottom: 6px;
   }
 
   .statIcon svg {

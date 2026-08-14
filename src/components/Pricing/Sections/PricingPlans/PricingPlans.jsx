@@ -213,7 +213,29 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
         {group.name} <span className={s.editionSuffix}>Edition</span>
       </h3>
 
-      {/* Billing cycle selector - inside the paid card */}
+      <div className={s.priceBlock}>
+        <p className={s.cardPrice}>
+          {formatMoney(plan.price, plan.currency)}
+          <span className={s.cardPriceSuffix}>
+            {" "}/ {CYCLE_LABELS[plan.billingCycle] || plan.billingCycle.toLowerCase()}
+          </span>
+        </p>
+        {isMultiYear ? (
+          <p className={s.cardPerMonth}>
+            {formatMoney(perMonth, plan.currency)}/mo equivalent
+            {savings > 0 && (
+              <span className={s.savingsBadge}>SAVE {savings}%</span>
+            )}
+          </p>
+        ) : (
+          <p className={s.cardPerMonth}>
+            Billed monthly
+            <span className={s.savingsBadge}>FLEXIBLE</span>
+          </p>
+        )}
+      </div>
+
+      {/* Billing cycle selector - below the price */}
       {!/shogun/i.test(group.name) &&
         CYCLE_ORDER.some(
           (c) => c !== "Monthly" && group.plans.some((p) => p.billingCycle === c)
@@ -253,27 +275,6 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
         })}
       </div>
 
-      <div className={s.priceBlock}>
-        <p className={s.cardPrice}>
-          {formatMoney(plan.price, plan.currency)}
-          <span className={s.cardPriceSuffix}>
-            {" "}/ {CYCLE_LABELS[plan.billingCycle] || plan.billingCycle.toLowerCase()}
-          </span>
-        </p>
-        {isMultiYear ? (
-          <p className={s.cardPerMonth}>
-            {formatMoney(perMonth, plan.currency)}/mo equivalent
-            {savings > 0 && (
-              <span className={s.savingsBadge}>SAVE {savings}%</span>
-            )}
-          </p>
-        ) : (
-          <p className={s.cardPerMonth}>
-            Billed monthly
-            <span className={s.savingsBadge}>FLEXIBLE</span>
-          </p>
-        )}
-      </div>
       <FeatureList plan={plan} showUsers minRows={maxRows} />
       <div className={s.cardFooter}>
         <a
