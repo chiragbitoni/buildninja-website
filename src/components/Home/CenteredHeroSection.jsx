@@ -46,7 +46,7 @@ export default function CenteredHeroSection() {
             </span>
           </h1>
           <p className={styles.subtext}>
-Self-hosted CI/CD platform for DevOps teams who want full control. Deploy in under 5 minutes with one Docker command, run unlimited pipelines with Shogun on your own servers, and escape per-seat billing - with no vendor lock-in, ever.
+Self-hosted CI/CD platform for DevOps teams who want full control. Deploy in under 5 minutes with one Docker command, run unlimited pipelines with Shogun Edition on your own servers, and escape per-seat billing - with no vendor lock-in, ever.
           </p>
           <div className={styles.ctas}>
             <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>
