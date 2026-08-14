@@ -242,7 +242,7 @@ export const pricingSeventhText = {
 export const pricingEighthText = {
   title: "DevOps Made Simple. Get Started.",
   subtitle:
-    "Join engineering teams who’ve eliminated per-seat cost anxiety and deployed confidently with BuildNinja. <br/>Get your CI/CD build process running in under 15 minutes.",
+    "Reduce DevOps costs, automate software deployments, and launch production-ready build pipelines in under 15 minutes.",
   enterprise: {
     title: "Enterprise Edition",
     description: "Built for teams requiring high availability, custom SLAs, and dedicated deployments.",

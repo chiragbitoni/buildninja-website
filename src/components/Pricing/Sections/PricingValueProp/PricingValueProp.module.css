@@ -59,6 +59,8 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   display: inline-block;
+  letter-spacing: 0;
+  padding-right: 0.1em;
   padding-bottom: 0.1em;
   margin-bottom: -0.1em;
 }
