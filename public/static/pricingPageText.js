@@ -102,7 +102,7 @@ export const pricingFourthText = {
       title: "Simple, Transparent Pricing",
       tag: "Predictable",
       // region-based text will override this in Fourth.js
-      desc: "Unlimited users, projects, and configurations. Scale your build orchestration as much as your infrastructure allows with zero per-seat costs.",
+      desc: "Growth Edition covers 10 users, projects, and configurations; Shogun removes the limits - with zero per-seat costs.",
       link: "Learn more →",
       id: "what-is-concurrent-agent",
     },

@@ -16,7 +16,7 @@ import CTABanner from '@/components/compare-github-actions/CTABanner';
 
 export const metadata = {
   title: 'BuildNinja vs GitHub Actions | Comparison',
-  description: 'An honest, detailed comparison between BuildNinja and GitHub Actions. See how unlimited self-hosted builds compare against GitHub per-minute pricing.',
+  description: 'An honest, detailed comparison between BuildNinja and GitHub Actions. See how self-hosted builds with no per-minute pricing compare against GitHub per-minute billing.',
   alternates: {
     canonical: 'https://buildninja.grapehub.io/compare/buildninja-vs-github-actions',
   },
@@ -71,7 +71,7 @@ const faqSchema = {
       "name": "Is BuildNinja open source?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BuildNinja uses an open-core model. The core CI/CD engine is free to self-host with no license fees. Advanced features - SSO, multi-tenant management, enterprise audit logs, and the upcoming AI Intelligence module - are part of the commercial Growth Edition. GitHub Actions is proprietary, closed-source, and exclusively available as part of GitHub's platform."
+        "text": "BuildNinja uses an open-core model. The core CI/CD engine is free to self-host with no license fees. Advanced features - SSO, multi-tenant management, enterprise audit logs, and the upcoming AI Intelligence module - are part of the commercial Shogun Edition. GitHub Actions is proprietary, closed-source, and exclusively available as part of GitHub's platform."
       }
     },
     {

@@ -89,7 +89,7 @@ export default function AddToCartContent() {
     features.push("Docker support included");
     features.push("Community Support");
     features.push("Full orchestration platform access");
-    features.push("No time limits or expiration");
+    features.push("License key valid for the license term");
 
     return features;
   };

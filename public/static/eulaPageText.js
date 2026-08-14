@@ -1,6 +1,4 @@
-export const eulaContent = `<h1>BUILDNINJA END USER LICENSE AGREEMENT</h1>
-
-<p><strong>Effective Date:</strong> December 1, 2025</p>
+export const eulaContent = `<p><strong>Effective Date:</strong> December 1, 2025</p>
 
 <h3><strong>IMPORTANT: READ CAREFULLY BEFORE INSTALLING, COPYING, OR USING THIS SOFTWARE</strong></h3>
 <p>

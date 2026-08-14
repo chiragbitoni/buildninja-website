@@ -184,12 +184,12 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="3"><Users size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Team & Scalability</td></tr>
               <tr>
                 <td>User Limits</td>
-                <td className={s.ninjaTd}>Unlimited users - no per-seat pricing <span className={`${s.tag} ${s.tagGreen}`}>Free</span></td>
+                <td className={s.ninjaTd}>10 users in Growth, unlimited with Shogun - no per-seat pricing <span className={`${s.tag} ${s.tagGreen}`}>Free</span></td>
                 <td className={s.jenkinsTd}>Unlimited (open source) but infra costs scale</td>
               </tr>
               <tr>
                 <td>Project Limits</td>
-                <td className={s.ninjaTd}>Unlimited projects</td>
+                <td className={s.ninjaTd}>10 projects in Growth, unlimited with Shogun</td>
                 <td className={s.jenkinsTd}>Unlimited (limited by server resources)</td>
               </tr>
               <tr>

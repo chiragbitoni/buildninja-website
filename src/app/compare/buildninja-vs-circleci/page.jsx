@@ -13,7 +13,7 @@ import CTABanner from '@/components/compare-circleci/CTABanner';
 
 export const metadata = {
   title: 'BuildNinja vs CircleCI: Full Comparison - Self-Hosted CI/CD vs SaaS',
-  description: 'BuildNinja vs CircleCI - honest feature comparison. See why teams switch from CircleCI to BuildNinja: unlimited builds, no seat pricing, self-hosted CI/CD, and full data sovereignty.',
+  description: 'BuildNinja vs CircleCI - honest feature comparison. See why teams switch from CircleCI to BuildNinja: no seat pricing, self-hosted CI/CD, unlimited scale with Shogun, and full data sovereignty.',
   alternates: {
     canonical: 'https://buildninja.grapehub.io/compare/buildninja-vs-circleci',
   },

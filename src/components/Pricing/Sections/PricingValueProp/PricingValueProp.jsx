@@ -46,7 +46,7 @@ export default function PricingValueProp() {
   const { region } = useSelector((state) => state.pricing);
   const text = JSON.parse(JSON.stringify(pricingFourthText));
   text.cards[2].desc =
-    "Unlimited users, projects, and configurations. Scale your build orchestration as much as your infrastructure allows with zero per-seat costs.";
+    "Growth Edition covers 10 users, projects, and configurations; Shogun removes the limits - with zero per-seat costs.";
 
   return (
     <section className={s.section}>

@@ -32,7 +32,7 @@ export default function FAQ() {
     },
     {
       q: 'Is BuildNinja open source?',
-      a: 'BuildNinja uses an open-core model. The core CI/CD engine is free to self-host with no license fees. Advanced features - SSO, multi-tenant management, enterprise audit logs, and the upcoming AI Intelligence module - are part of the commercial Growth Edition. GitHub Actions is proprietary, closed-source, and exclusively available as part of GitHub\'s platform.'
+      a: 'BuildNinja uses an open-core model. The core CI/CD engine is free to self-host with no license fees. Advanced features - SSO, multi-tenant management, enterprise audit logs, and the upcoming AI Intelligence module - are part of the commercial Shogun Edition. GitHub Actions is proprietary, closed-source, and exclusively available as part of GitHub\'s platform.'
     },
     {
       q: 'How does BuildNinja handle GitHub pull request status checks?',

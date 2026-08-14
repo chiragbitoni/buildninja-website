@@ -5,8 +5,7 @@ export const shogunFeatures = [
     "Unlimited users & projects",
     "Unlimited concurrent builds",
     "Unlimited build agents",
-    "Perpetual build history",
-    "Dedicated 24/7 support",
-    "Custom deployment (K8s / Air-gapped)",
-    "Professional migration assistance"
+    "Unlimited build history",
+    "Email support (business hours)",
+    "Custom deployment (K8s / Air-gapped)"
 ];

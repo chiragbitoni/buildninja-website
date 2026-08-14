@@ -17,7 +17,7 @@ export const metadata = {
 };
 
 export default async function AboutPage() {
-  const content = await fetchGrapeHubPage("about");
+  const content = await fetchGrapeHubPage("about", { stripHeading: "About Us" });
   return (
     <LegalContent 
       title="About Us"

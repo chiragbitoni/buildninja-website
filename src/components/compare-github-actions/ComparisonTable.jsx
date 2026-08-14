@@ -279,11 +279,6 @@ export default function ComparisonTable() {
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> GitHub Community + paid support options</td>
               </tr>
               <tr>
-                <td>Engineer-to-engineer access</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Direct technical team contact <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
-                <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Ticket-based routing; depends on plan</td>
-              </tr>
-              <tr>
                 <td>Enterprise SLA</td>
                 <td className={s.tdBn}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> In roadmap for Growth Edition</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Uptime SLA on Enterprise plans</td>
