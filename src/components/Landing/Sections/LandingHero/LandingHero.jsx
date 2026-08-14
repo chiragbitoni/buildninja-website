@@ -210,9 +210,9 @@ export default function LandingHero() {
 
                     <div className={s.stats}>
                         {[
-                            { label: "Build Agents", value: "Unlimited" },
-                            { label: "Concurrent Builds", value: "Unlimited" },
-                            { label: "Growth Edition", value: "Enterprise Scale" }
+                            { label: "Build Agents (Growth)", value: "10" },
+                            { label: "Concurrent Builds (Growth)", value: "10" },
+                            { label: "Shogun Edition", value: "Unlimited" }
                         ].map((stat, i) => (
                             <motion.div
                                 className={s.statCard}
