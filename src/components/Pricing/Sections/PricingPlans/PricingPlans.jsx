@@ -236,8 +236,7 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
           </p>
         ) : (
           <p className={s.cardPerMonth}>
-            Billed monthly
-            <span className={s.savingsBadge}>FLEXIBLE</span>
+            One-time payment · License valid for the selected term
           </p>
         )}
       </div>

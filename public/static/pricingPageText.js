@@ -245,17 +245,17 @@ export const pricingEighthText = {
     "Reduce DevOps costs, automate software deployments, and launch production-ready build pipelines in under 15 minutes.",
   enterprise: {
     title: "Enterprise Edition",
-    description: "Built for teams requiring high availability, custom SLAs, and dedicated deployments.",
+    description: "High availability, custom SLAs, and dedicated deployments for teams that need them.",
     buttonText: "Contact Us",
   },
   free: {
     title: "Growth Edition",
-    description: "No strings attached. Growth Edition stays free forever.",
+    description: "Free forever - no credit card required.",
     buttonText: "Get Your Free Key",
   },
   shogun: {
     title: "Shogun Edition",
-    description: "No credit card. No commitment.",
+    description: "One-time payment - license valid for the selected term.",
     buttonText: "Start with Trial License",
   },
   features: [

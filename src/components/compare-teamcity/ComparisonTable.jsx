@@ -80,6 +80,8 @@ const featureRows = [
   { feat: "Real-time log streaming", bn: "<30ms", tc: "Available", win: "tie" },
   { feat: "Interactive demo sandbox", bn: "Dojo - live", tc: "Not available", win: "bn" },
   { feat: "AI-assisted features", bn: "v1.3.0 roadmap", tc: "Limited", win: "tie" },
+  { cat: "Support" },
+  { feat: "Support", bn: "Direct Email Support", tc: "Community forum support only", win: "bn" },
 ];
 
 export default function ComparisonTable() {

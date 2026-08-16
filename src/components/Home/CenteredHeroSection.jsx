@@ -42,7 +42,7 @@ export default function CenteredHeroSection() {
 
           <h1 className={styles.heading}>
             Self-Hosted CI/CD.<br /><span className={styles.headingGradient}>
-              Start free. Scale without limits.
+              Start free with Growth Edition - Scale without limits with Shogun Edition
             </span>
           </h1>
           <p className={styles.subtext}>

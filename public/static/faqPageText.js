@@ -232,10 +232,10 @@ See complete system requirements for network, browser compatibility, and additio
             "Yes! BuildNinja is fully compatible with Kubernetes deployments. Both the BuildNinja Server and Agents can be deployed as containerized workloads using Kubernetes manifests. This enables scalable, high-availability CI/CD infrastructure with automated orchestration across multiple environments. Our documentation includes complete Kubernetes deployment guides with sample manifests for server and agent configurations.",
         },
         {
-          id: "what-is-concurrent-agent",
-          question: "What is a concurrent agent and how many do I need?",
-          answer: `<p>A concurrent agent is one build agent executing a build at the same time. With 10 concurrent agents, you can run 10 builds simultaneously - additional builds queue automatically.</p>
-<p>Example: A team of 20 developers typically runs fine with 3-5 concurrent agents, while 50+ developers may need 5-10. Growth Edition includes 10 concurrent builds. Shogun Edition includes unlimited concurrent builds - scale without limits.</p>`,
+          id: "what-is-concurrent-build",
+          question: "What is a concurrent build and how many do I need?",
+          answer: `<p>A concurrent build is a build executing at the same time as others. With 10 concurrent builds, you can run 10 builds simultaneously - additional builds queue automatically.</p>
+<p>Example: A team of 20 developers typically runs fine with 3-5 concurrent builds, while 50+ developers may need 5-10. Growth Edition includes 10 concurrent builds. Shogun Edition includes unlimited concurrent builds - scale without limits.</p>`,
         },
         {
           id: "notifications",
@@ -296,7 +296,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "sso-support",
           question: "Does BuildNinja support Single Sign-On (SSO)?",
           answer: `<p>Yes! BuildNinja supports SSO integration with five major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
-<p>Growth Edition includes 1 SSO provider, while Shogun Edition includes all 5 providers. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
+<p>Growth Edition includes any 1 SSO provider of your choice, while Shogun Edition includes all 5 providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
 <p>Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.</p>`,
         },
         {
@@ -344,7 +344,7 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "reporting-bugs",
           question: "What if I encounter a bug or issue?",
-          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:buildninja@grapecity.global">buildninja@grapecity.global</a>. We actively work on resolving reported issues and provide regular updates and patches.`,
+          answer: `You can report issues by submitting a support ticket through our <a class="faqThirdPinkText" href="/support">support portal</a> or by emailing <a class="faqThirdPinkText" href="mailto:buildninja@grapecity.global">buildninja@grapecity.global</a>. We actively work on resolving reported issues and provide regular updates and patches.`,
         },
         {
           id: "update-frequency",
