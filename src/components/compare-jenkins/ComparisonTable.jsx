@@ -62,7 +62,7 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="3"><Cog size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Setup & Installation</td></tr>
               <tr>
                 <td>Initial Setup Time</td>
-                <td className={s.ninjaTd}>Under 5 minutes via Docker <span className={`${s.tag} ${s.tagGreen}`}>Fast</span></td>
+                <td className={s.ninjaTd}>Under 15 minutes via Docker <span className={`${s.tag} ${s.tagGreen}`}>Fast</span></td>
                 <td className={s.jenkinsTd}>2–4+ hours including Java, WAR, config</td>
               </tr>
               <tr>
@@ -115,7 +115,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-Powered Features</td>
-                <td className={s.ninjaTd}>Coming soon - log analysis, build prediction <span className={`${s.tag} ${s.tagBlue}`}>v1.2</span></td>
+                <td className={s.ninjaTd}>Coming soon - log analysis, build prediction <span className={`${s.tag} ${s.tagBlue}`}>v1.3</span></td>
                 <td className={s.jenkinsTd}>No built-in AI capabilities</td>
               </tr>
 
@@ -184,12 +184,12 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="3"><Users size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Team & Scalability</td></tr>
               <tr>
                 <td>User Limits</td>
-                <td className={s.ninjaTd}>Unlimited users - no per-seat pricing <span className={`${s.tag} ${s.tagGreen}`}>Free</span></td>
+                <td className={s.ninjaTd}>10 users in Growth, unlimited with Shogun - no per-seat pricing <span className={`${s.tag} ${s.tagGreen}`}>Free</span></td>
                 <td className={s.jenkinsTd}>Unlimited (open source) but infra costs scale</td>
               </tr>
               <tr>
                 <td>Project Limits</td>
-                <td className={s.ninjaTd}>Unlimited projects</td>
+                <td className={s.ninjaTd}>10 projects in Growth, unlimited with Shogun</td>
                 <td className={s.jenkinsTd}>Unlimited (limited by server resources)</td>
               </tr>
               <tr>
@@ -230,7 +230,7 @@ export default function ComparisonTable() {
               <tr className={s.categoryRow}><td colSpan="3"><LifeBuoy size={16} style={{verticalAlign:'middle', display:'inline-block', marginRight:'6px'}} /> Support & Community</td></tr>
               <tr>
                 <td>Official Support</td>
-                <td className={s.ninjaTd}>Engineer-to-engineer direct support</td>
+                <td className={s.ninjaTd}>Email support (business hours)</td>
                 <td className={s.jenkinsTd}>Community forums; CloudBees for paid support</td>
               </tr>
               <tr>

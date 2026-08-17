@@ -38,7 +38,7 @@ export default function RelatedPages() {
             <div className={s.relIcon} style={{ background: 'var(--color-border)' }}><Github aria-label="GitHub" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <div>
               <div className={s.relTitle}>BuildNinja + GitHub Setup Guide</div>
-              <div className={s.relSub}>Connect GitHub repos and run your first build in 5 minutes.</div>
+              <div className={s.relSub}>Connect GitHub repos and run your first build in 15 minutes.</div>
             </div>
           </Link>
           <Link href="/blog/how-to-set-up-ci-cd-for-free" className={s.relCard}>

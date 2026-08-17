@@ -2,7 +2,7 @@
  * Utility service to fetch and parse pages dynamically from GrapeHub at build-time or runtime.
  * Implements 24-hour server caching using Next.js Incremental Static Regeneration (ISR).
  */
-export async function fetchGrapeHubPage(path) {
+export async function fetchGrapeHubPage(path, options = {}) {
   try {
     const url = `${process.env.NEXT_PUBLIC_GRAPEHUB_URL}/${path}`;
     const response = await fetch(url);
@@ -61,7 +61,12 @@ export async function fetchGrapeHubPage(path) {
     
     // Remove wixGuards
     cleanHtml = cleanHtml.replace(/<span class="wixGuard wixui-rich-text__text">.*?<\/span>/g, '');
-    
+
+    // Strip a leading heading that duplicates the page's own hero title
+    if (options.stripHeading) {
+      cleanHtml = stripLeadingHeading(cleanHtml, options.stripHeading);
+    }
+
     return cleanHtml.trim();
   } catch (error) {
     console.error(`Error in fetchGrapeHubPage for ${path}:`, error);
@@ -70,6 +75,37 @@ export async function fetchGrapeHubPage(path) {
     // into the static export or rendering an empty error page.
     throw error;
   }
+}
+
+/**
+ * Removes the first heading element whose text matches one of the given titles.
+ * Also drops the Wix spacer paragraph that typically follows a heading.
+ */
+function stripLeadingHeading(html, stripHeading) {
+  const titles = Array.isArray(stripHeading) ? stripHeading : [stripHeading];
+  const normalize = (text) =>
+    text
+      .replace(/&amp;/g, '&')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/<[^>]+>/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+
+  const headingMatch = html.match(/(<h[1-6][^>]*>)([\s\S]*?)(<\/h[1-6]>)/i);
+  if (!headingMatch) return html;
+
+  const headingText = normalize(headingMatch[2]);
+  const matchesTitle = titles.some((title) => normalize(title) === headingText);
+  if (!matchesTitle) return html;
+
+  let endIndex = headingMatch.index + headingMatch[0].length;
+  const after = html.slice(endIndex);
+  const spacer = after.match(/^\s*<p[^>]*>\s*(?:&nbsp;|<br\s*\/?>\s*)+\s*<\/p>/i);
+  if (spacer) {
+    endIndex += spacer[0].length;
+  }
+  return html.slice(0, headingMatch.index) + html.slice(endIndex);
 }
 
 /**

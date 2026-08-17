@@ -8,7 +8,7 @@ export default function ComparePortal() {
     {
       title: "BuildNinja vs GitHub Actions",
       badge: "SaaS vs Self-Hosted",
-      desc: "Compare GitHub's per-minute pricing and runner concurrency limits against BuildNinja's self-hosted, unlimited parallel build engine.",
+      desc: "Compare GitHub's per-minute pricing and runner concurrency limits against BuildNinja's self-hosted, no per-build-cost build engine.",
       href: "/compare/buildninja-vs-github-actions",
       icon: <img src="/resources/githubactions.svg" alt="GitHub Actions" className={s.logoImg} />,
       logoHover: "/resources/github-actions-logo.svg",
@@ -27,10 +27,10 @@ export default function ComparePortal() {
       icon: <img src="/resources/Circleci.svg" alt="CircleCI" className={s.logoImg} />,
       logoHover: "/resources/circleci-logo.svg",
       points: [
-        "Unlimited users on all tiers",
+        "No per-seat pricing - 10 users in Growth, unlimited with Shogun",
         "Full hardware utilization and sovereignty",
         "Simple self-hosted YAML configurations",
-        "Fast local setup in under 5 minutes"
+        "Fast local setup in under 15 minutes"
       ]
     },
     {
@@ -57,15 +57,16 @@ export default function ComparePortal() {
       overlayTeamcity: true,
       points: [
         "No JVM overhead - lightweight Docker deployment",
-        "Unlimited agents at $0 vs $359/yr each",
+        "10 build agents at $0 in Growth, unlimited with Shogun vs $359/yr each",
         "Native MSBuild + VSTest with zero plugins",
-        "5 SSO providers included in the free tier"
+        "1 SSO provider in Growth, all 5 with Shogun"
       ]
     }
   ];
 
   return (
     <section className={s.section}>
+      <div className={s.gridLines} />
       <div className={s.container}>
         <div className={s.hero}>
           <span className="badge-alt" style={{ marginBottom: '16px' }}>CI/CD Alternatives</span>

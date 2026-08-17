@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import styles from "./DevHeroSection.module.css";
 import { useRouter } from "next/navigation";
 import { siteConfig } from "@/config/site";
@@ -72,8 +71,6 @@ export default function DevHeroSection() {
 
   return (
     <section className={styles.hero}>
-      {/* <NetworkBackground /> */}
-
       {/* Gradient orbs */}
       <div ref={orb1} className={styles.orb1} />
       <div ref={orb2} className={styles.orb2} />
@@ -89,7 +86,7 @@ export default function DevHeroSection() {
         <div className={styles.copy}>
           <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
             <span className={styles.badgeDot} />
-            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+            {siteConfig.version} is Live 
           </div>
 
           <h1 className={styles.heading}>
@@ -101,7 +98,7 @@ export default function DevHeroSection() {
             </span>
           </h1>
           <p className={styles.subtext}>
-            BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes - and run as many builds as your team needs, for free.
+            BuildNinja is a self-hosted CI/CD platform that runs on your own servers. No build credits. No seat limits. No vendor lock-in. Deploy with a single Docker command in under 5 minutes.
           </p>
           <div className={styles.ctas}>
             <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>

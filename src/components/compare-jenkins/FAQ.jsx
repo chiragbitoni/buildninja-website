@@ -11,8 +11,8 @@ export default function FAQ() {
 
   const faqs = [
     {
-      q: "Is BuildNinja really free for unlimited users?",
-      a: "Yes. BuildNinja's core self-hosted edition supports unlimited users, unlimited projects, and unlimited builds at no per-seat cost. A paid Growth Edition exists for teams that want additional support SLAs and enterprise features, but the free tier is genuinely full-featured for most teams."
+      q: "Is BuildNinja really free?",
+      a: "Yes. BuildNinja's free Growth Edition includes up to 10 users, 10 projects, 10 build configurations, and 10 build agents. Shogun Edition provides unlimited users, projects, and builds at no per-seat cost, plus email support."
     },
     {
       q: "Can BuildNinja replace Jenkins for complex enterprise pipelines?",

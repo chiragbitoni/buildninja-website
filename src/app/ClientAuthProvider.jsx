@@ -9,6 +9,7 @@ import { getAuthCookie, setAuthCookie } from "@/lib/cookieAuth";
 export default function ClientAuthProvider({ children }) {
     const dispatch = useDispatch();
 
+    /* ===== /me API CALL DISABLED (keep commented to restore later) =====
     useEffect(() => {
         async function loadUser() {
             try {
@@ -38,6 +39,7 @@ export default function ClientAuthProvider({ children }) {
 
         loadUser();
     }, []);
+    ===== */
 
     return <>{children}</>;
 }

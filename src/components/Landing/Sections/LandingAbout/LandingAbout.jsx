@@ -40,18 +40,18 @@ export default function LandingAbout() {
                     </motion.span>
 
                     <motion.h2 className={s.title} variants={itemVariants}>
-                        Built by <span>GrapeHub</span>
+                        Built by <span>GrapeCity India</span>
                     </motion.h2>
 
                     <motion.p className={s.description} variants={itemVariants}>
-                        With over two decades of global trust, GrapeHub has been a pioneer in developer
+                        With over two decades of global trust, GrapeCity India has been a pioneer in developer
                         tools. BuildNinja is the culmination of 25+ years of software engineering excellence,
                         designed to solve the real-world CI/CD pains we faced ourselves.
                     </motion.p>
 
                     <ul className={s.list}>
                         {[
-                            { title: "Expert Support", desc: "Direct access to actual engineers" },
+                            { title: "Expert Support", desc: "Email support from our team during business hours - no chatbots" },
                             { title: "Global Trust", desc: "Trusted by enterprises worldwide" },
                             { title: "No Per-Seat Tax", desc: "Predictable, transparent pricing" },
                             { title: "Market Success", desc: "Streamlined release cycles" }

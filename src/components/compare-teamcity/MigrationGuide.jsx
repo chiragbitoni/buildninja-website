@@ -60,7 +60,7 @@ export default function MigrationGuide() {
             <div className={styles.stepNum}>01</div>
             <h4>Deploy BuildNinja</h4>
             <p>
-              Run <code className={styles.code}>docker pull buildninja/buildninja</code> on any server. Takes 5 minutes. Keep TeamCity running - no cutover yet.
+              Run <code className={styles.code}>docker pull grapehub/buildninja-server</code> on any server. Takes 5 minutes. Keep TeamCity running - no cutover yet.
             </p>
             <div className={styles.stepFooter}>
               <span className={styles.stepTime}><Clock size={14} /> 5 min</span>

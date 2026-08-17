@@ -1,7 +1,6 @@
 ﻿"use client";
 import s from "./PartnerHero.module.css";
 import { useEffect, useRef } from "react";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
@@ -60,7 +59,6 @@ export default function PartnerHero() {
 
   return (
     <section className={s.section}>
-      <NetworkBackground />
       <div ref={orb1} className={s.orb1} />
       <div ref={orb2} className={s.orb2} />
       <div className={s.grid} />

@@ -64,8 +64,8 @@ export const pageDataMap = {
   },
   "/pricing": {
     breadcrumb: "Pricing",
-    schemaType: "FAQPage",
-    name: "Simple & Transparent Pricing for Teams | Pricing",
+    schemaType: "WebPage",
+    name: "BuildNinja - Self-Hosted CI/CD, Free to Start",
     description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
   },
   "/privacy-policy": {

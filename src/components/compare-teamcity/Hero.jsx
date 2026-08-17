@@ -34,7 +34,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             Both are self-hosted. Both support Windows, .NET, and enterprise-scale builds.
-            Only one is free for unlimited teams and deploys in under 5 minutes.
+            Only one is free to start - and removes the caps as you scale - while deploying in under 5 minutes.
             Here is the honest, data-backed breakdown.
           </motion.p>
 

@@ -13,9 +13,9 @@ const features = [
       </svg>
     ),
     title: "Build Automation & Scheduling",
-    desc: "Trigger builds automatically with advanced scheduling and multi-environment support (dev, staging, production). Optimize workflows with flexible dependency resolution.",
+    desc: "Trigger builds automatically via cron schedules, Git events (pushes and merges), and multi-environment support (dev, staging, production). Filter by branch, commit type, or author for precise automation.",
     videoId: '5wFDALkVM0Y',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/schedule-build-triggers'
+    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-triggers'
   },
   {
     icon: (
@@ -27,9 +27,9 @@ const features = [
       </svg>
     ),
     title: "Version Control & Native Git",
-    desc: "Deep integrations with GitHub, GitLab, Bitbucket, and any Git host. Built-in Git with intelligent caching cuts clone time dramatically.",
+    desc: "Deep integrations with GitHub, GitLab, Bitbucket, and any Git host. Visualize commit graphs between builds, run builds against any branch or commit, and cut clone time dramatically with intelligent caching.",
     videoId: 'YOpVrKIF8wE',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-and-edit-builds'
+    videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics/projects-and-builds'
   },
   {
     icon: (
@@ -112,7 +112,7 @@ const features = [
       </svg>
     ),
     title: "Notifications & Alerts",
-    desc: "Configurable alerts for build results, user approval and rejection and more. Full SMTP + customisable email templates for every event.",
+    desc: "Configurable alerts for build results, trigger failures, user approval and rejection, and more. Full SMTP + customisable email templates for every event.",
     videoId: '2OuADSNMEoc',
     videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings'
   },
@@ -125,7 +125,7 @@ const features = [
       </svg>
     ),
     title: "Unified Installer & Quick Setup",
-    desc: "Install Server, Agent, and MongoDB in minutes with a single installer. Native support for Windows, Linux, and macOS. Get running from zero in under 5 minutes.",
+    desc: "Install Server, Agent, and MongoDB in minutes with a single installer. Native support for Windows, Linux, and macOS. Get running from zero in under 15 minutes.",
     videoId: 'zOW9BCYQkxk',
     videoLink: 'https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows'
   },

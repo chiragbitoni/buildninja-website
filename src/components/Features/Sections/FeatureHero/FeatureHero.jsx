@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import { openVideo } from '@/redux/slice/videoPopupSlice';
 import { siteConfig } from '@/config/site';
-import NetworkBackground from '@/components/ui/NetworkBackground';
 import styles from './FeatureHero.module.css';
 
 // Framer motion variants
@@ -27,7 +26,6 @@ export default function FeatureHero() {
   return (
     <>
       <section className={styles.hero}>
-        <NetworkBackground />
         <div className={styles.bottomFade} />
         <motion.div 
           className={styles.inner}
@@ -42,7 +40,7 @@ export default function FeatureHero() {
             style={{ cursor: 'pointer' }}
           >
             <span className={styles.badgeDot} />
-            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+            {siteConfig.version} is Live
           </motion.div>
 
           <motion.h1 className={styles.heading} variants={itemVariants}>

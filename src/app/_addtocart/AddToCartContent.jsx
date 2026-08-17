@@ -83,13 +83,20 @@ export default function AddToCartContent() {
         "${val}",
         f.value !== "999999" ? "Up to " + f.value : "Unlimited"
       );
+      // Team decision: hide the parallel build execution feature line
+      // (produced by both the Concurrent Builds and Build Agents features)
+      if (
+        desc.toLowerCase().includes("parallel build execution on build agents")
+      ) {
+        return;
+      }
       features.push(desc);
     });
 
     features.push("Docker support included");
     features.push("Community Support");
     features.push("Full orchestration platform access");
-    features.push("No time limits or expiration");
+    features.push("License key valid for the license term");
 
     return features;
   };

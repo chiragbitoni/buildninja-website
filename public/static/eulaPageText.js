@@ -1,6 +1,4 @@
-export const eulaContent = `<h1>BUILDNINJA END USER LICENSE AGREEMENT</h1>
-
-<p><strong>Effective Date:</strong> December 1, 2025</p>
+export const eulaContent = `<p><strong>Effective Date:</strong> December 1, 2025</p>
 
 <h3><strong>IMPORTANT: READ CAREFULLY BEFORE INSTALLING, COPYING, OR USING THIS SOFTWARE</strong></h3>
 <p>
@@ -351,7 +349,7 @@ THE SOFTWARE.
 <p>For questions about this Agreement:</p>
 <p><strong>GrapeCity India Private Limited</strong></p>
 <p>Address: A-15, Noida Sector 62, Uttar Pradesh, India</p>
-<p>Email: hello@grapehub.io</p>
+<p>Email: buildninja@grapecity.global</p>
 <p>Website: grapehub.io</p>
 
 <h4>By using the Software, you acknowledge that you have read, understood, and agree to be bound by this Agreement.</h4>

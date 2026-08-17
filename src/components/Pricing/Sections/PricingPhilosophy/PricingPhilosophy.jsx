@@ -8,13 +8,13 @@ const cards = [
     icon: paths.icons.infinite,
     alt: "Infinity icon",
     title: "Unlimited Build Agents",
-    desc: "Connect as many machines as you want - available on both Free and Enterprise editions.",
+    desc: "Growth includes 10 build agents; Shogun removes the limit. Windows, Linux, and macOS.",
   },
   {
     icon: paths.icons.restricted,
     alt: "Restricted icon",
     title: "No Per-Seat Costs",
-    desc: "Add unlimited users without any price increases. Enterprise scale for your team, not against it.",
+    desc: "Never pay per seat. Growth Edition covers 10 users; Shogun Edition removes the limit entirely.",
   },
   {
     icon: paths.icons.shieldPink,
@@ -26,7 +26,7 @@ const cards = [
     icon: paths.icons.clockPink,
     alt: "Clock icon",
     title: "Growth Edition",
-    desc: "Start with unlimited access to the core platform at zero cost. No credit card.",
+    desc: "Free - 10 users, projects, configurations, and build agents. Shogun removes all limits.",
   },
 ];
 

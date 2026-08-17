@@ -50,20 +50,20 @@ export default function VerdictCards() {
                 <div className={styles.vstatKey}>Setup time</div>
               </div>
               <div className={styles.vstat}>
-                <div className={styles.vstatVal}>Unlimited</div>
-                <div className={styles.vstatKey}>Users &amp; agents</div>
+                <div className={styles.vstatVal}>10</div>
+                <div className={styles.vstatKey}>Users &amp; agents in Growth</div>
               </div>
               <div className={styles.vstat}>
-                <div className={styles.vstatVal}>5</div>
-                <div className={styles.vstatKey}>SSO providers free</div>
+                <div className={styles.vstatVal}>1</div>
+                <div className={styles.vstatKey}>SSO provider in Growth</div>
               </div>
             </div>
             <ul className={styles.vlist}>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Free - no seat limits, no expiry, no credit card</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Free to start - 10 users in Growth, unlimited with Shogun. No credit card</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>One Docker command to full deployment - no JVM, no RAM overhead</li>
               <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>Native MSBuild + VSTest - zero plugin configuration needed</li>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>All 5 SSO providers: GitHub, GitLab, Bitbucket, Google, Azure AD</li>
-              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>AI-powered pipeline features in v1.2.0 at no extra cost</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>1 SSO provider in Growth, all 5 with Shogun: GitHub, GitLab, Bitbucket, Google, Azure AD</li>
+              <li className={styles.vitem}><span className={`${styles.dot} ${styles.dotG}`}></span>AI-powered pipeline features in v1.3.0 at no extra cost</li>
             </ul>
           </motion.div>
 

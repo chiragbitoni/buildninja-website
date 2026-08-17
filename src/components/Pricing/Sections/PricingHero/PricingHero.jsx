@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import s from "./PricingHero.module.css";
 import { useRouter } from "next/navigation";
 import {
-  secondSectionTextIndia,
   secondSectionTextGlobal,
   secondSectionEnterpriseCardText,
 } from "../../../../../public/static/pricingPageText";
@@ -12,7 +11,6 @@ import { paths } from "../../../../../public/static/paths";
 import { useEffect, useState, useRef } from "react";
 import { fetchPlansFromAPI } from "@/services/plans/plans";
 import Image from "next/image";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import { FreeIcon, ShogunIcon, EnterpriseIcon } from "./PricingIcons";
 import { motion } from "framer-motion";
 
@@ -212,7 +210,6 @@ export default function PricingHero() {
 
   return (
     <section className={s.section}>
-      <NetworkBackground />
 
       {/* Animated Background Elements */}
       <div ref={orb1} className={s.orb1} />
@@ -237,9 +234,8 @@ export default function PricingHero() {
         </motion.h1>
 
         <motion.p className={s.description} variants={itemVariants}>
-          CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free with unlimited
-          users, unlimited projects, and unlimited concurrent builds. Scale your orchestration
-          as much as your infrastructure allows.
+          CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free to start - unlimited
+          users, unlimited builds. Scale your orchestration as much as your infrastructure allows.
         </motion.p>
 
 

@@ -64,7 +64,7 @@
 /* ── Card header ── */
 .cardTitle {
   font-family: var(--font-display), 'Inter', system-ui, sans-serif;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(26px, 5vw, 44px);
   font-weight: 800;
   color: var(--color-text);
   line-height: 1.1;

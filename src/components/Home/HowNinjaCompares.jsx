@@ -8,11 +8,11 @@ const rows = [
   { feature: "Build pricing model", bn: { icon: true, text: "No credits - unlimited" }, cc: { icon: false, text: "Per credit consumed" }, ga: { icon: false, text: "Per compute minute" }, jen: { icon: true, text: "Free (self-hosted)" } },
   { feature: "Per-seat fees", bn: { icon: true, text: "None" }, cc: { icon: false, text: "Scales with team" }, ga: { icon: false, text: "Scales with team" }, jen: { icon: true, text: "None" } },
   { feature: "Self-hosted setup", bn: { icon: true, text: "1 Docker command" }, cc: { icon: false, text: "K8s + enterprise plan" }, ga: { icon: false, text: "Runner required" }, jen: { text: "Complex - war file + plugins", neutral: true } },
-  { feature: "Setup time", bn: { icon: true, text: "Under 5 minutes" }, cc: { text: "Minutes (SaaS sign-up)", neutral: true }, ga: { text: "Minutes (SaaS sign-up)", neutral: true }, jen: { icon: false, text: "Hours to days" } },
+  { feature: "Setup time", bn: { icon: true, text: "Under 15 minutes" }, cc: { text: "Minutes (SaaS sign-up)", neutral: true }, ga: { text: "Minutes (SaaS sign-up)", neutral: true }, jen: { icon: false, text: "Hours to days" } },
   { feature: "Data sovereignty / on-premise", bn: { icon: true, text: "Full - your servers" }, cc: { icon: false, text: "SaaS cloud only" }, ga: { icon: false, text: "GitHub cloud" }, jen: { icon: true, text: "Full (self-managed)" } },
   { feature: "Air-gapped / no internet", bn: { icon: true, text: "Supported" }, cc: { icon: false, text: "Not possible" }, ga: { icon: false, text: "Not possible" }, jen: { icon: true, text: "Supported" } },
   { feature: "Modern UI + dashboards", bn: { icon: true, text: "Built-in, no plugins" }, cc: { icon: true, text: "Built-in" }, ga: { icon: true, text: "Built-in" }, jen: { icon: false, text: "Plugin-dependent" } },
-  { feature: "AI build intelligence", bn: { tag: "warn", text: "Coming v1.2.0" }, cc: { text: "Limited", neutral: true }, ga: { text: "Limited", neutral: true }, jen: { icon: false, text: "Not available" } },
+  { feature: "AI build intelligence", bn: { tag: "warn", text: "Coming v1.3.0" }, cc: { text: "Limited", neutral: true }, ga: { text: "Limited", neutral: true }, jen: { icon: false, text: "Not available" } },
   { feature: "Interactive sandbox (no install)", bn: { icon: true, text: "Live Dojo" }, cc: { icon: false, text: "Not available" }, ga: { icon: false, text: "Not available" }, jen: { icon: false, text: "Not available" } },
 ];
 

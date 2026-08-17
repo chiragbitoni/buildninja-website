@@ -49,7 +49,7 @@ const reasons = [
     text: "Most CI/CD tools charge per minute, per concurrent build, and per user. At scale, those pennies become a budget line item. BuildNinja runs entirely on your infrastructure - no usage limits, no surprise bills.",
     size: "large",
     theme: "coral",
-    comparison: { saas: "$2,847+", self: "$0" },
+    comparison: { saas: "$2,800+", self: "$0" },
   },
   {
     icon: (
@@ -57,11 +57,11 @@ const reasons = [
         <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
     ),
-    title: "Data sovereignty for regulated environments",
-    text: "Healthcare, financial services, defense, and government projects require source code and build artifacts never leave your network. SOC-2, FedRAMP, and healthcare compliance without the paperwork headache.",
+    title: "Build securely within your infrastructure",
+    text: "Keep your source code, build pipelines, and artifacts entirely within your own environment. BuildNinja Self-Hosted gives teams complete control over their CI/CD operations while meeting enterprise security, compliance, and data residency requirements.",
     size: "medium",
     theme: "dark",
-    tags: ["SOC 2 Type II", "FedRAMP", "HIPAA", "ISO 27001"],
+    tags: ["Self Hosted", "Private Infrastructure", "Data Residency", "Enterprise Security"],
   },
   {
     icon: (
@@ -92,7 +92,7 @@ const reasons = [
       </svg>
     ),
     title: "Works with your existing tools",
-    text: "Connect to GitHub, GitLab, Bitbucket, or Gitea. Deploy to Kubernetes, ECS, bare metal, or edge locations. Use your existing Docker registries and secrets managers.",
+    text: "Connect to GitHub, GitLab, or Bitbucket. Deploy to Kubernetes, ECS, bare metal, or edge locations. Use your existing Docker registries and secrets managers.",
     size: "small",
     theme: "white",
   },
@@ -162,7 +162,7 @@ export default function WhySelfHosted() {
                   {r.comparison && (
                     <div className={styles.comparison}>
                       <div className={styles.comparisonCard}>
-                        <span className={styles.comparisonLabel}>Typical SaaS monthly</span>
+                        <span className={styles.comparisonLabel}>Typical SaaS Cost</span>
                         <span className={styles.comparisonValue}>
                           <AnimatedPrice raw={r.comparison.saas} isInView={isInView} />
                         </span>
@@ -171,7 +171,7 @@ export default function WhySelfHosted() {
                         <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                       </svg>
                       <div className={`${styles.comparisonCard} ${styles.comparisonHighlight}`}>
-                        <span className={styles.comparisonLabel}>BuildNinja monthly</span>
+                        <span className={styles.comparisonLabel}>BuildNinja (Growth Edition)</span>
                         <span className={styles.comparisonValueWhite}>{r.comparison.self}<span className={styles.comparisonSuffix}>on your own infrastructure</span></span>
                       </div>
                     </div>

@@ -39,7 +39,7 @@ const faqSchema = {
       "name": "TeamCity Professional is also free - why choose BuildNinja?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition has no caps - unlimited agents, configurations, and users - Free."
+        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition is free with 10 users, 10 build configurations, and 10 build agents. Shogun Edition removes all caps - unlimited users, agents, and configurations."
       }
     },
     {
@@ -63,7 +63,7 @@ const faqSchema = {
       "name": "Does BuildNinja support build chains like TeamCity?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Full build chain support with DAG-based pipeline dependencies is on the BuildNinja roadmap for v1.2.0. Currently, multi-stage pipelines with sequential and parallel steps are fully supported."
+        "text": "Full build chain support with DAG-based pipeline dependencies is on the BuildNinja roadmap for v1.3.0. Currently, multi-stage pipelines with sequential and parallel steps are fully supported."
       }
     },
     {

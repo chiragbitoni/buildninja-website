@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import NetworkBackground from "@/components/ui/NetworkBackground";
 import s from "./LegalContent.module.css";
 
 export default function LegalContent({ title, description, badge, htmlContent }) {
@@ -28,7 +27,6 @@ export default function LegalContent({ title, description, badge, htmlContent })
     <div className={s.pageWrapper}>
       {/* Background Orbs and Grids */}
       <section className={s.heroSection}>
-        <NetworkBackground />
         <div ref={orb1} className={s.orb1} />
         <div ref={orb2} className={s.orb2} />
         <div className={s.grid} />

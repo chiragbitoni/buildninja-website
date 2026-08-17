@@ -76,7 +76,7 @@ export default function MigrationGuide() {
             <div className={s.stepNum}>02</div>
             <h4>Connect Your Repos</h4>
             <p>
-              Connect GitHub, GitLab, or Bitbucket via OAuth. Builds are triggered manually or scheduled - no webhook automation required.
+              Connect GitHub, GitLab, or Bitbucket via OAuth. Trigger builds manually, on a schedule, or automatically on Git events with Git Trigger.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 3 min</span>
           </motion.div>

@@ -8,7 +8,7 @@ import {
 import styles from "./SocialProof.module.css";
 
 function AnimatedValue({ raw, isInView }) {
-  const match = raw.match(/^([$£€¥]?)([\d,.]+)([xX%a-zA-Z+]*)$/);
+  const match = raw.match(/^([$£€¥]?)([\d,.]+)(\D*)$/);
   const prefix = match?.[1] || "";
   const suffix = match?.[3] || "";
   const isDecimal = match?.[2]?.includes(".");
@@ -18,6 +18,7 @@ function AnimatedValue({ raw, isInView }) {
   const startTime = useRef(null);
 
   useEffect(() => {
+    if (!match) return;
     if (!isInView) {
       setDisplayed(isDecimal ? "0.00" : "0");
       startTime.current = null;
@@ -34,16 +35,17 @@ function AnimatedValue({ raw, isInView }) {
     };
     raf.current = requestAnimationFrame(step);
     return () => { if (raf.current) cancelAnimationFrame(raf.current); };
-  }, [isInView, target, isDecimal]);
+  }, [isInView, target, isDecimal, match]);
 
+  if (!match) return <>{raw}</>;
   return <>{prefix}{displayed}{suffix}</>;
 }
 
 const stats = [
-  { value: "3.4x", label: "Faster build times", sub: "vs. shared cloud runners", icon: faRocket },
-  { value: "$0", label: "Per-build cost", sub: "Truly unlimited pipelines", icon: faDollarSign },
-  { value: "99.97%", label: "Pipeline uptime", sub: "Your infrastructure, your SLA", icon: faServer },
-  { value: "14min", label: "Avg. setup time", sub: "From install to first build", icon: faClock },
+  { value: "5 min", label: "DEPLOYMENT TIME", sub: "Single Docker command", icon: faRocket },
+  { value: "Unlimited", label: "BUILD EXECUTIONS", sub: "No build-credit restrictions", icon: faDollarSign },
+  { value: "100%", label: "YOUR INFRASTRUCTURE", sub: "Your code, secrets, and artifacts", icon: faServer },
+  { value: "No", label: "VENDOR LOCK-IN", sub: "Self-hosted and portable", icon: faClock },
 ];
 
 export default function SocialProof() {

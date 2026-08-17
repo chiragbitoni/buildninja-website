@@ -123,7 +123,7 @@ const BnLogo = () => {
         width={24}
         height={24}
         alt="BuildNinja Logo"
-        style={{ objectFit: 'contain' }}
+        style={{ width: 24, height: 24, objectFit: 'contain' }}
       />
     </div>
   );

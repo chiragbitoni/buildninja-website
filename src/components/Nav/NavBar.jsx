@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import AvatarMenu from "./AvatarMenu";
+/* import AvatarMenu from "./AvatarMenu"; */
 import ThemeToggle from "./ThemeToggle";
 import { useDispatch } from "react-redux";
 import { closeVideo } from "@/redux/slice/videoPopupSlice";
@@ -13,6 +13,7 @@ import DojoBanner from "../Dojo/DojoBanner";
 import NavDropdown from "./NavDropdown";
 
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCUMENTATION_URL || "";
+const MY_ACCOUNT_URL = process.env.NEXT_PUBLIC_MYACCOUNT_URL || "";
 
 export default function Navbar({ blogPosts = [] }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,7 +59,7 @@ export default function Navbar({ blogPosts = [] }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getLogoSrc = () => "/resources/logo_buildninja.svg";
+  const getLogoSrc = () => "/resources/logo_BN_by_GC.svg";
 
   const handleNavigation = (path) => {
     router.push(path);
@@ -80,6 +81,7 @@ export default function Navbar({ blogPosts = [] }) {
         { name: "Licensing", path: `${DOCS_URL}/docs/category/licensing` },
         { name: "Release Notes", path: `${DOCS_URL}/docs/category/release-notes` },
       ],
+      viewAll: { name: "View Documentation", path: `${DOCS_URL}/docs/overview` },
     },
     {
       name: "Compare",
@@ -92,6 +94,7 @@ export default function Navbar({ blogPosts = [] }) {
         { name: "BuildNinja vs Jenkins", path: "/compare/buildninja-vs-jenkins" },
         { name: "BuildNinja vs TeamCity", path: "/compare/buildninja-vs-teamcity" },
       ],
+      viewAll: { name: "View All Comparisons", path: "/compare" },
     },
     {
       name: "Blog",
@@ -102,6 +105,7 @@ export default function Navbar({ blogPosts = [] }) {
         name: post.title,
         path: `/blog/${post.slug}`,
       })),
+      viewAll: { name: "View All Blogs", path: "/blog" },
     },
   ];
 
@@ -115,9 +119,10 @@ export default function Navbar({ blogPosts = [] }) {
           <Image
             src={getLogoSrc()}
             alt="BuildNinja Logo"
-            width={178}
+            width={149}
             height={48.5}
             className={styles.logoImage}
+            loading="eager"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           />
@@ -126,7 +131,7 @@ export default function Navbar({ blogPosts = [] }) {
         {/* Mobile Controls Group */}
         <div className={styles.mobileControls}>
           <div className={styles.mobileOnlyActions}>
-            <AvatarMenu />
+            {/* <AvatarMenu /> */}
             <ThemeToggle />
           </div>
 
@@ -206,13 +211,23 @@ export default function Navbar({ blogPosts = [] }) {
               className={styles.navbarGithubIcon}
               onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
             />
-            <button
+            <a
+              href="/install"
               className={styles.navbarGetStartedButton}
-              onClick={() => handleNavigation("/install")}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/install");
+              }}
             >
               Get Started
-            </button>
-            <AvatarMenu />
+            </a>
+            <a
+              href={MY_ACCOUNT_URL}
+              className={styles.navbarGetStartedButton}
+            >
+              My Account
+            </a>
+            {/* <AvatarMenu /> */}
             <ThemeToggle />
           </div>
         </div>
@@ -292,12 +307,22 @@ export default function Navbar({ blogPosts = [] }) {
                   className={styles.navbarGithubIcon}
                   onClick={() => { window.location.href = "https://github.com/BuildNinja-CICD"; }}
                 />
-                <button
+                <a
+                  href="/install"
                   className={styles.navbarGetStartedButton}
-                  onClick={() => handleNavigation("/install")}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("/install");
+                  }}
                 >
                   Get Started
-                </button>
+                </a>
+                <a
+                  href={MY_ACCOUNT_URL}
+                  className={styles.navbarGetStartedButton}
+                >
+                  My Account
+                </a>
               </motion.div>
             </motion.ul>
           )}

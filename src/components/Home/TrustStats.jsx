@@ -38,7 +38,7 @@ function AnimatedValue({ raw, isInView }) {
 }
 
 const stats = [
-  { value: "3.4x", label: "Faster build times", sub: "vs. shared cloud runners", icon: faRocket },
+  { value: "5 min", label: "Faster build times", sub: "vs. shared cloud runners", icon: faRocket },
   { value: "$0", label: "Per-build cost", sub: "Truly unlimited pipelines", icon: faDollarSign },
   { value: "99.97%", label: "Pipeline uptime", sub: "Your infrastructure, your SLA", icon: faServer },
   { value: "14min", label: "Avg. setup time", sub: "From install to first build", icon: faClock },

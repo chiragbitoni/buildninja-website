@@ -13,17 +13,21 @@ export default function DynamicFavicon() {
       ? "/resources/Favicon/faviconWhite.png" 
       : "/resources/Favicon/favicon.png";
 
+    // Firefox ignores in-place href mutation of an existing link element,
+    // so remove the old elements and re-append fresh ones.
     links.forEach(link => {
-      link.href = faviconHref;
+      link.remove();
     });
 
-    // If no icon link exists, create one
-    if (links.length === 0) {
-      const link = document.createElement("link");
-      link.rel = "icon";
-      link.href = faviconHref;
-      document.head.appendChild(link);
-    }
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.href = faviconHref;
+    document.head.appendChild(link);
+
+    const shortcut = document.createElement("link");
+    shortcut.rel = "shortcut icon";
+    shortcut.href = faviconHref;
+    document.head.appendChild(shortcut);
   }, [resolvedTheme]);
 
   return null;

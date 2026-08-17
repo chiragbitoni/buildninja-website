@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import s from "./PricingCta.module.css";
 import { pricingEighthText } from "../../../../../public/static/pricingPageText";
 import { paths } from "../../../../../public/static/paths";
-import { useRouter } from "next/navigation";
-import { useSelector } from "react-redux";
 import Image from "next/image";
+import { env } from "@/lib/config/env";
+import { findPaidMonthlyPlan } from "@/services/plans/plans";
+import { formatUsd } from "@/lib/utils";
+
+const PAID_PRICE_TOKEN = "{{paidPlanMonthlyPrice}}";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,23 +32,46 @@ const itemVariants = {
   },
 };
 
-export default function PricingCta() {
+export default function PricingCta({ plansData }) {
   const text = pricingEighthText;
-  const router = useRouter();
-  const { region } = useSelector((state) => state.pricing);
 
-  const features = text.features;
+  const bnPlans = plansData?.byProduct?.BuildNinja || [];
+  const freePlan = bnPlans.find((p) => Number(p.price) === 0);
+
+  const paidMonthlyPlan = findPaidMonthlyPlan(bnPlans);
+  const paidMonthlyPrice = paidMonthlyPlan
+    ? formatUsd(paidMonthlyPlan.price)
+    : null;
+
+  const features = text.features.map((f) =>
+    f.includes(PAID_PRICE_TOKEN)
+      ? paidMonthlyPrice
+        ? f.replace(PAID_PRICE_TOKEN, paidMonthlyPrice)
+        : "Unlimited Builds"
+      : f
+  );
+
+  const envFreePlanId = process.env.NEXT_PUBLIC_BUILDNINJA_FREE_PLAN_ID;
+  const freeHref = freePlan
+    ? `${env.MY_ACCOUNT}/order?planId=${freePlan.id}`
+    : envFreePlanId
+      ? `${env.MY_ACCOUNT}/order?planId=${envFreePlanId}`
+      : `${env.MY_ACCOUNT}/order`;
+
+  const enterpriseHref = "mailto:sales@grapecity.global";
 
   return (
     <section className={s.section}>
-      <motion.div 
+      <motion.div
         className={s.inner}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
         variants={containerVariants}
       >
-        <motion.span className={s.sectionBadge} variants={itemVariants}>Get Started</motion.span>
+        <motion.span className={s.sectionBadge} variants={itemVariants}>
+          Get Started
+        </motion.span>
         <motion.h2 className={s.title} variants={itemVariants}>
           Stop Paying Per-Seat.{" "}
           <span className={s.accent}>Start Shipping Code.</span>
@@ -56,42 +82,42 @@ export default function PricingCta() {
           variants={itemVariants}
         />
 
-        <motion.div className={s.cardsGrid} variants={containerVariants}>
-          {/* Free */}
-          <motion.div className={`${s.card} ${s.cardSolo}`} variants={itemVariants}>
-            <h3 className={s.cardTitle}>{text.free.title}</h3>
-            <p className={s.cardDesc}>{text.free.description}</p>
-            <button
-              id="pricing-cta-free"
-              className={s.btnInfo}
-              onClick={() => {
-                window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=${process.env.NEXT_PUBLIC_GROWTH_EDITION_GUID}`;
-              }}
-            >
-              {text.free.buttonText}
-              <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-            </button>
-          </motion.div>
-
-          {/* Enterprise */}
-          <motion.div className={`${s.card} ${s.cardEnterprise}`} variants={itemVariants}>
-            <h3 className={s.cardTitle}>{text.enterprise.title}</h3>
-            <p className={s.cardDesc}>{text.enterprise.description}</p>
-            <button
-              id="pricing-cta-enterprise"
-              className={s.btnEnterprise}
-              onClick={() => router.push("/support")}
-            >
-              {text.enterprise.buttonText}
-              <Image width={16} height={16} className={s.btnIcon} src={paths.icons.navigation} alt="→" />
-            </button>
-          </motion.div>
+        <motion.div className={s.ctaActions} variants={containerVariants}>
+          <motion.a
+            id="pricing-cta-free"
+            className={s.btnPrimary}
+            href={freeHref}
+            variants={itemVariants}
+          >
+            {text.free.buttonText}
+            <Image
+              width={16}
+              height={16}
+              className={s.btnIcon}
+              src={paths.icons.navigation}
+              alt="→"
+            />
+          </motion.a>
+          <motion.a
+            id="pricing-cta-enterprise"
+            className={s.btnSecondary}
+            href={enterpriseHref}
+            variants={itemVariants}
+          >
+            {text.enterprise.buttonText}
+          </motion.a>
         </motion.div>
 
         <motion.div className={s.featureRow} variants={containerVariants}>
           {features.map((f, i) => (
             <motion.span key={i} className={s.featurePill} variants={itemVariants}>
-              <Image width={15} height={15} src={paths.icons.greenTick} alt="✓" className={s.featureTick} />
+              <Image
+                width={15}
+                height={15}
+                src={paths.icons.greenTick}
+                alt="✓"
+                className={s.featureTick}
+              />
               {f}
             </motion.span>
           ))}

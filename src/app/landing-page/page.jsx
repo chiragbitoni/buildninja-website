@@ -3,6 +3,10 @@ import LandingPage from "./LandingPage";
 export const metadata = {
   title: "DevOps Made Simple - BuildNinja | Landing Page",
   description: "Experience the speed and security of BuildNinja self-hosted CI/CD platform. Standardize your build pipelines and optimize your release cycles today.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: "https://buildninja.grapehub.io/landing-page",
   },

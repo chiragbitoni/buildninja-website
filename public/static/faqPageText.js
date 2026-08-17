@@ -69,7 +69,7 @@ export const thirdSectionText = {
           id: "installation-time",
           question: "How long does it take to install BuildNinja?",
           answer:
-            "Installation typically takes 10-15 minutes. For Windows, download the executable and run the installer wizard. For Docker deployments, pull the official image and configure environment variables. Our installation guide provides step-by-step instructions for all platforms.",
+            "Installation typically takes under 15 minutes. For Windows, download the executable and run the installer wizard. For Docker deployments, pull the official image and configure environment variables. Our installation guide provides step-by-step instructions for all platforms.",
         },
         {
           id: "system-requirements",
@@ -89,9 +89,11 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "license-needed",
           question: "Do I need a license to use BuildNinja?",
-          answer: `<li>BuildNinja Growth Edition: Designed for engineering teams of all sizes. Register and generate your free license key to get unlimited access to all core features, including unlimited users, projects, and concurrent builds.</li>
+          answer: `<ul>
+<li><strong>Growth Edition (free):</strong> Register and generate your free license key - no credit card needed. The key is valid for the license term; you can claim it multiple times - whenever the term expires, simply generate a new free Growth key. Includes {{freePlanFeatures}}.</li>
+<li><strong>Shogun Edition (paid):</strong> Purchase and generate your license key. Shogun is designed for teams - includes unlimited users, unlimited builds, projects, and configurations, 5 SSO providers, email support, and all features.</li>
 </ul>
-<p>Activate your license through Settings > Manage License (online or offline activation available).</p>`,
+<p>Activate your license through: My Accounts > Settings > Manage License (online or offline activation available).</p>`,
         },
         {
           id: "infrastructure-needed",
@@ -150,31 +152,36 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "pricing-overview",
           question: "How much does BuildNinja cost?",
-          answer: `Growth Edition - provides unlimited access to the core platform, including unlimited users, projects, configurations, and concurrent builds. It's designed to be the only CI/CD tool you'll ever need.`,
+          answer: `BuildNinja offers two plans: <strong>Growth (Free)</strong> - perfect for individual developers, includes {{freePlanFeatures}}. <strong>Shogun</strong> - designed for teams, includes unlimited users and unlimited builds (no per-seat or per-build costs), 5 SSO providers, email support, and all features.`,
         },
         {
           id: "pricing-for-teams",
           question: "How does pricing work for growing teams?",
-          answer: `<p>BuildNinja is designed to scale with you at zero cost. We do not charge per seat or per build. You can add unlimited developers and run as many concurrent builds as your hardware can handle without ever paying for a license.</p>
-<p>Growth Edition supports unlimited users and unlimited concurrent builds. There are no artificial caps on your growth.</p>`,
+          answer: `<p>BuildNinja charges based on plan limits, not team size. Shogun Edition includes unlimited users and unlimited builds. Add your 11th, 50th, or 500th developer - your price stays the same.</p>
+<p>Growth Edition supports {{freePlanFeatures}}. You only pay for infrastructure capacity, never per developer.</p>`,
         },
         {
           id: "solo-plan-free",
-          question: "Is the Free plan really free?",
+          question: "Is the Growth Edition plan really free forever?",
           answer:
-            "Yes! The Free plan is completely free with no time limits or hidden costs. It includes everything a growing team needs: automated builds, version control integration, artifact management, real-time logs, and email notifications.",
-        },
-        {
-          id: "more-concurrent-builds",
-          question: "What happens if I need more concurrent builds?",
-          answer:
-            "BuildNinja Growth Edition includes unlimited concurrent builds. Your scale is only limited by your own infrastructure (CPU/RAM). We don't place any software-level restrictions on how many builds you can run at once.",
+            "Yes! The Growth Edition plan is completely free, no credit card or hidden costs. Your free license key is valid for the license term - when it expires, simply generate a new free key. It includes everything an individual developer needs: automated builds, version control integration, artifact management, real-time logs, and email notifications.",
         },
         {
           id: "payment-methods",
           question: "What payment methods do you accept?",
           answer:
-            "We accept major credit cards, debit cards, and bank transfers for Enterprise customers. All payments are processed securely, and invoices are generated automatically for each billing cycle.",
+            "Growth and Shogun plans are paid online with major credit cards and debit cards. All payments are processed securely, and invoices are generated automatically for each payment. Enterprise plans are purchased by contacting sales at sales@grapecity.global.",
+        },
+        {
+          id: "upgrade-growth-to-shogun",
+          question: "Can I upgrade from Growth to Shogun?",
+          answer:
+            "Yes, you can upgrade at any time. Your existing projects and configurations will be preserved. Simply switch to the Shogun plan from your dashboard, and you'll immediately gain access to team features, SSO, and additional build capacity.",
+        },
+        {
+          id: "annual-billing",
+          question: "Do you offer annual billing or discounts?",
+          answer: `{{annualBilling}} As an early adopter benefit, the first 100 customers receive price lock guarantees on multi-year plans.`,
         },
       ],
     },
@@ -189,6 +196,24 @@ See complete system requirements for network, browser compatibility, and additio
             "BuildNinja supports all Git-based version control systems including GitHub, GitLab, Bitbucket",
         },
         {
+          id: "git-trigger",
+          question: "Does BuildNinja support Git triggers?",
+          answer:
+            "Yes. BuildNinja 1.2.0 introduces Git Trigger, which automatically starts builds on Git events such as pushes and merges. You can filter by branch patterns, commit types, commit message patterns, polling intervals, and allowed authors, with support for custom VCS configurations across multiple repositories.",
+        },
+        {
+          id: "git-changes-visualization",
+          question: "Can I see the commits included in a build?",
+          answer:
+            "Yes. The Git Changes tab in Build Details shows a visual commit graph of every commit between builds, with commit metadata, author tooltips, and copyable commit IDs. Build History also previews commit counts, recent commits, and associated branches for each build.",
+        },
+        {
+          id: "run-build-branch-commit",
+          question: "Can I run a build against a specific branch or commit?",
+          answer:
+            "Yes. The Run Build modal supports selecting VCS branches or running builds against a specific commit ID. Commit IDs override branch selection, enabling precise, reproducible builds across multiple repositories.",
+        },
+        {
           id: "agent-management",
           question: "How does agent management work?",
           answer: `<p>BuildNinja provides a centralized management interface for all your build agents. When a new agent registers with the server, it appears in an unauthorized state - you must explicitly authorize it before it can execute builds.</p>
@@ -201,12 +226,6 @@ See complete system requirements for network, browser compatibility, and additio
             "Yes! BuildNinja is fully compatible with Kubernetes deployments. Both the BuildNinja Server and Agents can be deployed as containerized workloads using Kubernetes manifests. This enables scalable, high-availability CI/CD infrastructure with automated orchestration across multiple environments. Our documentation includes complete Kubernetes deployment guides with sample manifests for server and agent configurations.",
         },
         {
-          id: "what-is-concurrent-agent",
-          question: "What is a concurrent agent and how many do I need?",
-          answer: `<p>A concurrent agent/slot is a build executing at the same time. With BuildNinja, you can run as many simultaneous builds as your infrastructure supports.</p>
-<p>Unlike other tools that charge for concurrency, BuildNinja Growth Edition is unlimited. Whether you need 3 or 300 concurrent builds, the software won't stop you.</p>`,
-        },
-        {
           id: "notifications",
           question: "What kind of notifications does BuildNinja send?",
           answer: `<p>BuildNinja sends email notifications for build events configured at the build configuration level. You can set up notifications for build success, failure, or completion with customizable recipients (To, CC, BCC), email templates, subject lines, and trigger conditions.</p>
@@ -216,7 +235,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "real-time-logs",
           question: "Can I see real-time build logs?",
           answer: `<p>Yes! BuildNinja provides detailed execution logs with timestamped, step-by-step records of your build process. You can search logs using keywords, filter by category (VCS, Runner, or System), and export complete logs as CSV files for offline analysis.</p>
-<p>Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, and an Artifacts tab for generated files.</p>
+<p>Build results include an Overview tab showing trigger information and duration, an Execution Logs tab for detailed build steps, a Git Changes tab with commit graphs between builds, and an Artifacts tab for generated files.</p>
 <p>Note: Logs are limited to 16 MiB per build.</p>`,
         },
         {
@@ -264,8 +283,8 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "sso-support",
           question: "Does BuildNinja support Single Sign-On (SSO)?",
-          answer: `<p>Yes! BuildNinja supports SSO integration with major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
-<p>All 5 SSO providers are included in the Growth Edition. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
+          answer: `<p>Yes! BuildNinja supports SSO integration with five major identity providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket.</p>
+<p>Growth Edition includes any 1 SSO provider of your choice, while Shogun Edition includes all 5 providers: Microsoft (Azure AD), GitHub, GitLab, Google, and Bitbucket. SSO streamlines user authentication, increases security, and improves user experience by eliminating the need for multiple passwords.</p>
 <p>Administrators can configure SSO through the Settings panel with Client ID, Client Secret, Auth URL, and Token Endpoint configuration.</p>`,
         },
         {
@@ -284,7 +303,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "can-i-control-user-permissions-and-access",
           question: "Can I control user permissions and access?",
           answer:
-            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. BuildNinja supports unlimited users in the Growth Edition, allowing your team to grow without any artificial limits. In addition, BuildNinja supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
+            "Yes, BuildNinja provides administrator-level user management capabilities. Administrators can approve or reject user registration requests, reset passwords, block or unblock users, and export audit logs for compliance. Growth Edition supports up to 10 users, while Shogun Edition supports unlimited users. In addition, BuildNinja supports RBAC, allowing administrators to assign granular roles such as Viewer, Executor, Editor, and Manager to control user permissions at the project and build configuration level.",
         },
         {
           id: "can-permission-changes-affect-running-builds",
@@ -302,7 +321,7 @@ See complete system requirements for network, browser compatibility, and additio
           id: "support-included",
           question: "What support is included?",
           answer:
-            "BuildNinja Growth Edition now includes priority business support with direct access to our engineering team. We are committed to ensuring our users have the best experience possible, regardless of their scale. Migration assistance is also available to help you get started quickly.",
+            "BuildNinja support is provided via email and comprehensive documentation.",
         },
         {
           id: "documentation",
@@ -313,22 +332,13 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "reporting-bugs",
           question: "What if I encounter a bug or issue?",
-          answer: `You can report issues by submitting a support ticket through our portal or by emailing <a class="faqThirdPinkText" href="mailto:hello@grapehub.io">hello@grapehub.io</a>. Growth Edition users receive community support, while Enterprise users receive dedicated priority support. We actively work on resolving reported issues and provide regular updates and patches.`,
+          answer: `You can report issues by submitting a support ticket through our <a class="faqThirdPinkText" href="/support">support portal</a> or by emailing <a class="faqThirdPinkText" href="mailto:buildninja@grapecity.global">buildninja@grapecity.global</a>. We actively work on resolving reported issues and provide regular updates and patches.`,
         },
         {
           id: "update-frequency",
           question: "How often is BuildNinja updated?",
           answer:
             "Updates are regularly published to Docker Hub and announced on our blog. Since BuildNinja is self-hosted, you have full control over when to upgrade and can update on your own schedule.",
-        },
-        {
-          id: "professional-services",
-          question:
-            "What's included in professional services and migration assistance?",
-          answer: `<p>Enterprise subscriptions include professional services covering setup consultation, custom workflow configuration, best practices review, and troubleshooting.</p>
-<p>Migration assistance helps you move your existing projects from Jenkins, GitLab CI, Azure DevOps, or other platforms - including pipeline conversion guidance and initial configuration.</p>
-
-<p>Contact hello@grapehub.io to get started.</p>`,
         },
       ],
     },

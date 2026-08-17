@@ -32,7 +32,7 @@ export default function ExploreLinks() {
             <div className={s.linkIcon} style={{ background: 'var(--color-primary-subtle)' }}><Rocket aria-label="Rocket" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></div>
             <div>
               <div className={s.linkCardTitle}>Install BuildNinja</div>
-              <div className={s.linkCardSub}>Get your self-hosted CI/CD running in 5 minutes</div>
+              <div className={s.linkCardSub}>Get your self-hosted CI/CD running in 15 minutes</div>
             </div>
           </Link>
           <Link href="/dojo" className={s.linkCard}>

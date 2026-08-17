@@ -40,12 +40,12 @@ export default function Download() {
       {
         "@type": "HowToStep",
         "name": "Get License Key",
-        "text": "Sign up on the install page with your email to receive your free Growth Edition license key."
+        "text": "Enter your email on the install page to download the free Growth Edition installer and receive your license key."
       },
       {
         "@type": "HowToStep",
         "name": "Run the Installer or Docker Command",
-        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull grapehub/buildninja'."
+        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull grapehub/buildninja-server'."
       },
       {
         "@type": "HowToStep",

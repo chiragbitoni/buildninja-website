@@ -98,7 +98,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Setup time</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Under 5 minutes</strong></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> <strong>Under 15 minutes</strong></td>
                 <td>15–30 minutes (OAuth + orbs config)</td>
               </tr>
               <tr>
@@ -141,7 +141,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Build agents / runners</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited self-hosted build agents <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 10 build agents in Growth, unlimited with Shogun <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Self-hosted runners limited on free tier</td>
               </tr>
               <tr>
@@ -161,7 +161,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-powered pipeline intelligence</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence <span className={`${s.winTag} ${s.winBn}`}>BN Unique</span></td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence (coming in v1.3.0)</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> "Autonomous validation" in beta</td>
               </tr>
 
@@ -249,13 +249,13 @@ export default function ComparisonTable() {
               {/* SCALABILITY */}
               <tr className={s.catRow}><td colSpan="3"><TrendingUp aria-label="Scalability" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> Scalability &amp; Performance</td></tr>
               <tr>
-                <td>Unlimited concurrent builds</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Limited only by your hardware <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
+                <td>Concurrent builds</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 10 in Growth, unlimited with Shogun - limited only by your hardware <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Subject to plan concurrency limits</td>
               </tr>
               <tr>
                 <td>Horizontal agent scaling</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents freely</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents - 10 in Growth, unlimited with Shogun</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more resource consumption</td>
               </tr>
               <tr>
@@ -265,7 +265,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Multi-project support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects, no per-project limits</td>
+                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> 10 projects in Growth, unlimited with Shogun - no per-project limits</td>
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Unlimited projects on enterprise plans</td>
               </tr>
 
@@ -305,8 +305,8 @@ export default function ComparisonTable() {
                 <td><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Available on paid plans</td>
               </tr>
               <tr>
-                <td>Engineer-to-engineer support</td>
-                <td className={s.tdBn}><span className={s.check}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Direct technical team access <span className={`${s.winTag} ${s.winBn}`}>BN Wins</span></td>
+                <td>Email support</td>
+                <td className={s.tdBn}><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Email support (business hours)</td>
                 <td><span className={s.partial}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Ticket-based support routing</td>
               </tr>
               <tr>

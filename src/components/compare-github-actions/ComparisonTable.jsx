@@ -92,7 +92,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Time to first build</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Under 10 minutes</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Under 15 minutes</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Under 10 minutes (if already on GitHub)</td>
               </tr>
 
@@ -130,7 +130,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>AI-powered pipeline intelligence</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence - failure prediction, log AI <span className={`${s.tagWin} ${s.tagBn}`}>BN Unique</span></td>
+                <td className={s.tdBn}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> BuildNinja Intelligence - failure prediction, log AI (coming in v1.3.0)</td>
                 <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Copilot integrations, no native pipeline AI</td>
               </tr>
 
@@ -234,7 +234,7 @@ export default function ComparisonTable() {
               </tr>
               <tr>
                 <td>Horizontal agent scaling</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents - cost stays flat</td>
+                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Add build agents - cost stays flat · 10 in Growth, unlimited with Shogun</td>
                 <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> More runners = more orchestration charges</td>
               </tr>
               <tr>
@@ -277,11 +277,6 @@ export default function ComparisonTable() {
                 <td>Email support</td>
                 <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Included in all plans</td>
                 <td className={s.tdGh}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> GitHub Community + paid support options</td>
-              </tr>
-              <tr>
-                <td>Engineer-to-engineer access</td>
-                <td className={s.tdBn}><span className={s.icYes}><Check aria-label="Yes" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Direct technical team contact <span className={`${s.tagWin} ${s.tagBn}`}>BN Wins</span></td>
-                <td className={s.tdGh}><span className={s.icWarn}><AlertTriangle aria-label="Warning" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /></span> Ticket-based routing; depends on plan</td>
               </tr>
               <tr>
                 <td>Enterprise SLA</td>

@@ -194,7 +194,7 @@ export default function LandingHero() {
                         data-cursor-grow
                     >
                         <span className={s.badgeDot} />
-                        <span className={s.badgeFull}>{siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features</span>
+                        <span className={s.badgeFull}>{siteConfig.version} is Live </span>
                         <span className={s.badgeMobile}>{siteConfig.version} is Live </span>
                     </motion.div>
 
@@ -210,9 +210,9 @@ export default function LandingHero() {
 
                     <div className={s.stats}>
                         {[
-                            { label: "Build Agents", value: "Unlimited" },
-                            { label: "Concurrent Builds", value: "Unlimited" },
-                            { label: "Growth Edition", value: "Enterprise Scale" }
+                            { label: "Build Agents (Growth)", value: "10" },
+                            { label: "Concurrent Builds (Growth)", value: "10" },
+                            { label: "Shogun Edition", value: "Unlimited" }
                         ].map((stat, i) => (
                             <motion.div
                                 className={s.statCard}

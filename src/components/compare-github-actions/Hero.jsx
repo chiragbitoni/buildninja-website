@@ -22,7 +22,7 @@ export default function Hero() {
 
         <motion.h1
           className={`section-title ${s.fadeUp}`}
-          style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 700, marginBottom: '18px' }}
+          style={{ fontSize: 'clamp(24px, 7vw, 56px)', fontWeight: 700, marginBottom: '18px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
