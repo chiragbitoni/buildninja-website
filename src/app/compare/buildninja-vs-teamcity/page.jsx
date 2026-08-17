@@ -39,7 +39,7 @@ const faqSchema = {
       "name": "TeamCity Professional is also free - why choose BuildNinja?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition is free with 10 users, 10 concurrent builds, and 10 build configurations. Shogun Edition removes all caps - unlimited users, agents, and configurations."
+        "text": "TeamCity Professional caps you at 3 agents and 100 configurations. BuildNinja Growth Edition is free with 10 users, 10 build configurations, and 10 build agents. Shogun Edition removes all caps - unlimited users, agents, and configurations."
       }
     },
     {

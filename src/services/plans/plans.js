@@ -93,10 +93,6 @@ export const findFreePlan = (plans) => {
 };
 
 const FREE_FEATURE_DEFS = [
-  {
-    match: "concurrent builds",
-    make: (v) => `up to ${v} concurrent builds`,
-  },
   { match: "projects", make: (v) => `up to ${v} projects` },
   { match: "configurations", make: (v) => `up to ${v} build configurations` },
   {
@@ -110,7 +106,9 @@ const FREE_FEATURE_DEFS = [
 ];
 
 // Human-readable summary of a free plan's limits, e.g.
-// "up to 10 users, up to 10 concurrent builds, up to 10 projects, ..."
+// "up to 10 projects, up to 10 build configurations, 30-day history, ..."
+// (concurrent builds are not a separate limit - concurrency is bounded by
+// the plan's build agents; omitted from the summary intentionally)
 export const describeFreePlanFeatures = (plan) => {
   if (!plan) return null;
   const parts = [];

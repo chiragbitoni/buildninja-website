@@ -157,7 +157,7 @@ See complete system requirements for network, browser compatibility, and additio
         {
           id: "pricing-for-teams",
           question: "How does pricing work for growing teams?",
-          answer: `<p>BuildNinja charges based on plan limits, not team size. Shogun Edition includes unlimited users and unlimited concurrent builds. Add your 11th, 50th, or 500th developer - your price stays the same.</p>
+          answer: `<p>BuildNinja charges based on plan limits, not team size. Shogun Edition includes unlimited users and unlimited builds. Add your 11th, 50th, or 500th developer - your price stays the same.</p>
 <p>Growth Edition supports {{freePlanFeatures}}. You only pay for infrastructure capacity, never per developer.</p>`,
         },
         {
@@ -165,12 +165,6 @@ See complete system requirements for network, browser compatibility, and additio
           question: "Is the Growth Edition plan really free forever?",
           answer:
             "Yes! The Growth Edition plan is completely free, no credit card or hidden costs. Your free license key is valid for the license term - when it expires, simply generate a new free key. It includes everything an individual developer needs: automated builds, version control integration, artifact management, real-time logs, and email notifications.",
-        },
-        {
-          id: "more-concurrent-builds",
-          question: "What happens if I need more concurrent builds?",
-          answer:
-            "Growth Edition includes 10 concurrent builds - enough for most small teams. Shogun Edition includes unlimited concurrent builds - no add-on purchases needed, scale without limits.",
         },
         {
           id: "payment-methods",
@@ -230,12 +224,6 @@ See complete system requirements for network, browser compatibility, and additio
           question: "Does BuildNinja support Kubernetes?",
           answer:
             "Yes! BuildNinja is fully compatible with Kubernetes deployments. Both the BuildNinja Server and Agents can be deployed as containerized workloads using Kubernetes manifests. This enables scalable, high-availability CI/CD infrastructure with automated orchestration across multiple environments. Our documentation includes complete Kubernetes deployment guides with sample manifests for server and agent configurations.",
-        },
-        {
-          id: "what-is-concurrent-build",
-          question: "What is a concurrent build and how many do I need?",
-          answer: `<p>A concurrent build is a build executing at the same time as others. With 10 concurrent builds, you can run 10 builds simultaneously - additional builds queue automatically.</p>
-<p>Example: A team of 20 developers typically runs fine with 3-5 concurrent builds, while 50+ developers may need 5-10. Growth Edition includes 10 concurrent builds. Shogun Edition includes unlimited concurrent builds - scale without limits.</p>`,
         },
         {
           id: "notifications",

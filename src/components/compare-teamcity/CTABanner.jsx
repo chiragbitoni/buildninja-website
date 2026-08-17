@@ -30,7 +30,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          BuildNinja Growth Edition is free - up to 10 users and 10 concurrent builds. Unlimited with Shogun. Deploy in under 5 minutes with one Docker command.
+          BuildNinja Growth Edition is free - up to 10 users and 10 build agents. Unlimited with Shogun. Deploy in under 5 minutes with one Docker command.
         </motion.p>
         <motion.div
           className={styles.ctaBtns}

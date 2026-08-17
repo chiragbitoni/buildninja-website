@@ -33,7 +33,7 @@ const faqSchema = {
       "name": "Is BuildNinja really free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. BuildNinja's free Growth Edition includes up to 10 users, 10 projects, 10 build configurations, and 10 concurrent builds. Shogun Edition provides unlimited users, projects, and builds at no per-seat cost, plus email support."
+        "text": "Yes. BuildNinja's free Growth Edition includes up to 10 users, 10 projects, 10 build configurations, and 10 build agents. Shogun Edition provides unlimited users, projects, and builds at no per-seat cost, plus email support."
       }
     },
     {

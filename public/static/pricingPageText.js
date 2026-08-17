@@ -49,7 +49,6 @@ export const secondSectionTextGlobal = {
         "Up to 10 build configurations",
       ],
       list2: [
-        "10 concurrent builds",
         "10 build agents",
         "30-day build history",
         "1 SSO provider",
@@ -227,9 +226,9 @@ export const pricingSeventhText = {
         "Yes! The Growth Edition is completely free - no credit card, no surprise bills. Your free license key is valid for the license term; when it expires, simply generate a new free key. The Growth Edition includes {{freePlanFeatures}} - free, forever.",
     },
     {
-      question: "What's the difference between build agents and concurrent builds?",
+      question: "How do build agents and concurrent builds relate?",
       answer:
-        "Build agents are the machines you connect. Concurrent builds are the number of builds running at the exact same time. Growth Edition includes 10 concurrent builds; Shogun Edition is unlimited.",
+        "Build agents are the machines that execute your builds. The number of builds running at the exact same time is limited by the build agents you have - with 10 build agents, up to 10 builds run simultaneously and additional builds queue automatically. Growth Edition includes 10 build agents; Shogun Edition is unlimited.",
     },
     {
       question: "Can I try before committing to Enterprise?",

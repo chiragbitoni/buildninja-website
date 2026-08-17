@@ -15,8 +15,7 @@ export default function PricingTeaser() {
     features: [
       "Up to 10 users - No per-seat costs",
       "Up to 10 projects & 10 configurations",
-      "10 concurrent builds",
-      "10 build agents",
+      "10 build agents - up to 10 builds at once",
       "30-day build history",
       "Email support",
       "1 SSO provider",

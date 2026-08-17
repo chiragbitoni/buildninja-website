@@ -234,9 +234,8 @@ export default function PricingHero() {
         </motion.h1>
 
         <motion.p className={s.description} variants={itemVariants}>
-          CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free with unlimited
-          users, unlimited projects, and unlimited concurrent builds. Scale your orchestration
-          as much as your infrastructure allows.
+          CI/CD costs shouldn&apos;t spiral as your team grows. BuildNinja is free to start - unlimited
+          users, unlimited builds. Scale your orchestration as much as your infrastructure allows.
         </motion.p>
 
 

@@ -8,7 +8,7 @@ const cards = [
     icon: paths.icons.infinite,
     alt: "Infinity icon",
     title: "Unlimited Build Agents",
-    desc: "Growth Edition includes 10 build agents; Shogun Edition removes the limit. Connect machines across Windows, Linux, and macOS.",
+    desc: "Growth includes 10 build agents; Shogun removes the limit. Windows, Linux, and macOS.",
   },
   {
     icon: paths.icons.restricted,
@@ -26,7 +26,7 @@ const cards = [
     icon: paths.icons.clockPink,
     alt: "Clock icon",
     title: "Growth Edition",
-    desc: "Free - up to 10 users, 10 projects, 10 build configurations, 10 concurrent builds, and 10 build agents. No credit card. Shogun removes all limits.",
+    desc: "Free - 10 users, projects, configurations, and build agents. Shogun removes all limits.",
   },
 ];
 

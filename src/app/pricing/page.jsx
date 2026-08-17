@@ -84,7 +84,7 @@ export default async function Pricing() {
     "@id": `https://buildninja.grapehub.io/pricing#product-${name.toLowerCase().replace(/\s+/g, "-")}`,
     "name": `${name} Edition`,
     "image": "https://buildninja.grapehub.io/resources/BuildNinja.png",
-    "description": `${name} Edition - self-hosted CI/CD by BuildNinja. No per-seat pricing${name === "Growth" ? " - 10 concurrent builds" : " - unlimited concurrent builds"} on your own infrastructure.`,
+    "description": `${name} Edition - self-hosted CI/CD by BuildNinja. No per-seat pricing${name === "Growth" ? " - 10 build agents" : " - unlimited build agents"} on your own infrastructure.`,
     "brand": { "@type": "Brand", "name": "BuildNinja" },
     "offers": plans.map((plan) => ({
       "@type": "Offer",
