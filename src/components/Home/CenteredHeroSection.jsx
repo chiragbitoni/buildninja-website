@@ -36,17 +36,17 @@ export default function CenteredHeroSection() {
         <div className={styles.copy}>
           <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
             <span className={styles.badgeDot} />
-            {siteConfig.version} is Live 
+            {siteConfig.version} is Live
             {/* - {siteConfig.upcomingVersion} is coming soon with AI Features */}
           </div>
 
           <h1 className={styles.heading}>
             Self-Hosted CI/CD.<br /><span className={styles.headingGradient}>
-              Start free with Growth Edition - Scale without limits with Shogun Edition
+              Start Free, Scale Without Limits.
             </span>
           </h1>
           <p className={styles.subtext}>
-Self-hosted CI/CD platform for DevOps teams who want full control. Deploy in under 5 minutes with one Docker command, run unlimited pipelines with Shogun Edition on your own servers, and escape per-seat billing - with no vendor lock-in, ever.
+            Self-hosted CI/CD platform for DevOps teams who want full control. Deploy in under 5 minutes with one Docker command, run unlimited pipelines with Shogun Edition on your own servers, and escape per-seat billing - with no vendor lock-in, ever.
           </p>
           <div className={styles.ctas}>
             <a href="/install" className={styles.ctaPrimary} onClick={() => { posthog.capture("hero_deploy_clicked"); router.push("/install") }} data-cursor-grow>
