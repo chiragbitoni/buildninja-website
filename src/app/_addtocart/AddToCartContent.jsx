@@ -83,6 +83,13 @@ export default function AddToCartContent() {
         "${val}",
         f.value !== "999999" ? "Up to " + f.value : "Unlimited"
       );
+      // Team decision: hide the parallel build execution feature line
+      // (produced by both the Concurrent Builds and Build Agents features)
+      if (
+        desc.toLowerCase().includes("parallel build execution on build agents")
+      ) {
+        return;
+      }
       features.push(desc);
     });
 

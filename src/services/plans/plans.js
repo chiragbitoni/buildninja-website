@@ -107,8 +107,8 @@ const FREE_FEATURE_DEFS = [
 
 // Human-readable summary of a free plan's limits, e.g.
 // "up to 10 projects, up to 10 build configurations, 30-day history, ..."
-// (concurrent builds are not a separate limit - concurrency is bounded by
-// the plan's build agents; omitted from the summary intentionally)
+// (the parallel build execution feature is hidden per team decision, so it
+// is omitted from the summary)
 export const describeFreePlanFeatures = (plan) => {
   if (!plan) return null;
   const parts = [];
@@ -147,8 +147,8 @@ export const findPlanForCycle = (plans, cycle) => {
 
 // Discount comparison sentence for the paid (Shogun) plan across billing
 // cycles, computed from live plan prices, e.g.
-// "Yearly billing saves you 33% vs monthly - $15.99/year (just $1.33/month)
-// instead of $1.99/month ($23.88/year). ..."
+// "Yearly billing saves you 33% vs monthly - $1,599/year (just $133.25/month)
+// instead of $199/month ($2,388/year). ..."
 export const describeShogunBilling = (plans) => {
   const monthly = findPaidMonthlyPlan(plans);
   const yearly = findPlanForCycle(plans, "Yearly");

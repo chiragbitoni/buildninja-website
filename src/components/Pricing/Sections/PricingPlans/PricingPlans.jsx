@@ -104,6 +104,18 @@ const isUsableFeature = (f) =>
   String(f.featureName || "").toLowerCase() !== "gst" &&
   Boolean(featureText(f));
 
+// Features the team asked to hide from the plans feature list. Matched on
+// the rendered description text (e.g. the "10 parallel build execution on
+// Build agents" line produced by both the Concurrent Builds and Build
+// Agents API features) - if the API later changes the description, the
+// feature shows again automatically.
+const HIDDEN_FEATURE_TEXTS = ["parallel build execution on build agents"];
+
+const isHiddenFeature = (f) => {
+  const text = featureText(f).toLowerCase();
+  return HIDDEN_FEATURE_TEXTS.some((hidden) => text.includes(hidden));
+};
+
 const getSavingsPct = (plan, namePlans) => {
   if (!plan || plan.billingCycle === "Monthly") return 0;
   const monthly = (namePlans || []).find((p) => p.billingCycle === "Monthly");
@@ -130,7 +142,7 @@ const FeatureList = ({ plan, showUsers, minRows = 0 }) => {
     });
   }
   (plan.features || []).forEach((f) => {
-    if (!isUsableFeature(f)) return;
+    if (!isUsableFeature(f) || isHiddenFeature(f)) return;
     items.push({ key: f.featureId || f.featureName, text: featureText(f) });
   });
   const rowHeightRem = 0.88 * 1.45;
