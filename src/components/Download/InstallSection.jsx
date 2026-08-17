@@ -35,12 +35,19 @@ const itemVariants = {
   }
 };
 
-export default function InstallSection() {
+export default function InstallSection({ initialInstallers = null }) {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [data, setData] = useState({ latest: {}, history: [] });
-  const [loading, setLoading] = useState(true);
-  const [hasHistory, setHasHistory] = useState(false);
+  const hasInitialData = Boolean(initialInstallers?.latest);
+  const [data, setData] = useState(
+    hasInitialData
+      ? { latest: initialInstallers.latest, history: initialInstallers.history || [] }
+      : { latest: {}, history: [] }
+  );
+  const [loading, setLoading] = useState(!hasInitialData);
+  const [hasHistory, setHasHistory] = useState(
+    hasInitialData ? Boolean(initialInstallers.history?.length) : false
+  );
   const [downloadingUrl, setDownloadingUrl] = useState(null);
   const [hasDownloaded, setHasDownloaded] = useState(false);
   const [copiedType, setCopiedType] = useState(null);
@@ -52,6 +59,14 @@ export default function InstallSection() {
   const pendingDownloadRef = useRef(null);
 
   useEffect(() => {
+    // Installer list is baked in at build time - only fetch at runtime when
+    // the build-time fetch failed or was unavailable.
+    if (hasInitialData) {
+      posthog.capture("installer_list_loaded", {
+        has_history: Boolean(initialInstallers.history?.length),
+      });
+      return;
+    }
     async function load() {
       try {
         const api = await fetchInstallers();
@@ -69,7 +84,7 @@ export default function InstallSection() {
       }
     }
     load();
-  }, []);
+  }, [hasInitialData, initialInstallers]);
 
   useEffect(() => {
     // Load plans for the license key link

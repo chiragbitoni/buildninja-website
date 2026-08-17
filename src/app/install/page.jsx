@@ -1,4 +1,5 @@
 import DownloadPage from "./InstallPage";
+import { fetchInstallersForBuild } from "@/services/auth/installers";
 
 export const metadata = {
   title: "Download & Install BuildNinja on Your Own Servers | Install",
@@ -24,7 +25,12 @@ export const metadata = {
   },
 };
 
-export default function Download() {
+export default async function Download() {
+  // Fetched at build time (server-side) so the installer list is baked into
+  // the static page - no runtime wait for users. Throws (aborts the build)
+  // if the installer API is unreachable, mirroring the plans fetch pattern.
+  const installers = await fetchInstallersForBuild();
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -61,7 +67,7 @@ export default function Download() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <DownloadPage />
+      <DownloadPage installers={installers} />
     </>
   );
 }

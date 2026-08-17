@@ -2,10 +2,10 @@
 
 import InstallSection from "../../components/Download/InstallSection";
 
-export default function DownloadPage() {
+export default function DownloadPage({ installers }) {
   return (
     <div style={{ position: "relative", minHeight: "100vh", background: "var(--color-bg)", overflow: "hidden" }}>
-      <InstallSection />
+      <InstallSection initialInstallers={installers} />
     </div>
   );
 }
