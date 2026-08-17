@@ -86,7 +86,7 @@ export default function DevHeroSection() {
         <div className={styles.copy}>
           <div className={styles.heroBadge} onClick={() => { router.push("/install"); }} data-cursor-grow>
             <span className={styles.badgeDot} />
-            {siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features
+            {siteConfig.version} is Live 
           </div>
 
           <h1 className={styles.heading}>

@@ -194,7 +194,7 @@ export default function LandingHero() {
                         data-cursor-grow
                     >
                         <span className={s.badgeDot} />
-                        <span className={s.badgeFull}>{siteConfig.version} is Live - {siteConfig.upcomingVersion} is coming soon with AI Features</span>
+                        <span className={s.badgeFull}>{siteConfig.version} is Live </span>
                         <span className={s.badgeMobile}>{siteConfig.version} is Live </span>
                     </motion.div>
 
