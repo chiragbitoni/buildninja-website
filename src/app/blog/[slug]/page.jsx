@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const canonicalUrl = `https://buildninja.grapehub.io/blog/${slug}`;
+  const canonicalUrl = `https://www.buildninja.io/blog/${slug}`;
 
   return {
     title: `${post.title} | BuildNinja Blog`,
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }) {
         ]
         : [
           {
-            url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+            url: "https://www.buildninja.io/resources/BuildNinja.png",
             width: 1200,
             height: 630,
             alt: "BuildNinja Blog",
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }) {
       description: post.excerpt || post.title,
       images: post.coverImage
         ? [post.coverImage]
-        : ["https://buildninja.grapehub.io/resources/BuildNinja.png"],
+        : ["https://www.buildninja.io/resources/BuildNinja.png"],
     },
   };
 }
@@ -140,17 +140,17 @@ export default async function BlogPostPage({ params }) {
         "@type": "Article",
         headline: post.title,
         description: post.excerpt || post.title,
-        image: post.coverImage || "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        image: post.coverImage || "https://www.buildninja.io/resources/BuildNinja.png",
         author: {
           "@type": "Person",
           name: post.author || "BuildNinja Team",
         },
-        publisher: { "@id": "https://buildninja.grapehub.io/#organization" },
+        publisher: { "@id": "https://www.buildninja.io/#organization" },
         datePublished: post.firstPublishedDate,
         dateModified: post.lastPublishedDate || post.firstPublishedDate,
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://buildninja.grapehub.io/blog/${slug}`,
+          "@id": `https://www.buildninja.io/blog/${slug}`,
         },
       },
     ],

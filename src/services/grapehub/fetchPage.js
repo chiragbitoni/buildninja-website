@@ -311,6 +311,9 @@ export async function fetchGrapeHubBlogPost(slug) {
     const postLinkRegex = new RegExp(`href="https:\\/\\/(www\\.)?grapehub\\.io\\/post\\/([^"]+)"`, 'gi');
     postBody = postBody.replace(postLinkRegex, 'href="/blog/$2"');
 
+    // Normalize old BuildNinja domain links (baked into CMS content) to the new domain
+    postBody = postBody.replace(/https?:\/\/buildninja\.grapehub\.io/g, 'https://www.buildninja.io');
+
     // Extract FAQ data for JSON-LD schema and convert Wix collapsible-list to native accordion
     const faqData = [];
     postBody = postBody.replace(

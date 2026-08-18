@@ -19,8 +19,8 @@ export const metadata = {
   openGraph: {
     title: 'BuildNinja vs Jenkins: Feature-by-Feature Comparison [2025]',
     description: 'Honest comparison of BuildNinja vs Jenkins. See which CI/CD tool wins on setup time, maintenance, scalability, and total cost of ownership.',
-    url: 'https://buildninja.grapehub.io/compare/buildninja-vs-jenkins',
-    images: ['https://buildninja.grapehub.io/resources/BuildNinja.png']
+    url: 'https://www.buildninja.io/compare/buildninja-vs-jenkins',
+    images: ['https://www.buildninja.io/resources/BuildNinja.png']
   }
 };
 

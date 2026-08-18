@@ -5,12 +5,12 @@ export const metadata = {
   title: "Contact Us | BuildNinja",
   description: "Have questions or need assistance? Contact the BuildNinja team at GrapeCity India for inquiries, sales, and support.",
   alternates: {
-    canonical: "https://buildninja.grapehub.io/contact",
+    canonical: "https://www.buildninja.io/contact",
   },
   openGraph: {
     title: "Contact Us | BuildNinja",
     description: "Have questions or need assistance? Contact the BuildNinja team at GrapeCity India for inquiries, sales, and support.",
-    url: "https://buildninja.grapehub.io/contact",
+    url: "https://www.buildninja.io/contact",
     siteName: "BuildNinja",
     type: "website",
   },

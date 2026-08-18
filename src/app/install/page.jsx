@@ -6,16 +6,16 @@ export const metadata = {
   description: "Get started with BuildNinja in minutes. Follow our easy installation guide for Linux, Docker, and self-hosted environments.",
   keywords: ["install CI/CD server", "download BuildNinja", "self-hosted CI/CD setup", "Docker CI/CD installation", "Linux build server", "deploy continuous integration server"],
   alternates: {
-    canonical: "https://buildninja.grapehub.io/install",
+    canonical: "https://www.buildninja.io/install",
   },
   openGraph: {
     title: "Download & Install BuildNinja on Your Own Servers | Install",
     description: "Get started with BuildNinja in minutes. Follow our easy installation guide for Linux, Docker, and self-hosted environments.",
-    url: "https://buildninja.grapehub.io/install",
+    url: "https://www.buildninja.io/install",
     siteName: "BuildNinja",
     images: [
       {
-        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        url: "https://www.buildninja.io/resources/BuildNinja.png",
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD Platform Installation",
@@ -34,7 +34,7 @@ export default async function Download() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "@id": "https://buildninja.grapehub.io/install#howto",
+    "@id": "https://www.buildninja.io/install#howto",
     "name": "How to Install BuildNinja",
     "description": "Learn how to deploy and configure the BuildNinja self-hosted CI/CD platform on your own infrastructure using the Windows Installer or Docker.",
     "step": [

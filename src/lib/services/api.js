@@ -2,7 +2,7 @@ import {env} from "@/lib/config/env";
 export class ApiService {
   
   getAPIUrl() {
-    let domain = "grapehub.io";
+    let domain = "buildninja.io";
     if (
       location.host.indexOf(domain) > -1 &&
       env.API_URL.indexOf("azurewebsites.net") > -1 &&
@@ -19,7 +19,7 @@ export class ApiService {
     const api_url = this.getAPIUrl();
     const url = `${api_url}${endpoint}`;
 
-    const allowedDomains = [".localtest.me", ".grapehub.io"];
+    const allowedDomains = [".localtest.me", ".buildninja.io"];
     const _isCredentialAllowed = allowedDomains.some(
       domain => api_url.includes(domain) && location.host.includes(domain)
     );

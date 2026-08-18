@@ -17,8 +17,8 @@ export const setCookie = (name, value, days = 365, overwrite = true) => {
 
   const domain = hostname.endsWith(".localtest.me")
     ? ".localtest.me"
-    : hostname.endsWith(".grapehub.io")
-    ? ".grapehub.io"
+    : hostname.endsWith(".buildninja.io")
+    ? ".buildninja.io"
     : null;
 
   const expires = new Date();

@@ -5,12 +5,12 @@ export const metadata = {
   title: "Terms of Service | BuildNinja",
   description: "Read BuildNinja's Terms and Conditions outlining the rules, responsibilities, and policies governing the use of our website, products, and services.",
   alternates: {
-    canonical: "https://buildninja.grapehub.io/terms-of-service",
+    canonical: "https://www.buildninja.io/terms-of-service",
   },
   openGraph: {
     title: "Terms of Service | BuildNinja",
     description: "Read BuildNinja's Terms and Conditions outlining the rules, responsibilities, and policies governing the use of our website, products, and services.",
-    url: "https://buildninja.grapehub.io/terms-of-service",
+    url: "https://www.buildninja.io/terms-of-service",
     siteName: "BuildNinja",
     type: "website",
   },

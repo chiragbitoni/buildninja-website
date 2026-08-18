@@ -18,7 +18,7 @@ export const metadata = {
   title: 'BuildNinja vs GitHub Actions | Comparison',
   description: 'An honest, detailed comparison between BuildNinja and GitHub Actions. See how self-hosted builds with no per-minute pricing compare against GitHub per-minute billing.',
   alternates: {
-    canonical: 'https://buildninja.grapehub.io/compare/buildninja-vs-github-actions',
+    canonical: 'https://www.buildninja.io/compare/buildninja-vs-github-actions',
   },
 };
 

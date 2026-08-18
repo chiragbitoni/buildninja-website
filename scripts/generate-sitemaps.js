@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 async function generateSitemaps() {
-  const baseUrl = "https://buildninja.grapehub.io";
+  const baseUrl = "https://www.buildninja.io";
   const grapehubUrl = "https://www.grapehub.io";
   const stableStaticDate = "2026-05-21T06:00:00.000Z";
 

@@ -15,16 +15,16 @@ export const metadata = {
     description: "Find answers to common questions about BuildNinja CI/CD, installation, pricing, security, and enterprise features.",
     keywords: ["BuildNinja FAQ", "CI/CD questions", "self-hosted DevOps FAQ", "build server security", "enterprise CI/CD answers"],
     alternates: {
-        canonical: "https://buildninja.grapehub.io/faq",
+        canonical: "https://www.buildninja.io/faq",
     },
     openGraph: {
         title: "Frequently Asked Questions | FAQ",
         description: "Find answers to common questions about BuildNinja CI/CD, installation, pricing, security, and enterprise features.",
-        url: "https://buildninja.grapehub.io/faq",
+        url: "https://www.buildninja.io/faq",
         siteName: "BuildNinja",
         images: [
             {
-                url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+                url: "https://www.buildninja.io/resources/BuildNinja.png",
                 width: 1200,
                 height: 630,
                 alt: "BuildNinja CI/CD FAQ",
@@ -49,7 +49,7 @@ export default async function Faq() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": "https://buildninja.grapehub.io/faq#faqpage",
+    "@id": "https://www.buildninja.io/faq#faqpage",
     "mainEntity": thirdSectionText.faqs.flatMap(category =>
         category.faqs.map(faq => ({
           "@type": "Question",

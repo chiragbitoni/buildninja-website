@@ -17,7 +17,7 @@ export const metadata = {
   description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
   keywords: ["CI/CD pricing", "DevOps tools cost", "BuildNinja pricing", "self-hosted CI/CD free", "enterprise CI/CD plans", "DevOps budget"],
   alternates: {
-    canonical: "https://buildninja.grapehub.io/pricing",
+    canonical: "https://www.buildninja.io/pricing",
   },
   robots: {
     index: true,
@@ -26,12 +26,12 @@ export const metadata = {
   openGraph: {
     title: "BuildNinja - Self-Hosted CI/CD, Free to Start",
     description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
-    url: "https://buildninja.grapehub.io/pricing",
+    url: "https://www.buildninja.io/pricing",
     siteName: "BuildNinja",
     locale: "en_US",
     images: [
       {
-        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        url: "https://www.buildninja.io/resources/BuildNinja.png",
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD Pricing Plans",
@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "BuildNinja - Self-Hosted CI/CD, Free to Start",
     description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
-    images: ["https://buildninja.grapehub.io/resources/BuildNinja.png"],
+    images: ["https://www.buildninja.io/resources/BuildNinja.png"],
   },
 };
 
@@ -59,7 +59,7 @@ export default async function Pricing() {
 
   const faqSchema = {
     "@type": "FAQPage",
-    "@id": "https://buildninja.grapehub.io/pricing#faqpage",
+    "@id": "https://www.buildninja.io/pricing#faqpage",
     "mainEntity": pricingSeventhText.faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
@@ -81,9 +81,9 @@ export default async function Pricing() {
 
   const productSchemas = Object.entries(byName).map(([name, plans]) => ({
     "@type": "Product",
-    "@id": `https://buildninja.grapehub.io/pricing#product-${name.toLowerCase().replace(/\s+/g, "-")}`,
+    "@id": `https://www.buildninja.io/pricing#product-${name.toLowerCase().replace(/\s+/g, "-")}`,
     "name": `${name} Edition`,
-    "image": "https://buildninja.grapehub.io/resources/BuildNinja.png",
+    "image": "https://www.buildninja.io/resources/BuildNinja.png",
     "description": `${name} Edition - self-hosted CI/CD by BuildNinja. No per-seat pricing${name === "Growth" ? " - 10 build agents" : " - unlimited build agents"} on your own infrastructure.`,
     "brand": { "@type": "Brand", "name": "BuildNinja" },
     "offers": plans.map((plan) => ({

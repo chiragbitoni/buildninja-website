@@ -94,7 +94,7 @@ export default function MigrationGuide() {
               Convert your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>.github/workflows/*.yml</code> to <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>buildninja.yaml</code>. The syntax is similar - most pipelines translate in under 30 minutes. Commit the YAML file to your repository.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
-            <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
+            <Link href="https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
               <ExternalLink size={14} /> YAML Reference
             </Link>
           </motion.div>
@@ -112,7 +112,7 @@ export default function MigrationGuide() {
               Create a new Build Configuration, select the <strong>Config File</strong> runner, and point it to your <code style={{ fontSize: '12px', background: 'var(--color-bg-shell)', padding: '2px 6px', borderRadius: '4px' }}>buildninja.yaml</code> in the repository. BuildNinja will execute all steps defined in the file - no manual pipeline setup needed.
             </p>
             <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 5 min</span>
-            <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
+            <Link href="https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
               <ExternalLink size={14} /> View Guide
             </Link>
           </motion.div>

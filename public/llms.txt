@@ -1,6 +1,6 @@
 # llms.txt - BuildNinja
 
-site: https://buildninja.grapehub.io
+site: https://www.buildninja.io
 name: BuildNinja
 type: Software Product
 category: Self-Hosted CI/CD Platform
@@ -38,14 +38,14 @@ publisher:
 - 25+ years experience building developer tools
 
 official_links:
-homepage: https://buildninja.grapehub.io
-features: https://buildninja.grapehub.io/features
-pricing: https://buildninja.grapehub.io/pricing
-installation: https://buildninja.grapehub.io/install
-support: https://buildninja.grapehub.io/support
-faq: https://buildninja.grapehub.io/faq
-terms: https://buildninja.grapehub.io/eula
+homepage: https://www.buildninja.io
+features: https://www.buildninja.io/features
+pricing: https://www.buildninja.io/pricing
+installation: https://www.buildninja.io/install
+support: https://www.buildninja.io/support
+faq: https://www.buildninja.io/faq
+terms: https://www.buildninja.io/eula
 
 contact:
-support_url: https://buildninja.grapehub.io/support
+support_url: https://www.buildninja.io/support
 

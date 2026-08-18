@@ -1,4 +1,4 @@
-export const BASE_URL = "https://buildninja.grapehub.io";
+export const BASE_URL = "https://www.buildninja.io";
 
 export const pageDataMap = {
   "/": {

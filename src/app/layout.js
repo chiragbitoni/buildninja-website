@@ -31,10 +31,10 @@ const schema = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://buildninja.grapehub.io/#organization",
+      "@id": "https://www.buildninja.io/#organization",
       name: "BuildNinja",
-      url: "https://buildninja.grapehub.io",
-      logo: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+      url: "https://www.buildninja.io",
+      logo: "https://www.buildninja.io/resources/BuildNinja.png",
       sameAs: [
         "https://www.linkedin.com/showcase/build-ninja/",
         "https://www.instagram.com/GrapeHubindia/",
@@ -44,17 +44,17 @@ const schema = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://buildninja.grapehub.io/#website",
-      url: "https://buildninja.grapehub.io",
+      "@id": "https://www.buildninja.io/#website",
+      url: "https://www.buildninja.io",
       name: "BuildNinja",
       publisher: {
-        "@id": "https://buildninja.grapehub.io/#organization",
+        "@id": "https://www.buildninja.io/#organization",
       },
     },
   ],
 };
 export const metadata = {
-  metadataBase: new URL("https://buildninja.grapehub.io"),
+  metadataBase: new URL("https://www.buildninja.io"),
   alternates: {
     canonical: "/",
   },
@@ -74,12 +74,12 @@ export const metadata = {
     title: "BuildNinja – Self hosted CI/CD platform",
     description:
       "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
-    url: "https://buildninja.grapehub.io/",
+    url: "https://www.buildninja.io/",
     siteName: "BuildNinja",
     type: "website",
     images: [
       {
-        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        url: "https://www.buildninja.io/resources/BuildNinja.png",
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD platform",
@@ -92,10 +92,13 @@ export const metadata = {
     title: "BuildNinja – Self hosted CI/CD platform",
     description:
       "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
-    images: ["https://buildninja.grapehub.io/resources/BuildNinja.png"],
+    images: ["https://www.buildninja.io/resources/BuildNinja.png"],
   },
   verification: {
-    google: "TXxGesv5AA45OhGIYqDoLArrrfIWPRPpi8LV5hYQAK8",  
+    google: [
+      "TXxGesv5AA45OhGIYqDoLArrrfIWPRPpi8LV5hYQAK8",
+      "xTvvvmy_SGaQ3obul5vGL6LMggN_L4OC9EqzTSZ9_0E",
+    ],
   },
 };
 
@@ -111,7 +114,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://buildninja.grapehub.io/sitemap.xml" />
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.buildninja.io/sitemap.xml" />
         <SchemaScript />
         <script
           id="schema-org"

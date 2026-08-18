@@ -98,7 +98,7 @@ export default function MigrationGuide() {
             </p>
             <div className={styles.stepFooter}>
               <span className={styles.stepTime}><Clock size={14} /> 30–60 min</span>
-              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={styles.guideLink}>
+              <Link href="https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={styles.guideLink}>
                 <ExternalLink size={14} /> YAML Reference
               </Link>
             </div>
@@ -117,7 +117,7 @@ export default function MigrationGuide() {
               BuildNinja can execute builds directly from a YAML file in your repository - no UI configuration needed. Point BuildNinja at your <code className={styles.code}>.buildninja.yaml</code> in your repository root and it handles the rest.
             </p>
             <div className={styles.stepFooter}>
-              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={styles.guideLink}>
+              <Link href="https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={styles.guideLink}>
                 <ExternalLink size={14} /> Run from Config Guide
               </Link>
             </div>

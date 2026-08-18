@@ -5,12 +5,12 @@ export const metadata = {
   title: "Refund and Cancellation Policy | BuildNinja",
   description: "Read BuildNinja's Refund and Cancellation Policy outlining the terms for service withdrawal, refund eligibility, and customer support assistance.",
   alternates: {
-    canonical: "https://buildninja.grapehub.io/refund-and-cancellation-policy",
+    canonical: "https://www.buildninja.io/refund-and-cancellation-policy",
   },
   openGraph: {
     title: "Refund and Cancellation Policy | BuildNinja",
     description: "Read BuildNinja's Refund and Cancellation Policy outlining the terms for service withdrawal, refund eligibility, and customer support assistance.",
-    url: "https://buildninja.grapehub.io/refund-and-cancellation-policy",
+    url: "https://www.buildninja.io/refund-and-cancellation-policy",
     siteName: "BuildNinja",
     type: "website",
   },

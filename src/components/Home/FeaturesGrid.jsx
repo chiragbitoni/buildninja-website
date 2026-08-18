@@ -15,7 +15,7 @@ const features = [
     title: "Build Automation & Scheduling",
     desc: "Trigger builds automatically via cron schedules, Git events (pushes and merges), and multi-environment support (dev, staging, production). Filter by branch, commit type, or author for precise automation.",
     videoId: '5wFDALkVM0Y',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-triggers'
+    videoLink: 'https://www.buildninja.io/docs/manage-projects-and-builds/configure-build-triggers'
   },
   {
     icon: (
@@ -29,7 +29,7 @@ const features = [
     title: "Version Control & Native Git",
     desc: "Deep integrations with GitHub, GitLab, Bitbucket, and any Git host. Visualize commit graphs between builds, run builds against any branch or commit, and cut clone time dramatically with intelligent caching.",
     videoId: 'YOpVrKIF8wE',
-    videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics/projects-and-builds'
+    videoLink: 'https://www.buildninja.io/docs/getting-started/interface-basics/projects-and-builds'
   },
   {
     icon: (
@@ -41,7 +41,7 @@ const features = [
     title: "Artifact & Deployment Management",
     desc: "Store, version, and distribute build outputs. Deploy to Kubernetes or Docker with zero downtime using canary strategies and environment-specific secrets.",
     videoId: 'NJHpySRbJNs',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-and-edit-builds'
+    videoLink: 'https://www.buildninja.io/docs/manage-projects-and-builds/configure-and-edit-builds'
   },
   {
     icon: (
@@ -53,7 +53,7 @@ const features = [
     title: "Real-time Visibility & High-Density Dashboards",
     desc: "Monitor builds live - filter logs by runner, step, or time. Dashboards auto-refresh with customisable time ranges and beautiful performance charts.",
     videoId: 'Pjl3muKtmhE',
-    videoLink: 'https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view',
+    videoLink: 'https://www.buildninja.io/docs/user-guide/customize-dashboard-view',
     dojoLink: '/dojo'
   },
   {
@@ -67,7 +67,7 @@ const features = [
     title: "Agent Management",
     desc: "Authorize, monitor, and configure build agents across Windows, Linux, and macOS. Set capability requirements to route builds to the right agent automatically.",
     videoId: 'MnvaPLguA6c',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-agents/'
+    videoLink: 'https://www.buildninja.io/docs/manage-agents/'
   },
   {
     icon: (
@@ -79,7 +79,7 @@ const features = [
     title: "Enterprise Security & RBAC",
     desc: "Role-based access control (RBAC) at project and system level with granular permissions management and AES-256 encryption for all secrets.",
     videoId: 'C-Ln6bbGo2E',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
+    videoLink: 'https://www.buildninja.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
   },
   {
     icon: (
@@ -91,7 +91,7 @@ const features = [
     title: "Single Sign-On (SSO) Support",
     desc: "Supports multiple SSO providers for streamlined authentication. Connect with GitHub, GitLab, Google, Microsoft, Bitbucket, and custom OIDC providers.",
     videoId: 'C-Ln6bbGo2E',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
+    videoLink: 'https://www.buildninja.io/docs/manage-projects-and-builds/manage-project-and-configuration-access'
   },
   {
     icon: (
@@ -102,7 +102,7 @@ const features = [
     title: "Pipeline Runners",
     desc: "Execute scripts in any shell. Run commands on remote servers via SSH. Define build parameters and variables securely at configuration level or project level.",
     videoId: 'IOd9CmP6G4c',
-    videoLink: 'https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners'
+    videoLink: 'https://www.buildninja.io/docs/getting-started/interface-basics#build-runners'
   },
   {
     icon: (
@@ -114,7 +114,7 @@ const features = [
     title: "Notifications & Alerts",
     desc: "Configurable alerts for build results, trigger failures, user approval and rejection, and more. Full SMTP + customisable email templates for every event.",
     videoId: '2OuADSNMEoc',
-    videoLink: 'https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings'
+    videoLink: 'https://www.buildninja.io/docs/manage-projects-and-builds/configure-build-notification-settings'
   },
   {
     icon: (
@@ -127,7 +127,7 @@ const features = [
     title: "Unified Installer & Quick Setup",
     desc: "Install Server, Agent, and MongoDB in minutes with a single installer. Native support for Windows, Linux, and macOS. Get running from zero in under 15 minutes.",
     videoId: 'zOW9BCYQkxk',
-    videoLink: 'https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows'
+    videoLink: 'https://www.buildninja.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows'
   },
 ];
 
