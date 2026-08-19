@@ -22,11 +22,10 @@ THE SOFTWARE.
 <p><strong>Build Configuration:</strong> A set of build parameters and instructions defining how a software build should be executed on the Server.</p>
 <p><strong>Concurrent Builds:</strong> The maximum number of build tasks that can execute simultaneously at any given time across all connected Build Agents.</p>
 <p><strong>Grace Period:</strong> The 7-day period after license key installation during which the Software will continue to function even if there are licensing issues, allowing time to resolve any problems.</p>
-<p><strong>License Term:</strong> The subscription period shall commence on the date the Licensee generates the License from the website (grapehub.io) and shall, by default, remain valid for one (1) year, unless a different subscription term is selected by the Licensee at the time of purchase.</p>
+<p><strong>License Term:</strong> The subscription period shall commence on the date the Licensee generates the License from the website (grapehub.io) and shall remain valid for the subscription term selected by the Licensee at the time of purchase, which may be semiannual, annual, or multi-year.</p>
 <p><strong>License Account:</strong> The Licensee's registered account at grapehub.io through which License Keys are obtained and managed.</p>
 <p><strong>License Key:</strong> A unique key-code that enables Licensee to run the Software. Only Licensor and/or its representatives are permitted to produce License Keys.</p>
-<p><strong>Professional Services:</strong> Remote assistance to migrate from existing CI/CD platforms to BuildNinja, including installation support and basic configuration to replicate existing workflows. Services are limited to migration assistance only. Licensor makes no representation or warranty regarding the availability, scope, or outcome of such services.</p>
-<p><strong>Enterprise Edition License:</strong> A license to use Software subject to clause 3.1(b) of this Agreement.</p>
+<p><strong>Shogun Edition License:</strong> A license to use Software subject to clause 3.1(b) of this Agreement.</p>
 <p><strong>Growth Edition License:</strong> A license to use Software subject to clause 3.1(a) of this Agreement.</p>
 <p><strong>Third-Party Software:</strong> Any software components, libraries, or modules owned by parties other than Licensor that are integrated with or made part of the Software.</p>
 <p><strong>User:</strong> Any person authorized by Licensee to use Software while performing duties within the scope of their employment or assignment with Licensee, including employees, independent contractors, and temporary workers.</p>
@@ -64,16 +63,14 @@ THE SOFTWARE.
 <ul class="inline-list-disc">
   <li>Install and run unlimited number of Servers</li>
   <li>Use up to 10 Users per installation</li>
-  <li>Execute up to three (3) concurrent builds per Server</li>
-  <li>Connect unlimited Build Agents to the Server</li>
-  <li>Purchase additional concurrent build capacity as per subscription plan at published rates, if capacity beyond three (3) simultaneous builds is required</li>
-  <li>Create up to 100 Build Configurations per Server</li>
+  <li>Connect up to ten (10) Build Agents to the Server</li>
+  <li>Create up to ten (10) Build Configurations per Server</li>
   <li>Retain build history for 30 days</li>
   <li>Use any 1 SSO integration provider (Microsoft, GitLab, Bitbucket, GitHub, or Google)</li>
   <li>Receive standard business hours support for the duration of the License Term via email (Monday-Friday, 10 AM - 4 PM IST, excluding Indian public holidays)</li>
 </ul>
 
-<p><strong>(b) Enterprise Edition License:</strong></p>
+<p><strong>(b) Shogun Edition License:</strong></p>
 <ul class="inline-list-disc">
   <li>Install and run unlimited number of Servers</li>
   <li>Use unlimited Users</li>
@@ -81,9 +78,6 @@ THE SOFTWARE.
   <li>Create unlimited Build Configurations per Server</li>
   <li>Retain build history for unlimited duration, subject to Licensee's available storage capacity</li>
   <li>Use all 5 SSO integration providers (Microsoft, GitLab, Bitbucket, GitHub, and Google)</li>
-  <li>Receive priority support for the duration of the License Term with dedicated response time targets</li>
-  <li>Access professional CI/CD assistance and custom deployment support</li>
-  <li>Receive free migration assistance for complex environments</li>
 </ul>
 
 <p><strong>(c) General Rights (Both Editions):</strong></p>
@@ -97,7 +91,6 @@ THE SOFTWARE.
 <ol>
   <li>Sell, redistribute, encumber, give, lend, rent, lease, sublicense, or transfer Software or any portion thereof without prior written consent of Licensor.</li>
   <li>Reverse engineer, decompile, disassemble, modify, translate, attempt to discover source code, or create derivative works from Software.</li>
-  <li>Use more concurrent builds than granted under the applicable license without purchasing additional build capacity (Growth Edition only) or without appropriate Enterprise Edition licensing.</li>
   <li>Use more Build Configurations per Server than allowed under Growth Edition License.</li>
   <li>Use the same License Key for multiple Server installations.</li>
   <li>Remove, alter, or obscure any proprietary or copyright notices in the Software.</li>
@@ -112,7 +105,7 @@ THE SOFTWARE.
 <ul class="inline-list-disc">
   <li>All users must register at www.grapehub.io and obtain a valid license key before first use. Software will not function without a valid license key</li>
   <li><strong>Growth Edition:</strong> Free license key (no payment required, valid for the License Term)</li>
-  <li><strong>Enterprise Edition:</strong> Paid license key (requires active subscription / contract)</li>
+  <li><strong>Shogun Edition:</strong> Paid license key (requires active subscription / contract)</li>
 </ul>
 
 <h3>7-Day Grace Period:</h3>
@@ -139,7 +132,7 @@ THE SOFTWARE.
 <p>Licensor shall provide generally available Software upgrades as follows:</p>
 <ul class="inline-list-disc">
   <li><strong>Growth Edition:</strong> Free upgrades during the License term.</li>
-  <li><strong>Enterprise Edition:</strong> Free upgrades during the License Term ("Upgrade Subscription").</li>
+  <li><strong>Shogun Edition:</strong> Free upgrades during the License Term ("Upgrade Subscription").</li>
 </ul>
 <p>If Licensee does not renew the Upgrade Subscription, Licensee shall retain a license valid for the remaining License Term.</p>
 
@@ -164,7 +157,7 @@ THE SOFTWARE.
 <h3>7.3 License Compliance and Overuse</h3>
 <p>The Software enforces usage limits based on the licensed edition. If Licensee requires additional capacity beyond their current license:</p>
 <ol type="a">
-  <li>Licensee shall purchase additional license capacity at published rates on grapehub.io.</li>
+  <li>Licensee shall purchase an upgraded license (e.g., the Shogun Edition) at published rates on grapehub.io.</li>
   <li>If Licensee tampers with or bypasses license enforcement mechanisms, Licensor may immediately terminate this Agreement and revoke all License Keys.</li>
   <li>Failure to maintain proper licensing or pay required License Fees may result in termination per Section 13.2.</li>
 </ol>
