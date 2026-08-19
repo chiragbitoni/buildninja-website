@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://buildninja.grapehub.io
+Host: https://www.buildninja.io
 
 # Sitemaps
-Sitemap: https://buildninja.grapehub.io/sitemap.xml
+Sitemap: https://www.buildninja.io/sitemap.xml

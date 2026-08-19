@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://buildninja.grapehub.io",
+  siteUrl: "https://www.buildninja.io",
   generateRobotsTxt: true,
   transform: async (config, path) => {
   // Skip internal routes
@@ -25,6 +25,6 @@ module.exports = {
     '/landing-page'
   ],
   additionalSitemaps: [
-    'https://buildninja.grapehub.io/docs/sitemap.xml',
+    'https://www.buildninja.io/docs/sitemap.xml',
   ],
 };

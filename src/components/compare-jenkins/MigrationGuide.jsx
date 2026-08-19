@@ -99,7 +99,7 @@ export default function MigrationGuide() {
             </p>
             <div className={s.stepFooter}>
               <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 30–60 min</span>
-              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
+              <Link href="https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference" className={s.guideLink}>
                 <ExternalLink size={14} /> YAML Reference
               </Link>
             </div>
@@ -119,7 +119,7 @@ export default function MigrationGuide() {
             </p>
             <div className={s.stepFooter}>
               <span className={s.stepTime}><Clock aria-label="Time" size={16} color="currentColor" style={{ verticalAlign: 'middle', display: 'inline-block' }} /> 1 week</span>
-              <Link href="https://buildninja.grapehub.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
+              <Link href="https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations#run-builds-directly-from-yaml-file" className={s.guideLink}>
                 <ExternalLink size={14} /> View Guide
               </Link>
             </div>

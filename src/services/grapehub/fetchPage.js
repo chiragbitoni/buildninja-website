@@ -311,26 +311,81 @@ export async function fetchGrapeHubBlogPost(slug) {
     const postLinkRegex = new RegExp(`href="https:\\/\\/(www\\.)?grapehub\\.io\\/post\\/([^"]+)"`, 'gi');
     postBody = postBody.replace(postLinkRegex, 'href="/blog/$2"');
 
+    // Normalize old BuildNinja domain links (baked into CMS content) to the new domain
+    postBody = postBody.replace(/https?:\/\/buildninja\.grapehub\.io/g, 'https://www.buildninja.io');
+
     // Extract FAQ data for JSON-LD schema and convert Wix collapsible-list to native accordion
     const faqData = [];
+    const divToken = /<div\b[^>]*>|<\/div>/gi;
+
+    // Return the outer HTML of the element whose opening tag starts at openIdx,
+    // balanced by counting <div> / </div> tokens (regexes can't count nesting).
+    const extractElement = (html, openIdx) => {
+      divToken.lastIndex = openIdx;
+      let depth = 0;
+      let token;
+      while ((token = divToken.exec(html)) !== null) {
+        if (token[0].charAt(1) === '/') depth -= 1;
+        else depth += 1;
+        if (depth === 0) return html.slice(openIdx, divToken.lastIndex);
+      }
+      return null;
+    };
+
+    const decodeEntities = (text) =>
+      text
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&nbsp;/g, ' ');
+
     postBody = postBody.replace(
-      /<div[^>]*data-hook="collapsible-list-component"[^>]*>[\s\S]*?<div[^>]*type="collapsible_list"[^>]*><\/div>/g,
+      /<div[^>]*data-hook="collapsible-list-component"[^>]*>[\s\S]*?<div[^>]*type="collapsible_list"[^>]*>\s*<\/div>/g,
       (section) => {
-        const items = [...section.matchAll(
-          /<div[^>]*data-hook="collapsible-list-item[^"]*"[^>]*>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/g
-        )];
+        const itemStartRe = /<div\b[^>]*data-hook="collapsible-list-item(?:\s+(?:collapsed|expanded))?"[^>]*>/gi;
+        const items = [];
+        let m;
+        while ((m = itemStartRe.exec(section)) !== null) {
+          const itemHtml = extractElement(section, m.index);
+          if (!itemHtml) continue;
+          items.push(itemHtml);
+          itemStartRe.lastIndex = m.index + itemHtml.length;
+        }
         if (!items.length) return section;
-        const faqItems = items.map(([itemHtml]) => {
-          const titleMatch = itemHtml.match(
-            /data-hook="collapsible-list-item-title"[^>]*>[\s\S]*?<strong[^>]*>[\s\S]*?<span[^>]*>([\s\S]*?)<\/span>/i
-          );
-          const bodyMatch = itemHtml.match(
-            /data-hook="collapsible-list-item-body"[^>]*>[\s\S]*?<p[^>]*>[\s\S]*?<span[^>]*>[\s\S]*?<span[^>]*>([\s\S]*?)<\/span>/i
-          );
-          const question = titleMatch ? titleMatch[1].trim() : '';
-          const answer = bodyMatch ? bodyMatch[1].trim() : '';
+
+        const faqItems = items.map((itemHtml) => {
+          const titleIdx = itemHtml.indexOf('data-hook="collapsible-list-item-title"');
+          const bodyIdx = itemHtml.indexOf('data-hook="collapsible-list-item-body"');
+          let question = '';
+          if (titleIdx !== -1) {
+            const titleDiv = extractElement(itemHtml, itemHtml.lastIndexOf('<div', titleIdx));
+            if (titleDiv) {
+              question = decodeEntities(titleDiv.replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim();
+            }
+          }
+          let answer = '';
+          if (bodyIdx !== -1) {
+            const bodyDiv = extractElement(itemHtml, itemHtml.lastIndexOf('<div', bodyIdx));
+            if (bodyDiv) {
+              answer = bodyDiv
+                .replace(/^<div[^>]*>\s*/, '')
+                .replace(/\s*<\/div>$/, '')
+                .replace(/<div[^>]*>/g, '')
+                .replace(/<\/div>/g, '')
+                .replace(/<p[^>]*>(?:\s*<span[^>]*>){3}/g, '<p>')
+                .replace(/<\/span>(?:\s*<\/span>){2}\s*<\/p>/g, '</p>')
+                .trim();
+              if (!/<p[^>]*>/.test(answer)) {
+                answer = answer
+                  .replace(/^(?:\s*<span[^>]*>){3}/, '')
+                  .replace(/(?:\s*<\/span>){3}\s*$/, '');
+              }
+            }
+          }
           if (!question) return '';
-          faqData.push({ question, answer });
+          faqData.push({ question, answer: answer.replace(/<[^>]*>/g, '') });
           return `<details class="blog-faq-item"><summary>${question}</summary><div class="blog-faq-answer">${answer}</div></details>`;
         }).filter(Boolean).join('\n');
         return `<div class="blog-faq-section">${faqItems}</div>`;

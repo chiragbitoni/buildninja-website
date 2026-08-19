@@ -8,16 +8,16 @@ export const metadata = {
     follow: false,
   },
   alternates: {
-    canonical: "https://buildninja.grapehub.io/landing-page",
+    canonical: "https://www.buildninja.io/landing-page",
   },
   openGraph: {
     title: "DevOps Made Simple - BuildNinja | Landing Page",
     description: "Experience the speed and security of BuildNinja self-hosted CI/CD platform. Standardize your build pipelines and optimize your release cycles today.",
-    url: "https://buildninja.grapehub.io/landing-page",
+    url: "https://www.buildninja.io/landing-page",
     siteName: "BuildNinja",
     images: [
       {
-        url: "https://buildninja.grapehub.io/resources/BuildNinja.png",
+        url: "https://www.buildninja.io/resources/BuildNinja.png",
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD Landing Page",

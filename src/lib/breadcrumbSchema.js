@@ -1,4 +1,4 @@
-const BASE_URL = "https://buildninja.grapehub.io";
+const BASE_URL = "https://www.buildninja.io";
 
 export function generateBreadcrumbSchema(items) {
   return {

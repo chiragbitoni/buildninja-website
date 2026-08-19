@@ -8,7 +8,7 @@ export const metadata = {
     follow: false,
   },
   alternates: {
-    canonical: "https://buildninja.grapehub.io/addtocart",
+    canonical: "https://www.buildninja.io/addtocart",
   },
 };
 

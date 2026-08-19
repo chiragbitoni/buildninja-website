@@ -3,7 +3,7 @@ export const metadata = {
   description: "Access your BuildNinja installation dashboard to configure, manage, and monitor your secure self-hosted CI/CD build environments.",
   keywords: ["BuildNinja dashboard", "CI/CD environment setup", "manage DevOps pipeline", "self-hosted CI/CD configuration"],
   alternates: {
-    canonical: "https://buildninja.grapehub.io/install/dashboard",
+    canonical: "https://www.buildninja.io/install/dashboard",
   },
 };
 

@@ -15,7 +15,7 @@ export const secondSectionText = {
       description:
         "Automatically triggers builds on a schedule or Git events - pushes, merges, branch patterns - with Git Trigger.",
       videoId: "5wFDALkVM0Y",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-triggers",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/configure-build-triggers",
     },
     {
       icon: paths.icons.versioningWhite,
@@ -24,7 +24,7 @@ export const secondSectionText = {
       description:
         "Integrates with Git, GitHub, GitLab, Bitbucket, and others to automate build, test, and deployment workflows.",
       videoId: "YOpVrKIF8wE",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-and-edit-builds",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/configure-and-edit-builds",
     },
     {
       icon: paths.icons.artifactBoxWhite,
@@ -33,7 +33,7 @@ export const secondSectionText = {
       description:
         "Stores build outputs for future deployment or distribution.",
       videoId: "NJHpySRbJNs",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-and-edit-builds",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/configure-and-edit-builds",
     },
     {
       icon: paths.icons.cdsWhite,
@@ -42,7 +42,7 @@ export const secondSectionText = {
       description:
         "Deploy and configure servers and agents on Kubernetes for scalable operations, or use Docker for local setups. Flexible infrastructure management.",
       videoId: "0hL9R4raTaE",
-      link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-with-docker-&-kubernetes/configure-and-deploy-with-docker",
+      link: "https://www.buildninja.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-with-docker-&-kubernetes/configure-and-deploy-with-docker",
     },
     {
       icon: paths.icons.usersWhite,
@@ -51,7 +51,7 @@ export const secondSectionText = {
       description:
         "Manage build agents: authorize, enable/disable, refresh, reset, filter by OS or status.",
       videoId: "MnvaPLguA6c",
-      link: "https://buildninja.grapehub.io/docs/manage-agents/",
+      link: "https://www.buildninja.io/docs/manage-agents/",
     },
     {
       icon: paths.icons.gearWhite,
@@ -60,7 +60,7 @@ export const secondSectionText = {
       description:
         "Specify agent capabilities to ensure builds run on appropriate agents.",
       videoId: "2uUohHVRuWQ",
-      link: "https://buildninja.grapehub.io/docs/manage-agents/",
+      link: "https://www.buildninja.io/docs/manage-agents/",
     },
     {
       icon: paths.icons.chartWhite,
@@ -69,7 +69,7 @@ export const secondSectionText = {
       description:
         "View and filter build metrics with customizable time ranges and auto-refresh.",
       videoId: "Pjl3muKtmhE",
-      link: "https://buildninja.grapehub.io/docs/user-guide/customize-dashboard-view",
+      link: "https://www.buildninja.io/docs/user-guide/customize-dashboard-view",
     },
     {
       icon: paths.icons.clock,
@@ -78,7 +78,7 @@ export const secondSectionText = {
       description:
         "Live logs and dashboards for monitoring builds and deployments.",
       videoId: "DRmi3UzhsO0",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/view-build-results",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/view-build-results",
     },
     {
       icon: paths.icons.emailWhite,
@@ -87,7 +87,7 @@ export const secondSectionText = {
       description:
         "Alerts for key events (registrations, password resets, build results, user approval, rejection, and more). Supports SMTP configuration.",
       videoId: "2OuADSNMEoc",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },
     {
       icon: paths.icons.shield,
@@ -96,7 +96,7 @@ export const secondSectionText = {
       description:
         "Supports multiple SSO providers for streamlined authentication.",
       videoId: "O5-JHWbqzyQ",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-notification-settings",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/configure-build-notification-settings",
     },
 
     {
@@ -106,7 +106,7 @@ export const secondSectionText = {
       description:
         "Execute commands on remote servers directly from your BuildNinja pipelines.",
       videoId: "IOd9CmP6G4c",
-      link: "https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners",
+      link: "https://www.buildninja.io/docs/getting-started/interface-basics#build-runners",
     },
 
     {
@@ -116,7 +116,7 @@ export const secondSectionText = {
       description:
         "Define and manage build variables securely at project and configuration level.",
       videoId: "0FsMkbjgdVk",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/configure-build-parameters",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/configure-build-parameters",
     },
 
     {
@@ -125,7 +125,7 @@ export const secondSectionText = {
       title: "Script Runner",
       description: "Configure and run scripts in any shell environment.",
       videoId: "8TmkgKDmuoE",
-      link: "https://buildninja.grapehub.io/docs/getting-started/interface-basics#build-runners",
+      link: "https://www.buildninja.io/docs/getting-started/interface-basics#build-runners",
     },
 
     {
@@ -135,7 +135,7 @@ export const secondSectionText = {
       description:
         "Create roles, assign permissions, and manage team access at project and system level.",
       videoId: "C-Ln6bbGo2E",
-      link: "https://buildninja.grapehub.io/docs/manage-projects-and-builds/manage-project-and-configuration-access",
+      link: "https://www.buildninja.io/docs/manage-projects-and-builds/manage-project-and-configuration-access",
     },
 
     {
@@ -145,7 +145,7 @@ export const secondSectionText = {
       description:
         "Customize build alerts, user notifications, and system emails.",
       videoId: "6-H-ZIqk8yE",
-      link: "https://buildninja.grapehub.io/docs/administrator-guide/configure-mail-templates/configure-mail-templates",
+      link: "https://www.buildninja.io/docs/administrator-guide/configure-mail-templates/configure-mail-templates",
     },
 
     {
@@ -154,7 +154,7 @@ export const secondSectionText = {
       title: "Unified Installer",
       description: "Installs Server, Agent, and MongoDB in minutes.",
       videoId: "zOW9BCYQkxk",
-      link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows",
+      link: "https://www.buildninja.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows",
     },
     {
       icon: paths.icons.globeWhite,
@@ -163,7 +163,7 @@ export const secondSectionText = {
       description:
         "Manage deployments across dev, staging, and production with environment-specific logic, secrets, and conditions.",
       // videoId: "XLcMnvfpwBw",
-      // link: "https://buildninja.grapehub.io/docs/key-features/",
+      // link: "https://www.buildninja.io/docs/key-features/",
     },
     {
       icon: paths.icons.crossPlatformWhite,
@@ -171,7 +171,7 @@ export const secondSectionText = {
       title: "Cross-Platform Configuration",
       description: "Seamless setup across Windows, Linux, & macOS.",
       // videoId: "XLcMnvfpwBw",
-      // link: "https://buildninja.grapehub.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
+      // link: "https://www.buildninja.io/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows/",
     },
     {
       icon: paths.icons.git,
@@ -179,7 +179,7 @@ export const secondSectionText = {
       title: "Native Git Support",
       description:
         "Includes built-in Git support with intelligent caching for faster builds.",
-      // link: "https://buildninja.grapehub.io/docs/key-features/native-git-support",
+      // link: "https://www.buildninja.io/docs/key-features/native-git-support",
     },
   ],
 };

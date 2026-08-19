@@ -69,7 +69,7 @@ export default function FeatureHero() {
                 videoId: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID, 
                 title: "BuildNinja", 
                 ctaText: "Self Hosted CI/CD That Just Works", 
-                link: "https://buildninja.grapehub.io/docs/category/getting-started" 
+                link: "https://www.buildninja.io/docs/category/getting-started" 
               }))}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

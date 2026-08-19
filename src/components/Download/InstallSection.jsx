@@ -250,7 +250,7 @@ export default function InstallSection({ initialInstallers = null }) {
                 {latestWindows && (
                   <div className={dashboardStyles.osSection}>
                     <h3 className={dashboardStyles.osTitle}>
-                      <FontAwesomeIcon icon={faWindows} /> Windows
+                      <FontAwesomeIcon icon={faWindows} /> Windows Installer
                     </h3>
                     <div className={dashboardStyles.versionInfo}>
                       <span className={dashboardStyles.versionItem}>Version: <b>{latestWindows.version}</b></span>
@@ -286,7 +286,7 @@ export default function InstallSection({ initialInstallers = null }) {
                 {latestLinux && (
                   <div className={dashboardStyles.osSection}>
                     <h3 className={dashboardStyles.osTitle}>
-                      <FontAwesomeIcon icon={faLinux} /> Linux
+                      <FontAwesomeIcon icon={faLinux} /> Linux Distributables
                     </h3>
                     <div className={dashboardStyles.versionInfo}>
                       <span className={dashboardStyles.versionItem}>Server: <b>{latestLinux.serverVersion}</b></span>
@@ -323,7 +323,7 @@ export default function InstallSection({ initialInstallers = null }) {
                 {latestMac && (
                   <div className={dashboardStyles.osSection}>
                     <h3 className={dashboardStyles.osTitle}>
-                      <FontAwesomeIcon icon={faApple} /> macOS
+                      <FontAwesomeIcon icon={faApple} /> macOS Distributables
                     </h3>
                     <div className={dashboardStyles.versionInfo}>
                       <span className={dashboardStyles.versionItem}>Server: <b>{latestMac.serverVersion}</b></span>

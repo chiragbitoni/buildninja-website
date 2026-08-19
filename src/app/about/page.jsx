@@ -5,12 +5,12 @@ export const metadata = {
   title: "About Us | BuildNinja",
   description: "At BuildNinja, we bring together technology, creativity, and collaboration to build powerful DevOps, CI/CD, and software solutions.",
   alternates: {
-    canonical: "https://buildninja.grapehub.io/about",
+    canonical: "https://www.buildninja.io/about",
   },
   openGraph: {
     title: "About Us | BuildNinja",
     description: "At BuildNinja, we bring together technology, creativity, and collaboration to build powerful DevOps, CI/CD, and software solutions.",
-    url: "https://buildninja.grapehub.io/about",
+    url: "https://www.buildninja.io/about",
     siteName: "BuildNinja",
     type: "website",
   },

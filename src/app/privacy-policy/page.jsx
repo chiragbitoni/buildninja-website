@@ -5,12 +5,12 @@ export const metadata = {
   title: "Privacy Policy | BuildNinja",
   description: "Read BuildNinja's Privacy Policy to understand how we collect, use, and protect your personal information while ensuring transparency and data security.",
   alternates: {
-    canonical: "https://buildninja.grapehub.io/privacy-policy",
+    canonical: "https://www.buildninja.io/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | BuildNinja",
     description: "Read BuildNinja's Privacy Policy to understand how we collect, use, and protect your personal information while ensuring transparency and data security.",
-    url: "https://buildninja.grapehub.io/privacy-policy",
+    url: "https://www.buildninja.io/privacy-policy",
     siteName: "BuildNinja",
     type: "website",
   },
