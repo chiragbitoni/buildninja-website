@@ -78,6 +78,7 @@ THE SOFTWARE.
   <li>Create unlimited Build Configurations per Server</li>
   <li>Retain build history for unlimited duration, subject to Licensee's available storage capacity</li>
   <li>Use all 5 SSO integration providers (Microsoft, GitLab, Bitbucket, GitHub, and Google)</li>
+  <li>Receive standard business hours support for the duration of the License Term via email (Monday-Friday, 10 AM - 4 PM IST, excluding Indian public holidays)</li>
 </ul>
 
 <p><strong>(c) General Rights (Both Editions):</strong></p>
@@ -149,9 +150,9 @@ THE SOFTWARE.
 
 <h3>7.2 Pricing Structure</h3>
 <ul class="inline-list-disc">
-  <li>Indian customers receive INR pricing</li>
-  <li>Global customers receive USD pricing</li>
-  <li>Pricing is determined by customer's business location</li>
+<li>Global customers receive quotations, billing, and pricing in USD</li>
+<li>Pricing is determined by customer's billing address location</li>
+<li>Indian customers will be quoted INR pricing based on the customer's billing address location, and will see pricing displayed in INR converted from USD using the applicable foreign exchange rate published on the <a href="https://foservices.icegate.gov.in/#/services/notifyPublishScreen" target="_blank" rel="noopener noreferrer">Indian Customs ICEGATE website</a></li>
 </ul>
 
 <h3>7.3 License Compliance and Overuse</h3>
