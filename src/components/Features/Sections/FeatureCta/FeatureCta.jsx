@@ -26,7 +26,7 @@ export default function FeatureCta() {
           </h2>
 
           <p className={styles.subtitle}>
-            Get BuildNinja running in your environment in under 15 minutes.
+            Get BuildNinja running in your environment in 5 minutes.
             Self-hosted, fully private, no vendor lock-in.
           </p>
 
@@ -53,7 +53,7 @@ export default function FeatureCta() {
           <div className={styles.miniStats}>
             <div className={styles.miniStat}>
               <span className={styles.miniStatValue}>5 min</span>
-              <span className={styles.miniStatLabel}>Setup Time</span>
+              <span className={styles.miniStatLabel}>Deploy Time</span>
             </div>
             <div className={styles.miniStat}>
               <span className={styles.miniStatValue}>Self-hosted</span>

@@ -241,7 +241,7 @@ export const pricingSeventhText = {
 export const pricingEighthText = {
   title: "DevOps Made Simple. Get Started.",
   subtitle:
-    "Reduce DevOps costs, automate software deployments, and launch production-ready build pipelines in under 15 minutes.",
+    "Reduce DevOps costs, automate software deployments, and launch production-ready build pipelines in 5 minutes.",
   enterprise: {
     title: "Enterprise Edition",
     description: "High availability, custom SLAs, and dedicated deployments for teams that need them.",
@@ -261,7 +261,7 @@ export const pricingEighthText = {
     "Free forever - Growth Edition",
     "{{paidPlanMonthlyPrice}} unlimited",
     "30-day trial license",
-    "15-minute setup",
+    "5-minute deploy",
     "Self-hosted control",
     "Email support",
   ],
