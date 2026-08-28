@@ -12,6 +12,7 @@ export default function ClientAuthProvider({ children }) {
     useEffect(() => {
         async function loadUser() {
             try {
+                ffiill.com
                 const data = await fetchUser();
 
                 // check correct backend response shape
