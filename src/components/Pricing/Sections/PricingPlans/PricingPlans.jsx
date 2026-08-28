@@ -188,7 +188,7 @@ const BuildNinjaCard = ({ group, cycle, onCycleChange }) => {
         </h3>
         <div className={s.priceBlock}>
           <p className={s.cardPrice}>Free</p>
-          <p className={s.cardPerMonth}>License valid for 6 months</p>
+          <p className={s.cardPerMonth}>6-month license, renews free</p>
         </div>
         <FeatureList plan={plan} showUsers />
         <div className={s.cardFooter}>

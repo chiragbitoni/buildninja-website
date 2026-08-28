@@ -5,10 +5,10 @@ export const heroSectionText = {
   title2: "That Just Works Out of the Box",
   subtitle:
     "Growing teams waste time on complex CI/CD tools and per-seat pricing",
-  subtitle2: "Start free up to 3 build slots • Enterprise scale as you grow",
-  subtitle3: "Deploy in minutes. Ship features, not infrastructure.",
+  subtitle2: "Start free: 10 users, 10 agents, 10 configs • Shogun scales unlimited",
+  subtitle3: "Deploy in 5 minutes. Ship features, not infrastructure.",
   primaryButton: "Get started",
-  secondaryButton: "Watch 3-min demo",
+  secondaryButton: "Watch demo",
 };
 
 export const secondSectionText = {
@@ -293,11 +293,11 @@ export const seventhSectionText = {
     "Own your infrastructure with self-hosted control. Lead your competition deploying faster with reliable tools.",
   card1: {
     title: "Free",
-    description: "Up to 3 Agents",
+    description: "Up to 10 Agents",
   },
   card2: {
-    title: "5min",
-    description: "Setup Time",
+    title: "5 min",
+    description: "Deploy Time",
   },
   card3: {
     title: "Unlimited",
@@ -341,6 +341,6 @@ export const homeFaqs = [
   { q: "Is BuildNinja suitable for HIPAA or financial compliance requirements?", a: "BuildNinja's self-hosted architecture means your build data and source code never touch a third-party cloud. This makes it well-suited for teams in regulated industries - healthcare, finance, defence, government - where data sovereignty and on-premise processing requirements are mandated. Combined with AES-256 encryption for secrets, role-based access control, and SSO support, BuildNinja provides the security infrastructure that compliance-sensitive teams require." },
   { q: "What are the minimum server requirements to run BuildNinja?", a: "BuildNinja runs on any modern Linux, Windows, or macOS server with Docker installed. For small teams running up to 50 builds per day, a 2 vCPU / 4 GB RAM server is sufficient. For teams running 200+ builds per day with parallel execution, an 8 vCPU / 16 GB RAM server is recommended. BuildNinja's agent architecture lets you distribute build load across multiple machines as your team grows." },
   { q: "What happens to my price when my team grows?", a: "Nothing to your BuildNinja price. Add 10 or 100 developers, your price stays the same - we never charge per seat. The free Growth Edition covers up to 10 users, 10 projects, 10 build configurations, and 10 build agents; Shogun removes all limits." },
-  { q: "Do I need a DevOps engineer to set up BuildNinja?", a: "No. Engineer may set up BuildNinja in under 15 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables." },
+  { q: "Do I need a DevOps engineer to set up BuildNinja?", a: "No. Any engineer can set up BuildNinja in under 5 minutes. The Unified Installer handles server, agent, and database on Windows. Docker users pull one image and configure with environment variables." },
   { q: "Does it support macOS / Apple Silicon?", a: "Yes. Full support for Apple Silicon (M-series) on both Server and Agent. You can run builds natively on your Mac infrastructure." },
 ];

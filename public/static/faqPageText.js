@@ -69,7 +69,7 @@ export const thirdSectionText = {
           id: "installation-time",
           question: "How long does it take to install BuildNinja?",
           answer:
-            "Installation typically takes under 15 minutes. For Windows, download the executable and run the installer wizard. For Docker deployments, pull the official image and configure environment variables. Our installation guide provides step-by-step instructions for all platforms.",
+            "Deploy in 5 minutes with one Docker command. For Windows, download the executable and run the installer wizard. For Docker deployments, pull the official image and configure environment variables. Our installation guide provides step-by-step instructions for all platforms.",
         },
         {
           id: "system-requirements",

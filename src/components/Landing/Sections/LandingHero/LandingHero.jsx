@@ -205,7 +205,7 @@ export default function LandingHero() {
 
                     <motion.p className={s.subtitle} variants={itemVariants}>
                         Self-hosted CI/CD that just works out of the box.
-                        Deploy in minutes. Ship features, not infrastructure.
+                        Deploy in 5 minutes. Ship features, not infrastructure.
                     </motion.p>
 
                     <div className={s.stats}>
