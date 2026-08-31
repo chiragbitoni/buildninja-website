@@ -89,7 +89,7 @@ export default async function Pricing() {
     "offers": plans.map((plan) => ({
       "@type": "Offer",
       "name": `${name} Edition (${plan.billingCycle})`,
-      "price": Number(plan.price).toFixed(2),
+      "price": Math.floor(Number(plan.price)),
       "priceCurrency": ["USD", "INR"].includes(plan.currency) ? plan.currency : "USD",
       "availability": "https://schema.org/InStock",
       "url": `${env.MY_ACCOUNT}/order?planId=${plan.id}`,

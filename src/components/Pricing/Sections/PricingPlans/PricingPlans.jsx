@@ -59,10 +59,10 @@ const formatMoney = (value, currency) => {
     return new Intl.NumberFormat(currency === "INR" ? "en-IN" : "en-US", {
       style: "currency",
       currency: ["USD", "INR"].includes(currency) ? currency : "USD",
-      maximumFractionDigits: 2,
+      maximumFractionDigits: 0,
     }).format(num);
   } catch {
-    return `$${num.toFixed(2)}`;
+    return `$${Math.floor(num)}`;
   }
 };
 

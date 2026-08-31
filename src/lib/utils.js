@@ -18,7 +18,7 @@ export const formatUsd = (value) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    maximumFractionDigits: 2,
+    maximumFractionDigits: 0,
   }).format(Number(value) || 0);
 
 export function sortBy(arr, keySelector, order = "asc") {
