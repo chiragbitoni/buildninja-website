@@ -103,7 +103,7 @@
 .cf-animated-heading .cf-heading-line { color:var(--ink); background:none!important; -webkit-text-fill-color:var(--ink); }
 .cf-heading-line>span,.cf-heading-emphasis>span { display:inline-block; margin-right:.18em; animation:cf-word-enter 800ms cubic-bezier(.2,.8,.2,1) both; animation-delay:var(--word-delay); }
 .cf-heading-line>span:last-child,.cf-heading-emphasis>span:last-child { margin-right:0; }
-.cf-animated-heading .cf-heading-emphasis { background:linear-gradient(110deg,#75a9ff,#16bcec 40%,#66c5ff 60%,#75a9ff); background-size:200% 100%; background-clip:text; -webkit-text-fill-color:transparent; animation:cf-gradient-travel 9s ease infinite; }
+.cf-animated-heading .cf-heading-emphasis { color:var(--coral); background:none; -webkit-background-clip:border-box; background-clip:border-box; -webkit-text-fill-color:var(--coral); }
 .cf-centered.reveal-pending:not(.is-revealed) .cf-animated-heading span>span { animation-play-state:paused; }
 .cf-hero-copy>.cf-announcement { animation:cf-panel-enter .6s ease both; }
 .cf-hero-copy>p { animation:cf-panel-enter .7s .28s ease both; }.cf-hero-actions { animation:cf-panel-enter .7s .4s ease both; }.cf-hero-proof { animation:cf-panel-enter .7s .53s ease both; }
