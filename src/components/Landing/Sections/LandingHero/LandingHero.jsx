@@ -2,20 +2,16 @@
 import { useState, useEffect, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Check, Play, Sparkles } from "lucide-react";
 import { sendLeadEmail } from "@/services/email/sendEmail";
 import posthog from "posthog-js";
 import 'react-international-phone/style.css'
 import { PhoneInput } from 'react-international-phone'
-import { siteConfig } from "@/config/site";
-import { useRouter, useSearchParams } from "next/navigation";
-import s from "./LandingHero.module.css";
+import s from "./LandingHeroRedesign.module.css";
 
 export default function LandingHero() {
-    const router = useRouter();
     const hasStartedRef = useRef(false);
-    const formRef = useRef(null);
-    const orb1 = useRef(null);
-    const orb2 = useRef(null);
 
     const [loading, setLoading] = useState(false);
     const [captchaToken, setCaptchaToken] = useState(null);
@@ -27,23 +23,6 @@ export default function LandingHero() {
         teamSize: "",
         countryCode: "+1",
     });
-
-    // Background animation
-    useEffect(() => {
-        let t = 0;
-        const tick = () => {
-            t += 0.003;
-            if (orb1.current) {
-                orb1.current.style.transform = `translate(${Math.sin(t) * 40}px, ${Math.cos(t * 0.8) * 50}px)`;
-            }
-            if (orb2.current) {
-                orb2.current.style.transform = `translate(${Math.cos(t * 0.7) * 45}px, ${Math.sin(t * 1.2) * 35}px)`;
-            }
-            requestAnimationFrame(tick);
-        };
-        const id = requestAnimationFrame(tick);
-        return () => cancelAnimationFrame(id);
-    }, []);
 
     // UTM and PH setup
     useEffect(() => {
@@ -142,22 +121,11 @@ export default function LandingHero() {
         }
     };
 
+    const [isFormFirst, setIsFormFirst] = useState(false);
+
     useEffect(() => {
-        const el = formRef.current;
-        if (!el) return;
-
-        const handleMouseMove = (e) => {
-            const rect = el.getBoundingClientRect();
-            el.style.setProperty("--x", `${e.clientX - rect.left}px`);
-            el.style.setProperty("--y", `${e.clientY - rect.top}px`);
-        };
-
-        el.addEventListener("mousemove", handleMouseMove);
-        return () => el.removeEventListener("mousemove", handleMouseMove);
+        setIsFormFirst(new URLSearchParams(window.location.search).get("form") === "first");
     }, []);
-
-    const searchParams = useSearchParams();
-    const isFormFirst = searchParams.get("form") === "first";
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -174,10 +142,6 @@ export default function LandingHero() {
 
     return (
         <section className={`${s.section} ${isFormFirst ? s.formFirst : ""}`}>
-            <div ref={orb1} className={s.orb1} />
-            <div ref={orb2} className={s.orb2} />
-            <div className={s.grid} />
-
             <div className={s.container}>
                 {/* LEFT CONTENT */}
                 <motion.div
@@ -187,58 +151,49 @@ export default function LandingHero() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <motion.div
-                        className={s.badge}
-                        variants={itemVariants}
-                        onClick={() => { router.push("/install"); }}
-                        data-cursor-grow
-                    >
+                    <motion.div className={s.badge} variants={itemVariants}>
                         <span className={s.badgeDot} />
-                        <span className={s.badgeFull}>{siteConfig.version} is Live </span>
-                        <span className={s.badgeMobile}>{siteConfig.version} is Live </span>
+                        <span>SELF-HOSTED CI/CD · KENZOAI BUILD INSIGHTS</span>
                     </motion.div>
 
-                    <motion.h2 className={s.title} variants={itemVariants}>
-                        Stop Fighting <br />
-                        <span>Your CI/CD Tool</span>
-                    </motion.h2>
+                    <motion.h1 className={s.title} variants={itemVariants}>
+                        Make every build easier to <span>understand.</span>
+                    </motion.h1>
 
                     <motion.p className={s.subtitle} variants={itemVariants}>
-                        Self-hosted CI/CD that just works out of the box.
-                        Deploy in 5 minutes. Ship features, not infrastructure.
+                        Automate pipelines, keep build results and changes together, and use kenzoAI for contextual build insights — on infrastructure you manage.
                     </motion.p>
 
-                    <div className={s.stats}>
-                        {[
-                            { label: "Build Agents (Growth)", value: "10" },
-                            { label: "Concurrent Builds (Growth)", value: "10" },
-                            { label: "Shogun Edition", value: "Unlimited" }
-                        ].map((stat, i) => (
-                            <motion.div
-                                className={s.statCard}
-                                key={i}
-                                variants={itemVariants}
-                            >
-                                <strong>{stat.value}</strong>
-                                <span>{stat.label}</span>
-                            </motion.div>
-                        ))}
+                    <motion.div className={s.actions} variants={itemVariants}>
+                        <Link href="/install" className={s.primaryAction}>
+                            Explore installation <ArrowRight size={15} aria-hidden="true" />
+                        </Link>
+                        <Link href="/dojo" className={s.secondaryAction}>
+                            <Play size={13} aria-hidden="true" /> Try the live sandbox
+                        </Link>
+                    </motion.div>
+
+                    <div className={s.proof}>
+                        <span><Check size={13} aria-hidden="true" /> Self-hosted control</span>
+                        <span><Check size={13} aria-hidden="true" /> Free Growth edition</span>
+                        <span><Sparkles size={13} aria-hidden="true" /> kenzoAI insights</span>
                     </div>
                 </motion.div>
 
                 {/* RIGHT FORM */}
                 <motion.div
                     className={s.right}
-                    ref={formRef}
+                    id="landing-consultation"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
                     <div className={s.formContent}>
-                        <h3 className={s.formTitle}>Get Started</h3>
+                        <p className={s.formEyebrow}>LET’S TALK BUILDNINJA</p>
+                        <h2 className={s.formTitle}>Talk through your CI/CD setup.</h2>
                         <p className={s.formSubtitle}>
-                            Fill out the form and we’ll help you get set up instantly.
+                            Tell us a little about your team. We’ll help you explore a BuildNinja workflow that fits.
                         </p>
 
                         <form className={s.form} onSubmit={handleSubmit}>
@@ -319,7 +274,7 @@ export default function LandingHero() {
                             <div className="captcha-container">
                                 <div className="captcha-inner">
                                     <ReCAPTCHA
-                                        theme="dark"
+                                        theme="light"
                                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                                         onChange={(token) => {
                                             setCaptchaToken(token);
@@ -336,7 +291,7 @@ export default function LandingHero() {
                                 className={s.submit}
                                 disabled={loading}
                             >
-                                {loading ? "Submitting..." : "Submit Request"}
+                                {loading ? "Sending request…" : "Request a conversation"}
                             </button>
                         </form>
                     </div>

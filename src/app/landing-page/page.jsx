@@ -1,9 +1,8 @@
 import LandingPage from "./LandingPage";
-import { fetchActivePlansForBuild } from "@/services/plans/plans";
 
 export const metadata = {
-  title: { absolute: "DevOps Made Simple - BuildNinja | Landing Page" },
-  description: "Experience the speed and security of BuildNinja self-hosted CI/CD platform. Standardize your build pipelines and optimize your release cycles today.",
+  title: { absolute: "Self-Hosted CI/CD with kenzoAI | BuildNinja" },
+  description: "Explore BuildNinja: self-hosted CI/CD for pipeline automation and build visibility, with kenzoAI insights for logs, configurations, and code changes.",
   robots: {
     index: false,
     follow: false,
@@ -12,8 +11,8 @@ export const metadata = {
     canonical: "https://www.buildninja.io/landing-page",
   },
   openGraph: {
-    title: "DevOps Made Simple - BuildNinja | Landing Page",
-    description: "Experience the speed and security of BuildNinja self-hosted CI/CD platform. Standardize your build pipelines and optimize your release cycles today.",
+    title: "Self-Hosted CI/CD with kenzoAI | BuildNinja",
+    description: "Explore BuildNinja: self-hosted CI/CD for pipeline automation and build visibility, with kenzoAI insights for logs, configurations, and code changes.",
     url: "https://www.buildninja.io/landing-page",
     siteName: "BuildNinja",
     images: [
@@ -21,14 +20,13 @@ export const metadata = {
         url: "https://www.buildninja.io/resources/BuildNinja.png",
         width: 1200,
         height: 630,
-        alt: "BuildNinja CI/CD Landing Page",
+        alt: "BuildNinja self-hosted CI/CD with kenzoAI",
       },
     ],
     type: "website",
   },
 };
 
-export default async function Landing() {
-  const plansData = await fetchActivePlansForBuild();
-  return <LandingPage plansData={plansData} />;
+export default function Landing() {
+  return <LandingPage />;
 }
