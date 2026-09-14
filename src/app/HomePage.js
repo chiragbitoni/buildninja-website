@@ -2,6 +2,6 @@
 
 import { MarketingHome } from "../components/MarketingSite/app/home-page";
 
-export default function HomePage() {
-  return <MarketingHome />;
+export default function HomePage({ plansData }) {
+  return <MarketingHome plansData={plansData} />;
 }

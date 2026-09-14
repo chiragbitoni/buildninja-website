@@ -113,10 +113,8 @@
 /* Pricing uses a restrained Aceternity-style glow and a denser comparison stage. */
 .marketing-site .pricing-glow-card { position:relative; isolation:isolate; overflow:hidden; }
 .marketing-site .pricing-glow-card>*:not(.glow) { position:relative; z-index:1; }
-.marketing-site .pricing-glow-card>.edition-grape-mark { position:absolute; inset:27px 27px auto auto; width:52px; height:52px; display:grid; place-items:center; border:1px solid color-mix(in srgb,currentColor 24%,var(--line)); border-radius:12px; box-shadow:0 8px 22px #17384a0d; }
+.marketing-site .pricing-glow-card>.edition-grape-mark { position:absolute; inset:27px 27px auto auto; width:52px; height:52px; display:grid; place-items:center; background:transparent; border:0; box-shadow:none; }
 .marketing-site .edition-grape-mark svg { width:31px; height:31px; }
-.marketing-site .edition-grape-mark.growth { color:#4f7df0; background:linear-gradient(145deg,#edf3ff,var(--surface)); }
-.marketing-site .edition-grape-mark.shogun { color:#f07d64; background:linear-gradient(145deg,#fff0ed,var(--surface)); }
 .marketing-site .edition-cards>article,.marketing-site .credit-card,.marketing-site .included-grid>article { transition:transform 180ms ease,border-color 180ms ease,box-shadow 180ms ease; }
 .marketing-site .edition-cards>article:hover,.marketing-site .credit-card:hover,.marketing-site .included-grid>article:hover { transform:translateY(-2px); border-color:color-mix(in srgb,var(--cf-blue) 38%,var(--line)); box-shadow:0 16px 40px #17384a0d; }
 .marketing-site .included-grid { gap:14px; }

@@ -2,12 +2,67 @@ import { formatUsd } from "@/lib/utils";
 
 export const PlanProduct = {
   BuildNinja: "BuildNinja",
+  KenzoAI: "KenzoAI",
 };
+
+export function getPlanOrderUrl(plan, accountUrl) {
+  const baseUrl = (accountUrl || "https://myaccount.grapehub.io").replace(/\/+$/, "");
+  return plan?.id
+    ? `${baseUrl}/order?planId=${encodeURIComponent(plan.id)}`
+    : baseUrl;
+}
+
+export function formatPlanPrice(plan) {
+  const price = Number(plan?.price);
+  if (!Number.isFinite(price)) return "Price shown at checkout";
+
+  const currency = plan?.currency || "USD";
+  try {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency,
+    }).format(price);
+  } catch {
+    return `${price.toLocaleString("en-US")} ${currency}`;
+  }
+}
+
+export function getPlanFeature(plan, featureName) {
+  const normalizedName = String(featureName || "").trim().toLowerCase();
+  return (Array.isArray(plan?.features) ? plan.features : []).find(
+    (feature) => String(feature.featureName || "").trim().toLowerCase() === normalizedName
+  );
+}
+
+export function describeKenzoPlans(plans) {
+  if (!Array.isArray(plans) || plans.length === 0) {
+    return "KenzoAI credit plans are not currently available.";
+  }
+
+  const planDescriptions = plans.map((plan) => {
+    const creditFeature = getPlanFeature(plan, "credits");
+    const credits = Number(creditFeature?.value);
+    const creditDescription = Number.isFinite(credits)
+      ? `, ${credits.toLocaleString("en-US")} credits`
+      : "";
+    const price = Number(plan.price) === 0 ? "free" : formatPlanPrice(plan);
+    return `${plan.name}: ${price}${creditDescription}`;
+  });
+
+  const hasFreePlan = plans.some((plan) => Number(plan.price) === 0);
+  const hasPaidPlans = plans.some((plan) => Number(plan.price) > 0);
+  const purchaseTerms = [
+    hasFreePlan ? "Eligible users can claim a free plan once" : null,
+    hasPaidPlans ? "paid top-ups can be purchased repeatedly and add credits to the account balance" : null,
+  ].filter(Boolean);
+
+  return `${planDescriptions.join("; ")}.${purchaseTerms.length ? ` ${purchaseTerms.join("; ")}.` : ""}`;
+}
 
 export async function fetchPlansFromAPI() {
   try {
     const url =
-      process.env.NEXT_PUBLIC_USR_SVC_URL.trimEnd('/') +
+      process.env.NEXT_PUBLIC_USR_SVC_URL.replace(/\/+$/, "") +
       "/api/Subscription/plans?source=1";
 
     const res = await fetch(url, {
@@ -39,12 +94,16 @@ export function filterActivePlans(plans) {
   );
 }
 
-// Group active plans by product name (BuildNinja)
+// Group active plans by each product they belong to.
 export function groupPlansByProduct(plans) {
   return (Array.isArray(plans) ? plans : []).reduce((acc, plan) => {
     (plan.products || []).forEach((product) => {
-      if (product.name === PlanProduct.BuildNinja) {
-        (acc[product.name] = acc[product.name] || []).push(plan);
+      const productName = String(product?.name || "").trim();
+      if (!productName) return;
+
+      const productPlans = (acc[productName] = acc[productName] || []);
+      if (!productPlans.some((existingPlan) => existingPlan.id === plan.id)) {
+        productPlans.push(plan);
       }
     });
     return acc;
@@ -176,7 +235,7 @@ export const describeShogunBilling = (plans) => {
 };
 
 const PLANS_URL = () =>
-  `${process.env.NEXT_PUBLIC_USR_SVC_URL.trimEnd('/')}/api/Subscription/plans?source=1`;
+  `${process.env.NEXT_PUBLIC_USR_SVC_URL.replace(/\/+$/, "")}/api/Subscription/plans?source=1`;
 
 // Build-time fetch. Throws so `next build` fails when plans cannot be
 // fetched - the pricing page must never ship without live plan data.

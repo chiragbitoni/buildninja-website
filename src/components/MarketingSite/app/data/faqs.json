@@ -171,7 +171,7 @@
       {
         "id": "pricing-overview",
         "question": "How much does BuildNinja cost?",
-        "answer": "Growth is free and uses a license key you can regenerate at no charge when its term expires. Shogun costs $199 for one month, $1,599 for one year, $2,499 for two years, or $3,199 for three years. Each Shogun price is a one-time license payment, not a per-seat charge. BuildNinja comes with AI; the separate prepaid packs are $10 for 2.5 million, $25 for 7 million, and $50 for 15 million credits. Prices are in USD before applicable taxes.",
+        "answer": "Growth is free and uses a license key you can regenerate at no charge when its term expires. Shogun costs $199 for one month, $1,599 for one year, $2,499 for two years, or $3,199 for three years. Each Shogun price is a one-time license payment, not a per-seat charge. BuildNinja comes with AI; KenzoAI credit plan prices and allowances are shown on the pricing page.",
         "source": "existing"
       },
       {
@@ -213,13 +213,13 @@
       {
         "id": "how-many-free-ai-credits-can-i-claim",
         "question": "How many free AI credits can I claim?",
-        "answer": "Eligible new GrapeHub accounts can claim 500,000 credits once, subject to eligibility and allowance availability. No payment card is required to claim.",
+        "answer": "The free KenzoAI plan and its current credit allowance are shown on the pricing page. Eligible users can claim it once, subject to eligibility and plan availability.",
         "source": "launch"
       },
       {
         "id": "what-credit-packs-are-available",
         "question": "What credit packs are available?",
-        "answer": "The USD packs are $10 for 2.5 million credits, $25 for 7 million, and $50 for 15 million. For larger volumes, contact our team about a custom credit allocation. Prices are before applicable taxes.",
+        "answer": "Current KenzoAI plans, prices, and credit allowances are shown on the pricing page. Paid top-ups can be purchased more than once and add credits to your account balance. Contact our team about a custom credit allocation.",
         "source": "launch"
       },
       {

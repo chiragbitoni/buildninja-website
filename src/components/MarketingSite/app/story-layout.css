@@ -75,7 +75,7 @@
 /* AI sits inside the product workflow, with readable source and response. */
 .ai-story>.section { padding:76px 0 0; }
 .ai-story .section-heading { padding-inline:28px; }
-.ai-story .ai-explorer { display:grid; grid-template-columns:minmax(240px,.85fr) minmax(0,2fr); margin-top:52px; border-inline:0; border-bottom:0; border-radius:0; overflow:visible; }
+.ai-story .ai-explorer { display:grid; grid-template-columns:minmax(240px,.85fr) minmax(0,2fr); margin-top:52px; border:0; border-radius:0; background:transparent; overflow:visible; }
 .ai-story-controls { border-right:1px solid var(--line); padding-top:0; }
 .ai-story-intro { padding:0 30px 30px; }
 .ai-story-intro h3 { margin:18px 0; }

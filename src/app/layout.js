@@ -1,7 +1,6 @@
 import { DM_Mono, Inter } from "next/font/google";
 import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import { ReduxProvider } from "@/redux/ReduxProvider";
-import { paths } from "../../public/static/paths";
 import ClientAuthProvider from "./ClientAuthProvider";
 import GoogleAnalytics from "../components/Analytics/GA";
 import PHProviderWrapper from "../components/Analytics/Providers";
@@ -22,7 +21,6 @@ import "../components/MarketingSite/app/developer-page.css";
 import "react-international-phone/style.css";
 import "./site-theme.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import DynamicFavicon from "@/components/DynamicFavicon";
 import SchemaScript from "@/components/SchemaScript";
 import SiteFrame from "./SiteFrame";
 
@@ -75,10 +73,6 @@ export const metadata = {
   },
   description:
     "Optimize your DevOps workflow with Build Ninja integrates with GitHub,GitLab & Bitbucket. Deploy in minutes without complexity.Jenkins Alternative Try free today",
-
-  icons: {
-    icon: paths.icons.favicon,
-  },
 
   openGraph: {
     title: "BuildNinja – Self hosted CI/CD platform",
@@ -138,7 +132,6 @@ export default async function RootLayout({ children }) {
           <PosthogWrapper />
           <ReduxProvider>
             <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
-              <DynamicFavicon />
               <ClientAuthProvider>
                 <SiteFrame blogPosts={blogPosts}>
                   {children}

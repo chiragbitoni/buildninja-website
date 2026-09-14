@@ -1,4 +1,5 @@
 import LandingPage from "./LandingPage";
+import { fetchActivePlansForBuild } from "@/services/plans/plans";
 
 export const metadata = {
   title: { absolute: "DevOps Made Simple - BuildNinja | Landing Page" },
@@ -27,6 +28,7 @@ export const metadata = {
   },
 };
 
-export default function Landing() {
-  return <LandingPage />;
+export default async function Landing() {
+  const plansData = await fetchActivePlansForBuild();
+  return <LandingPage plansData={plansData} />;
 }

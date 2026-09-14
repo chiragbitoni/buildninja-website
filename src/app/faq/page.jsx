@@ -71,7 +71,7 @@ export default async function Faq() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
-            <MarketingFAQPage />
+            <MarketingFAQPage plansData={plansData} />
         </>
     );
 }

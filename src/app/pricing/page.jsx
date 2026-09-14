@@ -5,6 +5,7 @@ import {
   findPaidMonthlyPlan,
   findFreePlan,
   describeFreePlanFeatures,
+  getPlanOrderUrl,
 } from "@/services/plans/plans";
 import { env } from "@/lib/config/env";
 import { formatUsd } from "@/lib/utils";
@@ -53,6 +54,7 @@ export default async function Pricing() {
   const plansData = await fetchActivePlansForBuild();
 
   const bnPlans = plansData?.byProduct?.BuildNinja || [];
+  const kenzoPlans = plansData?.byProduct?.KenzoAI || [];
   const paidMonthly = findPaidMonthlyPlan(bnPlans);
   const paidPriceText = paidMonthly ? `${formatUsd(paidMonthly.price)}/month` : "no per-seat costs";
   const freePlanText = describeFreePlanFeatures(findFreePlan(bnPlans)) ?? "all the core features";
@@ -96,9 +98,25 @@ export default async function Pricing() {
     })),
   }));
 
+  const kenzoProductSchemas = kenzoPlans.length ? [{
+    "@type": "Product",
+    "@id": "https://www.buildninja.io/pricing#product-kenzoai-credits",
+    "name": "KenzoAI Credits",
+    "description": "Free and paid KenzoAI credit top-ups added to the user's account balance.",
+    "brand": { "@type": "Brand", "name": "KenzoAI" },
+    "offers": kenzoPlans.map((plan) => ({
+      "@type": "Offer",
+      "name": plan.name,
+      "price": Number(plan.price),
+      "priceCurrency": plan.currency || "USD",
+      "availability": "https://schema.org/InStock",
+      "url": getPlanOrderUrl(plan, env.MY_ACCOUNT),
+    })),
+  }] : [];
+
   const schema = {
     "@context": "https://schema.org",
-    "@graph": [faqSchema, ...productSchemas],
+    "@graph": [faqSchema, ...productSchemas, ...kenzoProductSchemas],
   };
 
   return (

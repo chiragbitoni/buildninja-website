@@ -1,7 +1,7 @@
 export const paths = {
   root: "/resources/icons/",
   icons: {
-    favicon: "/resources/Favicon/favicon.png",
+    favicon: "/icon.png",
     agentManagement: "/resources/icons/AgentManagement.svg",
     nintyNine: "/resources/icons/nintyNine.svg",
     fiveHundredPlus: "/resources/icons/500+.svg",

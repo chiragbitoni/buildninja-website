@@ -1,5 +1,6 @@
 import HomePage from "./HomePage";
 import { homeFaqs } from "../../public/static/homePageText";
+import { fetchActivePlansForBuild } from "@/services/plans/plans";
 
 export const metadata = {
   title: { absolute: "Build Ninja | Self-Hosted CI/CD Platform for Seamless DevOps" },
@@ -25,7 +26,8 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const plansData = await fetchActivePlansForBuild();
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -45,7 +47,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <HomePage />
+      <HomePage plansData={plansData} />
     </>
   );
 }

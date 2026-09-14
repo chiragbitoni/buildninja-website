@@ -1,7 +1,6 @@
 ﻿'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import s from './BuildNinjaDemo.module.css';
-import { useTheme } from 'next-themes';
 import {
   BUILDS, SUCCESS_CONFIGS, TOP5_CONFIGS, AGENT_TREEMAP,
   AGENTS, SIDEBAR_TREE, PROJECT,
@@ -108,18 +107,10 @@ const Ic = {
 };
 
 const BnLogo = () => {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  const src = (mounted && resolvedTheme === "light")
-    ? "/resources/Favicon/favicon.png"
-    : "/resources/Favicon/faviconWhite.png";
-
   return (
     <div style={{ padding: 2 }}>
       <Image
-        src={src}
+        src="/icon.png"
         width={24}
         height={24}
         alt="BuildNinja Logo"
