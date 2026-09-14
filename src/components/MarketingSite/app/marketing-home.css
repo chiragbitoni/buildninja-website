@@ -6,7 +6,7 @@
 .marketing-site .aceternity-nav { width:100%!important; transform:none!important; border-radius:0!important; box-shadow:none!important; padding-inline:35px; }
 .marketing-site .navigation { gap:23px; font-size:13px; }.marketing-site .nav-account { font-size:11px; }
 .marketing-site .button { background:var(--plum); border:1px solid var(--plum); color:#fff; border-radius:99px; box-shadow:0 3px 8px #30182118; font-size:13px; font-weight:500; min-height:45px; padding-inline:23px; transition:background-color 180ms,border-color 180ms,box-shadow 180ms,transform 180ms; }
-.marketing-site .button>svg { color:var(--cf-bright); }
+.marketing-site .button>svg { color:currentColor; }
 .marketing-site .button:hover { transform:translateY(-1px); box-shadow:0 6px 16px #30182122; background:#4a2b37; border-color:#4a2b37; }
 .dark .marketing-site .button { background:#f2e9ec; border-color:#f2e9ec; color:#24171d; }.dark .marketing-site .button:hover { background:#fff; border-color:#fff; }
 .marketing-site .button-secondary { background:var(--surface); border-color:var(--line); box-shadow:0 1px 2px #00000004; color:var(--ink); }.marketing-site .button-secondary>svg { color:var(--muted); }.marketing-site .button-secondary:hover { background:var(--soft); border-color:var(--line); }
