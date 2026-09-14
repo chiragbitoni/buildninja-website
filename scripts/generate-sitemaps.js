@@ -4,7 +4,6 @@ const path = require('path');
 async function generateSitemaps() {
   const baseUrl = "https://www.buildninja.io";
   const grapehubUrl = "https://www.grapehub.io";
-  const stableStaticDate = "2026-05-21T06:00:00.000Z";
 
   console.log("Generating sitemap.xml...");
 
@@ -46,7 +45,9 @@ async function generateSitemaps() {
             if (posts && Array.isArray(posts)) {
               blogPosts = posts.map(post => ({
                 slug: post.slug,
-                lastPublishedDate: post.lastPublishedDate ? new Date(post.lastPublishedDate).toISOString() : stableStaticDate
+                lastPublishedDate: post.lastPublishedDate && Number.isFinite(Date.parse(post.lastPublishedDate))
+                  ? new Date(post.lastPublishedDate).toISOString()
+                  : undefined
               }));
               break;
             }
@@ -80,12 +81,17 @@ async function generateSitemaps() {
     "/compare/buildninja-vs-circleci",
     "/compare/buildninja-vs-jenkins",
     "/compare/buildninja-vs-teamcity",
-    "/install"
+    "/install",
+    "/kenzo-ai",
+    "/kenzo-ai-portal",
+    "/resources",
+    "/release-notes/ai-built-in",
+    "/kenzo-ai-terms",
+    "/kenzo-ai-data-policy"
   ];
 
   const items = staticRoutes.map((route) => ({
     loc: `${baseUrl}${route}`,
-    lastmod: stableStaticDate,
     changefreq: "weekly",
     priority: route === "" ? "1.0" : "0.7",
   }));
@@ -94,7 +100,7 @@ async function generateSitemaps() {
     if (post.slug) {
       items.push({
         loc: `${baseUrl}/blog/${post.slug}`,
-        lastmod: post.lastPublishedDate,
+        ...(post.lastPublishedDate ? { lastmod: post.lastPublishedDate } : {}),
         changefreq: "weekly",
         priority: "0.7"
       });
@@ -108,8 +114,7 @@ async function generateSitemaps() {
       (item) => `
   <url>
     <loc>${item.loc}</loc>
-    <lastmod>${item.lastmod}</lastmod>
-    <changefreq>${item.changefreq}</changefreq>
+${item.lastmod ? `    <lastmod>${item.lastmod}</lastmod>\n` : ""}    <changefreq>${item.changefreq}</changefreq>
     <priority>${item.priority}</priority>
   </url>`
     )

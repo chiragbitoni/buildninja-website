@@ -34,21 +34,21 @@ export const pageDataMap = {
   },
   "/faq": {
     breadcrumb: "FAQ",
-    schemaType: "FAQPage",
+    schemaType: "WebPage",
     name: "Frequently Asked Questions | FAQ",
     description: "Find answers to common questions about BuildNinja CI/CD, installation, pricing, security, and enterprise features.",
   },
   "/features": {
     breadcrumb: "Features",
-    schemaType: "SoftwareApplication",
-    name: "BuildNinja",
+    schemaType: "WebPage",
+    name: "BuildNinja Features",
     description: "Experience lightning-fast, secure, and fully automated self-hosted CI/CD platform. The ultimate self-hosted alternative to Jenkins, GitLab CI, and GitHub Actions.",
   },
   "/install": {
     breadcrumb: "Install",
-    schemaType: "HowTo",
-    name: "How to Install BuildNinja",
-    description: "Learn how to deploy and configure the BuildNinja self-hosted CI/CD platform on your own infrastructure using the Windows Installer or Docker.",
+    schemaType: "WebPage",
+    name: "Download and Install BuildNinja",
+    description: "Download BuildNinja for your environment, prepare server and agent resources, connect your repository, and run your first build.",
   },
   "/landing-page": {
     breadcrumb: "Landing Page",

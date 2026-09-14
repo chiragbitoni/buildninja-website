@@ -117,7 +117,7 @@ function inline(text:string):React.ReactNode[]{
   return result;
 }
 
-const marketingRoutes = new Set(['','features','pricing','kenzo-ai','developers','kenzo-ai-portal','install','dojo','compare','faq','resources','blog','about','contact','support','partners','privacy-policy','terms-of-service','eula','refund-and-cancellation-policy','kenzo-ai-terms','kenzo-ai-data-policy','release-notes/ai-built-in','compare/buildninja-vs-github-actions','compare/buildninja-vs-circleci','compare/buildninja-vs-jenkins','compare/buildninja-vs-teamcity']);
+const marketingRoutes = new Set(['','features','pricing','kenzo-ai','kenzo-ai-portal','install','dojo','compare','faq','resources','blog','about','contact','support','partners','privacy-policy','terms-of-service','eula','refund-and-cancellation-policy','kenzo-ai-terms','kenzo-ai-data-policy','release-notes/ai-built-in','compare/buildninja-vs-github-actions','compare/buildninja-vs-circleci','compare/buildninja-vs-jenkins','compare/buildninja-vs-teamcity']);
 function localLink(href:string) {
   if (!href.startsWith('https://www.buildninja.io/')) return href;
   const url = new URL(href);
@@ -335,7 +335,7 @@ function BlogPostCopy({post}:{post:BlogPostRecord}){
 export function ContentPage({page,route,blogPosts=[]}:{page:PageRecord;route:string;blogPosts?:BlogPostRecord[]}){
  const enhanced=useMarketingMotion().enabled;
  if(route==='kenzo-ai')return <KenzoPage/>;
- if(route==='developers'||route==='kenzo-ai-portal')return <DeveloperPage/>;
+ if(route==='kenzo-ai-portal')return <DeveloperPage/>;
  if(route==='about'&&enhanced)return <AboutPage/>;
  const sections=splitSections(page.content);
  const isForm=(['contact','support','partners'] as string[]).includes(route);

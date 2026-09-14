@@ -1,17 +1,9 @@
 import { PricingPage as MarketingPricingPage } from "../../components/MarketingSite/app/pricing-page";
-import { pricingSeventhText } from "../../../public/static/pricingPageText";
 import {
   fetchActivePlansForBuild,
-  findPaidMonthlyPlan,
-  findFreePlan,
-  describeFreePlanFeatures,
   getPlanOrderUrl,
 } from "@/services/plans/plans";
 import { env } from "@/lib/config/env";
-import { formatUsd } from "@/lib/utils";
-
-const PAID_PRICE_TOKEN = "{{paidPlanMonthlyPrice}}";
-const FREE_FEATURES_TOKEN = "{{freePlanFeatures}}";
 
 export const metadata = {
   title: { absolute: "BuildNinja - Self-Hosted CI/CD, Free to Start" },
@@ -55,25 +47,6 @@ export default async function Pricing() {
 
   const bnPlans = plansData?.byProduct?.BuildNinja || [];
   const kenzoPlans = plansData?.byProduct?.KenzoAI || [];
-  const paidMonthly = findPaidMonthlyPlan(bnPlans);
-  const paidPriceText = paidMonthly ? `${formatUsd(paidMonthly.price)}/month` : "no per-seat costs";
-  const freePlanText = describeFreePlanFeatures(findFreePlan(bnPlans)) ?? "all the core features";
-
-  const faqSchema = {
-    "@type": "FAQPage",
-    "@id": "https://www.buildninja.io/pricing#faqpage",
-    "mainEntity": pricingSeventhText.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-          .replace(PAID_PRICE_TOKEN, paidPriceText)
-          .replace(FREE_FEATURES_TOKEN, freePlanText)
-          .replace(/<[^>]*>/g, "")
-      }
-    }))
-  };
 
   const byName = {};
   bnPlans.forEach((plan) => {
@@ -116,7 +89,7 @@ export default async function Pricing() {
 
   const schema = {
     "@context": "https://schema.org",
-    "@graph": [faqSchema, ...productSchemas, ...kenzoProductSchemas],
+    "@graph": [...productSchemas, ...kenzoProductSchemas],
   };
 
   return (

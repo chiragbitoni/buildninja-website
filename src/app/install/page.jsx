@@ -31,43 +31,5 @@ export default async function Download() {
   // if the installer API is unreachable, mirroring the plans fetch pattern.
   const installers = await fetchInstallersForBuild();
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "@id": "https://www.buildninja.io/install#howto",
-    "name": "How to Install BuildNinja",
-    "description": "Learn how to deploy and configure the BuildNinja self-hosted CI/CD platform on your own infrastructure using the Windows Installer or Docker.",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Check Requirements",
-        "text": "Ensure your system meets the minimum requirements: 2 CPU cores, 4 GB RAM, and 10 GB free space on Windows, Linux, or macOS."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Get License Key",
-        "text": "Enter your email on the install page to download the free Growth Edition installer and receive your license key."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Run the Installer or Docker Command",
-        "text": "Download and run the Windows Installer for native Windows service setup, or pull and run the official Docker image using 'docker pull grapehub/buildninja-server'."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Configure and Launch",
-        "text": "Configure VCS integrations (GitHub, GitLab, Bitbucket), add build steps, and start running continuous integration builds."
-      }
-    ]
-  };
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-      <MarketingInstallPage installers={installers} />
-    </>
-  );
+  return <MarketingInstallPage installers={installers} />;
 }

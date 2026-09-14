@@ -44,7 +44,6 @@ function CommonQuestions({ plansData }) {
 const homeStructuredData = {
   '@context':'https://schema.org',
   '@graph':[
-    {'@type':'WebSite',name:'BuildNinja',url:'https://www.buildninja.io/'},
     {'@type':'SoftwareApplication',name:'BuildNinja',url:'https://www.buildninja.io/',applicationCategory:'DeveloperApplication',operatingSystem:'Windows, Linux, macOS, Docker',description:'A self-hosted CI/CD platform for DevOps and engineering teams with pipeline automation, build visibility, and kenzoAI build intelligence.',featureList:['GitHub, GitLab, and Bitbucket integrations','Build and scheduled triggers','Windows, Linux, and macOS build agents','Docker and Kubernetes workflows','Commands, scripts, SSH, MSBuild, and VSTest','Build dashboards, history, logs, and artifacts','Single sign-on and project access controls','kenzoAI log, configuration, and code-change analysis']},
   ],
 };

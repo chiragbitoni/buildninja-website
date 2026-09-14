@@ -7,12 +7,6 @@ export const pages = {
     "description": kenzoCopy.description,
     "content": ""
   },
-  "developers": {
-    "title": developerCopy.title,
-    "seo": developerCopy.seo,
-    "description": developerCopy.description,
-    "content": ""
-  },
   "kenzo-ai-portal": {
     "title": developerCopy.title,
     "seo": developerCopy.seo,

@@ -5,7 +5,7 @@ import { MarketingMotion } from './animation-scenes';
 import { createContext, useContext, type ComponentProps, type ReactNode } from 'react';
 
 const VersionContext = createContext('');
-const routes = new Set(['', 'features', 'pricing', 'kenzo-ai', 'developers', 'kenzo-ai-portal', 'install', 'dojo', 'compare', 'faq', 'resources', 'blog', 'about', 'contact', 'support', 'partners', 'privacy-policy', 'terms-of-service', 'eula', 'refund-and-cancellation-policy', 'kenzo-ai-terms', 'kenzo-ai-data-policy', 'release-notes/ai-built-in', 'compare/buildninja-vs-github-actions', 'compare/buildninja-vs-circleci', 'compare/buildninja-vs-jenkins', 'compare/buildninja-vs-teamcity']);
+const routes = new Set(['', 'features', 'pricing', 'kenzo-ai', 'kenzo-ai-portal', 'install', 'dojo', 'compare', 'faq', 'resources', 'blog', 'about', 'contact', 'support', 'partners', 'privacy-policy', 'terms-of-service', 'eula', 'refund-and-cancellation-policy', 'kenzo-ai-terms', 'kenzo-ai-data-policy', 'release-notes/ai-built-in', 'compare/buildninja-vs-github-actions', 'compare/buildninja-vs-circleci', 'compare/buildninja-vs-jenkins', 'compare/buildninja-vs-teamcity']);
 
 export function versionedHref(href: string | undefined, base: string) {
   if (!href || !href.startsWith('/') || href.startsWith('//')) return href;

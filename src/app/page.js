@@ -1,5 +1,4 @@
 import HomePage from "./HomePage";
-import { homeFaqs } from "../../public/static/homePageText";
 import { fetchActivePlansForBuild } from "@/services/plans/plans";
 
 export const metadata = {
@@ -28,27 +27,6 @@ export const metadata = {
 
 export default async function Home() {
   const plansData = await fetchActivePlansForBuild();
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": homeFaqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a
-      }
-    }))
-  };
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <HomePage plansData={plansData} />
-    </>
-  );
+  return <HomePage plansData={plansData} />;
 }
 
