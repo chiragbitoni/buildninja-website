@@ -1,7 +1,7 @@
 .themeToggle {
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
+  border-radius: var(--control-radius);
   width: 40px;
   height: 40px;
   display: flex;
@@ -20,7 +20,7 @@
   border-color: var(--color-primary);
   background: var(--color-bg-surface-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 65, 114, 0.15);
+  box-shadow: none;
 }
 
 .iconWrapper {

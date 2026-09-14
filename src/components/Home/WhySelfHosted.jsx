@@ -2,10 +2,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import styles from "./WhySelfHosted.module.css";
+import { AnimatedSection, useSectionMotion } from "@/components/Marketing/SectionMotion";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
 function AnimatedPrice({ raw, isInView }) {
+  const { playing } = useSectionMotion();
   const match = raw.match(/^([$£€¥]?)([\d,.]+)([xX%a-zA-Z+]*)$/);
   const prefix = match?.[1] || "";
   const suffix = match?.[3] || "";
@@ -13,18 +15,22 @@ function AnimatedPrice({ raw, isInView }) {
   const target = match ? parseFloat(match[2].replace(/,/g, "")) : 0;
   const [displayed, setDisplayed] = useState(isDecimal ? "0.00" : "0");
   const raf = useRef(null);
-  const startTime = useRef(null);
+  const elapsed = useRef(0);
 
   useEffect(() => {
     if (!isInView) {
       setDisplayed(isDecimal ? "0.00" : "0");
-      startTime.current = null;
+      elapsed.current = 0;
       return;
     }
+    if (!playing) return;
+
     const duration = 3000;
+    let lastFrame = null;
     const step = (ts) => {
-      if (!startTime.current) startTime.current = ts;
-      const p = Math.min((ts - startTime.current) / duration, 1);
+      if (lastFrame !== null) elapsed.current += ts - lastFrame;
+      lastFrame = ts;
+      const p = Math.min(elapsed.current / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       const cur = target * eased;
       const formatted = isDecimal ? cur.toFixed(2) : Math.floor(cur).toLocaleString();
@@ -33,7 +39,7 @@ function AnimatedPrice({ raw, isInView }) {
     };
     raf.current = requestAnimationFrame(step);
     return () => { if (raf.current) cancelAnimationFrame(raf.current); };
-  }, [isInView, prefix, suffix, target, isDecimal]);
+  }, [isInView, playing, prefix, suffix, target, isDecimal]);
 
   return <>{displayed}{suffix}</>;
 }
@@ -103,7 +109,7 @@ export default function WhySelfHosted() {
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <AnimatedSection as="section" className={styles.section} ref={sectionRef} space="standard" label="Cost comparison animation">
       <div className={styles.container}>
         <motion.div
           className={styles.header}
@@ -121,11 +127,11 @@ export default function WhySelfHosted() {
           </p>
         </motion.div>
 
-        <div className={styles.grid}>
+        <div className={`${styles.grid} site-grid`}>
           {reasons.map((r, i) => (
             <motion.div
               key={i}
-              className={`${styles.card} ${styles[`card_${r.size}`]} ${styles[`theme_${r.theme}`]}`}
+              className={`${styles.card} site-grid-cell ${styles[`card_${r.size}`]} ${styles[`theme_${r.theme}`]}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
@@ -189,6 +195,6 @@ export default function WhySelfHosted() {
           ))}
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

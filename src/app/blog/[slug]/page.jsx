@@ -18,14 +18,14 @@ export async function generateMetadata({ params }) {
 
   if (!post) {
     return {
-      title: "Post Not Found | BuildNinja Blog",
+      title: { absolute: "Post Not Found | BuildNinja Blog" },
     };
   }
 
   const canonicalUrl = `https://www.buildninja.io/blog/${slug}`;
 
   return {
-    title: `${post.title} | BuildNinja Blog`,
+    title: { absolute: `${post.title} | BuildNinja Blog` },
     description: post.excerpt || post.title,
     alternates: {
       canonical: canonicalUrl,
@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }) {
 
   if (!post) {
     return (
-      <div className={styles.pageWrapper}>
+      <main className={styles.pageWrapper}>
         <div className={styles.notFound}>
           <p className={styles.notFoundTitle}>Post Not Found</p>
           <p className={styles.notFoundText}>
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }) {
             <ArrowLeft size={16} /> Back to Blogs
           </Link>
         </div>
-      </div>
+      </main>
     );
   }
 
@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }) {
     : null;
 
   return (
-    <div className={styles.pageWrapper}>
+    <main className={styles.pageWrapper}>
       {/* JSON-LD Article Schema */}
       <script
         type="application/ld+json"
@@ -233,6 +233,6 @@ export default async function BlogPostPage({ params }) {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
-    </div>
+    </main>
   );
 }

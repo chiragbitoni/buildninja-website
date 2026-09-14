@@ -1,0 +1,33 @@
+.section { background-color: var(--section-tint); }
+.heading { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 7px; margin: 0 0 11px; color: var(--color-primary); font: 500 var(--type-label-size)/1.5 var(--font-mono); letter-spacing: .025em; text-transform: uppercase; }
+.heading h2 { margin: 0; }
+.heading h2 span { color: var(--color-primary); }
+.heading > p:last-child { max-width: 660px; margin: 14px auto 0; color: var(--color-text-secondary); font-size: 14px; line-height: 1.65; }
+.workflows { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.workflow { grid-column: span 2; min-width: 0; padding: clamp(17px, 2vw, 26px); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.workflow:nth-child(4) { grid-column: 2 / span 2; }
+.cardHeading { display: flex; align-items: center; justify-content: space-between; color: var(--color-primary); }
+.cardHeading span { font: 400 11px/1.4 var(--font-mono); }
+.path { margin: 27px 0 7px; color: var(--color-text-muted); font: 400 10px/1.5 var(--font-mono); text-transform: uppercase; }
+.workflow h3 { min-height: 2.8em; margin: 0 0 9px; font-size: 16px; }
+.description { min-height: 5.6em; margin: 0; color: var(--color-text-secondary); font-size: 12px; line-height: 1.65; }
+.action { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: var(--color-primary); font-size: 12px; text-decoration: none; }
+.action:hover { text-decoration: underline; }
+.note { display: flex; align-items: center; justify-content: space-between; gap: 26px; padding: 18px 0 0; }
+.note p { max-width: 860px; margin: 0; color: var(--color-text-muted); font-size: 11px; line-height: 1.6; }
+.note a { display: inline-flex; align-items: center; gap: 7px; color: var(--color-primary); font-size: 12px; text-decoration: none; white-space: nowrap; }
+.note a:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .workflows { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .workflow, .workflow:nth-child(4) { grid-column: auto; }
+  .workflow:last-child { grid-column: 1 / -1; }
+  .description, .workflow h3 { min-height: 0; }
+}
+@media (max-width: 600px) {
+  .workflows { grid-template-columns: 1fr; }
+  .workflow:last-child { grid-column: auto; }
+  .path { margin-top: 18px; }
+  .note { align-items: start; flex-direction: column; gap: 12px; }
+}

@@ -1,0 +1,74 @@
+{
+  "title": "kenzoAI",
+  "seo": "kenzoAI | Build Intelligence for Your Workflow | BuildNinja",
+  "description": "Meet kenzoAI, the intelligence behind BuildNinja's AI features. Understand logs, configurations, and code-change risks, then connect through the developer portal.",
+  "hero": {
+    "eyebrow": "BUILD INTELLIGENCE FOR BUILDNINJA",
+    "title": "kenzoAI.",
+    "accent": "A clearer way to understand builds.",
+    "body": "Understand a failed build, explore an unfamiliar configuration, and review the risks in a code change. BuildNinja comes with AI, powered by kenzoAI.",
+    "primary": "Explore the AI workflow",
+    "secondary": "Developer setup"
+  },
+  "problem": {
+    "title": "A failed build should not leave you guessing.",
+    "body": "Logs show what happened. Configurations describe how the build runs. Source changes reveal what is different. kenzoAI analyzes the relevant context and returns explanations and findings you can investigate, so the next step is easier to understand."
+  },
+  "capabilities": [
+    {
+      "title": "Find the useful signal in a log.",
+      "body": "Ask AI to analyze an execution log and identify errors and possible causes worth investigating."
+    },
+    {
+      "title": "Understand a configuration.",
+      "body": "Get an explanation of execution steps and settings before deciding what needs attention."
+    },
+    {
+      "title": "Review the changes behind a build.",
+      "body": "Use the AI Build Analysis Report to explore risk indicators, severity, and file-level findings after an AI Runner analysis."
+    },
+    {
+      "title": "Keep the investigation in context.",
+      "body": "Continue with follow-up questions in BuildNinja's AI side panel using the current build or configuration context."
+    },
+    {
+      "title": "Make analysis part of the workflow.",
+      "body": "Add an AI Runner execution step and configure its credentials, analysis quality, failure threshold, and server-error behavior."
+    }
+  ],
+  "roles": [
+    {
+      "title": "kenzoAI powers the analysis.",
+      "body": "The hosted AI service processes the context submitted with a request and returns insights. In BuildNinja, those insights appear in log analysis, configuration explanations, AI chat, and build reports.",
+      "action": "Read about AI in BuildNinja"
+    },
+    {
+      "title": "The developer portal manages access.",
+      "body": "Create an application, save its App ID/API key and App Secret, set a credit limit, and follow usage. The portal is where developers and administrators manage the connection.",
+      "action": "Explore the developer portal"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Create your application.",
+      "body": "Sign in to the kenzoAI Developer Portal, enable access, and create an application. Save the App ID and App Secret securely."
+    },
+    {
+      "title": "Connect your workflow.",
+      "body": "In BuildNinja, an administrator adds the credentials under Settings → AI Configurations. For a custom integration, start with the kenzoAI documentation."
+    },
+    {
+      "title": "Ask, inspect, and decide.",
+      "body": "Run an analysis, review the findings, and follow up with questions. Your team validates the guidance and decides what to change."
+    }
+  ],
+  "credits": {
+    "title": "Use AI with a balance you can follow.",
+    "body": "kenzoAI requests use prepaid credits. Review application usage in the developer portal and add credits when needed. Application limits help control consumption from the shared account pool.",
+    "action": "See AI credits and USD pricing"
+  },
+  "final": {
+    "title": "Bring a clearer next step to your next build.",
+    "body": "Explore BuildNinja with AI, or open the developer portal to prepare your integration."
+  }
+}

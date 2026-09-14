@@ -1,4 +1,5 @@
-import DojoClient from "./DojoClient";
+import { pages } from "../../components/MarketingSite/app/content";
+import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
 export const metadata = {
   title: "Interactive CI/CD Sandbox & Playground | Dojo",
@@ -25,5 +26,5 @@ export const metadata = {
 };
 
 export default function DojoPage() {
-  return <DojoClient />;
+  return <ContentPage page={pages.dojo} route="dojo" />;
 }

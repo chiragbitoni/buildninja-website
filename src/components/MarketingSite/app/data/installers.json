@@ -1,0 +1,32 @@
+{
+  "latest": {
+    "windows": {
+      "title": "Window Installer",
+      "version": "2026.1.2.1",
+      "downloadUrl": "/api/installers/download/BuildNinja_2026.1.2.1.exe",
+      "name": "BuildNinja_Installer_2026.1.2.1.exe",
+      "releasedOn": "2026-08-17T11:58:53Z"
+    },
+    "linux": {
+      "title": "Linux Distributables",
+      "serverName": "BuildNinja_server_linux_1.2.0",
+      "serverVersion": "1.2.0",
+      "serverDownloadUrl": "/api/installers/download/bn_server_linux_1.2.0",
+      "agentName": "BuildNinja_agent_linux_1.2.0",
+      "agentVersion": "1.2.0",
+      "agentDownloadUrl": "/api/installers/download/bn_agent_linux_1.2.0",
+      "releasedOn": "2026-08-17T11:59:09Z"
+    },
+    "mac": {
+      "title": "Mac Distributables",
+      "serverName": "BuildNinja_server_mac_1.2.0",
+      "serverVersion": "1.2.0",
+      "serverDownloadUrl": "/api/installers/download/bn_server_mac_1.2.0",
+      "agentName": "BuildNinja_agent_mac_1.2.0",
+      "agentVersion": "1.2.0",
+      "agentDownloadUrl": "/api/installers/download/bn_agent_mac_1.2.0",
+      "releasedOn": "2026-08-17T11:59:16Z"
+    }
+  },
+  "history": []
+}

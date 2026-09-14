@@ -1,4 +1,6 @@
 import React from 'react';
+import { pages } from '../../../components/MarketingSite/app/content';
+import { ContentPage } from '../../../components/MarketingSite/app/markdown';
 import NavBar from '../../../components/Nav/NavBar';
 import Footer from '../../../components/Footer/Footer';
 import Hero from '../../../components/compare-jenkins/Hero';
@@ -13,7 +15,10 @@ import ExploreLinks from '../../../components/compare-jenkins/ExploreLinks';
 import CTABanner from '../../../components/compare-jenkins/CTABanner';
 
 export const metadata = {
-  title: 'BuildNinja vs Jenkins: Honest Comparison [2025] | Jenkins Alternative',
+  title: { absolute: 'BuildNinja vs Jenkins: Honest Comparison [2025] | Jenkins Alternative' },
+  alternates: {
+    canonical: 'https://www.buildninja.io/compare/buildninja-vs-jenkins',
+  },
   description: 'BuildNinja vs Jenkins: A feature-by-feature comparison of CI/CD platforms. See how BuildNinja\'s modern self-hosted solution stacks up against Jenkins for build automation, ease of setup, and total cost.',
   keywords: 'buildninja vs jenkins, jenkins alternative, ci cd pipeline tools, best ci cd platform, self hosted ci cd, jenkins replacement, continuous integration tools, devops pipeline, build automation tools, jenkins alternative open source, tools like jenkins, similar to jenkins, jenkins competitor',
   openGraph: {
@@ -104,16 +109,7 @@ export default function CompareJenkinsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
-      <Hero />
-      <VerdictBanner />
-      <MetricsBars />
-      <ComparisonTable />
-      <DeepDiveCards />
-      <DecisionGuide />
-      <MigrationGuide />
-      <FAQ />
-      {/* <ExploreLinks /> */}
-      <CTABanner />
+      <ContentPage page={pages['compare/buildninja-vs-jenkins']} route="compare/buildninja-vs-jenkins" />
     </div>
   );
 }

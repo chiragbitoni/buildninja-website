@@ -1,8 +1,8 @@
-import React from 'react';
-import ComparePortal from '@/components/compare-portal/ComparePortal';
+import { pages } from "../../components/MarketingSite/app/content";
+import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
 export const metadata = {
-  title: 'CI/CD Platform Comparisons: BuildNinja vs Alternatives',
+  title: { absolute: 'CI/CD Platform Comparisons: BuildNinja vs Alternatives' },
   description: 'Honest, feature-by-feature comparisons between BuildNinja and popular CI/CD tools: GitHub Actions, CircleCI, and Jenkins. See which tool wins on TCO, setup speed, and maintenance.',
   alternates: {
     canonical: 'https://www.buildninja.io/compare',
@@ -17,9 +17,5 @@ export const metadata = {
 };
 
 export default function ComparePage() {
-  return (
-    <>
-      <ComparePortal />
-    </>
-  );
+  return <ContentPage page={pages.compare} route="compare" />;
 }

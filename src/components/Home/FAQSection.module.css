@@ -16,7 +16,7 @@
   background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
   opacity: 0.06;
   filter: blur(120px);
-  pointer-events: none;
+  display: none;
 }
 
 .gridOverlay {
@@ -28,7 +28,7 @@
   background-size: 60px 60px;
   mask-image: radial-gradient(circle at 50% 20%, black, transparent 70%);
   opacity: 0.2;
-  pointer-events: none;
+  display: none;
 }
 
 .container {
@@ -80,7 +80,7 @@
 .faqCol {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
 }
 
 .faqItem {

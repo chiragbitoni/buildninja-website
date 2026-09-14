@@ -1,0 +1,78 @@
+/* Shared Notus theme and type tokens for the site. */
+.marketing-site {
+  --background: var(--color-bg);
+  --surface: var(--color-bg-surface);
+  --soft: var(--section-tint);
+  --ink: var(--color-text);
+  --muted: var(--color-text-secondary);
+  --line: var(--color-border);
+  --coral: var(--color-primary);
+  --coral-dark: var(--color-primary);
+  --coral-soft: var(--color-primary-subtle);
+  --plum: var(--color-primary);
+  --plum-light: var(--color-primary);
+  --cf-blue: var(--color-primary);
+  --cf-bright: var(--color-primary);
+  --cf-grid: var(--color-border);
+  --green: var(--color-success);
+  --font-geist-sans: var(--font-body);
+  --font-geist-mono: var(--font-dm-mono), "DM Mono", monospace;
+  background: var(--background);
+  color: var(--ink);
+}
+
+/* Expose the shared palette to production modules that use these token names. */
+:root {
+  --background: var(--color-bg);
+  --surface: var(--color-bg-surface);
+  --soft: var(--section-tint);
+  --ink: var(--color-text);
+  --muted: var(--color-text-secondary);
+  --line: var(--color-border);
+  --coral: var(--color-primary);
+  --coral-dark: var(--color-primary);
+  --coral-soft: var(--color-primary-subtle);
+  --plum: var(--color-primary);
+  --plum-light: var(--color-primary);
+  --green: var(--color-success);
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  border-color: var(--color-border);
+}
+
+[data-theme="light"] .marketing-site,
+[data-theme="dark"] .marketing-site {
+  --background: var(--color-bg);
+  --surface: var(--color-bg-surface);
+  --soft: var(--section-tint);
+  --ink: var(--color-text);
+  --muted: var(--color-text-secondary);
+  --line: var(--color-border);
+  --coral: var(--color-primary);
+  --coral-dark: var(--color-primary);
+  --coral-soft: var(--color-primary-subtle);
+  --plum: var(--color-primary);
+  --plum-light: var(--color-primary);
+  --cf-blue: var(--color-primary);
+  --cf-bright: var(--color-primary);
+  --cf-grid: var(--color-border);
+  --green: var(--color-success);
+  --font-geist-sans: var(--font-body);
+  --font-geist-mono: var(--font-dm-mono), "DM Mono", monospace;
+  background: var(--background);
+  color: var(--ink);
+}
+
+.marketing-site .cf-motion-toggle,
+.marketing-site .cf-scene-controls,
+.marketing-site .cf-tour-controls > button {
+  display: none !important;
+}

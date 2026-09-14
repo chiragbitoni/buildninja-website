@@ -1,8 +1,8 @@
-import DownloadPage from "./InstallPage";
+import { InstallPage as MarketingInstallPage } from "../../components/MarketingSite/app/install-page";
 import { fetchInstallersForBuild } from "@/services/auth/installers";
 
 export const metadata = {
-  title: "Download & Install BuildNinja on Your Own Servers | Install",
+  title: { absolute: "Download & Install BuildNinja on Your Own Servers | Install" },
   description: "Get started with BuildNinja in minutes. Follow our easy installation guide for Linux, Docker, and self-hosted environments.",
   keywords: ["install CI/CD server", "download BuildNinja", "self-hosted CI/CD setup", "Docker CI/CD installation", "Linux build server", "deploy continuous integration server"],
   alternates: {
@@ -67,7 +67,7 @@ export default async function Download() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <DownloadPage installers={installers} />
+      <MarketingInstallPage installers={installers} />
     </>
   );
 }

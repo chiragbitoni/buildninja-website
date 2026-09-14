@@ -1,0 +1,51 @@
+.section { overflow: hidden; }
+.heading { max-width: 800px; margin-bottom: 38px; }
+.eyebrow { margin: 0 0 11px; color: var(--color-primary); font: 500 var(--type-label-size)/1.5 var(--font-mono); letter-spacing: .025em; text-transform: uppercase; }
+.heading h2 { margin: 0; }
+.heading h2 span { color: var(--color-text-secondary); }
+.heading > p:last-child { max-width: 700px; margin: 14px 0 0; color: var(--color-text-secondary); font-size: 14px; line-height: 1.65; }
+.storyGrid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-top: 1px solid var(--rule); }
+.story { min-width: 0; }
+.story + .story { border-left: 1px solid var(--rule); }
+.network,
+.access { min-height: 305px; padding: clamp(17px, 2.4vw, 30px); border-bottom: 1px solid var(--rule); background: var(--section-tint); }
+.network { display: grid; grid-template-columns: minmax(0,1fr) 34px minmax(0,1fr); align-items: center; }
+.node { display: flex; min-height: 95px; flex-direction: column; align-items: center; justify-content: center; padding: 12px 8px; border: 1px solid var(--rule); text-align: center; }
+.node svg { margin-bottom: 9px; color: var(--color-text-secondary); }
+.node b { font-size: 11px; font-weight: 500; }
+.node small { margin-top: 5px; color: var(--color-text-muted); font-size: 9px; line-height: 1.5; }
+.server { border-color: color-mix(in srgb, var(--color-primary) 42%, var(--rule)); }
+.server svg { color: var(--color-primary); }
+.connector { position: relative; height: 1px; background: var(--rule); }
+.connector span { position: absolute; top: 50%; left: 50%; width: 6px; height: 6px; border: 1px solid var(--color-primary); background: var(--color-bg); transform: translate(-50%,-50%); }
+.agentList { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 7px; margin-top: 17px; }
+.agentList > div { display: grid; grid-template-columns: 7px minmax(0,1fr); gap: 5px 7px; align-items: center; padding: 9px; border-top: 1px solid var(--rule); }
+.agentList > div > span:nth-child(2) { color: var(--color-text-secondary); font-size: 10px; }
+.agentDot { width: 6px; height: 6px; border-radius: 50%; background: #26a269; }
+.agentList small { grid-column: 2; color: var(--color-text-muted); font-size: 9px; }
+.accessHeader { display: flex; align-items: center; gap: 8px; padding-bottom: 13px; border-bottom: 1px solid var(--rule); color: var(--color-text-secondary); font-size: 11px; }
+.accessHeader svg { color: var(--color-primary); }
+.accessHeader small { margin-left: auto; color: var(--color-text-muted); font: 400 9px/1.4 var(--font-mono); text-transform: uppercase; }
+.member { display: grid; grid-template-columns: 29px minmax(0,1fr) auto; gap: 10px; align-items: center; min-height: 57px; border-bottom: 1px solid var(--rule); }
+.avatar { display: grid; width: 27px; height: 27px; place-items: center; background: var(--color-bg); color: var(--color-text-secondary); font: 400 9px/1 var(--font-mono); }
+.member b { display: block; font-size: 11px; font-weight: 500; }
+.member small { display: block; margin-top: 3px; color: var(--color-text-muted); font-size: 9px; }
+.permission { padding: 4px 6px; border: 1px solid var(--rule); color: var(--color-text-muted); font: 400 9px/1.2 var(--font-mono); }
+.accessFoot { display: flex; align-items: center; gap: 7px; padding-top: 12px; color: var(--color-text-muted); font-size: 9px; }
+.accessFoot svg:first-child { color: var(--color-primary); }
+.accessFoot svg:last-child { margin-left: auto; }
+.storyCopy { padding: 20px clamp(16px, 2.4vw, 30px) 25px; }
+.storyCopy > span { display: inline-flex; align-items: center; gap: 7px; color: var(--color-primary); font: 400 10px/1.5 var(--font-mono); text-transform: uppercase; }
+.storyCopy h3 { margin: 11px 0 7px; font-size: 17px; }
+.storyCopy p { max-width: 500px; margin: 0; color: var(--color-text-secondary); font-size: 13px; line-height: 1.6; }
+.storyCopy a { display: inline-flex; align-items: center; gap: 7px; margin-top: 13px; color: var(--color-primary); font-size: 12px; text-decoration: none; }
+.storyCopy a:hover { text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .heading { margin-bottom: 25px; }
+  .storyGrid { grid-template-columns: 1fr; }
+  .story + .story { border-top: 1px solid var(--rule); border-left: 0; }
+  .network, .access { min-height: 270px; }
+  .agentList > div { grid-template-columns: 6px minmax(0,1fr); padding-inline: 4px; }
+  .agentList > div > span:nth-child(2) { font-size: 9px; }
+}

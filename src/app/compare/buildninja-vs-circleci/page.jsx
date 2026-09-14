@@ -1,4 +1,6 @@
 import React from 'react';
+import { pages } from '../../../components/MarketingSite/app/content';
+import { ContentPage } from '../../../components/MarketingSite/app/markdown';
 import Hero from '@/components/compare-circleci/Hero';
 import SnapshotStats from '@/components/compare-circleci/SnapshotStats';
 import VerdictCards from '@/components/compare-circleci/VerdictCards';
@@ -12,7 +14,7 @@ import ExploreLinks from '@/components/compare-circleci/ExploreLinks';
 import CTABanner from '@/components/compare-circleci/CTABanner';
 
 export const metadata = {
-  title: 'BuildNinja vs CircleCI: Full Comparison - Self-Hosted CI/CD vs SaaS',
+  title: { absolute: 'BuildNinja vs CircleCI: Full Comparison - Self-Hosted CI/CD vs SaaS' },
   description: 'BuildNinja vs CircleCI - honest feature comparison. See why teams switch from CircleCI to BuildNinja: no seat pricing, self-hosted CI/CD, unlimited scale with Shogun, and full data sovereignty.',
   alternates: {
     canonical: 'https://www.buildninja.io/compare/buildninja-vs-circleci',
@@ -99,17 +101,7 @@ export default function CompareCircleCIPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
-      <Hero />
-      {/* <SnapshotStats /> */}
-      <VerdictCards />
-      <ComparisonTable />
-      {/* <CostCalculator /> */}
-      {/* <CodeComparison /> */}
-      <MigrationGuide />
-      <Recommendation />
-      <FAQ />
-      {/* <ExploreLinks /> */}
-      <CTABanner />
+      <ContentPage page={pages['compare/buildninja-vs-circleci']} route="compare/buildninja-vs-circleci" />
     </div>
   );
 }

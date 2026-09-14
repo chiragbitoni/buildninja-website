@@ -1,0 +1,58 @@
+{
+  "source": "https://gc-userservice.grapehub.io/api/Subscription/plans?source=1",
+  "checked": "2026-09-04",
+  "status": "Existing website USD platform pricing retained per user instruction; new AI credit packs are separate",
+  "editions": [
+    {
+      "name": "Growth",
+      "users": 10,
+      "features": {
+        "Configurations": 10,
+        "Projects": 10,
+        "Concurrent Builds": 10,
+        "Build Agents": 10,
+        "SSO Integrations": 1,
+        "Build History Retention": 30
+      }
+    },
+    {
+      "name": "Shogun",
+      "users": 999999,
+      "features": {
+        "Configurations": 999999,
+        "Projects": 999999,
+        "Concurrent Builds": 999999,
+        "Build Agents": 999999,
+        "SSO Integrations": 5,
+        "Build History Retention": 999999
+      }
+    }
+  ],
+  "currency": "USD",
+  "shogunTerms": [
+    {
+      "label": "Monthly",
+      "price": 199,
+      "period": "month",
+      "validity": "1 month"
+    },
+    {
+      "label": "Yearly",
+      "price": 1599,
+      "period": "year",
+      "validity": "1 year"
+    },
+    {
+      "label": "2-Year",
+      "price": 2499,
+      "period": "2 years",
+      "validity": "2 years"
+    },
+    {
+      "label": "3-Year",
+      "price": 3199,
+      "period": "3 years",
+      "validity": "3 years"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import styles from "./WorksWith.module.css";
+import { AnimatedSection } from "@/components/Marketing/SectionMotion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faGithub, 
@@ -105,7 +106,7 @@ const integrationDetails = [
 
 export default function WorksWith() {
   return (
-    <div className={styles.section}>
+    <AnimatedSection as="section" className={styles.section} space="standard" label="Integration logo carousel">
       <div className={styles.container}>
         {/* H2 SEO Heading */}
         <motion.h2
@@ -133,20 +134,7 @@ export default function WorksWith() {
 
         {/* Scrolling Carousel with Alt Tags on Logos */}
         <div className={styles.carouselMask}>
-          <motion.div
-            className={styles.scroller}
-            animate={{
-              x: [0, "-50%"],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 45,
-                ease: "linear",
-              },
-            }}
-          >
+          <div className={styles.scroller}>
             {scrollItems.map((tool, i) => {
               const IconComponent = Icons[tool];
               return (
@@ -170,7 +158,7 @@ export default function WorksWith() {
                 </motion.div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
 
         {/* Visually hidden integration descriptions for SEO indexing by search engine crawlers */}
@@ -183,6 +171,6 @@ export default function WorksWith() {
           ))}
         </div>
       </div>
-    </div>
+    </AnimatedSection>
   );
 }

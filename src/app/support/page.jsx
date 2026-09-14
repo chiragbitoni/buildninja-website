@@ -1,7 +1,8 @@
-import SupportPage from "./Supportpage";
+import { pages } from "../../components/MarketingSite/app/content";
+import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
 export const metadata = {
-  title: "BuildNinja Support & Technical Assistance | Support",
+  title: { absolute: "BuildNinja Support & Technical Assistance | Support" },
   description: "Need help? Access our documentation, join the community, or contact our technical support team for BuildNinja CI/CD assistance.",
   keywords: ["BuildNinja support", "CI/CD technical assistance", "DevOps help", "build automation documentation", "continuous integration support"],
   alternates: {
@@ -25,5 +26,5 @@ export const metadata = {
 };
 
 export default function Support() {
-  return <SupportPage />;
+  return <ContentPage page={pages.support} route="support" />;
 }

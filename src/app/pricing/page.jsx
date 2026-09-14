@@ -1,4 +1,4 @@
-import PricingPage from "./PricingPage";
+import { PricingPage as MarketingPricingPage } from "../../components/MarketingSite/app/pricing-page";
 import { pricingSeventhText } from "../../../public/static/pricingPageText";
 import {
   fetchActivePlansForBuild,
@@ -13,7 +13,7 @@ const PAID_PRICE_TOKEN = "{{paidPlanMonthlyPrice}}";
 const FREE_FEATURES_TOKEN = "{{freePlanFeatures}}";
 
 export const metadata = {
-  title: "BuildNinja - Self-Hosted CI/CD, Free to Start",
+  title: { absolute: "BuildNinja - Self-Hosted CI/CD, Free to Start" },
   description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
   keywords: ["CI/CD pricing", "DevOps tools cost", "BuildNinja pricing", "self-hosted CI/CD free", "enterprise CI/CD plans", "DevOps budget"],
   alternates: {
@@ -107,7 +107,7 @@ export default async function Pricing() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <PricingPage plansData={plansData} />
+      <MarketingPricingPage plansData={plansData} />
     </>
   );
 }

@@ -1,7 +1,8 @@
-import PartnerPage from "./PartnerPage";
+import { pages } from "../../components/MarketingSite/app/content";
+import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
 export const metadata = {
-  title: "BuildNinja Partner Program | Partners",
+  title: { absolute: "BuildNinja Partner Program | Partners" },
   description: "Join the BuildNinja ecosystem. Collaborate with us to build better CI/CD experiences and empower engineering teams worldwide.",
   keywords: ["DevOps partner program", "CI/CD partnership", "BuildNinja affiliates", "technology partners", "GrapeHub partnerships"],
   alternates: {
@@ -25,5 +26,5 @@ export const metadata = {
 };
 
 export default function Partners() {
-  return <PartnerPage />;
+  return <ContentPage page={pages.partners} route="partners" />;
 }

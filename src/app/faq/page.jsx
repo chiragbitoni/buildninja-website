@@ -1,4 +1,4 @@
-import FaqPage from "./FAQPage";
+import { FAQPage as MarketingFAQPage } from "../../components/MarketingSite/app/faq-page";
 import { thirdSectionText } from "../../../public/static/faqPageText";
 import {
   fetchActivePlansForBuild,
@@ -71,7 +71,7 @@ export default async function Faq() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
-            <FaqPage />
+            <MarketingFAQPage />
         </>
     );
 }

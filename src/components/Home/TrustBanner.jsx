@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Globe2, Package, Tag, Server, Users, CheckCircle2 } from "lucide-react";
 import styles from "./TrustBanner.module.css";
+import { AnimatedSection } from "@/components/Marketing/SectionMotion";
 
 const trustPoints = [
   { label: "Trusted partner to global enterprises", desc: "Delivering software excellence worldwide", icon: Globe2, tone: "amber" },
@@ -35,12 +36,12 @@ function GrapecityLogo() {
 
 export default function TrustBanner() {
   return (
-    <section className={styles.section}>
+    <AnimatedSection as="section" className={styles.section} space="standard" label="Trust banner animation">
       <div className={styles.gridOverlay} />
 
       <div className={styles.container}>
         <motion.div
-          className={styles.panel}
+          className={`${styles.panel} site-panel`}
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -72,19 +73,19 @@ export default function TrustBanner() {
               </div>
             </div>
 
-            <div className={styles.statGrid}>
+            <div className={`${styles.statGrid} site-grid`} data-grid-columns="2">
               {trustPoints.map((point, i) => {
                 const Icon = point.icon;
                 return (
                   <motion.div
                     key={i}
-                    className={styles.statCard}
+                    className={`${styles.statCard} site-grid-cell`}
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.12 + i * 0.08, duration: 0.5 }}
                   >
-                    <div className={`${styles.statIcon} ${styles[point.tone]}`}>
+                    <div className={`${styles.statIcon} site-icon ${styles[point.tone]}`}>
                       <Icon size={18} />
                     </div>
                     <div className={styles.statBody}>
@@ -100,6 +101,6 @@ export default function TrustBanner() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

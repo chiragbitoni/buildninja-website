@@ -1,30 +1,40 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "../components/Nav/NavBar";
+import { DM_Mono, Inter } from "next/font/google";
 import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { paths } from "../../public/static/paths";
-import Footer from "../components/Footer/Footer";
 import ClientAuthProvider from "./ClientAuthProvider";
 import GoogleAnalytics from "../components/Analytics/GA";
-import YouTubePopup from "../components/YouTubePopup/YouTubePopup";
 import PHProviderWrapper from "../components/Analytics/Providers";
 import PosthogWrapper from "../components/Analytics/PostHogWrapper";
-import Script from "next/script";
 import "./globals.css";
 import "./animations.css";
+import "../components/MarketingSite/app/site-base.css";
+import "../components/MarketingSite/app/design-system.css";
+import "../components/MarketingSite/app/story-layout.css";
+import "../components/MarketingSite/app/product-pages.css";
+import "../components/MarketingSite/app/dashboard-preview.css";
+import "../components/MarketingSite/app/ai-runner-demo.css";
+import "../components/MarketingSite/app/product-previews.css";
+import "../components/MarketingSite/app/brand-logo.css";
+import "../components/MarketingSite/app/marketing-home.css";
+import "../components/MarketingSite/app/animation-scenes.css";
+import "../components/MarketingSite/app/developer-page.css";
+import "react-international-phone/style.css";
+import "./site-theme.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import DynamicFavicon from "@/components/DynamicFavicon";
-import TrackingInitializer from "@/components/TrackingInitializer";
 import SchemaScript from "@/components/SchemaScript";
+import SiteFrame from "./SiteFrame";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 const schema = {
   "@context": "https://schema.org",
@@ -123,22 +133,16 @@ export default async function RootLayout({ children }) {
         />
         <GoogleAnalytics GA_ID={process.env.NEXT_PUBLIC_GA_ID} />
       </head>
-      <body
-        className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}
-      >
+      <body className={`min-h-screen ${inter.variable} ${dmMono.variable}`}>
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>
-            <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+            <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
               <DynamicFavicon />
               <ClientAuthProvider>
-                <Navbar blogPosts={blogPosts} />
-                <TrackingInitializer />
-                <main>
-                  <YouTubePopup />
+                <SiteFrame blogPosts={blogPosts}>
                   {children}
-                </main>
-                <Footer />
+                </SiteFrame>
               </ClientAuthProvider>
             </ThemeProvider>
           </ReduxProvider>

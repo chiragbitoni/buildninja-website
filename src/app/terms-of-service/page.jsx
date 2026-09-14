@@ -1,8 +1,7 @@
-import LegalContent from "@/components/Legal/LegalContent";
-import { fetchGrapeHubPage } from "@/services/grapehub/fetchPage";
+import { LegalPage } from "../../components/MarketingSite/app/legal-page";
 
 export const metadata = {
-  title: "Terms of Service | BuildNinja",
+  title: { absolute: "Terms of Service | BuildNinja" },
   description: "Read BuildNinja's Terms and Conditions outlining the rules, responsibilities, and policies governing the use of our website, products, and services.",
   alternates: {
     canonical: "https://www.buildninja.io/terms-of-service",
@@ -16,16 +15,6 @@ export const metadata = {
   },
 };
 
-export default async function TermsOfServicePage() {
-  const content = await fetchGrapeHubPage("terms-of-service", {
-    stripHeading: ["Terms of Service", "Terms & Conditions"],
-  });
-  return (
-    <LegalContent 
-      title="Terms of Service"
-      description="The rules and guidelines for using the BuildNinja platform, products, and services. Clear, transparent, and fair."
-      badge="Legal Documents"
-      htmlContent={content}
-    />
-  );
+export default function TermsOfServicePage() {
+  return <LegalPage route="terms-of-service" />;
 }

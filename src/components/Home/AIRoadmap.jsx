@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import styles from "./AIRoadmap.module.css";
+import { Section } from "@/components/Marketing/Section";
 
 const features = [
   {
@@ -41,10 +42,10 @@ const features = [
 
 export default function AIRoadmap() {
   return (
-    <section className={styles.section} id="intelligence">
+    <Section className={styles.section} id="intelligence" space="standard">
       <div className={styles.container}>
         <motion.div
-          className={styles.panel}
+          className={`${styles.panel} site-panel`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -78,11 +79,11 @@ export default function AIRoadmap() {
                 AI-powered insights built directly into your CI/CD. Less time debugging, more time shipping.
               </p>
             </div>
-            <div className={styles.cardsCol}>
+            <div className={`${styles.cardsCol} site-rule-list`}>
               {features.map((f, i) => (
                 <motion.div
                   key={i}
-                  className={styles.card}
+                  className={`${styles.card} site-grid-cell`}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -99,6 +100,6 @@ export default function AIRoadmap() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -2,7 +2,8 @@
   background-color: var(--color-bg);
   background: var(--color-bg);
   color: var(--color-text-secondary);
-  padding: 6vw 4vw;
+  padding: 80px 0;
+  border-top: 1px solid var(--rule);
   /* tighter mobile padding */
   font-family: var(--font-body);
   line-height: 1.45;
@@ -207,7 +208,7 @@
  ========================= */
 @media (min-width: 1024px) {
   .footerContainer {
-    padding: 4vw 6vw;
+    padding: 80px 0;
   }
 
   .footerTitle {

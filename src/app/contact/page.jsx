@@ -1,8 +1,8 @@
-import { fetchGrapeHubPage } from "@/services/grapehub/fetchPage";
-import ContactPageClient from "./ContactPageClient";
+import { pages } from "../../components/MarketingSite/app/content";
+import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
 export const metadata = {
-  title: "Contact Us | BuildNinja",
+  title: { absolute: "Contact Us | BuildNinja" },
   description: "Have questions or need assistance? Contact the BuildNinja team at GrapeCity India for inquiries, sales, and support.",
   alternates: {
     canonical: "https://www.buildninja.io/contact",
@@ -16,7 +16,6 @@ export const metadata = {
   },
 };
 
-export default async function ContactPage() {
-  const grapehubContactHtml = await fetchGrapeHubPage("contact");
-  return <ContactPageClient grapehubContactHtml={grapehubContactHtml} />;
+export default function ContactPage() {
+  return <ContentPage page={pages.contact} route="contact" />;
 }

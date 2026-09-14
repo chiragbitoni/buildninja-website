@@ -5,30 +5,41 @@ import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import posthog from "posthog-js";
+import { AnimatedSection, useSectionMotion } from "@/components/Marketing/SectionMotion";
 
 const BuildNinjaDemo = dynamic(() => import("./BuildNinjaDemo"), { ssr: false });
 
-export default function CenteredHeroSection() {
+function HeroAmbient() {
   const orb1 = useRef(null);
   const orb2 = useRef(null);
-  const router = useRouter();
+  const { playing } = useSectionMotion();
 
   useEffect(() => {
+    if (!playing) return;
     let t = 0;
+    let id;
     const tick = () => {
       t += 0.006;
       if (orb1.current) orb1.current.style.transform = `translate(${Math.sin(t) * 16}px, ${Math.cos(t * 0.7) * 20}px)`;
       if (orb2.current) orb2.current.style.transform = `translate(${Math.cos(t * 0.8) * 18}px, ${Math.sin(t * 1.1) * 16}px)`;
-      requestAnimationFrame(tick);
+      id = requestAnimationFrame(tick);
     };
-    const id = requestAnimationFrame(tick);
+    id = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(id);
-  }, []);
+  }, [playing]);
+
+  return <>
+    <div ref={orb1} className={styles.orb1} />
+    <div ref={orb2} className={styles.orb2} />
+  </>;
+}
+
+export default function CenteredHeroSection() {
+  const router = useRouter();
 
   return (
-    <section className={styles.section}>
-      <div ref={orb1} className={styles.orb1} />
-      <div ref={orb2} className={styles.orb2} />
+    <AnimatedSection as="section" space="hero" className={styles.section} label="Hero animation">
+      <HeroAmbient />
       <div className={styles.grid} />
       <div className={styles.bottomFade} />
 
@@ -72,6 +83,6 @@ export default function CenteredHeroSection() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

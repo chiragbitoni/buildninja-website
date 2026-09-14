@@ -2,10 +2,11 @@
 import { motion } from "framer-motion";
 import styles from "./FAQSection.module.css";
 import { homeFaqs } from "../../../public/static/homePageText";
+import { Section } from "@/components/Marketing/Section";
 
 export default function FAQSection() {
   return (
-    <section className={styles.section} id="faq">
+    <Section className={styles.section} id="faq" space="standard">
       <div className={styles.ambientGlow} />
       <div className={styles.gridOverlay} />
 
@@ -21,12 +22,12 @@ export default function FAQSection() {
           <h2 className={styles.title}>Frequently Asked Questions</h2>
         </motion.div>
 
-        <div className={styles.faqSplit}>
-          <div className={styles.faqCol}>
+        <div className={`${styles.faqSplit} site-grid`} data-grid-columns="2">
+          <div className={`${styles.faqCol} site-grid-cell site-rule-list`}>
             {homeFaqs.slice(0, Math.ceil(homeFaqs.length / 2)).map((faq, i) => (
               <motion.div
                 key={i}
-                className={styles.faqItem}
+                className={`${styles.faqItem} site-grid-cell`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -50,11 +51,11 @@ export default function FAQSection() {
               </motion.div>
             ))}
           </div>
-          <div className={styles.faqCol}>
+          <div className={`${styles.faqCol} site-grid-cell site-rule-list`}>
             {homeFaqs.slice(Math.ceil(homeFaqs.length / 2)).map((faq, i) => (
               <motion.div
                 key={i}
-                className={styles.faqItem}
+                className={`${styles.faqItem} site-grid-cell`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -80,6 +81,6 @@ export default function FAQSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

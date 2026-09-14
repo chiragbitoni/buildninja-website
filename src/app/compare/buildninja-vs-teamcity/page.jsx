@@ -1,4 +1,6 @@
 import React from 'react';
+import { pages } from '../../../components/MarketingSite/app/content';
+import { ContentPage } from '../../../components/MarketingSite/app/markdown';
 import Hero from '@/components/compare-teamcity/Hero';
 import VerdictCards from '@/components/compare-teamcity/VerdictCards';
 import ComparisonTable from '@/components/compare-teamcity/ComparisonTable';
@@ -9,7 +11,7 @@ import FAQ from '@/components/compare-teamcity/FAQ';
 import CTABanner from '@/components/compare-teamcity/CTABanner';
 
 export const metadata = {
-  title: 'BuildNinja vs TeamCity: Self-Hosted CI/CD Comparison',
+  title: { absolute: 'BuildNinja vs TeamCity: Self-Hosted CI/CD Comparison' },
   description: 'Honest comparison of BuildNinja vs TeamCity. Side-by-side pricing, features, Windows/.NET support, and real user pain points. See why growing teams are switching to BuildNinja.',
   alternates: {
     canonical: 'https://www.buildninja.io/compare/buildninja-vs-teamcity',
@@ -102,14 +104,7 @@ export default function CompareTeamCityPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
-      <Hero />
-      <VerdictCards />
-      <ComparisonTable />
-      <PainPoints />
-      <ChoiceCards />
-      <MigrationGuide />
-      <FAQ />
-      <CTABanner />
+      <ContentPage page={pages['compare/buildninja-vs-teamcity']} route="compare/buildninja-vs-teamcity" />
     </div>
   );
 }

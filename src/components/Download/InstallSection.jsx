@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faCheckCircle, faCopy, faKey, faPlayCircle, faCalendarAlt, faHistory, faMicrochip, faInfoCircle, faLifeRing, faExternalLinkAlt, faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { faWindows, faLinux, faApple, faDocker } from "@fortawesome/free-brands-svg-icons";
+import { Monitor, Server } from "lucide-react";
 import EmailDialog from "./EmailDialog";
 
 const containerVariants = {
@@ -35,7 +36,7 @@ const itemVariants = {
   }
 };
 
-export default function InstallSection({ initialInstallers = null }) {
+export default function InstallSection({ initialInstallers = null, compact = false }) {
   const router = useRouter();
   const dispatch = useDispatch();
   const hasInitialData = Boolean(initialInstallers?.latest);
@@ -211,6 +212,71 @@ export default function InstallSection({ initialInstallers = null }) {
 
     window.location.href = `${process.env.NEXT_PUBLIC_MYACCOUNT_URL}/order?planId=${planId}`;
   };
+
+  if (compact) {
+    const windowsFile = latestWindows?.downloadUrl?.split("/").pop();
+    const linuxServerFile = latestLinux?.serverDownloadUrl?.split("/").pop();
+    const linuxAgentFile = latestLinux?.agentDownloadUrl?.split("/").pop();
+    const macServerFile = latestMac?.serverDownloadUrl?.split("/").pop();
+    const macAgentFile = latestMac?.agentDownloadUrl?.split("/").pop();
+
+    return (
+      <div className="download-grid" id="installers">
+        {loading ? <p>Loading current downloads…</p> : null}
+        {!loading && latestWindows ? (
+          <article>
+            <span className="download-icon"><Monitor size={25}/></span>
+            <span className="edition-tag">GUIDED SETUP</span>
+            <h3>Windows</h3>
+            <p>Install the server, agent, or both. The unified installer can include local MongoDB.</p>
+            <div className="download-version">Installer <b>{latestWindows.version}</b></div>
+            <button className="button" type="button" onClick={() => handleDownloadClick(windowsFile, { os: "windows", version: latestWindows.version })} disabled={downloadingUrl === windowsFile}>
+              {downloadingUrl === windowsFile ? "Preparing download…" : "Get Windows installer"}
+            </button>
+            <button className="download-guide" type="button" onClick={() => dispatch(openVideo({ videoId: "zOW9BCYQkxk", title: "Windows Installation Guide", ctaText: "Official Setup Documentation", link: "/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows" }))}>
+              Watch installation guide
+            </button>
+          </article>
+        ) : null}
+        {!loading && latestLinux ? (
+          <article>
+            <span className="download-icon"><Server size={25}/></span>
+            <span className="edition-tag">SERVER + AGENT PACKAGES</span>
+            <h3>Linux</h3>
+            <p>Configure the packages and MongoDB for the environment you manage.</p>
+            <div className="download-version">Server <b>{latestLinux.serverVersion}</b><span>Agent <b>{latestLinux.agentVersion}</b></span></div>
+            <div className="download-actions">
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(linuxServerFile, { os: "linux", type: "server", version: latestLinux.serverVersion })} disabled={downloadingUrl === linuxServerFile}>Server</button>
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(linuxAgentFile, { os: "linux", type: "agent", version: latestLinux.agentVersion })} disabled={downloadingUrl === linuxAgentFile}>Agent</button>
+            </div>
+            <a className="download-guide" href="https://www.buildninja.io/docs/category/quick-setup-guide">Read the setup guide</a>
+          </article>
+        ) : null}
+        {!loading && latestMac ? (
+          <article>
+            <span className="download-icon"><Server size={25}/></span>
+            <span className="edition-tag">SERVER + AGENT PACKAGES</span>
+            <h3>macOS</h3>
+            <p>Use the server and agent packages for your Mac environment. Configure MongoDB separately.</p>
+            <div className="download-version">Server <b>{latestMac.serverVersion}</b><span>Agent <b>{latestMac.agentVersion}</b></span></div>
+            <div className="download-actions">
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(macServerFile, { os: "mac", type: "server", version: latestMac.serverVersion })} disabled={downloadingUrl === macServerFile}>Server</button>
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(macAgentFile, { os: "mac", type: "agent", version: latestMac.agentVersion })} disabled={downloadingUrl === macAgentFile}>Agent</button>
+            </div>
+            <a className="download-guide" href="https://www.buildninja.io/docs/category/quick-setup-guide">Read the setup guide</a>
+          </article>
+        ) : null}
+        {!loading && !latestWindows && !latestLinux && !latestMac ? <p>Downloads are temporarily unavailable. Please try again later.</p> : null}
+        <EmailDialog
+          open={dialogOpen}
+          onClose={() => { setDialogError(null); pendingDownloadRef.current = null; setDialogOpen(false); }}
+          onSubmit={handleEmailSubmit}
+          loading={dialogLoading}
+          error={dialogError}
+        />
+      </div>
+    );
+  }
 
   return (
     <>

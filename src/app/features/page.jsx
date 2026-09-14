@@ -1,4 +1,5 @@
-import FeaturesPage from "./FeaturePage";
+import { pages } from "../../components/MarketingSite/app/content";
+import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
 export const metadata = {
   title: "Powerful CI/CD Features for Modern Engineering | Features",
@@ -46,9 +47,7 @@ export default function Features() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <div>
-        <FeaturesPage />
-      </div>
+      <ContentPage page={pages.features} route="features" />
     </>
   );
 }

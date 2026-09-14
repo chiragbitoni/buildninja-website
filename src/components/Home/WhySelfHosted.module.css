@@ -120,27 +120,31 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
+  gap: 0;
+  border-top: 1px solid var(--rule);
 }
 
 .card {
-  border-radius: 20px;
-  padding: 32px 36px;
+  border-radius: 0;
+  padding: 32px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid var(--rule);
+  transition: background-color 0.2s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+:global(#site-main) .grid > .card:nth-child(2),
+:global(#site-main) .grid > .card:nth-child(4),
+:global(#site-main) .grid > .card:nth-child(5) {
+  border-left: 1px solid var(--rule);
 }
 
 .card_large {
-  grid-column: span 7;
+  grid-column: span 6;
 }
 
 .card_medium {
-  grid-column: span 5;
+  grid-column: span 6;
 }
 
 .card_small {
@@ -196,6 +200,23 @@
   box-shadow: 0 12px 40px -8px rgb(255 255 255 / 0.04);
 }
 
+.theme_coral,
+.theme_dark,
+.theme_sage,
+.theme_sand,
+.theme_white,
+.theme_gradient {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.card:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--section-tint);
+}
+
 .theme_gradient {
   background: linear-gradient(135deg, #ff4172, #ff6a4a);
   border: none;
@@ -207,13 +228,23 @@
 }
 
 .cardIcon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+}
+
+.theme_coral .cardIcon,
+.theme_dark .cardIcon,
+.theme_sage .cardIcon,
+.theme_sand .cardIcon,
+.theme_white .cardIcon {
+  background: transparent;
+  border: 0;
+  color: var(--color-primary);
 }
 
 .theme_coral .cardIcon {
@@ -270,15 +301,14 @@
 }
 
 .comparisonCard {
-  background: var(--comparison-bg);
-  border-radius: 14px;
-  padding: 16px 20px;
-  border: 1px solid var(--comparison-border);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .comparisonHighlight {
-  background: linear-gradient(135deg, #ff4172, #ff6a4a);
-  border-color: transparent;
+  border-left: 1px solid var(--color-primary);
+  padding-left: 16px;
 }
 
 .comparisonLabel {
@@ -292,7 +322,7 @@
 }
 
 .comparisonHighlight .comparisonLabel {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-label);
 }
 
 .comparisonValue {
@@ -306,18 +336,18 @@
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .comparisonSuffix {
   font-size: 13px;
   font-weight: 400;
-  color: hsla(0, 0%, 100%, 0.7);
+  color: var(--text-secondary);
   margin-left: 4px;
 }
 
 [data-theme='light'] .comparisonSuffix {
-  color: hsla(0, 0%, 100%, 0.85);
+  color: var(--text-secondary);
 }
 
 .comparisonArrow {
@@ -334,7 +364,7 @@
 
 .tag {
   padding: 4px 12px;
-  border-radius: 8px;
+  border-radius: var(--control-radius);
   background: var(--tag-bg);
   color: var(--tag-color);
   border: 1px solid var(--tag-border);
@@ -362,7 +392,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 20px;
-  border-radius: 10px;
+  border-radius: var(--control-radius);
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
   font-size: 14px;
@@ -397,7 +427,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  border-radius: 10px;
+  border-radius: var(--control-radius);
   background: #fff;
   color: #ff4172;
   font-size: 14px;
@@ -414,17 +444,18 @@
 }
 
 @media (max-width: 1024px) {
-  .card_large { grid-column: span 12; }
-  .card_medium { grid-column: span 12; }
-  .card_small { grid-column: span 6; }
-  .grid > :nth-child(5) { grid-column: span 12; }
+  .card_large,
+  .card_medium,
+  .card_small { grid-column: span 12; }
+  :global(#site-main) .grid > .card:nth-child(2),
+  :global(#site-main) .grid > .card:nth-child(4),
+  :global(#site-main) .grid > .card:nth-child(5) { border-left: 0; }
 }
 
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
   .header { margin-bottom: 40px; }
-  .card_small { grid-column: span 12; }
-  .card { padding: 24px 20px; }
+  .card { padding: 24px 0; }
   .comparison { flex-direction: column; align-items: flex-start; }
   .comparisonArrow { transform: rotate(90deg); }
   .ctaContent { flex-direction: column; align-items: flex-start; }

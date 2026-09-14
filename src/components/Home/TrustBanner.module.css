@@ -521,3 +521,16 @@
     font-size: 10px;
   }
 }
+
+.panel.site-panel::before { display: none; }
+.chip { border-radius: var(--control-radius); }
+.rose {
+  color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  border-color: var(--color-primary-border);
+}
+.statNumber {
+  color: var(--color-primary);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}

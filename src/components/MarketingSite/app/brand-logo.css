@@ -1,0 +1,12 @@
+/* Fresh website lockup: separate symbol, clear wordmark, quiet attribution. */
+.refreshed-logo { display: inline-block; flex: none; width: 166px; line-height: 0; vertical-align: middle; }
+.brand .refreshed-logo img, .footer .refreshed-logo img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; filter: none; }
+.dark .brand .refreshed-logo .image-dark, .dark .footer .refreshed-logo .image-dark { filter: invert(1); }
+.dark .cf-network-center img,
+.dark .native-ninja-mark img,
+.dark .fp-brand img,
+.dark .runner-workspace img { filter: invert(1); }
+.footer .refreshed-logo { width: 184px; }
+@media(max-width:1050px) { .brand .refreshed-logo { width: 150px; } }
+@media(max-width:600px) { .brand .refreshed-logo { width: 136px; } }
+@media(max-width:380px) { .brand .refreshed-logo { width: 122px; } }

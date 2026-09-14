@@ -1,8 +1,7 @@
-import LegalContent from "@/components/Legal/LegalContent";
-import { fetchGrapeHubPage } from "@/services/grapehub/fetchPage";
+import { LegalPage } from "../../components/MarketingSite/app/legal-page";
 
 export const metadata = {
-  title: "Privacy Policy | BuildNinja",
+  title: { absolute: "Privacy Policy | BuildNinja" },
   description: "Read BuildNinja's Privacy Policy to understand how we collect, use, and protect your personal information while ensuring transparency and data security.",
   alternates: {
     canonical: "https://www.buildninja.io/privacy-policy",
@@ -16,14 +15,6 @@ export const metadata = {
   },
 };
 
-export default async function PrivacyPolicyPage() {
-  const content = await fetchGrapeHubPage("privacy-policy", { stripHeading: "Privacy Policy" });
-  return (
-    <LegalContent 
-      title="Privacy Policy"
-      description="Your privacy is extremely important to us. Learn how we handle, protect, and respect your personal information."
-      badge="Legal Documents"
-      htmlContent={content}
-    />
-  );
+export default function PrivacyPolicyPage() {
+  return <LegalPage route="privacy-policy" />;
 }

@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/components/ui/tabs": ["./src/components/MarketingSite/components/ui/tabs.tsx"],
+      "@/components/ui/bento-grid": ["./src/components/MarketingSite/components/ui/bento-grid.tsx"],
+      "@/components/ui/glowing-effect": ["./src/components/MarketingSite/components/ui/glowing-effect.tsx"],
+      "@/components/ui/resizable-navbar": ["./src/components/MarketingSite/components/ui/resizable-navbar.tsx"],
+      "@/components/ui/chart": ["./src/components/MarketingSite/components/ui/chart.tsx"],
+      "@/components/ui/code-block": ["./src/components/MarketingSite/components/ui/code-block.jsx"]
     }
   }
 }

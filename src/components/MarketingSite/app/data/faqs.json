@@ -1,0 +1,636 @@
+[
+  {
+    "category": "General",
+    "faqs": [
+      {
+        "id": "what-is-buildninja",
+        "question": "What is BuildNinja?",
+        "answer": "BuildNinja is self-hosted CI/CD with AI built in. Configure and run builds, follow activity, and understand failures and code-change findings in one workflow.",
+        "source": "existing"
+      },
+      {
+        "id": "who-is-buildninja-for",
+        "question": "Who is BuildNinja for?",
+        "answer": "BuildNinja is for developers, build owners, and engineering teams who want to run CI/CD on infrastructure they manage. Compare editions against your users, projects, configurations, and build capacity.",
+        "source": "existing"
+      },
+      {
+        "id": "cloud-or-self-hosted",
+        "question": "Is BuildNinja cloud-based or self-hosted?",
+        "answer": "BuildNinja is self-hosted. Run its server and agents on your own machines or cloud infrastructure you manage. AI requests use an external service and require internet access.",
+        "source": "existing"
+      },
+      {
+        "id": "what-makes-buildninja-different",
+        "question": "What makes BuildNinja different from other CI/CD tools?",
+        "answer": "BuildNinja combines configuration management, agents, triggers, execution logs, dashboards, and build intelligence in a self-hosted product. Your team manages the infrastructure and can investigate builds in the same workflow.",
+        "source": "existing"
+      },
+      {
+        "id": "what-is-native-git-support",
+        "question": "What is Native Git support in BuildNinja?",
+        "answer": "BuildNinja handles Git operations through its native Git integration, including server-side repository caching. Connect your repository and configure the credentials and access the build needs.",
+        "source": "existing"
+      },
+      {
+        "id": "what-are-build-parameters",
+        "question": "What are Build Parameters in BuildNinja?",
+        "answer": "Build Parameters are reusable values for build steps. They support inheritance and runtime input, and can be marked secure when they contain sensitive data.",
+        "source": "existing"
+      },
+      {
+        "id": "what-roles-are-available-in-rbac",
+        "question": "What roles are available in RBAC?",
+        "answer": "Viewer can inspect work; Executor can run builds; Editor can change configurations; Manager can manage the project and membership. Permissions apply at project and build-configuration level.",
+        "source": "existing"
+      },
+      {
+        "id": "can-i-try-it-before-installing",
+        "question": "Can I try it before installing?",
+        "answer": "Yes. The [Dojo sandbox](https://www.buildninja.io/dojo) lets you explore sample projects in a browser.",
+        "source": "launch"
+      },
+      {
+        "id": "does-buildninja-include-ai",
+        "question": "Does BuildNinja include AI?",
+        "answer": "Yes. AI helps analyze build logs, explain configurations, and review potential build risks. Requests use free or purchased credits.",
+        "source": "launch"
+      },
+      {
+        "id": "is-ai-a-separate-product-i-need-to-install",
+        "question": "Is AI a separate product I need to install?",
+        "answer": "The supported AI features are part of BuildNinja. Follow the setup instructions for the supported release and account configuration.",
+        "source": "launch"
+      },
+      {
+        "id": "who-makes-buildninja",
+        "question": "Who makes BuildNinja?",
+        "answer": "BuildNinja is a product of GrapeCity India. [Learn about the team](https://www.buildninja.io/about).",
+        "source": "launch"
+      }
+    ]
+  },
+  {
+    "category": "Installation & Setup",
+    "faqs": [
+      {
+        "id": "installation-time",
+        "question": "How long does it take to install BuildNinja?",
+        "answer": "Setup time depends on your operating system, database, network, and build tools. The Windows unified installer guides you through setup; Docker, Linux, and macOS each have dedicated installation guides.",
+        "source": "existing"
+      },
+      {
+        "id": "system-requirements",
+        "question": "What are the System Requirements?",
+        "answer": "Start with at least 2 CPU cores and 4 GB RAM for the server, and 2 CPU cores and 2 GB RAM for an agent. Allow at least 20 GB for the server and 10 GB for an agent as a planning baseline. Your build tools, repositories, and artifacts may need substantially more storage. Review the installation guide for your selected release.",
+        "source": "existing"
+      },
+      {
+        "id": "license-needed",
+        "question": "Do I need a license to use BuildNinja?",
+        "answer": "Yes. Growth uses a free license key. When its license term expires, generate a new Growth key at no charge. Shogun uses a paid license for the term you select. Online and machine-specific offline activation are documented for both editions.",
+        "source": "existing"
+      },
+      {
+        "id": "infrastructure-needed",
+        "question": "What infrastructure do I need for BuildNinja?",
+        "answer": "You need a BuildNinja server, MongoDB, and at least one agent with your build tools and repository access. These can run on your own servers or cloud infrastructure you manage. Infrastructure costs remain separate from edition licensing and AI credits.",
+        "source": "existing"
+      },
+      {
+        "id": "docker-support",
+        "question": "Is there Docker support?",
+        "answer": "Yes. Official server and agent images are available. Follow the Docker guide to configure MongoDB, persistent storage, networking, and startup; pulling the images alone does not complete installation.",
+        "source": "existing"
+      },
+      {
+        "id": "does-buildninja-support-macos",
+        "question": "Does BuildNinja support macOS?",
+        "answer": "Yes. Server and agent distributables are available for macOS, including the documented Apple Silicon setup. Check the current package and installation guide for your machine architecture.",
+        "source": "existing"
+      },
+      {
+        "id": "what-is-included-in-the-installer",
+        "question": "What is included in the BuildNinja installer?",
+        "answer": "The Windows unified installer can install the server, agent, or both. It can configure local MongoDB for the server, or connect to a MongoDB instance you provide. You can also choose the installation directory.",
+        "source": "existing"
+      },
+      {
+        "id": "install-server-and-agent-same-machine",
+        "question": "Can I install both Server and Agent on the same machine?",
+        "answer": "Yes. The unified installer supports both on the same machine. This can suit evaluation or a small setup; size the machine for the combined server, database, and build workload.",
+        "source": "existing"
+      },
+      {
+        "id": "need-to-install-mongodb-separately",
+        "question": "Do I need to install MongoDB separately?",
+        "answer": "The Windows unified installer can install MongoDB locally. Linux and macOS require a separate database setup. If you choose a remote MongoDB URL, that database must already be configured and reachable.",
+        "source": "existing"
+      },
+      {
+        "id": "use-binary-files-instead-of-installer",
+        "question": "Can I still use binary files instead of the installer?",
+        "answer": "Yes. Standalone server and agent binaries support manual configuration for customized or automated deployments. Follow the guide for the package and operating system you choose.",
+        "source": "existing"
+      },
+      {
+        "id": "which-operating-systems-can-i-use",
+        "question": "Which operating systems can I use?",
+        "answer": "Installation options include Windows, Linux, macOS, and Docker. Choose the supported server and agent packages for your environment.",
+        "source": "launch"
+      },
+      {
+        "id": "what-does-a-build-agent-do",
+        "question": "What does a build agent do?",
+        "answer": "An agent is the machine environment that executes your configured build steps. It needs the tools, dependencies, permissions, and connectivity those steps require.",
+        "source": "launch"
+      },
+      {
+        "id": "what-is-a-concurrent-agent",
+        "question": "What is a concurrent agent?",
+        "answer": "Concurrency describes how many agents can execute work at the same time. Check the allowance in your selected edition and the capacity of your infrastructure.",
+        "source": "launch"
+      },
+      {
+        "id": "do-the-docker-pull-commands-complete-the-installation",
+        "question": "Do the Docker pull commands complete the installation?",
+        "answer": "They download the images. Follow the Docker setup guide to configure storage, networking, the database, and startup.",
+        "source": "launch"
+      },
+      {
+        "id": "does-ai-work-offline",
+        "question": "Does AI work offline?",
+        "answer": "No. AI requests require internet access to the external service and an available credit balance. Review your network requirements before enabling the features.",
+        "source": "launch"
+      }
+    ]
+  },
+  {
+    "category": "Pricing & Plans",
+    "faqs": [
+      {
+        "id": "pricing-overview",
+        "question": "How much does BuildNinja cost?",
+        "answer": "Growth is free and uses a license key you can regenerate at no charge when its term expires. Shogun costs $199 for one month, $1,599 for one year, $2,499 for two years, or $3,199 for three years. Each Shogun price is a one-time license payment, not a per-seat charge. BuildNinja comes with AI; the separate prepaid packs are $10 for 2.5 million, $25 for 7 million, and $50 for 15 million credits. Prices are in USD before applicable taxes.",
+        "source": "existing"
+      },
+      {
+        "id": "pricing-for-teams",
+        "question": "How does pricing work for growing teams?",
+        "answer": "Shogun includes unlimited users without a per-seat platform fee. Choose its published monthly, yearly, two-year, or three-year license term. Infrastructure and AI credits remain separate costs. For specialized Enterprise deployment, procurement, or support requirements, talk to our team.",
+        "source": "existing"
+      },
+      {
+        "id": "solo-plan-free",
+        "question": "Is the Growth Edition plan really free forever?",
+        "answer": "Yes. Growth is free. Its free license key is valid for the current license term; generate a new free key when that term expires. AI use has its own credit balance, so the free platform edition does not include unlimited AI usage.",
+        "source": "existing"
+      },
+      {
+        "id": "payment-methods",
+        "question": "What payment methods do you accept?",
+        "answer": "Use the available payment methods in My Account at checkout. Supported card options, taxes, and your invoice are shown there. Contact our team if your organization needs help with purchasing.",
+        "source": "existing"
+      },
+      {
+        "id": "upgrade-growth-to-shogun",
+        "question": "Can I upgrade from Growth to Shogun?",
+        "answer": "Yes. Use My Account to obtain the appropriate license and follow the activation guidance for your existing installation. Review the new license term and allowances before completing the upgrade.",
+        "source": "existing"
+      },
+      {
+        "id": "annual-billing",
+        "question": "Do you offer annual billing or discounts?",
+        "answer": "Yes. Shogun is $199 for one month, $1,599 for one year, $2,499 for two years, or $3,199 for three years. Pay once for the selected license term. AI top-ups are separate one-time purchases and do not renew automatically.",
+        "source": "existing"
+      },
+      {
+        "id": "are-ai-features-available-in-both-editions",
+        "question": "Are AI features available in both editions?",
+        "answer": "Yes. Both Growth and Shogun provide access to supported AI features. Requests use your credit balance.",
+        "source": "launch"
+      },
+      {
+        "id": "how-many-free-ai-credits-can-i-claim",
+        "question": "How many free AI credits can I claim?",
+        "answer": "Eligible new GrapeHub accounts can claim 500,000 credits once, subject to eligibility and allowance availability. No payment card is required to claim.",
+        "source": "launch"
+      },
+      {
+        "id": "what-credit-packs-are-available",
+        "question": "What credit packs are available?",
+        "answer": "The USD packs are $10 for 2.5 million credits, $25 for 7 million, and $50 for 15 million. For larger volumes, contact our team about a custom credit allocation. Prices are before applicable taxes.",
+        "source": "launch"
+      },
+      {
+        "id": "is-there-a-recurring-ai-subscription-or-a-per-seat-ai-charge",
+        "question": "Is there a recurring AI subscription or a per-seat AI charge?",
+        "answer": "No. AI top-ups are prepaid, one-time purchases and do not renew automatically.",
+        "source": "launch"
+      },
+      {
+        "id": "what-are-economy-balanced-and-best",
+        "question": "What are Economy, Balanced, and Best?",
+        "answer": "They are analysis-quality settings for the same supported AI features. Economy uses fewer credits for routine questions, Balanced is the recommended default for everyday investigations, and Best provides the deepest analysis for complex work with higher credit use. Choose a setting for each request or use your app's default.",
+        "source": "launch"
+      },
+      {
+        "id": "why-does-each-request-use-a-different-number-of-credits",
+        "question": "Why does each request use a different number of credits?",
+        "answer": "Usage depends on the quality setting, the information submitted, and the response generated. Larger inputs and longer responses can use more credits.",
+        "source": "launch"
+      },
+      {
+        "id": "what-happens-when-my-ai-balance-reaches-zero",
+        "question": "What happens when my AI balance reaches zero?",
+        "answer": "AI requests pause until credits are available. There is no automatic overage charge. Core CI/CD remains available; if you configure an AI Runner to fail on an analysis error, that explicit step policy can affect the build result.",
+        "source": "launch"
+      },
+      {
+        "id": "when-do-purchased-credits-expire",
+        "question": "When do purchased credits expire?",
+        "answer": "Purchased credits are valid for 12 months from purchase. The earliest-expiring credits are used first.",
+        "source": "launch"
+      },
+      {
+        "id": "do-failed-ai-requests-use-credits",
+        "question": "Do failed AI requests use credits?",
+        "answer": "Provider-side failures do not consume credits. Invalid requests that still use model inference are charged normally. See the [AI terms](https://www.buildninja.io/kenzo-ai-terms).",
+        "source": "launch"
+      },
+      {
+        "id": "does-dojo-spend-my-account-credits",
+        "question": "Does Dojo spend my account credits?",
+        "answer": "No. Dojo uses a shared allowance. If that allowance is exhausted, it shows when AI access resets.",
+        "source": "launch"
+      },
+      {
+        "id": "where-can-i-find-the-refund-rules",
+        "question": "Where can I find the refund rules?",
+        "answer": "Read the [Refund and Cancellation Policy](https://www.buildninja.io/refund-and-cancellation-policy).",
+        "source": "launch"
+      }
+    ]
+  },
+  {
+    "category": "Features & Capabilities",
+    "faqs": [
+      {
+        "id": "vcs-support",
+        "question": "What version control systems does BuildNinja support?",
+        "answer": "BuildNinja supports Git repositories, including GitHub, GitLab, and Bitbucket. Configure repository URLs and authentication for the access your builds require.",
+        "source": "existing"
+      },
+      {
+        "id": "git-trigger",
+        "question": "Does BuildNinja support Git triggers?",
+        "answer": "Yes. Configure Git triggers with branch, commit, author, and other supported filters. BuildNinja checks repository activity according to the trigger configuration. The trigger guide explains the available settings.",
+        "source": "existing"
+      },
+      {
+        "id": "git-changes-visualization",
+        "question": "Can I see the commits included in a build?",
+        "answer": "Yes. The Git Changes tab shows source changes associated with a build, including commits, authors, branches, and commit IDs. This helps connect build results with the changes that triggered them.",
+        "source": "existing"
+      },
+      {
+        "id": "run-build-branch-commit",
+        "question": "Can I run a build against a specific branch or commit?",
+        "answer": "Yes. The Run Build dialog supports selecting branches or a specific commit ID. Review the selected revisions for each repository before starting the build.",
+        "source": "existing"
+      },
+      {
+        "id": "agent-management",
+        "question": "How does agent management work?",
+        "answer": "New agents must be authorized before they execute builds. Administrators can inspect agent status, enable or disable agents, refresh configuration, reset status, and remove agents. Filter by platform or status to find a suitable machine.",
+        "source": "existing"
+      },
+      {
+        "id": "kubernetes-support",
+        "question": "Does BuildNinja support Kubernetes?",
+        "answer": "Yes. The documentation covers deploying server and agent containers with Kubernetes manifests. Your team is responsible for the database, storage, networking, and operating the deployment; high availability requires its own design.",
+        "source": "existing"
+      },
+      {
+        "id": "notifications",
+        "question": "What kind of notifications does BuildNinja send?",
+        "answer": "BuildNinja supports configured email notifications for build events. Administrators configure SMTP; project users choose events, recipients, subjects, and templates for their configurations.",
+        "source": "existing"
+      },
+      {
+        "id": "real-time-logs",
+        "question": "Can I see real-time build logs?",
+        "answer": "Yes. Execution Logs show build output and support keyword search, category filters, and export. Build Results also contains Overview, Git Changes, Artifacts, and AI Analysis when a report is available. The documented per-build log limit is 16 MiB.",
+        "source": "existing"
+      },
+      {
+        "id": "does-native-git-support-caching",
+        "question": "Does Native Git support caching?",
+        "answer": "Yes. Native Git includes server-side repository caching to reduce repeated repository transfers. Performance depends on the repository and your environment.",
+        "source": "existing"
+      },
+      {
+        "id": "which-shells-does-script-runner-support",
+        "question": "Which shells does Script Runner support?",
+        "answer": "Script Runner supports Bash, Shell (sh), Zsh, Command Prompt, PowerShell, and PowerShell 7. The selected shell must be available on the agent.",
+        "source": "existing"
+      },
+      {
+        "id": "can-i-use-ssh-runner-for-deployments",
+        "question": "Can I use SSH Runner for deployments?",
+        "answer": "Yes. SSH Runner executes commands on a remote server using the configured connection and credentials. Use it for deployment steps that your team defines and validates.",
+        "source": "existing"
+      },
+      {
+        "id": "how-do-build-parameters-work-in-build-steps",
+        "question": "How do Build Parameters work in build steps?",
+        "answer": "Reference parameters through supported placeholders or environment variables. Project and configuration parameters can be reused in steps. Mark sensitive parameters secure and limit access appropriately.",
+        "source": "existing"
+      },
+      {
+        "id": "how-does-rbac-affect-build-configurations",
+        "question": "How does RBAC affect build configurations?",
+        "answer": "Assign Viewer, Executor, Editor, or Manager permissions through project or configuration membership. The selected role controls viewing, execution, editing, and membership actions.",
+        "source": "existing"
+      },
+      {
+        "id": "can-i-reuse-commands-and-scripts",
+        "question": "Can I reuse commands and scripts?",
+        "answer": "Yes. Use supported runners and parameters to carry out your commands and scripts. Make sure the agent has the dependencies and access they need.",
+        "source": "launch"
+      },
+      {
+        "id": "can-i-reuse-build-configurations",
+        "question": "Can I reuse build configurations?",
+        "answer": "BuildNinja supports configuration export and reuse, including supported YAML workflows. See the [YAML reference](https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference).",
+        "source": "launch"
+      },
+      {
+        "id": "can-i-copy-a-configuration-from-another-ci-cd-tool-unchanged",
+        "question": "Can I copy a configuration from another CI/CD tool unchanged?",
+        "answer": "Do not assume direct compatibility. Map its triggers, steps, credentials, artifacts, and provider-specific behavior to BuildNinja.",
+        "source": "launch"
+      },
+      {
+        "id": "where-do-i-inspect-a-failed-build",
+        "question": "Where do I inspect a failed build?",
+        "answer": "Open the build details and execution log. AI can help interpret the submitted log and suggest areas to investigate.",
+        "source": "launch"
+      },
+      {
+        "id": "what-does-a-build-risk-forecast-do",
+        "question": "What does a build-risk forecast do?",
+        "answer": "It provides guidance about potential problems based on the context submitted. It cannot guarantee whether a build will succeed or fail.",
+        "source": "launch"
+      },
+      {
+        "id": "does-ai-automatically-change-a-configuration",
+        "question": "Does AI automatically change a configuration?",
+        "answer": "The documented AI workflows analyze, explain, and suggest changes. Review and apply any change yourself, then run your normal checks. The AI Runner can affect step status according to the failure threshold and error behavior you configure.",
+        "source": "launch"
+      },
+      {
+        "id": "can-we-keep-using-buildninja-without-ai",
+        "question": "Can we keep using BuildNinja without AI?",
+        "answer": "Yes. Core configuration, build execution, logs, and agent management do not depend on purchasing AI credits.",
+        "source": "launch"
+      }
+    ]
+  },
+  {
+    "category": "Security & Compliance",
+    "faqs": [
+      {
+        "id": "data-security",
+        "question": "Is my data secure with BuildNinja?",
+        "answer": "Self-hosting gives your team control over the server, agents, and infrastructure. Configure access, credentials, backups, and network controls for your environment. AI sends the submitted request context to an external service; review the AI data policy before enabling it.",
+        "source": "existing"
+      },
+      {
+        "id": "sso-support",
+        "question": "Does BuildNinja support Single Sign-On (SSO)?",
+        "answer": "Supported providers include Microsoft Entra ID, GitHub, GitLab, Google, and Bitbucket. The current account catalog lists one provider for Growth and five for Shogun. Administrators configure each connection; check the applicable license for your release.",
+        "source": "existing"
+      },
+      {
+        "id": "industry-compliance",
+        "question": "Is BuildNinja compliant with industry standards?",
+        "answer": "Self-hosting and access controls can support your infrastructure and data-location requirements. Compliance depends on your complete deployment, organizational processes, and the standard involved; self-hosting alone is not certification.",
+        "source": "existing"
+      },
+      {
+        "id": "hipaa-financial-compliance",
+        "question": "Can BuildNinja support HIPAA or financial compliance requirements?",
+        "answer": "BuildNinja’s self-hosted architecture, role-based access, SSO, and control over data location can support a regulated deployment. Your organization remains responsible for configuring, operating, and validating the complete environment against the specific HIPAA, financial, or other compliance requirements that apply; using BuildNinja does not by itself certify compliance.",
+        "source": "existing"
+      },
+      {
+        "id": "air-gapped-deployment",
+        "question": "Can BuildNinja run in an air-gapped environment?",
+        "answer": "Core BuildNinja can operate without a phone-home or cloud dependency after the required packages are available inside the environment. Repository access, dependency downloads, and external tools still need routes or internal mirrors appropriate to your setup. kenzoAI requires internet access and is unavailable in a fully air-gapped deployment.",
+        "source": "existing"
+      },
+      {
+        "id": "how-are-secrets-and-credentials-managed",
+        "question": "How are secrets and credentials managed?",
+        "answer": "Use secure Build Parameters and the documented credential settings, with access limited by project and configuration permissions. Review how your scripts handle secrets and avoid writing sensitive values into output.",
+        "source": "existing"
+      },
+      {
+        "id": "can-i-control-user-permissions-and-access",
+        "question": "Can I control user permissions and access?",
+        "answer": "Yes. Administrators can review registration requests, block or unblock users, and manage account access. Project and configuration roles determine who can view, execute, edit, or manage work.",
+        "source": "existing"
+      },
+      {
+        "id": "can-permission-changes-affect-running-builds",
+        "question": "Can permission changes affect running builds?",
+        "answer": "Permission changes affect subsequent user actions. They do not provide a substitute for explicitly cancelling a build that is already running. Use the build controls when you need to stop execution.",
+        "source": "existing"
+      },
+      {
+        "id": "does-all-data-stay-inside-that-infrastructure",
+        "question": "Does all data stay inside that infrastructure?",
+        "answer": "AI requests send the submitted context to an external service for processing. Review the [AI data policy](https://www.buildninja.io/kenzo-ai-data-policy) for the applicable data flow and handling.",
+        "source": "launch"
+      }
+    ]
+  },
+  {
+    "category": "Support & Resources",
+    "faqs": [
+      {
+        "id": "support-included",
+        "question": "What support is included?",
+        "answer": "Email support and product documentation are available. Contact the team about the support arrangements for your edition and deployment.",
+        "source": "existing"
+      },
+      {
+        "id": "documentation",
+        "question": "Where can I find documentation?",
+        "answer": "Open the documentation for installation guides, product workflows, runner references, administration, and AI features. Getting Started and the quick setup guides are useful first steps.",
+        "source": "existing"
+      },
+      {
+        "id": "reporting-bugs",
+        "question": "What if I encounter a bug or issue?",
+        "answer": "Use the Support page or email buildninja@grapecity.global. Include the version, operating system, expected behavior, actual result, and relevant error text with credentials removed.",
+        "source": "existing"
+      },
+      {
+        "id": "update-frequency",
+        "question": "How often is BuildNinja updated?",
+        "answer": "Check the release notes and installation page for available releases. Since BuildNinja is self-hosted, your team chooses when to install an update and should review the upgrade instructions first.",
+        "source": "existing"
+      },
+      {
+        "id": "are-there-product-videos",
+        "question": "Are there product videos?",
+        "answer": "The [Features page](https://www.buildninja.io/features) includes demonstrations linked to the relevant product topics.",
+        "source": "launch"
+      },
+      {
+        "id": "where-can-i-see-release-changes",
+        "question": "Where can I see release changes?",
+        "answer": "Read the [release notes](https://www.buildninja.io/docs/category/release-notes).",
+        "source": "launch"
+      },
+      {
+        "id": "what-should-i-include-in-a-support-request",
+        "question": "What should I include in a support request?",
+        "answer": "Include your version, operating system, affected workflow, what you expected, and what happened. Add relevant error text after removing credentials and other sensitive information.",
+        "source": "launch"
+      }
+    ]
+  },
+  {
+    "category": "AI & Build Intelligence",
+    "faqs": [
+      {
+        "id": "what-is-kenzo-ai",
+        "question": "What is kenzoAI?",
+        "answer": "kenzoAI is the hosted AI service behind BuildNinja’s AI features. It analyzes the submitted logs, configurations, code changes, and build context, then returns explanations and findings. The Developer Portal is where you manage the applications, credentials, credit limits, and usage for that service.",
+        "source": "kenzoAI platform model and BuildNinja AI documentation"
+      },
+      {
+        "id": "what-is-build-intelligence",
+        "question": "What does build intelligence mean?",
+        "answer": "Build intelligence means turning build activity, logs, configurations, and code changes into context your team can act on. BuildNinja combines CI/CD visibility with AI analysis and contextual help. It does not replace build results or human review.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "where-is-ai-chat",
+        "question": "Where do I open AI chat?",
+        "answer": "Open the right-edge AI handle or use Alt + A. The panel offers actions for the current build or configuration. You can ask follow-up questions without starting a new investigation.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-log-analysis",
+        "question": "How do I analyze a failed build log?",
+        "answer": "After the build completes, open Build Results → Execution Logs and choose Analyze Logs. Review the findings and use Continue in AI Chat for follow-up questions.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "explain-build-configuration",
+        "question": "How do I get a configuration explanation?",
+        "answer": "Open Configuration Details and choose Explain Config. The explanation covers the submitted steps, parameters, dependencies, and relationships. Continue in the side panel for further questions.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-runner-step",
+        "question": "What does the AI Runner execution step do?",
+        "answer": "AI Runner analyzes the repository code changes associated with a build and produces the AI Build Analysis Report. Add it under Edit Configuration → Execution Steps and configure its credentials, quality, failure threshold, and server-error behavior.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-report-location",
+        "question": "Where do I find the AI Build Analysis Report?",
+        "answer": "When a build has an available AI Runner analysis, open Build Results → AI Analysis. The report contains a summary, risk gauge, severity filters, file findings, and code comparisons.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-risk-gauge",
+        "question": "What does the AI risk gauge show?",
+        "answer": "It shows an AI-generated estimate based on the analyzed changes. In the documented report, high is 90% or above, medium is 75% to below 90%, and low is below 75%. The estimate is advisory and is not a guarantee of the build outcome.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-severity-filter",
+        "question": "Can I filter the AI report by severity?",
+        "answer": "Yes. Select High, Medium, or Low to filter the findings, then expand a file to inspect the explanation and suggested fix.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-runner-failure-policy",
+        "question": "Can an AI Runner cause a build step to fail?",
+        "answer": "Yes, according to the policy you configure. The runner has a failure-percentage threshold and a choice to fail or continue on server errors. Review these settings before adding the step to a required pipeline.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "configure-ai-access",
+        "question": "How does an administrator enable AI?",
+        "answer": "Create an application in the [kenzoAI Developer Portal](/kenzo-ai-portal). Save the App ID/API key and App Secret. An administrator enters them as App Key and App Secret under Settings → AI Configurations in BuildNinja. kenzoAI access, internet connectivity, and available credits are required. An AI Runner step has its own credential and execution settings.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-sessions-controls",
+        "question": "Can I stop a request or clear AI conversation history?",
+        "answer": "The documented side panel includes a stop control for an active request, timestamped sessions, and controls to clear one session or all session history.",
+        "source": "ai-docs"
+      },
+      {
+        "id": "ai-optimized-balanced",
+        "question": "Why do some screenshots say Optimized instead of Balanced?",
+        "answer": "The product documentation and screenshots use Optimized for the middle model tier. The launch credit copy calls the middle setting Balanced. Both describe the balance between analysis depth and credit use; follow the labels available in your installed version.",
+        "source": "ai-docs"
+      }
+    ]
+  },
+  {
+    "category": "kenzoAI portal",
+    "faqs": [
+      {
+        "id": "kenzo-developer-portal",
+        "question": "What is the kenzoAI portal for?",
+        "answer": "It is the place to create kenzoAI applications, manage their credentials and credit limits, and inspect usage. BuildNinja uses those application credentials to connect its AI features to kenzoAI.",
+        "source": "kenzoAI portal documentation"
+      },
+      {
+        "id": "kenzo-api-credentials",
+        "question": "Where do I create my API token or key?",
+        "answer": "Sign in to the developer portal and create an application. kenzoAI provides an App ID, also called an API key, plus an App Secret. Save both securely and use them to connect your integration.",
+        "source": "kenzoAI portal documentation"
+      },
+      {
+        "id": "kenzo-app-id-key",
+        "question": "Is App ID the same as BuildNinja’s App Key?",
+        "answer": "Yes. The portal calls the application identifier App ID or API key. BuildNinja’s AI Configurations screen labels the corresponding field App Key. The App Secret goes in the App Secret field.",
+        "source": "kenzoAI portal documentation"
+      },
+      {
+        "id": "kenzo-secret-once",
+        "question": "Can I see my App Secret again?",
+        "answer": "The App Secret is shown once after creation. Store it securely. If you need a new secret, regenerate it in the application details; the previous secret becomes invalid, so update the connected integration.",
+        "source": "kenzoAI portal documentation"
+      },
+      {
+        "id": "kenzo-reset-pool",
+        "question": "Does resetting an application add more credits?",
+        "answer": "No. A reset renews the application’s consumption allowance for its reset cycle. It does not restore credits already consumed from the account pool.",
+        "source": "kenzoAI portal documentation"
+      },
+      {
+        "id": "kenzo-application-limit",
+        "question": "What happens when an application reaches its Max Credits limit?",
+        "answer": "AI requests from that application pause until you increase its Max Credits or reset its consumed allowance. Other applications can continue if their own allowance and the shared account balance are still available. The minimum configurable application limit is 10,000 credits.",
+        "source": "kenzoAI application management documentation"
+      },
+      {
+        "id": "kenzo-portal-self-hosted",
+        "question": "Does the portal run on my BuildNinja server?",
+        "answer": "The kenzoAI Developer Portal is a hosted service accessed in a browser. BuildNinja runs on your infrastructure and needs network access to kenzoAI for its AI requests.",
+        "source": "kenzoAI portal documentation"
+      }
+    ]
+  }
+]

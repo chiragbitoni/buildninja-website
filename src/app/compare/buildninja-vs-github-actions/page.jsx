@@ -1,4 +1,6 @@
 import React from 'react';
+import { pages } from '../../../components/MarketingSite/app/content';
+import { ContentPage } from '../../../components/MarketingSite/app/markdown';
 
 // Page components
 import Hero from '@/components/compare-github-actions/Hero';
@@ -15,7 +17,7 @@ import RelatedPages from '@/components/compare-github-actions/RelatedPages';
 import CTABanner from '@/components/compare-github-actions/CTABanner';
 
 export const metadata = {
-  title: 'BuildNinja vs GitHub Actions | Comparison',
+  title: { absolute: 'BuildNinja vs GitHub Actions | Comparison' },
   description: 'An honest, detailed comparison between BuildNinja and GitHub Actions. See how self-hosted builds with no per-minute pricing compare against GitHub per-minute billing.',
   alternates: {
     canonical: 'https://www.buildninja.io/compare/buildninja-vs-github-actions',
@@ -101,27 +103,10 @@ const softwareSchema = {
 
 export default function BuildNinjaVsGitHubActions() {
   return (
-    <div className="compare-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
-      />
-      <Hero />
-      <PricingReality />
-      <StructuralWins />
-      <ComparisonTable />
-      <MidCTA />
-      <CostCalculator />
-      {/* <CodeComparison /> */}
-      <MigrationGuide />
-      <Recommendation />
-      <FAQ />
-      {/* <RelatedPages /> */}
-      <CTABanner />
-    </div>
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+        <ContentPage page={pages['compare/buildninja-vs-github-actions']} route="compare/buildninja-vs-github-actions" />
+      </>
   );
 }

@@ -49,6 +49,11 @@
   padding: 20px 0;
   width: max-content;
   will-change: transform;
+  animation: integration-scroll 45s linear infinite;
+}
+
+@keyframes integration-scroll {
+  to { transform: translateX(-50%); }
 }
 
 .logoChip {
@@ -227,4 +232,8 @@
   .detailsCard {
     padding: 24px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroller { animation: none; }
 }

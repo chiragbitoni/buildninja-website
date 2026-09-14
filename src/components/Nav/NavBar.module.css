@@ -3,16 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(var(--bg-rgb), 0.85);
-  backdrop-filter: blur(50px) saturate(120%);
-  -webkit-backdrop-filter: blur(50px) saturate(120%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.05) inset,
-    0 8px 32px rgba(0, 0, 0, 0.2);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--rule);
+  box-shadow: none;
   z-index: 50;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
 }
 
 /* Uncomment for sticky navbar */
@@ -131,7 +127,7 @@
 
 /* ── CTA Button ── */
 .navbarGetStartedButton {
-  border-radius: var(--radius-pill);
+  border-radius: var(--control-radius);
   color: #ffffff;
   background: var(--color-primary);
   padding: 7px 20px;

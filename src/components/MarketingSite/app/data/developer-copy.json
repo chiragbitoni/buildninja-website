@@ -1,0 +1,105 @@
+{
+  "title": "kenzoAI Portal",
+  "seo": "kenzoAI Portal | Credentials, Quality Settings, and Credit Limits | BuildNinja",
+  "description": "Manage kenzoAI access for BuildNinja. Create application credentials, set credit limits and reset schedules, and inspect request-level usage.",
+  "hero": {
+    "eyebrow": "kenzoAI PORTAL",
+    "title": "Manage kenzoAI access",
+    "accent": "with clear credit controls.",
+    "description": "Create application credentials for BuildNinja, choose Economy, Balanced, or Best, set how many credits the application can use, and inspect usage from one portal.",
+    "primary": "Sign in to kenzoAI portal",
+    "secondary": "Read the documentation"
+  },
+  "problem": {
+    "title": "Choose the depth. Set the guardrail.",
+    "description": "Economy, Balanced, and Best change the analysis depth and credit use for the same supported AI features. A separate application allowance controls how much BuildNinja can consume from the shared account pool. Use the sample to see both controls work together."
+  },
+  "benefits": [
+    {
+      "title": "Create and manage applications.",
+      "body": "Give BuildNinja or another integration its own application. See its status, credentials, usage allowance, and activity in one place."
+    },
+    {
+      "title": "Keep credentials under control.",
+      "body": "Create an App ID/API key and App Secret for each application. Store the secret securely and regenerate it when the connection must change."
+    },
+    {
+      "title": "Set quality, limits, and resets.",
+      "body": "Choose the analysis quality, set a maximum of at least 10,000 credits, and reset the application allowance manually, daily, weekly, or monthly."
+    },
+    {
+      "title": "Investigate usage in detail.",
+      "body": "Review requests, sessions, credit trends, and request-level activity. Filter usage by application, period, model tier, task type, or credit amount."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Sign in and enable access.",
+      "body": "Use your GrapeHub account to open the developer portal. Activate kenzoAI access and make sure credits are available. Eligible accounts can claim free credits, with prepaid top-ups available when needed.",
+      "action": "Open the developer portal"
+    },
+    {
+      "title": "Create an application.",
+      "body": "Open Applications and choose Create application. Name the integration, set its credit limit, and choose the available model tier and reset frequency. Save the App ID and the App Secret shown after creation.",
+      "action": "Read the application guide"
+    },
+    {
+      "title": "Connect your workflow.",
+      "body": "In BuildNinja, an administrator adds the credentials under Settings → AI Configurations. For your own integration, start with the kenzoAI documentation. Return to the portal to monitor usage.",
+      "action": "Follow the BuildNinja setup guide"
+    }
+  ],
+  "connection": {
+    "eyebrow": "ALREADY USING BUILDNINJA?",
+    "title": "Set up the access. Keep the intelligence in your builds.",
+    "body": "BuildNinja comes with AI. The developer portal is where you create the application credentials and manage its usage. BuildNinja is where your team analyzes logs, explains configurations, and reviews AI build reports.",
+    "note": "An administrator saves these credentials in Settings → AI Configurations. An AI Runner step has its own documented credential and execution settings."
+  },
+  "credits": {
+    "title": "One credit pool. Clear limits for each application.",
+    "body": "AI requests consume credits from the account pool and count toward the application’s usage limit. Resetting an application’s consumption allowance does not refund credits or refill the account pool.",
+    "action": "See AI credits and USD pricing"
+  },
+  "faqs": [
+    {
+      "id": "kenzo-developer-portal",
+      "question": "What is the kenzoAI portal for?",
+      "answer": "It is the place to create kenzoAI applications, manage their credentials and credit limits, and inspect usage. BuildNinja uses those application credentials to connect its AI features to kenzoAI."
+    },
+    {
+      "id": "kenzo-api-credentials",
+      "question": "Where do I create my API token or key?",
+      "answer": "Sign in to the developer portal and create an application. kenzoAI provides an App ID, also called an API key, plus an App Secret. Save both securely and use them to connect your integration."
+    },
+    {
+      "id": "kenzo-app-id-key",
+      "question": "Is App ID the same as BuildNinja’s App Key?",
+      "answer": "Yes. The portal calls the application identifier App ID or API key. BuildNinja’s AI Configurations screen labels the corresponding field App Key. The App Secret goes in the App Secret field."
+    },
+    {
+      "id": "kenzo-secret-once",
+      "question": "Can I see my App Secret again?",
+      "answer": "The App Secret is shown once after creation. Store it securely. If you need a new secret, regenerate it in the application details; the previous secret becomes invalid, so update the connected integration."
+    },
+    {
+      "id": "kenzo-reset-pool",
+      "question": "Does resetting an application add more credits?",
+      "answer": "No. A reset renews the application’s consumption allowance for its reset cycle. It does not restore credits already consumed from the account pool."
+    },
+    {
+      "id": "kenzo-quality-settings",
+      "question": "What are Economy, Balanced, and Best?",
+      "answer": "They are quality settings for the same supported AI features. Economy gives concise help with the lowest credit use, Balanced is the recommended default for everyday investigations, and Best applies the deepest analysis to complex failures and code-change risk. Actual usage also depends on the context and response size."
+    },
+    {
+      "id": "kenzo-application-limit",
+      "question": "What happens when an application reaches its Max Credits limit?",
+      "answer": "AI requests from that application pause until you increase its Max Credits or reset its consumed allowance. Other applications can continue if their own allowance and the shared account balance are still available. The minimum configurable application limit is 10,000 credits."
+    },
+    {
+      "id": "kenzo-portal-self-hosted",
+      "question": "Does the portal run on my BuildNinja server?",
+      "answer": "The kenzoAI portal is a hosted service accessed in a browser. BuildNinja runs on your infrastructure and needs network access to kenzoAI for its AI requests."
+    }
+  ]
+}

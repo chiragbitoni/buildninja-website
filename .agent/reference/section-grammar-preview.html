@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section grammar preview</title>
+<style>
+/* Tokens copied verbatim from src/app/globals.css. If these drift from
+   the real thing, the real thing wins. */
+:root {
+  --rule: #262626;
+  --section-max: 1280px;
+  --section-space: 80px;
+  --section-space-hero: 128px;
+  --section-space-hero-end: 80px;
+  --section-space-mobile: 40px;
+  --section-space-inset: 64px;
+  --section-pad-x: 16px;
+  --section-pad-x-md: 32px;
+  --section-tint: #262626;
+  --section-marker: 8px;
+
+  --color-bg: #08080b;
+  --color-text: #f5f6f8;
+  --color-text-secondary: #b8bbc4;
+  --color-primary-text: #d8305b;
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] {
+  --rule: #eaedf1;
+  --section-tint: #f9f9f9;
+  --color-bg: #f7f8fa;
+  --color-text: #16181d;
+  --color-text-secondary: #4f5563;
+  --color-primary-text: #be123c;
+  --color-border: rgba(15, 23, 42, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Primitives, mirroring Section.module.css ────────────────── */
+.rule { width: 100%; height: 1px; background-color: var(--rule); }
+.ruleGap { margin-top: 8px; }
+
+.section {
+  position: relative;
+  width: 100%;
+  max-width: var(--section-max);
+  margin-inline: auto;
+  border-inline: 1px solid var(--rule);
+  --section-surface: var(--color-bg);
+}
+
+.spaceStandard, .spaceHero { padding-block: var(--section-space-mobile); }
+.padX { padding-inline: var(--section-pad-x); }
+
+@media (min-width: 768px) {
+  .spaceStandard { padding-block: var(--section-space); }
+  .spaceHero { padding-block: var(--section-space-hero) var(--section-space-hero-end); }
+  .padX { padding-inline: var(--section-pad-x-md); }
+}
+
+.tint {
+  background-color: var(--section-tint);
+  --section-surface: var(--section-tint);
+}
+
+.marker {
+  position: absolute;
+  z-index: 10;
+  width: var(--section-marker);
+  height: var(--section-marker);
+  background-color: var(--color-text);
+  border-radius: 0;
+}
+.mTL { top: 0; left: 0; }
+.mTR { top: 0; right: 0; }
+.mBL { bottom: 0; left: 0; }
+.mBR { bottom: 0; right: 0; }
+
+@media (min-width: 1280px) {
+  .mTL, .mTR { top: calc(var(--section-marker) / -2); }
+  .mBL, .mBR { bottom: calc(var(--section-marker) / -2); }
+  .mTL, .mBL { left: calc(var(--section-marker) * -1); }
+  .mTR, .mBR { right: calc(var(--section-marker) * -1); }
+}
+
+.header {
+  padding-inline: var(--section-pad-x);
+  padding-block: var(--section-space-mobile);
+}
+.headerCenter { text-align: center; }
+.headerCenter .sub { margin-inline: auto; }
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-primary-text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.sub {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .header { padding-inline: var(--section-pad-x-md); padding-block: var(--section-space); }
+  .heading { font-size: 1.875rem; }
+}
+@media (min-width: 1024px) {
+  .heading { font-size: 2.25rem; }
+  .sub { font-size: 1rem; }
+}
+
+.headerFlush { padding-bottom: var(--section-space-inset); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols, 1), minmax(0, 1fr));
+  gap: 1px;
+  background-color: var(--rule);
+  border-top: 1px solid var(--rule);
+}
+.grid > * { background-color: var(--section-surface); }
+
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(var(--grid-cols-md, 3), minmax(0, 1fr)); }
+}
+
+/* ── Preview-only demo content ───────────────────────────────── */
+.cell { padding: 32px var(--section-pad-x); }
+@media (min-width: 768px) { .cell { padding: 32px; } }
+
+.cellTitle { margin: 0 0 8px; font-size: 0.9375rem; font-weight: 600; }
+.cellText { margin: 0; color: var(--color-text-secondary); font-size: 0.875rem; line-height: 1.55; }
+
+.logoCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+.shot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+}
+
+.mount { padding: 8px; }
+@media (min-width: 768px) { .mount { padding: 16px; } }
+@media (min-width: 1024px) { .mount { padding: 32px; } }
+
+.btn {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.faqRow { padding: 24px var(--section-pad-x); }
+@media (min-width: 768px) { .faqRow { padding: 24px 32px; } }
+.faqRow + .faqRow { border-top: 1px solid var(--rule); }
+.faqQ { margin: 0; font-size: 0.9375rem; font-weight: 500; }
+.faqA { margin: 8px 0 0; color: var(--color-text-secondary); font-size: 0.875rem; line-height: 1.55; }
+
+.toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 50;
+  padding: 6px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.note {
+  padding: 12px var(--section-pad-x);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) { .note { padding: 12px 32px; } }
+</style>
+</head>
+<body>
+<button class="toggle" id="t">Toggle theme</button>
+<div class="note">1 &middot; hero band &mdash; space="hero" padX, centred header</div>
+<div class="rule"></div>
+<section class="section spaceHero padX">
+  <div class="header headerCenter" style="padding:0">
+    <p class="eyebrow">Self hosted CI/CD</p>
+    <h1 class="heading" style="font-size:clamp(2.5rem,7vw,4.5rem);font-weight:600;letter-spacing:-0.045em;line-height:1">
+      Ship faster on hardware you own
+    </h1>
+    <p class="sub">
+      One binary, your servers, no per seat pricing. The band above and below this
+      text is closed by a hairline, and the two vertical rails run the whole page.
+    </p>
+    <p style="margin:24px 0 0"><a class="btn" href="#">Get started</a></p>
+  </div>
+</section>
+
+<div class="note">2 &middot; showcase band &mdash; tint + markers, mount padding only</div>
+<div class="rule"></div>
+<section class="section tint mount">
+  <span class="marker mTL"></span><span class="marker mTR"></span>
+  <span class="marker mBL"></span><span class="marker mBR"></span>
+  <div class="shot">product screenshot &middot; the only surface that keeps a radius</div>
+</section>
+
+<div class="note">3 &middot; logo cloud &mdash; unpadded band, 2 up mobile / 4 up md</div>
+<div class="rule"></div>
+<section class="section">
+  <div class="grid" style="--grid-cols:2;--grid-cols-md:4">
+    <div class="cell logoCell">GitHub</div>
+    <div class="cell logoCell">GitLab</div>
+    <div class="cell logoCell">Bitbucket</div>
+    <div class="cell logoCell">Gitea</div>
+    <div class="cell logoCell">Docker</div>
+    <div class="cell logoCell">Kubernetes</div>
+    <div class="cell logoCell">Terraform</div>
+    <div class="cell logoCell">Ansible</div>
+  </div>
+</section>
+<div class="note">4 &middot; header + grid &mdash; flush header, 2 up md</div>
+<div class="rule"></div>
+<section class="section">
+  <div class="header headerFlush">
+    <p class="eyebrow">How it works</p>
+    <h2 class="heading">From commit to production</h2>
+    <p class="sub">The header keeps its own inline padding. The grid does not, so its
+      hairlines reach the rails on both sides.</p>
+  </div>
+  <div class="grid" style="--grid-cols:1;--grid-cols-md:2">
+    <div class="cell">
+      <h3 class="cellTitle">Push</h3>
+      <p class="cellText">A webhook lands and the pipeline starts on your own runner.
+        No queue, no minutes billed.</p>
+    </div>
+    <div class="cell">
+      <h3 class="cellTitle">Build</h3>
+      <p class="cellText">Steps run in containers you define, with the cache on local disk.</p>
+    </div>
+    <div class="cell">
+      <h3 class="cellTitle">Test</h3>
+      <p class="cellText">Parallel jobs fan out across the runners you have registered.</p>
+    </div>
+    <div class="cell">
+      <h3 class="cellTitle">Deploy</h3>
+      <p class="cellText">Promote to an environment with an approval gate in front of it.</p>
+    </div>
+  </div>
+</section>
+
+<div class="note">5 &middot; three up grid &mdash; centred header</div>
+<div class="rule"></div>
+<section class="section">
+  <div class="header headerCenter headerFlush">
+    <h2 class="heading">Why self hosted</h2>
+    <p class="sub">Cells carry no border, no radius and no shadow of their own. Every
+      divider you can see is the same one hairline value.</p>
+  </div>
+  <div class="grid" style="--grid-cols:1;--grid-cols-md:3">
+    <div class="cell">
+      <h3 class="cellTitle">Your data stays put</h3>
+      <p class="cellText">Source, artefacts and secrets never leave the network you control.</p>
+    </div>
+    <div class="cell">
+      <h3 class="cellTitle">Flat cost</h3>
+      <p class="cellText">You pay for the box. Adding a tenth engineer costs nothing extra.</p>
+    </div>
+    <div class="cell">
+      <h3 class="cellTitle">No cold starts</h3>
+      <p class="cellText">Runners are already warm, with the dependency cache on local disk.</p>
+    </div>
+  </div>
+</section>
+<div class="note">6 &middot; double rule &mdash; the accent for a major transition, use sparingly</div>
+<div class="rule"></div>
+<div class="rule ruleGap"></div>
+<section class="section">
+  <div class="header headerFlush">
+    <h2 class="heading">How BuildNinja compares</h2>
+  </div>
+  <div class="grid" style="--grid-cols:1;--grid-cols-md:3">
+    <div class="cell">
+      <h3 class="cellTitle">Hosted runners</h3>
+      <p class="cellText">Billed per minute, cold on every start, capped concurrency.</p>
+    </div>
+    <div class="cell">
+      <h3 class="cellTitle">Self managed forks</h3>
+      <p class="cellText">Free to run, expensive to keep patched and upgraded.</p>
+    </div>
+    <div class="cell">
+      <h3 class="cellTitle">BuildNinja</h3>
+      <p class="cellText">One binary to install, upgrades in place, no per seat maths.</p>
+    </div>
+  </div>
+</section>
+
+<div class="note">7 &middot; hairline list &mdash; one continuous divided list, no cards</div>
+<div class="rule"></div>
+<section class="section">
+  <div class="header headerFlush">
+    <h2 class="heading">Questions</h2>
+  </div>
+  <div class="rule"></div>
+  <div class="faqRow">
+    <p class="faqQ">Do I need Kubernetes to run this?</p>
+    <p class="faqA">No. A single Linux host with Docker is enough to start.</p>
+  </div>
+  <div class="faqRow">
+    <p class="faqQ">How are upgrades handled?</p>
+    <p class="faqA">Replace the binary and restart. Config and history are on disk.</p>
+  </div>
+  <div class="faqRow">
+    <p class="faqQ">Is there a seat limit?</p>
+    <p class="faqA">No. Licensing is per install, not per person.</p>
+  </div>
+</section>
+
+<div class="note">8 &middot; closing CTA &mdash; space="standard" padX, no grid</div>
+<div class="rule"></div>
+<section class="section spaceStandard padX" style="text-align:center">
+  <h2 class="heading">Run your first pipeline today</h2>
+  <p class="sub" style="margin-inline:auto">Install takes about five minutes on a box you already have.</p>
+  <p style="margin:24px 0 0"><a class="btn" href="#">Read the install guide</a></p>
+</section>
+<div class="rule"></div>
+<script>
+  const b = document.getElementById('t');
+  b.addEventListener('click', () => {
+    const h = document.documentElement;
+    h.dataset.theme = h.dataset.theme === 'light' ? 'dark' : 'light';
+  });
+</script>
+</body>
+</html>

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import styles from "./HowNinjaCompares.module.css";
+import { Section } from "@/components/Marketing/Section";
 
 const rows = [
   { feature: "Monthly cost (200 builds/day)", bn: { icon: true, text: "Server infra only" }, cc: { tag: "cost", text: "~$800\u20131,200/mo" }, ga: { tag: "cost", text: "~$300\u2013450/mo" }, jen: { icon: true, text: "Server infra only" } },
@@ -27,7 +28,7 @@ function CellContent({ data }) {
 
 export default function HowNinjaCompares() {
   return (
-    <section className={styles.section}>
+    <Section className={styles.section} space="standard">
       <div className={styles.ambientGlow} />
       <div className={styles.gridOverlay} />
 
@@ -87,6 +88,6 @@ export default function HowNinjaCompares() {
           * Cost estimates based on publicly listed pricing for a 50-person team running 200 builds/day at 6 minutes average duration. CircleCI Performance plan at $15/user/mo + credit overages. GitHub Actions Team plan at $4/user/mo + compute overage. BuildNinja and Jenkins are self-hosted - server infrastructure cost only.
         </motion.p>
       </div>
-    </section>
+    </Section>
   );
 }

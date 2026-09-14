@@ -429,3 +429,15 @@
 .notFoundLink:hover {
   opacity: 0.85;
 }
+
+@media (max-width: 768px) {
+  .content :global(a) {
+    overflow-wrap: anywhere;
+  }
+
+  .content :global(table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}

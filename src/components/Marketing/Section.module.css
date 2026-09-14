@@ -1,0 +1,128 @@
+.rule {
+  width: 100%;
+  height: 1px;
+  margin-inline: 0;
+  background: var(--rule);
+}
+
+.ruleGap {
+  margin-top: 8px;
+}
+
+.band {
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, var(--section-max));
+  margin: 0 auto;
+  border-inline: 1px solid var(--rule);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.heading {
+  width: min(100%, var(--type-copy-measure));
+}
+
+.heading h2 {
+  margin: 0;
+}
+
+.heading .section-subtitle {
+  margin-top: 16px;
+}
+
+.centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.centered .section-subtitle {
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: var(--type-label-size);
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--section-grid-columns, 2), minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+}
+
+.grid > * {
+  min-width: 0;
+  padding: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.grid > * + * {
+  border-left: 1px solid var(--rule);
+}
+
+.body {
+  width: min(100%, var(--type-copy-measure));
+  margin-inline: auto;
+}
+
+.marker {
+  position: absolute;
+  z-index: 2;
+  width: var(--section-marker);
+  height: var(--section-marker);
+  border-radius: 0;
+  background: var(--color-text);
+  pointer-events: none;
+}
+
+.markerTopLeft { inset: -4px auto auto -4px; }
+.markerTopRight { inset: -4px -4px auto auto; }
+.markerBottomLeft { inset: auto auto -4px -4px; }
+.markerBottomRight { inset: auto -4px -4px auto; }
+
+.motionControl {
+  position: absolute;
+  z-index: 5;
+  inset: 12px 12px auto auto;
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid var(--rule);
+  border-radius: var(--control-radius);
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  font: 500 12px/1.2 var(--font-ui);
+  cursor: pointer;
+}
+
+.motionControl:hover:not(:disabled) {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.motionControl:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.motionControl:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.band[data-motion-state='paused'] * {
+  animation-play-state: paused !important;
+}
+
+@media (min-width: 768px) {
+  .grid > * { padding: 32px; }
+  .grid > *:nth-child(2n + 1) { border-left: 0; }
+}
+
+@media (max-width: 767px) {
+  .grid { grid-template-columns: 1fr; }
+  .grid > * + * { border-left: 0; }
+}

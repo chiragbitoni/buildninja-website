@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import posthog from "posthog-js";
 import styles from "./CTASection.module.css";
+import { AnimatedSection } from "@/components/Marketing/SectionMotion";
 
 export default function CTASection() {
   const containerRef = useRef(null);
@@ -17,7 +18,7 @@ export default function CTASection() {
   const orbY2 = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
 
   return (
-    <section className={styles.section} ref={containerRef}>
+    <AnimatedSection as="section" className={styles.section} ref={containerRef} space="standard" label="Call-to-action animation">
       {/* Decorative background grid and orbs */}
       <div className={styles.grid} aria-hidden="true" />
       <motion.div className={`${styles.orb} ${styles.orb1}`} style={{ y: orbY1 }} aria-hidden="true" />
@@ -25,7 +26,7 @@ export default function CTASection() {
 
       <div className={styles.container}>
         <motion.div 
-          className={styles.contentBox}
+          className={`${styles.contentBox} site-panel`}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -135,6 +136,6 @@ export default function CTASection() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }
