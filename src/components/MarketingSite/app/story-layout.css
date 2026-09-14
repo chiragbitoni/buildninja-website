@@ -64,14 +64,13 @@
 .setup-tabs>button { flex:1; min-height:143px; padding:26px 32px; }
 .setup-tabs>button:last-child { border-bottom:0; }
 .setup-tabs>button[data-active] { background:linear-gradient(100deg,var(--soft),var(--surface)); box-shadow:inset 3px 0 var(--coral); }
-.setup-tabs>button[data-active]::before { content:''; position:absolute; left:0; bottom:0; width:100%; height:2px; background:var(--coral); transform-origin:left; animation:step-underline 450ms ease both; }
+#site-main .setup-tabs>button:focus-visible { outline:none; outline-offset:0; border-color:transparent; box-shadow:inset 3px 0 var(--coral); }
 .setup-output { border:0; border-left:1px solid var(--line); border-radius:0; padding:50px 40px; display:grid; align-items:center; background-image:radial-gradient(var(--line) .75px,transparent .75px),radial-gradient(ellipse at 50% 100%,var(--coral-soft),var(--soft) 70%); background-size:9px 9px,100% 100%; }
 .setup-preview-layer { position:relative; max-width:480px; margin:auto; padding-top:12px; }
 .setup-preview-layer::before { content:''; position:absolute; inset:22px 14px -10px; border:1px solid var(--line); background:var(--surface); border-radius:12px; transform:rotate(-3deg); }
 .setup-terminal { position:relative; min-height:325px; box-shadow:0 12px 30px #2021240b; }
 .setup-badge { display:flex; align-items:center; gap:8px; position:relative; width:max-content; max-width:90%; margin:0 14px -17px auto; padding:9px 13px; background:var(--surface); border:1px solid var(--line); border-radius:40px; box-shadow:0 4px 9px #2021240c; font-size:11px; z-index:2; }
 .setup-badge svg:first-child { color:var(--coral-dark); }
-@keyframes step-underline { from { transform:scaleX(0); } to { transform:scaleX(1); } }
 
 /* AI sits inside the product workflow, with readable source and response. */
 .ai-story>.section { padding:76px 0 0; }
@@ -185,5 +184,5 @@
  .page-end.stack-cta { padding:75px 24px; }.final-cta.stack-cta { padding:80px 22px; }.final-cta.stack-cta h2 { font-size:43px; }
 }
 @media (prefers-reduced-motion:reduce) {
- .connection-pulses { display:none; }.setup-tabs>button[data-active]::before { animation:none; }
+ .connection-pulses { display:none; }
 }
