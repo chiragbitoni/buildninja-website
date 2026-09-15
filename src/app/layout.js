@@ -1,4 +1,4 @@
-import { DM_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import ClientAuthProvider from "./ClientAuthProvider";
@@ -25,15 +25,14 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import SchemaScript from "@/components/SchemaScript";
 import SiteFrame from "./SiteFrame";
 
-const inter = Inter({
-  variable: "--font-inter",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const dmMono = DM_Mono({
-  variable: "--font-dm-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
 });
 const schema = {
   "@context": "https://schema.org",
@@ -128,7 +127,7 @@ export default async function RootLayout({ children }) {
         />
         <GoogleAnalytics GA_ID={process.env.NEXT_PUBLIC_GA_ID} />
       </head>
-      <body className={`min-h-screen ${inter.variable} ${dmMono.variable}`}>
+      <body className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}>
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>
