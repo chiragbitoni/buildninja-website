@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ResizableNavbar } from '@/components/ui/resizable-navbar';
 import { AskAISection } from './trust-sections';
 import { BrandLogo } from './brand-logo';
+import { AnnouncementBar } from './announcement-bar';
 
 const navigation = [
   ['Features', '/features'],
@@ -55,6 +56,7 @@ export function SiteHeader() {
   }
   return <>
     <SiteLink className="skip-link" href="#main-content">Skip to content</SiteLink>
+    <AnnouncementBar />
     <header className="site-header"><ResizableNavbar>
       <SiteLink className="brand" href="/" aria-label="BuildNinja home"><BrandLogo/></SiteLink>
       <nav className={open ? 'navigation is-open' : 'navigation'} aria-label="Main navigation">

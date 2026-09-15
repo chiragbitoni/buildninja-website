@@ -9,6 +9,7 @@ import "./globals.css";
 import "./animations.css";
 import "../components/MarketingSite/app/site-base.css";
 import "../components/MarketingSite/app/design-system.css";
+import "../components/MarketingSite/app/announcement-bar.css";
 import "../components/MarketingSite/app/story-layout.css";
 import "../components/MarketingSite/app/product-pages.css";
 import "../components/MarketingSite/app/dashboard-preview.css";
