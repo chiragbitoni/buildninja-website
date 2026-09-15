@@ -178,6 +178,7 @@ function ContactBox({kind}:{kind:'contact'|'support'|'partners'}){
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState<'success' | 'error' | null>(null);
   const { resolvedTheme } = useTheme();
+  const captchaTheme = resolvedTheme === 'light' ? 'light' : 'dark';
 
   useEffect(() => {
     if (!isPartner) return;
@@ -264,7 +265,7 @@ function ContactBox({kind}:{kind:'contact'|'support'|'partners'}){
         : <input name={label} type={label.toLowerCase().includes('email')?'email':'text'} required value={form[label]} onChange={event => updateField(label, event.target.value)} />}</label>;
     })}</div>
     {kind === 'support' ? <p className="form-note">Relevant error text helps us understand the issue. Remove passwords, tokens, and other sensitive information before sharing it.</p> : null}
-    <div className="captcha-container"><div className="captcha-inner"><ReCAPTCHA key={resolvedTheme} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} theme={resolvedTheme === 'light' ? 'light' : 'dark'} onChange={token => setCaptchaToken(token)} onExpired={() => setCaptchaToken(null)} /></div></div>
+    <div className="captcha-container"><div className="captcha-inner"><ReCAPTCHA key={captchaTheme} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} theme={captchaTheme} onChange={token => setCaptchaToken(token)} onExpired={() => setCaptchaToken(null)} /></div></div>
     <button className="button" type="submit" disabled={submitting || !captchaToken}>{submitting ? 'Sending…' : buttonLabel}<Send size={15}/></button>
     {kind === 'partners' ? <p className="form-note">Your phone number must use a valid Indian number starting with +91.</p> : null}
   </form>;

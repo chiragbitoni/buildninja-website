@@ -232,15 +232,20 @@
   color: var(--color-text);
 }
 
-/* react-international-phone overrides to match glassmorphism */
+/* react-international-phone overrides - keep both themes on the shared palette */
 .phoneWrap {
   width: 100%;
-  --react-international-phone-background-color: transparent;
+  --react-international-phone-background-color: var(--color-bg-panel);
+  --react-international-phone-country-selector-background-color: var(--color-bg-panel);
+  --react-international-phone-country-selector-background-color-hover: var(--color-bg-surface-hover);
   --react-international-phone-border-color: var(--color-border-medium);
   --react-international-phone-text-color: var(--color-text);
-  --react-international-phone-dropdown-bg: var(--color-bg-panel);
+  --react-international-phone-dropdown-item-background-color: var(--color-bg-panel);
   --react-international-phone-dropdown-item-text-color: var(--color-text);
-  --react-international-phone-dropdown-item-background-hover-color: rgba(255, 255, 255, 0.1);
+  --react-international-phone-selected-dropdown-item-background-color: var(--color-bg-surface-hover);
+  --react-international-phone-selected-dropdown-item-text-color: var(--color-text);
+  --react-international-phone-dropdown-item-dial-code-color: var(--color-text-secondary);
+  --react-international-phone-selected-dropdown-item-dial-code-color: var(--color-text-secondary);
   --react-international-phone-border-radius: var(--radius-md);
 }
 
@@ -249,28 +254,64 @@
 }
 
 :global(.react-international-phone-input-container) {
+  display: flex !important;
+  align-items: stretch !important;
+  box-sizing: border-box;
   width: 100% !important;
   height: 50px !important;
 }
 
+.phoneWrap :global(.react-international-phone-country-selector) {
+  display: flex;
+  flex: 0 0 auto;
+  height: 100%;
+}
+
 .phoneWrap input {
+  display: block;
   flex: 1 1 auto !important;
+  align-self: stretch;
+  min-width: 0;
+  width: auto !important;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.2) !important;
+  background: var(--color-bg-panel) !important;
   border: 1px solid var(--color-border-medium) !important;
   color: var(--color-text) !important;
   font-size: 1rem;
   padding: 0 16px !important;
   height: 100% !important;
+  line-height: 1.2 !important;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .phoneWrap :global(.react-international-phone-country-selector-button) {
-  background: rgba(0, 0, 0, 0.2) !important;
+  display: flex !important;
+  flex: 0 0 auto;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box;
+  background: var(--color-bg-panel) !important;
   border: 1px solid var(--color-border-medium) !important;
   border-right: none !important;
   height: 100% !important;
+  line-height: 1 !important;
   padding: 0 14px !important;
+}
+
+.phoneWrap :global(.react-international-phone-country-selector-button__button-content) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.phoneWrap :global(.react-international-phone-country-selector-button__flag-emoji) {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.phoneWrap :global(.react-international-phone-country-selector-button__dropdown-arrow) {
+  flex: 0 0 auto;
 }
 
 :global(.react-international-phone-country-selector-dropdown) {
@@ -286,7 +327,7 @@
 }
 
 :global(.react-international-phone-country-selector-dropdown) li:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: var(--color-bg-surface-hover) !important;
 }
 
 

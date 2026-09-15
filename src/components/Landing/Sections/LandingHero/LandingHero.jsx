@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Check, Play, Sparkles } from "lucide-react";
@@ -12,6 +13,8 @@ import s from "./LandingHeroRedesign.module.css";
 
 export default function LandingHero() {
     const hasStartedRef = useRef(false);
+    const { resolvedTheme } = useTheme();
+    const captchaTheme = resolvedTheme === "light" ? "light" : "dark";
 
     const [loading, setLoading] = useState(false);
     const [captchaToken, setCaptchaToken] = useState(null);
@@ -274,7 +277,8 @@ export default function LandingHero() {
                             <div className="captcha-container">
                                 <div className="captcha-inner">
                                     <ReCAPTCHA
-                                        theme="light"
+                                        key={captchaTheme}
+                                        theme={captchaTheme}
                                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                                         onChange={(token) => {
                                             setCaptchaToken(token);

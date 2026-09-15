@@ -1,4 +1,4 @@
-.developer-page { background:var(--surface); }
+.developer-page { background:var(--background); }
 .ai-actions { flex-wrap:wrap; }
 .ai-actions>a { display:inline-flex; align-items:center; gap:8px; color:var(--coral-dark); flex-shrink:0; }
 .kenzo-context { padding:48px 40px; border-block:1px solid var(--line); background:var(--soft); display:grid; grid-template-columns:1.15fr 1fr; gap:70px; align-items:center; }
@@ -54,7 +54,7 @@
 .developer-story-rail h2 { font-size:34px; line-height:1.15; margin:22px 0; }
 .developer-story-rail p { font-size:14px; margin-bottom:25px; }
 .developer-story-rail>a,.developer-entry-actions>a,.developer-steps a,.developer-key-map>a,.developer-credit-story>a { display:inline-flex; align-items:center; gap:9px; color:var(--coral-dark); font-size:13px; font-weight:500; }
-.developer-product-stage { min-width:0; padding:34px; background:radial-gradient(ellipse at 80% 100%,var(--coral-soft),transparent 70%),var(--soft); }
+.developer-product-stage { min-width:0; padding:34px; background:var(--background); }
 .developer-console { border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--surface); box-shadow:0 20px 45px #2021240b; font-size:12px; container-type:inline-size; }
 .developer-console [data-slot=button] { height:auto; white-space:normal; }
 .developer-console-layout>nav>button,.developer-app-list>button { justify-content:flex-start; }
@@ -219,7 +219,7 @@
 .developer-steps h3 { font-size:22px; margin:25px 0 13px; }
 .developer-steps p { font-size:13px; margin:0 0 24px; }
 .developer-steps a { margin-top:auto; }
-.developer-connection { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; padding:65px 50px; border-bottom:1px solid var(--line); background:var(--soft); }
+.developer-connection { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; padding:65px 50px; border-bottom:1px solid var(--line); background:var(--background); }
 .developer-connection h2 { font-size:32px; line-height:1.25; margin:18px 0; }
 .developer-connection p { font-size:14px; margin-bottom:22px; }
 .developer-key-map { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:24px; box-shadow:var(--shadow); }

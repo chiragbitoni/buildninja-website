@@ -19,7 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactPageClient({ grapehubContactHtml }) {
-    const { theme, resolvedTheme } = useTheme();
+    const { resolvedTheme } = useTheme();
 
     const [form, setForm] = useState({
         name: "",
@@ -32,7 +32,7 @@ export default function ContactPageClient({ grapehubContactHtml }) {
     const [captchaToken, setCaptchaToken] = useState(null);
     const [isSuccess, setIsSuccess] = useState(false);
 
-    const currentTheme = theme === "system" ? resolvedTheme : theme;
+    const captchaTheme = resolvedTheme === "light" ? "light" : "dark";
 
     const handleChange = (e) => {
         setForm({
@@ -222,8 +222,8 @@ export default function ContactPageClient({ grapehubContactHtml }) {
                                     <motion.div className="captcha-container" variants={fadeUp} initial="hidden" animate="visible" custom={5}>
                                         <div className="captcha-inner">
                                             <ReCAPTCHA
-                                                key={currentTheme}
-                                                theme={currentTheme || "dark"}
+                                                key={captchaTheme}
+                                                theme={captchaTheme}
                                                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                                                 onChange={(token) => setCaptchaToken(token)}
                                             />

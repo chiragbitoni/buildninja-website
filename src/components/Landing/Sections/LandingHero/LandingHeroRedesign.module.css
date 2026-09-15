@@ -118,19 +118,48 @@
 .formFirst .left { order: 2; }
 .formFirst .right { order: 1; }
 
-:global(.react-international-phone-input-container) { width: 100% !important; height: 42px !important; }
-:global(.react-international-phone-country-selector-button), :global(.react-international-phone-input) {
+:global(.react-international-phone-input-container) {
+  display: flex !important;
+  align-items: stretch !important;
+  box-sizing: border-box;
+  width: 100% !important;
   height: 42px !important;
+  --react-international-phone-background-color: var(--color-bg-panel);
+  --react-international-phone-country-selector-background-color: var(--color-bg-panel);
+  --react-international-phone-country-selector-background-color-hover: var(--color-bg-surface-hover);
+  --react-international-phone-border-color: var(--line);
+  --react-international-phone-text-color: var(--ink);
+  --react-international-phone-dropdown-item-background-color: var(--color-bg-panel);
+  --react-international-phone-dropdown-item-text-color: var(--ink);
+  --react-international-phone-selected-dropdown-item-background-color: var(--background);
+  --react-international-phone-selected-dropdown-item-text-color: var(--ink);
+  --react-international-phone-dropdown-item-dial-code-color: var(--muted);
+  --react-international-phone-selected-dropdown-item-dial-code-color: var(--muted);
+}
+:global(.react-international-phone-country-selector) { display: flex; flex: 0 0 auto; height: 100%; }
+:global(.react-international-phone-country-selector-button) {
+  display: flex !important;
+  flex: 0 0 auto;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box;
+  height: 100% !important;
+  line-height: 1 !important;
   border-color: var(--line) !important;
-  background: var(--background) !important;
+  background: var(--color-bg-panel) !important;
   color: var(--ink) !important;
   box-shadow: none !important;
 }
+:global(.react-international-phone-country-selector-button__button-content) { display: flex; align-items: center; justify-content: center; line-height: 1; }
+:global(.react-international-phone-country-selector-button__flag-emoji) { display: block; flex: 0 0 auto; }
+:global(.react-international-phone-country-selector-button__dropdown-arrow) { flex: 0 0 auto; }
 :global(.react-international-phone-country-selector-button) { border-radius: 7px 0 0 7px !important; }
-:global(.react-international-phone-input) { width: 100% !important; border-radius: 0 7px 7px 0 !important; font-size: 11px !important; }
+:global(.react-international-phone-input) { display: block; flex: 1 1 auto !important; align-self: stretch; min-width: 0; width: auto !important; height: 100% !important; box-sizing: border-box; line-height: 1.2 !important; border-radius: 0 7px 7px 0 !important; font-size: 11px !important; }
 :global(.react-international-phone-input-container:focus-within .react-international-phone-country-selector-button),
 :global(.react-international-phone-input-container:focus-within .react-international-phone-input) { border-color: var(--coral-dark) !important; }
-:global(.react-international-phone-country-selector-dropdown) { z-index: 20 !important; border-color: var(--line) !important; background: var(--surface) !important; color: var(--ink) !important; }
+:global(.react-international-phone-country-selector-dropdown) { z-index: 20 !important; border-color: var(--line) !important; background: var(--color-bg-panel) !important; color: var(--ink) !important; }
+:global(.react-international-phone-country-selector-dropdown) li { background: var(--color-bg-panel) !important; color: var(--ink) !important; }
+:global(.react-international-phone-country-selector-dropdown) li:hover { background: var(--color-bg-surface-hover) !important; }
 
 @media (max-width: 950px) {
   .container { grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr); gap: 28px; }

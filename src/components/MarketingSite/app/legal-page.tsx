@@ -101,15 +101,19 @@ function LegalDocument({ markdown }: { markdown: string }) {
 export function LegalPage({ route }: { route: LegalRoute }) {
   const page = legalPages[route];
   const markdown = legalDocumentMarkdown[route];
+  const outlineLevel = markdown.split('\n')
+    .map(line => line.trim().match(/^(#{2,6})\s+(.+)$/)?.[1].length)
+    .find((level): level is number => level !== undefined) ?? 2;
+  const outlineHeading = new RegExp(`^#{${outlineLevel}}\\s+(.+)$`);
   const outline = markdown.split('\n').flatMap(line => {
-    const match = line.trim().match(/^##\s+(.+)$/);
+    const match = line.trim().match(outlineHeading);
     if (!match) return [];
     const label = match[1].replace(/\*\*/g, '');
     return [{ label, id: sectionId(label) }];
   });
   return <main className="legal-v2" id="main-content"><PageMotion/>
     <section className="legal-hero"><div><span className="page-kicker">LEGAL DOCUMENTS</span><h1>{page.title}</h1><p>{page.description}</p></div><div className="legal-source-card"><FileCheck2 size={24}/><span>FULL DOCUMENT</span><strong>Read the complete text here.</strong><p>This maintained legal document is published directly inside the BuildNinja website.</p><a className="button button-secondary" href="#legal-document">Start reading<ArrowDown size={15}/></a></div></section>
-    <section className="legal-document-layout" id="legal-document"><aside><div className="legal-sidebar-sticky"><span>LEGAL INDEX</span><nav aria-label="Legal documents">{legalNavigation.map(([href,label])=><SiteLink key={href} href={`/${href}`} aria-current={href===route?'page':undefined}>{label}<ArrowRight size={12}/></SiteLink>)}</nav>{outline.length ? <div className="legal-outline"><span>ON THIS PAGE</span>{outline.map(item => <a key={item.id} href={`#${item.id}`}>{item.label}</a>)}</div> : null}</div></aside><article><div className="legal-document-mark"><FileText size={22}/><span>COMPLETE LEGAL TEXT</span></div><LegalDocument markdown={markdown}/></article></section>
+    <section className="legal-document-layout" id="legal-document"><aside><div className="legal-sidebar-sticky">{outline.length ? <div className="legal-outline"><span>ON THIS PAGE</span>{outline.map(item => <a key={item.id} href={`#${item.id}`}>{item.label}</a>)}</div> : null}</div></aside><article><div className="legal-document-mark"><FileText size={22}/><span>COMPLETE LEGAL TEXT</span></div><LegalDocument markdown={markdown}/></article></section>
     <section className="legal-contact"><div><span className="page-kicker">QUESTIONS ABOUT THIS DOCUMENT?</span><h2>Contact the BuildNinja team.</h2><p>Tell us which clause, purchase, or account your question concerns so it reaches the right person.</p></div><SiteLink className="button" href="/contact">Contact us<ArrowRight size={15}/></SiteLink></section>
   </main>;
 }

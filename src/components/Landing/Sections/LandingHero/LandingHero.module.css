@@ -402,26 +402,61 @@
   height: 48px !important;
   display: flex !important;
   align-items: stretch !important;
+  box-sizing: border-box;
+}
+
+:global(.react-international-phone-country-selector) {
+  display: flex;
+  flex: 0 0 auto;
+  height: 100%;
 }
 
 :global(.react-international-phone-country-selector-button) {
+  display: flex !important;
+  flex: 0 0 auto;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box;
   background: var(--color-bg-panel) !important;
   border: 1px solid var(--color-border) !important;
   border-right: none !important;
   border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
   padding: 0 12px !important;
   height: 100% !important;
+  line-height: 1 !important;
   transition: all 0.3s ease !important;
 }
 
+:global(.react-international-phone-country-selector-button__button-content) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+:global(.react-international-phone-country-selector-button__flag-emoji) {
+  display: block;
+  flex: 0 0 auto;
+}
+
+:global(.react-international-phone-country-selector-button__dropdown-arrow) {
+  flex: 0 0 auto;
+}
+
 :global(.react-international-phone-input) {
-  width: 100% !important;
+  display: block;
+  flex: 1 1 auto !important;
+  align-self: stretch;
+  min-width: 0;
+  width: auto !important;
   background: var(--color-bg-panel) !important;
   border: 1px solid var(--color-border) !important;
   border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
   color: var(--color-text) !important;
   font-size: 1rem !important;
   height: 100% !important;
+  box-sizing: border-box;
+  line-height: 1.2 !important;
   padding: 0 16px !important;
   transition: all 0.3s ease !important;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;

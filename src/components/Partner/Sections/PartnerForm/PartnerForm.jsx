@@ -50,6 +50,7 @@ export default function PartnerForm() {
     const [status, setStatus] = useState(null); // success | error
     const [captchaToken, setCaptchaToken] = useState(null);
     const { resolvedTheme } = useTheme();
+    const captchaTheme = resolvedTheme === "light" ? "light" : "dark";
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -280,9 +281,9 @@ export default function PartnerForm() {
                              <div className="captcha-container">
                                 <div className="captcha-inner">
                                     <ReCAPTCHA 
-                                        key={resolvedTheme}
+                                        key={captchaTheme}
                                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} 
-                                        theme={resolvedTheme === "light" ? "light" : "dark"} 
+                                        theme={captchaTheme} 
                                         onChange={(token) => setCaptchaToken(token)} 
                                         onExpired={() => setCaptchaToken(null)} 
                                     />

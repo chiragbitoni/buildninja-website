@@ -34,9 +34,9 @@
   color: var(--coral-dark);
 }
 
-.proofItem h2 {
+:global(#site-main) .proofItem h2 {
   color: var(--ink);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 550;
   letter-spacing: -0.015em;
 }
@@ -44,7 +44,7 @@
 .proofItem p {
   margin-top: 5px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.55;
 }
 
@@ -286,6 +286,14 @@
 
   .proofItem:last-child {
     border-bottom: 0;
+  }
+
+  :global(#site-main) .proofItem h2 {
+    font-size: 13px;
+  }
+
+  .proofItem p {
+    font-size: 11px;
   }
 
   .kenzoSection {
