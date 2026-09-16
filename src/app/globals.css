@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════
@@ -17,12 +16,12 @@
   --section-tint: #262626;
   --section-marker: 8px;
   --control-radius: 12px;
-  --type-h1-size: clamp(1.875rem, 1.1rem + 3.32vw, 3.75rem);
-  --type-h2-size: clamp(1.5rem, 1.19rem + 1.33vw, 2.25rem);
-  --type-h3-size: 1.125rem;
+  --type-h1-size: clamp(2.625rem, 5vw, 4rem);
+  --type-h2-size: clamp(2.125rem, 3.7vw, 3rem);
+  --type-h3-size: 1.375rem;
   --type-body-size: 1rem;
-  --type-small-size: 0.875rem;
-  --type-label-size: 0.75rem;
+  --type-small-size: 0.8125rem;
+  --type-label-size: 0.625rem;
   --type-copy-measure: 45rem;
   --type-heading-weight: 500;
   --type-heading-leading: 1.1;
@@ -91,11 +90,13 @@
   --color-card-icon-hover-bg: rgba(0, 0, 0, 0.6);
 
   /* Typography */
-  --font-display: 'Inter', sans-serif;
-  --font-accent: 'Syne', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-ui: 'Inter', system-ui, sans-serif;
+  /* Geist is loaded by next/font in layout.js; body-scoped aliases below
+     make these legacy tokens resolve to the same reference type system. */
+  --font-display: Arial, sans-serif;
+  --font-accent: Arial, sans-serif;
+  --font-body: Arial, sans-serif;
+  --font-mono: "Courier New", monospace;
+  --font-ui: Arial, system-ui, sans-serif;
 
   /* Spacing & Shape */
   --radius-sm: 6px;
@@ -237,209 +238,6 @@
   /* "auto" or "thin" */
   scrollbar-color: var(--color-primary-glow) var(--color-bg);
   /* thumb color track color */
-}
-
-/* Shared Notus type and control system. Keep repeated styling here so one
-   token change updates every production route, regardless of CSS Module. */
-#site-main h1 {
-  font-family: var(--font-display);
-  font-size: var(--type-h1-size);
-  font-weight: var(--type-heading-weight);
-  line-height: var(--type-heading-leading);
-  letter-spacing: var(--type-heading-tracking);
-  color: var(--color-text);
-}
-
-#site-main h2,
-#site-main .section-title {
-  font-family: var(--font-display);
-  font-size: var(--type-h2-size);
-  font-weight: var(--type-heading-weight);
-  line-height: 1.2;
-  letter-spacing: var(--type-heading-tracking);
-  color: var(--color-text);
-}
-
-#site-main h3 {
-  font-family: var(--font-display);
-  font-size: var(--type-h3-size);
-  font-weight: var(--type-heading-weight);
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-}
-
-#site-main h4,
-#site-main h5,
-#site-main h6 {
-  font-family: var(--font-display);
-  font-weight: var(--type-heading-weight);
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-  color: var(--color-text);
-}
-
-#site-main h4 { font-size: 1rem; }
-#site-main h5,
-#site-main h6 { font-size: var(--type-small-size); }
-
-#site-main :is(h1, h2, h3, h4, h5, h6) :is(span, em, strong) {
-  font: inherit;
-  letter-spacing: inherit;
-}
-
-#site-main :is(h1, h2, .section-title) [class*="Gradient"] {
-  color: var(--color-primary);
-  background: none;
-  -webkit-text-fill-color: currentColor;
-}
-
-#site-main .section-subtitle {
-  font-family: var(--font-body);
-  font-size: var(--type-body-size);
-  line-height: var(--type-body-leading);
-  max-width: var(--type-copy-measure);
-}
-
-#site-main button,
-#site-main input:not([type="checkbox"]):not([type="radio"]),
-#site-main select,
-#site-main textarea,
-#site-main a[role="button"],
-#site-main a[class*="ctaPrimary"],
-#site-main a[class*="ctaSecondary"],
-#site-main a[class*="btnPrimary"],
-#site-main a[class*="btnDoc"],
-#site-main a[class*="btnSecondary"],
-#site-main a[class*="btnTertiary"],
-#site-main a[class*="ctaBtn"],
-#site-main a[class*="ctaDocLink"] {
-  font-family: var(--font-ui);
-  border-radius: var(--control-radius);
-}
-
-#site-main :is(button, input, select, textarea, a):focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
-#site-main :is(input, select, textarea) {
-  border-color: var(--rule);
-}
-
-#site-main ::selection {
-  color: var(--color-text);
-  background: color-mix(in srgb, var(--color-primary) 22%, transparent);
-}
-
-#site-main .site-band {
-  position: relative;
-  box-sizing: border-box;
-  width: min(100%, var(--section-max));
-  max-width: var(--section-max);
-  margin-block: 0;
-  margin-inline: auto;
-  border-inline: 1px solid var(--rule);
-  color: var(--color-text);
-  background-color: var(--color-bg);
-}
-
-#site-main .site-band[data-band-space="standard"] {
-  padding-block: var(--section-space);
-}
-
-#site-main .site-band[data-band-space="hero"] {
-  padding-top: var(--section-space-hero-top);
-  padding-bottom: var(--section-space-hero-bottom);
-}
-
-#site-main .site-band[data-band-pad-x] {
-  padding-inline: var(--section-pad-x);
-}
-
-#site-main .site-band[data-band-tint] {
-  background-color: var(--section-tint);
-}
-
-#site-main .site-band[data-motion-state="paused"] * {
-  animation-play-state: paused !important;
-}
-
-#site-main .site-panel {
-  border: 0;
-  border-radius: 0;
-  background: var(--section-tint);
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-#site-main .site-grid {
-  gap: 0;
-  border-top: 1px solid var(--rule);
-}
-
-#site-main .site-grid[data-grid-columns="2"] {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-#site-main .site-grid > .site-grid-cell {
-  min-width: 0;
-  border: 0;
-  border-bottom: 1px solid var(--rule);
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-#site-main .site-grid > .site-grid-cell:hover {
-  transform: none;
-  background: var(--section-tint);
-  box-shadow: none;
-}
-
-#site-main .site-grid[data-grid-columns="2"] > .site-grid-cell:nth-child(2n) {
-  border-left: 1px solid var(--rule);
-}
-
-#site-main .site-rule-list {
-  border-top: 1px solid var(--rule);
-}
-
-#site-main .site-rule-list > * {
-  border: 0;
-  border-bottom: 1px solid var(--rule);
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-#site-main .site-rule-list > *:hover {
-  transform: none;
-  background: var(--section-tint);
-  box-shadow: none;
-}
-
-#site-main .site-icon {
-  border-radius: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-@media (max-width: 767px) {
-  #site-main .site-band[data-band-space="standard"],
-  #site-main .site-band[data-band-space="hero"] {
-    padding-block: var(--section-space-mobile);
-  }
-
-  #site-main .site-grid[data-grid-columns="2"] {
-    grid-template-columns: 1fr;
-  }
-
-  #site-main .site-grid[data-grid-columns="2"] > .site-grid-cell:nth-child(2n) {
-    border-left: 0;
-  }
 }
 
 @layer base {

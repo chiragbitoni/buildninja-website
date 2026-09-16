@@ -1,5 +1,5 @@
 export async function emailSignup(customerEmail) {
-  const data = JSON.stringify({
+  const requestBody = JSON.stringify({
     email: customerEmail,
     source: 1,
   });
@@ -8,13 +8,13 @@ export async function emailSignup(customerEmail) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
-    body: data,
+    body: requestBody,
   });
 
-  const data = await res.json();
+  const responseData = await res.json();
   if (!res.ok) {
-    throw new Error(data?.message || `Email signup failed with status ${res.status}`);
+    throw new Error(responseData?.message || `Email signup failed with status ${res.status}`);
   }
 
-  return data;
+  return responseData;
 }

@@ -63,7 +63,7 @@
 
 /* ── Card header ── */
 .cardTitle {
-  font-family: var(--font-display), 'Inter', system-ui, sans-serif;
+  font-family: var(--font-display), Arial, system-ui, sans-serif;
   font-size: clamp(26px, 5vw, 44px);
   font-weight: 800;
   color: var(--color-text);
@@ -95,7 +95,7 @@
 }
 
 .statValue {
-  font-family: var(--font-display), 'Inter', sans-serif;
+  font-family: var(--font-display), Arial, sans-serif;
   font-size: 38px;
   font-weight: 800;
   color: var(--color-primary);

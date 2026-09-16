@@ -1,7 +1,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 /* @import "tailwindcss"; */
 /* Load Tailwind v4 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* =========================================
@@ -9,17 +8,8 @@
 ========================================= */
 
 * {
-  font-size: 14px;
-  font-family: var(
-    --default-font-family,
-    ui-sans-serif,
-    system-ui,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji"
-  );
+  font-size: inherit;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
 }
 
 /* =========================================

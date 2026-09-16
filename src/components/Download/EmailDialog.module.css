@@ -289,7 +289,7 @@
   border-color: var(--line);
   border-radius: 9px;
   font-family: var(--font-geist-sans), sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .input::placeholder,
@@ -308,7 +308,7 @@
 
 .error {
   color: var(--color-error);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .submitBtn {
@@ -319,7 +319,7 @@
   border: 1px solid var(--ink);
   border-radius: 9px;
   font-family: var(--font-geist-sans), sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .submitBtn:hover:not(:disabled) {
@@ -334,7 +334,7 @@
 
 .note {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 @media (max-width: 480px) {
