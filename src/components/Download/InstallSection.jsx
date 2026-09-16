@@ -60,6 +60,11 @@ export default function InstallSection({ initialInstallers = null, compact = fal
   const pendingDownloadRef = useRef(null);
 
   useEffect(() => {
+    posthog.capture("install_page_viewed", { page: "install" });
+    posthog.capture("dashboard_viewed", { page: "download_dashboard" });
+  }, []);
+
+  useEffect(() => {
     // Installer list is baked in at build time - only fetch at runtime when
     // the build-time fetch failed or was unavailable.
     if (hasInitialData) {
@@ -115,23 +120,29 @@ export default function InstallSection({ initialInstallers = null, compact = fal
     setTimeout(() => setCopiedType(null), 2000);
   };
 
-  async function performDownload(fileName, meta) {
+  async function performDownload(fileName, meta, user = getCachedEmailUser(), viaCache = Boolean(user)) {
     if (!fileName) return;
     setDownloadingUrl(fileName);
+    const downloadMeta = {
+      ...meta,
+      source_page: "install",
+      via_cache: viaCache,
+    };
+
     try {
-      const cached = getCachedEmailUser();
-      posthog.capture("installer_download_clicked", {
-        ...meta,
-        source_page: "install",
-        via_cache: Boolean(cached),
-      });
-      await downloadInstaller(fileName, cached || {});
+      posthog.capture("installer_download_started", downloadMeta);
+      await downloadInstaller(fileName, user || {});
+      posthog.capture("installer_download_succeeded", downloadMeta);
       setHasDownloaded(true);
       setTimeout(() => {
         const licenseEl = document.getElementById('license-section');
         if (licenseEl) licenseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 500);
     } catch (err) {
+      posthog.capture("installer_download_failed", {
+        ...downloadMeta,
+        error: err?.message,
+      });
       console.error("Download failed", err);
     } finally {
       setDownloadingUrl(null);
@@ -139,9 +150,17 @@ export default function InstallSection({ initialInstallers = null, compact = fal
   }
 
   function handleDownloadClick(fileName, meta) {
+    if (!fileName || downloadingUrl) return;
+
+    setDownloadingUrl(fileName);
     const cached = getCachedEmailUser();
+    posthog.capture("installer_download_clicked", {
+      ...meta,
+      source_page: "install",
+      via_cache: Boolean(cached),
+    });
     if (cached) {
-      performDownload(fileName, meta);
+      performDownload(fileName, meta, cached, true);
       return;
     }
 
@@ -158,25 +177,46 @@ export default function InstallSection({ initialInstallers = null, compact = fal
       const res = await emailSignup(email);
       const userId = res?.value?.user?.userId;
       const userEmail = res?.value?.user?.email || email;
+      const signupMeta = {
+        location: "install_page",
+        registered: Boolean(userId),
+      };
 
       setCachedEmailUser({ userId, email: userEmail });
       if (userId) {
         posthog.identify(userId, { email: userEmail });
       }
-      posthog.capture("email_dialog_submitted", { registered: Boolean(userId) });
+      posthog.capture("email_dialog_submitted", signupMeta);
+      posthog.capture("email_signup_success", signupMeta);
 
       setDialogOpen(false);
       const pending = pendingDownloadRef.current;
       pendingDownloadRef.current = null;
       if (pending) {
-        await performDownload(pending.fileName, pending.meta);
+        await performDownload(pending.fileName, pending.meta, { userId, email: userEmail }, false);
       }
     } catch (err) {
       setDialogError("Something went wrong. Please try again.");
-      posthog.capture("email_dialog_error", { error: err?.message });
+      const errorMeta = {
+        location: "install_page",
+        error: err?.message,
+      };
+      posthog.capture("email_dialog_error", errorMeta);
+      posthog.capture("email_signup_error", errorMeta);
     } finally {
       setDialogLoading(false);
     }
+  }
+
+  function closeEmailDialog() {
+    posthog.capture("email_dialog_cancelled", {
+      location: "install_page",
+      had_pending_download: Boolean(pendingDownloadRef.current),
+    });
+    pendingDownloadRef.current = null;
+    setDialogError(null);
+    setDialogOpen(false);
+    setDownloadingUrl(null);
   }
 
   const latestWindows = data.latest?.windows;
@@ -230,8 +270,8 @@ export default function InstallSection({ initialInstallers = null, compact = fal
             <h3>Windows</h3>
             <p>Install the server, agent, or both. The unified installer can include local MongoDB.</p>
             <div className="download-version">Installer <b>{latestWindows.version}</b></div>
-            <button className="button" type="button" onClick={() => handleDownloadClick(windowsFile, { os: "windows", version: latestWindows.version })} disabled={downloadingUrl === windowsFile}>
-              {downloadingUrl === windowsFile ? "Preparing download…" : "Get Windows installer"}
+            <button className="button" type="button" onClick={() => handleDownloadClick(windowsFile, { os: "windows", version: latestWindows.version })} disabled={Boolean(downloadingUrl)} aria-busy={downloadingUrl === windowsFile}>
+              {downloadingUrl === windowsFile ? <><FontAwesomeIcon icon={faCircleNotch} spin /> Preparing download…</> : "Get Windows installer"}
             </button>
             <button className="download-guide" type="button" onClick={() => dispatch(openVideo({ videoId: "zOW9BCYQkxk", title: "Windows Installation Guide", ctaText: "Official Setup Documentation", link: "/docs/getting-started/quick-setup-guide/configure-server-and-agent-on-windows" }))}>
               Watch installation guide
@@ -246,8 +286,12 @@ export default function InstallSection({ initialInstallers = null, compact = fal
             <p>Configure the packages and MongoDB for the environment you manage.</p>
             <div className="download-version">Server <b>{latestLinux.serverVersion}</b><span>Agent <b>{latestLinux.agentVersion}</b></span></div>
             <div className="download-actions">
-              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(linuxServerFile, { os: "linux", type: "server", version: latestLinux.serverVersion })} disabled={downloadingUrl === linuxServerFile}>Server</button>
-              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(linuxAgentFile, { os: "linux", type: "agent", version: latestLinux.agentVersion })} disabled={downloadingUrl === linuxAgentFile}>Agent</button>
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(linuxServerFile, { os: "linux", type: "server", version: latestLinux.serverVersion })} disabled={Boolean(downloadingUrl)} aria-busy={downloadingUrl === linuxServerFile}>
+                {downloadingUrl === linuxServerFile ? <><FontAwesomeIcon icon={faCircleNotch} spin /> Preparing…</> : "Server"}
+              </button>
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(linuxAgentFile, { os: "linux", type: "agent", version: latestLinux.agentVersion })} disabled={Boolean(downloadingUrl)} aria-busy={downloadingUrl === linuxAgentFile}>
+                {downloadingUrl === linuxAgentFile ? <><FontAwesomeIcon icon={faCircleNotch} spin /> Preparing…</> : "Agent"}
+              </button>
             </div>
             <a className="download-guide" href="https://www.buildninja.io/docs/category/quick-setup-guide">Read the setup guide</a>
           </article>
@@ -260,8 +304,12 @@ export default function InstallSection({ initialInstallers = null, compact = fal
             <p>Use the server and agent packages for your Mac environment. Configure MongoDB separately.</p>
             <div className="download-version">Server <b>{latestMac.serverVersion}</b><span>Agent <b>{latestMac.agentVersion}</b></span></div>
             <div className="download-actions">
-              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(macServerFile, { os: "mac", type: "server", version: latestMac.serverVersion })} disabled={downloadingUrl === macServerFile}>Server</button>
-              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(macAgentFile, { os: "mac", type: "agent", version: latestMac.agentVersion })} disabled={downloadingUrl === macAgentFile}>Agent</button>
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(macServerFile, { os: "mac", type: "server", version: latestMac.serverVersion })} disabled={Boolean(downloadingUrl)} aria-busy={downloadingUrl === macServerFile}>
+                {downloadingUrl === macServerFile ? <><FontAwesomeIcon icon={faCircleNotch} spin /> Preparing…</> : "Server"}
+              </button>
+              <button className="button button-secondary" type="button" onClick={() => handleDownloadClick(macAgentFile, { os: "mac", type: "agent", version: latestMac.agentVersion })} disabled={Boolean(downloadingUrl)} aria-busy={downloadingUrl === macAgentFile}>
+                {downloadingUrl === macAgentFile ? <><FontAwesomeIcon icon={faCircleNotch} spin /> Preparing…</> : "Agent"}
+              </button>
             </div>
             <a className="download-guide" href="https://www.buildninja.io/docs/category/quick-setup-guide">Read the setup guide</a>
           </article>
@@ -269,7 +317,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
         {!loading && !latestWindows && !latestLinux && !latestMac ? <p>Downloads are temporarily unavailable. Please try again later.</p> : null}
         <EmailDialog
           open={dialogOpen}
-          onClose={() => { setDialogError(null); pendingDownloadRef.current = null; setDialogOpen(false); }}
+          onClose={closeEmailDialog}
           onSubmit={handleEmailSubmit}
           loading={dialogLoading}
           error={dialogError}
@@ -603,10 +651,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
 
       <EmailDialog
         open={dialogOpen}
-        onClose={() => {
-          pendingDownloadRef.current = null;
-          setDialogOpen(false);
-        }}
+        onClose={closeEmailDialog}
         onSubmit={handleEmailSubmit}
         loading={dialogLoading}
         error={dialogError}

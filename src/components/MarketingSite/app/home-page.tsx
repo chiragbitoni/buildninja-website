@@ -2,7 +2,9 @@
 'use client';
 
 import { ArrowRight, ArrowUpRight, Check, GitBranch, Layers, LayoutDashboard, Play, Server, ShieldCheck, Sparkles, Terminal, Users } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'framer-motion';
+import posthog from 'posthog-js';
 import { AnimatedHeading, AnimatedPipeline, AnimatedAIStory, AnimatedAgentNetwork, AnimatedToolStrip, useScenePlayback } from './animation-scenes';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { DashboardDemo } from './dashboard-preview';
@@ -41,6 +43,21 @@ function CommonQuestions({ plansData }) {
   return <section className="cf-faq"><div className="cf-faq-heading"><span className="cf-mini-eyebrow">CLEAR ANSWERS</span><h2>Before your<br/>next build.</h2><p>Get familiar with the workflow, installation, and AI credits.</p><SiteLink className="text-button" href="/faq">Explore all FAQs<ArrowRight size={15}/></SiteLink></div><div className="cf-faq-list">{questions.map(faq=><details key={faq.id}><summary>{faq.question}<span>+</span></summary><p>{faq.answer}</p></details>)}</div></section>;
 }
 
+function SectionTracker({ name, children }) {
+  const ref = useRef(null);
+  const tracked = useRef(false);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  useEffect(() => {
+    if (isInView && !tracked.current) {
+      tracked.current = true;
+      posthog.capture('section_viewed', { section: name });
+    }
+  }, [isInView, name]);
+
+  return <div ref={ref}>{children}</div>;
+}
+
 const homeStructuredData = {
   '@context':'https://schema.org',
   '@graph':[
@@ -72,7 +89,7 @@ export function MarketingHome({ plansData }) {
     <GettingStarted chapterLabel="GET STARTED" sectionId="getting-started"/>
     <section className="cf-comparisons"><div><span className="cf-mini-eyebrow">FIND THE RIGHT FIT</span><h2>Make the choice<br/>with a clearer picture.</h2><p>Compare deployment models, operating responsibility, and the costs that actually change.</p></div><div>{[['Jenkins','jenkins'],['GitHub Actions','github-actions'],['TeamCity','teamcity'],['CircleCI','circleci']].map(([name,slug])=><SiteLink key={slug} href={'/compare/buildninja-vs-'+slug}><span>BuildNinja vs</span><b>{name}</b><ArrowUpRight size={18}/></SiteLink>)}</div></section>
     <PricingOverview plansData={plansData}/>
-    <CommonQuestions plansData={plansData}/>
+    <SectionTracker name="faq"><CommonQuestions plansData={plansData}/></SectionTracker>
     <section className="cf-final"><div className="cf-final-grid" aria-hidden="true"/><span className="cf-pill"><Sparkles size={13}/>Your next build starts here</span><h2>Give your next build<br/><span>a clearer path.</span></h2><p>Bring pipelines, build visibility, and build intelligence into one workflow.</p><div><SiteLink className="button" href="/install">Get Started<ArrowRight size={16}/></SiteLink><SiteLink className="button button-secondary" href="/dojo">Try the live sandbox<ArrowUpRight size={16}/></SiteLink></div></section>
   </main>;
 }

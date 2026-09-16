@@ -6,8 +6,9 @@ import { useEffect } from 'react';
 
 export default function PHProviderWrapper({ children }) {
     useEffect(() => {
-        if (posthog.__loaded) return;
-        posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+        const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+        if (!posthogKey || posthog.__loaded) return;
+        posthog.init(posthogKey, {
             api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
             person_profiles: 'identified_only',
             // Routing

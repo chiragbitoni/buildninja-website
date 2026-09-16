@@ -11,5 +11,10 @@ export async function emailSignup(customerEmail) {
     body: data,
   });
 
-  return res.json();
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.message || `Email signup failed with status ${res.status}`);
+  }
+
+  return data;
 }

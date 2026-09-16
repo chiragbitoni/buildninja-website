@@ -377,3 +377,20 @@
 .legal-contact p { color:var(--muted); font-size:13px; }
 @media(max-width:900px){.legal-hero{grid-template-columns:1fr}.legal-hero>div:first-child{border-right:0;border-bottom:1px solid var(--line)}.legal-source-card{margin:36px}.legal-document-layout{grid-template-columns:1fr}.legal-document-layout aside{border-right:0;border-bottom:1px solid var(--line);padding:48px 34px}.legal-sidebar-sticky{position:static;max-height:none;overflow:visible;padding:0}.legal-document-layout nav{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}.legal-contact{margin:55px 34px}}
 @media(max-width:600px){.legal-hero>div:first-child{padding:64px 24px}.legal-hero h1{font-size:45px}.legal-source-card{margin:22px 16px;padding:28px;min-height:330px}.legal-document-layout aside{padding:42px 24px}.legal-document-layout nav{grid-template-columns:1fr}.legal-document-layout article{padding:58px 24px 66px}.legal-document-layout h2{font-size:34px}.legal-contact{margin:42px 16px;padding:30px 24px;align-items:flex-start;flex-direction:column}.legal-contact h2{font-size:30px}}
+
+/* Keep the built-in AI intro content centered as one visual group. */
+.marketing-site #ai-built-in > .section > .section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.marketing-site #ai-built-in > .section > .section-heading > .section-label {
+  align-self: center;
+}
+.marketing-site #ai-built-in > .section > .section-heading > h2,
+.marketing-site #ai-built-in > .section > .section-heading > p {
+  width: 100%;
+  text-align: center;
+  margin-inline: auto;
+}

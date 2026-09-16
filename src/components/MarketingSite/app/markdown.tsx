@@ -193,12 +193,17 @@ function ContactBox({kind}:{kind:'contact'|'support'|'partners'}){
     if (!utmData.utm_source && document.referrer && !localStorage.getItem('utm_data')) {
       localStorage.setItem('utm_data', JSON.stringify({ utm_source: document.referrer, utm_medium: 'referral' }));
     }
+    let storedUtm: Record<string, string> = {};
+    try {
+      storedUtm = JSON.parse(localStorage.getItem('utm_data') || '{}');
+    } catch {}
+    const attribution = utmData.utm_source ? utmData : storedUtm;
     posthog.capture('partner_page_viewed', {
       page: 'partner-page',
-      utm_source: utmData.utm_source || undefined,
-      utm_medium: utmData.utm_medium || undefined,
-      utm_campaign: utmData.utm_campaign || undefined,
-      utm_content: utmData.utm_content || undefined,
+      utm_source: attribution.utm_source || undefined,
+      utm_medium: attribution.utm_medium || undefined,
+      utm_campaign: attribution.utm_campaign || undefined,
+      utm_content: attribution.utm_content || undefined,
     });
   }, [isPartner]);
 
@@ -358,6 +363,6 @@ export function ContentPage({page,route,blogPosts=[]}:{page:PageRecord;route:str
    })}</div>
    {route==='compare/buildninja-vs-github-actions'?<GithubCalculator/>:null}
    {route==='about'&&!enhanced?<HeritageSection/>:null}
-   <section className="page-end stack-cta"><StackBackdrop/><span>READY FOR THE NEXT STEP?</span><h2>Give your next build a clearer path.</h2><div><SiteLink className="button" href="/install">Get Started <ArrowRight size={15}/></SiteLink><SiteLink className="text-button" href="/dojo">Try the live sandbox</SiteLink></div></section>
+   <section className="page-end stack-cta"><StackBackdrop/><span>READY FOR THE NEXT STEP?</span><h2>Give your next build a clearer path.</h2><div><SiteLink className="button" href="/install">Get Started <ArrowRight size={15}/></SiteLink>{route === 'dojo' ? <a className="text-button" href={getDojoSandboxUrl()} target="_blank" rel="noopener noreferrer" onClick={() => trackDojoClick('cta_dojo_clicked')}>Try the live sandbox</a> : <SiteLink className="text-button" href="/dojo">Try the live sandbox</SiteLink>}</div></section>
  </main>;
 }

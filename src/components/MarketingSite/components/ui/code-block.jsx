@@ -3,13 +3,14 @@
 import { useState } from 'react';
 import { Check, Copy } from 'lucide-react';
 
-export function CodeBlock({ filename, language, code }) {
+export function CodeBlock({ filename, language, code, onCopy = null }) {
   const [copied, setCopied] = useState(false);
 
   async function copyCode() {
     try {
       await navigator.clipboard.writeText(code);
       setCopied(true);
+      onCopy?.();
       window.setTimeout(() => setCopied(false), 1600);
     } catch {
       setCopied(false);

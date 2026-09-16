@@ -1,5 +1,6 @@
 /* Fresh website lockup: separate symbol, clear wordmark, quiet attribution. */
 .refreshed-logo { display: inline-block; flex: none; width: 166px; line-height: 0; vertical-align: middle; }
+.brand .refreshed-logo { padding-inline: 6px; }
 .brand .refreshed-logo img, .footer .refreshed-logo img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; filter: none; }
 .dark .brand .refreshed-logo .image-dark, .dark .footer .refreshed-logo .image-dark { filter: invert(1); }
 .dark .cf-network-center img,

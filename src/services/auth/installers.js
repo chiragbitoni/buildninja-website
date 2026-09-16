@@ -53,37 +53,29 @@ export async function fetchInstallersForBuild() {
 // Download file endpoint
 // @param {{ userId?: string | null, email?: string }} user - user from the in-memory email cache
 export async function downloadInstaller(fileName, user = {}) {
-  try {
-    // Build full URL using env variable
-    const url = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/download/${fileName}`;
+  const url = `${process.env.NEXT_PUBLIC_USR_SVC_URL}/api/Installers/download/${encodeURIComponent(fileName)}`;
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        userId: user?.userId || null,
-        email: user?.email || null,
-      }),
-    });
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({
+      userId: user?.userId || null,
+      email: user?.email || null,
+    }),
+  });
 
-    if (!res.ok) throw new Error("Download failed");
+  if (!res.ok) throw new Error(`Download failed with status ${res.status}`);
 
-    // Convert response to file & download
-    const blob = await res.blob();
-    const href = URL.createObjectURL(blob);
+  const blob = await res.blob();
+  const href = URL.createObjectURL(blob);
 
-    const a = document.createElement("a");
-    a.href = href;
-    a.download = fileName;
-    a.click();
+  const a = document.createElement("a");
+  a.href = href;
+  a.download = fileName;
+  a.click();
 
-    URL.revokeObjectURL(href);
-
-  } catch (error) {
-    console.error(error);
-    alert("Failed to download file");
-  }
+  URL.revokeObjectURL(href);
 }
