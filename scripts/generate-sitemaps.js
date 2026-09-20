@@ -85,7 +85,6 @@ async function generateSitemaps() {
     "/kenzo-ai",
     "/kenzo-ai-portal",
     "/resources",
-    "/release-notes/ai-built-in",
     "/kenzo-ai-terms",
     "/kenzo-ai-data-policy"
   ];

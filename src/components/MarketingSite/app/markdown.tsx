@@ -117,7 +117,7 @@ function inline(text:string):React.ReactNode[]{
   return result;
 }
 
-const marketingRoutes = new Set(['','features','pricing','kenzo-ai','kenzo-ai-portal','install','dojo','compare','faq','resources','blog','about','contact','support','partners','privacy-policy','terms-of-service','eula','refund-and-cancellation-policy','kenzo-ai-terms','kenzo-ai-data-policy','release-notes/ai-built-in','compare/buildninja-vs-github-actions','compare/buildninja-vs-circleci','compare/buildninja-vs-jenkins','compare/buildninja-vs-teamcity']);
+const marketingRoutes = new Set(['','features','pricing','kenzo-ai','kenzo-ai-portal','install','dojo','compare','faq','resources','blog','about','contact','support','partners','privacy-policy','terms-of-service','eula','refund-and-cancellation-policy','kenzo-ai-terms','kenzo-ai-data-policy','compare/buildninja-vs-github-actions','compare/buildninja-vs-circleci','compare/buildninja-vs-jenkins','compare/buildninja-vs-teamcity']);
 function localLink(href:string) {
   if (!href.startsWith('https://www.buildninja.io/')) return href;
   const url = new URL(href);

@@ -117,11 +117,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.buildninja.io/release-notes/ai-built-in</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.buildninja.io/kenzo-ai-terms</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

@@ -1563,7 +1563,11 @@
 }
 
 .marketing-site .footer-groups h3 {
-  font-size: 12px;
+  font-size: 16px;
+}
+
+.marketing-site .footer-groups a {
+  font-size: 13px;
 }
 
 .marketing-site .footer-identity h2 {
@@ -3240,7 +3244,7 @@
 
 .marketing-site .footer-top-compact .footer-identity p {
   margin: 20px 0 0;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.65;
 }
 

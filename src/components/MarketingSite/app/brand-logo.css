@@ -2,7 +2,9 @@
 .refreshed-logo { display: inline-block; flex: none; width: 166px; line-height: 0; vertical-align: middle; }
 .brand .refreshed-logo { padding-inline: 6px; }
 .brand .refreshed-logo img, .footer .refreshed-logo img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; filter: none; }
-.dark .brand .refreshed-logo .image-dark, .dark .footer .refreshed-logo .image-dark { filter: invert(1); }
+.refreshed-logo .image-dark { display: none !important; }
+:is(.dark, [data-theme='dark']) .refreshed-logo .image-light { display: none !important; }
+:is(.dark, [data-theme='dark']) .refreshed-logo .image-dark { display: block !important; filter: invert(1); }
 .dark .cf-network-center img,
 .dark .native-ninja-mark img,
 .dark .fp-brand img,

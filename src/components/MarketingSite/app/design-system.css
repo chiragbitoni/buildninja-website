@@ -15,8 +15,6 @@
 }
 html { background:var(--soft); scroll-padding-top:100px; }
 body { max-width:1280px; margin:auto; border-inline:1px solid var(--line); }
-.skip-link { position:fixed; top:-70px; left:24px; z-index:100; background:var(--ink); color:var(--surface); padding:12px 20px; }
-.skip-link:focus { top:12px; }
 .site-header { height:80px; background:color-mix(in srgb,var(--background) 94%,transparent); }
 .nav-wrap { padding:0 36px; gap:32px; }
 .brand { margin-right:auto; }

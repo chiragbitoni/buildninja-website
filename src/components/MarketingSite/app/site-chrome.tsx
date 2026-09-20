@@ -55,7 +55,6 @@ export function SiteHeader() {
     localStorage.setItem('buildninja-theme', next ? 'dark' : 'light');
   }
   return <>
-    <SiteLink className="skip-link" href="#main-content">Skip to content</SiteLink>
     <AnnouncementBar />
     <header className="site-header"><ResizableNavbar>
       <SiteLink className="brand" href="/" aria-label="BuildNinja home"><BrandLogo/></SiteLink>
@@ -63,7 +62,7 @@ export function SiteHeader() {
         {navigation.map(([label, href]) => <SiteLink key={href} href={href} onClick={() => setOpen(false)}>{label}</SiteLink>)}
         <details className="resource-menu" ref={resourceMenuRef}><summary>Resources <ChevronDown size={13} /></summary><div className="resource-menu-panel">
           <section><span>LEARN</span><SiteLink href="https://www.buildninja.io/docs/overview"><b>Documentation</b><ArrowUpRight size={13}/></SiteLink><SiteLink href="/faq" onClick={() => setOpen(false)}><b>FAQs</b></SiteLink><SiteLink href="/blog" onClick={() => setOpen(false)}><b>Blog</b></SiteLink></section>
-          <section><span>USE & SUPPORT</span><SiteLink href="/dojo" onClick={() => setOpen(false)}><b>Live sandbox</b></SiteLink><SiteLink href="/release-notes/ai-built-in" onClick={() => setOpen(false)}><b>What’s new</b></SiteLink><SiteLink href="/support" onClick={() => setOpen(false)}><b>Support</b></SiteLink></section>
+          <section><span>USE & SUPPORT</span><SiteLink href="/dojo" onClick={() => setOpen(false)}><b>Live sandbox</b></SiteLink><a href="https://www.buildninja.io/docs/category/release-notes" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}><b>What’s new</b></a><SiteLink href="/support" onClick={() => setOpen(false)}><b>Support</b></SiteLink></section>
           <footer><SiteLink href="/resources" onClick={() => setOpen(false)}>View all resources <ArrowRight size={12}/></SiteLink><SiteLink href="/blog" onClick={() => setOpen(false)}>Blog</SiteLink></footer>
         </div></details>
       </nav>
@@ -80,7 +79,7 @@ export function SiteHeader() {
 
 const groups = [
   ['Product', [['Features','/features'],['kenzoAI','/kenzo-ai'],['Pricing','/pricing'],['kenzoAI Portal','/kenzo-ai-portal'],['Compare','/compare'],['Install','/install'],['Dojo','/dojo'],['FAQs','/faq']]],
-  ['Resources', [['Documentation','https://www.buildninja.io/docs/overview'],['Getting Started','https://www.buildninja.io/docs/category/getting-started'],['Tutorials','https://www.buildninja.io/docs/category/quick-setup-guide'],['Licensing','https://www.buildninja.io/docs/category/licensing'],['Release Notes','/release-notes/ai-built-in']]],
+  ['Resources', [['Documentation','https://www.buildninja.io/docs/overview'],['Getting Started','https://www.buildninja.io/docs/category/getting-started'],['Tutorials','https://www.buildninja.io/docs/category/quick-setup-guide'],['Licensing','https://www.buildninja.io/docs/category/licensing'],['Release Notes','https://www.buildninja.io/docs/category/release-notes']]],
   ['Company', [['About Us','/about'],['Blog','/blog'],['Contact','/contact'],['Support','/support'],['Partners','/partners']]],
   ['Legal', [['Privacy Policy','https://www.buildninja.io/privacy-policy'],['Terms of Service','https://www.buildninja.io/terms-of-service'],['EULA','https://www.buildninja.io/eula'],['Refund & Cancellation','https://www.buildninja.io/refund-and-cancellation-policy'],['AI Terms','https://www.buildninja.io/kenzo-ai-terms'],['AI Data Policy','https://www.buildninja.io/kenzo-ai-data-policy']]],
 ] as const;
