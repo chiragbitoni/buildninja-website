@@ -57,6 +57,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogLoading, setDialogLoading] = useState(false);
   const [dialogError, setDialogError] = useState(null);
+  const [dialogSuccess, setDialogSuccess] = useState(false);
   const pendingDownloadRef = useRef(null);
 
   useEffect(() => {
@@ -166,6 +167,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
 
     pendingDownloadRef.current = { fileName, meta };
     setDialogError(null);
+    setDialogSuccess(false);
     setDialogOpen(true);
     posthog.capture("email_dialog_opened", { location: "install_page" });
   }
@@ -173,6 +175,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
   async function handleEmailSubmit(email) {
     setDialogLoading(true);
     setDialogError(null);
+    setDialogSuccess(false);
     try {
       const res = await emailSignup(email);
       const userId = res?.value?.user?.userId;
@@ -190,6 +193,8 @@ export default function InstallSection({ initialInstallers = null, compact = fal
       posthog.capture("email_signup_success", signupMeta);
 
       setDialogOpen(false);
+      setDialogSuccess(true);
+      setTimeout(() => setDialogSuccess(false), 5000);
       const pending = pendingDownloadRef.current;
       pendingDownloadRef.current = null;
       if (pending) {
@@ -203,9 +208,11 @@ export default function InstallSection({ initialInstallers = null, compact = fal
       };
       posthog.capture("email_dialog_error", errorMeta);
       posthog.capture("email_signup_error", errorMeta);
+      return { success: false };
     } finally {
       setDialogLoading(false);
     }
+    return { success: true };
   }
 
   function closeEmailDialog() {
@@ -262,6 +269,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
 
     return (
       <div className="download-grid" id="installers">
+        {dialogSuccess ? <p className="form-status" role="status" aria-live="polite">Email confirmed. Your download is being prepared.</p> : null}
         {loading ? <p>Loading current downloads…</p> : null}
         {!loading && latestWindows ? (
           <article>
@@ -328,6 +336,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
 
   return (
     <>
+      {dialogSuccess ? <p className="form-status" role="status" aria-live="polite" style={{ maxWidth: 720, margin: "0 auto 18px" }}>Email confirmed. Your download is being prepared.</p> : null}
       {/* ── Installer List (old dashboard layout, no auth) ── */}
       <div id="installers" className={dashboardStyles.dashboard}>
         <div className={dashboardStyles.grid} />

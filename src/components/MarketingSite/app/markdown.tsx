@@ -176,7 +176,7 @@ function ContactBox({kind}:{kind:'contact'|'support'|'partners'}){
   const [form, setForm] = useState<Record<string, string>>(() => Object.fromEntries(labels.map(label => [label, ''])));
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [status, setStatus] = useState<'success' | 'error' | null>(null);
+  const [status, setStatus] = useState<'success' | 'error' | 'pending' | null>(null);
   const { resolvedTheme } = useTheme();
   const captchaTheme = resolvedTheme === 'light' ? 'light' : 'dark';
 
@@ -223,7 +223,7 @@ function ContactBox({kind}:{kind:'contact'|'support'|'partners'}){
     }
 
     setSubmitting(true);
-    setStatus(null);
+    setStatus('pending');
     try {
       let result;
       if (kind === 'contact') {
@@ -256,9 +256,10 @@ function ContactBox({kind}:{kind:'contact'|'support'|'partners'}){
   }
 
   const buttonLabel = kind === 'partners' ? 'Discuss a partnership' : kind === 'support' ? 'Send support request' : 'Send message';
-  return <form className="contact-box" onSubmit={submit}>
+  return <form className="contact-box" onSubmit={submit} aria-busy={submitting}>
     <div className="form-heading"><span>START THE CONVERSATION</span><h2>{kind==='support'?'Tell us where you need help.':kind==='partners'?'Tell us where you see a fit.':'Tell us what your team needs to build.'}</h2></div>
-    {status === 'success' ? <p className="form-status" role="status">{kind === 'partners' ? 'Thanks for sharing your idea. Your enquiry has been received, and we will reply by email.' : kind === 'support' ? 'Thanks. Your support request has been received. We will reply using the email address you provided.' : 'Thanks. Your message has been received. We will reply using the email address you provided.'}</p> : null}
+    {status === 'pending' ? <p className="form-status is-pending" role="status" aria-live="polite">Sending your {kind === 'partners' ? 'enquiry' : kind === 'support' ? 'support request' : 'message'}…</p> : null}
+    {status === 'success' ? <p className="form-status" role="status" aria-live="polite">{kind === 'partners' ? 'Thanks for sharing your idea. Your enquiry has been received, and we will reply by email.' : kind === 'support' ? 'Thanks. Your support request has been received. We will reply using the email address you provided.' : 'Thanks. Your message has been received. We will reply using the email address you provided.'}</p> : null}
     {status === 'error' ? <p className="form-status is-error" role="alert">{kind === 'partners' ? 'Your enquiry could not be sent. Please check the fields and try again or contact our team.' : kind === 'support' ? 'Your request could not be sent. Please try again or contact our team.' : 'Your message could not be sent. Please try again or email our team.'}</p> : null}
     <div className="form-grid">{labels.map((label, index) => {
       const fullWidth = label === 'Details' || label === 'Message' || label === 'Partnership type' || label === 'Phone';

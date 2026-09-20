@@ -17,6 +17,7 @@ export default function LandingHero() {
     const captchaTheme = resolvedTheme === "light" ? "light" : "dark";
 
     const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState(null);
     const [captchaToken, setCaptchaToken] = useState(null);
     const [form, setForm] = useState({
         name: "",
@@ -56,6 +57,7 @@ export default function LandingHero() {
     }, []);
 
     const handleChange = (e) => {
+        setStatus(null);
         if (!hasStartedRef.current) {
             hasStartedRef.current = true;
             posthog.capture("marketing_form_started", {
@@ -75,14 +77,14 @@ export default function LandingHero() {
         const isValidIndian = isIndian && /^[6-9]\d{9}$/.test(numberPart);
 
         if (!isValidIndian) {
-            alert("Please enter a valid 10-digit Indian phone number starting with +91");
+            setStatus({ type: "error", message: "Please enter a valid 10-digit Indian phone number starting with +91." });
             return;
         }
         if (!captchaToken) {
             posthog.capture("marketing_form_blocked_no_captcha", {
                 page: "landing-page",
             });
-            alert("Please verify you are not a robot");
+            setStatus({ type: "error", message: "Please verify you are not a robot before sending your request." });
             return;
         }
         posthog.capture("marketing_form_submitted", {
@@ -91,36 +93,47 @@ export default function LandingHero() {
         });
         const utmData = JSON.parse(localStorage.getItem("utm_data") || "{}");
         setLoading(true);
-        const { success, message } = await sendLeadEmail({
-            ...form,
-            fullPhone: `${form.countryCode} ${form.phone}`,
-            utmSource: utmData.utm_source,
-            utmMedium: utmData.utm_medium,
-            utmCampaign: utmData.utm_campaign,
-        });
-
-        setLoading(false);
-
-        if (success) {
-            alert("Request submitted! We'll contact you shortly.");
-            setForm({
-                name: "",
-                phone: "",
-                email: "",
-                company: "",
-                teamSize: "",
+        setStatus({ type: "pending", message: "Sending your request…" });
+        try {
+            const { success, message } = await sendLeadEmail({
+                ...form,
+                fullPhone: `${form.countryCode} ${form.phone}`,
+                utmSource: utmData.utm_source,
+                utmMedium: utmData.utm_medium,
+                utmCampaign: utmData.utm_campaign,
             });
-            posthog.capture("marketing_lead_success", {
-                page: "landing-page",
-                team_size: form.teamSize,
-                latency_ms: Date.now() - submitStart,
-            });
-        } else {
+
+            if (success) {
+                setStatus({ type: "success", message: "Request sent. We’ll contact you shortly." });
+                setForm({
+                    name: "",
+                    phone: "",
+                    email: "",
+                    company: "",
+                    teamSize: "",
+                    countryCode: "+1",
+                });
+                setCaptchaToken(null);
+                posthog.capture("marketing_lead_success", {
+                    page: "landing-page",
+                    team_size: form.teamSize,
+                    latency_ms: Date.now() - submitStart,
+                });
+            } else {
+                posthog.capture("marketing_lead_failed", {
+                    page: "landing-page",
+                    reason: message || "unknown",
+                });
+                setStatus({ type: "error", message: message || "Something went wrong. Please try again." });
+            }
+        } catch (error) {
             posthog.capture("marketing_lead_failed", {
                 page: "landing-page",
-                reason: message || "unknown",
+                reason: error?.message || "unknown",
             });
-            alert(message || "Something went wrong");
+            setStatus({ type: "error", message: "Something went wrong. Please try again." });
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -199,7 +212,8 @@ export default function LandingHero() {
                             Tell us a little about your team. We’ll help you explore a BuildNinja workflow that fits.
                         </p>
 
-                        <form className={s.form} onSubmit={handleSubmit}>
+                        <form className={s.form} onSubmit={handleSubmit} aria-busy={loading}>
+                            {status ? <p className={`${s.formStatus} ${status.type === "error" ? s.formStatusError : status.type === "pending" ? s.formStatusPending : s.formStatusSuccess}`} role={status.type === "error" ? "alert" : "status"} aria-live="polite">{status.message}</p> : null}
                             <div className={s.formRow}>
                                 <label className={s.formLabel}>
                                     <div>First Name<span className={s.required}>*</span></div>
@@ -286,6 +300,7 @@ export default function LandingHero() {
                                                 page: "landing-page",
                                             });
                                         }}
+                                        onExpired={() => setCaptchaToken(null)}
                                     />
                                 </div>
                             </div>

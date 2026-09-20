@@ -26,10 +26,11 @@ export default function EmailDialog({ open, onClose, onSubmit, loading, error })
     };
   }, [open, onClose]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || loading) return;
-    onSubmit(email.trim());
+    const result = await onSubmit(email.trim());
+    if (result?.success) setEmail("");
   };
 
   return (
@@ -61,7 +62,7 @@ export default function EmailDialog({ open, onClose, onSubmit, loading, error })
             <div className={styles.body}>
               <p className={styles.desc}>{emailDialogText.desc}</p>
 
-              <form className={styles.form} onSubmit={handleSubmit}>
+              <form className={styles.form} onSubmit={handleSubmit} aria-busy={loading}>
                 <div className={styles.inputWrapper}>
                   <FontAwesomeIcon icon={faEnvelope} className={styles.inputIcon} />
                   <input
@@ -78,7 +79,7 @@ export default function EmailDialog({ open, onClose, onSubmit, loading, error })
                 </div>
 
                 {error && (
-                  <p className={styles.error}>
+                  <p className={styles.error} role="alert">
                     <FontAwesomeIcon icon={faExclamationCircle} />
                     {error}
                   </p>

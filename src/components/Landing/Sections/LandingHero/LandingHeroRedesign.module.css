@@ -81,6 +81,10 @@
 .formTitle { max-width: 420px; color: var(--ink); font-size: clamp(24px, 2.5vw, 31px); font-weight: 530; line-height: 1.16; letter-spacing: -0.045em; }
 .formSubtitle { max-width: 440px; margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .form { display: flex; flex-direction: column; gap: 15px; margin-top: 23px; }
+.formStatus { margin: 0; padding: 11px 13px; border: 1px solid color-mix(in srgb, var(--coral) 42%, var(--line)); border-radius: 8px; background: var(--coral-soft); color: var(--ink); font-size: 10px; line-height: 1.5; }
+.formStatusPending { border-color: var(--line); background: var(--background); color: var(--muted); }
+.formStatusError { border-color: color-mix(in srgb, #d94d4d 48%, var(--line)); background: color-mix(in srgb, #d94d4d 10%, var(--surface)); color: #b53636; }
+.formStatusSuccess { border-color: color-mix(in srgb, #2f9e68 42%, var(--line)); background: color-mix(in srgb, #2f9e68 10%, var(--surface)); color: var(--ink); }
 .formRow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
 .formLabel { display: flex; min-width: 0; flex-direction: column; gap: 7px; color: var(--ink); font-size: 10px; font-weight: 520; }
 .required { margin-left: 3px; color: var(--coral-dark); }

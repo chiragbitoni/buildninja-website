@@ -31,6 +31,7 @@ export default function ContactPageClient({ grapehubContactHtml }) {
     const [loading, setLoading] = useState(false);
     const [captchaToken, setCaptchaToken] = useState(null);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [status, setStatus] = useState(null);
 
     const captchaTheme = resolvedTheme === "light" ? "light" : "dark";
 
@@ -45,20 +46,26 @@ export default function ContactPageClient({ grapehubContactHtml }) {
     e.preventDefault();
 
     if (!captchaToken) {
-      alert("Please verify you are not a robot!");
+      setStatus({ type: "error", message: "Please verify you are not a robot before sending your inquiry." });
       return;
     }
     setLoading(true);
-    const { success, message } = await sendContactEmail(form);
-    setLoading(false);
-
-    if (success) {
-      setIsSuccess(true);
-      setForm({ name: "", email: "", subject: "", message: "" });
-      setCaptchaToken(null);
-      setTimeout(() => setIsSuccess(false), 5000);
-    } else {
-      alert(message || "Failed to send message. Try again later.");
+    setStatus({ type: "pending", message: "Sending your inquiry…" });
+    try {
+      const { success, message } = await sendContactEmail(form);
+      if (success) {
+        setIsSuccess(true);
+        setStatus({ type: "success", message: "Inquiry sent. Thank you for reaching out." });
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setCaptchaToken(null);
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        setStatus({ type: "error", message: message || "Failed to send message. Please try again later." });
+      }
+    } catch (error) {
+      setStatus({ type: "error", message: error?.message || "Failed to send message. Please try again later." });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -160,7 +167,8 @@ export default function ContactPageClient({ grapehubContactHtml }) {
                                     Send a Message
                                 </h3>
 
-                                <form className={styles.contactForm} onSubmit={handleSubmit}>
+                                <form className={styles.contactForm} onSubmit={handleSubmit} aria-busy={loading}>
+                                    {status && !isSuccess ? <p className={`${styles.formStatus} ${status.type === "error" ? styles.formStatusError : styles.formStatusPending}`} role={status.type === "error" ? "alert" : "status"} aria-live="polite">{status.message}</p> : null}
                                     <div className={styles.formGrid}>
                                         <motion.div className={styles.field} variants={fadeUp} initial="hidden" animate="visible" custom={1}>
                                             <label>Full Name</label>
@@ -226,6 +234,7 @@ export default function ContactPageClient({ grapehubContactHtml }) {
                                                 theme={captchaTheme}
                                                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                                                 onChange={(token) => setCaptchaToken(token)}
+                                                onExpired={() => setCaptchaToken(null)}
                                             />
                                         </div>
                                     </motion.div>
