@@ -11,6 +11,11 @@ import { env } from '@/lib/config/env';
 import { formatPlanPrice, getPlanOrderUrl } from '@/services/plans/plans';
 import { EnterpriseIcon, ShogunIcon } from '@/components/Pricing/Sections/PricingHero/PricingIcons';
 
+const packs=[
+ {price:10,credits:'2.5 million',rate:'$4.00',config:200,report:45,logs:250},
+ {price:25,credits:'7 million',rate:'$3.57',config:600,report:130,logs:750},
+ {price:50,credits:'15 million',rate:'$3.33',config:1300,report:290,logs:1600},
+];
 const qualityTiers=[
  {name:'Economy',creditUse:'Lowest credit use',body:'Routine build-log questions, quick configuration checks, and concise follow-up.'},
  {name:'Balanced',creditUse:'Recommended default',body:'Everyday investigations with a practical balance of useful detail and credit use.'},
@@ -41,34 +46,47 @@ function formatKenzoFeature(feature) {
 }
 
 function KenzoCreditsSection({ plans, accountUrl }) {
+  const [pack, setPack] = useState(0);
+  const selected = packs[pack];
   const freePlan = plans.find(plan => Number(plan.price) === 0);
   const paidPlans = plans
     .filter(plan => Number(plan.price) > 0)
     .sort((a, b) => Number(a.price) - Number(b.price));
   const freeCredits = getCreditFeature(freePlan);
+  const freeCreditCount = Number(freeCredits?.value);
+  const freeCreditText = Number.isFinite(freeCreditCount)
+    ? freeCreditCount.toLocaleString('en-US')
+    : '500,000';
 
   return <section className="commercial-section credits-section" id="kenzo-ai-credits">
     <div className="commercial-heading"><span>02 / AI WHEN YOU NEED IT</span><h2>Prepaid credits.<br/>A balance you control.</h2><p>No recurring AI subscription, no per-seat AI fee, and no automatic overage billing.</p></div>
-    {freePlan ? <div className="free-credit-banner"><Sparkles size={23}/><div><h3>{freePlan.name}</h3><p>{freeCredits ? `${Number(freeCredits.value).toLocaleString('en-US')} credits included. ` : ''}The free plan can be claimed once per user.</p></div><SiteLink href={getPlanOrderUrl(freePlan, accountUrl)}>Claim free plan<ArrowRight size={15}/></SiteLink></div> : <p className="commercial-note">A free KenzoAI plan is not currently available.</p>}
-    {paidPlans.length ? <div className="credit-grid">{paidPlans.map(plan => {
+    {freePlan ? <div className="free-credit-banner"><Sparkles size={23}/><div><h3>Start with {freeCreditText} free AI credits.</h3><p>One-time allowance for eligible new GrapeHub accounts. No payment card required to claim.</p></div><SiteLink href={getPlanOrderUrl(freePlan, accountUrl)}>Claim free credits<ArrowRight size={15}/></SiteLink></div> : <p className="commercial-note">A free KenzoAI plan is not currently available.</p>}
+    {paidPlans.length ? <div className="credit-grid">{paidPlans.map((plan, i) => {
       const creditFeature = getCreditFeature(plan);
       const planFeatures = (Array.isArray(plan.features) ? plan.features : []).filter(feature =>
         feature.featureType !== 5 &&
         String(feature.featureName || '').trim().toLowerCase() !== 'credits' &&
         feature.value !== null && feature.value !== undefined
       );
+      const creditCount = Number(creditFeature?.value);
+      const price = Number(plan.price);
+      const rate = Number.isFinite(creditCount) && creditCount > 0 && Number.isFinite(price)
+        ? `About $${(price / (creditCount / 1000000)).toFixed(2)} per million credits`
+        : 'Credits are added to your account balance';
+      const packLabel = i === 0 ? 'START HERE' : i === paidPlans.length - 1 ? 'BEST VALUE PER CREDIT' : 'MORE CREDITS';
       return <article className="credit-card pricing-glow-card" key={plan.id || plan.name}>
         <GlowingEffect disabled={false} proximity={80} spread={32} borderWidth={1}/>
-        <span>KENZOAI CREDIT TOP-UP</span>
-        <h3>{plan.name}</h3>
-        <strong>{formatPlanPrice(plan)}</strong>
-        {creditFeature ? <p>{Number(creditFeature.value).toLocaleString('en-US')} credits added per purchase</p> : <p>Credits are added to your account balance</p>}
-        <SiteLink className="button button-secondary" href={getPlanOrderUrl(plan, accountUrl)}>Buy top-up<ArrowRight size={14}/></SiteLink>
+        <span>{packLabel}</span>
+        <h3>{formatPlanPrice(plan)}<small>{plan.currency || 'USD'}</small></h3>
+        <strong>{creditFeature ? `${Number(creditFeature.value).toLocaleString('en-US')} credits` : 'Credits added to your balance'}</strong>
+        <p>{rate}</p>
+        <SiteLink className={'button' + (i === paidPlans.length - 1 ? '' : ' button-secondary')} href={getPlanOrderUrl(plan, accountUrl)}>Buy top-up<ArrowRight size={14}/></SiteLink>
         {planFeatures.length ? <ul>{planFeatures.map(feature => <li key={feature.featureId || feature.featureName}>{formatKenzoFeature(feature)}</li>)}</ul> : null}
       </article>;
     })}</div> : <p className="commercial-note">KenzoAI credit top-ups are not currently available.</p>}
     {paidPlans.length ? <p className="commercial-note">You can purchase a paid top-up more than once; each purchase adds credits to your account balance. Applicable taxes and the total are shown at checkout.</p> : null}
     <aside className="enterprise-enquiry credit-enquiry"><div><span className="edition-tag">CUSTOM AI CREDITS</span><h3>Need a larger credit allocation?</h3><p>Tell us about your expected AI usage and procurement needs. We’ll help you plan a custom credit allocation for your team.</p></div><SiteLink className="button button-secondary" href="/contact">Talk about custom credits<ArrowRight size={15}/></SiteLink></aside>
+    <div className="credit-estimator"><div><span className="chapter-label">ILLUSTRATIVE USAGE · BALANCED SETTING</span><h3>What could a pack cover?</h3><div className="pack-selector" aria-label="Choose a credit pack">{packs.map((p,i)=><button type="button" aria-pressed={i===pack} className={i===pack?'active':''} onClick={()=>setPack(i)} key={p.price}>${p.price} pack</button>)}</div></div><div className="estimate-values"><div><strong>~{selected.config.toLocaleString()}</strong><span>Configuration explanations</span></div><div><strong>~{selected.report.toLocaleString()}</strong><span>Build-risk analyses</span></div><div><strong>~{selected.logs.toLocaleString()}</strong><span>Build-log analyses</span></div></div><p>Each figure is an alternative use of the full balance; do not add them together. Actual consumption varies with context, log length, response size, and quality setting.</p></div>
   </section>;
 }
 

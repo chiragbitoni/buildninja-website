@@ -63,7 +63,7 @@ export function SiteHeader() {
         <details className="resource-menu" ref={resourceMenuRef}><summary>Resources <ChevronDown size={13} /></summary><div className="resource-menu-panel">
           <section><span>LEARN</span><SiteLink href="https://www.buildninja.io/docs/overview"><b>Documentation</b><ArrowUpRight size={13}/></SiteLink><SiteLink href="/faq" onClick={() => setOpen(false)}><b>FAQs</b></SiteLink><SiteLink href="/blog" onClick={() => setOpen(false)}><b>Blog</b></SiteLink></section>
           <section><span>USE & SUPPORT</span><SiteLink href="/dojo" onClick={() => setOpen(false)}><b>Live sandbox</b></SiteLink><a href="https://www.buildninja.io/docs/category/release-notes" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}><b>What’s new</b></a><SiteLink href="/support" onClick={() => setOpen(false)}><b>Support</b></SiteLink></section>
-          <footer><SiteLink href="/resources" onClick={() => setOpen(false)}>View all resources <ArrowRight size={12}/></SiteLink><SiteLink href="/blog" onClick={() => setOpen(false)}>Blog</SiteLink></footer>
+          <footer><SiteLink href="/resources" onClick={() => setOpen(false)}>View all resources <ArrowRight size={12}/></SiteLink></footer>
         </div></details>
       </nav>
       <div className="nav-actions">
