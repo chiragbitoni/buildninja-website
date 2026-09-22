@@ -2,6 +2,7 @@
 'use client';
 
 import { MarketingMotion } from './animation-scenes';
+import { PageMotion } from './page-motion';
 import { createContext, useContext, type ComponentProps, type ReactNode } from 'react';
 
 const VersionContext = createContext('');
@@ -24,5 +25,5 @@ export function useSiteVersion() {
 }
 
 export function MarketingShell({ children }: { children: ReactNode }) {
-  return <VersionContext.Provider value="/v2"><div className="marketing-site"><MarketingMotion>{children}</MarketingMotion></div></VersionContext.Provider>;
+  return <VersionContext.Provider value="/v2"><div className="marketing-site"><MarketingMotion><PageMotion/>{children}</MarketingMotion></div></VersionContext.Provider>;
 }

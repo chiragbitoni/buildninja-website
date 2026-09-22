@@ -42,6 +42,10 @@
   height: 78px;
 }
 
+.marketing-site .site-header:has(.aceternity-nav[data-compact='true']) {
+  border-bottom-color: var(--line);
+}
+
 .marketing-site .aceternity-nav {
   width: 100% !important;
   transform: none !important;
@@ -3215,6 +3219,14 @@
   height: auto;
 }
 
+.grapecity-logo {
+  transition: filter 180ms ease;
+}
+
+:is(.dark, [data-theme='dark']) .grapecity-logo {
+  filter: invert(1);
+}
+
 .cf-early-trust>strong {
   font-size: 14px;
   line-height: 1.45;
@@ -3365,10 +3377,6 @@
 
 .about-proof-brand img {
   width: 118px;
-}
-
-:is(.dark, [data-theme='dark']) .about-proof-brand img {
-  filter: invert(1);
 }
 
 .about-proof-number {
@@ -4263,20 +4271,22 @@
 }
 
 /* Keep the built-in AI intro content centered as one visual group. */
-.marketing-site #ai-built-in>.section>.section-heading {
+.ai-intro-heading {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  width: 100%;
+  margin-inline: auto !important;
+  text-align: center !important;
 }
 
-.marketing-site #ai-built-in>.section>.section-heading>.section-label {
+.ai-intro-heading>.section-label {
   align-self: center;
 }
 
-.marketing-site #ai-built-in>.section>.section-heading>h2,
-.marketing-site #ai-built-in>.section>.section-heading>p {
+.ai-intro-heading>h2,
+.ai-intro-heading>p {
   width: 100%;
-  text-align: center;
+  text-align: center !important;
   margin-inline: auto;
 }

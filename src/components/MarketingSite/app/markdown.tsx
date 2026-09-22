@@ -10,7 +10,6 @@ import posthog from 'posthog-js';
 import { getCookie } from '@/lib/tracking/cookies';
 import { sendContactEmail, sendPartnershipEmail, sendSupportEmail } from '@/services/email/sendEmail';
 import { ProductImage, AISection } from './sections';
-import { PageMotion } from './page-motion';
 import { FeatureCatalogue } from './feature-catalogue';
 import { CodeBlock } from '@/components/ui/code-block';
 import { StackBackdrop, ToolConnections } from './product-visuals';
@@ -346,7 +345,7 @@ export function ContentPage({page,route,blogPosts=[]}:{page:PageRecord;route:str
  if(route==='about'&&enhanced)return <AboutPage/>;
  const sections=splitSections(page.content);
  const isForm=(['contact','support','partners'] as string[]).includes(route);
- return <main className={'content-page'+(route==='features'?' features-page':'')} id="main-content"><PageMotion/>
+ return <main className={'content-page'+(route==='features'?' features-page':'')} id="main-content">
    <div className="content-sections"><PageHero blocks={sections[0].blocks} title={page.title} route={route}/>{sections.slice(1).map((s,i)=>{
     const heading=s.blocks[0];const title=heading.type==='heading'?heading.text:'';
     if(isForm&&/^(Start a conversation|Send a support request|Tell us where you see a fit)/.test(title))return <div id="enquiry" key={i}><ContactBox kind={route as 'contact'|'support'|'partners'}/></div>;

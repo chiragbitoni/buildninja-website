@@ -1851,16 +1851,16 @@
     margin-right: 25px;
     border: 1px solid var(--line);
     border-radius: 12px;
-    background: #18212c;
-    color: #dce5ee;
+    background: var(--surface);
+    color: var(--ink);
     overflow: hidden;
     position: relative;
 }
 
 .cf-evidence-terminal .cf-window-title {
-    background: #202c38;
-    color: #a8bac9;
-    border-color: #35404d;
+    background: var(--soft);
+    color: var(--muted);
+    border-color: var(--line);
     font-size: 10px;
 }
 
@@ -1878,13 +1878,13 @@
 .cf-evidence-code p>span {
     display: inline-block;
     width: 24px;
-    color: #8a9fb0;
+    color: var(--muted);
 }
 
 .cf-error-evidence {
-    background: #fb786521;
-    border-left: 2px solid #e47d70;
-    color: #ffb9af;
+    background: color-mix(in srgb, var(--coral) 14%, transparent);
+    border-left: 2px solid var(--coral);
+    color: var(--coral-dark);
 }
 
 .cf-evidence-scan {

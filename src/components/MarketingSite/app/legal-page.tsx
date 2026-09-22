@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { ArrowDown, ArrowRight, FileCheck2, FileText } from 'lucide-react';
 import { legalDocumentMarkdown } from './data/legal-documents';
-import { PageMotion } from './page-motion';
 import { SiteLink } from './site-context';
 
 export const legalPages = {
@@ -111,7 +110,7 @@ export function LegalPage({ route }: { route: LegalRoute }) {
     const label = match[1].replace(/\*\*/g, '');
     return [{ label, id: sectionId(label) }];
   });
-  return <main className="legal-v2" id="main-content"><PageMotion/>
+  return <main className="legal-v2" id="main-content">
     <section className="legal-hero"><div><span className="page-kicker">LEGAL DOCUMENTS</span><h1>{page.title}</h1><p>{page.description}</p></div><div className="legal-source-card"><FileCheck2 size={24}/><span>FULL DOCUMENT</span><strong>Read the complete text here.</strong><p>This maintained legal document is published directly inside the BuildNinja website.</p><a className="button button-secondary" href="#legal-document">Start reading<ArrowDown size={15}/></a></div></section>
     <section className="legal-document-layout" id="legal-document"><aside><div className="legal-sidebar-sticky">{outline.length ? <div className="legal-outline"><span>ON THIS PAGE</span>{outline.map(item => <a key={item.id} href={`#${item.id}`}>{item.label}</a>)}</div> : null}</div></aside><article><div className="legal-document-mark"><FileText size={22}/><span>COMPLETE LEGAL TEXT</span></div><LegalDocument markdown={markdown}/></article></section>
     <section className="legal-contact"><div><span className="page-kicker">QUESTIONS ABOUT THIS DOCUMENT?</span><h2>Contact the BuildNinja team.</h2><p>Tell us which clause, purchase, or account your question concerns so it reaches the right person.</p></div><SiteLink className="button" href="/contact">Contact us<ArrowRight size={15}/></SiteLink></section>
