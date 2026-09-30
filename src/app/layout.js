@@ -131,7 +131,12 @@ export default async function RootLayout({ children }) {
         <PHProviderWrapper>
           <PosthogWrapper />
           <ReduxProvider>
-            <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
+            <ThemeProvider
+              attribute={["class", "data-theme"]}
+              storageKey="buildninja-theme"
+              defaultTheme="light"
+              enableSystem={false}
+            >
               <ClientAuthProvider>
                 <SiteFrame blogPosts={blogPosts}>
                   {children}

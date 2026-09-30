@@ -4,6 +4,7 @@ import { SiteLink, useSiteVersion } from './site-context';
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { ResizableNavbar } from '@/components/ui/resizable-navbar';
 import { AskAISection } from './trust-sections';
 import { BrandLogo } from './brand-logo';
@@ -32,14 +33,13 @@ export function SiteHeader() {
   const isVersionTwo = useSiteVersion() === '/v2';
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const dark = mounted && resolvedTheme === 'dark';
   const menuToggleRef = useRef<HTMLButtonElement>(null);
   const resourceMenuRef = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
-    const saved = localStorage.getItem('buildninja-theme');
-    const wantsDark = saved === 'dark';
-    setDark(wantsDark);
-    document.documentElement.classList.toggle('dark', wantsDark);
+    setMounted(true);
   }, []);
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -57,10 +57,7 @@ export function SiteHeader() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [open]);
   function toggleTheme() {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.classList.toggle('dark', next);
-    localStorage.setItem('buildninja-theme', next ? 'dark' : 'light');
+    setTheme(dark ? 'light' : 'dark');
   }
   return <>
     <AnnouncementBar />
