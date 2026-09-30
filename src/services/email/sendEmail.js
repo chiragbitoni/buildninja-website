@@ -68,12 +68,9 @@ export async function sendSupportEmail({ name, email, subject, message }) {
     const raw = getCookie("gh_utm");
     if (raw) utm = JSON.parse(raw);
   } catch { }
-  const toCCs = [
-    ...supportCCs,
-    ...(email ? [email.trim()] : []), // add user email to CC
-  ];
+  const toCCs = email ? [email.trim()] : []; // add user email to CC
 
-  const toEmails = parseEmailList(process.env.NEXT_PUBLIC_SUPPORT_EMAIL_ID);
+  const toEmails = supportCCs;
   const payload = {
     toEmails,
     toCCs,

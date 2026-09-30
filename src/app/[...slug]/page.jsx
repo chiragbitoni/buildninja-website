@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { pages } from "../../components/MarketingSite/app/content";
 import { ContentPage } from "../../components/MarketingSite/app/markdown";
+import { siteUrl } from "@/lib/site-url";
 import { LegalPage, legalPages } from "../../components/MarketingSite/app/legal-page";
 
 const existingRoutes = new Set([
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }) {
     ? pageTitle
     : `${pageTitle} | BuildNinja`;
   const description = record.description;
-  const canonical = `https://www.buildninja.io/${route}`;
+  const canonical = siteUrl(`/${route}`);
 
   return {
     title: { absolute: title },

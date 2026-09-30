@@ -1,8 +1,10 @@
+import { siteUrl } from "@/lib/site-url";
+
 export function baseEmailTemplate({ title, content }) {
   const year = new Date().getFullYear();
 
-  const LOGO_URL =
-    "https://www.buildninja.io/resources/BuildNinjaDark.png";
+  const LOGO_URL = siteUrl("/resources/BuildNinjaDark.png");
+  const WEBSITE_URL = siteUrl("/");
 
   return `
   <div style="font-family: Arial, sans-serif; background:#f4f6f8; padding:20px;">
@@ -15,7 +17,7 @@ export function baseEmailTemplate({ title, content }) {
         <td style="background:#111827; padding:24px; text-align:center;">
           
           <!-- LOGO -->
-          <a href="https://www.buildninja.io/" target="_blank">
+          <a href="${WEBSITE_URL}" target="_blank">
             <img 
               src="${LOGO_URL}" 
               alt="BuildNinja Logo"
@@ -58,7 +60,7 @@ export function baseEmailTemplate({ title, content }) {
           text-align:center;
         ">
           © ${year} BuildNinja. All rights reserved.<br/>
-          <a href="https://www.buildninja.io/"
+          <a href="${WEBSITE_URL}"
             style="color:#2563eb; text-decoration:none;">
             Visit Website
           </a>

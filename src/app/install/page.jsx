@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { InstallPage as MarketingInstallPage } from "../../components/MarketingSite/app/install-page";
 import { fetchInstallersForBuild } from "@/services/auth/installers";
 
@@ -6,16 +7,16 @@ export const metadata = {
   description: "Get started with BuildNinja in minutes. Follow our easy installation guide for Linux, Docker, and self-hosted environments.",
   keywords: ["install CI/CD server", "download BuildNinja", "self-hosted CI/CD setup", "Docker CI/CD installation", "Linux build server", "deploy continuous integration server"],
   alternates: {
-    canonical: "https://www.buildninja.io/install",
+    canonical: siteUrl("/install"),
   },
   openGraph: {
     title: "Download & Install BuildNinja on Your Own Servers | Install",
     description: "Get started with BuildNinja in minutes. Follow our easy installation guide for Linux, Docker, and self-hosted environments.",
-    url: "https://www.buildninja.io/install",
+    url: siteUrl("/install"),
     siteName: "BuildNinja",
     images: [
       {
-        url: "https://www.buildninja.io/resources/BuildNinja.png",
+        url: siteUrl("/resources/BuildNinja.png"),
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD Platform Installation",

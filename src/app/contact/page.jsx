@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { pages } from "../../components/MarketingSite/app/content";
 import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
@@ -5,12 +6,12 @@ export const metadata = {
   title: { absolute: "Contact Us | BuildNinja" },
   description: "Have questions or need assistance? Contact the BuildNinja team at GrapeCity India for inquiries, sales, and support.",
   alternates: {
-    canonical: "https://www.buildninja.io/contact",
+    canonical: siteUrl("/contact"),
   },
   openGraph: {
     title: "Contact Us | BuildNinja",
     description: "Have questions or need assistance? Contact the BuildNinja team at GrapeCity India for inquiries, sales, and support.",
-    url: "https://www.buildninja.io/contact",
+    url: siteUrl("/contact"),
     siteName: "BuildNinja",
     type: "website",
   },

@@ -1,4 +1,4 @@
-const BASE_URL = "https://www.buildninja.io";
+import { siteUrl } from "@/lib/site-url";
 
 export function generateBreadcrumbSchema(items) {
   return {
@@ -7,7 +7,7 @@ export function generateBreadcrumbSchema(items) {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: item.url.startsWith("http") ? item.url : `${BASE_URL}${item.url}`,
+      item: item.url.startsWith("http") ? item.url : siteUrl(item.url),
     })),
   };
 }

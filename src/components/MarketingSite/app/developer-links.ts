@@ -1,5 +1,6 @@
-// Preview portal links. Update the origin when the launch portal goes live.
-export const kenzoPortalOrigin = 'https://preview-kenzoai.buildninja.io';
+import { env } from '@/lib/config/env';
+
+export const kenzoPortalOrigin = env.KENZO_AI_DEV_PORTAL_URL.replace(/\/+$/, '');
 export const kenzoLinks = {
   signIn: `${kenzoPortalOrigin}/`,
   dashboard: `${kenzoPortalOrigin}/dashboard`,
@@ -9,5 +10,5 @@ export const kenzoLinks = {
   integration: `${kenzoPortalOrigin}/docs/getting-started/integrate-kenzoai-with-buildninja`,
   platform: `${kenzoPortalOrigin}/docs/kenzoai-platform-model`,
   usage: `${kenzoPortalOrigin}/docs/kenzoai-management-and-insights/usage-and-credit-analytics`,
-  buildninjaSetup: 'https://www.buildninja.io/docs/administrator-guide/manage-kenzoai-access',
+  buildninjaSetup: `${env.DOCUMENTATION_URL.replace(/\/+$/, '')}/administrator-guide/manage-kenzoai-access`,
 };

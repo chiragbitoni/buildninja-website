@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { LegalPage } from "../../components/MarketingSite/app/legal-page";
 
 export const metadata = {
@@ -5,16 +6,16 @@ export const metadata = {
     description: "BuildNinja End User License Agreement (EULA). Read about our licensing terms, usage rights, and data protection policies.",
     keywords: ["BuildNinja EULA", "software license agreement", "CI/CD terms of use", "DevOps software licensing", "data protection policies"],
     alternates: {
-        canonical: "https://www.buildninja.io/eula",
+        canonical: siteUrl("/eula"),
     },
     openGraph: {
         title: "EULA | BuildNinja",
         description: "BuildNinja End User License Agreement (EULA). Read about our licensing terms, usage rights, and data protection policies.",
-        url: "https://www.buildninja.io/eula",
+        url: siteUrl("/eula"),
         siteName: "BuildNinja",
         images: [
             {
-                url: "https://www.buildninja.io/resources/BuildNinja.png",
+                url: siteUrl("/resources/BuildNinja.png"),
                 width: 1200,
                 height: 630,
                 alt: "BuildNinja CI/CD EULA",

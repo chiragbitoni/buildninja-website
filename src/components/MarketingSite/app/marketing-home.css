@@ -2926,11 +2926,12 @@
 
 .marketing-site .dojo-questions {
   max-width: 1080px;
-  margin: 0 auto;
+  margin: 56px auto 0;
   display: grid;
   grid-template-columns: .8fr 1.2fr;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
   background: var(--surface);
 }
 
@@ -2963,15 +2964,17 @@
 }
 
 .marketing-site .dojo-question-list {
-  padding: 12px 34px;
+  display: grid;
+  align-content: stretch;
 }
 
 .marketing-site .dojo-question-list article {
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
   gap: 14px;
-  padding: 23px 0;
+  padding: 27px 34px;
   border-bottom: 1px solid var(--line);
+  background: var(--surface);
 }
 
 .marketing-site .dojo-question-list article:last-child {
@@ -3066,7 +3069,7 @@
 
   .marketing-site .dojo-questions {
     grid-template-columns: 1fr;
-    margin-inline: 18px;
+    margin: 42px 18px 0;
   }
 
   .marketing-site .dojo-questions-intro {
@@ -3177,7 +3180,13 @@
   }
 
   .marketing-site .dojo-question-list {
-    padding-inline: 24px;
+    padding: 0;
+  }
+
+  .marketing-site .dojo-question-list article {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 23px 24px;
   }
 }
 

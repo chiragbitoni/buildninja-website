@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { pages } from "../../components/MarketingSite/app/content";
 import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
@@ -6,16 +7,16 @@ export const metadata = {
   description: "Explore BuildNinja's features: Git triggers and Git changes visualization with commit graphs, self-hosted agents, real-time logs, and seamless integration with GitHub, GitLab, and Bitbucket.",
   keywords: ["CI/CD features", "build automation capabilities", "Git trigger", "Git changes", "commit graphs", "self-hosted agents", "DevOps integrations", "multi-cloud deployment", "GitHub integration", "GitLab integration", "Bitbucket integration", "real-time build logs"],
   alternates: {
-    canonical: "https://www.buildninja.io/features",
+    canonical: siteUrl("/features"),
   },
   openGraph: {
     title: "Powerful CI/CD Features for Modern Engineering | Features",
     description: "Explore BuildNinja's features: Git triggers and Git changes visualization with commit graphs, self-hosted agents, real-time logs, and seamless integration with GitHub, GitLab, and Bitbucket.",
-    url: "https://www.buildninja.io/features",
+    url: siteUrl("/features"),
     siteName: "BuildNinja",
     images: [
       {
-        url: "https://www.buildninja.io/resources/BuildNinja.png",
+        url: siteUrl("/resources/BuildNinja.png"),
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD Platform Features",
@@ -29,7 +30,7 @@ export default function Features() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "@id": "https://www.buildninja.io/features#softwareapplication",
+    "@id": siteUrl("/features#softwareapplication"),
     "name": "BuildNinja",
     "operatingSystem": "Windows, Linux, macOS, Docker, Kubernetes",
     "applicationCategory": "DeveloperApplication",

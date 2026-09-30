@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { Geist, Geist_Mono } from "next/font/google";
 import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
 import { ReduxProvider } from "@/redux/ReduxProvider";
@@ -39,30 +40,30 @@ const schema = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.buildninja.io/#organization",
+      "@id": siteUrl("/#organization"),
       name: "BuildNinja",
-      url: "https://www.buildninja.io",
-      logo: "https://www.buildninja.io/resources/BuildNinja.png",
+      url: siteUrl(""),
+      logo: siteUrl("/resources/BuildNinja.png"),
       sameAs: [
         "https://www.linkedin.com/showcase/build-ninja/",
-        "https://www.instagram.com/GrapeHubindia/",
-        "https://www.facebook.com/GrapeHubIndiaPvtLtd",
+        "https://www.instagram.com/buildninja.io/?next=%2Fbuildninja.io%2F",
+        "https://www.facebook.com/GrapeCityIndiaPvtLtd",
         "https://www.youtube.com/@BuildNinja_CICD",
       ],
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.buildninja.io/#website",
-      url: "https://www.buildninja.io",
+      "@id": siteUrl("/#website"),
+      url: siteUrl(""),
       name: "BuildNinja",
       publisher: {
-        "@id": "https://www.buildninja.io/#organization",
+        "@id": siteUrl("/#organization"),
       },
     },
   ],
 };
 export const metadata = {
-  metadataBase: new URL("https://www.buildninja.io"),
+  metadataBase: new URL(siteUrl("")),
   alternates: {
     canonical: "/",
   },
@@ -78,12 +79,12 @@ export const metadata = {
     title: "BuildNinja – Self hosted CI/CD platform",
     description:
       "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
-    url: "https://www.buildninja.io/",
+    url: siteUrl("/"),
     siteName: "BuildNinja",
     type: "website",
     images: [
       {
-        url: "https://www.buildninja.io/resources/BuildNinja.png",
+        url: siteUrl("/resources/BuildNinja.png"),
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD platform",
@@ -96,7 +97,7 @@ export const metadata = {
     title: "BuildNinja – Self hosted CI/CD platform",
     description:
       "BuildNinja helps developers manage software development life cycle efficiently with advanced CI/CD technology, real-time collaboration, and zero downtime updates.",
-    images: ["https://www.buildninja.io/resources/BuildNinja.png"],
+    images: [siteUrl("/resources/BuildNinja.png")],
   },
   verification: {
     google: [
@@ -118,7 +119,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.buildninja.io/sitemap.xml" />
+        <link rel="sitemap" type="application/xml" title="Sitemap" href={siteUrl("/sitemap.xml")} />
         <SchemaScript />
         <script
           id="schema-org"

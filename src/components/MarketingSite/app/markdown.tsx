@@ -18,6 +18,7 @@ import { KenzoPage } from './kenzo-page';
 import { AboutPage } from './about-page';
 import { HeritageSection } from './trust-sections';
 import { useMarketingMotion, useScenePlayback } from './animation-scenes';
+import { env } from '@/lib/config/env';
 
 type PageRecord = { title: string; seo: string; description: string; content: string };
 
@@ -59,8 +60,7 @@ function trackDojoClick(eventName: string) {
 }
 
 function getDojoSandboxUrl() {
-  const configuredUrl = (process.env.NEXT_PUBLIC_DOJO_URL || '').trim().replace(/^["']|["']$/g, '');
-  return configuredUrl || 'https://dojo.buildninja.io';
+  return env.DOJO_URL.trim().replace(/^["']|["']$/g, '');
 }
 
 function blocksFrom(text:string): Block[] {
@@ -107,7 +107,12 @@ function inline(text:string):React.ReactNode[]{
     if(m.index>last) result.push(text.slice(last,m.index));
     const token=m[0];
     const link=token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if(link) result.push(<SiteLink key={k++} href={localLink(link[2])}>{link[1]}</SiteLink>);
+    if(link) {
+      const href=localLink(link[2]);
+      result.push(href===getDojoSandboxUrl()
+        ? <a key={k++} href={href} target="_blank" rel="noopener noreferrer">{link[1]}</a>
+        : <SiteLink key={k++} href={href}>{link[1]}</SiteLink>);
+    }
     else if(token.startsWith('**')) result.push(<strong key={k++}>{token.slice(2,-2)}</strong>);
     else result.push(<code key={k++}>{token.slice(1,-1)}</code>);
     last=m.index+token.length;
@@ -288,10 +293,10 @@ function DojoExplorer(){
  const [sampleId,setSampleId]=useState('lifecycle');
  const legacyText:{[k:string]:string}={Node:'npm ci  →  npm test  →  npm run build',Python:'pip install  →  pytest  →  package',Docker:'docker build  →  test image  →  publish'};
  const samples:{[k:string]:{label:string;short:string;pipeline:string;summary:string;url:string;agent:string}}={
-  lifecycle:{label:'CI/CD Lifecycle Demo',short:'Lifecycle',pipeline:'mvn clean  →  compile  →  test  →  package  →  run',summary:'A Maven project that compiles, tests, packages, starts the application, captures logs, and publishes three artifacts.',url:'https://dojo.buildninja.io/projects/00000000-0000-0000-0000-000000000000/config/78ae3c28-ad2a-4861-82c7-6c19638e4d64?tab=overview',agent:'Windows agent'},
-  yaml:{label:'CI/CD YAML Flow Demo',short:'YAML flow',pipeline:'pnpm install  →  unit test  →  Playwright  →  build  →  deploy',summary:'A declarative YAML workflow for a Vue application, including tests, a production build, a short deployment, and collected reports.',url:'https://dojo.buildninja.io/projects/00000000-0000-0000-0000-000000000000/config/54b26f0d-b7af-46c9-8914-e89a6d94c65b?tab=overview',agent:'Linux agent'},
-  docker:{label:'Docker Playground',short:'Docker',pipeline:'create network  →  start container  →  health check  →  clean up',summary:'An ephemeral Docker environment with deterministic health checks, a short access window, automatic cleanup, and result artifacts.',url:'https://dojo.buildninja.io/projects/00000000-0000-0000-0000-000000000000/config/cf06838c-573e-4fd4-9ce3-9c9a81432ac8?tab=overview',agent:'Docker agent'},
-  cmd:{label:'Native CMD Demo',short:'Native CMD',pipeline:'generate metadata  →  validate  →  promote  →  verify',summary:'A Windows CMD pipeline that carries metadata across steps, enforces a quality gate, promotes artifacts, and verifies their integrity.',url:'https://dojo.buildninja.io/projects/00000000-0000-0000-0000-000000000000/config/d3b08ab2-b335-4eee-a7b9-fcc7c46d9b34?tab=overview',agent:'Windows agent'}
+  lifecycle:{label:'CI/CD Lifecycle Demo',short:'Lifecycle',pipeline:'mvn clean  →  compile  →  test  →  package  →  run',summary:'A Maven project that compiles, tests, packages, starts the application, captures logs, and publishes three artifacts.',url:env.DOJO_URL,agent:'Windows agent'},
+  yaml:{label:'CI/CD YAML Flow Demo',short:'YAML flow',pipeline:'pnpm install  →  unit test  →  Playwright  →  build  →  deploy',summary:'A declarative YAML workflow for a Vue application, including tests, a production build, a short deployment, and collected reports.',url:env.DOJO_URL,agent:'Linux agent'},
+  docker:{label:'Docker Playground',short:'Docker',pipeline:'create network  →  start container  →  health check  →  clean up',summary:'An ephemeral Docker environment with deterministic health checks, a short access window, automatic cleanup, and result artifacts.',url:env.DOJO_URL,agent:'Docker agent'},
+  cmd:{label:'Native CMD Demo',short:'Native CMD',pipeline:'generate metadata  →  validate  →  promote  →  verify',summary:'A Windows CMD pipeline that carries metadata across steps, enforces a quality gate, promotes artifacts, and verifies their integrity.',url:env.DOJO_URL,agent:'Windows agent'}
  };
  const sample=samples[sampleId];
  const exercises=enhanced
@@ -343,7 +348,16 @@ export function ContentPage({page,route,blogPosts=[]}:{page:PageRecord;route:str
  if(route==='kenzo-ai')return <KenzoPage/>;
  if(route==='kenzo-ai-portal')return <DeveloperPage/>;
  if(route==='about'&&enhanced)return <AboutPage/>;
- const sections=splitSections(page.content);
+ const resolvedContent=route==='features'
+  ? page.content.replace('https://www.buildninja.io/#product-demo',getDojoSandboxUrl())
+  : page.content;
+ const environmentContent = resolvedContent
+  .replaceAll('{{SUPPORT_EMAIL}}', env.SUPPORT_CC_EMAIL)
+  .replaceAll('https://www.buildninja.io', (process.env.NEXT_PUBLIC_BUILDNINJA_URL || '').replace(/\/+$/, ''))
+  .replaceAll('{{DOCUMENTATION_URL}}', env.DOCUMENTATION_URL.replace(/\/+$/, ''))
+  .replaceAll('{{MY_ACCOUNT_URL}}', env.MY_ACCOUNT.replace(/\/+$/, ''))
+  .replaceAll('{{NEXT_PUBLIC_KENZO_AI_DEV_PORTAL_URL}}', env.KENZO_AI_DEV_PORTAL_URL.replace(/\/+$/, ''));
+ const sections=splitSections(environmentContent);
  const isForm=(['contact','support','partners'] as string[]).includes(route);
  return <main className={'content-page'+(route==='features'?' features-page':'')} id="main-content">
    <div className="content-sections"><PageHero blocks={sections[0].blocks} title={page.title} route={route}/>{sections.slice(1).map((s,i)=>{

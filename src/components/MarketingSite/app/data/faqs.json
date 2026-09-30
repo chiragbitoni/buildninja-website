@@ -362,7 +362,7 @@
       {
         "id": "can-i-reuse-build-configurations",
         "question": "Can I reuse build configurations?",
-        "answer": "BuildNinja supports configuration export and reuse, including supported YAML workflows. See the [YAML reference](https://www.buildninja.io/docs/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference).",
+        "answer": "BuildNinja supports configuration export and reuse, including supported YAML workflows. See the [YAML reference]({{DOCUMENTATION_URL}}/manage-projects-and-builds/export-and-reuse-build-configurations/yaml-configuration-reference).",
         "source": "launch"
       },
       {
@@ -474,7 +474,7 @@
       {
         "id": "reporting-bugs",
         "question": "What if I encounter a bug or issue?",
-        "answer": "Use the Support page or email buildninja@grapecity.global. Include the version, operating system, expected behavior, actual result, and relevant error text with credentials removed.",
+        "answer": "Use the Support page or email {{SUPPORT_EMAIL}}. Include the version, operating system, expected behavior, actual result, and relevant error text with credentials removed.",
         "source": "existing"
       },
       {
@@ -492,7 +492,7 @@
       {
         "id": "where-can-i-see-release-changes",
         "question": "Where can I see release changes?",
-        "answer": "Read the [release notes](https://www.buildninja.io/docs/category/release-notes).",
+        "answer": "Read the [release notes]({{DOCUMENTATION_URL}}/category/release-notes).",
         "source": "launch"
       },
       {

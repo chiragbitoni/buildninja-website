@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { pages } from "../../components/MarketingSite/app/content";
 import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
@@ -6,16 +7,16 @@ export const metadata = {
   description: "Master BuildNinja in our interactive Dojo. Experiment with build pipelines, configurations, and CI/CD workflows in a safe sandbox environment.",
   keywords: ["CI/CD sandbox", "DevOps playground", "build pipeline testing", "CI/CD tutorial", "BuildNinja Dojo", "test CI/CD workflows", "interactive DevOps learning"],
   alternates: {
-    canonical: "https://www.buildninja.io/dojo",
+    canonical: siteUrl("/dojo"),
   },
   openGraph: {
     title: "Interactive CI/CD Sandbox & Playground | Dojo",
     description: "Master BuildNinja in our interactive Dojo. Experiment with build pipelines, configurations, and CI/CD workflows in a safe sandbox environment.",
-    url: "https://www.buildninja.io/dojo",
+    url: siteUrl("/dojo"),
     siteName: "BuildNinja",
     images: [
       {
-        url: "https://www.buildninja.io/resources/BuildNinja.png",
+        url: siteUrl("/resources/BuildNinja.png"),
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD Dojo Sandbox",

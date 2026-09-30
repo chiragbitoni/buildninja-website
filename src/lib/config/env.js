@@ -2,5 +2,8 @@ export const env = {
   SSO_Support: process.env.NEXT_PUBLIC_SSO_SUPPORTED || '',
   API_URL:process.env.NEXT_PUBLIC_USR_SVC_URL||'',
   MY_ACCOUNT:process.env.NEXT_PUBLIC_MYACCOUNT_URL||'',
-  BUILDNINJA_URL:process.env.NEXT_PUBLIC_BUILDNINJA_URL||'https://www.buildninja.io'
+  DOCUMENTATION_URL:process.env.NEXT_PUBLIC_DOCUMENTATION_URL||'',
+  SUPPORT_CC_EMAIL:process.env.NEXT_PUBLIC_SUPPORT_CC_EMAIL_ID||'',
+  KENZO_AI_DEV_PORTAL_URL:process.env.NEXT_PUBLIC_KENZO_AI_DEV_PORTAL_URL||'',
+  DOJO_URL:process.env.NEXT_PUBLIC_DOJO_URL||''
 };

@@ -16,6 +16,7 @@ import { GettingStarted } from './sections';
 import catalog from './data/edition-entitlements.json';
 import faqCategories from './data/faqs.json';
 import { env } from '@/lib/config/env';
+import { siteUrl } from '@/lib/site-url';
 import { describeKenzoPlans, formatPlanPrice, getPlanOrderUrl } from '@/services/plans/plans';
 
 function CenteredHeading({ label, title, emphasis, description }: { label:string; title:string; emphasis:string; description:string }) {
@@ -25,7 +26,7 @@ function CenteredHeading({ label, title, emphasis, description }: { label:string
 function PricingOverview({ plansData }) {
   const activePlans = plansData?.byProduct?.BuildNinja || [];
   const cycles = ['Monthly', 'Yearly', '2-Years', '3-Years'];
-  const accountUrl = env.MY_ACCOUNT || 'https://myaccount.grapehub.io';
+  const accountUrl = env.MY_ACCOUNT;
   const lowestKenzoPlan = [...(plansData?.byProduct?.KenzoAI || [])]
     .filter(plan => Number(plan.price) > 0)
     .sort((a, b) => Number(a.price) - Number(b.price))[0];
@@ -39,7 +40,7 @@ function CommonQuestions({ plansData }) {
   const ids=['what-is-buildninja','cloud-or-self-hosted','can-i-try-it-before-installing','does-buildninja-include-ai','what-credit-packs-are-available','what-happens-when-my-ai-balance-reaches-zero'];
   const plansSummary = describeKenzoPlans(plansData?.byProduct?.KenzoAI || []);
   const questions=faqCategories.flatMap(group=>group.faqs).filter(faq=>ids.includes(faq.id)).map(faq=>faq.id==='what-credit-packs-are-available'?{...faq,answer:plansSummary}:faq);
-  return <section className="cf-faq"><div className="cf-faq-heading"><span className="cf-mini-eyebrow">CLEAR ANSWERS</span><h2>Before your<br/>next build.</h2><p>Get familiar with the workflow, installation, and AI credits.</p><SiteLink className="text-button" href="/faq">Explore all FAQs<ArrowRight size={15}/></SiteLink></div><div className="cf-faq-list">{questions.map(faq=><details key={faq.id}><summary>{faq.question}<span>+</span></summary><p>{faq.answer}</p></details>)}</div></section>;
+  return <section className="cf-faq"><div className="cf-faq-heading"><span className="cf-mini-eyebrow">CLEAR ANSWERS</span><h2>Before your<br/>next build.</h2><p>Get familiar with the workflow, installation, and AI credits.</p><SiteLink className="text-button" href="/faq">Explore all FAQs<ArrowRight size={15}/></SiteLink></div><div className="cf-faq-list">{questions.map(faq=><details key={faq.id}><summary>{faq.question}<span>+</span></summary><p>{faq.answer.replaceAll('{{SUPPORT_EMAIL}}',env.SUPPORT_CC_EMAIL).replaceAll('https://www.buildninja.io',(process.env.NEXT_PUBLIC_BUILDNINJA_URL||'').replace(/\/+$/,''))}</p></details>)}</div></section>;
 }
 
 function SectionTracker({ name, children }) {
@@ -60,7 +61,7 @@ function SectionTracker({ name, children }) {
 const homeStructuredData = {
   '@context':'https://schema.org',
   '@graph':[
-    {'@type':'SoftwareApplication',name:'BuildNinja',url:'https://www.buildninja.io/',applicationCategory:'DeveloperApplication',operatingSystem:'Windows, Linux, macOS, Docker',description:'A self-hosted CI/CD platform for DevOps and engineering teams with pipeline automation, build visibility, and kenzoAI build intelligence.',featureList:['GitHub, GitLab, and Bitbucket integrations','Build and scheduled triggers','Windows, Linux, and macOS build agents','Docker and Kubernetes workflows','Commands, scripts, SSH, MSBuild, and VSTest','Build dashboards, history, logs, and artifacts','Single sign-on and project access controls','kenzoAI log, configuration, and code-change analysis']},
+    {'@type':'SoftwareApplication',name:'BuildNinja',url:siteUrl('/'),applicationCategory:'DeveloperApplication',operatingSystem:'Windows, Linux, macOS, Docker',description:'A self-hosted CI/CD platform for DevOps and engineering teams with pipeline automation, build visibility, and kenzoAI build intelligence.',featureList:['GitHub, GitLab, and Bitbucket integrations','Build and scheduled triggers','Windows, Linux, and macOS build agents','Docker and Kubernetes workflows','Commands, scripts, SSH, MSBuild, and VSTest','Build dashboards, history, logs, and artifacts','Single sign-on and project access controls','kenzoAI log, configuration, and code-change analysis']},
   ],
 };
 

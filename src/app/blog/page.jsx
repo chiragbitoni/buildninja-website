@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { pages } from "../../components/MarketingSite/app/content";
 import { ContentPage } from "../../components/MarketingSite/app/markdown";
 import { fetchGrapeHubBlogPosts } from "@/services/grapehub/fetchPage";
@@ -7,18 +8,18 @@ export const metadata = {
   description:
     "Explore the latest articles, tutorials, and insights from the BuildNinja team - covering CI/CD pipelines, self-hosted DevOps, and software delivery best practices.",
   alternates: {
-    canonical: "https://www.buildninja.io/blog",
+    canonical: siteUrl("/blog"),
   },
   openGraph: {
     title: "Blog | BuildNinja – CI/CD Insights & DevOps Tutorials",
     description:
       "Explore the latest articles, tutorials, and insights from the BuildNinja team - covering CI/CD pipelines, self-hosted DevOps, and software delivery best practices.",
-    url: "https://www.buildninja.io/blog",
+    url: siteUrl("/blog"),
     siteName: "BuildNinja",
     type: "website",
     images: [
       {
-        url: "https://www.buildninja.io/resources/BuildNinja.png",
+        url: siteUrl("/resources/BuildNinja.png"),
         width: 1200,
         height: 630,
         alt: "BuildNinja Blog",

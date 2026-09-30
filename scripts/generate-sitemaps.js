@@ -1,9 +1,26 @@
 const fs = require('fs');
 const path = require('path');
+const { loadEnvConfig } = require('@next/env');
+
+loadEnvConfig(path.join(__dirname, '..'));
+
+function requiredAbsoluteUrl(name) {
+  const value = (process.env[name] || '').replace(/\/+$/, '');
+
+  try {
+    const url = new URL(value);
+    if (!['http:', 'https:'].includes(url.protocol)) throw new Error();
+  } catch {
+    throw new Error(`${name} must be configured as an absolute HTTP(S) URL before generating sitemaps.`);
+  }
+
+  return value;
+}
 
 async function generateSitemaps() {
-  const baseUrl = "https://www.buildninja.io";
+  const baseUrl = requiredAbsoluteUrl('NEXT_PUBLIC_BUILDNINJA_URL');
   const grapehubUrl = "https://www.grapehub.io";
+  const documentationUrl = (process.env.NEXT_PUBLIC_DOCUMENTATION_URL || `${baseUrl}/docs`).replace(/\/+$/, '');
 
   console.log("Generating sitemap.xml...");
 
@@ -14,7 +31,7 @@ async function generateSitemaps() {
     <loc>${baseUrl}/sitemap-0.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>${baseUrl}/docs/sitemap.xml</loc>
+    <loc>${documentationUrl}/sitemap.xml</loc>
   </sitemap>
 </sitemapindex>`;
 

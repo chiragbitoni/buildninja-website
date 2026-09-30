@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { fetchGrapeHubBlogPosts, fetchGrapeHubBlogPost } from "@/services/grapehub/fetchPage";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbSchema";
+import { siteUrl } from "@/lib/site-url";
 import styles from "./BlogPost.module.css";
 // ── Pre-render all known post slugs at build time ──────────────────────────
 export async function generateStaticParams() {
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const canonicalUrl = `https://www.buildninja.io/blog/${slug}`;
+  const canonicalUrl = siteUrl(`/blog/${slug}`);
 
   return {
     title: { absolute: `${post.title} | BuildNinja Blog` },
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }) {
         ]
         : [
           {
-            url: "https://www.buildninja.io/resources/BuildNinja.png",
+            url: siteUrl("/resources/BuildNinja.png"),
             width: 1200,
             height: 630,
             alt: "BuildNinja Blog",
@@ -62,7 +63,7 @@ export async function generateMetadata({ params }) {
       description: post.excerpt || post.title,
       images: post.coverImage
         ? [post.coverImage]
-        : ["https://www.buildninja.io/resources/BuildNinja.png"],
+        : [siteUrl("/resources/BuildNinja.png")],
     },
   };
 }
@@ -140,17 +141,17 @@ export default async function BlogPostPage({ params }) {
         "@type": "Article",
         headline: post.title,
         description: post.excerpt || post.title,
-        image: post.coverImage || "https://www.buildninja.io/resources/BuildNinja.png",
+        image: post.coverImage || siteUrl("/resources/BuildNinja.png"),
         author: {
           "@type": "Person",
           name: post.author || "BuildNinja Team",
         },
-        publisher: { "@id": "https://www.buildninja.io/#organization" },
+        publisher: { "@id": siteUrl("/#organization") },
         datePublished: post.firstPublishedDate,
         dateModified: post.lastPublishedDate || post.firstPublishedDate,
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://www.buildninja.io/blog/${slug}`,
+          "@id": siteUrl(`/blog/${slug}`),
         },
       },
     ],

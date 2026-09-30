@@ -98,7 +98,7 @@ export function PricingPage({ plansData }) {
   const liveShogun = activePlans.find(plan => plan.billingCycle === cycles[term] && Number(plan.price) > 0);
   const liveGrowth = activePlans.find(plan => Number(plan.price) === 0 && String(plan.name || '').toLowerCase().includes('growth'));
   const shogun = { ...catalog.shogunTerms[term], price: Number(liveShogun?.price ?? catalog.shogunTerms[term].price) };
-  const accountUrl = env.MY_ACCOUNT || 'https://myaccount.grapehub.io';
+  const accountUrl = env.MY_ACCOUNT;
   const growthOrderUrl = getPlanOrderUrl(liveGrowth, accountUrl);
   const shogunOrderUrl = getPlanOrderUrl(liveShogun, accountUrl);
   const enhanced = useMarketingMotion().enabled;

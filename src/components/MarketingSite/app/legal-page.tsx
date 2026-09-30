@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { ArrowDown, ArrowRight, FileCheck2, FileText } from 'lucide-react';
 import { legalDocumentMarkdown } from './data/legal-documents';
 import { SiteLink } from './site-context';
+import { env } from '@/lib/config/env';
 
 export const legalPages = {
   'privacy-policy': { title: 'Privacy Policy', seo: 'BuildNinja Privacy Policy | GrapeCity India', description: 'How GrapeCity India collects, uses, protects, and manages personal information connected with BuildNinja websites, accounts, products, and support.' },
@@ -99,7 +100,9 @@ function LegalDocument({ markdown }: { markdown: string }) {
 
 export function LegalPage({ route }: { route: LegalRoute }) {
   const page = legalPages[route];
-  const markdown = legalDocumentMarkdown[route];
+  const markdown = legalDocumentMarkdown[route]
+    .replaceAll('{{SUPPORT_EMAIL}}', env.SUPPORT_CC_EMAIL)
+    .replaceAll('https://www.buildninja.io', (process.env.NEXT_PUBLIC_BUILDNINJA_URL || '').replace(/\/+$/, ''));
   const outlineLevel = markdown.split('\n')
     .map(line => line.trim().match(/^(#{2,6})\s+(.+)$/)?.[1].length)
     .find((level): level is number => level !== undefined) ?? 2;

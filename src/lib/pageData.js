@@ -1,5 +1,3 @@
-export const BASE_URL = "https://www.buildninja.io";
-
 export const pageDataMap = {
   "/": {
     breadcrumb: "Home",

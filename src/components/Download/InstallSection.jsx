@@ -15,6 +15,7 @@ import { faDownload, faCheckCircle, faCopy, faKey, faPlayCircle, faCalendarAlt, 
 import { faWindows, faLinux, faApple, faDocker } from "@fortawesome/free-brands-svg-icons";
 import { Monitor, Server } from "lucide-react";
 import EmailDialog from "./EmailDialog";
+import { env } from "@/lib/config/env";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -301,7 +302,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
                 {downloadingUrl === linuxAgentFile ? <><FontAwesomeIcon icon={faCircleNotch} spin /> Preparing…</> : "Agent"}
               </button>
             </div>
-            <a className="download-guide" href="https://www.buildninja.io/docs/category/quick-setup-guide">Read the setup guide</a>
+            <a className="download-guide" href={`${env.DOCUMENTATION_URL.replace(/\/+$/, "")}/category/quick-setup-guide`}>Read the setup guide</a>
           </article>
         ) : null}
         {!loading && latestMac ? (
@@ -319,7 +320,7 @@ export default function InstallSection({ initialInstallers = null, compact = fal
                 {downloadingUrl === macAgentFile ? <><FontAwesomeIcon icon={faCircleNotch} spin /> Preparing…</> : "Agent"}
               </button>
             </div>
-            <a className="download-guide" href="https://www.buildninja.io/docs/category/quick-setup-guide">Read the setup guide</a>
+            <a className="download-guide" href={`${env.DOCUMENTATION_URL.replace(/\/+$/, "")}/category/quick-setup-guide`}>Read the setup guide</a>
           </article>
         ) : null}
         {!loading && !latestWindows && !latestLinux && !latestMac ? <p>Downloads are temporarily unavailable. Please try again later.</p> : null}

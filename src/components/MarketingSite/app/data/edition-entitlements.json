@@ -1,5 +1,5 @@
 {
-  "source": "https://gc-userservice.grapehub.io/api/Subscription/plans?source=1",
+  "sourcePath": "/api/Subscription/plans?source=1",
   "checked": "2026-09-04",
   "status": "Existing website USD platform pricing retained per user instruction; new AI credit packs are separate",
   "editions": [

@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { PricingPage as MarketingPricingPage } from "../../components/MarketingSite/app/pricing-page";
 import {
   fetchActivePlansForBuild,
@@ -10,7 +11,7 @@ export const metadata = {
   description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
   keywords: ["CI/CD pricing", "DevOps tools cost", "BuildNinja pricing", "self-hosted CI/CD free", "enterprise CI/CD plans", "DevOps budget"],
   alternates: {
-    canonical: "https://www.buildninja.io/pricing",
+    canonical: siteUrl("/pricing"),
   },
   robots: {
     index: true,
@@ -19,12 +20,12 @@ export const metadata = {
   openGraph: {
     title: "BuildNinja - Self-Hosted CI/CD, Free to Start",
     description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
-    url: "https://www.buildninja.io/pricing",
+    url: siteUrl("/pricing"),
     siteName: "BuildNinja",
     locale: "en_US",
     images: [
       {
-        url: "https://www.buildninja.io/resources/BuildNinja.png",
+        url: siteUrl("/resources/BuildNinja.png"),
         width: 1200,
         height: 630,
         alt: "BuildNinja CI/CD Pricing Plans",
@@ -36,7 +37,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "BuildNinja - Self-Hosted CI/CD, Free to Start",
     description: "Choose the best plan for your DevOps needs. From free community editions to advanced enterprise features, BuildNinja scales with your team.",
-    images: ["https://www.buildninja.io/resources/BuildNinja.png"],
+    images: [siteUrl("/resources/BuildNinja.png")],
   },
 };
 
@@ -56,9 +57,9 @@ export default async function Pricing() {
 
   const productSchemas = Object.entries(byName).map(([name, plans]) => ({
     "@type": "Product",
-    "@id": `https://www.buildninja.io/pricing#product-${name.toLowerCase().replace(/\s+/g, "-")}`,
+    "@id": siteUrl(`/pricing#product-${name.toLowerCase().replace(/\s+/g, "-")}`),
     "name": `${name} Edition`,
-    "image": "https://www.buildninja.io/resources/BuildNinja.png",
+    "image": siteUrl("/resources/BuildNinja.png"),
     "description": `${name} Edition - self-hosted CI/CD by BuildNinja. No per-seat pricing${name === "Growth" ? " - 10 build agents" : " - unlimited build agents"} on your own infrastructure.`,
     "brand": { "@type": "Brand", "name": "BuildNinja" },
     "offers": plans.map((plan) => ({
@@ -73,7 +74,7 @@ export default async function Pricing() {
 
   const kenzoProductSchemas = kenzoPlans.length ? [{
     "@type": "Product",
-    "@id": "https://www.buildninja.io/pricing#product-kenzoai-credits",
+    "@id": siteUrl("/pricing#product-kenzoai-credits"),
     "name": "KenzoAI Credits",
     "description": "Free and paid KenzoAI credit top-ups added to the user's account balance.",
     "brand": { "@type": "Brand", "name": "KenzoAI" },

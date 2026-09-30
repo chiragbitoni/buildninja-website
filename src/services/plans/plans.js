@@ -6,7 +6,7 @@ export const PlanProduct = {
 };
 
 export function getPlanOrderUrl(plan, accountUrl) {
-  const baseUrl = (accountUrl || "https://myaccount.grapehub.io").replace(/\/+$/, "");
+  const baseUrl = accountUrl.replace(/\/+$/, "");
   return plan?.id
     ? `${baseUrl}/order?planId=${encodeURIComponent(plan.id)}`
     : baseUrl;

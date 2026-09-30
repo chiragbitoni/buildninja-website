@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { Suspense } from "react";
 import AddToCartContent from "./AddToCartContent";
 
@@ -8,7 +9,7 @@ export const metadata = {
     follow: false,
   },
   alternates: {
-    canonical: "https://www.buildninja.io/addtocart",
+    canonical: siteUrl("/addtocart"),
   },
 };
 

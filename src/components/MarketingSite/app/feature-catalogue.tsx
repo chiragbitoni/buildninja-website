@@ -6,6 +6,7 @@ import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { FeatureProductPreview } from './product-previews';
 import { useMarketingMotion } from './animation-scenes';
+import { env } from '@/lib/config/env';
 
 const icons=[Workflow,GitBranch,Package,Layers,Server,LockKeyhole,ShieldCheck,Terminal,Bell,Server];
 const demoVideos = [
@@ -15,7 +16,7 @@ const demoVideos = [
  {id:'Pjl3muKtmhE',label:'Watch dashboard demo'},
  {id:'MnvaPLguA6c',label:'Watch agent management demo'},
  {id:'C-Ln6bbGo2E',label:'Watch access management demo'},
- {id:'C-Ln6bbGo2E',label:'Watch SSO demo'},
+ {id:'O5-JHWbqzyQ',label:'Watch SSO demo'},
  {id:'IOd9CmP6G4c',label:'Watch pipeline runners demo'},
  {id:'2OuADSNMEoc',label:'Watch notifications demo'},
  {id:'zOW9BCYQkxk',label:'Watch installation demo'},
@@ -41,7 +42,7 @@ function Visual({index}:{index:number}) {
 
 export function FeatureCatalogue({items}:{items:{title:string;description:ReactNode}[]}) {
  const enhanced=useMarketingMotion().enabled;
- const featureChapters=enhanced?chapters.map(chapter=>chapter.number==='02'?{...chapter,label:'BUILD NOTIFICATIONS',title:'Keep the right people informed.',description:'Send useful build updates through your configured email service, with enough context for the team to respond.',items:[8],href:'https://www.buildninja.io/docs/manage-projects-and-builds/configure-build-notification-settings',action:'Explore notification settings'}:chapter):chapters;
+ const featureChapters=enhanced?chapters.map(chapter=>chapter.number==='02'?{...chapter,label:'BUILD NOTIFICATIONS',title:'Keep the right people informed.',description:'Send useful build updates through your configured email service, with enough context for the team to respond.',items:[8],href:`${env.DOCUMENTATION_URL.replace(/\/+$/,'')}/manage-projects-and-builds/configure-build-notification-settings`,action:'Explore notification settings'}:chapter):chapters;
  return <div className="feature-catalogue">{featureChapters.map(chapter=><section className={'feature-chapter chapter-'+chapter.number} key={chapter.number} aria-labelledby={'chapter-'+chapter.number}>
   <div className="story-rail"><div className="story-rail-inner"><span className="chapter-label">{chapter.number} / {chapter.label}</span><h3 id={'chapter-'+chapter.number}>{chapter.title}</h3><p>{chapter.description}</p><SiteLink className="text-button" href={chapter.href}>{chapter.action}<ArrowRight size={15}/></SiteLink></div></div>
   <BentoGrid className="chapter-panels">{chapter.items.map(index=>{const item=items[index];if(!item)return null;const Icon=icons[index]||Workflow;const demo=demoVideos[index];return <BentoGridItem key={item.title} headingTag="h4" className={'ac-bento-item catalogue-card '+(index===3?'catalogue-overview':'')}

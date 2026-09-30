@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site-url";
 import { pages } from "../../components/MarketingSite/app/content";
 import { ContentPage } from "../../components/MarketingSite/app/markdown";
 
@@ -5,12 +6,12 @@ export const metadata = {
   title: { absolute: 'CI/CD Platform Comparisons: BuildNinja vs Alternatives' },
   description: 'Honest, feature-by-feature comparisons between BuildNinja and popular CI/CD tools: GitHub Actions, CircleCI, and Jenkins. See which tool wins on TCO, setup speed, and maintenance.',
   alternates: {
-    canonical: 'https://www.buildninja.io/compare',
+    canonical: siteUrl("/compare"),
   },
   openGraph: {
     title: 'CI/CD Platform Comparisons: BuildNinja vs Alternatives',
     description: 'Detailed comparisons between BuildNinja and leading CI/CD tools: GitHub Actions, CircleCI, and Jenkins. Learn how self-hosted builds stack up against SaaS pricing.',
-    url: 'https://www.buildninja.io/compare',
+    url: siteUrl("/compare"),
     siteName: 'BuildNinja',
     type: 'website',
   }
