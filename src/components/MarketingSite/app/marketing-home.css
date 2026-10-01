@@ -336,6 +336,13 @@
   align-items: center;
 }
 
+.cf-preview-caption>a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
 .cf-preview-caption i {
   width: 5px;
   height: 5px;
