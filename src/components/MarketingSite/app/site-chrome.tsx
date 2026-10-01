@@ -86,9 +86,9 @@ export function SiteHeader() {
           const isActive = isCurrentNavigationPath(pathname, href);
           return <SiteLink key={href} href={href} className={isActive ? 'is-active' : undefined} aria-current={isActive ? 'page' : undefined} onClick={() => setOpen(false)}>{label}</SiteLink>;
         })}
-        <details className="resource-menu" ref={resourceMenuRef}><summary>Resources <ChevronDown size={13} /></summary><div className="resource-menu-panel">
+        <details className="resource-menu" ref={resourceMenuRef}><summary className={isCurrentNavigationPath(pathname, '/resources') ? 'is-active' : undefined} aria-current={isCurrentNavigationPath(pathname, '/resources') ? 'page' : undefined}>Resources <ChevronDown size={13} /></summary><div className="resource-menu-panel">
           <section><span>LEARN</span><SiteLink href={`${env.DOCUMENTATION_URL.replace(/\/+$/,'')}/overview`}><b>Documentation</b><ArrowUpRight size={13}/></SiteLink><SiteLink href="/faq" onClick={() => setOpen(false)}><b>FAQs</b></SiteLink><SiteLink href="/blog" onClick={() => setOpen(false)}><b>Blog</b></SiteLink></section>
-          <section><span>USE & SUPPORT</span><SiteLink href="/dojo" onClick={() => setOpen(false)}><b>Live sandbox</b></SiteLink><a href={`${env.DOCUMENTATION_URL.replace(/\/+$/,'')}/category/release-notes`} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}><b>What’s new</b></a><SiteLink href="/support" onClick={() => setOpen(false)}><b>Support</b></SiteLink></section>
+          <section><span>USE & SUPPORT</span><SiteLink href="/dojo" onClick={() => setOpen(false)}><b>Live sandbox</b></SiteLink><a href={`${env.DOCUMENTATION_URL.replace(/\/+$/,'')}/category/release-notes`} onClick={() => setOpen(false)}><b>What’s new</b></a><SiteLink href="/support" onClick={() => setOpen(false)}><b>Support</b></SiteLink></section>
           <footer><SiteLink href="/resources" onClick={() => setOpen(false)}>View all resources <ArrowRight size={12}/></SiteLink></footer>
         </div></details>
       </nav>
