@@ -291,12 +291,13 @@ function DojoExplorer(){
  const enhanced=useMarketingMotion().enabled;
  const [legacyTab,setLegacyTab]=useState('Node');
  const [sampleId,setSampleId]=useState('lifecycle');
+ const dojoUrl=env.DOJO_URL.replace(/\/+$/, '');
  const legacyText:{[k:string]:string}={Node:'npm ci  →  npm test  →  npm run build',Python:'pip install  →  pytest  →  package',Docker:'docker build  →  test image  →  publish'};
  const samples:{[k:string]:{label:string;short:string;pipeline:string;summary:string;url:string;agent:string}}={
-  lifecycle:{label:'CI/CD Lifecycle Demo',short:'Lifecycle',pipeline:'mvn clean  →  compile  →  test  →  package  →  run',summary:'A Maven project that compiles, tests, packages, starts the application, captures logs, and publishes three artifacts.',url:env.DOJO_URL,agent:'Windows agent'},
-  yaml:{label:'CI/CD YAML Flow Demo',short:'YAML flow',pipeline:'pnpm install  →  unit test  →  Playwright  →  build  →  deploy',summary:'A declarative YAML workflow for a Vue application, including tests, a production build, a short deployment, and collected reports.',url:env.DOJO_URL,agent:'Linux agent'},
-  docker:{label:'Docker Playground',short:'Docker',pipeline:'create network  →  start container  →  health check  →  clean up',summary:'An ephemeral Docker environment with deterministic health checks, a short access window, automatic cleanup, and result artifacts.',url:env.DOJO_URL,agent:'Docker agent'},
-  cmd:{label:'Native CMD Demo',short:'Native CMD',pipeline:'generate metadata  →  validate  →  promote  →  verify',summary:'A Windows CMD pipeline that carries metadata across steps, enforces a quality gate, promotes artifacts, and verifies their integrity.',url:env.DOJO_URL,agent:'Windows agent'}
+  lifecycle:{label:'CI/CD Lifecycle Demo',short:'Lifecycle',pipeline:'mvn clean  →  compile  →  test  →  package  →  run',summary:'A Maven project that compiles, tests, packages, starts the application, captures logs, and publishes three artifacts.',url:`${dojoUrl}/projects/00000000-0000-0000-0000-000000000000/config/78ae3c28-ad2a-4861-82c7-6c19638e4d64?tab=overview`,agent:'Windows agent'},
+  yaml:{label:'CI/CD YAML Flow Demo',short:'YAML flow',pipeline:'pnpm install  →  unit test  →  Playwright  →  build  →  deploy',summary:'A declarative YAML workflow for a Vue application, including tests, a production build, a short deployment, and collected reports.',url:`${dojoUrl}/projects/00000000-0000-0000-0000-000000000000/config/54b26f0d-b7af-46c9-8914-e89a6d94c65b?tab=overview`,agent:'Linux agent'},
+  docker:{label:'Docker Playground',short:'Docker',pipeline:'create network  →  start container  →  health check  →  clean up',summary:'An ephemeral Docker environment with deterministic health checks, a short access window, automatic cleanup, and result artifacts.',url:`${dojoUrl}/projects/00000000-0000-0000-0000-000000000000/config/cf06838c-573e-4fd4-9ce3-9c9a81432ac8?tab=overview`,agent:'Docker agent'},
+  cmd:{label:'Native CMD Demo',short:'Native CMD',pipeline:'generate metadata  →  validate  →  promote  →  verify',summary:'A Windows CMD pipeline that carries metadata across steps, enforces a quality gate, promotes artifacts, and verifies their integrity.',url:`${dojoUrl}/projects/00000000-0000-0000-0000-000000000000/config/d3b08ab2-b335-4eee-a7b9-fcc7c46d9b34?tab=overview`,agent:'Windows agent'}
  };
  const sample=samples[sampleId];
  const exercises=enhanced
