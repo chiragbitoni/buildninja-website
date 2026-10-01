@@ -45,7 +45,7 @@ function TriggersPanel(){
 }
 
 function UsersPanel(){
- const [tab,setTab]=useState('Pending approvals');return <><div className="demo-title-row"><div><span>TEAM ACCESS</span><h3>People and permissions</h3><p>Review access to the workspace.</p></div><button className="demo-primary">Invite user</button></div>
+ const [tab,setTab]=useState('Pending approvals');return <><div className="demo-title-row"><div><span>TEAM ACCESS</span><h3>People and permissions</h3><p>Review access to the workspace.</p></div></div>
  <div className="filter-row">{['Pending approvals','Users'].map(x=><button className={x===tab?'active':''} onClick={()=>setTab(x)} key={x}>{x}</button>)}</div>
  {tab==='Pending approvals'?<div className="empty-state"><ShieldCheck/><h4>No approvals waiting</h4><p>New requests will appear here.</p></div>:<div className="data-list">{[['Aarav Mehta','Administrator'],['Maya Singh','Developer'],['Noah Williams','Release lead']].map(x=><div key={x[0]}><span className="avatar">{x[0].split(' ').map(v=>v[0]).join('')}</span><div><b>{x[0]}</b><small>{x[1]}</small></div><em>Active</em></div>)}</div>}</>;
 }

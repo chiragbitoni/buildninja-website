@@ -163,7 +163,7 @@ export function AnimatedAgentNetwork() {
 }
 
 export function AnimatedToolStrip() {
-  const tools = [{ Icon: GitBranch, label: 'GitHub' }, { Icon: FileCode2, label: 'GitLab' }, { Icon: GitBranch, label: 'Bitbucket' }, { Icon: Server, label: 'Docker' }, { Icon: Server, label: 'Kubernetes' }, { Icon: ShieldCheck, label: 'Google SSO' }, { Icon: ShieldCheck, label: 'Microsoft Entra ID' }, { Icon: Terminal, label: '.NET' }, { Icon: Terminal, label: 'SSH' }];
+  const tools = [{ Icon: GitBranch, label: 'GitHub' }, { Icon: FileCode2, label: 'GitLab' }, { Icon: GitBranch, label: 'Bitbucket' }, { Icon: Server, label: 'Docker' }, { Icon: Server, label: 'Kubernetes' }, { Icon: ShieldCheck, label: 'Google SSO' }, { Icon: Terminal, label: '.NET' }, { Icon: Terminal, label: 'SSH' }];
   return <section className="cf-tools cf-tool-marquee"><p>YOUR REPOSITORY. YOUR TOOLS. ONE BUILD WORKFLOW.</p><div className="cf-marquee-window"><div className="cf-marquee-track">{[0, 1].map(copy => <div key={copy} className="cf-marquee-group" aria-hidden={copy === 1 ? true : undefined}>{tools.map(({ Icon, label }) => <span key={label}><Icon size={22}/>{label}</span>)}</div>)}</div></div></section>;
 }
 
