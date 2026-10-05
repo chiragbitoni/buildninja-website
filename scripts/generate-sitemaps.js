@@ -20,7 +20,8 @@ function requiredAbsoluteUrl(name, fallback = '') {
 async function generateSitemaps() {
   const baseUrl = requiredAbsoluteUrl('NEXT_PUBLIC_BUILDNINJA_URL', 'https://www.buildninja.io');
   const grapehubUrl = "https://www.grapehub.io";
-  const documentationUrl = `${requiredAbsoluteUrl('NEXT_PUBLIC_DOCUMENTATION_URL', baseUrl)}/docs`;
+  const documentationBaseUrl = requiredAbsoluteUrl('NEXT_PUBLIC_DOCUMENTATION_URL', baseUrl).replace(/\/docs$/, '');
+  const documentationUrl = `${documentationBaseUrl}/docs`;
 
   console.log("Generating sitemap.xml...");
 
