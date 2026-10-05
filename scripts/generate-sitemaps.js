@@ -4,8 +4,8 @@ const { loadEnvConfig } = require('@next/env');
 
 loadEnvConfig(path.join(__dirname, '..'));
 
-function requiredAbsoluteUrl(name) {
-  const value = (process.env[name] || '').replace(/\/+$/, '');
+function requiredAbsoluteUrl(name, fallback = '') {
+  const value = (process.env[name] || fallback).replace(/\/+$/, '');
 
   try {
     const url = new URL(value);
@@ -18,9 +18,9 @@ function requiredAbsoluteUrl(name) {
 }
 
 async function generateSitemaps() {
-  const baseUrl = requiredAbsoluteUrl('NEXT_PUBLIC_BUILDNINJA_URL');
+  const baseUrl = requiredAbsoluteUrl('NEXT_PUBLIC_BUILDNINJA_URL', 'https://www.buildninja.io');
   const grapehubUrl = "https://www.grapehub.io";
-  const documentationUrl = (process.env.NEXT_PUBLIC_DOCUMENTATION_URL || `${baseUrl}/docs`).replace(/\/+$/, '');
+  const documentationUrl = `${requiredAbsoluteUrl('NEXT_PUBLIC_DOCUMENTATION_URL', baseUrl)}/docs`;
 
   console.log("Generating sitemap.xml...");
 
